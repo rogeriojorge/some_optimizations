@@ -8,11 +8,12 @@ from simsopt.mhd import Vmec
 from simsopt.util import MpiPartition
 from simsopt.mhd import VirtualCasing
 from simsopt._core.derivative import Derivative
+from simsopt._core.optimizable import Optimizable, make_optimizable
 from simsopt.geo import create_equally_spaced_curves
 from simsopt.field import Current, coils_via_symmetries, BiotSavart
 from simsopt.geo import CurveLength, MeanSquaredCurvature, LpCurveCurvature
 from simsopt.objectives import SquaredFlux, LeastSquaresProblem, QuadraticPenalty
-from simsopt._core.finite_difference import finite_difference_steps,FiniteDifference
+from simsopt._core.finite_difference import finite_difference_steps, FiniteDifference, MPIFiniteDifference
 logger = logging.getLogger(__name__)
 mpi = MpiPartition()
 
@@ -138,8 +139,9 @@ def grad_fun_analytical(x0, finite_difference_rel_step=0, finite_difference_abs_
     ## Check with the FiniteDifference class if this derivative is being computed correctly
     mixed_dJ = Derivative({surf: deriv})(surf)
     ## Finite differences for the first-stage objective function
-    prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step)
-    prob_dJ = prob_jacobian.jac(prob.x)
+    with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="forward") as prob_jacobian:
+        if mpi.proc0_world:
+            prob_dJ = prob_jacobian.jac(prob.x)
     ## Put both gradients together
     grad_with_respect_to_coils = coils_objective_weight * coils_dJ
     grad_with_respect_to_surface = np.ravel(prob_dJ) + coils_objective_weight * mixed_dJ
@@ -148,6 +150,10 @@ def grad_fun_analytical(x0, finite_difference_rel_step=0, finite_difference_abs_
 
 def grad_fun_numerical(x0, diff_method: str = derivative_algorithm, abs_step = 1e-7, rel_step = 0):
     set_dofs(x0)
+    # myopt = make_optimizable(fun, x0)
+    # with MPIFiniteDifference(myopt.J, mpi, rel_step=rel_step, abs_step=abs_step, diff_method="forward") as prob_jacobian:
+    #     if mpi.proc0_world:
+    #         grad = prob_jacobian.jac(x0)
     grad = np.zeros(len(x0),)
     steps = finite_difference_steps(x0, abs_step=abs_step, rel_step=rel_step)
     if diff_method == "centered":
