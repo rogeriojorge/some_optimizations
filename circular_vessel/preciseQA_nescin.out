@@ -1,0 +1,11 @@
+------ Plasma information from VMEC ----
+np     iota_edge       phip_edge       curpol
+2  0.000000000000E+00  0.000000000000E+00  3.3603957344001074
+------ Current Surface -----
+Number of fourier modes in table
+        2
+Table of fourier coefficients
+m,n,crc2,czs2,crs2,czc2
+      0     0  1.0098736979848868  0.000000000000E+00  0.000000000000E+00  0.000000000000E+00
+      1     0  0.439  0.439  0.000000000000E+00  0.000000000000E+00
+

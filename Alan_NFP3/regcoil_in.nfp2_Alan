@@ -1,0 +1,18 @@
+! For documentation of these input parameters and their default values, see the manual.
+
+&regcoil_nml
+  general_option=5
+
+  target_option = 'max_Bnormal'
+  target_value = 0.025
+
+  nlambda=30
+  lambda_min = 1e-20
+  lambda_max = 1
+
+  geometry_option_plasma = 2
+  wout_filename = 'wout_nfp2_Alan.nc'
+
+  geometry_option_coil = 2 ! Uniform offset from plasma surface 
+  separation = 0.25
+/
