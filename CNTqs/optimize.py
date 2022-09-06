@@ -44,7 +44,7 @@ from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
 max_modes = [1, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 10
+MAXITER_single_stage = 40
 MAXITER_stage_2 = 1200
 coils_objective_weight = 1e+2
 nmodes_coils = 6
