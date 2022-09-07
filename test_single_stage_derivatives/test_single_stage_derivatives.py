@@ -190,7 +190,6 @@ for abs_step in abs_step_array:
         if mpi.proc0_world:
             print(f'abs_step={abs_step}')
             gradNumerical = np.array(fd.jac()[0])
-            print(gradNumerical)
     mpi.comm_world.Bcast(gradNumerical, root=0)
 
     # gradNumerical = grad_fun_numerical(x0=dofs, abs_step=abs_step, rel_step=rel_step_value)

@@ -18,9 +18,8 @@ from simsopt import load
 from simsopt.mhd import Vmec, Boozer
 from simsopt.geo import curves_to_vtk
 from simsopt.geo.curvexyzfourier import CurveXYZFourier
+from simsopt._core.optimizable import make_optimizable
 from simsopt.field import BiotSavart, Coil, Current
-from simsopt._core.optimizable import Optimizable#, OptimizableSum
-from simsopt._core.derivative import derivative_dec
 import logging
 logging.basicConfig()
 logger = logging.getLogger('CNTqs')
@@ -359,7 +358,24 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
                 fplus = coils_objective_weight * JF.J()
                 ## This is only doing forward differences, should be centered
                 ## because the derivative with respect to coils is innacurate
-                grad_coils[j] = (fplus - f0) / steps[j]
+                # grad_coils[j] = (fplus - f0) / steps[j]
+                ## This is doing centered differences
+                x[j] = dofs[j] - steps[j]
+                if np.sum(JF.x-x[:-number_vmec_dofs])!=0:
+                    JF.x = x[:-number_vmec_dofs]
+                if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
+                    prob.x = x[-number_vmec_dofs:]
+                    vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
+                    Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+                    JF.opts[0].opts[0].opts[0] = Jf
+                bs.set_points(surf.gamma().reshape((-1, 3)))
+                fminus = coils_objective_weight * JF.J()
+                grad_coils[j] = (fplus - fminus) / (2 * steps[j])
+                # gradNumerical = np.empty(len(dofs))
+                # opt = make_optimizable(fun, dofs, dof_indicators=["dof"])
+                # with MPIFiniteDifference(opt.J, mpi, diff_method="centered", abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as fd:
+                #     if mpi.proc0_world:
+                #         gradNumerical = np.array(fd.jac()[0])
             grad_with_respect_to_coils = grad_coils[:-number_vmec_dofs]
             grad_with_respect_to_surface = np.ravel(prob_dJ) + grad_coils[-number_vmec_dofs:]
         else:
@@ -493,7 +509,7 @@ for max_mode in max_modes:
 
     if single_stage:
         pprint(f'  Performing single stage optimization with {MAXITER_single_stage} iterations')
-        with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="forward") as prob_jacobian:
+        with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
             if mpi.proc0_world:
                 res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
                 oustr_dict_outer.append(oustr_dict_inner)
