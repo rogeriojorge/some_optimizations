@@ -94,9 +94,9 @@ JF = Jf \
    + LENGTH_CON_WEIGHT * QuadraticPenalty(sum(Jls[i] for i in range(len(base_curves))), LENGTHBOUND)
 
 def set_dofs(x0):
-    if np.sum(JF.x-x0[:-number_vmec_dofs])!=0:
+    if np.sum(JF.x!=x0[:-number_vmec_dofs])>0:
         JF.x = x0[:-number_vmec_dofs]
-    if np.sum(prob.x-x0[-number_vmec_dofs:])!=0:
+    if np.sum(prob.x!=x0[-number_vmec_dofs:])>0:
         prob.x = x0[-number_vmec_dofs:]
         if finite_beta:
             vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi, trgt_ntheta=ntheta)
@@ -139,9 +139,8 @@ def grad_fun_analytical(x0, finite_difference_rel_step=0, finite_difference_abs_
     ## Check with the FiniteDifference class if this derivative is being computed correctly
     mixed_dJ = Derivative({surf: deriv})(surf)
     ## Finite differences for the first-stage objective function
-    with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="forward") as prob_jacobian:
-        if mpi.proc0_world:
-            prob_dJ = prob_jacobian.jac(prob.x)
+    prob_jacobian = FiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=derivative_algorithm)
+    prob_dJ = prob_jacobian.jac(prob.x)
     ## Put both gradients together
     grad_with_respect_to_coils = coils_objective_weight * coils_dJ
     grad_with_respect_to_surface = np.ravel(prob_dJ) + coils_objective_weight * mixed_dJ
@@ -150,10 +149,6 @@ def grad_fun_analytical(x0, finite_difference_rel_step=0, finite_difference_abs_
 
 def grad_fun_numerical(x0, diff_method: str = derivative_algorithm, abs_step = 1e-7, rel_step = 0):
     set_dofs(x0)
-    # myopt = make_optimizable(fun, x0)
-    # with MPIFiniteDifference(myopt.J, mpi, rel_step=rel_step, abs_step=abs_step, diff_method="forward") as prob_jacobian:
-    #     if mpi.proc0_world:
-    #         grad = prob_jacobian.jac(x0)
     grad = np.zeros(len(x0),)
     steps = finite_difference_steps(x0, abs_step=abs_step, rel_step=rel_step)
     if diff_method == "centered":
@@ -179,41 +174,53 @@ def grad_fun_numerical(x0, diff_method: str = derivative_algorithm, abs_step = 1
 dofs = np.concatenate((JF.x, vmec.x))
 
 # Perform regression test
-squared_diff_grad_with_respect_to_coils_array=[]
-squared_diff_grad_with_respect_to_surface_array=[]
+sqrt_squared_diff_grad_with_respect_to_coils_array=[]
+sqrt_squared_diff_grad_with_respect_to_surface_array=[]
 start_outer = time.time()
 for abs_step in abs_step_array:
-    print(f'abs_step={abs_step}')
+    set_dofs(dofs)
     start_inner = time.time()
     gradAnalytical = grad_fun_analytical(dofs, finite_difference_rel_step=rel_step_value, finite_difference_abs_step=abs_step)
     gradAnalytical_with_respect_to_coils = gradAnalytical[:-number_vmec_dofs]
     gradAnalytical_with_respect_to_surface = gradAnalytical[-number_vmec_dofs:]
 
-    gradNumerical = grad_fun_numerical(x0=dofs, abs_step=abs_step, rel_step=rel_step_value)
+    gradNumerical = np.empty(len(dofs))
+    opt = make_optimizable(fun, dofs, dof_indicators=["dof"])
+    with MPIFiniteDifference(opt.J, mpi, diff_method=derivative_algorithm, abs_step=abs_step, rel_step=rel_step_value) as fd:
+        if mpi.proc0_world:
+            print(f'abs_step={abs_step}')
+            gradNumerical = np.array(fd.jac()[0])
+            print(gradNumerical)
+    mpi.comm_world.Bcast(gradNumerical, root=0)
+
+    # gradNumerical = grad_fun_numerical(x0=dofs, abs_step=abs_step, rel_step=rel_step_value)
+
     gradNumerical_with_respect_to_coils = gradNumerical[:-number_vmec_dofs]
     gradNumerical_with_respect_to_surface = gradNumerical[-number_vmec_dofs:]
 
-    squared_diff_grad_with_respect_to_coils = np.sum((gradAnalytical_with_respect_to_coils - gradNumerical_with_respect_to_coils)**2)
-    squared_diff_grad_with_respect_to_surface = np.sum((gradAnalytical_with_respect_to_surface - gradNumerical_with_respect_to_surface)**2)
+    sqrt_squared_diff_grad_with_respect_to_coils = np.sqrt(np.sum((gradAnalytical_with_respect_to_coils - gradNumerical_with_respect_to_coils)**2))
+    sqrt_squared_diff_grad_with_respect_to_surface = np.sqrt(np.sum((gradAnalytical_with_respect_to_surface - gradNumerical_with_respect_to_surface)**2))
 
-    squared_diff_grad_with_respect_to_coils_array.append(squared_diff_grad_with_respect_to_coils)
-    squared_diff_grad_with_respect_to_surface_array.append(squared_diff_grad_with_respect_to_surface)
-    print(f' took {time.time()-start_inner}s')
-print(f'Outer abs_step loop took {time.time()-start_outer}s')
+    sqrt_squared_diff_grad_with_respect_to_coils_array.append(sqrt_squared_diff_grad_with_respect_to_coils)
+    sqrt_squared_diff_grad_with_respect_to_surface_array.append(sqrt_squared_diff_grad_with_respect_to_surface)
+    if mpi.proc0_world: print(f' took {time.time()-start_inner}s')
 
-# Plot and save results
-fig=plt.figure()
-plt.loglog(abs_step_array, squared_diff_grad_with_respect_to_coils_array, label='coils grad')
-plt.loglog(abs_step_array, squared_diff_grad_with_respect_to_surface_array, label='surface grad')
-plt.legend()
-plt.gca().invert_xaxis()
-plt.xlabel('Absolute Step (finite difference)')
-plt.ylabel('|Analytical Derivative - Finite Difference|^2')
-plt.tight_layout()
-plt.savefig("test_result.png", dpi=250)
-plt.show()
+if mpi.proc0_world:
+    print(f'Outer abs_step loop took {time.time()-start_outer}s')
 
-# Print results
-print(f'abs_step_array={abs_step_array}')
-print(f'Squared differences grad coils={squared_diff_grad_with_respect_to_coils_array}')
-print(f'Squared differences grad surface={squared_diff_grad_with_respect_to_surface_array}')
+    # Plot and save results
+    fig=plt.figure()
+    plt.loglog(abs_step_array, sqrt_squared_diff_grad_with_respect_to_coils_array, label='coils grad')
+    plt.loglog(abs_step_array, sqrt_squared_diff_grad_with_respect_to_surface_array, label='surface grad')
+    plt.legend()
+    plt.gca().invert_xaxis()
+    plt.xlabel('Absolute Step (finite difference)')
+    plt.ylabel('RMS |Analytical Derivative - Finite Difference|')
+    plt.tight_layout()
+    plt.savefig("test_result.png", dpi=250)
+    plt.show()
+
+    # Print results
+    print(f'abs_step_array={abs_step_array}')
+    print(f'RMS differences grad coils={sqrt_squared_diff_grad_with_respect_to_coils_array}')
+    print(f'RMS differences grad surface={sqrt_squared_diff_grad_with_respect_to_surface_array}')
