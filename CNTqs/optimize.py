@@ -43,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 40
-MAXITER_stage_2 = 1200
+MAXITER_stage_2 = 200
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -164,10 +164,10 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
     currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
 else:
     if finite_beta:
-        currents = [Current(total_current/4*1e-5)*1e5,Current(total_current/4*1e-5)*1e5,Current(total_current/4*1e-5)*1e5]
-        total_current = Current(total_current)
-        total_current.fix_all()
-        currents += [total_current - sum(currents)]
+        currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(-total_current/4*1e-5)*1e5]
+        # total_current = Current(total_current)
+        # total_current.fix_all()
+        # currents += [total_current - sum(currents)]
         logger.info(f'Coil currents = {[current.x[0] for current in currents]}')
     else:
         current1 = alpha*current2
