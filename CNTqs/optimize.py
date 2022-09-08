@@ -44,7 +44,7 @@ from simsopt.mhd import VirtualCasing
 mpi = MpiPartition()
 max_modes = [1, 1, 1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 40
-MAXITER_stage_2 = 600
+MAXITER_stage_2 = 20
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -140,11 +140,11 @@ if comm.rank == 0:
 if use_previous_results_if_available and os.path.isfile(os.path.join(this_path, "input.CNT_final")):
     pprint(f' Using vmec input file {os.path.join(this_path,"input.CNT_final")}')
     vmec = Vmec(os.path.join(this_path,'input.CNT_final'), mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC)
-    surf = vmec.boundary
 else:
     pprint(f' Using vmec input file {os.path.join(parent_path,vmec_input_filename)}')
     vmec = Vmec(os.path.join(parent_path,vmec_input_filename), mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC)
-    surf = vmec.boundary
+
+surf = vmec.boundary
 
 # Finite Beta Virtual Casing Principle
 if finite_beta:
@@ -154,8 +154,6 @@ if finite_beta:
     pprint(' Running the initial virtual casing calculation')
     vc = VirtualCasing.from_vmec(vmec_file, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
     total_current = Vmec(vmec_file).external_current()
-    target_external_normal = vc.B_external_normal
-    B_external = vc.B_external
 
 #Stage 2
 if use_previous_results_if_available and os.path.isfile(os.path.join(coils_results_path, "biot_savart_opt.json")):
@@ -202,7 +200,7 @@ bs = BiotSavart(coils)
 bs.set_points(surf.gamma().reshape((-1, 3)))
 Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
 if finite_beta:
-    BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - target_external_normal
+    BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal
 else:
     BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
 if comm.rank == 0:
@@ -212,7 +210,7 @@ if comm.rank == 0:
 
 # Define the individual terms in the objective function
 if finite_beta:
-    Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+    Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
 else:
     Jf = SquaredFlux(surf, bs, local=True)
 Jls = [CurveLength(c) for c in curves]
@@ -291,9 +289,10 @@ def fun_J(dofs):
         prob.x = dofs[-number_vmec_dofs:]
         if finite_beta:
             try:
-                logger.info(f"Running virtual casing")
+                logger.info(f"Running virtual casing with VMEC dofs={dofs[-number_vmec_dofs:]}...")
                 vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-                Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+                logger.info(f"   Done")
+                Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
                 JF.opts[0].opts[0].opts[0] = Jf
             except Exception as e:
                 logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
@@ -311,6 +310,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
     info['Nfeval'] += 1
     os.chdir(vmec_results_path)
 
+    # This should be computed only on the main processor
     J = fun_J(dofs)
 
     if J > JACOBIAN_THRESHOLD or isnan(J):
@@ -357,7 +357,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             #     if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
             #         prob.x = x[-number_vmec_dofs:]
             #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-            #         Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+            #         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
             #         JF.opts[0].opts[0].opts[0] = Jf
             #     bs.set_points(surf.gamma().reshape((-1, 3)))
             #     fplus = coils_objective_weight * JF.J()
@@ -371,7 +371,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             #     if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
             #         prob.x = x[-number_vmec_dofs:]
             #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-            #         Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+            #         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
             #         JF.opts[0].opts[0].opts[0] = Jf
             #     bs.set_points(surf.gamma().reshape((-1, 3)))
             #     fminus = coils_objective_weight * JF.J()
@@ -400,7 +400,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             Bcoil_n = np.sum(Bcoil*unitn, axis=2)
             mod_Bcoil = np.linalg.norm(Bcoil, axis=2)
             # if finite_beta:
-            #     B_n = (Bcoil_n - target_external_normal)
+            #     B_n = (Bcoil_n - vc.B_external_normal)
             #     B_diff = Bcoil - B_external
             #     B_N = np.sum(B_diff * n, axis=2)
             # else:
@@ -523,10 +523,9 @@ for max_mode in max_modes:
         pprint(f'  Performing single stage optimization with {MAXITER_single_stage} iterations')
         if finite_beta:
             # If in finite beta, MPI is used to compute the gradients of J=J_stage1+J_stage2
-            if mpi.proc0_world:
-                prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
-                res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-                oustr_dict_outer.append(oustr_dict_inner)
+            prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
+            res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+            oustr_dict_outer.append(oustr_dict_inner)
         else:
             # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
             with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
