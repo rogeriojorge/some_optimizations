@@ -36,15 +36,15 @@ from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
 from simsopt.solve import least_squares_mpi_solve
 from simsopt.objectives import SquaredFlux
 from simsopt.objectives import QuadraticPenalty
-from simsopt._core.finite_difference import MPIFiniteDifference, finite_difference_steps
+from simsopt._core.finite_difference import MPIFiniteDifference, FiniteDifference, finite_difference_steps
 from simsopt._core.derivative import Derivative
 from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
 max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 40
-MAXITER_stage_2 = 200
+MAXITER_single_stage = 50
+MAXITER_stage_2 = 400
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -151,10 +151,11 @@ if finite_beta:
     vmec_file = os.path.join(parent_path, 'wout_CNT_finiteBeta.nc')
     head, tail = os.path.split(vmec_file)
     vc_filename = os.path.join(head, tail.replace('wout', 'vcasing'))
-    pprint('Virtual casing data file:', vc_filename)
-    pprint('Running the virtual casing calculation')
+    pprint(' Running the initial virtual casing calculation')
     vc = VirtualCasing.from_vmec(vmec_file, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
     total_current = Vmec(vmec_file).external_current()
+    target_external_normal = vc.B_external_normal
+    B_external = vc.B_external
 
 #Stage 2
 if use_previous_results_if_available and os.path.isfile(os.path.join(coils_results_path, "biot_savart_opt.json")):
@@ -201,7 +202,7 @@ bs = BiotSavart(coils)
 bs.set_points(surf.gamma().reshape((-1, 3)))
 Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
 if finite_beta:
-    BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal
+    BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - target_external_normal
 else:
     BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
 if comm.rank == 0:
@@ -211,7 +212,7 @@ if comm.rank == 0:
 
 # Define the individual terms in the objective function
 if finite_beta:
-    Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+    Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
 else:
     Jf = SquaredFlux(surf, bs, local=True)
 Jls = [CurveLength(c) for c in curves]
@@ -283,32 +284,36 @@ def plot_df_stage2(df, max_mode):
 ## Define main optimization function with gradients
 #############################################################
 pprint(f'  Performing Single Stage optimization with {MAXITER_single_stage} iterations')
-def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
-    logger.info('Entering fun')
-    info['Nfeval'] += 1
-    os.chdir(vmec_results_path)
-    JF.x = dofs[:-number_vmec_dofs]
-    prob.x = dofs[-number_vmec_dofs:]
-
-    logger.info('Seting new magnetic field location')
+def fun_J(dofs):
+    if np.sum(JF.x!=dofs[:-number_vmec_dofs])>0:
+        JF.x = dofs[:-number_vmec_dofs]
+    if np.sum(prob.x!=dofs[-number_vmec_dofs:])>0:
+        prob.x = dofs[-number_vmec_dofs:]
+        if finite_beta:
+            try:
+                logger.info(f"Running virtual casing")
+                vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
+                Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+                JF.opts[0].opts[0].opts[0] = Jf
+            except Exception as e:
+                logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
+                J = JACOBIAN_THRESHOLD
+                Jf = JF.opts[0].opts[0].opts[0]
     bs.set_points(surf.gamma().reshape((-1, 3)))
-
-    logger.info('Running virtual casing')
-    if finite_beta:
-        try:
-            vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-            Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-            JF.opts[0].opts[0].opts[0] = Jf
-        except Exception as e:
-            logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
-            J = JACOBIAN_THRESHOLD
-            Jf = JF.opts[0].opts[0].opts[0]
 
     J_stage_1 = prob.objective()
     J_stage_2 = coils_objective_weight * JF.J()
     J = J_stage_1 + J_stage_2
+    return J
 
-    if J > JACOBIAN_THRESHOLD or isnan(J_stage_1):
+def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
+    logger.info('Entering fun')
+    info['Nfeval'] += 1
+    os.chdir(vmec_results_path)
+
+    J = fun_J(dofs)
+
+    if J > JACOBIAN_THRESHOLD or isnan(J):
         logger.info(f"Exception caught during function evaluation with J={J}. Returning J={JACOBIAN_THRESHOLD}")
         J = JACOBIAN_THRESHOLD
         
@@ -336,49 +341,54 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
     if J<JACOBIAN_THRESHOLD:
         logger.info(f'Objective function {J} is smaller than the threshold {JACOBIAN_THRESHOLD}')
         logger.info(f'Now calculating the gradient')
-        prob_dJ = prob_jacobian.jac(prob.x)
-        surface = surf
-        bs.set_points(surface.gamma().reshape((-1, 3)))
         if finite_beta:
             # Finite difference for the coil gradients
-            grad_coils = np.zeros(len(dofs),)
-            steps = finite_difference_steps(dofs, abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step)
-            f0 = coils_objective_weight * JF.J()
-            for j in range(len(dofs)):
-                x = np.copy(dofs)
-                x[j] = dofs[j] + steps[j]
-                if np.sum(JF.x-x[:-number_vmec_dofs])!=0:
-                    JF.x = x[:-number_vmec_dofs]
-                if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
-                    prob.x = x[-number_vmec_dofs:]
-                    vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-                    Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-                    JF.opts[0].opts[0].opts[0] = Jf
-                bs.set_points(surf.gamma().reshape((-1, 3)))
-                fplus = coils_objective_weight * JF.J()
-                ## This is only doing forward differences, should be centered
-                ## because the derivative with respect to coils is innacurate
-                # grad_coils[j] = (fplus - f0) / steps[j]
-                ## This is doing centered differences
-                x[j] = dofs[j] - steps[j]
-                if np.sum(JF.x-x[:-number_vmec_dofs])!=0:
-                    JF.x = x[:-number_vmec_dofs]
-                if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
-                    prob.x = x[-number_vmec_dofs:]
-                    vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-                    Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-                    JF.opts[0].opts[0].opts[0] = Jf
-                bs.set_points(surf.gamma().reshape((-1, 3)))
-                fminus = coils_objective_weight * JF.J()
-                grad_coils[j] = (fplus - fminus) / (2 * steps[j])
-                # gradNumerical = np.empty(len(dofs))
-                # opt = make_optimizable(fun, dofs, dof_indicators=["dof"])
-                # with MPIFiniteDifference(opt.J, mpi, diff_method="centered", abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as fd:
-                #     if mpi.proc0_world:
-                #         gradNumerical = np.array(fd.jac()[0])
-            grad_with_respect_to_coils = grad_coils[:-number_vmec_dofs]
-            grad_with_respect_to_surface = np.ravel(prob_dJ) + grad_coils[-number_vmec_dofs:]
+            # prob_dJ = prob_jacobian.jac(prob.x)
+            # surface = surf
+            # bs.set_points(surface.gamma().reshape((-1, 3)))
+            # grad_coils = np.zeros(len(dofs),)
+            # steps = finite_difference_steps(dofs, abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step)
+            # f0 = coils_objective_weight * JF.J()
+            # for j in range(len(dofs)):
+            #     x = np.copy(dofs)
+            #     x[j] = dofs[j] + steps[j]
+            #     if np.sum(JF.x-x[:-number_vmec_dofs])!=0:
+            #         JF.x = x[:-number_vmec_dofs]
+            #     if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
+            #         prob.x = x[-number_vmec_dofs:]
+            #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
+            #         Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+            #         JF.opts[0].opts[0].opts[0] = Jf
+            #     bs.set_points(surf.gamma().reshape((-1, 3)))
+            #     fplus = coils_objective_weight * JF.J()
+            #     ## This is only doing forward differences, should be centered
+            #     ## because the derivative with respect to coils is innacurate
+            #     # grad_coils[j] = (fplus - f0) / steps[j]
+            #     ## This is doing centered differences
+            #     x[j] = dofs[j] - steps[j]
+            #     if np.sum(JF.x-x[:-number_vmec_dofs])!=0:
+            #         JF.x = x[:-number_vmec_dofs]
+            #     if np.sum(prob.x-x[-number_vmec_dofs:])!=0:
+            #         prob.x = x[-number_vmec_dofs:]
+            #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
+            #         Jf = SquaredFlux(surf, bs, local=True, target=target_external_normal)
+            #         JF.opts[0].opts[0].opts[0] = Jf
+            #     bs.set_points(surf.gamma().reshape((-1, 3)))
+            #     fminus = coils_objective_weight * JF.J()
+            #     grad_coils[j] = (fplus - fminus) / (2 * steps[j])
+            # grad_with_respect_to_coils = grad_coils[:-number_vmec_dofs]
+            # grad_with_respect_to_surface = np.ravel(prob_dJ) + grad_coils[-number_vmec_dofs:]
+            # grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
+            grad = np.empty(len(dofs))
+            opt = make_optimizable(fun_J, dofs, dof_indicators=["dof"])
+            with MPIFiniteDifference(opt.J, mpi, diff_method="centered", abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as fd:
+                if mpi.proc0_world:
+                    grad = np.array(fd.jac()[0])
+            mpi.comm_world.Bcast(grad, root=0)
         else:
+            prob_dJ = prob_jacobian.jac(prob.x)
+            surface = surf
+            bs.set_points(surface.gamma().reshape((-1, 3)))
             coils_dJ = JF.dJ()
             ## Mixed term - derivative of squared flux with respect to the surface shape
             n = surface.normal()
@@ -390,8 +400,8 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             Bcoil_n = np.sum(Bcoil*unitn, axis=2)
             mod_Bcoil = np.linalg.norm(Bcoil, axis=2)
             # if finite_beta:
-            #     B_n = (Bcoil_n - vc.B_external_normal)
-            #     B_diff = Bcoil - vc.B_external
+            #     B_n = (Bcoil_n - target_external_normal)
+            #     B_diff = Bcoil - B_external
             #     B_N = np.sum(B_diff * n, axis=2)
             # else:
             B_n = Bcoil_n
@@ -406,15 +416,16 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             ## Put both gradients together
             grad_with_respect_to_coils = coils_objective_weight * coils_dJ
             grad_with_respect_to_surface = np.ravel(prob_dJ) + coils_objective_weight * mixed_dJ
-        grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
+            grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
     else:
         logger.info(f'Objective function {J} is greater than the threshold {JACOBIAN_THRESHOLD}')
         grad = [0] * len(dofs)
         grad_with_respect_to_coils = np.zeros(len(dofs)--number_vmec_dofs,)
 
     if debug_coils_outputtxt:
-        if nsurfaces_stage2==1: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
-        else: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
+        if not finite_beta:
+            if nsurfaces_stage2==1: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
+            else: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
         outstr += f", C-C-Sep={Jccdist.shortest_distance():.2f}"#,, C-S-Sep={Jcsdist.shortest_distance():.2f}"
         # outstr += f"\nJ_CS={J_CS.J():.1e}"
         outstr += f"\n J_length={J_LENGTH.J():.1e}, J_CC={(J_CC.J()):.1e}, J_LENGTH_PENALTY={J_LENGTH_PENALTY.J():.1e}, J_CURVATURE={J_CURVATURE.J():.1e}, J_MSC={J_MSC.J():.1e}, J_ALS={J_ALS.J():.1e}"
@@ -506,13 +517,21 @@ for max_mode in max_modes:
                 myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
             except Exception as e:
                 myfile.write(e)
+    mpi.comm_world.Bcast(dofs, root=0)
 
     if single_stage:
         pprint(f'  Performing single stage optimization with {MAXITER_single_stage} iterations')
-        with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
-            if mpi.proc0_world:
-                res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-                oustr_dict_outer.append(oustr_dict_inner)
+        if finite_beta:
+            # If in finite beta, MPI is used to compute the gradients of J=J_stage1+J_stage2
+            prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
+            res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+            oustr_dict_outer.append(oustr_dict_inner)
+        else:
+            # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
+            with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
+                if mpi.proc0_world:
+                    res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+                    oustr_dict_outer.append(oustr_dict_inner)
 
     if mpi.proc0_world:
         pointData = {"B_N": np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
