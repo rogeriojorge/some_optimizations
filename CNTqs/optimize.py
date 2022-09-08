@@ -42,16 +42,16 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1, 1, 1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 40
-MAXITER_stage_2 = 20
+max_modes = [1, 1, 1, 2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 30
+MAXITER_stage_2 = 500
 coils_objective_weight = 1e+2
 nmodes_coils = 6
-circularTopBottom = False
+circularTopBottom = True
 aspect_ratio_target = 3.0
 iota_target = -0.22
 single_stage=True
-magnetic_well=False
+magnetic_well=True
 vacuum_well_target=0.05
 vacuum_well_weight=1
 finite_beta=True
@@ -289,9 +289,8 @@ def fun_J(dofs):
         prob.x = dofs[-number_vmec_dofs:]
         if finite_beta:
             try:
-                logger.info(f"Running virtual casing with VMEC dofs={dofs[-number_vmec_dofs:]}...")
+                logger.info(f"Running virtual casing")
                 vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-                logger.info(f"   Done")
                 Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
                 JF.opts[0].opts[0].opts[0] = Jf
             except Exception as e:
