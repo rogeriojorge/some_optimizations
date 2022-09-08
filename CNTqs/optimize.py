@@ -42,9 +42,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 50
-MAXITER_stage_2 = 400
+max_modes = [1, 1, 1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 40
+MAXITER_stage_2 = 600
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -523,9 +523,10 @@ for max_mode in max_modes:
         pprint(f'  Performing single stage optimization with {MAXITER_single_stage} iterations')
         if finite_beta:
             # If in finite beta, MPI is used to compute the gradients of J=J_stage1+J_stage2
-            prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
-            res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-            oustr_dict_outer.append(oustr_dict_inner)
+            if mpi.proc0_world:
+                prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
+                res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+                oustr_dict_outer.append(oustr_dict_inner)
         else:
             # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
             with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
