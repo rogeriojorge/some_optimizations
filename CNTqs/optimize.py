@@ -47,11 +47,11 @@ MAXITER_single_stage = 30
 MAXITER_stage_2 = 500
 coils_objective_weight = 1e+2
 nmodes_coils = 6
-circularTopBottom = True
+circularTopBottom = False
 aspect_ratio_target = 3.0
 iota_target = -0.22
 single_stage=True
-magnetic_well=True
+magnetic_well=False
 vacuum_well_target=0.05
 vacuum_well_weight=1
 finite_beta=True
@@ -77,8 +77,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 50
 initial_irad = 3
 
-nphi_VMEC=80
-ntheta_VMEC=30
+nphi_VMEC=110
+ntheta_VMEC=40
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -111,7 +111,7 @@ CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the object
 CURVATURE_WEIGHT = 1e-1 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-1 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
-vc_src_nphi = 30 # Resolution for the virtual casing calculation
+vc_src_nphi = 45 # Resolution for the virtual casing calculation
 
 debug_coils_outputtxt = True
 coil_gradients_analytical = True
