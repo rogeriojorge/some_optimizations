@@ -43,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 12
-MAXITER_stage_2 = 300
+max_modes = [1, 2, 2, 3]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 50
+MAXITER_stage_2 = 400
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 50
 initial_irad = 3
 
-nphi_VMEC=110
-ntheta_VMEC=40
+nphi_VMEC=120
+ntheta_VMEC=50
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -112,7 +112,7 @@ CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the object
 CURVATURE_WEIGHT = 1e-1 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-1 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
-vc_src_nphi = 45 # Resolution for the virtual casing calculation
+vc_src_nphi = 55 # Resolution for the virtual casing calculation
 
 debug_coils_outputtxt = True
 coil_gradients_analytical = True
