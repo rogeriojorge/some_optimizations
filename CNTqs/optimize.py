@@ -318,13 +318,15 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
         
     logger.info('Writing result')
     jf = Jf.J()
+    jF = JF.J()
     Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
     if finite_beta:
         BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - Jf.target
     else:
         BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
     BdotN = np.mean(np.abs(BdotN_surf))
-    outstr = f"\n\nfun#{info['Nfeval']} - J={J:.1e}, Jf={jf:.1e}, ⟨B·n⟩={BdotN:.1e}"
+    BdotNmax = np.max(np.abs(BdotN_surf))
+    outstr = f"\n\nfun#{info['Nfeval']} - J={J:.1e}, JF={jF:.1e}, Jf={jf:.1e}, ⟨B·n⟩={BdotN:.1e}, B·n max={BdotNmax:.1e}"
     dict1 = {}
     dict1.update({
         'Nfeval': info['Nfeval'], 'J':float(J), 'Jf': float(jf), 'J_length':float(J_LENGTH.J()),
@@ -456,7 +458,10 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
         #     myfile.write(f"\n prob_dJ="+", ".join([f"{p}" for p in np.ravel(prob_dJ)])+"\n coils_dJ[3:10]="+", ".join([f"{p}" for p in coils_dJ[3:10]])+"\n mixed_dJ="+", ".join([f"{p}" for p in mixed_dJ]))
     oustr_dict.append(dict1)
     if np.mod(info['Nfeval'],5)==0:
-        pointData = {"B_N": np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        if finite_beta:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        else:
+            pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
 
@@ -500,6 +505,9 @@ for max_mode in max_modes:
         info_coils={'Nfeval':0}
         oustr_dict=[]
         pprint(f'  Performing Stage 2 optimization with {MAXITER_stage_2} iterations')
+        if finite_beta:
+            Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+            JF.opts[0].opts[0].opts[0] = Jf
         res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
@@ -533,7 +541,10 @@ for max_mode in max_modes:
                     oustr_dict_outer.append(oustr_dict_inner)
 
     if mpi.proc0_world:
-        pointData = {"B_N": np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        if finite_beta:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        else:
+            pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt_max_mode_'+str(max_mode)), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt_max_mode_'+str(max_mode)))
         bs.save(os.path.join(coils_results_path,'biot_savart_opt_max_mode_'+str(max_mode)+'.json'))
@@ -573,7 +584,10 @@ for max_mode in max_modes:
 #############################################################
 if mpi.proc0_world:
     try:
-        pointData = {"B_N": np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        if finite_beta:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        else:
+            pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt'))
         bs.save(os.path.join(coils_results_path,"biot_savart_opt.json"))
