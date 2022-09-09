@@ -3,6 +3,7 @@ import os
 import sys
 import time
 start = time.time()
+import glob
 import shutil
 import numpy as np
 import pandas as pd
@@ -42,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1, 1, 1, 2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 30
-MAXITER_stage_2 = 500
+max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 20
+MAXITER_stage_2 = 400
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
@@ -240,8 +241,14 @@ def fun_coils(dofss, info, oustr_dict=[]):
     grad = JF.dJ()
     if mpi.proc0_world:
         jf = Jf.J()
-        BdotN = np.mean(np.abs(np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)))
-        outstr = f"\nfun_coils#{info['Nfeval']} - J={J:.1e}, Jf={jf:.1e}, ⟨B·n⟩={BdotN:.1e}"
+        Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
+        if finite_beta:
+            BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - Jf.target
+        else:
+            BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
+        BdotN = np.mean(np.abs(BdotN_surf))
+        BdotNmax = np.max(np.abs(BdotN_surf))
+        outstr = f"\nfun_coils#{info['Nfeval']} - J={J:.1e}, Jf={jf:.1e}, ⟨B·n⟩={BdotN:.1e}, B·n max={BdotNmax:.1e}"
         dict1 = {}
         dict1.update({
             'Nfeval': info['Nfeval'], 'J':float(J), 'Jf': float(jf), 'J_length':float(J_LENGTH.J()),
@@ -423,47 +430,52 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
         grad = [0] * len(dofs)
         grad_with_respect_to_coils = np.zeros(len(dofs)--number_vmec_dofs,)
 
-    if debug_coils_outputtxt:
-        if not finite_beta:
-            if nsurfaces_stage2==1: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
-            else: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
-        outstr += f", C-C-Sep={Jccdist.shortest_distance():.2f}"#,, C-S-Sep={Jcsdist.shortest_distance():.2f}"
-        # outstr += f"\nJ_CS={J_CS.J():.1e}"
-        outstr += f"\n J_length={J_LENGTH.J():.1e}, J_CC={(J_CC.J()):.1e}, J_LENGTH_PENALTY={J_LENGTH_PENALTY.J():.1e}, J_CURVATURE={J_CURVATURE.J():.1e}, J_MSC={J_MSC.J():.1e}, J_ALS={J_ALS.J():.1e}"
-        # outstr += f", J_CENTER_CURVES={J_CENTER_CURVES.J():.1e}"
-        cl_string = ", ".join([f"{j.J():.1f}" for j in Jls])
-        kap_string = ", ".join(f"{np.max(c.kappa()):.1f}" for c in curves)
-        msc_string = ", ".join(f"{j.J():.1f}" for j in Jmscs)
-        outstr += f"\n Coil lengths=sum([{cl_string}])={sum(j.J() for j in Jls):.1f}"
-        outstr += f", curvature=[{kap_string}], mean squared curvature=[{msc_string}]"
-    try:
-        outstr += f"\n surface dofs="+", ".join([f"{pr}" for pr in dofs[-number_vmec_dofs:]])
-        coilsdofs = dofs[:-number_vmec_dofs]
-        outstr += f"\n coils dofs="+", ".join([f"{pr}" for pr in coilsdofs[0:6]])
-        if J<JACOBIAN_THRESHOLD:
-            outstr += f"\n Quasisymmetry objective={qs.total()}"
-            outstr += f"\n aspect={vmec.aspect()}"
-            outstr += f"\n mean iota={vmec.mean_iota()}"
-            outstr += f"\n magnetic well={vmec.vacuum_well()}"
-            dict1.update({'Jquasisymmetry':float(qs.total()), 'Jwell': float((vmec.vacuum_well()-vacuum_well_target)**2), 'Jiota':float((vmec.mean_iota()-iota_target)**2), 'Jaspect':float((vmec.aspect()-aspect_ratio_target)**2)})
-        else:
-            dict1.update({'Jquasisymmetry':0, 'Jiota':0,'Jaspect':0, 'Jwell': 0})
-    except Exception as e:
-        pprint(e)
+    if mpi.proc0_world:
+        if debug_coils_outputtxt:
+            if not finite_beta:
+                if nsurfaces_stage2==1: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
+                else: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
+            outstr += f", C-C-Sep={Jccdist.shortest_distance():.2f}"#,, C-S-Sep={Jcsdist.shortest_distance():.2f}"
+            # outstr += f"\nJ_CS={J_CS.J():.1e}"
+            outstr += f"\n J_length={J_LENGTH.J():.1e}, J_CC={(J_CC.J()):.1e}, J_LENGTH_PENALTY={J_LENGTH_PENALTY.J():.1e}, J_CURVATURE={J_CURVATURE.J():.1e}, J_MSC={J_MSC.J():.1e}, J_ALS={J_ALS.J():.1e}"
+            # outstr += f", J_CENTER_CURVES={J_CENTER_CURVES.J():.1e}"
+            cl_string = ", ".join([f"{j.J():.1f}" for j in Jls])
+            kap_string = ", ".join(f"{np.max(c.kappa()):.1f}" for c in curves)
+            msc_string = ", ".join(f"{j.J():.1f}" for j in Jmscs)
+            outstr += f"\n Coil lengths=sum([{cl_string}])={sum(j.J() for j in Jls):.1f}"
+            outstr += f", curvature=[{kap_string}], mean squared curvature=[{msc_string}]"
+        try:
+            outstr += f"\n surface dofs="+", ".join([f"{pr}" for pr in dofs[-number_vmec_dofs:]])
+            coilsdofs = dofs[:-number_vmec_dofs]
+            outstr += f"\n coils dofs="+", ".join([f"{pr}" for pr in coilsdofs[0:6]])
+            if J<JACOBIAN_THRESHOLD:
+                outstr += f"\n Quasisymmetry objective={qs.total()}"
+                outstr += f"\n aspect={vmec.aspect()}"
+                outstr += f"\n mean iota={vmec.mean_iota()}"
+                outstr += f"\n magnetic well={vmec.vacuum_well()}"
+                dict1.update({'Jquasisymmetry':float(qs.total()), 'Jwell': float((vmec.vacuum_well()-vacuum_well_target)**2), 'Jiota':float((vmec.mean_iota()-iota_target)**2), 'Jaspect':float((vmec.aspect()-aspect_ratio_target)**2)})
+            else:
+                dict1.update({'Jquasisymmetry':0, 'Jiota':0,'Jaspect':0, 'Jwell': 0})
+        except Exception as e:
+            pprint(e)
 
-    os.chdir(this_path)
-    with open(debug_output_file, "a") as myfile:
-        myfile.write(outstr)
-        # if J<JACOBIAN_THRESHOLD:
-        #     myfile.write(f"\n prob_dJ="+", ".join([f"{p}" for p in np.ravel(prob_dJ)])+"\n coils_dJ[3:10]="+", ".join([f"{p}" for p in coils_dJ[3:10]])+"\n mixed_dJ="+", ".join([f"{p}" for p in mixed_dJ]))
-    oustr_dict.append(dict1)
-    if np.mod(info['Nfeval'],5)==0:
-        if finite_beta:
-            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
-        else:
-            pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
-        surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
-        curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
+        # Remove spurious files
+        for vcasing_file in glob.glob("vcasing*"):
+            os.remove(vcasing_file)
+
+        os.chdir(this_path)
+        with open(debug_output_file, "a") as myfile:
+            myfile.write(outstr)
+            # if J<JACOBIAN_THRESHOLD:
+            #     myfile.write(f"\n prob_dJ="+", ".join([f"{p}" for p in np.ravel(prob_dJ)])+"\n coils_dJ[3:10]="+", ".join([f"{p}" for p in coils_dJ[3:10]])+"\n mixed_dJ="+", ".join([f"{p}" for p in mixed_dJ]))
+        oustr_dict.append(dict1)
+        if np.mod(info['Nfeval'],5)==0:
+            if finite_beta:
+                pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+            else:
+                pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+            surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
+            curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
 
     return J, grad
 
@@ -501,16 +513,22 @@ for max_mode in max_modes:
                 except Exception as e:
                     myfile.write(e)
 
+    if finite_beta:
+        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+        JF.opts[0].opts[0].opts[0] = Jf
     if mpi.proc0_world:
         info_coils={'Nfeval':0}
         oustr_dict=[]
         pprint(f'  Performing Stage 2 optimization with {MAXITER_stage_2} iterations')
-        if finite_beta:
-            Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-            JF.opts[0].opts[0].opts[0] = Jf
         res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
+        Jf = JF.opts[0].opts[0].opts[0]
+        if finite_beta:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
+        else:
+            pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - Jf.target)[:, :, None]}
+        surf.to_vtk(os.path.join(coils_results_path,f'surf_after_inner_loop_max_mode_{max_mode}'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_after_inner_loop_max_mode_{max_mode}"))
         bs.save(os.path.join(coils_results_path,f"biot_savart_inner_loop_max_mode_{max_mode}.json"))
         df = pd.DataFrame(oustr_dict)
@@ -532,6 +550,7 @@ for max_mode in max_modes:
             # If in finite beta, MPI is used to compute the gradients of J=J_stage1+J_stage2
             prob_jacobian = FiniteDifference(prob.objective, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered")
             res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+            mpi.comm_world.Bcast(oustr_dict_inner, root=0)
             oustr_dict_outer.append(oustr_dict_inner)
         else:
             # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
