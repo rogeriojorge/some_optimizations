@@ -17,7 +17,7 @@ PHIEDGE = 0.049
 
 ! ---- Pressure profile specification ----
 PMASS_TYPE = "power_series"
-AM = 1.e5 -1.e5
+AM = 0.0 
 PRES_SCALE = 1.0
 
 ! ---- Profile specification of iota or current ----
