@@ -98,8 +98,8 @@ nfp = 2
 
 boozxform_nsurfaces = 10
 helical_detail = False
-finite_difference_abs_step = 1e-7
-finite_difference_rel_step = 0
+finite_difference_abs_step = 1e-6
+finite_difference_rel_step = 1e-4
 JACOBIAN_THRESHOLD = 550
 CC_THRESHOLD = 0.15 # Threshold for the coil-to-coil distance penalty in the objective function
 CS_THRESHOLD = 0.1 # Threshold for the curvature penalty in the objective function
