@@ -301,11 +301,11 @@ def fun_J(dofs):
                 logger.info(f"Running virtual casing")
                 vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
                 Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-                JF.opts[0].opts[0].opts[0] = Jf
+                JF.opts[0].opts[0].opts[0].opts[0] = Jf
             except Exception as e:
                 logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
                 J = JACOBIAN_THRESHOLD
-                Jf = JF.opts[0].opts[0].opts[0]
+                Jf = JF.opts[0].opts[0].opts[0].opts[0]
     bs.set_points(surf.gamma().reshape((-1, 3)))
 
     J_stage_1 = prob.objective()
@@ -368,7 +368,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             #         prob.x = x[-number_vmec_dofs:]
             #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
             #         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-            #         JF.opts[0].opts[0].opts[0] = Jf
+            #         JF.opts[0].opts[0].opts[0].opts[0] = Jf
             #     bs.set_points(surf.gamma().reshape((-1, 3)))
             #     fplus = coils_objective_weight * JF.J()
             #     ## This is only doing forward differences, should be centered
@@ -382,7 +382,7 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
             #         prob.x = x[-number_vmec_dofs:]
             #         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
             #         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-            #         JF.opts[0].opts[0].opts[0] = Jf
+            #         JF.opts[0].opts[0].opts[0].opts[0] = Jf
             #     bs.set_points(surf.gamma().reshape((-1, 3)))
             #     fminus = coils_objective_weight * JF.J()
             #     grad_coils[j] = (fplus - fminus) / (2 * steps[j])
@@ -475,9 +475,9 @@ def fun(dofs, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[]):
         oustr_dict.append(dict1)
         if np.mod(info['Nfeval'],5)==0:
             if finite_beta:
-                pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
-            else:
                 pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+            else:
+                pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
             surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
             curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
 
@@ -519,7 +519,7 @@ for max_mode in max_modes:
 
     if finite_beta:
         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
-        JF.opts[0].opts[0].opts[0] = Jf
+        JF.opts[0].opts[0].opts[0].opts[0] = Jf
     if mpi.proc0_world:
         info_coils={'Nfeval':0}
         oustr_dict=[]
@@ -527,11 +527,11 @@ for max_mode in max_modes:
         res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
-        Jf = JF.opts[0].opts[0].opts[0]
+        Jf = JF.opts[0].opts[0].opts[0].opts[0]
         if finite_beta:
-            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
-        else:
             pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - Jf.target)[:, :, None]}
+        else:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,f'surf_after_inner_loop_max_mode_{max_mode}'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_after_inner_loop_max_mode_{max_mode}"))
         bs.save(os.path.join(coils_results_path,f"biot_savart_inner_loop_max_mode_{max_mode}.json"))
@@ -564,9 +564,9 @@ for max_mode in max_modes:
 
     if mpi.proc0_world:
         if finite_beta:
-            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
-        else:
             pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+        else:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt_max_mode_'+str(max_mode)), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt_max_mode_'+str(max_mode)))
         bs.save(os.path.join(coils_results_path,'biot_savart_opt_max_mode_'+str(max_mode)+'.json'))
@@ -607,9 +607,9 @@ for max_mode in max_modes:
 if mpi.proc0_world:
     try:
         if finite_beta:
-            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
-        else:
             pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+        else:
+            pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt'))
         bs.save(os.path.join(coils_results_path,"biot_savart_opt.json"))
