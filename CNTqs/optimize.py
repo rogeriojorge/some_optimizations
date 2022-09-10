@@ -155,6 +155,8 @@ if finite_beta:
     pprint(' Running the initial virtual casing calculation')
     vc = VirtualCasing.from_vmec(vmec_file, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
     total_current = Vmec(vmec_file).external_current()
+    pprint(f' Total current = {total_current}')
+    pprint(f' max(B_external_normal) = {np.max(vc.B_external_normal)}')
 
 #Stage 2
 if use_previous_results_if_available and os.path.isfile(os.path.join(coils_results_path, "biot_savart_opt.json")):

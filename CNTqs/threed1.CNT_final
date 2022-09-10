@@ -26,7 +26,7 @@
  MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
  PMASS parameterization type is 'power_series'
  -----------------------------------
-
+   1.000E+05  -1.000E+05
 
  TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
  PCURR parameterization type is 'power_series'
