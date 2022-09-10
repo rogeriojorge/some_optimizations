@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 50
 initial_irad = 3
 
-nphi_VMEC=120
-ntheta_VMEC=45
+nphi_VMEC=130
+ntheta_VMEC=50
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
