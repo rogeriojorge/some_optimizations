@@ -44,7 +44,7 @@ from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
 max_modes = [2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 30
+MAXITER_single_stage = 50
 MAXITER_stage_2 = 400
 coils_objective_weight = 1e+2
 nmodes_coils = 6
@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 50
 initial_irad = 3
 
-nphi_VMEC=130
-ntheta_VMEC=50
+nphi_VMEC=120
+ntheta_VMEC=45
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -99,7 +99,7 @@ nfp = 2
 boozxform_nsurfaces = 10
 helical_detail = False
 finite_difference_abs_step = 1e-7
-finite_difference_rel_step = 1e-5
+finite_difference_rel_step = 0
 JACOBIAN_THRESHOLD = 550
 CC_THRESHOLD = 0.15 # Threshold for the coil-to-coil distance penalty in the objective function
 CS_THRESHOLD = 0.1 # Threshold for the curvature penalty in the objective function
