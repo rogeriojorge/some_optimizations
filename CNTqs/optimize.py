@@ -43,14 +43,14 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 5
-MAXITER_stage_2 = 5
+max_modes = [2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 50
+MAXITER_stage_2 = 500
 coils_objective_weight = 1e+2
 nmodes_coils = 6
 circularTopBottom = False
 aspect_ratio_target = 3.0
-iota_target = -0.22
+iota_target = -0.41
 single_stage=True
 magnetic_well=False
 vacuum_well_target=0.05
