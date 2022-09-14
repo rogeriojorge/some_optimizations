@@ -43,14 +43,14 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+max_modes = [1, 2, 2, 3]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 50
 MAXITER_stage_2 = 500
-coils_objective_weight = 1e+2
+coils_objective_weight = 1e+3
 nmodes_coils = 6
 circularTopBottom = False
 aspect_ratio_target = 3.0
-iota_target = -0.41
+iota_target = -0.23
 single_stage=True
 magnetic_well=False
 vacuum_well_target=0.05
@@ -75,11 +75,11 @@ nsurfaces_stage2 = 1
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 quasisymmetry_helicity_n = 0
-iota_weight = 50
+iota_weight = 10
 initial_irad = 3
 
-nphi_VMEC=70
-ntheta_VMEC=35
+nphi_VMEC=100
+ntheta_VMEC=40
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -106,13 +106,13 @@ CS_THRESHOLD = 0.1 # Threshold for the curvature penalty in the objective functi
 LENGTHBOUND = 20 # Threshold for the sum of coil lengths
 LENGTH_CON_WEIGHT = 0.1 # Weight on the quadratic penalty for the curve length
 LENGTH_WEIGHT = 1e-8 # Weight on the curve lengths in the objective function
-CC_WEIGHT = 1e+1 # Weight for the coil-to-coil distance penalty in the objective function
+CC_WEIGHT = 1e+0 # Weight for the coil-to-coil distance penalty in the objective function
 CS_THRESHOLD = 0.3 # Threshold for the coil-to-surface distance penalty in the objective function
 CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the objective function
 CURVATURE_WEIGHT = 1e-1 # Weight for the curvature penalty in the objective function
-MSC_WEIGHT = 1e-1 # Weight for the mean squared curvature penalty in the objective function
+MSC_WEIGHT = 1e-3 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
-vc_src_nphi = 40 # Resolution for the virtual casing calculation
+vc_src_nphi = 60 # Resolution for the virtual casing calculation
 
 debug_coils_outputtxt = True
 coil_gradients_analytical = True
@@ -232,7 +232,7 @@ J_MSC = MSC_WEIGHT * sum(QuadraticPenalty(J, MSC_THRESHOLD) for i, J in enumerat
 J_ALS = ARCLENGTH_WEIGHT * sum(Jals)
 J_LENGTH_PENALTY = LENGTH_CON_WEIGHT * sum([QuadraticPenalty(Jls[i], LENGTH_THRESHOLD[i]) for i in range(len(curves))])
 
-JF = Jf + J_CC + J_LENGTH + J_LENGTH_PENALTY + J_CURVATURE# + J_MSC + J_ALS + J_CS
+JF = Jf + J_CC + J_LENGTH + J_LENGTH_PENALTY + J_CURVATURE + J_MSC# + J_ALS + J_CS
 
 # Initial stage 2 optimization
 def fun_coils(dofss, info, oustr_dict=[]):
@@ -327,11 +327,11 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
         J = JACOBIAN_THRESHOLD
         
     logger.info('Writing result')
-    jf = Jf.J()
     jF = JF.J()
+    jf = JF.opts[0].opts[0].opts[0].opts[0].J()
     Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
     if finite_beta:
-        BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - Jf.target
+        BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - JF.opts[0].opts[0].opts[0].opts[0].target
     else:
         BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
     BdotN = np.mean(np.abs(BdotN_surf))
@@ -471,6 +471,11 @@ for max_mode in max_modes:
         os.chdir(vmec_results_path)
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
         os.chdir(this_path)
+        pprint(f"\nAspect ratio at max_mode {max_mode}: {vmec.aspect()}")
+        pprint(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
+        pprint(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
+        pprint(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+        pprint(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
         if mpi.proc0_world:
             with open(debug_output_file, "a") as myfile:
                 try:
@@ -483,6 +488,7 @@ for max_mode in max_modes:
                     myfile.write(e)
 
     if finite_beta:
+        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
         JF.opts[0].opts[0].opts[0].opts[0] = Jf
     if mpi.proc0_world:
