@@ -43,10 +43,10 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1, 2, 2, 3]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+max_modes = [2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 50
 MAXITER_stage_2 = 500
-coils_objective_weight = 1e+3
+coils_objective_weight = 3e+3
 nmodes_coils = 6
 circularTopBottom = False
 aspect_ratio_target = 3.0
@@ -75,7 +75,7 @@ nsurfaces_stage2 = 1
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 quasisymmetry_helicity_n = 0
-iota_weight = 10
+iota_weight = 1
 initial_irad = 3
 
 nphi_VMEC=100
@@ -109,8 +109,8 @@ LENGTH_WEIGHT = 1e-8 # Weight on the curve lengths in the objective function
 CC_WEIGHT = 1e+0 # Weight for the coil-to-coil distance penalty in the objective function
 CS_THRESHOLD = 0.3 # Threshold for the coil-to-surface distance penalty in the objective function
 CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the objective function
-CURVATURE_WEIGHT = 1e-1 # Weight for the curvature penalty in the objective function
-MSC_WEIGHT = 1e-3 # Weight for the mean squared curvature penalty in the objective function
+CURVATURE_WEIGHT = 1e-2 # Weight for the curvature penalty in the objective function
+MSC_WEIGHT = 1e-2 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
 vc_src_nphi = 60 # Resolution for the virtual casing calculation
 
@@ -232,7 +232,7 @@ J_MSC = MSC_WEIGHT * sum(QuadraticPenalty(J, MSC_THRESHOLD) for i, J in enumerat
 J_ALS = ARCLENGTH_WEIGHT * sum(Jals)
 J_LENGTH_PENALTY = LENGTH_CON_WEIGHT * sum([QuadraticPenalty(Jls[i], LENGTH_THRESHOLD[i]) for i in range(len(curves))])
 
-JF = Jf + J_CC + J_LENGTH + J_LENGTH_PENALTY + J_CURVATURE + J_MSC# + J_ALS + J_CS
+JF = Jf + J_CC + J_LENGTH + J_LENGTH_PENALTY + J_CURVATURE# + J_MSC# + J_ALS + J_CS
 
 # Initial stage 2 optimization
 def fun_coils(dofss, info, oustr_dict=[]):
