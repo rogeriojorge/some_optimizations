@@ -26,21 +26,22 @@ def pprint(*args, **kwargs):
         print(*args, **kwargs)
 from simsopt.geo.curverzfourier import CurveRZFourier
 
-main_directory = 'optimization_6modes_well'
+main_directory = 'optimization_6modes_finitebeta'
 volume_scale = 1.0
-nfieldlines = 14
+nfieldlines = 8
 delta_R = 0.028
-tmax_fl = 4200
+tmax_fl = 1500
 tol_qfm = 1e-14
-nphi_QFM = 30
-ntheta_QFM = 50
-mpol = 14
-ntor = 14
+tol_poincare = 1e-13
+nphi_QFM = 25
+ntheta_QFM = 35
+mpol = 8
+ntor = 8
 maxiter_qfm = 700
 constraint_weight=1e-0
 ntheta_VMEC = 300
-create_QFM = False
-create_Poincare = True
+create_QFM = True
+create_Poincare = False
 nfp=2
 initial_QFM_radius=0.08
 bs_file = 'biot_savart_opt.json'
@@ -128,6 +129,7 @@ if create_QFM:
     vmec_QFM.indata.ns_array[:2]    = [   16,     51]
     vmec_QFM.indata.niter_array[:2] = [ 5000,  10000]
     vmec_QFM.indata.ftol_array[:2]  = [1e-14,  1e-14]
+    vmec_QFM.indata.am[0:10] = [0]*10
     vmec_QFM.write_input(os.path.join(this_path,f'input.CNT_qfm'))
     vmec_QFM = Vmec(os.path.join(this_path,f'input.CNT_qfm'))
     try:
@@ -201,7 +203,7 @@ if create_Poincare:
         t1 = time.time()
         phis = [(i/4)*(2*np.pi/nfp) for i in range(4)]
         fieldlines_tys, fieldlines_phi_hits = compute_fieldlines(
-            bfield, R0, Z0, tmax=tmax_fl, tol=1e-12, comm=comm,
+            bfield, R0, Z0, tmax=tmax_fl, tol=tol_poincare, comm=comm,
             phis=phis, stopping_criteria=[])
         t2 = time.time()
         pprint(f"Time for fieldline tracing={t2-t1:.3f}s. Num steps={sum([len(l) for l in fieldlines_tys])//nfieldlines}", flush=True)

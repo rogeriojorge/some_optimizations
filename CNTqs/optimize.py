@@ -45,7 +45,7 @@ from simsopt.mhd import VirtualCasing
 mpi = MpiPartition()
 max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 10
-MAXITER_stage_2 = 4500
+MAXITER_stage_2 = 200
 coils_objective_weight = 3e+3
 nmodes_coils = 6
 circularTopBottom = False
@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 1
 initial_irad = 3
 
-nphi_VMEC=280
-ntheta_VMEC=110
+nphi_VMEC=32
+ntheta_VMEC=32
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -112,7 +112,7 @@ CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the object
 CURVATURE_WEIGHT = 1e-2 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-2 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
-vc_src_nphi = 220 # Resolution for the virtual casing calculation
+vc_src_nphi = 60 # Resolution for the virtual casing calculation
 
 debug_coils_outputtxt = True
 coil_gradients_analytical = True
@@ -139,12 +139,12 @@ if comm.rank == 0:
 
 # Stage 1
 if use_previous_results_if_available and os.path.isfile(os.path.join(this_path, "input.CNT_final")):
-    pprint(f' Using vmec input file {os.path.join(this_path,"input.CNT_final")}')
-    vmec = Vmec(os.path.join(this_path,'input.CNT_final'), mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC)
+    vmec_input = os.path.join(this_path,"input.CNT_final")
 else:
-    pprint(f' Using vmec input file {os.path.join(parent_path,vmec_input_filename)}')
-    vmec = Vmec(os.path.join(parent_path,vmec_input_filename), mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC)
+    vmec_input = os.path.join(parent_path,vmec_input_filename)
 
+pprint(f' Using vmec input file {vmec_input}')
+vmec = Vmec(vmec_input, mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC, range_surface='half period')
 surf = vmec.boundary
 
 # Finite Beta Virtual Casing Principle
