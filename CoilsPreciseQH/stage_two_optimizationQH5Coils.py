@@ -16,7 +16,7 @@ from simsopt.geo.curveobjectives import CurveLength, CurveCurveDistance, \
 ncoils = 4
 R0 = 1.0
 R1 = 0.5
-order = 7
+order = 9
 LENGTH_WEIGHT = 0.01
 AVERAGE_LENGTH_PER_COIL = 3.1
 CC_THRESHOLD = 0.1
