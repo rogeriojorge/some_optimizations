@@ -43,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 50
-MAXITER_stage_2 = 500
+max_modes = [3]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 5
+MAXITER_stage_2 = 2500
 coils_objective_weight = 3e+3
 nmodes_coils = 6
 circularTopBottom = False
@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 1
 initial_irad = 3
 
-nphi_VMEC=100
-ntheta_VMEC=40
+nphi_VMEC=220
+ntheta_VMEC=70
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -112,7 +112,7 @@ CS_WEIGHT = 3e-1 # Weight for the coil-to-surface distance penalty in the object
 CURVATURE_WEIGHT = 1e-2 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-2 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the objective function
-vc_src_nphi = 60 # Resolution for the virtual casing calculation
+vc_src_nphi = 220 # Resolution for the virtual casing calculation
 
 debug_coils_outputtxt = True
 coil_gradients_analytical = True
@@ -166,7 +166,8 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
     currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
 else:
     if finite_beta:
-        currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(-total_current/4*1e-5)*1e5]
+        # currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(-total_current/4*1e-5)*1e5]
+        currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(7.57)*1e5, Current(-7.57)*1e5]
         # total_current = Current(total_current)
         # total_current.fix_all()
         # currents += [total_current - sum(currents)]
@@ -191,8 +192,8 @@ else:
 # Fix the currents, otherwise they will just reduce to zero to minimize the Squared Flux
 # currents[0].fix_all()
 # currents[1].fix_all()
-# currents[2].fix_all()
-# currents[3].fix_all()
+currents[2].fix_all()
+currents[3].fix_all()
 
 if circularTopBottom:
     curves[0].fix_all()
@@ -431,8 +432,16 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
             os.remove(vcasing_file)
         for jac_file in glob.glob("jac_log_*"):
             os.remove(jac_file)
-
+        os.chdir(parent_path)
+        for vcasing_file in glob.glob("vcasing*"):
+            os.remove(vcasing_file)
+        for jac_file in glob.glob("jac_log_*"):
+            os.remove(jac_file)
         os.chdir(this_path)
+        for vcasing_file in glob.glob("vcasing*"):
+            os.remove(vcasing_file)
+        for jac_file in glob.glob("jac_log_*"):
+            os.remove(jac_file)
         with open(debug_output_file, "a") as myfile:
             myfile.write(outstr)
             # if J<JACOBIAN_THRESHOLD:
