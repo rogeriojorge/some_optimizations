@@ -175,7 +175,7 @@ else:
     else:
         current1 = alpha*current2
         currents = [Current(current1)*1e5,Current(current1)*1e5,Current(current2)*1e5,Current(-current2)*1e5]
-    curves = [CurveXYZFourier(128, 1) for i in range(4)]
+    # curves = [CurveXYZFourier(128, 1) for i in range(4)]
     # Only 1 Fourier mode in coils
     # # curves[0].local_dof_names -> ['xc(0)', 'xs(1)', 'xc(1)', 'yc(0)', 'ys(1)', 'yc(1)', 'zc(0)', 'zs(1)', 'zc(1)']
     # # curves[0].fix_all();curves[0].unfix('xc(1)');curves[0].unfix('ys(1)');curves[0].unfix('zc(0)')
