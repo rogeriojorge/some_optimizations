@@ -43,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [3]#np.concatenate(([1] * 5, [2]*4, [3]*2))
-MAXITER_single_stage = 5
-MAXITER_stage_2 = 2500
+max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+MAXITER_single_stage = 10
+MAXITER_stage_2 = 4500
 coils_objective_weight = 3e+3
 nmodes_coils = 6
 circularTopBottom = False
@@ -78,8 +78,8 @@ quasisymmetry_helicity_n = 0
 iota_weight = 1
 initial_irad = 3
 
-nphi_VMEC=220
-ntheta_VMEC=70
+nphi_VMEC=280
+ntheta_VMEC=110
 vmec_verbose=False
 if finite_beta:
     vmec_input_filename='input.CNT_qfm'
@@ -166,8 +166,8 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
     currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
 else:
     if finite_beta:
-        # currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(-total_current/4*1e-5)*1e5]
-        currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(7.57)*1e5, Current(-7.57)*1e5]
+        currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(-total_current/4*1e-5)*1e5]
+        # currents = [Current(total_current/4*1e-5)*1e5, Current(total_current/4*1e-5)*1e5, Current(7.57)*1e5, Current(-7.57)*1e5]
         # total_current = Current(total_current)
         # total_current.fix_all()
         # currents += [total_current - sum(currents)]
@@ -192,8 +192,8 @@ else:
 # Fix the currents, otherwise they will just reduce to zero to minimize the Squared Flux
 # currents[0].fix_all()
 # currents[1].fix_all()
-currents[2].fix_all()
-currents[3].fix_all()
+# currents[2].fix_all()
+# currents[3].fix_all()
 
 if circularTopBottom:
     curves[0].fix_all()
