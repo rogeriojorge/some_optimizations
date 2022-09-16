@@ -35,13 +35,13 @@ tol_qfm = 1e-14
 tol_poincare = 1e-13
 nphi_QFM = 25
 ntheta_QFM = 35
-mpol = 8
-ntor = 8
+mpol = 6
+ntor = 6
 maxiter_qfm = 700
 constraint_weight=1e-0
 ntheta_VMEC = 300
-create_QFM = True
-create_Poincare = False
+create_QFM = False
+create_Poincare = True
 nfp=2
 initial_QFM_radius=0.08
 bs_file = 'biot_savart_opt.json'
@@ -207,8 +207,8 @@ if create_Poincare:
             phis=phis, stopping_criteria=[])
         t2 = time.time()
         pprint(f"Time for fieldline tracing={t2-t1:.3f}s. Num steps={sum([len(l) for l in fieldlines_tys])//nfieldlines}", flush=True)
-        if comm is None or comm.rank == 0:
-            particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
+        # if comm is None or comm.rank == 0:
+        #     particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
             # plot_poincare_data(fieldlines_phi_hits, phis, os.path.join(OUT_DIR, f'poincare_fieldline_optimized_coils.png'), dpi=150)
         return fieldlines_tys, fieldlines_phi_hits, phis
 
