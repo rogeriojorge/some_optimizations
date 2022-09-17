@@ -42,22 +42,22 @@ mpi = MpiPartition()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1, 1, 2, 2]
-MAXITER_single_stage = 30
-MAXITER_stage_2 = 500
+max_modes = [1, 1, 2, 2, 3]
+MAXITER_single_stage = 40
+MAXITER_stage_2 = 1000
 QA_or_QH = 'QA'
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
     CC_THRESHOLD = 0.18
-    LENGTH_THRESHOLD = 4.0
+    LENGTH_THRESHOLD = 4.1
     CURVATURE_THRESHOLD = 4.0
     MSC_THRESHOLD = 7
 else:
-    ncoils = 5
+    ncoils = 4
     aspect_ratio_target = 7.0
-    CC_THRESHOLD = 0.07
-    LENGTH_THRESHOLD = 2.7
+    CC_THRESHOLD = 0.1
+    LENGTH_THRESHOLD = 2.8
     CURVATURE_THRESHOLD = 5.0
     MSC_THRESHOLD = 7
 finite_beta=True

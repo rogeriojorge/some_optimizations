@@ -1,26 +1,26 @@
  ====================== PARALLEL TIMINGS ====================
-               total  :        2.824510
+               total  :        0.822279
                 rank  :               0
 mgrid file read time  :        0.000000
         No. of procs  :               1
 
-      --- non-vacuum  :            1233             16              1       2.777016
+      --- non-vacuum  :             857             16              1       0.805756
 
-             runvmec  :        2.824398
+             runvmec  :        0.822169
 
          init radial  :        0.000000
-             eqsolve  :        2.791392
-             fileout  :        0.029483
+             eqsolve  :        0.810704
+             fileout  :        0.009372
 
-              evolve  :        2.786230
-             funct3d  :        2.777016
-            nfunct3d  :            1233
+              evolve  :        0.808369
+             funct3d  :        0.805756
+            nfunct3d  :             857
 
-             totzsps  :        0.683426
+             totzsps  :        0.158679
              totzspa  :        0.000000
               symrzl  :        0.000000
-            jacobian  :        0.050132
-              bcovar  :        0.249156
+            jacobian  :        0.020320
+              bcovar  :        0.104513
               vacuum  :        0.000000
 
             - precal  :        0.000000
@@ -41,20 +41,20 @@ mgrid file read time  :        0.000000
 
             - solver  :        0.000000
 
-               alias  :        0.367906
-              forces  :        0.280744
+               alias  :        0.066731
+              forces  :        0.131348
            symforces  :        0.000000
-             tomnsps  :        0.807847
+             tomnsps  :        0.177258
              tomnspa  :        0.000000
-             residue  :        0.305727
-          -- tridslv  :        0.268196
+             residue  :        0.135238
+          -- tridslv  :        0.122015
 
  ============================================================
 
            allgather  :        0.000000
-           allreduce  :        0.002935
-           broadcast  :        0.000170
-           sendrecv   :        0.005603
+           allreduce  :        0.000904
+           broadcast  :        0.000108
+           sendrecv   :        0.002261
 
      Fill_blocks      :        0.000000
      Compute blocks   :        0.000000
