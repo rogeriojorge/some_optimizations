@@ -43,23 +43,23 @@ mpi = MpiPartition()
 ############## Input parameters
 ##########################################################################################
 max_modes = [1, 1, 2, 2, 3]
-MAXITER_single_stage = 40
+MAXITER_single_stage = 50
 MAXITER_stage_2 = 1000
-QA_or_QH = 'QA'
+QA_or_QH = 'QH'
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
-    CC_THRESHOLD = 0.18
-    LENGTH_THRESHOLD = 4.1
+    CC_THRESHOLD = 0.15
+    LENGTH_THRESHOLD = 5.0
     CURVATURE_THRESHOLD = 4.0
-    MSC_THRESHOLD = 7
+    MSC_THRESHOLD = 10
 else:
     ncoils = 4
     aspect_ratio_target = 7.0
     CC_THRESHOLD = 0.1
-    LENGTH_THRESHOLD = 2.8
+    LENGTH_THRESHOLD = 3.0
     CURVATURE_THRESHOLD = 5.0
-    MSC_THRESHOLD = 7
+    MSC_THRESHOLD = 15
 finite_beta=True
 magnetic_well=False
 nphi_VMEC=32
@@ -67,7 +67,7 @@ ntheta_VMEC=32
 vc_src_nphi=50
 nmodes_coils = 7
 coils_objective_weight = 1e+3
-iota_target = 0.41
+iota_target = 0.42
 use_previous_results_if_available = True
 vacuum_well_target=0.05
 vacuum_well_weight=1
