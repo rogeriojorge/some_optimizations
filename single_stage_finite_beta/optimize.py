@@ -2,50 +2,51 @@
 import os
 import sys
 import time
-start = time.time()
 import glob
 import shutil
+import logging
 import numpy as np
 import pandas as pd
 from mpi4py import MPI
-comm = MPI.COMM_WORLD
+from math import isnan
 import booz_xform as bx
 from pathlib import Path
-parent_path = str(Path(__file__).parent.resolve())
-os.chdir(parent_path)
-from math import isnan
-import matplotlib.pyplot as plt
 from simsopt import load
-from simsopt.mhd import Vmec, Boozer
-from simsopt.geo import curves_to_vtk, create_equally_spaced_curves
+import matplotlib.pyplot as plt
+from scipy.optimize import minimize
+from simsopt.util import MpiPartition
+from simsopt._core.derivative import Derivative
+from simsopt.solve import least_squares_mpi_solve
 from simsopt._core.optimizable import make_optimizable
+from simsopt._core.finite_difference import MPIFiniteDifference
 from simsopt.field import BiotSavart, Current, coils_via_symmetries
-import logging
+from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual, VirtualCasing
+from simsopt.objectives import SquaredFlux, QuadraticPenalty, LeastSquaresProblem
+from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
+                        LpCurveCurvature, ArclengthVariation, curves_to_vtk, create_equally_spaced_curves)
 logging.basicConfig()
 logger = logging.getLogger('CNTqs')
 logger.setLevel(1)
-from simsopt.util import MpiPartition
+comm = MPI.COMM_WORLD
 def pprint(*args, **kwargs):
     if comm.rank == 0:
         print(*args, **kwargs)
-from simsopt.mhd import QuasisymmetryRatioResidual
-from simsopt.objectives import LeastSquaresProblem
-from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
-                        LpCurveCurvature, ArclengthVariation)
-from simsopt.objectives import SquaredFlux
-from simsopt.objectives import QuadraticPenalty
-from simsopt._core.finite_difference import MPIFiniteDifference
-from simsopt._core.derivative import Derivative
-from scipy.optimize import minimize
-from simsopt.mhd import VirtualCasing
 mpi = MpiPartition()
+parent_path = str(Path(__file__).parent.resolve())
+os.chdir(parent_path)
+start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1, 1, 2, 2, 3]
-MAXITER_single_stage = 50
-MAXITER_stage_2 = 1000
+max_modes = [1, 2, 3]
 QA_or_QH = 'QH'
+stage_1=False
+single_stage=False
+MAXITER_stage_1 = 50
+MAXITER_stage_2 = 1000
+MAXITER_single_stage = 50
+finite_beta=True
+magnetic_well=False
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
@@ -60,8 +61,6 @@ else:
     LENGTH_THRESHOLD = 3.0
     CURVATURE_THRESHOLD = 5.0
     MSC_THRESHOLD = 15
-finite_beta=True
-magnetic_well=False
 nphi_VMEC=32
 ntheta_VMEC=32
 vc_src_nphi=50
@@ -69,15 +68,14 @@ nmodes_coils = 7
 coils_objective_weight = 1e+3
 iota_target = 0.42
 use_previous_results_if_available = True
-vacuum_well_target=0.05
+vacuum_well_target=0.1
 vacuum_well_weight=1
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 iota_weight = 10
-single_stage=True
 R0 = 1.0
 R1 = 0.6
-quasisymmetry_target_surfaces = [0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. ]
+quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 debug_coils_outputtxt = True
 debug_output_file = 'output.txt'
 boozxform_nsurfaces = 10
@@ -402,6 +400,27 @@ for max_mode in max_modes:
 
     dofs = np.concatenate((JF.x, vmec.x))
     bs.set_points(surf.gamma().reshape((-1, 3)))
+
+    if stage_1:
+        pprint(f'  Performing Stage 1 optimization with {MAXITER_stage_1} iterations')
+        os.chdir(vmec_results_path)
+        least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
+        os.chdir(this_path)
+        pprint(f"\nAspect ratio at max_mode {max_mode}: {vmec.aspect()}")
+        pprint(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
+        pprint(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
+        pprint(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+        pprint(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
+        if mpi.proc0_world:
+            with open(debug_output_file, "a") as myfile:
+                try:
+                    myfile.write(f"\nAspect ratio at max_mode {max_mode}: {vmec.aspect()}")
+                    myfile.write(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
+                    myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
+                    myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+                    myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
+                except Exception as e:
+                    myfile.write(e)
 
     if finite_beta:
         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
