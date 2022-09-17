@@ -94,6 +94,7 @@ ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the obje
 directory = f'optimization_{QA_or_QH}_len{LENGTH_THRESHOLD}'
 if magnetic_well: directory +='_well'
 if finite_beta: directory +='_finitebeta'
+if stage_1: directory +='_stage1'
 if QA_or_QH=='QA': quasisymmetry_helicity_n = 0
 else: quasisymmetry_helicity_n = -1
 vmec_verbose=False
