@@ -25,7 +25,7 @@ from simsopt.objectives import SquaredFlux, QuadraticPenalty, LeastSquaresProble
 from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
                         LpCurveCurvature, ArclengthVariation, curves_to_vtk, create_equally_spaced_curves)
 logging.basicConfig()
-logger = logging.getLogger('CNTqs')
+logger = logging.getLogger('single_stage')
 logger.setLevel(1)
 comm = MPI.COMM_WORLD
 def pprint(*args, **kwargs):
@@ -38,14 +38,14 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1, 2, 3]
-QA_or_QH = 'QH'
+max_modes = [3]
+QA_or_QH = 'QA'
 stage_1=False
 single_stage=False
 MAXITER_stage_1 = 50
 MAXITER_stage_2 = 1000
 MAXITER_single_stage = 50
-finite_beta=True
+finite_beta=False
 magnetic_well=False
 if QA_or_QH == 'QA':
     ncoils = 4
@@ -475,7 +475,7 @@ for max_mode in max_modes:
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt_max_mode_'+str(max_mode)), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt_max_mode_'+str(max_mode)))
         bs.save(os.path.join(coils_results_path,'biot_savart_opt_max_mode_'+str(max_mode)+'.json'))
-        vmec.write_input(os.path.join(vmec_results_path, f'input.CNT_maxmode{max_mode}'))
+        vmec.write_input(os.path.join(vmec_results_path, f'input.maxmode{max_mode}'))
 
     os.chdir(vmec_results_path)
     try:
@@ -517,9 +517,9 @@ if mpi.proc0_world:
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt'))
         bs.save(os.path.join(coils_results_path,"biot_savart_opt.json"))
-        vmec.write_input(os.path.join(this_path, f'input.CNT_final'))
+        vmec.write_input(os.path.join(this_path, f'input.final'))
         df = pd.DataFrame(oustr_dict_outer[0])
-        df.to_csv(os.path.join(this_path, f'output_CNT_final.csv'), index_label='index')
+        df.to_csv(os.path.join(this_path, f'output_final.csv'), index_label='index')
         ax=df.plot(kind='line',
             logy=True,
             y=['J','Jf','B.n','Jquasisymmetry','Jwell','Jiota','Jaspect','J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'],
@@ -552,14 +552,14 @@ except Exception as e: pprint(e)
 #############################################
 os.chdir(this_path)
 try:
-    vmec_final = Vmec(os.path.join(this_path, f'input.CNT_final'))
+    vmec_final = Vmec(os.path.join(this_path, f'input.final'))
     vmec_final.indata.ns_array[:2]    = [  16,    51]#,    101,   151,   201]
     vmec_final.indata.niter_array[:2] = [ 4000, 10000]#,  4000,  5000, 10000]
     vmec_final.indata.ftol_array[:2]  = [1e-12, 1e-13]#, 1e-14, 1e-15, 1e-15]
     vmec_final.run()
     if mpi.proc0_world:
-        shutil.move(os.path.join(this_path, f"wout_CNT_final_000_000000.nc"), os.path.join(this_path, f"wout_CNT_final.nc"))
-        os.remove(os.path.join(this_path, f'input.CNT_final_000_000000'))
+        shutil.move(os.path.join(this_path, f"wout_final_000_000000.nc"), os.path.join(this_path, f"wout_final.nc"))
+        os.remove(os.path.join(this_path, f'input.final_000_000000'))
 except Exception as e:
     pprint('Exception when creating final vmec file:')
     pprint(e)
@@ -568,13 +568,13 @@ except Exception as e:
 #############################################
 ## Create results figures
 #############################################
-if os.path.isfile(os.path.join(this_path, f"wout_CNT_final.nc")):
+if os.path.isfile(os.path.join(this_path, f"wout_final.nc")):
     pprint('Found final vmec file')
     sys.path.insert(1, os.path.join(parent_path, '../single_stage/plotting'))
     if mpi.proc0_world:
         pprint("Plot VMEC result")
         import vmecPlot2
-        vmecPlot2.main(file=os.path.join(this_path, f"wout_CNT_final.nc"), name='CNT', figures_folder=OUT_DIR, coils_curves=curves)
+        vmecPlot2.main(file=os.path.join(this_path, f"wout_final.nc"), name='single_stage', figures_folder=OUT_DIR, coils_curves=curves)
         pprint('Creating Boozer class for vmec_final')
         b1 = Boozer(vmec_final, mpol=64, ntor=64)
         pprint('Defining surfaces where to compute Boozer coordinates')
@@ -584,18 +584,18 @@ if os.path.isfile(os.path.join(this_path, f"wout_CNT_final.nc")):
         pprint('Running BOOZ_XFORM')
         b1.run()
         if mpi.proc0_world:
-            b1.bx.write_boozmn(os.path.join(vmec_results_path,"boozmn_CNT.nc"))
+            b1.bx.write_boozmn(os.path.join(vmec_results_path,"boozmn_single_stage.nc"))
             pprint("Plot BOOZ_XFORM")
             fig = plt.figure(); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
-            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_1_CNT.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_1_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
-            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_2_CNT.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_2_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
-            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_3_CNT.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_3_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.symplot(b1.bx, helical_detail = helical_detail, sqrts=True)
-            plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_CNT.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
-            plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_CNT.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
 ##########################################################################################
 ##########################################################################################
 stop = time.time()
