@@ -42,7 +42,7 @@ max_modes = [3]
 QA_or_QH = 'QA'
 stage_1=False
 single_stage=True
-MAXITER_stage_1 = 60
+MAXITER_stage_1 = 50
 MAXITER_stage_2 = 1000
 MAXITER_single_stage = 50
 finite_beta=True
@@ -130,8 +130,8 @@ surf = vmec.boundary
 # Finite Beta Virtual Casing Principle
 if finite_beta:
     vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-    total_current = vmec.external_current() / (2 * surf.nfp)
-    pprint(f' Total current = {total_current}')
+    total_current_vmec = vmec.external_current() / (2 * surf.nfp)
+    pprint(f' Total current = {total_current_vmec}')
     pprint(f' max(B_external_normal) = {np.max(vc.B_external_normal)}')
 ##########################################################################################
 ##########################################################################################
@@ -140,13 +140,20 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
     bs = load(os.path.join(coils_results_path, "biot_savart_opt.json"))
     curves = [coil._curve for coil in bs.coils]
     base_curves = curves[0:ncoils]
-    currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
-    base_currents = currents[0:ncoils]
+    if finite_beta:
+        total_current = Current(total_current_vmec)
+        total_current.fix_all()
+        currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
+        base_currents = currents[0:ncoils-1]
+        base_currents += [total_current - sum(base_currents)]
+    else:
+        currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
+        base_currents = currents[0:ncoils]
 else:
     base_curves = create_equally_spaced_curves(ncoils, surf.nfp, stellsym=True, R0=R0, R1=R1, order=nmodes_coils, numquadpoints=128)
     if finite_beta:
-        base_currents = [Current(total_current / ncoils * 1e-5) * 1e5 for _ in range(ncoils-1)]
-        total_current = Current(total_current)
+        base_currents = [Current(total_current_vmec / ncoils * 1e-5) * 1e5 for _ in range(ncoils-1)]
+        total_current = Current(total_current_vmec)
         total_current.fix_all()
         base_currents += [total_current - sum(base_currents)]
     else:
