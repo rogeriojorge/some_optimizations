@@ -41,8 +41,8 @@ start = time.time()
 max_modes = [3]
 QA_or_QH = 'QA'
 stage_1=False
-single_stage=False
-MAXITER_stage_1 = 50
+single_stage=True
+MAXITER_stage_1 = 60
 MAXITER_stage_2 = 1000
 MAXITER_single_stage = 50
 finite_beta=False
@@ -505,6 +505,11 @@ for max_mode in max_modes:
             plt.close()
         except Exception as e:
             pprint(e)
+
+####################################################################################
+# Add extra stage 2 optimization at the end if single_stage = True
+####################################################################################
+
 ##########################################################################################
 ##########################################################################################
 #############################################################
