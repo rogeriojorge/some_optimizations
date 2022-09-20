@@ -45,6 +45,7 @@ if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'input.n
 else: filename = os.path.join(os.path.dirname(__file__), 'input.nfp4_QH_warm_start')
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 surf = vmec.boundary
+g_particle = ChargedParticleEnsemble(r_initial=r_initial)
 ######################################
 OUT_DIR=os.path.join(Path(__file__).parent.resolve(),f'out_s{r_initial}_NFP{vmec.indata.nfp}')
 if opt_quasisymmetry: OUT_DIR+=f'_{QA_or_QH}'
@@ -54,21 +55,17 @@ os.chdir(OUT_DIR)
 ######################################
 def EPcostFunction(v):
     v.run()
-    wout_filename = f"{os.path.join(os.path.dirname(__file__))}/inputs/wout_ARIESCS.nc"
-    g_field = Simple(wout_filename=wout_filename)
-    g_particle = ChargedParticleEnsemble(r_initial=r_initial)
-    g_orbits = ParticleEnsembleOrbit_Simple(
-        g_particle,
-        g_field,
-        tfinal=tfinal,
-        nparticles=nparticles,
-    )
-    return g_orbits.total_particles_lost
+    g_field_temp = Simple(wout_filename=v.output_file)
+    g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles)
+    return g_orbits_temp.total_particles_lost
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
 pprint("Initial mean iota:", vmec.mean_iota())
 pprint("Initial magnetic well:", vmec.vacuum_well())
+g_field = Simple(wout_filename=vmec.output_file)
+g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
+pprint("Initial lost fraction:", g_orbits.total_particles_lost)
 ######################################
 if QA_or_QH == 'QH': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
 else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)    
