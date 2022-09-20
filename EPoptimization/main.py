@@ -11,7 +11,7 @@ import matplotlib.pyplot as plt
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
-from simsopt.solve import least_squares_mpi_solve
+from simsopt.solve import least_squares_mpi_solve, least_squares_serial_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
@@ -55,7 +55,7 @@ os.chdir(OUT_DIR)
 ######################################
 def EPcostFunction(v):
     v.run()
-    g_field_temp = Simple(wout_filename=v.output_file)
+    g_field_temp = Simple(wout_filename=v.output_file, B_scale=1, Aminor_scale=10)
     g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles)
     return g_orbits_temp.total_particles_lost
 optEP = make_optimizable(EPcostFunction, vmec)
@@ -63,7 +63,7 @@ optEP = make_optimizable(EPcostFunction, vmec)
 pprint("Initial aspect ratio:", vmec.aspect())
 pprint("Initial mean iota:", vmec.mean_iota())
 pprint("Initial magnetic well:", vmec.vacuum_well())
-g_field = Simple(wout_filename=vmec.output_file)
+g_field = Simple(wout_filename=vmec.output_file, B_scale=1, Aminor_scale=1)
 g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
 pprint("Initial lost fraction:", g_orbits.total_particles_lost)
 ######################################
@@ -85,7 +85,8 @@ for max_mode in max_modes:
     surf.fix("rc(0,0)")
     ######################################
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
-    least_squares_mpi_solve(prob, mpi, grad=True, rel_step=1e-5, abs_step=1e-7, max_nfev=MAXITER)
+    # least_squares_mpi_solve(prob, mpi, grad=True, rel_step=1e-5, abs_step=1e-7, max_nfev=MAXITER)
+    least_squares_serial_solve(prob, rel_step=1e-5, abs_step=1e-7, max_nfev=MAXITER)
     ######################################
     pprint("Final aspect ratio:", vmec.aspect())
     pprint("Final mean iota:", vmec.mean_iota())
