@@ -43,9 +43,9 @@ from scipy.optimize import minimize
 from simsopt.mhd import VirtualCasing
 
 mpi = MpiPartition()
-max_modes = [1, 1, 2, 2]#np.concatenate(([1] * 5, [2]*4, [3]*2))
+max_modes = [1]#np.concatenate(([1] * 5, [2]*4, [3]*2))
 MAXITER_single_stage = 50
-MAXITER_stage_2 = 1500
+MAXITER_stage_2 = 500
 coils_objective_weight = 1e+3
 nmodes_coils = 6
 circularTopBottom = False
@@ -188,6 +188,10 @@ else:
     curves[1].set_dofs(np.concatenate(([       0, 0, radius1],np.zeros(2*(nmodes_coils-1)),[0,                radius1, 0],np.zeros(2*(nmodes_coils-1)),[ center1,                     0, 0],np.zeros(2*(nmodes_coils-1)))))
     curves[2].set_dofs(np.concatenate(([ center2, 0, radius2],np.zeros(2*(nmodes_coils-1)),[0, -radius2*np.sin(gamma), 0],np.zeros(2*(nmodes_coils-1)),[       0, radius2*np.cos(gamma), 0],np.zeros(2*(nmodes_coils-1)))))
     curves[3].set_dofs(np.concatenate(([-center2, 0, radius2],np.zeros(2*(nmodes_coils-1)),[0,  radius2*np.sin(gamma), 0],np.zeros(2*(nmodes_coils-1)),[       0, radius2*np.cos(gamma), 0],np.zeros(2*(nmodes_coils-1)))))
+
+######
+# coils = coils_via_symmetries(base_curves, base_currents, surf.nfp, True)
+
 
 # Fix the currents, otherwise they will just reduce to zero to minimize the Squared Flux
 # currents[0].fix_all()

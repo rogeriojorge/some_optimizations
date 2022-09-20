@@ -47,7 +47,7 @@ for main_directory in [
     mpol = 10
     ntor = 10
     maxiter_qfm = 700
-    constraint_weight=1e-0
+    constraint_weight=1e-0 ## Try changing this parameter to check QFM surfaces
     ntheta_VMEC = 300
     create_QFM = False
     create_Poincare = True

@@ -3,16 +3,16 @@
   DELT =   9.00E-01
   NSTEP =  200
   TCON0 =   2.00E+00
-  NS_ARRAY    =      16
+  NS_ARRAY    =       16
   NITER_ARRAY =     1200
-  FTOL_ARRAY  = 1.0E-11
+  FTOL_ARRAY  =  1.0E-11
   PRECON_TYPE = 'none'
   PREC2D_THRESHOLD =   1.000000E-19
 !----- Grid Parameters -----
   LASYM = F
   NFP = 0004
-  MPOL = 0005
-  NTOR = 0005
+  MPOL = 0008
+  NTOR = 0008
   PHIEDGE =    0.048
 !----- Free Boundary Parameters -----
   LFREEB = F

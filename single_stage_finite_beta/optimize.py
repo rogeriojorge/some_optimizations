@@ -38,7 +38,7 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [3]
+max_modes = [1, 2, 3]
 QA_or_QH = 'QH'
 stage_1=False
 single_stage=False
@@ -468,13 +468,11 @@ for max_mode in max_modes:
             with MPIFiniteDifference(opt.J, mpi, diff_method="centered", abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as prob_jacobian:
                 if mpi.proc0_world:
                     res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-                    oustr_dict_outer.append(oustr_dict_inner)
         else:
             # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
             with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method="centered") as prob_jacobian:
                 if mpi.proc0_world:
                     res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-                    oustr_dict_outer.append(oustr_dict_inner)
 
     if mpi.proc0_world:
         if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
@@ -565,9 +563,9 @@ except Exception as e: pprint(e)
 os.chdir(this_path)
 try:
     vmec_final = Vmec(os.path.join(this_path, f'input.final'))
-    vmec_final.indata.ns_array[:2]    = [  16,    51]#,    101,   151,   201]
-    vmec_final.indata.niter_array[:2] = [ 4000, 10000]#,  4000,  5000, 10000]
-    vmec_final.indata.ftol_array[:2]  = [1e-12, 1e-13]#, 1e-14, 1e-15, 1e-15]
+    vmec_final.indata.ns_array[:2]    = [  16,    51,    101,   151,   201]
+    vmec_final.indata.niter_array[:2] = [ 4000, 10000,  4000,  5000, 10000]
+    vmec_final.indata.ftol_array[:2]  = [1e-12, 1e-13, 1e-14, 1e-15, 1e-15]
     vmec_final.run()
     if mpi.proc0_world:
         shutil.move(os.path.join(this_path, f"wout_final_000_000000.nc"), os.path.join(this_path, f"wout_final.nc"))
