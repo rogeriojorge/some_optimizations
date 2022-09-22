@@ -24,37 +24,38 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 400
-max_modes = [1, 2]
+MAXITER = 40
+max_modes = [1]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
 
-s_initial = 0.1  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 256  # number of particles
 tfinal = 1e-4  # seconds
+nsamples = 500
 
 iota_target = -0.42
 weight_optEP = 10.0
 if QA_or_QH == 'QA':
-    B_scale = 8.58
-    Aminor_scale = 8.5
+    B_scale = 8.58 / 2
+    Aminor_scale = 8.5 / 2
     aspect_ratio_target = 6
 else:
-    B_scale = 6.55
-    Aminor_scale = 12.14
+    B_scale = 6.55 / 2
+    Aminor_scale = 12.14 / 2
     aspect_ratio_target = 7
 
-diff_rel_step = 1e-2
-diff_abs_step = 1e-5
+diff_rel_step = 1e-5
+diff_abs_step = 1e-7
 ######################################
 ######################################
 if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
 else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
 vmec = Vmec(filename, mpi=mpi, verbose=False)
-# vmec.keep_all_files = True
+vmec.keep_all_files = True
 surf = vmec.boundary
 g_particle = ChargedParticleEnsemble(r_initial=s_initial)
 ######################################
@@ -67,7 +68,7 @@ os.chdir(OUT_DIR)
 def EPcostFunction(v: Vmec):
     v.run()
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale)
-    g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles)
+    g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples)
     final_loss_fraction = g_orbits_temp.total_particles_lost
     print(f'Loss fraction = {final_loss_fraction}')
     return final_loss_fraction
@@ -79,7 +80,7 @@ pprint("Initial magnetic well:", vmec.vacuum_well())
 if MPI.COMM_WORLD.rank == 0:
     g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale)
     g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
-    pprint("Initial lost fraction:", g_orbits.total_particles_lost)
+    pprint("Initial loss fraction:", g_orbits.total_particles_lost)
 ######################################
 if QA_or_QH == 'QH': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
 else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)    
@@ -99,6 +100,7 @@ for max_mode in max_modes:
     surf.fix("rc(0,0)")
     ######################################
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
+    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
     least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     # least_squares_serial_solve(prob, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     ######################################
@@ -106,23 +108,28 @@ for max_mode in max_modes:
     pprint("Final mean iota:", vmec.mean_iota())
     pprint("Final magnetic well:", vmec.vacuum_well())
     pprint("Quasisymmetry objective after optimization:", qs.total())
-    pprint("Total objective after optimization:", prob.objective())
+    if MPI.COMM_WORLD.rank == 0:
+        g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale)
+        g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
+        pprint("Final loss fraction:", g_orbits.total_particles_lost)
+        pprint("Total objective after optimization:", prob.objective())
     ######################################
-try:
-    for objective_file in glob.glob("objective_*"):
-        os.remove(objective_file)
-    for residuals_file in glob.glob("residuals_*"):
-        os.remove(residuals_file)
-    for jac_file in glob.glob("jac_log_*"):
-        os.remove(jac_file)
-    for threed_file in glob.glob("threed1.*"):
-        os.remove(threed_file)
-    for threed_file in glob.glob("wout_*"):
-        os.remove(threed_file)
-    for threed_file in glob.glob("input.*"):
-        os.remove(threed_file)
-except Exception as e:
-    pprint(e)
+if MPI.COMM_WORLD.rank == 0:
+    try:
+        for objective_file in glob.glob("objective_*"):
+            os.remove(objective_file)
+        for residuals_file in glob.glob("residuals_*"):
+            os.remove(residuals_file)
+        for jac_file in glob.glob("jac_log_*"):
+            os.remove(jac_file)
+        for threed_file in glob.glob("threed1.*"):
+            os.remove(threed_file)
+        for threed_file in glob.glob("wout_*"):
+            os.remove(threed_file)
+        for threed_file in glob.glob("input.*"):
+            os.remove(threed_file)
+    except Exception as e:
+        pprint(e)
 ######################################
 vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'), mpi=mpi)
