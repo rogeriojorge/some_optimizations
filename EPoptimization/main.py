@@ -16,62 +16,76 @@ from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
 def pprint(*args, **kwargs):
-    if MPI.COMM_WORLD.rank == 0:  # only pprint on rank 0
+    if MPI.COMM_WORLD.rank == 0:
         print(*args, **kwargs)
-mpi = MpiPartition()
-from neat.fields import Simple  # isort:skip
+mpi = MpiPartition(2)
+from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 45
-max_modes = [1]
-r_initial = 0.1
+MAXITER = 400
+max_modes = [1, 2]
 QA_or_QH = 'QH'
-weight_optEP = 0.02
-aspect_ratio_target = 7
-theta_min_max=np.pi/20
-ntheta_PEST=25
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
-boozxform_nsurfaces=10
-r_initial = 0.4  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 64  # number of particles
+opt_iota = False
+
+s_initial = 0.1  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+nparticles = 256  # number of particles
 tfinal = 1e-4  # seconds
+
+iota_target = -0.42
+weight_optEP = 10.0
+if QA_or_QH == 'QA':
+    B_scale = 8.58
+    Aminor_scale = 8.5
+    aspect_ratio_target = 6
+else:
+    B_scale = 6.55
+    Aminor_scale = 12.14
+    aspect_ratio_target = 7
+
+diff_rel_step = 1e-2
+diff_abs_step = 1e-5
 ######################################
 ######################################
-if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'input.nfp2_QA')
-else: filename = os.path.join(os.path.dirname(__file__), 'input.nfp4_QH_warm_start')
+if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
+else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
 vmec = Vmec(filename, mpi=mpi, verbose=False)
+# vmec.keep_all_files = True
 surf = vmec.boundary
-g_particle = ChargedParticleEnsemble(r_initial=r_initial)
+g_particle = ChargedParticleEnsemble(r_initial=s_initial)
 ######################################
-OUT_DIR=os.path.join(Path(__file__).parent.resolve(),f'out_s{r_initial}_NFP{vmec.indata.nfp}')
+OUT_DIR=os.path.join(Path(__file__).parent.resolve(),f'out_s{s_initial}_NFP{vmec.indata.nfp}')
 if opt_quasisymmetry: OUT_DIR+=f'_{QA_or_QH}'
 if opt_well: OUT_DIR+=f'_well'
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
 ######################################
-def EPcostFunction(v):
+def EPcostFunction(v: Vmec):
     v.run()
-    g_field_temp = Simple(wout_filename=v.output_file, B_scale=1, Aminor_scale=10)
+    g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale)
     g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles)
-    return g_orbits_temp.total_particles_lost
+    final_loss_fraction = g_orbits_temp.total_particles_lost
+    print(f'Loss fraction = {final_loss_fraction}')
+    return final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
 pprint("Initial mean iota:", vmec.mean_iota())
 pprint("Initial magnetic well:", vmec.vacuum_well())
-g_field = Simple(wout_filename=vmec.output_file, B_scale=1, Aminor_scale=1)
-g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
-pprint("Initial lost fraction:", g_orbits.total_particles_lost)
+if MPI.COMM_WORLD.rank == 0:
+    g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale)
+    g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles)
+    pprint("Initial lost fraction:", g_orbits.total_particles_lost)
 ######################################
 if QA_or_QH == 'QH': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
 else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)    
 opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
 if opt_well: opt_tuple.append((vmec.vacuum_well, 0.1, 1))
-if QA_or_QH == 'QA': opt_tuple.append((vmec.mean_iota, 0.42, 1))
+if opt_iota: opt_tuple.append((vmec.mean_iota, iota_target, 1))
 if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
 pprint("Quasisymmetry objective before optimization:", qs.total())
@@ -85,8 +99,8 @@ for max_mode in max_modes:
     surf.fix("rc(0,0)")
     ######################################
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
-    # least_squares_mpi_solve(prob, mpi, grad=True, rel_step=1e-5, abs_step=1e-7, max_nfev=MAXITER)
-    least_squares_serial_solve(prob, rel_step=1e-5, abs_step=1e-7, max_nfev=MAXITER)
+    least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
+    # least_squares_serial_solve(prob, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     ######################################
     pprint("Final aspect ratio:", vmec.aspect())
     pprint("Final mean iota:", vmec.mean_iota())
@@ -103,11 +117,10 @@ try:
         os.remove(jac_file)
     for threed_file in glob.glob("threed1.*"):
         os.remove(threed_file)
-    # os.remove("parvmecinfo.txt")
-    # for input_file in glob.glob("input.nfp4_QH_warm_start_000*"):
-    #     os.remove(input_file)
-    # for wout_file in glob.glob("wout_nfp4_QH_warm_start_000_*"):
-    #     os.remove(wout_file)
+    for threed_file in glob.glob("wout_*"):
+        os.remove(threed_file)
+    for threed_file in glob.glob("input.*"):
+        os.remove(threed_file)
 except Exception as e:
     pprint(e)
 ######################################
@@ -124,6 +137,7 @@ try: vmecPlot2.main(file=os.path.join(OUT_DIR, f"wout_final.nc"), name='EP_opt',
 except Exception as e: print(e)
 pprint('Creating Boozer class for vmec_final')
 b1 = Boozer(vmec_final, mpol=64, ntor=64)
+boozxform_nsurfaces=10
 pprint('Defining surfaces where to compute Boozer coordinates')
 booz_surfaces = np.linspace(0,1,boozxform_nsurfaces,endpoint=False)
 pprint(f' booz_surfaces={booz_surfaces}')
