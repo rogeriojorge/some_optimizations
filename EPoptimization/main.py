@@ -34,7 +34,7 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution
+optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 2300  # number of particles
@@ -155,7 +155,6 @@ for max_mode in max_modes:
         pprint("Final loss fraction:", g_orbits.total_particles_lost)
         pprint("Total objective after optimization:", prob.objective())
     ######################################
-print('a')
 if MPI.COMM_WORLD.rank == 0:
     try:
         for objective_file in glob.glob("objective_*"):
@@ -172,10 +171,11 @@ if MPI.COMM_WORLD.rank == 0:
             os.remove(threed_file)
     except Exception as e:
         pprint(e)
+    ##################################################
+    vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
-vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 if plot_result and MPI.COMM_WORLD.rank==0:
-    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'))
+    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'), mpi=mpi)
     vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
     vmec_final.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
     vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
