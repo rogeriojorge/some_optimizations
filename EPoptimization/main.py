@@ -34,12 +34,12 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution
+optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 2500  # number of particles
 tfinal = 3e-5  # total time of tracing in seconds
-nsamples = 2000 # number of time steps
+nsamples = 1800 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
@@ -48,7 +48,7 @@ npoiper = 110 # number of points per period on this field line
 npoiper2 = 130 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
-nruns_opt_average = 3 # number of particle tracing runs to average over in cost function
+nruns_opt_average = 4 # number of particle tracing runs to average over in cost function
 
 iota_target = -0.42
 weight_optEP = 10.0
@@ -90,7 +90,7 @@ def EPcostFunction(v: Vmec):
         g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
         final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
     final_loss_fraction = np.mean(final_loss_fraction_array)
-    print(f'Loss fraction = {final_loss_fraction:1f} with dofs = {v.x}, mean_iota={v.mean_iota()} and aspect ratio={v.aspect()} took {time.time()-start_time}s')
+    print(f'Loss fraction = {final_loss_fraction:1f} with dofs = {v.x}, mean_iota={v.mean_iota()} and diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {time.time()-start_time}s')
     return final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
