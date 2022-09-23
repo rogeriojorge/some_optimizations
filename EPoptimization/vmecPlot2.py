@@ -136,7 +136,8 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     xLabel = r'$s = \psi/\psi_b$'
 
 
-    fig = plt.figure(figsize=(14,7))
+    fig = plt.figure()
+    fig.set_size_inches(14,7)
     fig.patch.set_facecolor('white')
 
     numCols = 3
@@ -246,7 +247,8 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     # Now make plot of flux surface shapes
     ########################################################
 
-    fig = plt.figure(figsize=(8,8))
+    fig = plt.figure()
+    fig.set_size_inches(8,8)
     fig.patch.set_facecolor('white')
     plt.plot(R[:,0], Z[:,0], '-',label=r'$\phi$=0')
     # plt.plot(R[:,1], Z[:,1], '-',label='_nolegend_')
@@ -264,7 +266,8 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     R_boundary = R
     Z_boundary = Z
 
-    fig = plt.figure(figsize=(14,7))
+    fig = plt.figure()
+    fig.set_size_inches(14,7)
     fig.patch.set_facecolor('white')
     # plt.subplot(numRows,numCols,plotNum)
     numCols = 4
@@ -335,7 +338,7 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     B_rescaled = (B - B.min()) / (B.max() - B.min())
 
     fig.patch.set_facecolor('white')
-    ax = fig.gca(projection='3d')
+    ax = plt.axes(projection='3d')
     ax.plot_surface(X, Y, Z, facecolors = cm.jet(B_rescaled), rstride=1, cstride=1, antialiased=False)
     ax.auto_scale_xyz([X.min(), X.max()], [X.min(), X.max()], [X.min(), X.max()])
 

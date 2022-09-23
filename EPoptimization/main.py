@@ -26,7 +26,7 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 40
+MAXITER = 8
 max_modes = [1]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
@@ -34,7 +34,7 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution, dual_annealing
+optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution, dual_annealing
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 3000  # number of particles
@@ -141,14 +141,14 @@ for max_mode in max_modes:
         initial_temp = 1000
         visit = 2.0
         no_local_search = False
-        bounds = [(-0.2,0.2) for _ in range(len(dofs))]
+        bounds = [(np.max([-2*np.abs(dof),-0.2]),np.min([0.2,2*np.abs(dof)])) for dof in dofs]
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'basinhopping':
         stepsize_minimizer = 0.5
         T_minimizer = 1.0
         res = basinhopping(fun, dofs, niter=MAXITER, stepsize=stepsize_minimizer, T=T_minimizer, disp=True, minimizer_kwargs={"method": "BFGS"})
     elif optimizer =='differential_evolution':
-        bounds = [(-0.2,0.2) for _ in range(len(dofs))]
+        bounds = [(np.max([-2*np.abs(dof),-0.2]),np.min([0.2,2*np.abs(dof)])) for dof in dofs]
         res = differential_evolution(fun, bounds, maxiter=MAXITER, disp=True, x0=dofs)
     elif optimizer == 'nl_least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
