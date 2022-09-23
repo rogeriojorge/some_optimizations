@@ -26,8 +26,8 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 8
-max_modes = [1]
+MAXITER = 40
+max_modes = [1, 2]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
@@ -37,8 +37,8 @@ plot_result = True
 optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution, dual_annealing
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 3000  # number of particles
-tfinal = 3e-5  # total time of tracing in seconds
+nparticles = 2600  # number of particles
+tfinal = 4e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
@@ -62,7 +62,7 @@ else:
     aspect_ratio_target = 7
 
 diff_rel_step = 1e-1
-diff_abs_step = 1e-3
+diff_abs_step = 1e-2
 ######################################
 ######################################
 if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
@@ -83,22 +83,27 @@ def EPcostFunction(v: Vmec):
     v.run()
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
+    # effective_velocity_array = []
     for i in range(nruns_opt_average): # Average over a given number of runs
         for j in range(0,3): # Try three times the same orbits, if not able continue
             while True:
                 try:
                     g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
+                    # lost_times_array = tfinal-g_field_temp.params.times_lost
+                    # lost_times_array = lost_times_array[lost_times_array!=0.0]
+                    # effective_velocity_array.append(np.sum(1/lost_times_array))
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
                     continue
                 break
     final_loss_fraction = np.mean(final_loss_fraction_array)
+    # final_effective_velocity = np.mean(effective_velocity_array)
     g_field_temp.simple_main.finalize()
     print(f'Loss fraction = {final_loss_fraction:1f} with '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
     + f'diff aspect ratio={(aspect_ratio_target-v.aspect()):1f} took {time.time()-start_time}s')
-    return final_loss_fraction
+    return final_loss_fraction # final_effective_velocity
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
