@@ -26,7 +26,7 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 1
+MAXITER = 40
 max_modes = [1]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
@@ -34,21 +34,21 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution
+optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 2300  # number of particles
+nparticles = 3000  # number of particles
 tfinal = 3e-5  # total time of tracing in seconds
-nsamples = 1600 # number of time steps
+nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
-nper = 1300 # number of periods for initial field line
+nper = 1400 # number of periods for initial field line
 npoiper = 110 # number of points per period on this field line
 npoiper2 = 130 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
-nruns_opt_average = 2 # number of particle tracing runs to average over in cost function
+nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
 
 iota_target = -0.42
 weight_optEP = 10.0
@@ -86,14 +86,21 @@ def EPcostFunction(v: Vmec):
     v.run()
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
-    for i in range(nruns_opt_average):
-        g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
-        final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
+    for i in range(nruns_opt_average): # Average over a given number of runs
+        for j in range(0,3): # Try three times the same orbits, if not able continue
+            while True:
+                try:
+                    g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
+                    final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
+                except ValueError as error_print:
+                    print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
+                    continue
+                break
     final_loss_fraction = np.mean(final_loss_fraction_array)
     g_field_temp.simple_main.finalize()
     print(f'Loss fraction = {final_loss_fraction:1f} with '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {time.time()-start_time}s')
+    + f'diff aspect ratio={(aspect_ratio_target-v.aspect()):1f} took {time.time()-start_time}s')
     return final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
