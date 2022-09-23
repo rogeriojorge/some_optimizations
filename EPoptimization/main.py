@@ -9,7 +9,7 @@ from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
 import matplotlib.pyplot as plt
-from scipy.optimize import minimize, basinhopping, differential_evolution
+from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
@@ -34,7 +34,7 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution
+optimizer = 'nl_least_squares' # nl_least_squares, basinhopping, differential_evolution, dual_annealing
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 3000  # number of particles
@@ -63,9 +63,6 @@ else:
 
 diff_rel_step = 1e-1
 diff_abs_step = 1e-3
-
-stepsize_minimizer = 0.1
-T_minimizer = 1.0
 ######################################
 ######################################
 if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
@@ -140,16 +137,24 @@ for max_mode in max_modes:
     pprint('-------------------------')
     if optimizer == 'minimize':
         res = minimize(fun, dofs, method='BFGS', options={'maxiter': MAXITER}, tol=1e-9)
+    elif optimizer == 'dual_annealing':
+        initial_temp = 1000
+        visit = 2.0
+        no_local_search = False
+        bounds = [(-0.2,0.2) for _ in range(len(dofs))]
+        res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'basinhopping':
+        stepsize_minimizer = 0.5
+        T_minimizer = 1.0
         res = basinhopping(fun, dofs, niter=MAXITER, stepsize=stepsize_minimizer, T=T_minimizer, disp=True, minimizer_kwargs={"method": "BFGS"})
     elif optimizer =='differential_evolution':
-        bounds = [(-0.3,0.3) for _ in range(len(dofs))]
+        bounds = [(-0.2,0.2) for _ in range(len(dofs))]
         res = differential_evolution(fun, bounds, maxiter=MAXITER, disp=True, x0=dofs)
     elif optimizer == 'nl_least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
         # least_squares_serial_solve(prob, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     if optimizer in ['minimize','basinhopping','differential_evolution']:
-        pprint("global minimum: x = %.4f, f(x) = %.4f" % (res.x,res.fun))
+        pprint(f"global minimum: x = {res.x}, f(x) = {res.fun}")
         vmec.x = res.x
     ######################################
     if MPI.COMM_WORLD.rank == 0:
