@@ -26,18 +26,18 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 40
-max_modes = [1, 2]
+MAXITER = 50
+max_modes = [1, 2, 3]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'differential_evolution' # nl_least_squares, basinhopping, differential_evolution, dual_annealing
+optimizer = 'least_squares_diff' # least_squares_diff, nl_least_squares, basinhopping, differential_evolution, dual_annealing
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 2600  # number of particles
+nparticles = 2200  # number of particles
 tfinal = 4e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
@@ -52,13 +52,15 @@ nruns_opt_average = 1 # number of particle tracing runs to average over in cost 
 
 iota_target = -0.42
 weight_optEP = 10.0
+redux_B = 2
+redux_Aminor = 2
 if QA_or_QH == 'QA':
-    B_scale = 8.58 / 2
-    Aminor_scale = 8.5 / 2
+    B_scale = 8.58 / redux_B
+    Aminor_scale = 8.5 / redux_Aminor
     aspect_ratio_target = 6
 else:
-    B_scale = 6.55 / 2
-    Aminor_scale = 12.14 / 2
+    B_scale = 6.55 / redux_B
+    Aminor_scale = 12.14 / redux_Aminor
     aspect_ratio_target = 7
 
 diff_rel_step = 1e-1
@@ -83,27 +85,29 @@ def EPcostFunction(v: Vmec):
     v.run()
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
-    # effective_velocity_array = []
+    effective_velocity_array = []
     for i in range(nruns_opt_average): # Average over a given number of runs
         for j in range(0,3): # Try three times the same orbits, if not able continue
             while True:
                 try:
                     g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
-                    # lost_times_array = tfinal-g_field_temp.params.times_lost
-                    # lost_times_array = lost_times_array[lost_times_array!=0.0]
-                    # effective_velocity_array.append(np.sum(1/lost_times_array))
+                    lost_times_array = tfinal-g_field_temp.params.times_lost
+                    lost_times_array = lost_times_array[lost_times_array!=0.0]
+                    effective_velocity_array.append(np.mean(1/lost_times_array)*tfinal)
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
                     continue
                 break
     final_loss_fraction = np.mean(final_loss_fraction_array)
-    # final_effective_velocity = np.mean(effective_velocity_array)
+    final_effective_velocity = np.mean(effective_velocity_array)
     g_field_temp.simple_main.finalize()
     print(f'Loss fraction = {final_loss_fraction:1f} with '
+    + f'eff velocity = {final_effective_velocity:1f} and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'diff aspect ratio={(aspect_ratio_target-v.aspect()):1f} took {time.time()-start_time}s')
-    return final_loss_fraction # final_effective_velocity
+    + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {time.time()-start_time}s')
+    # return final_loss_fraction
+    return final_effective_velocity*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
@@ -155,10 +159,11 @@ for max_mode in max_modes:
     elif optimizer =='differential_evolution':
         bounds = [(np.max([-2*np.abs(dof),-0.2]),np.min([0.2,2*np.abs(dof)])) for dof in dofs]
         res = differential_evolution(fun, bounds, maxiter=MAXITER, disp=True, x0=dofs)
-    elif optimizer == 'nl_least_squares':
+    elif optimizer == 'least_squares_diff':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
-        # least_squares_serial_solve(prob, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
-    if optimizer in ['minimize','basinhopping','differential_evolution']:
+    elif optimizer == 'least_squares':
+        least_squares_serial_solve(prob, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
+    if optimizer in ['dual_annealing','minimize','basinhopping','differential_evolution']:
         pprint(f"global minimum: x = {res.x}, f(x) = {res.fun}")
         vmec.x = res.x
     ######################################
