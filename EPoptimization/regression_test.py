@@ -23,15 +23,15 @@ opt_quasisymmetry = False
 opt_well = False
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 2500  # number of particles
-tfinal = 3e-5  # total time of tracing in seconds
-nsamples = 2000 # number of time steps
+nparticles = 500  # number of particles
+tfinal = 5e-4  # total time of tracing in seconds
+nsamples = 3000 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
-nper = 1500 # number of periods for initial field line
-npoiper = 110 # number of points per period on this field line
-npoiper2 = 130 # points per period for integrator step
+nper = 300 # number of periods for initial field line
+npoiper = 200 # number of points per period on this field line
+npoiper2 = 120 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function

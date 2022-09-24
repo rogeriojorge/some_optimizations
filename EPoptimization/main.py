@@ -1,10 +1,12 @@
 #!/usr/bin/env python
+from bdb import effective
 import os
 import glob
 import time
 import shutil
 import vmecPlot2
 import numpy as np
+import pandas as pd
 from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
@@ -26,32 +28,32 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 50
-max_modes = [1, 2, 3]
-QA_or_QH = 'QH'
+MAXITER = 250
+max_modes = [1]
+QA_or_QH = 'QA'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'least_squares_diff' # least_squares_diff, nl_least_squares, basinhopping, differential_evolution, dual_annealing
+optimizer = 'dual_annealing' # least_squares_diff, nl_least_squares, basinhopping, differential_evolution, dual_annealing
 
-s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 2200  # number of particles
-tfinal = 4e-5  # total time of tracing in seconds
+s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+nparticles = 600  # number of particles
+tfinal = 3e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
-nper = 1400 # number of periods for initial field line
-npoiper = 110 # number of points per period on this field line
-npoiper2 = 130 # points per period for integrator step
+nper = 400 # number of periods for initial field line
+npoiper = 150 # number of points per period on this field line
+npoiper2 = 120 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
 
 iota_target = -0.42
-weight_optEP = 10.0
+weight_optEP = 1.0
 redux_B = 2
 redux_Aminor = 2
 if QA_or_QH == 'QA':
@@ -65,6 +67,8 @@ else:
 
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
+
+output_path_parameters=f'output_{optimizer}_{QA_or_QH}.txt'
 ######################################
 ######################################
 if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
@@ -80,12 +84,20 @@ if opt_well: OUT_DIR+=f'_well'
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
 ######################################
+def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time]])
+    dictionary = dict(zip(keys, values))
+    df = pd.DataFrame(data=[dictionary])
+    if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
+    df.to_csv(output_path_parameters, mode='a', header=False, index=False)
+######################################
 def EPcostFunction(v: Vmec):
     start_time = time.time()
     v.run()
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
-    effective_velocity_array = []
+    effective_time_array = []
     for i in range(nruns_opt_average): # Average over a given number of runs
         for j in range(0,3): # Try three times the same orbits, if not able continue
             while True:
@@ -94,20 +106,21 @@ def EPcostFunction(v: Vmec):
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
                     lost_times_array = tfinal-g_field_temp.params.times_lost
                     lost_times_array = lost_times_array[lost_times_array!=0.0]
-                    effective_velocity_array.append(np.mean(1/lost_times_array)*tfinal)
+                    effective_time_array.append(np.mean(lost_times_array)/np.max(lost_times_array))
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
                     continue
                 break
     final_loss_fraction = np.mean(final_loss_fraction_array)
-    final_effective_velocity = np.mean(effective_velocity_array)
+    final_effective_time = np.mean(effective_time_array)
     g_field_temp.simple_main.finalize()
-    print(f'Loss fraction = {final_loss_fraction:1f} with '
-    + f'eff velocity = {final_effective_velocity:1f} and '
+    print(f'Loss = {(100*final_loss_fraction):1f}% with '
+    + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {time.time()-start_time}s')
+    + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {(time.time()-start_time):1f}s')
     # return final_loss_fraction
-    return final_effective_velocity*final_loss_fraction
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time)
+    return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
@@ -149,15 +162,17 @@ for max_mode in max_modes:
     elif optimizer == 'dual_annealing':
         initial_temp = 1000
         visit = 2.0
-        no_local_search = False
-        bounds = [(np.max([-2*np.abs(dof),-0.2]),np.min([0.2,2*np.abs(dof)])) for dof in dofs]
+        no_local_search = True
+        # bounds = [(np.max([-10*np.abs(dof),-0.21]),np.min([0.21,10*np.abs(dof)])) for dof in dofs]
+        bounds = [(-0.25,0.25) for _ in dofs]
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'basinhopping':
         stepsize_minimizer = 0.5
         T_minimizer = 1.0
         res = basinhopping(fun, dofs, niter=MAXITER, stepsize=stepsize_minimizer, T=T_minimizer, disp=True, minimizer_kwargs={"method": "BFGS"})
     elif optimizer =='differential_evolution':
-        bounds = [(np.max([-2*np.abs(dof),-0.2]),np.min([0.2,2*np.abs(dof)])) for dof in dofs]
+        bounds = [(-0.25,0.25) for _ in dofs]
+        # bounds = [(np.max([-10*np.abs(dof),-0.21]),np.min([0.21,10*np.abs(dof)])) for dof in dofs]
         res = differential_evolution(fun, bounds, maxiter=MAXITER, disp=True, x0=dofs)
     elif optimizer == 'least_squares_diff':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
