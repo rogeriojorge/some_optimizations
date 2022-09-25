@@ -28,7 +28,7 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 250
+MAXITER = 30
 max_modes = [1]
 QA_or_QH = 'QA'
 opt_quasisymmetry = False
@@ -36,11 +36,12 @@ opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'dual_annealing' # least_squares_diff, nl_least_squares, basinhopping, differential_evolution, dual_annealing
+optimizer = 'least_squares_diff' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
+use_previous_results = True
 
 s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 600  # number of particles
-tfinal = 3e-5  # total time of tracing in seconds
+nparticles = 1200  # number of particles
+tfinal = 4e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
@@ -71,18 +72,31 @@ diff_abs_step = 1e-2
 output_path_parameters=f'output_{optimizer}_{QA_or_QH}.txt'
 ######################################
 ######################################
-if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
-else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
+if QA_or_QH == 'QA': nfp=2
+else: nfp=4
+OUT_DIR_APPENDIX=f'out_s{s_initial}_NFP{nfp}'
+if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{QA_or_QH}'
+if opt_well: OUT_DIR_APPENDIX+=f'_well'
+OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
+os.makedirs(OUT_DIR, exist_ok=True)
+######################################
+if use_previous_results:
+    dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
+    if MPI.COMM_WORLD.rank == 0:
+        os.makedirs(dest, exist_ok=True)
+        if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
+            files = os.listdir(OUT_DIR)
+            for f in files:
+                shutil.move(os.path.join(OUT_DIR, f), dest)
+    filename = os.path.join(dest, 'input.final')
+else:
+    if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
+    else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
+os.chdir(OUT_DIR)
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary
 g_particle = ChargedParticleEnsemble(r_initial=s_initial)
-######################################
-OUT_DIR=os.path.join(this_path,f'out_s{s_initial}_NFP{vmec.indata.nfp}')
-if opt_quasisymmetry: OUT_DIR+=f'_{QA_or_QH}'
-if opt_well: OUT_DIR+=f'_well'
-os.makedirs(OUT_DIR, exist_ok=True)
-os.chdir(OUT_DIR)
 ######################################
 def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time):
     keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time']])
@@ -118,9 +132,9 @@ def EPcostFunction(v: Vmec):
     + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
     + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {(time.time()-start_time):1f}s')
-    # return final_loss_fraction
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time)
-    return final_effective_time*final_loss_fraction
+    return final_loss_fraction
+    # return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 pprint("Initial aspect ratio:", vmec.aspect())
@@ -206,6 +220,7 @@ if MPI.COMM_WORLD.rank == 0:
             os.remove(threed_file)
         for threed_file in glob.glob("input.*"):
             os.remove(threed_file)
+        os.remove('fort.6601')
     except Exception as e:
         pprint(e)
     ##################################################
