@@ -27,8 +27,8 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 350
-max_modes = [2]
+MAXITER = 400
+max_modes = [1, 2]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
@@ -36,16 +36,16 @@ opt_well = False
 opt_iota = False
 plot_result = True
 optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
-use_previous_results_if_available = False
+use_previous_results_if_available = True
 
-s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 1000  # number of particles
-tfinal = 1e-4  # total time of tracing in seconds
+s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+nparticles = 1200  # number of particles
+tfinal = 7e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
-nper = 1000 # number of periods for initial field line
+nper = 400 # number of periods for initial field line
 npoiper = 150 # number of points per period on this field line
 npoiper2 = 120 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
@@ -53,7 +53,7 @@ notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
 
 iota_target = -0.42
-weight_optEP = 10.0
+weight_optEP = 100.0
 redux_B = 2
 redux_Aminor = 2
 if QA_or_QH == 'QA':
@@ -87,6 +87,8 @@ if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'i
             files = os.listdir(OUT_DIR)
             for f in files:
                 shutil.move(os.path.join(OUT_DIR, f), dest)
+    else:
+        time.sleep(0.5)
     filename = os.path.join(dest, 'input.final')
 else:
     if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
@@ -107,7 +109,10 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time):
 ######################################
 def EPcostFunction(v: Vmec):
     start_time = time.time()
-    v.run()
+    try: v.run()
+    except Exception as e:
+        print(e)
+        return 1e3
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
     effective_time_array = []
@@ -119,6 +124,7 @@ def EPcostFunction(v: Vmec):
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
                     lost_times_array = tfinal-g_field_temp.params.times_lost
                     lost_times_array = lost_times_array[lost_times_array!=0.0]
+                    if np.asarray(lost_times_array).size==0: lost_times_array=[tfinal]
                     effective_time_array.append(np.mean(lost_times_array)/(np.max(lost_times_array)+1e-9))
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
@@ -136,9 +142,11 @@ def EPcostFunction(v: Vmec):
     # return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
-pprint("Initial aspect ratio:", vmec.aspect())
-pprint("Initial mean iota:", vmec.mean_iota())
-pprint("Initial magnetic well:", vmec.vacuum_well())
+try:
+    pprint("Initial aspect ratio:", vmec.aspect())
+    pprint("Initial mean iota:", vmec.mean_iota())
+    pprint("Initial magnetic well:", vmec.vacuum_well())
+except Exception as e: pprint(e)
 if MPI.COMM_WORLD.rank == 0:
     g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
@@ -151,7 +159,8 @@ if opt_well: opt_tuple.append((vmec.vacuum_well, 0.1, 1))
 if opt_iota: opt_tuple.append((vmec.mean_iota, iota_target, 1))
 if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
-pprint("Quasisymmetry objective before optimization:", qs.total())
+try: pprint("Quasisymmetry objective before optimization:", qs.total())
+except Exception as e: pprint(e)
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -197,14 +206,16 @@ for max_mode in max_modes:
         vmec.x = res.x
     ######################################
     if MPI.COMM_WORLD.rank == 0:
-        pprint("Final aspect ratio:", vmec.aspect())
-        pprint("Final mean iota:", vmec.mean_iota())
-        pprint("Final magnetic well:", vmec.vacuum_well())
-        pprint("Quasisymmetry objective after optimization:", qs.total())
-        g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale,multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
-        g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
-        pprint("Final loss fraction:", g_orbits.total_particles_lost)
-        pprint("Total objective after optimization:", prob.objective())
+        try: 
+            pprint("Final aspect ratio:", vmec.aspect())
+            pprint("Final mean iota:", vmec.mean_iota())
+            pprint("Final magnetic well:", vmec.vacuum_well())
+            pprint("Quasisymmetry objective after optimization:", qs.total())
+            g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale,multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
+            g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
+            pprint("Final loss fraction:", g_orbits.total_particles_lost)
+            pprint("Total objective after optimization:", prob.objective())
+        except Exception as e: pprint(e)
     ######################################
 if MPI.COMM_WORLD.rank == 0:
     try:

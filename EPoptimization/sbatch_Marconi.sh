@@ -10,4 +10,4 @@
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
 cd /marconi/home/userexternal/rjorge00/some_optimizations/EPoptimization
 export OMP_NUM_THREADS=36
-srun -N 1 ./main.py > output.txt
+srun --with-pmix -N 1 ./main.py > output.txt
