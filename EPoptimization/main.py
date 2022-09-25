@@ -28,7 +28,7 @@ def pprint(*args, **kwargs):
 #### Input Parameters
 ############################################################################
 MAXITER = 350
-max_modes = [1]
+max_modes = [2]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
@@ -40,7 +40,7 @@ use_previous_results_if_available = False
 
 s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 1000  # number of particles
-tfinal = 3e-5  # total time of tracing in seconds
+tfinal = 1e-4  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
