@@ -50,7 +50,7 @@ else:
 ######################################
 ######################################
 if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
-else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
+else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH')
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary

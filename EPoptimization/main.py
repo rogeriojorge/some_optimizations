@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-from bdb import effective
 import os
 import glob
 import time
@@ -11,7 +10,6 @@ from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
 import matplotlib.pyplot as plt
-from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
@@ -20,6 +18,7 @@ from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
+from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
@@ -28,25 +27,25 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 30
+MAXITER = 350
 max_modes = [1]
-QA_or_QH = 'QA'
+QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
 plot_result = True
-optimizer = 'least_squares_diff' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
-use_previous_results = True
+optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
+use_previous_results_if_available = False
 
 s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 1200  # number of particles
-tfinal = 4e-5  # total time of tracing in seconds
+nparticles = 1000  # number of particles
+tfinal = 3e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
 ns_tp = 3 # spline order over theta and phi
-nper = 400 # number of periods for initial field line
+nper = 1000 # number of periods for initial field line
 npoiper = 150 # number of points per period on this field line
 npoiper2 = 120 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
@@ -54,7 +53,7 @@ notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
 
 iota_target = -0.42
-weight_optEP = 1.0
+weight_optEP = 10.0
 redux_B = 2
 redux_Aminor = 2
 if QA_or_QH == 'QA':
@@ -69,7 +68,7 @@ else:
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
 
-output_path_parameters=f'output_{optimizer}_{QA_or_QH}.txt'
+output_path_parameters=f'output_{optimizer}_{QA_or_QH}.csv'
 ######################################
 ######################################
 if QA_or_QH == 'QA': nfp=2
@@ -80,8 +79,8 @@ if opt_well: OUT_DIR_APPENDIX+=f'_well'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
-if use_previous_results:
-    dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
+dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
+if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'input.final')) or os.path.isfile(os.path.join(dest,'input.final'))):
     if MPI.COMM_WORLD.rank == 0:
         os.makedirs(dest, exist_ok=True)
         if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
@@ -91,7 +90,7 @@ if use_previous_results:
     filename = os.path.join(dest, 'input.final')
 else:
     if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
-    else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH_warm_start')
+    else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH')
 os.chdir(OUT_DIR)
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
@@ -126,10 +125,10 @@ def EPcostFunction(v: Vmec):
                     continue
                 break
     final_loss_fraction = np.mean(final_loss_fraction_array)
-    final_effective_time = np.mean(effective_time_array)
+    final_effective_time = np.min([np.max([np.mean(effective_time_array),0]),10])
     g_field_temp.simple_main.finalize()
     print(f'Loss = {(100*final_loss_fraction):1f}% with '
-    + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
+    # + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
     + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {(time.time()-start_time):1f}s')
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time)
@@ -160,6 +159,7 @@ def fun(dofss):
     prob.x = dofss
     return prob.objective()
 for max_mode in max_modes:
+    output_path_parameters=f'output_{optimizer}_{QA_or_QH}_maxmode{max_mode}.csv'
     surf.fix_all()
     surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
     surf.fix("rc(0,0)")
@@ -176,7 +176,7 @@ for max_mode in max_modes:
     elif optimizer == 'dual_annealing':
         initial_temp = 1000
         visit = 2.0
-        no_local_search = True
+        no_local_search = False
         # bounds = [(np.max([-10*np.abs(dof),-0.21]),np.min([0.21,10*np.abs(dof)])) for dof in dofs]
         bounds = [(-0.25,0.25) for _ in dofs]
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
