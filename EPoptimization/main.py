@@ -119,7 +119,7 @@ def EPcostFunction(v: Vmec):
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
                     lost_times_array = tfinal-g_field_temp.params.times_lost
                     lost_times_array = lost_times_array[lost_times_array!=0.0]
-                    effective_time_array.append(np.mean(lost_times_array)/np.max(lost_times_array))
+                    effective_time_array.append(np.mean(lost_times_array)/(np.max(lost_times_array)+1e-9))
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
                     continue

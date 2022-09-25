@@ -22,16 +22,16 @@ run_simple = False
 use_previous_results_if_available = True
 
 nparticles = 1500  # number of particles
-tfinal = 1e-2  # seconds
+tfinal = 5e-3  # seconds
 nsamples = 10000  # number of time steps
 #################################
 if QA_or_QH == 'QA': nfp=2
 else: nfp=4
 out_dir = f'out_s{s_initial}_NFP{nfp}'
 out_csv = out_dir+f'/output_{optimizer}_{QA_or_QH}_maxmode{max_mode}.csv'
+df = pd.read_csv(out_csv)
 #################################
 if plt_opt_res:
-    df = pd.read_csv(out_csv)
     df['aspect-6'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),1.5]), axis=1)
@@ -60,7 +60,7 @@ if plot_vmec:
         surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
         surf.fix("rc(0,0)")
         vmec.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
-        vmec.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
+        vmec.indata.niter_array[:3] = [ 1000,  1000, 10000]#,  5000, 10000]
         vmec.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
         if max_mode==1:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)']]
@@ -157,3 +157,4 @@ if run_simple:
     print(f"  Final loss fraction = {g_orbits.total_particles_lost}")
     # Plot resulting loss fraction
     g_orbits.plot_loss_fraction()
+    plt.savefig('loss_fraction_plot.png')
