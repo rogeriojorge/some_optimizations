@@ -1,10 +1,49 @@
 import numpy as np
 from scipy.optimize import fsolve
 from scipy.special import ellipe
-from Helpers import *
+import warnings
+
+#unit normal vector of plane defined by points a, b, and c
+def FindUnitNormal(a, b, c):
+    x = np.linalg.det([[1,a[1],a[2]],
+             [1,b[1],b[2]],
+             [1,c[1],c[2]]])
+    y = np.linalg.det([[a[0],1,a[2]],
+             [b[0],1,b[2]],
+             [c[0],1,c[2]]])
+    z = np.linalg.det([[a[0],a[1],1],
+             [b[0],b[1],1],
+             [c[0],c[1],1]])
+    magnitude = np.sqrt(x**2 + y**2 + z**2)
+    return (x/magnitude, y/magnitude, z/magnitude)
+
+#area of polygon poly
+def FindArea(X,Y,Z):
+    total = [0,0,0]
+
+    for i in range(len(X)):
+        x1 = X[i]
+        y1 = Y[i]
+        z1 = Z[i]
+        
+        x2 = X[(i+1)%(len(X))]
+        y2 = Y[(i+1)%(len(Y))]
+        z2 = Z[(i+1)%(len(Z))]
+
+        vi1 = [x1,y1,z1]
+        vi2 = [x2,y2,z2]
+
+        prod = np.cross(vi1,vi2)
+        total += prod
+    pt0 = [X[0], Y[0], Z[0]]
+    pt1 = [X[1], Y[1], Z[1]]
+    pt2 = [X[2], Y[2], Z[2]]
+    result = np.dot(total,FindUnitNormal(pt0,pt1,pt2))
+    return abs(result/2)
 
 # Penalizes the configuration's maximum elongation
-def MaxElongationPen(vmec,t=6.0,ntheta=50,nphi=50):
+warnings.filterwarnings('ignore', 'The iteration is not making good progress')
+def MaxElongationPen(vmec,t=6.0,ntheta=16,nphi=8,return_elongation=False):
     """
     Penalizes the configuration's maximum elongation (e_max) if it exceeds some threshold (t).
     Specifically, if e_max > t, then output (e_max - t). Else, output zero.
@@ -201,7 +240,39 @@ def MaxElongationPen(vmec,t=6.0,ntheta=50,nphi=50):
 
     # Penalize maximum elongation
     e = np.max(elongs)
-    print("Max Elongation =",e)
-    print("Mean Elongation =",np.mean(elongs))
+    # print("Max Elongation =",e)
+    # print("Mean Elongation =",np.mean(elongs))
     pen = np.max([0,e-t])
-    return pen
+    if return_elongation: return e
+    else: return pen
+
+# Penalize the configuration's mirror ratio
+def MirrorRatioPen(v, mirror_threshold=0.20, output_mirror=False):
+    """
+    Return (Δ - t) if Δ > t, else return zero.
+    vmec        -   VMEC object
+    t           -   Threshold mirror ratio, above which the penalty is nonzero
+    """
+    v.run()
+    xm_nyq = v.wout.xm_nyq
+    xn_nyq = v.wout.xn_nyq
+    bmnc = v.wout.bmnc.T
+    bmns = 0*bmnc
+    nfp = v.wout.nfp
+    
+    Ntheta = 100
+    Nphi = 100
+    thetas = np.linspace(0,2*np.pi,Ntheta)
+    phis = np.linspace(0,2*np.pi/nfp,Nphi)
+    phis2D,thetas2D=np.meshgrid(phis,thetas)
+    b = np.zeros([Ntheta,Nphi])
+    for imode in range(len(xn_nyq)):
+        angles = xm_nyq[imode]*thetas2D - xn_nyq[imode]*phis2D
+        b += bmnc[1,imode]*np.cos(angles) + bmns[1,imode]*np.sin(angles)
+    Bmax = np.max(b)
+    Bmin = np.min(b)
+    m = (Bmax-Bmin)/(Bmax+Bmin)
+    # print("Mirror =",m)
+    pen = np.max([0,m-mirror_threshold])
+    if output_mirror: return m
+    else: return pen

@@ -13,14 +13,14 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 1
-QA_or_QH = 'QA'
+QA_or_QH = 'QI'
 optimizer = 'dual_annealing'
 s_initial = 0.3
 
-plt_opt_res = False
+plt_opt_res = True
 plot_vmec = False
 run_simple = False
-run_neo = True
+run_neo = False
 
 use_previous_results_if_available = False
 
@@ -47,6 +47,10 @@ if plt_opt_res:
     plt.savefig(out_dir+'/loss_fraction_over_opt.pdf')
     df.plot(use_index=True, y=['aspect'])#,'iota'])#,'normalized_time'])
     plt.savefig(out_dir+'/aspect_over_opt.pdf')
+    df.plot(use_index=True, y=['mirror_ratio'])#,'iota'])#,'normalized_time'])
+    plt.savefig(out_dir+'/mirror_ratio_over_opt.pdf')
+    df.plot(use_index=True, y=['max_elongation'])#,'iota'])#,'normalized_time'])
+    plt.savefig(out_dir+'/max_elongation_over_opt.pdf')
     # df.plot.scatter(y='normalized_time', x='loss_fraction')
     # plt.savefig(out_dir+'/loss_vs_normtime.pdf')
     # df.plot.scatter(y='loss_fraction', x='iota')

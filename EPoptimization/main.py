@@ -19,6 +19,7 @@ from simsopt.objectives import LeastSquaresProblem
 from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
+from Alan_objectives import MaxElongationPen, MirrorRatioPen
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
@@ -27,17 +28,27 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 300
+MAXITER = 3
 max_modes = [1]
-QA_or_QH_or_QI = 'QI'
+QA_or_QH_or_QI = 'QA'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
 opt_Mirror = True
+opt_Elongation = True
 plot_result = True
 optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
 use_previous_results_if_available = False
+
+weight_optEP = 100.0
+weight_opt_Mirror = 10.0
+weight_opt_Elongation = 1.0
+redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
+redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
+if QA_or_QH_or_QI == 'QA': aspect_ratio_target = 6
+elif QA_or_QH_or_QI == 'QH': aspect_ratio_target = 7
+elif QA_or_QH_or_QI == 'QI': aspect_ratio_target = 8
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
 nparticles = 700  # number of particles
@@ -52,17 +63,7 @@ npoiper2 = 120 # points per period for integrator step
 notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
-
 iota_target = -0.42
-weight_optEP = 100.0
-redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
-redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
-if QA_or_QH_or_QI == 'QA': aspect_ratio_target = 6
-elif QA_or_QH_or_QI == 'QH': aspect_ratio_target = 7
-elif QA_or_QH_or_QI == 'QI': aspect_ratio_target = 8
-
-mirror_threshold = 0.20
-weight_opt_Mirror = 100
 
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
@@ -100,44 +101,15 @@ vmec.keep_all_files = True
 surf = vmec.boundary
 g_particle = ChargedParticleEnsemble(r_initial=s_initial)
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time,mirror_ratio):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time'],['mirror_ratio']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time],[mirror_ratio]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time,mirror_ratio,max_elongation):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time'],['mirror_ratio'],['max_elongation']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time],[mirror_ratio],[max_elongation]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
     df.to_csv(output_path_parameters, mode='a', header=False, index=False)
 ######################################
-# Penalize the configuration's mirror ratio
-def MirrorRatioPen(v: Vmec, output_mirror=False):
-    """
-    Return (Δ - t) if Δ > t, else return zero.
-    vmec        -   VMEC object
-    t           -   Threshold mirror ratio, above which the penalty is nonzero
-    """
-    v.run()
-    xm_nyq = v.wout.xm_nyq
-    xn_nyq = v.wout.xn_nyq
-    bmnc = v.wout.bmnc.T
-    bmns = 0*bmnc
-    nfp = v.wout.nfp
-    
-    Ntheta = 100
-    Nphi = 100
-    thetas = np.linspace(0,2*np.pi,Ntheta)
-    phis = np.linspace(0,2*np.pi/nfp,Nphi)
-    phis2D,thetas2D=np.meshgrid(phis,thetas)
-    b = np.zeros([Ntheta,Nphi])
-    for imode in range(len(xn_nyq)):
-        angles = xm_nyq[imode]*thetas2D - xn_nyq[imode]*phis2D
-        b += bmnc[1,imode]*np.cos(angles) + bmns[1,imode]*np.sin(angles)
-    Bmax = np.max(b)
-    Bmin = np.min(b)
-    m = (Bmax-Bmin)/(Bmax+Bmin)
-    # print("Mirror =",m)
-    pen = np.max([0,m-mirror_threshold])
-    if output_mirror: return m
-    else: return pen
+optElongation = make_optimizable(MaxElongationPen, vmec)
 optMirror = make_optimizable(MirrorRatioPen, vmec)
 ######################################
 def EPcostFunction(v: Vmec):
@@ -169,12 +141,13 @@ def EPcostFunction(v: Vmec):
     final_effective_time = np.min([np.max([np.mean(effective_time_array),0]),10])
     g_field_temp.simple_main.finalize()
     mirror_ratio = MirrorRatioPen(v=v, output_mirror=True)
+    max_elongation = MaxElongationPen(vmec=v, return_elongation=True)
     print(f'Loss = {(100*final_loss_fraction):1f}% with '
     # + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'mirror ratio = {mirror_ratio:1f} and '
+    + f'mirror ratio={mirror_ratio:1f}, max elongation={max_elongation:1f} and '
     + f'aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s')
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time,mirror_ratio)
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time,mirror_ratio,max_elongation)
     return final_loss_fraction
     # return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
@@ -184,6 +157,7 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
     pprint("Initial mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
+    pprint("Initial max elongation:", MaxElongationPen(vmec=vmec, return_elongation=True))
 except Exception as e: pprint(e)
 if MPI.COMM_WORLD.rank == 0:
     B_scale = 5.7/vmec.wout.b0/redux_B  # Scale the magnetic field by a factor
@@ -200,6 +174,7 @@ if opt_iota: opt_tuple.append((vmec.mean_iota, iota_target, 1))
 if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
 if opt_Mirror: opt_tuple.append((optMirror.J, 0, weight_opt_Mirror))
+if opt_Elongation: opt_tuple.append((optElongation.J, 0, weight_opt_Elongation))
 try: pprint("Quasisymmetry objective before optimization:", qs.total())
 except Exception as e: pprint(e)
 ######################################
@@ -252,6 +227,7 @@ for max_mode in max_modes:
             pprint("Final mean iota:", vmec.mean_iota())
             pprint("Final magnetic well:", vmec.vacuum_well())
             pprint("Final mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
+            pprint("Final max elongation:", MaxElongationPen(vmec=vmec, return_elongation=True))
             pprint("Quasisymmetry objective after optimization:", qs.total())
             B_scale = 5.7/vmec.wout.b0/redux_B  # Scale the magnetic field by a factor
             Aminor_scale = 1.7/vmec.wout.Aminor_p/redux_Aminor  # Scale the machine size by a factor
