@@ -33,4 +33,6 @@
 ! n comes before m!
   RBC(0,0) =   1.0E+00     ZBS(0,0) =   0.0000E+00
   RBC(0,1) =   2.0E-01     ZBS(0,1) =   2.0E-01
+! Adding RBC(1,0) and ZBS(1,0) locks a particular orientation of the surface
+  RBC(1,0) =   1.0E-04     ZBS(1,0) =  1.0E-4
 /

@@ -97,6 +97,7 @@ else:
     if QA_or_QH_or_QI == 'QA': filename = os.path.join(this_path, 'initial_configs', 'input.nfp2_QA')
     elif QA_or_QH_or_QI == 'QH': filename = os.path.join(this_path, 'initial_configs', 'input.nfp4_QH')
     elif QA_or_QH_or_QI == 'QI': filename = os.path.join(this_path, 'initial_configs', 'input.QI')
+os.chdir(OUT_DIR)
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary
