@@ -29,18 +29,19 @@ def pprint(*args, **kwargs):
 ############################################################################
 MAXITER = 300
 max_modes = [1]
-QA_or_QH = 'QH'
+QA_or_QH_or_QI = 'QI'
 opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
 opt_iota = False
+opt_Mirror = True
 plot_result = True
 optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
-use_previous_results_if_available = True
+use_previous_results_if_available = False
 
-s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 1100  # number of particles
-tfinal = 4e-5  # total time of tracing in seconds
+s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+nparticles = 700  # number of particles
+tfinal = 7e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
@@ -54,27 +55,26 @@ nruns_opt_average = 1 # number of particle tracing runs to average over in cost 
 
 iota_target = -0.42
 weight_optEP = 100.0
-redux_B = 2
-redux_Aminor = 2
-if QA_or_QH == 'QA':
-    B_scale = 8.58 / redux_B
-    Aminor_scale = 8.5 / redux_Aminor
-    aspect_ratio_target = 6
-else:
-    B_scale = 6.55 / redux_B
-    Aminor_scale = 12.14 / redux_Aminor
-    aspect_ratio_target = 7
+redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
+redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
+if QA_or_QH_or_QI == 'QA': aspect_ratio_target = 6
+elif QA_or_QH_or_QI == 'QH': aspect_ratio_target = 7
+elif QA_or_QH_or_QI == 'QI': aspect_ratio_target = 8
+
+mirror_threshold = 0.20
+weight_opt_Mirror = 100
 
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
 
-output_path_parameters=f'output_{optimizer}_{QA_or_QH}.csv'
+output_path_parameters=f'output_{optimizer}_{QA_or_QH_or_QI}.csv'
 ######################################
 ######################################
-if QA_or_QH == 'QA': nfp=2
-else: nfp=4
+if QA_or_QH_or_QI == 'QA': nfp=2
+elif QA_or_QH_or_QI == 'QH': nfp=4
+elif QA_or_QH_or_QI == 'QI': nfp=3 # Change it later to vmec.indata.nfp
 OUT_DIR_APPENDIX=f'out_s{s_initial}_NFP{nfp}'
-if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{QA_or_QH}'
+if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{QA_or_QH_or_QI}'
 if opt_well: OUT_DIR_APPENDIX+=f'_well'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
@@ -91,21 +91,54 @@ if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'i
         time.sleep(0.5)
     filename = os.path.join(dest, 'input.final')
 else:
-    if QA_or_QH == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
-    else: filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH')
+    if QA_or_QH_or_QI == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
+    elif QA_or_QH_or_QI == 'QH': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH')
+    elif QA_or_QH_or_QI == 'QI': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.QI')
 os.chdir(OUT_DIR)
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary
 g_particle = ChargedParticleEnsemble(r_initial=s_initial)
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time,mirror_ratio):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time'],['mirror_ratio']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time],[mirror_ratio]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
     df.to_csv(output_path_parameters, mode='a', header=False, index=False)
+######################################
+# Penalize the configuration's mirror ratio
+def MirrorRatioPen(v: Vmec, output_mirror=False):
+    """
+    Return (Δ - t) if Δ > t, else return zero.
+    vmec        -   VMEC object
+    t           -   Threshold mirror ratio, above which the penalty is nonzero
+    """
+    v.run()
+    xm_nyq = v.wout.xm_nyq
+    xn_nyq = v.wout.xn_nyq
+    bmnc = v.wout.bmnc.T
+    bmns = 0*bmnc
+    nfp = v.wout.nfp
+    
+    Ntheta = 100
+    Nphi = 100
+    thetas = np.linspace(0,2*np.pi,Ntheta)
+    phis = np.linspace(0,2*np.pi/nfp,Nphi)
+    phis2D,thetas2D=np.meshgrid(phis,thetas)
+    b = np.zeros([Ntheta,Nphi])
+    for imode in range(len(xn_nyq)):
+        angles = xm_nyq[imode]*thetas2D - xn_nyq[imode]*phis2D
+        b += bmnc[1,imode]*np.cos(angles) + bmns[1,imode]*np.sin(angles)
+    Bmax = np.max(b)
+    Bmin = np.min(b)
+    m = (Bmax-Bmin)/(Bmax+Bmin)
+    # print("Mirror =",m)
+    pen = np.max([0,m-mirror_threshold])
+    if output_mirror: return m
+    else: return pen
+optMirror = make_optimizable(MirrorRatioPen, vmec)
 ######################################
 def EPcostFunction(v: Vmec):
     start_time = time.time()
@@ -113,6 +146,8 @@ def EPcostFunction(v: Vmec):
     except Exception as e:
         print(e)
         return 1e3
+    B_scale = 5.7/v.wout.b0/redux_B  # Scale the magnetic field by a factor
+    Aminor_scale = 1.7/v.wout.Aminor_p/redux_Aminor  # Scale the machine size by a factor
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
     effective_time_array = []
@@ -133,11 +168,13 @@ def EPcostFunction(v: Vmec):
     final_loss_fraction = np.mean(final_loss_fraction_array)
     final_effective_time = np.min([np.max([np.mean(effective_time_array),0]),10])
     g_field_temp.simple_main.finalize()
+    mirror_ratio = MirrorRatioPen(v=v, output_mirror=True)
     print(f'Loss = {(100*final_loss_fraction):1f}% with '
     # + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
     # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'diff aspect ratio={(v.aspect()-aspect_ratio_target):1f} took {(time.time()-start_time):1f}s')
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time)
+    + f'mirror ratio = {mirror_ratio:1f} and '
+    + f'aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s')
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time,mirror_ratio)
     return final_loss_fraction
     # return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
@@ -146,19 +183,23 @@ try:
     pprint("Initial aspect ratio:", vmec.aspect())
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
+    pprint("Initial mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
 except Exception as e: pprint(e)
 if MPI.COMM_WORLD.rank == 0:
+    B_scale = 5.7/vmec.wout.b0/redux_B  # Scale the magnetic field by a factor
+    Aminor_scale = 1.7/vmec.wout.Aminor_p/redux_Aminor  # Scale the machine size by a factor
     g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
     pprint("Initial loss fraction:", g_orbits.total_particles_lost)
 ######################################
-if QA_or_QH == 'QH': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
-else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)    
+if QA_or_QH_or_QI == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
+else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
 opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
 if opt_well: opt_tuple.append((vmec.vacuum_well, 0.1, 1))
 if opt_iota: opt_tuple.append((vmec.mean_iota, iota_target, 1))
 if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
+if opt_Mirror: opt_tuple.append((optMirror.J, 0, weight_opt_Mirror))
 try: pprint("Quasisymmetry objective before optimization:", qs.total())
 except Exception as e: pprint(e)
 ######################################
@@ -168,7 +209,7 @@ def fun(dofss):
     prob.x = dofss
     return prob.objective()
 for max_mode in max_modes:
-    output_path_parameters=f'output_{optimizer}_{QA_or_QH}_maxmode{max_mode}.csv'
+    output_path_parameters=f'output_{optimizer}_{QA_or_QH_or_QI}_maxmode{max_mode}.csv'
     surf.fix_all()
     surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
     surf.fix("rc(0,0)")
@@ -210,7 +251,10 @@ for max_mode in max_modes:
             pprint("Final aspect ratio:", vmec.aspect())
             pprint("Final mean iota:", vmec.mean_iota())
             pprint("Final magnetic well:", vmec.vacuum_well())
+            pprint("Final mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
             pprint("Quasisymmetry objective after optimization:", qs.total())
+            B_scale = 5.7/vmec.wout.b0/redux_B  # Scale the magnetic field by a factor
+            Aminor_scale = 1.7/vmec.wout.Aminor_p/redux_Aminor  # Scale the machine size by a factor
             g_field = Simple(wout_filename=vmec.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale,multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
             g_orbits = ParticleEnsembleOrbit_Simple(g_particle,g_field,tfinal=tfinal,nparticles=nparticles,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
             pprint("Final loss fraction:", g_orbits.total_particles_lost)

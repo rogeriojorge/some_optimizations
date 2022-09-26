@@ -10,23 +10,24 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 2
-QA_or_QH = 'QH'
+max_mode = 1
+QA_or_QH = 'QA'
 optimizer = 'dual_annealing'
 s_initial = 0.3
 
-plt_opt_res = False
+plt_opt_res = True
 plot_vmec = False
-run_simple = True
+run_simple = False
 
-use_previous_results_if_available = True
+use_previous_results_if_available = False
 
 nparticles = 1500  # number of particles
 tfinal = 1e-2  # seconds
 nsamples = 10000  # number of time steps
 #################################
 if QA_or_QH == 'QA': nfp=2
-else: nfp=4
+elif QA_or_QH == 'QH': nfp=4
+elif QA_or_QH == 'QI': nfp=3
 out_dir = f'out_s{s_initial}_NFP{nfp}'
 out_csv = out_dir+f'/output_{optimizer}_{QA_or_QH}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
@@ -36,20 +37,26 @@ if plt_opt_res:
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),1.5]), axis=1)
     df['normalized_time'] = df.apply(lambda row: np.min([np.max([np.mean(row.eff_time),0]),10]), axis=1)
+    df['normalized_time'] = df[df['normalized_time']!=0]['normalized_time']
+    df['iota'] = df[df['iota']!=1.5]['iota']
     df.plot(use_index=True, y=['loss_fraction'])#,'iota'])#,'normalized_time'])
     plt.ylim([0,1.])
-    df.plot.scatter(y='normalized_time', x='loss_fraction')
-    df.plot.scatter(y='loss_fraction', x='iota')
+    plt.savefig(out_dir+'/loss_fraction_over_opt.pdf')
+    df.plot(use_index=True, y=['aspect'])#,'iota'])#,'normalized_time'])
+    plt.savefig(out_dir+'/aspect_over_opt.pdf')
+    # df.plot.scatter(y='normalized_time', x='loss_fraction')
+    # plt.savefig(out_dir+'/loss_vs_normtime.pdf')
+    # df.plot.scatter(y='loss_fraction', x='iota')
+    # plt.savefig(out_dir+'/loss_vs_iota.pdf')
     plt.show()
 #################################
-if plot_vmec or run_simple:
-    location_min = df['loss_fraction'].nsmallest(3).index[0] # chose the index to see smales, second smallest, etc
-    df_min = df.iloc[location_min]
-    print('Location of minimum:')
-    print(df_min)
-    os.chdir(out_dir)
-    os.makedirs('see_min', exist_ok=True)
-    os.chdir('see_min')
+location_min = df['loss_fraction'].nsmallest(3).index[0] # chose the index to see smales, second smallest, etc
+df_min = df.iloc[location_min]
+print('Location of minimum:')
+print(df_min)
+os.chdir(out_dir)
+os.makedirs('see_min', exist_ok=True)
+os.chdir('see_min')
 if plot_vmec:
     if os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
         vmec = Vmec(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc')
@@ -128,20 +135,10 @@ if run_simple:
         vmec.run()
 
     wout_filename = vmec.output_file
-    B_scale = 1  # Scale the magnetic field by a factor
-    Aminor_scale = 1  # Scale the machine size by a factor
+    s_initial = 0.3 # Same s_initial as precise quasisymmetry paper
+    B_scale = 5.7/vmec.wout.b0  # Scale the magnetic field by a factor
+    Aminor_scale = 1.7/vmec.wout.Aminor_p  # Scale the machine size by a factor
     notrace_passing = 0  # If 1 skip tracing of passing particles
-
-    redux_B = 2
-    redux_Aminor = 2
-    if QA_or_QH == 'QA':
-        B_scale = 8.58 / redux_B
-        Aminor_scale = 8.5 / redux_Aminor
-        aspect_ratio_target = 6
-    else:
-        B_scale = 6.55 / redux_B
-        Aminor_scale = 12.14 / redux_Aminor
-        aspect_ratio_target = 7
 
     g_field = Simple(wout_filename=wout_filename, B_scale=B_scale, Aminor_scale=Aminor_scale)
     g_particle = ChargedParticleEnsemble(r_initial=s_initial)
@@ -157,3 +154,6 @@ if run_simple:
     print(f"  Final loss fraction = {g_orbits.total_particles_lost}")
     # Plot resulting loss fraction
     g_orbits.plot_loss_fraction(show=False, save=True)
+    data=np.column_stack([g_orbits.time, g_orbits.loss_fraction_array])
+    datafile_path='./loss_history.dat'
+    np.savetxt(datafile_path, data, fmt=['%s','%s'])
