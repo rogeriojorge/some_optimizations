@@ -10,19 +10,19 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 1
+max_mode = 2
 QA_or_QH = 'QH'
 optimizer = 'dual_annealing'
-s_initial = 0.2
+s_initial = 0.3
 
-plt_opt_res = True
+plt_opt_res = False
 plot_vmec = False
-run_simple = False
+run_simple = True
 
 use_previous_results_if_available = True
 
 nparticles = 1500  # number of particles
-tfinal = 5e-3  # seconds
+tfinal = 1e-2  # seconds
 nsamples = 10000  # number of time steps
 #################################
 if QA_or_QH == 'QA': nfp=2
@@ -156,5 +156,4 @@ if run_simple:
     )
     print(f"  Final loss fraction = {g_orbits.total_particles_lost}")
     # Plot resulting loss fraction
-    g_orbits.plot_loss_fraction()
-    plt.savefig('loss_fraction_plot.png')
+    g_orbits.plot_loss_fraction(show=False, save=True)

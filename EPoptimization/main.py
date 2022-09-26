@@ -27,8 +27,8 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 400
-max_modes = [1, 2]
+MAXITER = 300
+max_modes = [1]
 QA_or_QH = 'QH'
 opt_quasisymmetry = False
 opt_EP = True
@@ -38,9 +38,9 @@ plot_result = True
 optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
 use_previous_results_if_available = True
 
-s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 1200  # number of particles
-tfinal = 7e-5  # total time of tracing in seconds
+s_initial = 0.2  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
+nparticles = 1100  # number of particles
+tfinal = 4e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
