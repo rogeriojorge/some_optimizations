@@ -28,8 +28,8 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 3
-max_modes = [1]
+MAXITER = 500
+max_modes = [1, 2]
 QA_or_QH_or_QI = 'QA'
 opt_quasisymmetry = False
 opt_EP = True
@@ -44,6 +44,7 @@ use_previous_results_if_available = False
 weight_optEP = 100.0
 weight_opt_Mirror = 10.0
 weight_opt_Elongation = 1.0
+weight_opt_well = 0.1
 redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
 redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
 if QA_or_QH_or_QI == 'QA': aspect_ratio_target = 6
@@ -51,8 +52,8 @@ elif QA_or_QH_or_QI == 'QH': aspect_ratio_target = 7
 elif QA_or_QH_or_QI == 'QI': aspect_ratio_target = 8
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 700  # number of particles
-tfinal = 7e-5  # total time of tracing in seconds
+nparticles = 600  # number of particles
+tfinal = 6e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
@@ -64,6 +65,7 @@ notrace_passing = 0 # if 1 skips tracing of passing particles, else traces them
 
 nruns_opt_average = 1 # number of particle tracing runs to average over in cost function
 iota_target = -0.42
+well_target = 0.1
 
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
@@ -92,10 +94,9 @@ if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'i
         time.sleep(0.5)
     filename = os.path.join(dest, 'input.final')
 else:
-    if QA_or_QH_or_QI == 'QA': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp2_QA')
-    elif QA_or_QH_or_QI == 'QH': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.nfp4_QH')
-    elif QA_or_QH_or_QI == 'QI': filename = os.path.join(os.path.dirname(__file__), 'initial_configs', 'input.QI')
-os.chdir(OUT_DIR)
+    if QA_or_QH_or_QI == 'QA': filename = os.path.join(this_path, 'initial_configs', 'input.nfp2_QA')
+    elif QA_or_QH_or_QI == 'QH': filename = os.path.join(this_path, 'initial_configs', 'input.nfp4_QH')
+    elif QA_or_QH_or_QI == 'QI': filename = os.path.join(this_path, 'initial_configs', 'input.QI')
 vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary
@@ -169,7 +170,7 @@ if MPI.COMM_WORLD.rank == 0:
 if QA_or_QH_or_QI == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
 else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
 opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
-if opt_well: opt_tuple.append((vmec.vacuum_well, 0.1, 1))
+if opt_well: opt_tuple.append((vmec.vacuum_well, well_target, weight_opt_well))
 if opt_iota: opt_tuple.append((vmec.mean_iota, iota_target, 1))
 if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
