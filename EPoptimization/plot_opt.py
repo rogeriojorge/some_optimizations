@@ -1,8 +1,10 @@
 #!/usr/bin/env python
 import os
 import sys
+import shutil
 import numpy as np
 import pandas as pd
+from subprocess import run
 import matplotlib.pyplot as plt
 from simsopt.mhd import Vmec, Boozer
 from simsopt.mhd import QuasisymmetryRatioResidual
@@ -15,9 +17,10 @@ QA_or_QH = 'QA'
 optimizer = 'dual_annealing'
 s_initial = 0.3
 
-plt_opt_res = True
+plt_opt_res = False
 plot_vmec = False
 run_simple = False
+run_neo = True
 
 use_previous_results_if_available = False
 
@@ -157,3 +160,30 @@ if run_simple:
     data=np.column_stack([g_orbits.time, g_orbits.loss_fraction_array])
     datafile_path='./loss_history.dat'
     np.savetxt(datafile_path, data, fmt=['%s','%s'])
+
+if run_neo:
+    print("Run NEO")
+    shutil.copy('../../initial_configs/neo_in.example', 'neo_in.out')
+    bashCommand = "../../initial_configs/xneo out"
+    run(bashCommand.split())
+    print("Plot NEOresult")
+    token = open('neo_out.out','r')
+    linestoken=token.readlines()
+    eps_eff=[]
+    s_radial=[]
+    for x in linestoken:
+        s_radial.append(float(x.split()[0])/150)
+        eps_eff.append(float(x.split()[1])**(2/3))
+    token.close()
+    s_radial = np.array(s_radial)
+    eps_eff = np.array(eps_eff)
+    s_radial = s_radial[np.argwhere(~np.isnan(eps_eff))[:,0]]
+    eps_eff = eps_eff[np.argwhere(~np.isnan(eps_eff))[:,0]]
+    fig = plt.figure(figsize=(7, 3), dpi=200)
+    ax = fig.add_subplot(111)
+    plt.plot(s_radial,eps_eff, label='eps eff')
+    # ax.set_yscale('log')
+    plt.xlabel(r'$s=\psi/\psi_b$', fontsize=12)
+    plt.ylabel(r'$\epsilon_{eff}$', fontsize=14)
+    plt.tight_layout()
+    fig.savefig('neo_out.pdf', dpi=fig.dpi)#, bbox_inches = 'tight', pad_inches = 0)
