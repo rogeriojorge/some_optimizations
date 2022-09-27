@@ -42,8 +42,8 @@ optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, 
 use_previous_results_if_available = False
 
 weight_optEP = 100.0
-weight_opt_Mirror = 10.0
-weight_opt_Elongation = 1.0
+weight_opt_Mirror = 100.0
+weight_opt_Elongation = 10.0
 weight_opt_well = 0.1
 redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
 redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
