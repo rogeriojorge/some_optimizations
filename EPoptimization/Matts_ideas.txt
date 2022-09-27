@@ -1,0 +1,2 @@
+Trace only trapped particles
+Make the random seed in SIMPLE the same
