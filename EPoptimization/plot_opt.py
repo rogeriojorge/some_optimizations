@@ -22,6 +22,7 @@ plot_vmec = False
 run_simple = False
 run_neo = False
 
+use_final = True
 use_previous_results_if_available = False
 
 nparticles = 1500  # number of particles
@@ -65,7 +66,9 @@ os.chdir(out_dir)
 os.makedirs('see_min', exist_ok=True)
 os.chdir('see_min')
 if plot_vmec:
-    if os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
+    if use_final and os.path.isfile(f'../wout_final.nc'):
+        vmec = Vmec(f'../wout_final.nc')
+    elif os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
         vmec = Vmec(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc')
     else:
         vmec = Vmec(f'../../initial_configs/input.nfp{nfp}_{QA_or_QH}')
@@ -119,7 +122,9 @@ if plot_vmec:
     plt.savefig("Boozxform_modeplot.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
 #################################
 if run_simple:
-    if os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
+    if use_final and os.path.isfile(f'../wout_final.nc'):
+        vmec = Vmec(f'../wout_final.nc')
+    elif os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
         vmec = Vmec(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc')
     else:
         vmec = Vmec(f'../../initial_configs/input.nfp{nfp}_{QA_or_QH}')
