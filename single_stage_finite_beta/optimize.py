@@ -8,6 +8,10 @@ import logging
 import numpy as np
 import pandas as pd
 from mpi4py import MPI
+format = "%(levelname)s:%(name)s:%(lineno)d %(message)s"
+format = "[{}] ".format(MPI.COMM_WORLD.Get_rank()) + format
+# logging.basicConfig(level=logger.info, format=format)#, filename='output_parallel.txt')
+# logger = logging.getLogger(__name__)
 from math import isnan
 import booz_xform as bx
 from pathlib import Path
@@ -15,6 +19,7 @@ from simsopt import load
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 from simsopt.util import MpiPartition
+from simsopt.util.mpi import log
 from simsopt._core.derivative import Derivative
 from simsopt.solve import least_squares_mpi_solve
 from simsopt._core.optimizable import make_optimizable, Optimizable
@@ -24,7 +29,7 @@ from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual, VirtualCasing
 from simsopt.objectives import SquaredFlux, QuadraticPenalty, LeastSquaresProblem
 from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
                         LpCurveCurvature, ArclengthVariation, curves_to_vtk, create_equally_spaced_curves)
-logging.basicConfig()
+# logging.basicConfig()
 logger = logging.getLogger('single_stage')
 logger.setLevel(1)
 comm = MPI.COMM_WORLD
@@ -43,8 +48,8 @@ QA_or_QH = 'QH'
 stage_1=False
 single_stage=True
 MAXITER_stage_1 = 10
-MAXITER_stage_2 = 3
-MAXITER_single_stage = 10
+MAXITER_stage_2 = 1
+MAXITER_single_stage = 1
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
@@ -67,7 +72,7 @@ vc_src_nphi=50
 nmodes_coils = 7
 coils_objective_weight = 1e+3
 iota_target = 0.42
-use_previous_results_if_available = False
+use_previous_results_if_available = True
 vacuum_well_target=0.1
 vacuum_well_weight=1
 quasisymmetry_helicity_m = 1
@@ -247,53 +252,20 @@ def plot_df_stage2(df, max_mode):
 ## Define main optimization function with gradients
 #############################################################
 pprint(f'  Performing Single Stage optimization with {MAXITER_single_stage} iterations')
-class fun_J_class(Optimizable):
-    def __init__(self, v):
-        self.vmec = v
-        Optimizable.__init__(self, depends_on=[v])
-
-    def J(self):
-        self.vmec.run()
-        if finite_beta:
-            try:
-                logger.info(f"Running virtual casing")
-                vc = VirtualCasing.from_vmec(self.vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-                Jf = SquaredFlux(self.vmec.boundary, bs, local=True, target=vc.B_external_normal)
-                JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
-            except Exception as e:
-                logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
-                J_output = JACOBIAN_THRESHOLD
-                Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
-        bs.set_points(self.vmec.boundary.gamma().reshape((-1, 3)))
-
-        J_stage_1 = prob.objective()
-        J_stage_2 = coils_objective_weight * JF.J()
-        J_output =  J_stage_1 + J_stage_2
-        return J_output
-
-def fun_J(dofsss):
+def fun_J(dofs_vmec, dofs_coils):
     run_vcasing = False
-    if len(dofsss)>number_vmec_dofs:
-        logger.info(f'Running fun_J with all dofs')
-        if np.sum(JF.x!=dofsss[:-number_vmec_dofs])>0:
-            JF.x = dofsss[:-number_vmec_dofs]
-        if np.sum(prob.x!=dofsss[-number_vmec_dofs:])>0:
-            prob.x = dofsss[-number_vmec_dofs:]
-            run_vcasing = True
-    elif len(dofsss)==number_vmec_dofs:
-        if np.sum(prob.x!=dofsss)>0:
-            prob.x = dofsss
-            run_vcasing = True
-    else:
-        print('dofs in fun_J less than number of vmec dofs')
+    if np.sum(JF.x!=dofs_coils)>0:
+        JF.x = dofs_coils
+    if np.sum(prob.x!=dofs_vmec)>0:
+        prob.x = dofs_vmec
+        run_vcasing = True
     if finite_beta and run_vcasing:
         try:
-            logger.info(f"Running virtual casing")
+            logger.info('Running virtual casing')
             vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
             Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
             JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
         except Exception as e:
-            logger.info(f"Exception caught during VirtualCasing calculation. Returning J={JACOBIAN_THRESHOLD}")
             J = JACOBIAN_THRESHOLD
             Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
     bs.set_points(surf.gamma().reshape((-1, 3)))
@@ -308,8 +280,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
     logger.info('Entering fun')
     info['Nfeval'] += 1
     os.chdir(vmec_results_path)
-
-    J = fun_J(dofss)
+    J = fun_J(dofss[-number_vmec_dofs:],dofss[:-number_vmec_dofs])
     if J > JACOBIAN_THRESHOLD or isnan(J):
         logger.info(f"Exception caught during function evaluation with J={J}. Returning J={JACOBIAN_THRESHOLD}")
         J = JACOBIAN_THRESHOLD
@@ -340,7 +311,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
         logger.info(f'Now calculating the gradient')
         if finite_beta:
             grad_with_respect_to_coils = coils_objective_weight * JF.dJ()
-            grad_with_respect_to_surface = prob_jacobian.jac(prob.x)[0]
+            grad_with_respect_to_surface = prob_jacobian.jac(dofss[-number_vmec_dofs:], dofss[:-number_vmec_dofs])[0]
             # pprint(f'grad_with_respect_to_surface={grad_with_respect_to_surface}')
             grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
             # alternative_grad = prob_jacobian.jac(dofss)[0]
@@ -503,20 +474,22 @@ for max_mode in max_modes:
         pprint(f'  Performing single stage optimization with {MAXITER_single_stage} iterations')
         if finite_beta:
             # If in finite beta, MPI is used to compute the gradients of surface dofs of J=J_stage1+J_stage2
-            opt = make_optimizable(fun_J, dofs[-number_vmec_dofs:], dof_indicators=["dof"])
+            opt = make_optimizable(fun_J, dofs[-number_vmec_dofs:], dofs[:-number_vmec_dofs], dof_indicators=["dof","non-dof"])
             with MPIFiniteDifference(opt.J, mpi, diff_method=diff_method, abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as prob_jacobian:
             # o = fun_J_class(vmec)
             # with MPIFiniteDifference(o.J, mpi, diff_method=diff_method, abs_step=finite_difference_abs_step, rel_step=finite_difference_rel_step) as prob_jacobian:
                 if mpi.proc0_world:
                     res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
+                    dofs = res.x
         else:
             # If in vacuum, MPI is used to compute the gradients of J=J_stage1 only
             with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=diff_method) as prob_jacobian:
                 if mpi.proc0_world:
                     res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
 
-        vmec.x = res.x[-number_vmec_dofs:]
-        JF.x = res.x[:-number_vmec_dofs]
+        mpi.comm_world.Bcast(dofs, root=0)
+        vmec.x = dofs[-number_vmec_dofs:]
+        JF.x = dofs[:-number_vmec_dofs]
         Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
 
     if mpi.proc0_world:

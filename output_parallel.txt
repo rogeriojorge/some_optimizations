@@ -1,0 +1,824 @@
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:325 Entering fun
+[0] INFO:root:287 Running fun_J with all dofs
+[0] INFO:root:314 JF.x after vc=[ 1.12132779e+00  1.15155974e+00  1.18706457e+00  1.16226376e+00
+  1.02590916e-02  3.50194509e-01 -1.78396775e-02  8.75452519e-02
+  1.64631471e-02 -3.93625910e-02  6.01100724e-03  1.07875057e-03
+  1.67637790e-03 -1.31417512e-03 -8.74213714e-04  8.81528593e-04
+ -4.45828797e-04 -5.57641849e-05  1.64937197e-01  2.63892487e-02
+  1.37688842e-01 -1.31545433e-01 -1.54233509e-02 -9.34067934e-03
+ -2.61708955e-02 -5.93721024e-03 -7.82421359e-03  5.34966617e-03
+  1.79879336e-03 -2.68083665e-04  1.72029877e-03  3.21677371e-05
+  4.21882240e-04 -7.36640744e-02  4.43181515e-01  1.27962899e-02
+  8.72220925e-02  4.30165926e-02 -3.94396101e-02 -1.01242540e-02
+ -1.91615153e-03 -6.96899665e-03 -1.16795087e-03 -3.15140720e-03
+  1.17794349e-03  6.72601490e-04  4.93299544e-05  5.18213525e-04
+  9.70203400e-01  7.46921438e-02  2.70007237e-01 -4.52231620e-02
+  6.24320782e-02  3.17352311e-02 -2.08356731e-02 -1.98052649e-03
+  1.17216202e-02 -5.31622532e-04 -3.36804231e-04 -4.26300772e-04
+ -7.22591719e-04  4.00149631e-04 -1.09565998e-04  4.01728601e-01
+ -8.98656094e-02  3.03756780e-01 -1.12134838e-01 -7.73454863e-02
+  4.62874512e-02 -2.45149617e-02  2.05600174e-03  7.63648851e-03
+ -1.43087678e-03  3.49634925e-03 -1.90065295e-03 -1.61083491e-03
+  7.11308616e-04 -3.33748711e-04 -1.51084433e-01  4.02499456e-01
+  4.53893158e-02  7.75107828e-03  7.52575397e-02 -2.88883218e-02
+ -4.69733710e-02  1.61074844e-02 -7.29066367e-04  1.14002331e-03
+  2.24401787e-03 -1.51371428e-03  1.06781142e-03 -2.46888459e-04
+ -7.30523908e-04  7.73334483e-01  1.63195480e-01  2.39709200e-01
+ -7.75320178e-02  2.73904195e-02  3.99063709e-02 -4.98958457e-03
+ -1.27394108e-02  5.47698465e-03  1.17582756e-03 -1.85094320e-03
+  5.68390422e-04 -1.36438974e-04 -2.12543382e-04  3.82314404e-04
+  5.06767715e-01 -1.83939498e-01  3.24115866e-01 -2.89424189e-02
+ -1.22666225e-01  5.16151882e-02  3.32201810e-02 -1.89514248e-02
+  2.88815530e-03  1.82546600e-03 -3.72704750e-03  1.08464645e-03
+  4.09800245e-04 -3.58791920e-04  4.42544020e-04 -1.21624887e-01
+  3.33848681e-01  5.72170847e-02 -4.54227452e-02  3.96043904e-02
+  1.90832231e-02 -5.49086611e-02  5.56338945e-03  2.22473095e-02
+ -4.43530442e-03 -2.71934125e-03  5.56542168e-04 -1.06593800e-03
+  4.98984748e-04  4.65255336e-04  6.47151733e-01  2.12319261e-01
+  2.62874705e-01 -9.27894221e-02 -3.41709786e-02  3.90194517e-02
+  2.81156292e-02 -1.28386410e-02 -1.05478747e-02  2.55724018e-03
+  2.21350078e-03  1.72442502e-04 -1.20713725e-04 -4.36587144e-04
+ -1.12626492e-04  5.69121692e-01 -2.18566255e-01  2.96523212e-01
+  5.63922465e-02 -9.88897837e-02  9.16037477e-05  5.62989140e-02
+ -7.97925409e-03 -1.84358888e-02  4.13972576e-03  3.21210082e-03
+ -1.21877435e-03  3.36588053e-04  1.62793686e-04 -5.01482701e-04
+ -4.35821882e-02  2.84625241e-01  2.54680439e-02 -4.95482100e-02
+  7.62985746e-03  4.92422264e-02 -2.07155309e-02 -1.97514618e-02
+  1.33360844e-02  4.45745769e-03 -4.90203829e-03 -2.16930421e-04
+  1.01042214e-03 -3.04695005e-04  6.48394737e-05]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4899247210163211
+[0] INFO:root:319 J_stage_1=0.4899247210163211
+[0] INFO:root:320 J_stage_2=97.67579771113381
+[0] INFO:root:334 Writing result
+[0] INFO:root:356 Objective function 98.16572243215013 is smaller than the threshold 250
+[0] INFO:root:357 Now calculating the gradient
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:325 Entering fun
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:324 Entering fun
+[0] INFO:root:286 Running fun_J with all dofs
+[0] INFO:root:313 JF.x after vc=[ 1.12132779e+00  1.15155974e+00  1.18706457e+00  1.16226376e+00
+  1.02590916e-02  3.50194509e-01 -1.78396775e-02  8.75452519e-02
+  1.64631471e-02 -3.93625910e-02  6.01100724e-03  1.07875057e-03
+  1.67637790e-03 -1.31417512e-03 -8.74213714e-04  8.81528593e-04
+ -4.45828797e-04 -5.57641849e-05  1.64937197e-01  2.63892487e-02
+  1.37688842e-01 -1.31545433e-01 -1.54233509e-02 -9.34067934e-03
+ -2.61708955e-02 -5.93721024e-03 -7.82421359e-03  5.34966617e-03
+  1.79879336e-03 -2.68083665e-04  1.72029877e-03  3.21677371e-05
+  4.21882240e-04 -7.36640744e-02  4.43181515e-01  1.27962899e-02
+  8.72220925e-02  4.30165926e-02 -3.94396101e-02 -1.01242540e-02
+ -1.91615153e-03 -6.96899665e-03 -1.16795087e-03 -3.15140720e-03
+  1.17794349e-03  6.72601490e-04  4.93299544e-05  5.18213525e-04
+  9.70203400e-01  7.46921438e-02  2.70007237e-01 -4.52231620e-02
+  6.24320782e-02  3.17352311e-02 -2.08356731e-02 -1.98052649e-03
+  1.17216202e-02 -5.31622532e-04 -3.36804231e-04 -4.26300772e-04
+ -7.22591719e-04  4.00149631e-04 -1.09565998e-04  4.01728601e-01
+ -8.98656094e-02  3.03756780e-01 -1.12134838e-01 -7.73454863e-02
+  4.62874512e-02 -2.45149617e-02  2.05600174e-03  7.63648851e-03
+ -1.43087678e-03  3.49634925e-03 -1.90065295e-03 -1.61083491e-03
+  7.11308616e-04 -3.33748711e-04 -1.51084433e-01  4.02499456e-01
+  4.53893158e-02  7.75107828e-03  7.52575397e-02 -2.88883218e-02
+ -4.69733710e-02  1.61074844e-02 -7.29066367e-04  1.14002331e-03
+  2.24401787e-03 -1.51371428e-03  1.06781142e-03 -2.46888459e-04
+ -7.30523908e-04  7.73334483e-01  1.63195480e-01  2.39709200e-01
+ -7.75320178e-02  2.73904195e-02  3.99063709e-02 -4.98958457e-03
+ -1.27394108e-02  5.47698465e-03  1.17582756e-03 -1.85094320e-03
+  5.68390422e-04 -1.36438974e-04 -2.12543382e-04  3.82314404e-04
+  5.06767715e-01 -1.83939498e-01  3.24115866e-01 -2.89424189e-02
+ -1.22666225e-01  5.16151882e-02  3.32201810e-02 -1.89514248e-02
+  2.88815530e-03  1.82546600e-03 -3.72704750e-03  1.08464645e-03
+  4.09800245e-04 -3.58791920e-04  4.42544020e-04 -1.21624887e-01
+  3.33848681e-01  5.72170847e-02 -4.54227452e-02  3.96043904e-02
+  1.90832231e-02 -5.49086611e-02  5.56338945e-03  2.22473095e-02
+ -4.43530442e-03 -2.71934125e-03  5.56542168e-04 -1.06593800e-03
+  4.98984748e-04  4.65255336e-04  6.47151733e-01  2.12319261e-01
+  2.62874705e-01 -9.27894221e-02 -3.41709786e-02  3.90194517e-02
+  2.81156292e-02 -1.28386410e-02 -1.05478747e-02  2.55724018e-03
+  2.21350078e-03  1.72442502e-04 -1.20713725e-04 -4.36587144e-04
+ -1.12626492e-04  5.69121692e-01 -2.18566255e-01  2.96523212e-01
+  5.63922465e-02 -9.88897837e-02  9.16037477e-05  5.62989140e-02
+ -7.97925409e-03 -1.84358888e-02  4.13972576e-03  3.21210082e-03
+ -1.21877435e-03  3.36588053e-04  1.62793686e-04 -5.01482701e-04
+ -4.35821882e-02  2.84625241e-01  2.54680439e-02 -4.95482100e-02
+  7.62985746e-03  4.92422264e-02 -2.07155309e-02 -1.97514618e-02
+  1.33360844e-02  4.45745769e-03 -4.90203829e-03 -2.16930421e-04
+  1.01042214e-03 -3.04695005e-04  6.48394737e-05]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4899247210163211
+[0] INFO:root:318 J_stage_1=0.4899247210163211
+[0] INFO:root:319 J_stage_2=97.67579771113381
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:327 Entering fun
+[0] INFO:simsopt.mhd.vmec:279 Initializing a VMEC object from input file: /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/input.QH_finitebeta
+[0] INFO:simsopt.mhd.vmec:330 About to call runvmec to readin
+[0] INFO:simsopt.mhd.vmec:333 Done with runvmec. ierr=0. Calling cleanup next.
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/wout_QH_finitebeta_000_000000.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:absl:174 Remote TPU is not linked into jax; skipping remote TPU.
+[0] INFO:absl:350 Unable to initialize backend 'tpu_driver': Could not initialize backend 'tpu_driver'
+[0] INFO:absl:350 Unable to initialize backend 'cuda': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'rocm': module 'jaxlib.xla_extension' has no attribute 'GpuAllocatorConfig'
+[0] INFO:absl:350 Unable to initialize backend 'tpu': module 'jaxlib.xla_extension' has no attribute 'get_tpu_client'
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:315 Entering fun
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4899247210163211
+[0] INFO:root:309 J_stage_1=0.4899247210163211
+[0] INFO:root:310 J_stage_2=42.65882233416492
+[0] INFO:root:323 Writing result
+[0] INFO:root:345 Objective function 43.14874705518124 is smaller than the threshold 250
+[0] INFO:root:346 Now calculating the gradient
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4899247210163211
+[0] INFO:root:309 J_stage_1=0.4899247210163211
+[0] INFO:root:310 J_stage_2=42.65882233416492
+[0] INFO:simsopt._core.finite_difference:202 Beginning parallel finite difference gradient calculation
+[0] INFO:simsopt._core.finite_difference:208 nparams: 8
+[0] INFO:simsopt._core.finite_difference:209 x0:  [ 0.13125988 -0.07246449  0.15687388  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:simsopt._core.finite_difference:242 size of evals is (1, 9)
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4899247210163211
+[0] INFO:root:309 J_stage_1=0.4899247210163211
+[0] INFO:root:310 J_stage_2=42.65882233416492
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:292 Running virtual casing
+[0] INFO:root:293 vmec dofs=[ 0.131273   -0.07246449  0.15687388  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:294 JF.x before vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/vmec/wout_QH_finitebeta_000_000001.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:296 surf dofs=[ 0.131273   -0.07246449  0.15687388  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4900842479808843
+[0] INFO:root:309 J_stage_1=0.4900842479808843
+[0] INFO:root:310 J_stage_2=42.661862218531766
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:292 Running virtual casing
+[0] INFO:root:293 vmec dofs=[ 0.13125988 -0.07245724  0.15687388  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:294 JF.x before vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/vmec/wout_QH_finitebeta_000_000002.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:296 surf dofs=[ 0.13125988 -0.07245724  0.15687388  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4903947992668701
+[0] INFO:root:309 J_stage_1=0.4903947992668701
+[0] INFO:root:310 J_stage_2=42.65386133444212
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:292 Running virtual casing
+[0] INFO:root:293 vmec dofs=[ 0.13125988 -0.07246449  0.15688956  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:294 JF.x before vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/vmec/wout_QH_finitebeta_000_000003.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:root:296 surf dofs=[ 0.13125988 -0.07246449  0.15688956  0.0036007   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:304 JF.x after vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.objectives.least_squares:207 objective() called with x=None
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
+[0] INFO:simsopt.objectives.least_squares:214 objective(): 0.4904227750321647
+[0] INFO:root:309 J_stage_1=0.4904227750321647
+[0] INFO:root:310 J_stage_2=42.659978717053455
+[0] INFO:simsopt._core.optimizable:1531 reassembled args len is 2
+[0] INFO:root:292 Running virtual casing
+[0] INFO:root:293 vmec dofs=[ 0.13125988 -0.07246449  0.15687388  0.0036017   0.11319857  0.06757274
+  0.15929478  0.00502891]
+[0] INFO:root:294 JF.x before vc=[ 1.13258935e+00  1.15891775e+00  1.18959759e+00  1.11916286e+00
+  1.43168364e-03  3.96863403e-01 -1.04981316e-02  6.59455709e-02
+  9.23862503e-03 -2.87872764e-02  8.37082990e-03 -1.06151025e-03
+ -4.95433998e-04  2.15362536e-03 -2.37710026e-03 -7.91264278e-04
+  6.12281879e-03  2.10399273e-03  1.58394207e-01  2.73137464e-02
+  1.26073388e-01 -1.14387132e-01 -1.26127788e-02 -1.46947781e-02
+ -2.53673158e-02  5.50871766e-03 -7.82026884e-04 -1.10408211e-03
+ -2.87028748e-03 -8.37552171e-04 -9.30050305e-04 -2.01095499e-03
+  1.01462536e-02 -6.73533792e-02  4.61365013e-01  1.15477392e-02
+  7.51095268e-02  3.41258571e-02 -3.54150017e-02 -7.18550417e-03
+ -9.67562187e-04 -5.44264646e-03  1.25355243e-03 -3.68633103e-03
+  1.24160516e-03  3.55851847e-03  6.68418899e-04 -4.27715954e-03
+  9.55345351e-01  5.08412082e-02  3.12375247e-01 -3.00930550e-02
+  6.15918310e-02  3.00740927e-02 -2.15350420e-02 -1.57326389e-03
+  1.28744621e-02 -1.08496511e-03 -1.04131419e-03  1.62481238e-04
+  8.79176983e-04  6.07656968e-04 -2.12495603e-03  3.98116833e-01
+ -6.81082738e-02  2.84125994e-01 -1.05614385e-01 -7.80612970e-02
+  3.97701696e-02 -2.32339442e-02  4.53339590e-04  9.80702287e-03
+ -9.09317242e-04  1.74603276e-03 -2.21635449e-03  3.39119960e-05
+  2.68177794e-03 -1.40391126e-03 -1.40655580e-01  4.23895268e-01
+  4.13480146e-02  1.34605496e-02  6.28928513e-02 -2.97033084e-02
+ -4.58857014e-02  1.81422855e-02  2.23582367e-03  6.20078564e-04
+  1.43359273e-03 -3.36172088e-04  1.07151326e-04 -2.50458494e-03
+ -3.23369148e-04  7.73580573e-01  1.27036719e-01  2.74868651e-01
+ -7.03905624e-02  4.47552852e-02  4.44710894e-02  2.24128845e-03
+ -1.13665759e-02  9.97164220e-03  4.03526015e-03 -1.34160709e-03
+  2.77866620e-03 -1.59588366e-03 -7.47978692e-04 -3.37064575e-05
+  5.10241597e-01 -1.48680590e-01  3.20888661e-01 -1.85754182e-02
+ -1.20563594e-01  4.85185418e-02  2.98469145e-02 -1.90613927e-02
+ -4.10322098e-04  1.44362435e-03 -3.92139948e-03 -4.07478296e-04
+  2.47799943e-04 -3.72361100e-04  1.25798729e-03 -1.17477045e-01
+  3.63800795e-01  5.11456670e-02 -2.95193579e-02  3.52914280e-02
+  2.46055966e-02 -5.71194603e-02  3.61057428e-03  2.00129136e-02
+ -2.56451032e-03 -3.19741083e-03 -3.66491415e-04 -2.26812437e-03
+  6.06073365e-04  5.78012435e-04  6.46491117e-01  1.68621979e-01
+  2.86952676e-01 -9.89964691e-02 -9.00864615e-03  3.78275594e-02
+  4.10179709e-02 -1.69531816e-02 -6.16368276e-03  2.50026000e-03
+  5.10730566e-03  7.18092530e-04  3.27613455e-03 -1.63467976e-04
+  1.53798570e-04  5.70407621e-01 -1.76503445e-01  3.09070984e-01
+  7.02173803e-02 -8.32504961e-02  4.39337771e-03  5.99363172e-02
+ -3.10745599e-03 -1.96888123e-02  5.97600134e-03  3.30772296e-03
+  9.15953358e-04 -2.36081713e-04  8.03957134e-05 -1.19357643e-03
+ -4.45625029e-02  3.24318289e-01  2.18037814e-02 -2.88044867e-02
+  7.67141837e-03  6.09769334e-02 -2.13799797e-02 -1.38109602e-02
+  8.86390009e-03  4.69814136e-03 -4.44712840e-03  2.34063586e-03
+ -1.41423858e-03 -7.51352198e-04  2.61655701e-04]
+[0] INFO:simsopt.mhd.vmec:662 Preparing to run VMEC.
+[0] INFO:simsopt.mhd.vmec:684 Calling VMEC reinit().
+[0] INFO:simsopt.mhd.vmec:687 Calling runvmec().
+[0] INFO:simsopt.mhd.vmec:699 Calling VMEC cleanup().
+[0] INFO:simsopt.mhd.vmec:716 VMEC run complete. Now loading output.
+[0] INFO:simsopt.mhd.vmec:766 Attempting to read file /Users/rogeriojorge/local/some_optimizations/single_stage_finite_beta/optimization_QH_len3.1_finitebeta/vmec/wout_QH_finitebeta_000_000004.nc
+[0] INFO:simsopt.mhd.vmec:720 Done loading VMEC output.
+[0] INFO:simsopt.mhd.virtual_casing:173 new src_ntheta: 49
+[0] INFO:simsopt.mhd.vmec:656 run() called but no need to re-run VMEC.
