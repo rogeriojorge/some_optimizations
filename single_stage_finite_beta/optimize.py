@@ -8,8 +8,8 @@ import logging
 import numpy as np
 import pandas as pd
 from mpi4py import MPI
-format = "%(levelname)s:%(name)s:%(lineno)d %(message)s"
-format = "[{}] ".format(MPI.COMM_WORLD.Get_rank()) + format
+# format = "%(levelname)s:%(name)s:%(lineno)d %(message)s"
+# format = "[{}] ".format(MPI.COMM_WORLD.Get_rank()) + format
 # logging.basicConfig(level=logger.info, format=format)#, filename='output_parallel.txt')
 # logger = logging.getLogger(__name__)
 from math import isnan
@@ -19,10 +19,9 @@ from simsopt import load
 import matplotlib.pyplot as plt
 from scipy.optimize import minimize
 from simsopt.util import MpiPartition
-from simsopt.util.mpi import log
 from simsopt._core.derivative import Derivative
 from simsopt.solve import least_squares_mpi_solve
-from simsopt._core.optimizable import make_optimizable, Optimizable
+from simsopt._core.optimizable import make_optimizable
 from simsopt._core.finite_difference import MPIFiniteDifference
 from simsopt.field import BiotSavart, Current, coils_via_symmetries
 from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual, VirtualCasing
@@ -43,13 +42,13 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
+max_modes = [2, 2]
 QA_or_QH = 'QH'
-stage_1=False
-single_stage=True
-MAXITER_stage_1 = 10
-MAXITER_stage_2 = 1
-MAXITER_single_stage = 1
+stage_1=True
+single_stage=False
+MAXITER_stage_1 = 50
+MAXITER_stage_2 = 300
+MAXITER_single_stage = 50
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
