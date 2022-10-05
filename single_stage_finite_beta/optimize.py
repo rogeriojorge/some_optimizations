@@ -8,9 +8,9 @@ import logging
 import numpy as np
 import pandas as pd
 from mpi4py import MPI
-format = "%(levelname)s:%(name)s:%(lineno)d %(message)s"
-format = "[{}] ".format(MPI.COMM_WORLD.Get_rank()) + format
-logging.basicConfig(level=logging.INFO, format=format)#, filename='output_logger.txt')
+# format = "%(levelname)s:%(name)s:%(lineno)d %(message)s"
+# format = "[{}] ".format(MPI.COMM_WORLD.Get_rank()) + format
+# logging.basicConfig(level=logging.INFO, format=format)#, filename='output_logger.txt')
 # logger = logging.getLogger(__name__)
 from math import isnan
 import booz_xform as bx
@@ -28,11 +28,9 @@ from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual, VirtualCasing
 from simsopt.objectives import SquaredFlux, QuadraticPenalty, LeastSquaresProblem
 from simsopt.geo import (CurveLength, CurveCurveDistance, MeanSquaredCurvature,
                         LpCurveCurvature, ArclengthVariation, curves_to_vtk, create_equally_spaced_curves)
-# logging.basicConfig()
-
+logging.basicConfig()
 logger = logging.getLogger('single_stage')
 logger.setLevel(1)
-
 comm = MPI.COMM_WORLD
 def pprint(*args, **kwargs):
     if comm.rank == 0:
@@ -48,9 +46,9 @@ max_modes = [1]
 QA_or_QH = 'QH'
 stage_1=False
 single_stage=True
-MAXITER_stage_1 = 50
-MAXITER_stage_2 = 3
-MAXITER_single_stage = 50
+MAXITER_stage_1 = 100
+MAXITER_stage_2 = 70
+MAXITER_single_stage = 100
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
@@ -71,7 +69,7 @@ nphi_VMEC=32
 ntheta_VMEC=32
 vc_src_nphi=50
 nmodes_coils = 7
-coils_objective_weight = 1e+1
+coils_objective_weight = 1e+2
 iota_target = 0.42
 use_previous_results_if_available = True
 vacuum_well_target=0.1
@@ -256,15 +254,9 @@ pprint(f'  Starting optimization')
 def fun_J(dofs_vmec, dofs_coils):
     run_vcasing = False
     dofs_coils = np.ravel(dofs_coils)
-    # logger.info(f'dofs_vmec={dofs_vmec}')
-    # logger.info(f'prob.x={prob.x}')
-    logging.info(f'dofs_coils={dofs_coils[0:7]}')
-    logging.info(f'JF.x={JF.x[0:7]}')
     if np.sum(JF.x!=dofs_coils)>0:
-        logging.info(f'Altering JF.x with dofs_coils-JF.x={(dofs_coils-JF.x)[0:7]}')
         JF.x = dofs_coils
     if np.sum(prob.x!=dofs_vmec)>0:
-        logging.info(f'Altering prob.x with dofs_vmec-prob.x={dofs_vmec-prob.x}')
         prob.x = dofs_vmec
         run_vcasing = True
     if finite_beta and run_vcasing:
@@ -273,11 +265,6 @@ def fun_J(dofs_vmec, dofs_coils):
             vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
             Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
             JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
-            # logging.info(f'surf.x-vmec.x={surf.x-vmec.x}')
-            # logging.info(f'surf.x-prob.x={surf.x-prob.x}')
-            # logging.info(f'surf.x-dofs_vmec={surf.x-dofs_vmec}')
-            # logging.info(f'JF.x-dofs_coils={(JF.x-dofs_coils)[0:7]}')
-            # logging.info(f'Jf.x-dofs_coils={(Jf.x-dofs_coils)[0:7]}')
         except Exception as e:
             J = JACOBIAN_THRESHOLD
             Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
@@ -285,8 +272,6 @@ def fun_J(dofs_vmec, dofs_coils):
     J_stage_1 = prob.objective()
     J_stage_2 = coils_objective_weight * JF.J()
     J = J_stage_1 + J_stage_2
-    logging.info(f'J_stage_1={J_stage_1}')
-    logging.info(f'J_stage_2={J_stage_2}')
     return J
 ##########################################################################################
 ##########################################################################################
@@ -295,8 +280,6 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
     info['Nfeval'] += 1
     os.chdir(vmec_results_path)
 
-    logger.info(f'True vmec dofs = {dofss[-number_vmec_dofs:]}')
-    logger.info(f'True coils dofs = {dofss[:-number_vmec_dofs][0:7]}')
     J = fun_J(dofss[-number_vmec_dofs:],dofss[:-number_vmec_dofs])
 
     if J > JACOBIAN_THRESHOLD or isnan(J):
@@ -329,12 +312,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
         logger.info(f'Now calculating the gradient')
         if finite_beta:
             grad_with_respect_to_coils = coils_objective_weight * JF.dJ()
-            logger.info(f'True coils dofs = {dofss[:-number_vmec_dofs][0:7]}')
-            logger.info(f'True vmec dofs = {dofss[-number_vmec_dofs:]}')
-            logger.info(f'True JF.x = {JF.x[0:7]}')
             grad_with_respect_to_surface = prob_jacobian.jac(prob.x, JF.x)[0]
-            logging.info(f'grad_with_respect_to_coils={grad_with_respect_to_coils}')
-            logging.info(f'grad_with_respect_to_surface={grad_with_respect_to_surface}')
             # pprint(f'grad_with_respect_to_surface={grad_with_respect_to_surface}')
             grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
             # alternative_grad = prob_jacobian.jac(dofss)[0]
