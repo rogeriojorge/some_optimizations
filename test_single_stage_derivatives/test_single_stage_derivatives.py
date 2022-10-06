@@ -3,6 +3,7 @@ import os
 import time
 import logging
 import numpy as np
+from mpi4py import MPI
 import matplotlib.pyplot as plt
 from simsopt.mhd import Vmec
 from simsopt.util import MpiPartition
@@ -18,11 +19,11 @@ logger = logging.getLogger(__name__)
 mpi = MpiPartition()
 
 # Define absolute steps
-abs_step_array = [1e-4,1e-5,1e-6]#,1e-7,1e-8]
+abs_step_array = [1e-4,1e-5,1e-6,1e-7,1e-8]
 rel_step_value = 0
 
 # Input parameters
-derivative_algorithm = "centered"
+derivative_algorithm = "forward"
 LENGTHBOUND=20
 LENGTH_CON_WEIGHT=1e-2
 JACOBIAN_THRESHOLD=50
@@ -36,10 +37,10 @@ ncoils=3
 R0=1
 R1=0.5
 order=2
-nphi=70
+nphi=30
 ntheta=30
 finite_beta = False
-vc_src_nphi = 20
+vc_src_nphi = nphi
 OUT_DIR = f"output"
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
@@ -49,7 +50,7 @@ if finite_beta:
     vmec_file = '../input.nfp2_QAS_FiniteBeta'
 else:
     vmec_file = '../input.nfp2_QA_lowres'
-vmec = Vmec(vmec_file, nphi=nphi, ntheta=ntheta, mpi=mpi, verbose=False)
+vmec = Vmec(vmec_file, nphi=nphi, ntheta=ntheta, mpi=mpi, verbose=False, range_surface='half period')
 surf = vmec.boundary
 objective_tuple = [(vmec.aspect, 4, 1),(vmec.mean_iota, 0.4, 1)]
 prob = LeastSquaresProblem.from_tuples(objective_tuple)
@@ -60,9 +61,9 @@ number_vmec_dofs = int(len(surf.x))
 
 # Finite Beta Virtual Casing Principle
 if finite_beta:
-    print('Running the virtual casing calculation')
+    if mpi.proc0_world: print('Running the virtual casing calculation')
     vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi, trgt_ntheta=ntheta)
-    total_current = Vmec(vmec_file).external_current() / (2 * surf.nfp)
+    total_current = vmec.external_current() / (2 * surf.nfp)
     initial_current = total_current / ncoils * 1e-5
 else:
     initial_current = 1
@@ -111,40 +112,63 @@ def fun(x0):
     J = J_stage_1 + J_stage_2
     return J
 
+def fun_J(dofs_vmec, dofs_coils):
+    print(f'    processor {MPI.COMM_WORLD.Get_rank()} running fun_J')
+    set_dofs(np.concatenate((np.ravel(dofs_coils), np.ravel(dofs_vmec))))
+    J_stage_1 = prob.objective()
+    J_stage_2 = coils_objective_weight * JF.J()
+    J = J_stage_1 + J_stage_2
+    return J
+
 def grad_fun_analytical(x0, finite_difference_rel_step=0, finite_difference_abs_step=1e-7):
     set_dofs(x0)
+    dofs_vmec = prob.x
+    dofs_coils = JF.x
     ## Finite differences for the second-stage objective function
     coils_dJ = JF.dJ()
-    ## Mixed term - derivative of squared flux with respect to the surface shape
-    n = surf.normal()
-    absn = np.linalg.norm(n, axis=2)
-    B = bs.B().reshape((nphi, ntheta, 3))
-    dB_by_dX = bs.dB_by_dX().reshape((nphi,ntheta, 3, 3))
-    Bcoil = bs.B().reshape(n.shape)
-    unitn = n * (1./absn)[:, :, None]
-    Bcoil_n = np.sum(Bcoil*unitn, axis=2)
-    assert Jf.local
+    grad_with_respect_to_coils = coils_objective_weight * coils_dJ
     if finite_beta:
-        B_n = (Bcoil_n - vc.B_external_normal)
-        B_diff = Bcoil - vc.B_external
-        B_N = np.sum(B_diff * n, axis=2)
+        opt = make_optimizable(fun_J, dofs_vmec, dofs_coils, dof_indicators=["dof","non-dof"])
+        grad_with_respect_to_surface = np.empty(len(dofs_vmec))
+        with MPIFiniteDifference(opt.J, mpi, diff_method=derivative_algorithm, abs_step=abs_step, rel_step=rel_step_value) as prob_jacobian:
+            if mpi.proc0_world:
+        # prob_jacobian = FiniteDifference(opt.J, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=derivative_algorithm)
+                grad_with_respect_to_surface = prob_jacobian.jac(dofs_vmec, dofs_coils)[0]
+        mpi.comm_world.Bcast(grad_with_respect_to_surface, root=0)
+        # pprint(f'grad_with_respect_to_surface={grad_with_respect_to_surface}')
+        grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
+        # alternative_grad = prob_jacobian.jac(dofss)[0]
     else:
+        prob_jacobian = FiniteDifference(prob.objective, x0=dofs_vmec, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=derivative_algorithm)
+        prob_dJ = prob_jacobian.jac(dofs_vmec)
+        surface = surf
+        bs.set_points(surface.gamma().reshape((-1, 3)))
+        ## Mixed term - derivative of squared flux with respect to the surface shape
+        n = surface.normal()
+        absn = np.linalg.norm(n, axis=2)
+        B = bs.B().reshape((nphi, ntheta, 3))
+        dB_by_dX = bs.dB_by_dX().reshape((nphi, ntheta, 3, 3))
+        Bcoil = bs.B().reshape(n.shape)
+        unitn = n * (1./absn)[:, :, None]
+        Bcoil_n = np.sum(Bcoil*unitn, axis=2)
+        mod_Bcoil = np.linalg.norm(Bcoil, axis=2)
+        # if finite_beta:
+        #     B_n = (Bcoil_n - vc.B_external_normal)
+        #     B_diff = Bcoil - B_external
+        #     B_N = np.sum(B_diff * n, axis=2)
+        # else:
         B_n = Bcoil_n
         B_diff = Bcoil
         B_N = np.sum(Bcoil * n, axis=2)
-    mod_Bcoil = np.linalg.norm(Bcoil, axis=2)
-    dJdx = (B_n/mod_Bcoil**2)[:, :, None] * (np.sum(dB_by_dX*(n-B*(B_N/mod_Bcoil**2)[:, :, None])[:, :, None, :], axis=3))
-    dJdN = (B_n/mod_Bcoil**2)[:, :, None] * B_diff - 0.5 * (B_N**2/absn**3/mod_Bcoil**2)[:, :, None] * n
-    deriv = surf.dnormal_by_dcoeff_vjp(dJdN/(nphi*ntheta)) + surf.dgamma_by_dcoeff_vjp(dJdx/(nphi*ntheta))
-    ## Check with the FiniteDifference class if this derivative is being computed correctly
-    mixed_dJ = Derivative({surf: deriv})(surf)
-    ## Finite differences for the first-stage objective function
-    prob_jacobian = FiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=derivative_algorithm)
-    prob_dJ = prob_jacobian.jac(prob.x)
-    ## Put both gradients together
-    grad_with_respect_to_coils = coils_objective_weight * coils_dJ
-    grad_with_respect_to_surface = np.ravel(prob_dJ) + coils_objective_weight * mixed_dJ
-    grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
+        assert Jf.local
+        dJdx = (B_n/mod_Bcoil**2)[:, :, None] * (np.sum(dB_by_dX*(n-B*(B_N/mod_Bcoil**2)[:, :, None])[:, :, None, :], axis=3))
+        dJdN = (B_n/mod_Bcoil**2)[:, :, None] * B_diff - 0.5 * (B_N**2/absn**3/mod_Bcoil**2)[:, :, None] * n
+        deriv = surface.dnormal_by_dcoeff_vjp(dJdN/(nphi*ntheta)) + surface.dgamma_by_dcoeff_vjp(dJdx/(nphi*ntheta))
+        mixed_dJ = Derivative({surface: deriv})(surface)
+
+        ## Put both gradients together
+        grad_with_respect_to_surface = np.ravel(prob_dJ) + coils_objective_weight * mixed_dJ
+        grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
     return grad
 
 def grad_fun_numerical(x0, diff_method: str = derivative_algorithm, abs_step = 1e-7, rel_step = 0):
@@ -179,8 +203,11 @@ sqrt_squared_diff_grad_with_respect_to_surface_array=[]
 start_outer = time.time()
 for abs_step in abs_step_array:
     set_dofs(dofs)
+    if mpi.proc0_world: print(f'Starting time for abs_step={abs_step}')
     start_inner = time.time()
+    if mpi.proc0_world: print(f'  running grad_fun_analytical for abs_step={abs_step}...')
     gradAnalytical = grad_fun_analytical(dofs, finite_difference_rel_step=rel_step_value, finite_difference_abs_step=abs_step)
+    if mpi.proc0_world: print(f'   took {time.time()-start_inner}s')
     gradAnalytical_with_respect_to_coils = gradAnalytical[:-number_vmec_dofs]
     gradAnalytical_with_respect_to_surface = gradAnalytical[-number_vmec_dofs:]
 
@@ -188,8 +215,10 @@ for abs_step in abs_step_array:
     opt = make_optimizable(fun, dofs, dof_indicators=["dof"])
     with MPIFiniteDifference(opt.J, mpi, diff_method=derivative_algorithm, abs_step=abs_step, rel_step=rel_step_value) as fd:
         if mpi.proc0_world:
-            print(f'abs_step={abs_step}')
+            start_inner_inner = time.time()
+            print(f'  running fd.jac for abs_step={abs_step}...')
             gradNumerical = np.array(fd.jac()[0])
+            print(f'   took {time.time()-start_inner_inner}s')
     mpi.comm_world.Bcast(gradNumerical, root=0)
 
     # gradNumerical = grad_fun_numerical(x0=dofs, abs_step=abs_step, rel_step=rel_step_value)
@@ -202,7 +231,7 @@ for abs_step in abs_step_array:
 
     sqrt_squared_diff_grad_with_respect_to_coils_array.append(sqrt_squared_diff_grad_with_respect_to_coils)
     sqrt_squared_diff_grad_with_respect_to_surface_array.append(sqrt_squared_diff_grad_with_respect_to_surface)
-    if mpi.proc0_world: print(f' took {time.time()-start_inner}s')
+    if mpi.proc0_world: print(f' Inner abs_step took {time.time()-start_inner}s')
 
 if mpi.proc0_world:
     print(f'Outer abs_step loop took {time.time()-start_outer}s')
