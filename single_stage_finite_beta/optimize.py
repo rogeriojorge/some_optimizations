@@ -46,10 +46,10 @@ max_modes = [1]
 QA_or_QH = 'QA'
 stage_1=False
 single_stage=True
-MAXITER_stage_1 = 30
-MAXITER_stage_2 = 20
-MAXITER_single_stage = 30
-finite_beta=False
+MAXITER_stage_1 = 60
+MAXITER_stage_2 = 50
+MAXITER_single_stage = 40
+finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
     ncoils = 4
@@ -67,9 +67,9 @@ else:
     MSC_THRESHOLD = 10
 nphi_VMEC=50
 ntheta_VMEC=40
-vc_src_nphi=60
+vc_src_nphi=50
 nmodes_coils = 7
-coils_objective_weight = 1e+1
+coils_objective_weight = 1e+3
 iota_target = 0.42
 use_previous_results_if_available = True
 vacuum_well_target=0.1
@@ -265,7 +265,7 @@ def fun_J(dofs_vmec, dofs_coils):
     bs.set_points(surf.gamma().reshape((-1, 3)))
     if finite_beta and run_vcasing:
         try:
-            logger.info('Running virtual casing')
+            # logger.info('Running virtual casing')
             vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
             Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
             if np.sum(Jf.x!=dofs_coils)>0: Jf.x = dofs_coils
@@ -277,6 +277,9 @@ def fun_J(dofs_vmec, dofs_coils):
             Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
     J_stage_2 = coils_objective_weight * JF.J()
     J = J_stage_1 + J_stage_2
+
+    # print(f'J_stage_1={J_stage_1}')
+    print(f'J_stage_2={J_stage_2}')
 
     return J
 ##########################################################################################
@@ -328,9 +331,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
         logger.info(f'Now calculating the gradient')
         if finite_beta:
             grad_with_respect_to_surface = prob_jacobian.jac(dofs_vmec, dofs_coils)[0]
-            print(f'grad_with_respect_to_surface={grad_with_respect_to_surface}')
             grad = np.concatenate((grad_with_respect_to_coils, grad_with_respect_to_surface))
-            # alternative_grad = prob_jacobian.jac(dofss)[0]
         else:
             prob_dJ = prob_jacobian.jac(dofs_vmec)
             surface = surf
@@ -409,8 +410,6 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
             else: pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
             surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
             curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
-
-    print(f'grad_with_respect_to_surface={grad[-number_vmec_dofs:]}')
 
     return J, grad
 ##########################################################################################
@@ -501,11 +500,8 @@ for max_mode in max_modes:
             with MPIFiniteDifference(prob.objective, mpi, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, diff_method=diff_method) as prob_jacobian:
                 if mpi.proc0_world:
                     res = minimize(fun, dofs, args=(prob_jacobian,{'Nfeval':0},max_mode,oustr_dict_inner), jac=True, method='BFGS', options={'maxiter': MAXITER_single_stage}, tol=1e-9)
-
-        mpi.comm_world.Bcast(dofs, root=0)
-        vmec.x = dofs[-number_vmec_dofs:]
-        JF.x = dofs[:-number_vmec_dofs]
-        Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
+    
+    mpi.comm_world.Bcast(dofs, root=0)
 
     if mpi.proc0_world:
         if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
