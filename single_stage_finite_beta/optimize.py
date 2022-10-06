@@ -42,12 +42,12 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
+max_modes = [3,3]
 QA_or_QH = 'QH'
 stage_1=False
 single_stage=True
 MAXITER_stage_1 = 100
-MAXITER_stage_2 = 70
+MAXITER_stage_2 = 1000
 MAXITER_single_stage = 100
 finite_beta=True
 magnetic_well=False
@@ -85,8 +85,8 @@ debug_coils_outputtxt = True
 debug_output_file = 'output.txt'
 boozxform_nsurfaces = 10
 helical_detail = False
-finite_difference_abs_step = 1e-6
-finite_difference_rel_step = 1e-4
+finite_difference_abs_step = 1e-7
+finite_difference_rel_step = 1e-5
 JACOBIAN_THRESHOLD = 250
 LENGTH_CON_WEIGHT = 0.1 # Weight on the quadratic penalty for the curve length
 LENGTH_WEIGHT = 1e-8 # Weight on the curve lengths in the objective function
