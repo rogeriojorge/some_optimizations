@@ -48,7 +48,7 @@ stage_1=True
 single_stage=True
 MAXITER_stage_1 = 60
 MAXITER_stage_2 = 1000
-MAXITER_single_stage = 50
+MAXITER_single_stage = 60
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
@@ -447,6 +447,7 @@ for max_mode in max_modes:
         pprint(f'  Performing stage 1 optimization with {MAXITER_stage_1} iterations')
         os.chdir(vmec_results_path)
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
+        dofs[-number_vmec_dofs:] = prob.x
         os.chdir(this_path)
         pprint(f"Aspect ratio at max_mode {max_mode}: {vmec.aspect()}")
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
