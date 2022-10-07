@@ -50,8 +50,8 @@ MAXITER_stage_1 = 100
 MAXITER_stage_2 = 500
 MAXITER_single_stage = 100
 finite_beta=True
-magnetic_well=True
-#### ADD MERCIER STABILITY - FUNCTION BELOW
+magnetic_well=False
+mercier_stability=True
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
@@ -76,6 +76,8 @@ iota_target = 0.42
 use_previous_results_if_available = True
 vacuum_well_target=0.1
 vacuum_well_weight=1
+mercier_threshold=3e-5
+mercier_weight=1
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 iota_weight = 10
@@ -100,6 +102,7 @@ ARCLENGTH_WEIGHT = 1e-9 # Weight for the arclength variation penalty in the obje
 ##########################################################################################
 directory = f'optimization_{QA_or_QH}_len{LENGTH_THRESHOLD}'
 if magnetic_well: directory +='_well'
+if mercier_stability: directory +='_mercier'
 if finite_beta: directory +='_finitebeta'
 if stage_1: directory +='_stage1'
 if QA_or_QH=='QA': quasisymmetry_helicity_n = 0
@@ -252,7 +255,22 @@ def plot_df_stage2(df, max_mode):
 #############################################################
 ## Define main optimization function with gradients
 #############################################################
+##########################################################################################
+##########################################################################################
 pprint(f'  Starting optimization')
+##########################################################################################
+##########################################################################################
+def Mercier_objective(v, mercier_smin=0.1):
+    v.run()
+    sDMerc = v.wout.DMerc * v.s_full_grid
+    # Discard the inner part of the volume, since vmec's DGeod is inaccurate there.                            
+    mask = np.logical_and(v.s_full_grid > mercier_smin, v.s_full_grid < 0.95)
+    sDMerc = sDMerc[mask]
+    x = np.maximum(mercier_threshold - sDMerc, 0)
+    residuals = x / (np.sqrt(len(sDMerc)) * mercier_threshold)
+    return residuals
+##########################################################################################
+##########################################################################################
 def fun_J(dofs_vmec, dofs_coils):
 # def fun_J(dofsss):#dofsss = np.concatenate((JF.x, vmec.x))
 #     dofs_vmec = dofsss[-number_vmec_dofs:]
@@ -396,12 +414,17 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
             outstr += f"\n coils dofs="+", ".join([f"{pr}" for pr in coilsdofs[0:6]])
             if J<JACOBIAN_THRESHOLD:
                 outstr += f"\n Quasisymmetry objective={qs.total()}"
-                outstr += f"\n aspect={vmec.aspect()}"
-                outstr += f"\n mean iota={vmec.mean_iota()}"
-                outstr += f"\n magnetic well={vmec.vacuum_well()}"
-                dict1.update({'Jquasisymmetry':float(qs.total()), 'Jwell': float((vmec.vacuum_well()-vacuum_well_target)**2), 'Jiota':float((vmec.mean_iota()-iota_target)**2), 'Jaspect':float((vmec.aspect()-aspect_ratio_target)**2)})
+                outstr += f"\n Aspect={vmec.aspect()}"
+                outstr += f"\n Mean iota={vmec.mean_iota()}"
+                outstr += f"\n Magnetic well={vmec.vacuum_well()}"
+                outstr += f"\n Mercier objective={Mercier_objective(vmec)}"
+                dict1.update({'Jquasisymmetry':float(qs.total()),
+                              'Jwell': float((vmec.vacuum_well()-vacuum_well_target)**2),
+                              'Jiota':float((vmec.mean_iota()-iota_target)**2),
+                              'Jmercier':float(Mercier_objective(vmec)),
+                              'Jaspect':float((vmec.aspect()-aspect_ratio_target)**2)})
             else:
-                dict1.update({'Jquasisymmetry':0, 'Jiota':0,'Jaspect':0, 'Jwell': 0})
+                dict1.update({'Jquasisymmetry':0, 'Jiota':0, 'Jaspect':0, 'Jwell': 0, 'Jmercier': 0})
         except Exception as e:
             pprint(e)
 
@@ -425,23 +448,6 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
 
     return J, grad
 ##########################################################################################
-def Mercier_objective(vmec, mercier_smin=0.1, thresh = 3e-5):
-    vmec.run()
-    sDMerc = vmec.wout.DMerc * vmec.s_full_grid
-    ns = vmec.wout.ns
-    # Discard the inner part of the volume, since vmec's DGeod is inaccurate there.                            
-    mask = np.logical_and(vmec.s_full_grid > mercier_smin, vmec.s_full_grid < 0.95)
-    sDMerc = sDMerc[mask]
-    # Discard first and last point, where DMerc is always 0:                                                   
-    #sDMerc = sDMerc[1:-1]                                                                                     
-    #sDMerc = sDMerc[:-1]                                                                                      
-    nradii = len(sDMerc)
-    # If sDMerc is large and positive, max(negative, 0) = 0.                                                   
-    # If sDMerc is negative, max(positive, 0) = positive                                                       
-    x = np.maximum(thresh - sDMerc, 0)
-    residuals = x / (np.sqrt(nradii) * thresh)
-    return residuals
-##########################################################################################
 ##########################################################################################
 #############################################################
 ## Perform optimization
@@ -456,6 +462,9 @@ for max_mode in max_modes:
     qs = QuasisymmetryRatioResidual(vmec, quasisymmetry_target_surfaces, helicity_m=quasisymmetry_helicity_m, helicity_n=quasisymmetry_helicity_n)
     objective_tuple = [(vmec.aspect, aspect_ratio_target, aspect_ratio_weight), (qs.residuals, 0, 1)]
     if magnetic_well: objective_tuple.append((vmec.vacuum_well, vacuum_well_target, vacuum_well_weight))
+    opt_Mercier = make_optimizable(Mercier_objective, vmec)
+    if mercier_stability:
+        objective_tuple.append((opt_Mercier.J, 0, mercier_weight))
     if QA_or_QH=='QA': objective_tuple.append((vmec.mean_iota, iota_target, iota_weight))
     prob = LeastSquaresProblem.from_tuples(objective_tuple)
 
@@ -473,6 +482,7 @@ for max_mode in max_modes:
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+        pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
         if mpi.proc0_world:
             with open(debug_output_file, "a") as myfile:
@@ -481,6 +491,7 @@ for max_mode in max_modes:
                     myfile.write(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
                     myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                     myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+                    myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
                     myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
                 except Exception as e:
                     myfile.write(e)
@@ -510,6 +521,7 @@ for max_mode in max_modes:
                 myfile.write(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
                 myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                 myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+                myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
                 myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
             except Exception as e:
                 myfile.write(e)
@@ -547,6 +559,7 @@ for max_mode in max_modes:
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
+        pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
     except Exception as e:
         pprint(e)
@@ -557,9 +570,11 @@ for max_mode in max_modes:
             df.to_csv(os.path.join(this_path, f'output_max_mode_{max_mode}.csv'), index_label='index')
             if QA_or_QH == 'QA':
                 if magnetic_well: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jwell','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+                elif mercier_stability: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jmercier','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
                 else: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
             else:
                 if magnetic_well: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jwell','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+                elif mercier_stability: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jmercier','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
                 else: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
             ax.set_ylim(bottom=1e-9, top=None)
             ax.set_xlabel('Number of function evaluations')
@@ -604,7 +619,7 @@ if mpi.proc0_world:
         df.to_csv(os.path.join(this_path, f'output_final.csv'), index_label='index')
         ax=df.plot(kind='line',
             logy=True,
-            y=['J','Jf','B.n','Jquasisymmetry','Jwell','Jiota','Jaspect','J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'],
+            y=['J','Jf','B.n','Jquasisymmetry','Jwell','Jmercier','Jiota','Jaspect','J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'],
             linewidth=0.8)
         ax.set_ylim(bottom=1e-9, top=None)
         plt.legend(loc=3, prop={'size': 6})
@@ -626,6 +641,7 @@ try:
     pprint(f"Mean iota after optimization: {vmec.mean_iota()}")
     pprint(f"Quasisymmetry objective after optimization: {qs.total()}")
     pprint(f"Magnetic well after optimization: {vmec.vacuum_well()}")
+    pprint(f"Mercier objective: {opt_Mercier.J()}")
     pprint(f"Squared flux after optimization: {Jf.J()}")
 except Exception as e: pprint(e)
 ##########################################################################################
