@@ -51,6 +51,7 @@ MAXITER_stage_2 = 500
 MAXITER_single_stage = 100
 finite_beta=True
 magnetic_well=True
+#### ADD MERCIER STABILITY - FUNCTION BELOW
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
@@ -423,6 +424,23 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
             curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
 
     return J, grad
+##########################################################################################
+def Mercier_objective(vmec, mercier_smin=0.1, thresh = 3e-5):
+    vmec.run()
+    sDMerc = vmec.wout.DMerc * vmec.s_full_grid
+    ns = vmec.wout.ns
+    # Discard the inner part of the volume, since vmec's DGeod is inaccurate there.                            
+    mask = np.logical_and(vmec.s_full_grid > mercier_smin, vmec.s_full_grid < 0.95)
+    sDMerc = sDMerc[mask]
+    # Discard first and last point, where DMerc is always 0:                                                   
+    #sDMerc = sDMerc[1:-1]                                                                                     
+    #sDMerc = sDMerc[:-1]                                                                                      
+    nradii = len(sDMerc)
+    # If sDMerc is large and positive, max(negative, 0) = 0.                                                   
+    # If sDMerc is negative, max(positive, 0) = positive                                                       
+    x = np.maximum(thresh - sDMerc, 0)
+    residuals = x / (np.sqrt(nradii) * thresh)
+    return residuals
 ##########################################################################################
 ##########################################################################################
 #############################################################
