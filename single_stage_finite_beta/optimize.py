@@ -42,22 +42,22 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1, 2, 3]
+max_modes = [1]
 QA_or_QH = 'QA'
 stage_1=True
-single_stage=False
+single_stage=True
 MAXITER_stage_1 = 200
-MAXITER_stage_2 = 1000
+MAXITER_stage_2 = 500
 MAXITER_single_stage = 200
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
-    CC_THRESHOLD = 0.15
-    LENGTH_THRESHOLD = 5.1
-    CURVATURE_THRESHOLD = 3
-    MSC_THRESHOLD = 4
+    CC_THRESHOLD = 0.16
+    LENGTH_THRESHOLD = 5.2
+    CURVATURE_THRESHOLD = 2
+    MSC_THRESHOLD = 3
 else:
     ncoils = 4
     aspect_ratio_target = 7.0
@@ -66,10 +66,10 @@ else:
     CURVATURE_THRESHOLD = 8
     MSC_THRESHOLD = 10
 nphi_VMEC=50
-ntheta_VMEC=40
-vc_src_nphi=40
+ntheta_VMEC=50
+vc_src_nphi=50
 nmodes_coils = 7
-coils_objective_weight = 1e+2
+coils_objective_weight = 1e+3
 iota_target = 0.42
 use_previous_results_if_available = True
 vacuum_well_target=0.1
@@ -77,7 +77,7 @@ vacuum_well_weight=1
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 iota_weight = 10
-diff_method="centered"
+diff_method="forward"
 R0 = 1.0
 R1 = 0.6
 quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
@@ -85,7 +85,7 @@ debug_coils_outputtxt = True
 debug_output_file = 'output.txt'
 boozxform_nsurfaces = 10
 helical_detail = False
-finite_difference_abs_step = 1e-5
+finite_difference_abs_step = 1e-7
 finite_difference_rel_step = 0
 JACOBIAN_THRESHOLD = 100
 LENGTH_CON_WEIGHT = 0.1 # Weight on the quadratic penalty for the curve length
@@ -449,6 +449,7 @@ for max_mode in max_modes:
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
         dofs[-number_vmec_dofs:] = prob.x
         os.chdir(this_path)
+        vmec.write_input(os.path.join(this_path, f'input.stage1'))
         pprint(f"Aspect ratio at max_mode {max_mode}: {vmec.aspect()}")
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
