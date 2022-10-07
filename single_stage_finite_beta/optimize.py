@@ -42,13 +42,13 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
+max_modes = [1, 2, 3]
 QA_or_QH = 'QA'
 stage_1=True
-single_stage=True
-MAXITER_stage_1 = 60
+single_stage=False
+MAXITER_stage_1 = 200
 MAXITER_stage_2 = 1000
-MAXITER_single_stage = 60
+MAXITER_single_stage = 200
 finite_beta=True
 magnetic_well=False
 if QA_or_QH == 'QA':
