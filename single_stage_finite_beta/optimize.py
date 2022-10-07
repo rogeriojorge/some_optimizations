@@ -42,13 +42,13 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [2] ## IF THIS IS CHANGED CHANGED input.QH_finitebeta and input.QA_finitebeta
+max_modes = [1]
 QA_or_QH = 'QH'
-stage_1=False
+stage_1=True
 single_stage=True
 MAXITER_stage_1 = 100
-MAXITER_stage_2 = 500
-MAXITER_single_stage = 100
+MAXITER_stage_2 = 150
+MAXITER_single_stage = 30
 finite_beta=True
 magnetic_well=False
 mercier_stability=True
@@ -74,10 +74,10 @@ nmodes_coils = 7
 coils_objective_weight = 1e+3
 iota_target = 0.42
 use_previous_results_if_available = True
-vacuum_well_target=0.1
+vacuum_well_target=0.05
 vacuum_well_weight=1
 mercier_threshold=3e-5
-mercier_weight=1
+mercier_weight=1e-4
 quasisymmetry_helicity_m = 1
 aspect_ratio_weight = 1
 iota_weight = 10
@@ -260,7 +260,7 @@ def plot_df_stage2(df, max_mode):
 pprint(f'  Starting optimization')
 ##########################################################################################
 ##########################################################################################
-def Mercier_objective(v, mercier_smin=0.1):
+def Mercier_objective(v, mercier_smin=0.2):
     v.run()
     sDMerc = v.wout.DMerc * v.s_full_grid
     # Discard the inner part of the volume, since vmec's DGeod is inaccurate there.                            
@@ -268,7 +268,7 @@ def Mercier_objective(v, mercier_smin=0.1):
     sDMerc = sDMerc[mask]
     x = np.maximum(mercier_threshold - sDMerc, 0)
     residuals = x / (np.sqrt(len(sDMerc)) * mercier_threshold)
-    return residuals
+    return np.max(residuals)
 ##########################################################################################
 ##########################################################################################
 def fun_J(dofs_vmec, dofs_coils):
