@@ -1,0 +1,66 @@
+ SHOT ID.: QH_finitebeta  SEQ. NO.:   0
+ TIME SLICE =    0. ms
+
+ COMPUTATION PARAMETERS: (u = theta, v = zeta)
+ ---------------------------------------------
+     ns     nu     nv     mu     mv
+     16     16     14      5      5
+
+ CONFIGURATION PARAMETERS:
+ ---------------------------------------
+    nfp      gamma      spres_ped    phiedge(wb)     curtor(A)        lRFP
+      4  0.000E+00      1.000E+00      3.818E-02     0.000E+00           F
+
+ RUN CONTROL PARAMETERS:
+ -----------------------
+  ncurr  niter   nsin  nstep  nvacskip      ftol     tcon0    lasym  lforbal lmove_axis lconm1
+      1   2000     16    200         1  1.00E-12  1.00E+00        F        F        T        T
+  mfilter_fbdy nfilter_fbdy lfull3d1out max_main_iterations lgiveup fgiveup
+           -1           -1           F                   1       F  3.0E+01
+
+ PRECONDITIONER CONTROL PARAMETERS:
+ ----------------------------------
+  precon_type   prec2d_threshold
+  NONE                  1.00E-30
+
+ MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
+ PMASS parameterization type is 'power_series'
+ -----------------------------------
+   1.000E+04  -1.000E+04
+
+ TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
+ PCURR parameterization type is 'power_series'
+ --------------------------------------
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00
+
+
+ NORMALIZED TOROIDAL FLUX COEFFICIENTS aphi (EXPANSION IN S):
+ -----------------------------------
+   1.000E+00
+
+ R-Z FOURIER BOUNDARY COEFFICIENTS AND MAGNETIC AXIS INITIAL GUESS
+ R = RBC*COS(m*u - n*v) + RBS*SIN(m*u - n*v), Z = ZBC*COS(m*u - n*v) + ZBS*SIN(m*u-n*v)
+ --------------------------------------------------------------------------------------
+   nb  mb     rbc         rbs         zbc         zbs       raxis(c)    raxis(s)    zaxis(c)    zaxis(s)
+    0   0  1.0000E+00  0.0000E+00  0.0000E+00 -0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    1   0  1.3256E-01  0.0000E+00  0.0000E+00  8.1231E-02  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    2   0  5.0603E-03  0.0000E+00  0.0000E+00  5.3444E-03  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+   -2   1 -1.4164E-02  0.0000E+00  0.0000E+00  1.6267E-02
+   -1   1 -1.0841E-01  0.0000E+00  0.0000E+00  6.6729E-02
+    0   1  1.4152E-01  0.0000E+00  0.0000E+00  1.7387E-01
+    1   1  3.4020E-02  0.0000E+00  0.0000E+00  3.4871E-02
+    2   1  4.1894E-03  0.0000E+00  0.0000E+00  3.9725E-03
+   -2   2  8.2919E-03  0.0000E+00  0.0000E+00 -1.4644E-02
+   -1   2  2.7124E-02  0.0000E+00  0.0000E+00  2.2469E-02
+    0   2  2.4956E-02  0.0000E+00  0.0000E+00  1.7675E-02
+    1   2  2.7426E-03  0.0000E+00  0.0000E+00  7.0297E-04
+    2   2  2.0083E-04  0.0000E+00  0.0000E+00  1.5724E-04
+ FSQR, FSQZ = Normalized Physical Force Residuals
+ fsqr, fsqz = Preconditioned Force Residuals
+ -----------------------
+ BEGIN FORCE ITERATIONS
+ -----------------------
+

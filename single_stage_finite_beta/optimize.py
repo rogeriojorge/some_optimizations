@@ -42,32 +42,33 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
-QA_or_QH = 'QA'
-stage_1=True
+max_modes = [2] ## IF THIS IS CHANGED CHANGED input.QH_finitebeta and input.QA_finitebeta
+QA_or_QH = 'QH'
+stage_1=False
 single_stage=True
-MAXITER_stage_1 = 200
+MAXITER_stage_1 = 100
 MAXITER_stage_2 = 500
-MAXITER_single_stage = 200
+MAXITER_single_stage = 100
 finite_beta=True
-magnetic_well=False
+magnetic_well=True
 if QA_or_QH == 'QA':
     ncoils = 4
     aspect_ratio_target = 6.0
-    CC_THRESHOLD = 0.16
-    LENGTH_THRESHOLD = 5.2
-    CURVATURE_THRESHOLD = 2
-    MSC_THRESHOLD = 3
+    CC_THRESHOLD = 0.15
+    LENGTH_THRESHOLD = 5.0
+    CURVATURE_THRESHOLD = 3.5
+    MSC_THRESHOLD = 6
+    nphi_VMEC=46
 else:
-    ncoils = 4
+    ncoils = 3
     aspect_ratio_target = 7.0
     CC_THRESHOLD = 0.08
-    LENGTH_THRESHOLD = 3.1
-    CURVATURE_THRESHOLD = 8
+    LENGTH_THRESHOLD = 3.3
+    CURVATURE_THRESHOLD = 7
     MSC_THRESHOLD = 10
-nphi_VMEC=50
-ntheta_VMEC=50
-vc_src_nphi=50
+    nphi_VMEC=34
+ntheta_VMEC=34
+vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
 coils_objective_weight = 1e+3
 iota_target = 0.42
@@ -536,11 +537,12 @@ for max_mode in max_modes:
         try:
             df = pd.DataFrame(oustr_dict_inner)
             df.to_csv(os.path.join(this_path, f'output_max_mode_{max_mode}.csv'), index_label='index')
-            ax=df.plot(
-                kind='line',
-                logy=True,
-                y=['J','Jf','B.n','Jquasisymmetry', 'Jwell','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'],
-                linewidth=0.8)
+            if QA_or_QH == 'QA':
+                if magnetic_well: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jwell','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+                else: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry','Jiota','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+            else:
+                if magnetic_well: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jwell','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+                else: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry','Jaspect', 'J_length','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
             ax.set_ylim(bottom=1e-9, top=None)
             ax.set_xlabel('Number of function evaluations')
             ax.set_ylabel('Objective function')
@@ -552,9 +554,21 @@ for max_mode in max_modes:
             pprint(e)
 
 ####################################################################################
-# Add extra stage 2 optimization at the end if single_stage = True
+# Extra stage 2 optimization at the end if single_stage = True
 ####################################################################################
-
+if single_stage:
+    if finite_beta:
+        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
+        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+        JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
+    if mpi.proc0_world:
+        info_coils={'Nfeval':0}
+        oustr_dict=[]
+        pprint(f'  Performing stage 2 optimization with {MAXITER_stage_2} iterations')
+        res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
+        dofs[:-number_vmec_dofs] = res.x
+        JF.x = dofs[:-number_vmec_dofs]
+        Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
 ##########################################################################################
 ##########################################################################################
 #############################################################
