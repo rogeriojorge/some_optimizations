@@ -276,3 +276,20 @@ def MirrorRatioPen(v, mirror_threshold=0.20, output_mirror=False):
     pen = np.max([0,m-mirror_threshold])
     if output_mirror: return m
     else: return pen
+
+def Mercier_objective(vmec, mercier_smin=0.1, thresh = 3e-5):
+    vmec.run()
+    sDMerc = vmec.wout.DMerc * vmec.s_full_grid
+    ns = vmec.wout.ns
+    # Discard the inner part of the volume, since vmec's DGeod is inaccurate there.                            
+    mask = np.logical_and(vmec.s_full_grid > mercier_smin, vmec.s_full_grid < 0.95)
+    sDMerc = sDMerc[mask]
+    # Discard first and last point, where DMerc is always 0:                                                   
+    #sDMerc = sDMerc[1:-1]                                                                                     
+    #sDMerc = sDMerc[:-1]                                                                                      
+    nradii = len(sDMerc)
+    # If sDMerc is large and positive, max(negative, 0) = 0.                                                   
+    # If sDMerc is negative, max(positive, 0) = positive                                                       
+    x = np.maximum(thresh - sDMerc, 0)
+    residuals = x / (np.sqrt(nradii) * thresh)
+    return residuals
