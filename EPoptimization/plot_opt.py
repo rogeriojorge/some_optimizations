@@ -16,6 +16,7 @@ max_mode = 1
 QA_or_QH = 'QA'
 optimizer = 'dual_annealing'
 s_initial = 0.3
+mercier=False
 
 plt_opt_res = True
 plot_vmec = False
@@ -33,6 +34,7 @@ if QA_or_QH == 'QA': nfp=2
 elif QA_or_QH == 'QH': nfp=4
 elif QA_or_QH == 'QI': nfp=3
 out_dir = f'out_s{s_initial}_NFP{nfp}'
+if mercier: out_dir+='_Mercier'
 out_csv = out_dir+f'/output_{optimizer}_{QA_or_QH}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
 #################################
@@ -40,8 +42,6 @@ if plt_opt_res:
     df['aspect-6'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),1.5]), axis=1)
-    df['normalized_time'] = df.apply(lambda row: np.min([np.max([np.mean(row.eff_time),0]),10]), axis=1)
-    df['normalized_time'] = df[df['normalized_time']!=0]['normalized_time']
     df['iota'] = df[df['iota']!=1.5]['iota']
     df.plot(use_index=True, y=['loss_fraction'])#,'iota'])#,'normalized_time'])
     plt.ylim([0,1.])
@@ -52,8 +52,6 @@ if plt_opt_res:
     plt.savefig(out_dir+'/mirror_ratio_over_opt.pdf')
     df.plot(use_index=True, y=['max_elongation'])#,'iota'])#,'normalized_time'])
     plt.savefig(out_dir+'/max_elongation_over_opt.pdf')
-    # df.plot.scatter(y='normalized_time', x='loss_fraction')
-    # plt.savefig(out_dir+'/loss_vs_normtime.pdf')
     # df.plot.scatter(y='loss_fraction', x='iota')
     # plt.savefig(out_dir+'/loss_vs_iota.pdf')
     plt.show()

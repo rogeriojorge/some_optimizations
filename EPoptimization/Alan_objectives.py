@@ -277,7 +277,7 @@ def MirrorRatioPen(v, mirror_threshold=0.20, output_mirror=False):
     if output_mirror: return m
     else: return pen
 
-def Mercier_objective(vmec, mercier_smin=0.1, thresh = 3e-5):
+def Mercier_objective(vmec, mercier_smin=0.2, thresh = 3e-5):
     vmec.run()
     sDMerc = vmec.wout.DMerc * vmec.s_full_grid
     ns = vmec.wout.ns
@@ -292,4 +292,4 @@ def Mercier_objective(vmec, mercier_smin=0.1, thresh = 3e-5):
     # If sDMerc is negative, max(positive, 0) = positive                                                       
     x = np.maximum(thresh - sDMerc, 0)
     residuals = x / (np.sqrt(nradii) * thresh)
-    return residuals
+    return np.max(residuals)

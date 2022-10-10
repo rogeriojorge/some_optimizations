@@ -19,7 +19,7 @@ from simsopt.objectives import LeastSquaresProblem
 from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
-from Alan_objectives import MaxElongationPen, MirrorRatioPen
+from Alan_objectives import MaxElongationPen, MirrorRatioPen, Mercier_objective
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
@@ -28,15 +28,16 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 500
-max_modes = [1, 2]
+MAXITER = 3
+max_modes = [1]
 QA_or_QH_or_QI = 'QA'
-opt_quasisymmetry = False
 opt_EP = True
 opt_well = False
+opt_Mercier = False
 opt_iota = False
-opt_Mirror = True
-opt_Elongation = True
+opt_Mirror = False
+opt_Elongation = False
+opt_quasisymmetry = False
 plot_result = True
 optimizer = 'dual_annealing' # least_squares_diff, least_squares, basinhopping, differential_evolution, dual_annealing
 use_previous_results_if_available = False
@@ -45,6 +46,7 @@ weight_optEP = 100.0
 weight_opt_Mirror = 100.0
 weight_opt_Elongation = 10.0
 weight_opt_well = 0.1
+weight_opt_Mercier = 1
 redux_B = 1.5 # Use ARIES-CS magnetic field reduced by this factor
 redux_Aminor = 1.5 # Use ARIES-CS minor radius reduced by this factor
 if QA_or_QH_or_QI == 'QA': aspect_ratio_target = 6
@@ -52,8 +54,8 @@ elif QA_or_QH_or_QI == 'QH': aspect_ratio_target = 7
 elif QA_or_QH_or_QI == 'QI': aspect_ratio_target = 8
 
 s_initial = 0.3  # initial normalized toroidal magnetic flux (radial VMEC coordinate)
-nparticles = 600  # number of particles
-tfinal = 6e-5  # total time of tracing in seconds
+nparticles = 300  # number of particles
+tfinal = 3e-5  # total time of tracing in seconds
 nsamples = 1500 # number of time steps
 multharm = 3 # angular grid factor
 ns_s = 3 # spline order over s
@@ -70,6 +72,8 @@ well_target = 0.1
 diff_rel_step = 1e-1
 diff_abs_step = 1e-2
 
+no_local_search = True
+
 output_path_parameters=f'output_{optimizer}_{QA_or_QH_or_QI}.csv'
 ######################################
 ######################################
@@ -79,6 +83,7 @@ elif QA_or_QH_or_QI == 'QI': nfp=3 # Change it later to vmec.indata.nfp
 OUT_DIR_APPENDIX=f'out_s{s_initial}_NFP{nfp}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{QA_or_QH_or_QI}'
 if opt_well: OUT_DIR_APPENDIX+=f'_well'
+if opt_Mercier: OUT_DIR_APPENDIX+=f'_Mercier'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
@@ -103,9 +108,9 @@ vmec.keep_all_files = True
 surf = vmec.boundary
 g_particle = ChargedParticleEnsemble(r_initial=s_initial)
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time,mirror_ratio,max_elongation):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['eff_time'],['mirror_ratio'],['max_elongation']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[eff_time],[mirror_ratio],[max_elongation]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,mirror_ratio,max_elongation,Mercier_obj):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['loss_fraction'],['mirror_ratio'],['max_elongation'],['Mercier_obj']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[loss_fraction],[mirror_ratio],[max_elongation],[Mercier_obj]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -113,6 +118,7 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,loss_fraction,eff_time,mirror_ratio
 ######################################
 optElongation = make_optimizable(MaxElongationPen, vmec)
 optMirror = make_optimizable(MirrorRatioPen, vmec)
+optMercier = make_optimizable(Mercier_objective, vmec)
 ######################################
 def EPcostFunction(v: Vmec):
     start_time = time.time()
@@ -124,40 +130,42 @@ def EPcostFunction(v: Vmec):
     Aminor_scale = 1.7/v.wout.Aminor_p/redux_Aminor  # Scale the machine size by a factor
     g_field_temp = Simple(wout_filename=v.output_file, B_scale=B_scale, Aminor_scale=Aminor_scale, multharm=multharm,ns_s=ns_s,ns_tp=ns_tp)
     final_loss_fraction_array = []
-    effective_time_array = []
     for i in range(nruns_opt_average): # Average over a given number of runs
         for j in range(0,3): # Try three times the same orbits, if not able continue
             while True:
                 try:
                     g_orbits_temp = ParticleEnsembleOrbit_Simple(g_particle,g_field_temp,tfinal=tfinal,nparticles=nparticles,nsamples=nsamples,notrace_passing=notrace_passing,nper=nper,npoiper=npoiper,npoiper2=npoiper2)
                     final_loss_fraction_array.append(g_orbits_temp.total_particles_lost)
-                    lost_times_array = tfinal-g_field_temp.params.times_lost
-                    lost_times_array = lost_times_array[lost_times_array!=0.0]
-                    if np.asarray(lost_times_array).size==0: lost_times_array=[tfinal]
-                    effective_time_array.append(np.mean(lost_times_array)/(np.max(lost_times_array)+1e-9))
                 except ValueError as error_print:
                     print(f'Try {j} of ParticleEnsembleOrbit_Simple gave error:',error_print)
                     continue
                 break
     final_loss_fraction = np.mean(final_loss_fraction_array)
-    final_effective_time = np.min([np.max([np.mean(effective_time_array),0]),10])
     g_field_temp.simple_main.finalize()
-    mirror_ratio = MirrorRatioPen(v=v, output_mirror=True)
-    max_elongation = MaxElongationPen(vmec=v, return_elongation=True)
-    print(f'Loss = {(100*final_loss_fraction):1f}% with '
-    # + f'eff time = {final_effective_time:1f} (J={(final_effective_time*final_loss_fraction):1f}) and '
-    # + 'dofs = {v.x}, mean_iota={v.mean_iota()} and '
-    + f'mirror ratio={mirror_ratio:1f}, max elongation={max_elongation:1f} and '
-    + f'aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s')
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,final_effective_time,mirror_ratio,max_elongation)
+    out_str = f'Loss = {(100*final_loss_fraction):1f}% with'
+    if opt_Mirror:
+        mirror_ratio = MirrorRatioPen(v=v, output_mirror=True)
+        out_str+=f' mirror ratio={mirror_ratio:1f},'
+    else: mirror_ratio = 1.0
+    if opt_Elongation:
+        max_elongation = MaxElongationPen(vmec=v, return_elongation=True)
+        out_str+=f' max elongation={max_elongation:1f},'
+    else: max_elongation = 1.0
+    if opt_Mercier:
+        Mercier_obj = Mercier_objective(vmec=v)
+        out_str+=f' Mercier objective={Mercier_obj:1f},'
+    else: Mercier_obj=1.0
+    out_str+= f' aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+    print(out_str)
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),final_loss_fraction,mirror_ratio,max_elongation,Mercier_obj)
     return final_loss_fraction
-    # return final_effective_time*final_loss_fraction
 optEP = make_optimizable(EPcostFunction, vmec)
 ######################################
 try:
     pprint("Initial aspect ratio:", vmec.aspect())
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
+    pprint("Initial Mercier objective:", Mercier_objective(vmec))
     pprint("Initial mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
     pprint("Initial max elongation:", MaxElongationPen(vmec=vmec, return_elongation=True))
 except Exception as e: pprint(e)
@@ -177,6 +185,7 @@ if opt_EP: opt_tuple.append((optEP.J, 0, weight_optEP))
 if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
 if opt_Mirror: opt_tuple.append((optMirror.J, 0, weight_opt_Mirror))
 if opt_Elongation: opt_tuple.append((optElongation.J, 0, weight_opt_Elongation))
+if opt_Mercier: opt_tuple.append((optMercier.J, 0, weight_opt_Mercier))
 try: pprint("Quasisymmetry objective before optimization:", qs.total())
 except Exception as e: pprint(e)
 ######################################
@@ -203,8 +212,6 @@ for max_mode in max_modes:
     elif optimizer == 'dual_annealing':
         initial_temp = 1000
         visit = 2.0
-        no_local_search = False
-        # bounds = [(np.max([-10*np.abs(dof),-0.21]),np.min([0.21,10*np.abs(dof)])) for dof in dofs]
         bounds = [(-0.25,0.25) for _ in dofs]
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'basinhopping':
@@ -213,7 +220,6 @@ for max_mode in max_modes:
         res = basinhopping(fun, dofs, niter=MAXITER, stepsize=stepsize_minimizer, T=T_minimizer, disp=True, minimizer_kwargs={"method": "BFGS"})
     elif optimizer =='differential_evolution':
         bounds = [(-0.25,0.25) for _ in dofs]
-        # bounds = [(np.max([-10*np.abs(dof),-0.21]),np.min([0.21,10*np.abs(dof)])) for dof in dofs]
         res = differential_evolution(fun, bounds, maxiter=MAXITER, disp=True, x0=dofs)
     elif optimizer == 'least_squares_diff':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
@@ -228,6 +234,7 @@ for max_mode in max_modes:
             pprint("Final aspect ratio:", vmec.aspect())
             pprint("Final mean iota:", vmec.mean_iota())
             pprint("Final magnetic well:", vmec.vacuum_well())
+            pprint("Final Mercier objective:", Mercier_objective(vmec))
             pprint("Final mirror ratio:", MirrorRatioPen(v=vmec, output_mirror=True))
             pprint("Final max elongation:", MaxElongationPen(vmec=vmec, return_elongation=True))
             pprint("Quasisymmetry objective after optimization:", qs.total())
