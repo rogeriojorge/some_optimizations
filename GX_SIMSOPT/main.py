@@ -62,9 +62,9 @@ vmec = Vmec(filename, mpi=mpi, verbose=False)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect']])
-    values=np.concatenate([dofs,[mean_iota],[aspect]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['heat_flux']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[heat_flux]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -124,7 +124,7 @@ def TurbulenceCostFunction(v: Vmec):
     heat_flux = CalculateHeatFlux(v)
     out_str = f'Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect())
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),heat_flux)
     return heat_flux
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
