@@ -13,12 +13,11 @@ import matplotlib.pyplot as plt
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
-from simsopt.solve import least_squares_mpi_solve, least_squares_serial_solve
-from simsopt.mhd import QuasisymmetryRatioResidual
+from simsopt.solve import least_squares_mpi_solve
+from GX_io import GX_Runner, read_GX_output
 from simsopt.objectives import LeastSquaresProblem
-from neat.fields import Simple
-from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
-from scipy.optimize import minimize, basinhopping, differential_evolution, dual_annealing
+from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
+from scipy.optimize import dual_annealing
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
@@ -76,7 +75,43 @@ def output_dofs_to_csv(dofs,mean_iota,aspect):
 ######################################
 ######################################
 def CalculateHeatFlux(v: Vmec):
-    return 1
+    s_surface = 0.1
+    alpha_surface = [0]
+    theta_min_max = 2*np.pi
+    ntheta_PEST = 30
+    theta_PEST = np.linspace(-theta_min_max, theta_min_max, ntheta_PEST)
+    fl = vmec_fieldlines(v, s_surface, alpha_surface, theta1d=theta_PEST)
+    iota = fl.iota
+    shat = fl.shat
+    B_cross_grad_s_dot_grad_alpha = fl.B_cross_grad_s_dot_grad_alpha
+    B_cross_grad_B_dot_grad_alpha = fl.B_cross_grad_B_dot_grad_alpha
+    B_cross_grad_B_dot_grad_psi = fl.B_cross_grad_B_dot_grad_psi
+    B_cross_kappa_dot_grad_psi = fl.B_cross_kappa_dot_grad_psi
+    B_cross_kappa_dot_grad_alpha = fl.B_cross_kappa_dot_grad_alpha
+    grad_alpha_dot_grad_alpha = fl.grad_alpha_dot_grad_alpha
+    grad_alpha_dot_grad_psi = fl.grad_alpha_dot_grad_psi
+    grad_psi_dot_grad_psi = fl.grad_psi_dot_grad_psi
+    L_reference = fl.L_reference
+    B_reference = fl.B_reference
+    toroidal_flux_sign = fl.toroidal_flux_sign
+    bmag = fl.bmag
+    gradpar_theta_pest = fl.gradpar_theta_pest
+    gradpar_phi = fl.gradpar_phi
+    gds2 = fl.gds2
+    gds21 = fl.gds21
+    gds22 = fl.gds22
+    gbdrift = fl.gbdrift
+    gbdrift0 = fl.gbdrift0
+    cvdrift = fl.cvdrift
+    cvdrift0 = fl.cvdrift0
+    try:
+        gx_class = GX_Runner(os.path.join(this_path,'gx-sample.in'))
+        gx_class.execute()
+        heat_flux = read_GX_output('gx_output')
+        return heat_flux
+    except Exception as e:
+        print(e)
+        return 1
 ######################################
 ######################################
 ######################################
