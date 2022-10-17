@@ -41,28 +41,29 @@ start = time.time()
 #################################### Input parameters ####################################
 ##########################################################################################
 max_modes = [1]
-stage_1=True
-single_stage=True
-MAXITER_stage_1 = 5
-MAXITER_stage_2 = 350
-MAXITER_single_stage = 5
+stage_1=False
+single_stage=False
+MAXITER_stage_1 = 30
+MAXITER_stage_2 = 250
+MAXITER_single_stage = 50
 finite_beta=True
 mercier_stability=False
 circularTopBottom = True
-nphi_VMEC=36
+nphi_VMEC=130
 ntheta_VMEC=36
-nmodes_coils = 5
-CC_THRESHOLD = 0.2
-CURVATURE_THRESHOLD = [2.0,4.0]
-MSC_THRESHOLD = [2.0,7.0]
-LENGTH_THRESHOLD = [6.8,2.5]
+nmodes_coils = 7
+CC_THRESHOLD = 0.15
+CURVATURE_THRESHOLD = [3.0,6.0,3.0,6.0]
+MSC_THRESHOLD = [4.0,12.0,4.0,12.0]
+LENGTH_THRESHOLD = [6.8,3.0,6.8,3.0]
 beta_target=[0.03,0.03]
 MAXITER_stage_1_get_beta = 10
 iota_target = -0.23
 aspect_ratio_target = 3.5
 mercier_threshold=3e-5
 diff_method="forward"
-use_previous_results_if_available = True
+use_previous_results_if_available = False
+plot_result = False
 ##########################################################################################
 ################################ Optimization parameters #################################
 ##########################################################################################
@@ -104,6 +105,7 @@ directory = f'optimization_CNT'
 if mercier_stability: directory +='_mercier'
 if finite_beta: directory +='_finitebeta'
 if stage_1: directory +='_stage1'
+if circularTopBottom: directory +='_circular'
 vmec_verbose=False
 if finite_beta: vmec_input_filename='input.CNT_finiteBeta'
 else: vmec_input_filename='input.CNT_qfm'
@@ -186,22 +188,28 @@ if circularTopBottom:
 ##########################################################################################
 rotcurve1 = RotatedCurve(base_curves[0], phi=2*np.pi/2, flip=True)
 rotcurve2 = RotatedCurve(base_curves[1], phi=2*np.pi/2, flip=True)
-rotcurrent1 = ScaledCurrent(base_currents[0],1.e-5)*1.e5
+rotcurrent1 = ScaledCurrent(base_currents[0],-1.e-5)*1.e5
 rotcurrent2 = ScaledCurrent(base_currents[1],-1.e-5)*1.e5
 curves = np.concatenate((base_curves,[rotcurve1,rotcurve2]))
 currents = np.concatenate((base_currents,[rotcurrent1,rotcurrent2]))
+
+# currents = [Current(current1)*1e5,Current(current2)*1e5,Current(current1)*1e5,Current(-current2)*1e5]
+# curves = [CurveXYZFourier(128, nmodes_coils) for i in range(4)]
+# curves[0].set_dofs(np.concatenate(([       0, 0, radius1],np.zeros(2*(nmodes_coils-1)),[0,                radius1, 0],np.zeros(2*(nmodes_coils-1)),[-center1,                     0, 0],np.zeros(2*(nmodes_coils-1)))))
+# curves[1].set_dofs(np.concatenate(([ center2, 0, radius2],np.zeros(2*(nmodes_coils-1)),[0, -radius2*np.sin(gamma), 0],np.zeros(2*(nmodes_coils-1)),[       0, radius2*np.cos(gamma), 0],np.zeros(2*(nmodes_coils-1)))))
+# curves[2].set_dofs(np.concatenate(([       0, 0, radius1],np.zeros(2*(nmodes_coils-1)),[0,                radius1, 0],np.zeros(2*(nmodes_coils-1)),[ center1,                     0, 0],np.zeros(2*(nmodes_coils-1)))))
+# curves[3].set_dofs(np.concatenate(([-center2, 0, radius2],np.zeros(2*(nmodes_coils-1)),[0,  radius2*np.sin(gamma), 0],np.zeros(2*(nmodes_coils-1)),[       0, radius2*np.cos(gamma), 0],np.zeros(2*(nmodes_coils-1)))))
+# base_curves = curves
+
 coils = [Coil(curv, curr) for (curv, curr) in zip(curves, currents)]
 curves = [c.curve for c in coils]
-# base_curves = curves
-# coils = coils_via_symmetries(base_curves, base_currents, 1, True)
-# del coils[-6:-3]
-# del coils[-1]
-# print(f'len(coils)={len(coils)}')
+
 bs = BiotSavart(coils)
 bs.set_points(surf.gamma().reshape((-1, 3)))
 Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
 if finite_beta: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal
 else: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
+print(f'max bdotn={np.max(np.abs(BdotN_surf))}')
 if comm.rank == 0:
     curves_to_vtk(curves, os.path.join(coils_results_path, "curves_init"))
     pointData = {"B_N": BdotN_surf[:, :, None]}
@@ -654,6 +662,7 @@ except Exception as e: pprint(e)
 #############################################
 ## Final VMEC equilibrium
 #############################################
+if not plot_result: exit()
 os.chdir(this_path)
 try:
     vmec_final = Vmec(os.path.join(this_path, f'input.final'))
