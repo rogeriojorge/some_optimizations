@@ -43,23 +43,23 @@ start = time.time()
 max_modes = [1]
 stage_1=True
 single_stage=True
-MAXITER_stage_1 = 50
-MAXITER_stage_2 = 200
-MAXITER_single_stage = 30
-finite_beta=False
+MAXITER_stage_1 = 5
+MAXITER_stage_2 = 350
+MAXITER_single_stage = 5
+finite_beta=True
 mercier_stability=False
 circularTopBottom = True
-nphi_VMEC=34
-ntheta_VMEC=32
-nmodes_coils = 8
-CC_THRESHOLD = 0.15
-CURVATURE_THRESHOLD = 6
-MSC_THRESHOLD = 8
-LENGTH_THRESHOLD = [7.1,2.8]
-beta_target=[0.01,0.01,0.01,0.02,0.03]
+nphi_VMEC=36
+ntheta_VMEC=36
+nmodes_coils = 5
+CC_THRESHOLD = 0.2
+CURVATURE_THRESHOLD = [2.0,4.0]
+MSC_THRESHOLD = [2.0,7.0]
+LENGTH_THRESHOLD = [6.8,2.5]
+beta_target=[0.03,0.03]
 MAXITER_stage_1_get_beta = 10
 iota_target = -0.23
-aspect_ratio_target = 2.0
+aspect_ratio_target = 3.5
 mercier_threshold=3e-5
 diff_method="forward"
 use_previous_results_if_available = True
@@ -180,10 +180,11 @@ if circularTopBottom:
     # curves[0].fix_all()
     # curves[1].fix_all()
     base_curves[0].fix_all()
+# base_curves[1].fix('zc(0)')
 ##########################################################################################
 ######################### Save initial surface and coil data #############################
 ##########################################################################################
-rotcurve1 = RotatedCurve(base_curves[0], phi=0, flip=True)
+rotcurve1 = RotatedCurve(base_curves[0], phi=2*np.pi/2, flip=True)
 rotcurve2 = RotatedCurve(base_curves[1], phi=2*np.pi/2, flip=True)
 rotcurrent1 = ScaledCurrent(base_currents[0],1.e-5)*1.e5
 rotcurrent2 = ScaledCurrent(base_currents[1],-1.e-5)*1.e5
@@ -212,12 +213,12 @@ if finite_beta: Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_norm
 else: Jf = SquaredFlux(surf, bs, local=True)
 Jls = [CurveLength(c) for c in base_curves]
 Jccdist = CurveCurveDistance(curves, CC_THRESHOLD, num_basecurves=len(curves))
-Jcs = [LpCurveCurvature(c, 2, CURVATURE_THRESHOLD) for i, c in enumerate(base_curves)]
+Jcs = [LpCurveCurvature(c, 2, CURVATURE_THRESHOLD[i]) for i, c in enumerate(base_curves)]
 Jmscs = [MeanSquaredCurvature(c) for c in base_curves]
 Jals = [ArclengthVariation(c) for c in base_curves]
 J_CC = CC_WEIGHT * Jccdist
 J_CURVATURE = CURVATURE_WEIGHT * sum(Jcs)
-J_MSC = MSC_WEIGHT * sum(QuadraticPenalty(J, MSC_THRESHOLD) for i, J in enumerate(Jmscs))
+J_MSC = MSC_WEIGHT * sum(QuadraticPenalty(J, MSC_THRESHOLD[i]) for i, J in enumerate(Jmscs))
 J_ALS = ARCLENGTH_WEIGHT * sum(Jals)
 J_LENGTH_PENALTY = LENGTH_CON_WEIGHT * sum([QuadraticPenalty(Jls[i], LENGTH_THRESHOLD[i]) for i in range(len(base_curves))])
 JF = Jf + J_CC + J_LENGTH_PENALTY + J_CURVATURE + J_MSC + J_ALS
