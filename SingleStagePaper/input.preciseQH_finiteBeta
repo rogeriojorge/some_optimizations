@@ -26,7 +26,7 @@
   SPRES_PED =    1.000000000000E+000
   PRES_SCALE =    1.000000000000E+000
   PMASS_TYPE = 'power_series'
-  AM = 2.2847e4 -2.2847e4
+  AM = 2.3522e4 -2.3522e4
 !----- Current/Iota Parameters -----
   CURTOR =  0
   NCURR = 1

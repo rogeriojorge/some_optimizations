@@ -39,22 +39,22 @@ start = time.time()
 ############## Input parameters
 ##########################################################################################
 max_modes = [1]
-stage_1=False
-single_stage=True
-MAXITER_stage_1 = 10
-MAXITER_stage_2 = 150
-MAXITER_single_stage = 20
+stage_1=True
+single_stage=False
+MAXITER_stage_1 = 40
+MAXITER_stage_2 = 300
+MAXITER_single_stage = 100
 finite_beta=True
 mercier_stability=False
 ncoils = 3
 beta_target = 0.03
 aspect_ratio_target = 8.0
-CC_THRESHOLD = 0.08
-LENGTH_THRESHOLD = 2.8
+CC_THRESHOLD = 0.12
+LENGTH_THRESHOLD = 3.0
 CURVATURE_THRESHOLD = 8
-MSC_THRESHOLD = 8
-nphi_VMEC=30
-ntheta_VMEC=30
+MSC_THRESHOLD = 10
+nphi_VMEC=34
+ntheta_VMEC=34
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
 coils_objective_weight = 1e+3
@@ -80,10 +80,10 @@ CC_WEIGHT = 1e+0 # Weight for the coil-to-coil distance penalty in the objective
 CURVATURE_WEIGHT = 1e-3 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-3 # Weight for the mean squared curvature penalty in the objective function
 ARCLENGTH_WEIGHT = 1e-6 # Weight for the arclength variation penalty in the objective function
-plot_result = False
+plot_result = True
 ##########################################################################################
 ##########################################################################################
-directory = f'optimization_QH_len{LENGTH_THRESHOLD}'
+directory = f'optimization_QH'
 if mercier_stability: directory +='_mercier'
 if finite_beta: directory +='_finitebeta'
 if stage_1: directory +='_stage1'
@@ -544,8 +544,8 @@ for max_mode in max_modes:
         try:
             df = pd.DataFrame(oustr_dict_inner)
             df.to_csv(os.path.join(this_path, f'output_max_mode_{max_mode}.csv'), index_label='index')
-            if mercier_stability: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry', 'Jmercier','Jaspect','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
-            else: ax=df.plot(kind='line', logy=True, y=['J','Jf','B.n','Jquasisymmetry','Jaspect','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+            if mercier_stability: ax=df.plot(kind='line', logy=True, y=['J','Jf','Jquasisymmetry', 'Jmercier','Jaspect','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
+            else: ax=df.plot(kind='line', logy=True, y=['J','Jf','Jquasisymmetry','Jaspect','J_CC','J_LENGTH_PENALTY','J_CURVATURE'], linewidth=0.8)
             ax.set_ylim(bottom=1e-9, top=None)
             ax.set_xlabel('Number of function evaluations')
             ax.set_ylabel('Objective function')
