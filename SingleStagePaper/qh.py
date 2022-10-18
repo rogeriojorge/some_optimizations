@@ -38,23 +38,23 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [2]
+max_modes = [1]
 stage_1=True
 single_stage=True
-MAXITER_stage_1 = 30
+MAXITER_stage_1 = 40
 MAXITER_stage_2 = 350
-MAXITER_single_stage = 150
+MAXITER_single_stage = 160
 finite_beta=True
-mercier_stability=True
+mercier_stability=False
 ncoils = 3
-beta_target = 0.03
+# beta_target = 0.03
 aspect_ratio_target = 8.0
-CC_THRESHOLD = 0.12
+CC_THRESHOLD = 0.13
 LENGTH_THRESHOLD = 3.33
 CURVATURE_THRESHOLD = 5
 MSC_THRESHOLD = 8
-nphi_VMEC=34
-ntheta_VMEC=34
+nphi_VMEC=36
+ntheta_VMEC=36
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
 coils_objective_weight = 1e+3
@@ -264,7 +264,7 @@ def Mercier_objective(v, mercier_smin=0.2):
     mask = np.logical_and(v.s_full_grid > mercier_smin, v.s_full_grid < 0.95)
     sDMerc = sDMerc[mask]
     x = np.maximum(mercier_threshold - sDMerc, 0)
-    residuals = x / (np.sqrt(len(sDMerc)) * mercier_threshold)
+    residuals = x / (np.sqrt(len(sDMerc)))# * mercier_threshold)
     return residuals
 ##########################################################################################
 ##########################################################################################
