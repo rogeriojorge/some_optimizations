@@ -42,7 +42,7 @@ max_modes = [1]
 stage_1=True
 single_stage=True
 MAXITER_stage_1 = 40
-MAXITER_stage_2 = 350
+MAXITER_stage_2 = 500
 MAXITER_single_stage = 160
 finite_beta=True
 mercier_stability=False
@@ -50,14 +50,14 @@ ncoils = 3
 # beta_target = 0.03
 aspect_ratio_target = 8.0
 CC_THRESHOLD = 0.13
-LENGTH_THRESHOLD = 3.33
+LENGTH_THRESHOLD = 3.5
 CURVATURE_THRESHOLD = 5
-MSC_THRESHOLD = 8
+MSC_THRESHOLD = 10
 nphi_VMEC=36
 ntheta_VMEC=36
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
-coils_objective_weight = 1e+3
+coils_objective_weight = 5e+3
 use_previous_results_if_available = True
 mercier_threshold=3e-5
 mercier_weight=1e-4
@@ -482,7 +482,7 @@ for max_mode in max_modes:
         info_coils={'Nfeval':0}
         oustr_dict=[]
         pprint(f'  Performing stage 2 optimization with {MAXITER_stage_2} iterations')
-        res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
+        res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-9)
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
         Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
