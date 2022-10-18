@@ -362,7 +362,7 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     
         fig = plt.figure()
         fig.patch.set_facecolor('white')
-        ax = fig.gca(projection='3d')
+        ax = plt.axes(projection='3d')
         for curve in coils_curves:
             gamma = curve.gamma()
             plt.plot(gamma[:, 0], gamma[:, 1], gamma[:, 2])
