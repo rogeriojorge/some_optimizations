@@ -75,43 +75,8 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
 ######################################
 ######################################
 def CalculateHeatFlux(v: Vmec):
-    s_surface = 0.1
-    alpha_surface = [0]
-    theta_min_max = 2*np.pi
-    ntheta_PEST = 30
-    theta_PEST = np.linspace(-theta_min_max, theta_min_max, ntheta_PEST)
-    fl = vmec_fieldlines(v, s_surface, alpha_surface, theta1d=theta_PEST)
-    iota = fl.iota
-    shat = fl.shat
-    B_cross_grad_s_dot_grad_alpha = fl.B_cross_grad_s_dot_grad_alpha
-    B_cross_grad_B_dot_grad_alpha = fl.B_cross_grad_B_dot_grad_alpha
-    B_cross_grad_B_dot_grad_psi = fl.B_cross_grad_B_dot_grad_psi
-    B_cross_kappa_dot_grad_psi = fl.B_cross_kappa_dot_grad_psi
-    B_cross_kappa_dot_grad_alpha = fl.B_cross_kappa_dot_grad_alpha
-    grad_alpha_dot_grad_alpha = fl.grad_alpha_dot_grad_alpha
-    grad_alpha_dot_grad_psi = fl.grad_alpha_dot_grad_psi
-    grad_psi_dot_grad_psi = fl.grad_psi_dot_grad_psi
-    L_reference = fl.L_reference
-    B_reference = fl.B_reference
-    toroidal_flux_sign = fl.toroidal_flux_sign
-    bmag = fl.bmag
-    gradpar_theta_pest = fl.gradpar_theta_pest
-    gradpar_phi = fl.gradpar_phi
-    gds2 = fl.gds2
-    gds21 = fl.gds21
-    gds22 = fl.gds22
-    gbdrift = fl.gbdrift
-    gbdrift0 = fl.gbdrift0
-    cvdrift = fl.cvdrift
-    cvdrift0 = fl.cvdrift0
-    try:
-        gx_class = GX_Runner(os.path.join(this_path,'gx-sample.in'))
-        gx_class.execute()
-        heat_flux = read_GX_output('gx_output')
-        return heat_flux
-    except Exception as e:
-        print(e)
-        return 1
+    heat_flux = 1
+    return heat_flux
 ######################################
 ######################################
 ######################################
