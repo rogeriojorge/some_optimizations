@@ -41,7 +41,7 @@ start = time.time()
 max_modes = [2]
 stage_1=True
 single_stage=True
-MAXITER_stage_1 = 15
+MAXITER_stage_1 = 30
 MAXITER_stage_2 = 350
 MAXITER_single_stage = 150
 finite_beta=True
@@ -53,7 +53,7 @@ CC_THRESHOLD = 0.12
 LENGTH_THRESHOLD = 3.33
 CURVATURE_THRESHOLD = 5
 MSC_THRESHOLD = 8
-nphi_VMEC=28
+nphi_VMEC=34
 ntheta_VMEC=34
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
@@ -445,7 +445,7 @@ for max_mode in max_modes:
     bs.set_points(surf.gamma().reshape((-1, 3)))
 
     if stage_1 and not ran_stage1:
-        if finite_beta: vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
+        # if finite_beta: vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
         pprint(f'  Performing stage 1 optimization with {MAXITER_stage_1} iterations')
         os.chdir(vmec_results_path)
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
@@ -474,7 +474,7 @@ for max_mode in max_modes:
         ran_stage1 = True
 
     if finite_beta:
-        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
+        # vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
         JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
