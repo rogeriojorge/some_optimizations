@@ -40,24 +40,23 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [1,1,2,2]
-stage_1=True
-single_stage=True
+max_modes = [1]
+stage_1=False
+single_stage=False
 MAXITER_stage_1 = 10
-MAXITER_stage_2 = 500
-MAXITER_single_stage = 50
-finite_beta=True
+MAXITER_stage_2 = 250
+MAXITER_single_stage = 10
+finite_beta=False
 mercier_stability=False
-circularTopBottom = True
-nphi_VMEC=34
-ntheta_VMEC=34
+circularTopBottom = False
+nphi_VMEC=36
+ntheta_VMEC=36
 nmodes_coils = 7
-CC_THRESHOLD = 0.15
-CURVATURE_THRESHOLD = [3.0,6.0,3.0,6.0]
+CC_THRESHOLD = 0.12
+CURVATURE_THRESHOLD = [3.0,6.0,3.0,5.0]
 MSC_THRESHOLD = [4.0,12.0,4.0,12.0]
 LENGTH_THRESHOLD = [6.8,3.0,6.8,3.0]
-beta_target=[0.01,0.01,0.015,0.015]
-MAXITER_stage_1_get_beta = 8
+beta_target=0.1
 iota_target = -0.23
 aspect_ratio_target = 2.5
 mercier_threshold=3e-5
@@ -194,11 +193,20 @@ if circularTopBottom:
 ######################### Save initial surface and coil data #############################
 ##########################################################################################
 rotcurve1 = RotatedCurve(base_curves[0], phi=2*np.pi/2, flip=True)
-rotcurve2 = RotatedCurve(base_curves[1], phi=2*np.pi/2, flip=True)
 rotcurrent1 = ScaledCurrent(base_currents[0],-1.e-5)*1.e5
-rotcurrent2 = ScaledCurrent(base_currents[1],-1.e-5)*1.e5
+rotcurve2 = RotatedCurve(base_curves[1], phi=2*np.pi/2, flip=False)
+rotcurrent2 = ScaledCurrent(base_currents[1],1.e-5)*1.e5
 curves = np.concatenate((base_curves,[rotcurve1,rotcurve2]))
 currents = np.concatenate((base_currents,[rotcurrent1,rotcurrent2]))
+
+# rotcurve2 = RotatedCurve(base_curves[1], phi=1*np.pi/2, flip=True)
+# rotcurrent2 = ScaledCurrent(base_currents[1],-1.e-5)*1.e5
+# rotcurve3 = RotatedCurve(base_curves[1], phi=2*np.pi/2, flip=False)
+# rotcurrent3 = ScaledCurrent(base_currents[1],1.e-5)*1.e5
+# rotcurve4 = RotatedCurve(base_curves[1], phi=3*np.pi/2, flip=True)
+# rotcurrent4 = ScaledCurrent(base_currents[1],-1.e-5)*1.e5
+# curves = np.concatenate((base_curves,[rotcurve1,rotcurve2,rotcurve3,rotcurve4]))
+# currents = np.concatenate((base_currents,[rotcurrent1,rotcurrent2,rotcurrent3,rotcurrent4]))
 
 # currents = [Current(current1)*1e5,Current(current2)*1e5,Current(current1)*1e5,Current(-current2)*1e5]
 # curves = [CurveXYZFourier(128, nmodes_coils) for i in range(4)]
@@ -207,6 +215,8 @@ currents = np.concatenate((base_currents,[rotcurrent1,rotcurrent2]))
 # curves[2].set_dofs(np.concatenate(([       0, 0, radius1],np.zeros(2*(nmodes_coils-1)),[0,                radius1, 0],np.zeros(2*(nmodes_coils-1)),[ center1,                     0, 0],np.zeros(2*(nmodes_coils-1)))))
 # curves[3].set_dofs(np.concatenate(([-center2, 0, radius2],np.zeros(2*(nmodes_coils-1)),[0,  radius2*np.sin(gamma), 0],np.zeros(2*(nmodes_coils-1)),[       0, radius2*np.cos(gamma), 0],np.zeros(2*(nmodes_coils-1)))))
 # base_curves = curves
+# curves[0].fix_all()
+# curves[2].fix_all()
 
 coils = [Coil(curv, curr) for (curv, curr) in zip(curves, currents)]
 curves = [c.curve for c in coils]
@@ -283,7 +293,7 @@ def plot_df_stage2(df, max_mode):
     ax.set_ylim(bottom=1e-9, top=None)
     ax.set_xlabel('Number of function evaluations')
     ax.set_ylabel('Objective function')
-    plt.axvline(x=info_coils['Nfeval'], linestyle='dashed', color='k', label='simple-loop', linewidth=0.8)
+    # plt.axvline(x=info_coils['Nfeval'], linestyle='dashed', color='k', label='Stage 2', linewidth=0.8)
     plt.legend(loc=3, prop={'size': 6})
     plt.tight_layout()
     plt.savefig(os.path.join(OUT_DIR, f'optimization_stage2_max_mode_{max_mode}.pdf'), bbox_inches = 'tight', pad_inches = 0)
@@ -490,15 +500,13 @@ for max_mode in max_modes:
     dofs = np.concatenate((JF.x, vmec.x))
     bs.set_points(surf.gamma().reshape((-1, 3)))
 
+    if finite_beta:
+        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal
+        pprint('   Starting optimization with am =',vmec.indata.am[0:2])
+
     if stage_1:
         pprint(f'  Performing stage 1 optimization with {MAXITER_stage_1} iterations')
         os.chdir(vmec_results_path)
-        if finite_beta:
-            for beta in beta_target:
-                pprint('   Starting optimization with am =',vmec.indata.am[0:2])
-                least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1_get_beta)
-                vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta/vmec.wout.betatotal
-                pprint('   vmec.wout.betatotal after least_squares_opt =',vmec.wout.betatotal)
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
         if finite_beta: pprint('   vmec.wout.betatotal after stage_1 =',vmec.wout.betatotal)
         dofs[-number_vmec_dofs:] = prob.x
