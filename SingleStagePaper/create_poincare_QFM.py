@@ -23,22 +23,22 @@ logger.setLevel(1)
 def pprint(*args, **kwargs):
     if comm.rank == 0: print(*args, **kwargs)
 
-main_directory = 'optimization_CNT'
+# main_directory = 'optimization_CNT'
+main_directory = 'optimization_QH_finitebeta'
 volume_scale = 1.0
 nfieldlines = 4
 tmax_fl = 1500
 tol_qfm = 1e-14
 tol_poincare = 1e-13
-nphi_QFM = 25
+nphi_QFM = 30
 ntheta_QFM = 35
-mpol = 6
-ntor = 6
+mpol = 8
+ntor = 8
 maxiter_qfm = 700
 constraint_weight=1e-0
 ntheta_VMEC = 300
 create_QFM = False
 create_Poincare = True
-nfp=2
 bs_file = 'biot_savart_opt.json'
 
 boozxform_nsurfaces = 10
@@ -182,9 +182,8 @@ if create_Poincare:
             phis=phis, stopping_criteria=[])
         t2 = time.time()
         pprint(f"Time for fieldline tracing={t2-t1:.3f}s. Num steps={sum([len(l) for l in fieldlines_tys])//nfieldlines}", flush=True)
-        # if comm is None or comm.rank == 0:
-        #     particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
-            # plot_poincare_data(fieldlines_phi_hits, phis, os.path.join(OUT_DIR, f'poincare_fieldline_optimized_coils.png'), dpi=150)
+        if comm is None or comm.rank == 0:
+            particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
         return fieldlines_tys, fieldlines_phi_hits, phis
 
     if vmec_ran_QFM or os.path.isfile(os.path.join(this_path, f"wout_QFM.nc")):

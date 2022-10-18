@@ -38,22 +38,22 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
+max_modes = [2]
 stage_1=True
-single_stage=False
-MAXITER_stage_1 = 40
-MAXITER_stage_2 = 300
-MAXITER_single_stage = 100
+single_stage=True
+MAXITER_stage_1 = 15
+MAXITER_stage_2 = 350
+MAXITER_single_stage = 150
 finite_beta=True
-mercier_stability=False
+mercier_stability=True
 ncoils = 3
 beta_target = 0.03
 aspect_ratio_target = 8.0
 CC_THRESHOLD = 0.12
-LENGTH_THRESHOLD = 3.0
-CURVATURE_THRESHOLD = 8
-MSC_THRESHOLD = 10
-nphi_VMEC=34
+LENGTH_THRESHOLD = 3.33
+CURVATURE_THRESHOLD = 5
+MSC_THRESHOLD = 8
+nphi_VMEC=28
 ntheta_VMEC=34
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
@@ -86,7 +86,7 @@ plot_result = True
 directory = f'optimization_QH'
 if mercier_stability: directory +='_mercier'
 if finite_beta: directory +='_finitebeta'
-if stage_1: directory +='_stage1'
+# if stage_1: directory +='_stage1'
 vmec_verbose=False
 vmec_input_filename=f'input.preciseQH'
 if finite_beta: vmec_input_filename+='_finitebeta'
@@ -265,7 +265,7 @@ def Mercier_objective(v, mercier_smin=0.2):
     sDMerc = sDMerc[mask]
     x = np.maximum(mercier_threshold - sDMerc, 0)
     residuals = x / (np.sqrt(len(sDMerc)) * mercier_threshold)
-    return np.max(residuals)
+    return residuals
 ##########################################################################################
 ##########################################################################################
 def fun_J(dofs_vmec, dofs_coils):
@@ -393,10 +393,10 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
                 outstr += f"\n Aspect={vmec.aspect()}"
                 outstr += f"\n Mean iota={vmec.mean_iota()}"
                 outstr += f"\n Magnetic well={vmec.vacuum_well()}"
-                outstr += f"\n Mercier objective={Mercier_objective(vmec)}"
+                outstr += f"\n Mercier objective={np.max(Mercier_objective(vmec))}"
                 outstr += f"\n Total beta={vmec.wout.betatotal}"
                 dict1.update({'Jquasisymmetry':float(qs.total()),
-                              'Jmercier':float(Mercier_objective(vmec)),
+                              'Jmercier':float(np.max(Mercier_objective(vmec))),
                               'Jaspect':float((vmec.aspect()-aspect_ratio_target)**2)})
             else:
                 dict1.update({'Jquasisymmetry':0, 'Jaspect':0, 'Jmercier': 0})
@@ -428,6 +428,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
 ## Perform optimization
 #############################################################
 oustr_dict_outer=[]
+ran_stage1 = False # Only running stage1 optimization once
 for max_mode in max_modes:
     oustr_dict_inner=[]
     surf.fix_all()
@@ -443,7 +444,8 @@ for max_mode in max_modes:
     dofs = np.concatenate((JF.x, vmec.x))
     bs.set_points(surf.gamma().reshape((-1, 3)))
 
-    if stage_1:
+    if stage_1 and not ran_stage1:
+        if finite_beta: vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
         pprint(f'  Performing stage 1 optimization with {MAXITER_stage_1} iterations')
         os.chdir(vmec_results_path)
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=finite_difference_rel_step, abs_step=finite_difference_abs_step, max_nfev=MAXITER_stage_1)
@@ -454,7 +456,7 @@ for max_mode in max_modes:
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
-        pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+        pprint(f"Mercier objective at max_mode {max_mode}: {np.max(opt_Mercier.J())}")
         pprint(f"Total beta at max_mode {max_mode}: {vmec.wout.betatotal}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
         if mpi.proc0_world:
@@ -464,13 +466,15 @@ for max_mode in max_modes:
                     myfile.write(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
                     myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                     myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
-                    myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+                    myfile.write(f"\nMercier objective at max_mode {max_mode}: {np.max(opt_Mercier.J())}")
                     myfile.write(f"\nTotal beta at at max_mode {max_mode}: {vmec.wout.betatotal}")
                     myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
                 except Exception as e:
                     myfile.write(e)
+        ran_stage1 = True
 
     if finite_beta:
+        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal;vmec.need_to_run_code=True
         vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
         Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
         JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
@@ -495,7 +499,7 @@ for max_mode in max_modes:
                 myfile.write(f"\nMean iota at {max_mode}: {vmec.mean_iota()}")
                 myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                 myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
-                myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+                myfile.write(f"\nMercier objective at max_mode {max_mode}: {np.max(opt_Mercier.J())}")
                 myfile.write(f"\nTotal beta at at max_mode {max_mode}: {vmec.wout.betatotal}")
                 myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
             except Exception as e:
@@ -534,7 +538,7 @@ for max_mode in max_modes:
         pprint(f"Mean iota at {max_mode}: {vmec.mean_iota()}")
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
-        pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+        pprint(f"Mercier objective at max_mode {max_mode}: {np.max(opt_Mercier.J())}")
         pprint(f"Total beta at max_mode {max_mode}: {vmec.wout.betatotal}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
     except Exception as e:
@@ -611,7 +615,7 @@ try:
     pprint(f"Mean iota after optimization: {vmec.mean_iota()}")
     pprint(f"Quasisymmetry objective after optimization: {qs.total()}")
     pprint(f"Magnetic well after optimization: {vmec.vacuum_well()}")
-    pprint(f"Mercier objective: {opt_Mercier.J()}")
+    pprint(f"Mercier objective: {np.max(opt_Mercier.J())}")
     pprint(f"Squared flux after optimization: {Jf.J()}")
 except Exception as e: pprint(e)
 ##########################################################################################
