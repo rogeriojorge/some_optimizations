@@ -89,7 +89,7 @@ if finite_beta: directory +='_finitebeta'
 # if stage_1: directory +='_stage1'
 vmec_verbose=False
 vmec_input_filename=f'input.preciseQH'
-if finite_beta: vmec_input_filename+='_finitebeta'
+if finite_beta: vmec_input_filename+='_finiteBeta'
 # Create output directories
 if not use_previous_results_if_available:
     if comm.rank == 0:
