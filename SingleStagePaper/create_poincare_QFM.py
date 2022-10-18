@@ -26,10 +26,10 @@ def pprint(*args, **kwargs):
 # main_directory = 'optimization_CNT'
 main_directory = 'optimization_QH_finitebeta'
 volume_scale = 1.0
-nfieldlines = 4
-tmax_fl = 1500
+nfieldlines = 8
+tmax_fl = 2200
 tol_qfm = 1e-14
-tol_poincare = 1e-13
+tol_poincare = 1e-14
 nphi_QFM = 30
 ntheta_QFM = 35
 mpol = 8
