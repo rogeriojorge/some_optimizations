@@ -40,30 +40,30 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [1]
-stage_1=False
-single_stage=False
-MAXITER_stage_1 = 30
-MAXITER_stage_2 = 250
+max_modes = [1,1,2,2]
+stage_1=True
+single_stage=True
+MAXITER_stage_1 = 10
+MAXITER_stage_2 = 500
 MAXITER_single_stage = 50
 finite_beta=True
 mercier_stability=False
 circularTopBottom = True
-nphi_VMEC=130
-ntheta_VMEC=36
+nphi_VMEC=34
+ntheta_VMEC=34
 nmodes_coils = 7
 CC_THRESHOLD = 0.15
 CURVATURE_THRESHOLD = [3.0,6.0,3.0,6.0]
 MSC_THRESHOLD = [4.0,12.0,4.0,12.0]
 LENGTH_THRESHOLD = [6.8,3.0,6.8,3.0]
-beta_target=[0.03,0.03]
-MAXITER_stage_1_get_beta = 10
+beta_target=[0.01,0.01,0.015,0.015]
+MAXITER_stage_1_get_beta = 8
 iota_target = -0.23
-aspect_ratio_target = 3.5
+aspect_ratio_target = 2.5
 mercier_threshold=3e-5
 diff_method="forward"
-use_previous_results_if_available = False
-plot_result = False
+use_previous_results_if_available = True
+plot_result = True
 ##########################################################################################
 ################################ Optimization parameters #################################
 ##########################################################################################
@@ -96,8 +96,8 @@ quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 debug_coils_outputtxt = True
 debug_output_file = 'output.txt'
 boozxform_nsurfaces = 10
-finite_difference_abs_step = 1e-7
-finite_difference_rel_step = 0
+finite_difference_abs_step = 1e-6
+finite_difference_rel_step = 1e-4
 vc_src_nphi=ntheta_VMEC
 ##########################################################################################
 ##########################################################################################
@@ -133,6 +133,13 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(this_path, 
 else: vmec_input = os.path.join(parent_path,vmec_input_filename)
 pprint(f' Using vmec input file {vmec_input}')
 vmec = Vmec(vmec_input, mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC, range_surface='half period')
+if finite_beta:
+    try:
+        vmec.run()
+        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target[-1]/vmec.wout.betatotal
+        vmec.run()
+    except Exception as e:
+        pprint(e)
 surf = vmec.boundary
 ##########################################################################################
 ################################### Virtual Casing #######################################
@@ -209,7 +216,6 @@ bs.set_points(surf.gamma().reshape((-1, 3)))
 Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
 if finite_beta: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal
 else: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
-print(f'max bdotn={np.max(np.abs(BdotN_surf))}')
 if comm.rank == 0:
     curves_to_vtk(curves, os.path.join(coils_results_path, "curves_init"))
     pointData = {"B_N": BdotN_surf[:, :, None]}
@@ -433,6 +439,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
                 outstr += f"\n Mean iota={vmec.mean_iota()}"
                 outstr += f"\n Magnetic well={vmec.vacuum_well()}"
                 outstr += f"\n Mercier objective={Mercier_objective(vmec)}"
+                outstr += f"\n Total beta={vmec.wout.betatotal}"
                 dict1.update({'Jquasisymmetry':float(qs.total()),
                               'Jiota':float((vmec.mean_iota()-iota_target)**2),
                               'Jmercier':float(Mercier_objective(vmec)),
@@ -502,6 +509,7 @@ for max_mode in max_modes:
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
         pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+        pprint(f"Total beta at max_mode {max_mode}: {vmec.wout.betatotal}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
         if mpi.proc0_world:
             with open(debug_output_file, "a") as myfile:
@@ -511,6 +519,7 @@ for max_mode in max_modes:
                     myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                     myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
                     myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+                    myfile.write(f"\nTotal beta at at max_mode {max_mode}: {vmec.wout.betatotal}")
                     myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
                 except Exception as e:
                     myfile.write(e)
@@ -541,6 +550,7 @@ for max_mode in max_modes:
                 myfile.write(f"\nQuasisymmetry objective at max_mode {max_mode}: {qs.total()}")
                 myfile.write(f"\nMagnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
                 myfile.write(f"\nMercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+                myfile.write(f"\nTotal beta at at max_mode {max_mode}: {vmec.wout.betatotal}")
                 myfile.write(f"\nSquared flux at max_mode {max_mode}: {Jf.J()}")
             except Exception as e:
                 myfile.write(e)
@@ -579,6 +589,7 @@ for max_mode in max_modes:
         pprint(f"Quasisymmetry objective at max_mode {max_mode}: {qs.total()}")
         pprint(f"Magnetic well at max_mode {max_mode}: {vmec.vacuum_well()}")
         pprint(f"Mercier objective at max_mode {max_mode}: {opt_Mercier.J()}")
+        pprint(f"\nTotal beta at at max_mode {max_mode}: {vmec.wout.betatotal}")
         pprint(f"Squared flux at max_mode {max_mode}: {Jf.J()}")
     except Exception as e:
         pprint(e)
@@ -655,6 +666,7 @@ try:
     pprint(f"Quasisymmetry objective after optimization: {qs.total()}")
     pprint(f"Magnetic well after optimization: {vmec.vacuum_well()}")
     pprint(f"Mercier objective: {opt_Mercier.J()}")
+    pprint(f"Total beta: {vmec.wout.betatotal}")
     pprint(f"Squared flux after optimization: {Jf.J()}")
 except Exception as e: pprint(e)
 ##########################################################################################
