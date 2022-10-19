@@ -16,7 +16,7 @@
   NFP = 0004
   MPOL = 0005
   NTOR = 0005
-  PHIEDGE =    0.0381790210242581
+  PHIEDGE = 0.043937072
 !----- Free Boundary Parameters -----
   LFREEB = F
   NVACSKIP =    6
@@ -26,7 +26,7 @@
   SPRES_PED =    1.000000000000E+000
   PRES_SCALE =    1.000000000000E+000
   PMASS_TYPE = 'power_series'
-  AM = 1.9e4 -1.9e4
+  AM = 2.4e4 -2.4e4
 !----- Current/Iota Parameters -----
   CURTOR =  0
   NCURR = 1

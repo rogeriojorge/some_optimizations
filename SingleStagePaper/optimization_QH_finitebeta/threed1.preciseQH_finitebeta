@@ -1,4 +1,4 @@
- SHOT ID.: preciseQH_finitebeta  SEQ. NO.:   0
+ SHOT ID.: preciseQH_finiteBeta  SEQ. NO.:   0
  TIME SLICE =    0. ms
 
  COMPUTATION PARAMETERS: (u = theta, v = zeta)
@@ -9,7 +9,7 @@
  CONFIGURATION PARAMETERS:
  ---------------------------------------
     nfp      gamma      spres_ped    phiedge(wb)     curtor(A)        lRFP
-      4  0.000E+00      1.000E+00      3.818E-02     0.000E+00           F
+      4  0.000E+00      1.000E+00      4.394E-02     0.000E+00           F
 
  RUN CONTROL PARAMETERS:
  -----------------------
@@ -26,7 +26,7 @@
  MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
  PMASS parameterization type is 'power_series'
  -----------------------------------
-   1.900E+04  -1.900E+04
+   2.400E+04  -2.400E+04
 
  TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
  PCURR parameterization type is 'power_series'

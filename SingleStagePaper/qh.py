@@ -41,20 +41,20 @@ start = time.time()
 max_modes = [1]
 stage_1=True
 single_stage=True
-MAXITER_stage_1 = 40
-MAXITER_stage_2 = 500
-MAXITER_single_stage = 160
+MAXITER_stage_1 = 50
+MAXITER_stage_2 = 1500
+MAXITER_single_stage = 300
 finite_beta=True
 mercier_stability=False
 ncoils = 3
 # beta_target = 0.03
 aspect_ratio_target = 8.0
 CC_THRESHOLD = 0.13
-LENGTH_THRESHOLD = 3.5
+LENGTH_THRESHOLD = 3.6
 CURVATURE_THRESHOLD = 5
-MSC_THRESHOLD = 10
-nphi_VMEC=36
-ntheta_VMEC=36
+MSC_THRESHOLD = 7
+nphi_VMEC=38
+ntheta_VMEC=38
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
 coils_objective_weight = 5e+3
@@ -482,7 +482,7 @@ for max_mode in max_modes:
         info_coils={'Nfeval':0}
         oustr_dict=[]
         pprint(f'  Performing stage 2 optimization with {MAXITER_stage_2} iterations')
-        res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-9)
+        res = minimize(fun_coils, dofs[:-number_vmec_dofs], jac=True, args=(info_coils,oustr_dict), method='L-BFGS-B', options={'maxiter': MAXITER_stage_2, 'maxcor': 300}, tol=1e-12)
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
         Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
@@ -576,6 +576,8 @@ if single_stage:
         dofs[:-number_vmec_dofs] = res.x
         JF.x = dofs[:-number_vmec_dofs]
         Jf = JF.opts[0].opts[0].opts[0].opts[0].opts[0]
+        df = pd.DataFrame(oustr_dict)
+        plot_df_stage2(df, 0)
 ##########################################################################################
 ##########################################################################################
 #############################################################
@@ -627,9 +629,9 @@ if not plot_result: exit()
 os.chdir(this_path)
 try:
     vmec_final = Vmec(os.path.join(this_path, f'input.final'))
-    vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
-    vmec_final.indata.niter_array[:3] = [ 4000, 10000,  8000]#,  8000, 10000]
-    vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
+    vmec_final.indata.ns_array[:3]    = [  16,     51,   101]#,   151,   201]
+    vmec_final.indata.niter_array[:3] = [ 4000,  6000, 10000]#,  8000, 10000]
+    vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-16]#, 1e-15, 1e-15]
     vmec_final.run()
     if mpi.proc0_world:
         shutil.move(os.path.join(this_path, f"wout_final_000_000000.nc"), os.path.join(this_path, f"wout_final.nc"))
@@ -637,6 +639,19 @@ try:
 except Exception as e:
     pprint('Exception when creating final vmec file:')
     pprint(e)
+if stage_1:
+    try:
+        vmec_stage1 = Vmec(os.path.join(this_path, f'input.stage1'))
+        vmec_stage1.indata.ns_array[:3]    = [  16,     51,   101]#,   151,   201]
+        vmec_stage1.indata.niter_array[:3] = [ 4000,  6000, 10000]#,  8000, 10000]
+        vmec_stage1.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-16]#, 1e-15, 1e-15]
+        vmec_stage1.run()
+        if mpi.proc0_world:
+            shutil.move(os.path.join(this_path, f"wout_stage1_000_000000.nc"), os.path.join(this_path, f"wout_stage1.nc"))
+            os.remove(os.path.join(this_path, f'input.stage1_000_000000'))
+    except Exception as e:
+        pprint('Exception when creating stage1 vmec file:')
+        pprint(e)
 ##########################################################################################
 ##########################################################################################
 #############################################
@@ -669,6 +684,33 @@ if os.path.isfile(os.path.join(this_path, f"wout_final.nc")):
             plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
             plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+if os.path.isfile(os.path.join(this_path, f"wout_stage1.nc")):
+    pprint('Found stage1 vmec file')
+    if mpi.proc0_world:
+        pprint("Plot VMEC result")
+        import vmecPlot2
+        vmecPlot2.main(file=os.path.join(this_path, f"wout_stage1.nc"), name='stage1', figures_folder=OUT_DIR)
+        pprint('Creating Boozer class for vmec_stage1')
+        b1 = Boozer(vmec_stage1, mpol=64, ntor=64)
+        pprint('Defining surfaces where to compute Boozer coordinates')
+        booz_surfaces = np.linspace(0,1,boozxform_nsurfaces,endpoint=False)
+        pprint(f' booz_surfaces={booz_surfaces}')
+        b1.register(booz_surfaces)
+        pprint('Running BOOZ_XFORM')
+        b1.run()
+        if mpi.proc0_world:
+            b1.bx.write_boozmn(os.path.join(vmec_results_path,"boozmn_stage1.nc"))
+            pprint("Plot BOOZ_XFORM")
+            fig = plt.figure(); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_1_stage1.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            fig = plt.figure(); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_2_stage1.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            fig = plt.figure(); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_surfplot_3_stage1.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            fig = plt.figure(); bx.symplot(b1.bx, helical_detail = helical_detail, sqrts=True)
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_stage1.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+            fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
+            plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_stage1.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
 ##########################################################################################
 ##########################################################################################
 stop = time.time()

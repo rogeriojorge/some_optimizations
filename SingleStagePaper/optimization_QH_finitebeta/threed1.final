@@ -1,7 +1,7 @@
  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
 
- COMPUTER:    OS:    RELEASE:   DATE = Oct 18,2022  TIME = 17:44:11
+ COMPUTER:    OS:    RELEASE:   DATE = Oct 19,2022  TIME = 14:28:51
  SHOT ID.: final  SEQ. NO.:   0
  TIME SLICE =    0. ms
 
@@ -13,7 +13,7 @@
  CONFIGURATION PARAMETERS:
  ---------------------------------------
     nfp      gamma      spres_ped    phiedge(wb)     curtor(A)        lRFP
-      4  0.000E+00      1.000E+00      3.818E-02     0.000E+00           F
+      4  0.000E+00      1.000E+00      4.394E-02     0.000E+00           F
 
  RUN CONTROL PARAMETERS:
  -----------------------
@@ -30,7 +30,7 @@
  MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
  PMASS parameterization type is 'power_series'
  -----------------------------------
-   1.900E+04  -1.900E+04
+   2.400E+04  -2.400E+04
 
  TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
  PCURR parameterization type is 'power_series'
@@ -50,10 +50,10 @@
  --------------------------------------------------------------------------------------
    nb  mb     rbc         rbs         zbc         zbs       raxis(c)    raxis(s)    zaxis(c)    zaxis(s)
     0   0  1.0000E+00  0.0000E+00  0.0000E+00 -0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
-    1   0  1.2310E-01  0.0000E+00  0.0000E+00  1.1601E-01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
-   -1   1 -5.0904E-02  0.0000E+00  0.0000E+00  4.6506E-02
-    0   1  1.2076E-01  0.0000E+00  0.0000E+00  1.4748E-01
-    1   1  5.5453E-03  0.0000E+00  0.0000E+00  5.9518E-03
+    1   0  1.3717E-01  0.0000E+00  0.0000E+00  1.2539E-01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+   -1   1 -4.6129E-02  0.0000E+00  0.0000E+00  3.3427E-02
+    0   1  1.1510E-01  0.0000E+00  0.0000E+00  1.4674E-01
+    1   1  9.6712E-03  0.0000E+00  0.0000E+00  9.4891E-03
  FSQR, FSQZ = Normalized Physical Force Residuals
  fsqr, fsqz = Preconditioned Force Residuals
  -----------------------
