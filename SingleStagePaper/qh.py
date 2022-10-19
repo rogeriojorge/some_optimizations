@@ -152,8 +152,9 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
         total_current = Current(total_current_vmec)
         total_current.fix_all()
         currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
-        base_currents = currents[0:ncoils-1]
-        base_currents += [total_current - sum(base_currents)]
+        # base_currents = currents[0:ncoils-1]
+        # base_currents += [total_current - sum(base_currents)]
+        base_currents = currents[0:ncoils]
     else:
         currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
         base_currents = currents[0:ncoils]

@@ -14,6 +14,7 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     if name=='': name=os.path.basename(filename)[5:-3]
     f = netcdf.netcdf_file(filename,'r',mmap=False)
     phi = f.variables['phi'][()]
+    volavgB = f.variables['volavgB'][()]
     iotaf = f.variables['iotaf'][()]
     presf = f.variables['presf'][()]
     iotas = f.variables['iotas'][()]
@@ -64,6 +65,9 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     #print pcurr_type
     #print str(pcurr_type)
     #exit(0)
+
+    print("iotaf: ", iotaf)
+    print("volavgB: ", volavgB)
 
     print("nfp: ",nfp)
     print("ns: ",ns)

@@ -40,25 +40,25 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [1]
+max_modes = [1, 2]
 stage_1=False
 single_stage=False
 MAXITER_stage_1 = 10
-MAXITER_stage_2 = 250
-MAXITER_single_stage = 10
-finite_beta=False
+MAXITER_stage_2 = 1000
+MAXITER_single_stage = 300
+finite_beta=True
 mercier_stability=False
-circularTopBottom = False
-nphi_VMEC=36
-ntheta_VMEC=36
+circularTopBottom = True
+nphi_VMEC=176
+ntheta_VMEC=38
 nmodes_coils = 7
-CC_THRESHOLD = 0.12
-CURVATURE_THRESHOLD = [3.0,6.0,3.0,5.0]
-MSC_THRESHOLD = [4.0,12.0,4.0,12.0]
-LENGTH_THRESHOLD = [6.8,3.0,6.8,3.0]
-beta_target=0.1
-iota_target = -0.23
-aspect_ratio_target = 2.5
+CC_THRESHOLD = 0.0
+CURVATURE_THRESHOLD = [3.0,5.5]
+MSC_THRESHOLD = [4.0,8.0]
+LENGTH_THRESHOLD = [7.0,3.5]
+beta_target=0.15
+iota_target = -0.19
+aspect_ratio_target = 3.5
 mercier_threshold=3e-5
 diff_method="forward"
 use_previous_results_if_available = True
@@ -66,7 +66,7 @@ plot_result = True
 ##########################################################################################
 ################################ Optimization parameters #################################
 ##########################################################################################
-coils_objective_weight = 1e+3
+coils_objective_weight = 5e+3
 JACOBIAN_THRESHOLD = 100
 mercier_weight=1e-4
 aspect_ratio_weight = 1
@@ -95,15 +95,15 @@ quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
 debug_coils_outputtxt = True
 debug_output_file = 'output.txt'
 boozxform_nsurfaces = 10
-finite_difference_abs_step = 1e-6
-finite_difference_rel_step = 1e-4
-vc_src_nphi=ntheta_VMEC
+finite_difference_abs_step = 1e-7
+finite_difference_rel_step = 1e-5
+vc_src_nphi=int(nphi_VMEC/nfp/2)
 ##########################################################################################
 ##########################################################################################
 directory = f'optimization_CNT'
 if mercier_stability: directory +='_mercier'
 if finite_beta: directory +='_finitebeta'
-if stage_1: directory +='_stage1'
+# if stage_1: directory +='_stage1'
 if circularTopBottom: directory +='_circular'
 vmec_verbose=False
 if finite_beta: vmec_input_filename='input.CNT_finiteBeta'
@@ -131,23 +131,23 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(this_path, 
     vmec_input = os.path.join(this_path,"input.final")
 else: vmec_input = os.path.join(parent_path,vmec_input_filename)
 pprint(f' Using vmec input file {vmec_input}')
-vmec = Vmec(vmec_input, mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC, range_surface='half period')
-if finite_beta:
-    try:
-        vmec.run()
-        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target[-1]/vmec.wout.betatotal
-        vmec.run()
-    except Exception as e:
-        pprint(e)
+vmec = Vmec(vmec_input, mpi=mpi, verbose=vmec_verbose, nphi=nphi_VMEC, ntheta=ntheta_VMEC)#, range_surface='half period')
+# if finite_beta:
+#     try:
+#         vmec.run()
+#         vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target[-1]/vmec.wout.betatotal
+#         vmec.run()
+#     except Exception as e:
+#         pprint(e)
 surf = vmec.boundary
 ##########################################################################################
 ################################### Virtual Casing #######################################
 ##########################################################################################
 if finite_beta:
-    vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-    total_current_vmec = vmec.external_current() / (2 * surf.nfp)
+    vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, src_ntheta=ntheta_VMEC)
+    total_current_vmec = vmec.external_current()
     pprint(f' Total current = {total_current_vmec}')
-    pprint(f' max(B_external_normal) = {np.max(vc.B_external_normal)}')
+    pprint(f' max(B_external_normal) = {np.max(vc.B_external_normal_extended)}')
 ##########################################################################################
 ####################################### Coils ############################################
 ##########################################################################################
@@ -158,11 +158,11 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
     ncoils = 2
     base_curves = curves[0:ncoils]
     if finite_beta:
-        total_current = Current(total_current_vmec)
-        total_current.fix_all()
+        # total_current = Current(total_current_vmec)
+        # total_current.fix_all()
         # currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
-        base_currents = currents[0:ncoils-1]
-        base_currents += [total_current - sum(base_currents)]
+        base_currents = currents[0:ncoils]
+        # base_currents += [total_current - sum(base_currents)]
     else:
         # currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
         base_currents = currents[0:ncoils]
@@ -224,16 +224,34 @@ curves = [c.curve for c in coils]
 bs = BiotSavart(coils)
 bs.set_points(surf.gamma().reshape((-1, 3)))
 Bbs = bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3))
-if finite_beta: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal
+if finite_beta: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2) - vc.B_external_normal_extended
 else: BdotN_surf = np.sum(Bbs * surf.unitnormal(), axis=2)
 if comm.rank == 0:
     curves_to_vtk(curves, os.path.join(coils_results_path, "curves_init"))
     pointData = {"B_N": BdotN_surf[:, :, None]}
     surf.to_vtk(os.path.join(coils_results_path, "surf_init"), extra_data=pointData)
+
+# ## Test virtual casing with full period against traditional full casing
+# vc.plot(show=True)
+# vmec2 = Vmec(vmec_input, mpi=mpi, verbose=vmec_verbose, nphi=32, ntheta=ntheta_VMEC, range_surface='half period')
+# vc2 = VirtualCasing.from_vmec(vmec2, src_nphi=32, src_ntheta=ntheta_VMEC)
+# surf2 = vmec2.boundary
+# bs.set_points(surf2.gamma().reshape((-1, 3)))
+# Bbs2 = bs.B().reshape((32, ntheta_VMEC, 3))
+# if finite_beta: BdotN_surf2 = np.sum(Bbs2 * surf2.unitnormal(), axis=2) - vc2.B_external_normal
+# else: BdotN_surf2 = np.sum(Bbs2 * surf2.unitnormal(), axis=2)
+# if comm.rank == 0:
+#     pointData = {"B_N": BdotN_surf2[:, :, None]}
+#     surf2.to_vtk(os.path.join(coils_results_path, "surf_init2"), extra_data=pointData)
+# total_current_vmec2 = vmec2.external_current() / (2 * surf.nfp)
+# pprint(f' Total current2 = {total_current_vmec2}')
+# pprint(f' max(B_external_normal2) = {np.max(vc2.B_external_normal)}')
+# exit()
+
 ##########################################################################################
 ####################################### Stage 2 ##########################################
 ##########################################################################################
-if finite_beta: Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+if finite_beta: Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal_extended)
 else: Jf = SquaredFlux(surf, bs, local=True)
 Jls = [CurveLength(c) for c in base_curves]
 Jccdist = CurveCurveDistance(curves, CC_THRESHOLD, num_basecurves=len(curves))
@@ -338,8 +356,8 @@ def fun_J(dofs_vmec, dofs_coils):
     if finite_beta and run_vcasing:
         try:
             logger.info('Running virtual casing')
-            vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-            Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+            vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, src_ntheta=ntheta_VMEC)
+            Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal_extended)
             if np.sum(Jf.x!=dofs_coils)>0: Jf.x = dofs_coils
             JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
             if np.sum(JF.x!=dofs_coils)>0: JF.x = dofs_coils
@@ -472,7 +490,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
             myfile.write(outstr)
         oustr_dict.append(dict1)
         if np.mod(info['Nfeval'],5)==0:
-            if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+            if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal_extended)[:, :, None]}
             else: pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
             surf.to_vtk(os.path.join(coils_results_path,f"surf_intermediate_max_mode_{max_mode}_{info['Nfeval']}"), extra_data=pointData)
             curves_to_vtk(curves, os.path.join(coils_results_path,f"curves_intermediate_max_mode_{max_mode}_{info['Nfeval']}"))
@@ -501,7 +519,7 @@ for max_mode in max_modes:
     bs.set_points(surf.gamma().reshape((-1, 3)))
 
     if finite_beta:
-        vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal
+        # vmec.indata.am[0:2]=np.array([1,-1])*vmec.wout.am[0]*beta_target/vmec.wout.betatotal
         pprint('   Starting optimization with am =',vmec.indata.am[0:2])
 
     if stage_1:
@@ -533,8 +551,8 @@ for max_mode in max_modes:
                     myfile.write(e)
 
     if finite_beta:
-        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, src_ntheta=ntheta_VMEC)
+        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal_extended)
         JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
     if mpi.proc0_world:
         info_coils={'Nfeval':0}
@@ -583,7 +601,7 @@ for max_mode in max_modes:
     mpi.comm_world.Bcast(dofs, root=0)
 
     if mpi.proc0_world:
-        if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+        if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal_extended)[:, :, None]}
         else: pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt_max_mode_'+str(max_mode)), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt_max_mode_'+str(max_mode)))
@@ -623,8 +641,8 @@ for max_mode in max_modes:
 ####################################################################################
 if single_stage:
     if finite_beta:
-        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, trgt_nphi=nphi_VMEC, trgt_ntheta=ntheta_VMEC)
-        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal)
+        vc = VirtualCasing.from_vmec(vmec, src_nphi=vc_src_nphi, src_ntheta=ntheta_VMEC)
+        Jf = SquaredFlux(surf, bs, local=True, target=vc.B_external_normal_extended)
         JF.opts[0].opts[0].opts[0].opts[0].opts[0] = Jf
     if mpi.proc0_world:
         info_coils={'Nfeval':0}
@@ -641,7 +659,7 @@ if single_stage:
 #############################################################
 if mpi.proc0_world:
     try:
-        if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal)[:, :, None]}
+        if finite_beta: pointData = {"B_N": (np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2) - vc.B_external_normal_extended)[:, :, None]}
         else: pointData = {"B_N":  np.sum(bs.B().reshape((nphi_VMEC, ntheta_VMEC, 3)) * surf.unitnormal(), axis=2)[:, :, None]}
         surf.to_vtk(os.path.join(coils_results_path,'surf_opt'), extra_data=pointData)
         curves_to_vtk(curves, os.path.join(coils_results_path,'curves_opt'))
@@ -686,9 +704,9 @@ if not plot_result: exit()
 os.chdir(this_path)
 try:
     vmec_final = Vmec(os.path.join(this_path, f'input.final'))
-    vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
-    vmec_final.indata.niter_array[:3] = [ 4000, 10000,  8000]#,  8000, 10000]
-    vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
+    vmec_final.indata.ns_array[:3]    = [  16,     51,   101]#,   151,   201]
+    vmec_final.indata.niter_array[:3] = [ 4000,  8000, 10000]#,  8000, 10000]
+    vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-16]#, 1e-15, 1e-15]
     vmec_final.run()
     if mpi.proc0_world:
         shutil.move(os.path.join(this_path, f"wout_final_000_000000.nc"), os.path.join(this_path, f"wout_final.nc"))
