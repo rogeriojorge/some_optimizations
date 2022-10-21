@@ -38,12 +38,12 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [1]
-stage_1=True
+max_modes = [2]
+stage_1=False
 single_stage=True
-MAXITER_stage_1 = 50
-MAXITER_stage_2 = 1500
-MAXITER_single_stage = 300
+MAXITER_stage_1 = 70
+MAXITER_stage_2 = 150
+MAXITER_single_stage = 200
 finite_beta=True
 mercier_stability=False
 ncoils = 3
@@ -51,8 +51,8 @@ ncoils = 3
 aspect_ratio_target = 8.0
 CC_THRESHOLD = 0.13
 LENGTH_THRESHOLD = 3.6
-CURVATURE_THRESHOLD = 5
-MSC_THRESHOLD = 7
+CURVATURE_THRESHOLD = 6
+MSC_THRESHOLD = 9
 nphi_VMEC=38
 ntheta_VMEC=38
 vc_src_nphi=ntheta_VMEC
@@ -685,7 +685,7 @@ if os.path.isfile(os.path.join(this_path, f"wout_final.nc")):
             plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
             fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
             plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-if os.path.isfile(os.path.join(this_path, f"wout_stage1.nc")):
+if os.path.isfile(os.path.join(this_path, f"wout_stage1.nc")) and vmec_stage1:
     pprint('Found stage1 vmec file')
     if mpi.proc0_world:
         pprint("Plot VMEC result")

@@ -1,4 +1,5 @@
  ====================== PARALLEL TIMINGS ====================
+<<<<<<< HEAD
                total  :      394.822466
                 rank  :               0
 mgrid file read time  :        0.753795
@@ -57,13 +58,79 @@ mgrid file read time  :        0.753795
              tomnspa  :        0.000000
              residue  :        4.880208
           -- tridslv  :        4.299522
+=======
+               total  :       64.868675
+                rank  :               0
+mgrid file read time  :        0.827351
+        No. of procs  :               1
+
+      --- non-vacuum  :             364              9              1       0.620046
+      --- non-vacuum  :             441             29              1       2.354678
+      --- non-vacuum  :             559             49              1       5.144055
+      --- non-vacuum  :            1532            101              1      29.292526
+
+            VNRANKS   :               1
+         --- vacuum   :               9       4.918739
+         --- vacuum   :              29       3.923783
+         --- vacuum   :              49       4.305822
+         --- vacuum   :             101      12.730671
+
+             runvmec  :       64.863408
+
+         init radial  :        0.000000
+             eqsolve  :       63.716420
+             fileout  :        0.263669
+
+              evolve  :       63.630057
+             funct3d  :       63.290320
+            nfunct3d  :            2904
+
+             totzsps  :        8.789435
+             totzspa  :        0.000000
+              symrzl  :        0.000000
+            jacobian  :        1.379405
+              bcovar  :        5.862266
+              vacuum  :       25.879015
+
+            - precal  :        0.000504
+           - surface  :        0.650871
+
+           - bextern  :        3.517674
+
+           -- becoil  :        0.103480
+           -- tolicu  :        0.000000
+           -- belicu  :        3.362614
+
+           - scalpot  :      -11.097149
+
+           -- analyt  :        2.717193
+           -- greenf  :        5.531405
+            -- fourp  :        2.142698
+            -- fouri  :        0.605541
+
+            - solver  :       10.199215
+
+               alias  :        2.859342
+              forces  :        6.598654
+           symforces  :        0.000000
+             tomnsps  :        8.262769
+             tomnspa  :        0.000000
+             residue  :        3.145626
+          -- tridslv  :        2.868205
+>>>>>>> c7e7dc2 (More QH optimization)
 
  ============================================================
 
            allgather  :        0.000000
+<<<<<<< HEAD
            allreduce  :        0.029724
            broadcast  :        0.004059
            sendrecv   :        0.018661
+=======
+           allreduce  :        0.022901
+           broadcast  :        0.003658
+           sendrecv   :        0.019133
+>>>>>>> c7e7dc2 (More QH optimization)
 
      Fill_blocks      :        0.000000
      Compute blocks   :        0.000000
