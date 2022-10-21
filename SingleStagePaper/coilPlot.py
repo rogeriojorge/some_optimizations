@@ -19,7 +19,7 @@ nphi = 256
 ntheta = 128
 ncoils = 3
 
-# if finite_beta: dir += '_finitebeta'
+if finite_beta: dir += '_finitebeta'
 filename_final = dir+'/input.final'
 filename_stage1 = dir+'/input.stage1'
 outdir = dir+'/coils/'

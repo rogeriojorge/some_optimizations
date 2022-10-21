@@ -40,23 +40,23 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [1, 2]
+max_modes = [2]
 stage_1=False
-single_stage=False
-MAXITER_stage_1 = 10
-MAXITER_stage_2 = 1000
-MAXITER_single_stage = 300
+single_stage=True
+MAXITER_stage_1 = 20
+MAXITER_stage_2 = 200
+MAXITER_single_stage = 100
 finite_beta=True
 mercier_stability=False
-circularTopBottom = True
+circularTopBottom = False
 nphi_VMEC=176
 ntheta_VMEC=38
 nmodes_coils = 7
-CC_THRESHOLD = 0.0
+CC_THRESHOLD = 0.15
 CURVATURE_THRESHOLD = [3.0,5.5]
 MSC_THRESHOLD = [4.0,8.0]
 LENGTH_THRESHOLD = [7.0,3.5]
-beta_target=0.15
+beta_target=0.1
 iota_target = -0.19
 aspect_ratio_target = 3.5
 mercier_threshold=3e-5
@@ -102,9 +102,9 @@ vc_src_nphi=int(nphi_VMEC/nfp/2)
 ##########################################################################################
 directory = f'optimization_CNT'
 if mercier_stability: directory +='_mercier'
-if finite_beta: directory +='_finitebeta'
 # if stage_1: directory +='_stage1'
 if circularTopBottom: directory +='_circular'
+if finite_beta: directory +='_finitebeta'
 vmec_verbose=False
 if finite_beta: vmec_input_filename='input.CNT_finiteBeta'
 else: vmec_input_filename='input.CNT_qfm'
