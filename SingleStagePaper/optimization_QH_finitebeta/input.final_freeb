@@ -1,0 +1,47 @@
+&INDATA
+! This file created by simsopt on October 21 2022, 18:31:37
+
+! ---- Geometric parameters ----
+NFP = 4
+LASYM = F
+NZETA = 36
+
+!----- Free Boundary Parameters -----
+LFREEB = T
+MGRID_FILE = '/Users/rogeriojorge/local/some_optimizations/SingleStagePaper/optimization_QH_finitebeta/coils/mgrid_opt_coils.nc'
+EXTCUR = 329808.32231913897 249183.35799085055 295747.78405139514 -329808.32231913897 -249183.35799085055 -295747.78405139514 329808.32231913897 249183.35799085055 295747.78405139514 -329808.32231913897 -249183.35799085055 -295747.78405139514 329808.32231913897 249183.35799085055 295747.78405139514 -329808.32231913897 -249183.35799085055 -295747.78405139514 329808.32231913897 249183.35799085055 295747.78405139514 -329808.32231913897 -249183.35799085055 -295747.78405139514 
+NVACSKIP = 6
+
+! ---- Resolution parameters ----
+MPOL = 5
+NTOR = 5
+NS_ARRAY    =      9     29     49    101
+NITER_ARRAY =   4000   6000   6000   8000
+FTOL_ARRAY  =  1e-08  1e-10  1e-12  1e-15
+
+! ---- Boundary toroidal flux ----
+PHIEDGE = -0.043937072
+
+! ---- Pressure profile specification ----
+PMASS_TYPE = "power_series"
+AM = 24000.0 -24000.0 
+PRES_SCALE = 1.0
+
+! ---- Profile specification of iota or current ----
+NCURR = 1
+CURTOR = 0.0
+PCURR_TYPE = "power_series"
+AC = 0.0 
+
+! ---- Other numerical parameters ----
+DELT = 0.9
+NSTEP = 200
+
+! ---- Boundary shape. Array index order is (n, m) ----
+RBC(   0,   0) =  1.000000000000000e+00,    ZBS(   0,   0) = -0.000000000000000e+00
+RBC(   1,   0) =  1.371695932854470e-01,    ZBS(   1,   0) =  1.253869809701029e-01
+RBC(  -1,   1) = -4.612907880495963e-02,    ZBS(  -1,   1) =  3.342715432142935e-02
+RBC(   0,   1) =  1.151039805274008e-01,    ZBS(   0,   1) =  1.467402244263695e-01
+RBC(   1,   1) =  9.671163700446269e-03,    ZBS(   1,   1) =  9.489112612558963e-03
+/
+

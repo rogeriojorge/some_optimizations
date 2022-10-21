@@ -45,17 +45,17 @@ stage_1=False
 single_stage=True
 MAXITER_stage_1 = 20
 MAXITER_stage_2 = 200
-MAXITER_single_stage = 100
+MAXITER_single_stage = 200
 finite_beta=True
 mercier_stability=False
 circularTopBottom = False
-nphi_VMEC=176
-ntheta_VMEC=38
+nphi_VMEC=152
+ntheta_VMEC=36
 nmodes_coils = 7
 CC_THRESHOLD = 0.15
-CURVATURE_THRESHOLD = [3.0,5.5]
-MSC_THRESHOLD = [4.0,8.0]
-LENGTH_THRESHOLD = [7.0,3.5]
+CURVATURE_THRESHOLD = [3.5,10.0]
+MSC_THRESHOLD = [4.5,10.0]
+LENGTH_THRESHOLD = [7.0,3.8]
 beta_target=0.1
 iota_target = -0.19
 aspect_ratio_target = 3.5
@@ -66,7 +66,7 @@ plot_result = True
 ##########################################################################################
 ################################ Optimization parameters #################################
 ##########################################################################################
-coils_objective_weight = 5e+3
+coils_objective_weight = 5e+4
 JACOBIAN_THRESHOLD = 100
 mercier_weight=1e-4
 aspect_ratio_weight = 1
