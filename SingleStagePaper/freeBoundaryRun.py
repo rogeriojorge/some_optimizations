@@ -14,12 +14,14 @@ from simsopt.field.coil import coils_to_makegrid
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
-dir = os.path.join(this_path,'optimization_QH')
+folder = 'optimization_CNT'
 finite_beta = True
-
+full_torus = True
+ncoils = 3
 nphi = 128
 ntheta = 128
-ncoils = 3
+
+dir = os.path.join(this_path,folder)
 
 mgrid_executable = '/Users/rogeriojorge/bin/xgrid'
 vmec_executable = '/Users/rogeriojorge/bin/xvmec2000'
@@ -34,10 +36,18 @@ nfp = vmec_final.indata.nfp
 s_final = vmec_final.boundary
 bs_final = load(os.path.join(outdir_coils,"biot_savart_opt.json"))
 
-curves = [c.curve for c in bs_final.coils[0:ncoils]]
-currents = [c.current for c in bs_final.coils[0:ncoils]]
+ncoils_total = len(bs_final.coils)
+if full_torus:
+    curves = [c.curve for c in bs_final.coils]
+    currents = [c.current for c in bs_final.coils]
+else:
+    curves = [c.curve for c in bs_final.coils[0:ncoils]]
+    currents = [c.current for c in bs_final.coils[0:ncoils]]
 
-coils_to_makegrid(os.path.join(outdir_coils,'coils.opt_coils'), curves, currents, nfp=nfp, stellsym=True)
+if full_torus:
+    coils_to_makegrid(os.path.join(outdir_coils,'coils.opt_coils'), curves, currents, true_nfp=nfp)
+else:
+    coils_to_makegrid(os.path.join(outdir_coils,'coils.opt_coils'), curves, currents, nfp=nfp, stellsym=True)
 nzeta = 36
 r0 = np.sqrt(s_final.gamma()[:, :, 0] ** 2 + s_final.gamma()[:, :, 1] ** 2)
 z0 = s_final.gamma()[:, :, 2]
@@ -62,7 +72,7 @@ print(" done")
 
 vmec_final.indata.lfreeb = True
 vmec_final.indata.mgrid_file = os.path.join(outdir_coils,'mgrid_opt_coils.nc')
-vmec_final.indata.extcur[0:ncoils*nfp*2] = [c.current.get_value() for c in bs_final.coils]
+vmec_final.indata.extcur[0:ncoils_total] = [c.current.get_value() for c in bs_final.coils]
 vmec_final.indata.nvacskip = 6
 vmec_final.indata.nzeta = nzeta
 vmec_final.indata.phiedge = -np.abs(vmec_final.indata.phiedge)
@@ -96,21 +106,21 @@ if os.path.isfile(os.path.join(dir, f"wout_final_freeb.nc")):
     print(f' booz_surfaces={booz_surfaces}')
     b1.register(booz_surfaces)
     print('Running BOOZ_XFORM')
-    try:
-        b1.run()
-        b1.bx.write_boozmn(os.path.join(dir,'vmec',"boozmn_free_b.nc"))
-        print("Plot BOOZ_XFORM")
-        fig = plt.figure(); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
-        plt.savefig(os.path.join(outdir, "Boozxform_surfplot_1_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-        fig = plt.figure(); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
-        plt.savefig(os.path.join(outdir, "Boozxform_surfplot_2_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-        fig = plt.figure(); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
-        plt.savefig(os.path.join(outdir, "Boozxform_surfplot_3_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-        fig = plt.figure(); bx.symplot(b1.bx, helical_detail = helical_detail, sqrts=True)
-        plt.savefig(os.path.join(outdir, "Boozxform_symplot_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-        fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
-        plt.savefig(os.path.join(outdir, "Boozxform_modeplot_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-    except Exception as e: print(e)
+    # try:
+    #     b1.run()
+    #     b1.bx.write_boozmn(os.path.join(dir,'vmec',"boozmn_free_b.nc"))
+    #     print("Plot BOOZ_XFORM")
+    #     fig = plt.figure(); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
+    #     plt.savefig(os.path.join(outdir, "Boozxform_surfplot_1_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+    #     fig = plt.figure(); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
+    #     plt.savefig(os.path.join(outdir, "Boozxform_surfplot_2_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+    #     fig = plt.figure(); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
+    #     plt.savefig(os.path.join(outdir, "Boozxform_surfplot_3_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+    #     fig = plt.figure(); bx.symplot(b1.bx, helical_detail = helical_detail, sqrts=True)
+    #     plt.savefig(os.path.join(outdir, "Boozxform_symplot_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+    #     fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
+    #     plt.savefig(os.path.join(outdir, "Boozxform_modeplot_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
+    # except Exception as e: print(e)
 
 files_to_remove = ['input.final_000_000000','threed1.final']
 for file in files_to_remove:
