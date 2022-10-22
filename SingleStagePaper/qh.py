@@ -39,10 +39,10 @@ start = time.time()
 ############## Input parameters
 ##########################################################################################
 max_modes = [2]
-stage_1=False
+stage_1=True
 single_stage=True
 MAXITER_stage_1 = 70
-MAXITER_stage_2 = 150
+MAXITER_stage_2 = 350
 MAXITER_single_stage = 200
 finite_beta=True
 mercier_stability=False
@@ -64,7 +64,7 @@ mercier_weight=1e-4
 quasisymmetry_helicity_m = 1
 quasisymmetry_helicity_n = -1
 aspect_ratio_weight = 1
-diff_method="forward"
+diff_method="centered"
 R0 = 1.0
 R1 = 0.6
 quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]

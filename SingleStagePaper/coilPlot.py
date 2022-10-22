@@ -8,12 +8,15 @@ from simsopt.util import MpiPartition
 mpi = MpiPartition()
 
 # dir = 'optimization_QH'
-# dir = 'optimization_CNT'
-dir = 'optimization_CNT_circular'
+dir = 'optimization_CNT'
+# dir = 'optimization_CNT_circular'
 finite_beta = True
-
 whole_torus = True
 stage1 = False
+
+# dir = 'optimization_QH'
+# whole_torus = False
+# stage1 = True
 
 nphi = 256
 ntheta = 128
