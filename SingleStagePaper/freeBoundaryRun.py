@@ -13,8 +13,8 @@ from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
-# folder = 'optimization_CNT'
-folder = 'optimization_CNT_circular'
+folder = 'optimization_CNT'
+# folder = 'optimization_CNT_circular'
 QA_or_QH = 'QA'
 full_torus = True
 

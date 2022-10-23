@@ -40,27 +40,27 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [2]
+max_modes = [3]
 stage_1=False
 single_stage=True
 MAXITER_stage_1 = 20
-MAXITER_stage_2 = 200
+MAXITER_stage_2 = 150
 MAXITER_single_stage = 200
 finite_beta=True
 mercier_stability=False
 circularTopBottom = True
-nphi_VMEC=152
-ntheta_VMEC=36
+nphi_VMEC=96
+ntheta_VMEC=24
 nmodes_coils = 7
 CC_THRESHOLD = 0.15
 CURVATURE_THRESHOLD = [3.5,10.0]
 MSC_THRESHOLD = [4.5,10.0]
-LENGTH_THRESHOLD = [7.0,4.0]
+LENGTH_THRESHOLD = [7.0,3.8]
 beta_target=0.1
 iota_target = -0.19
 aspect_ratio_target = 3.5
 mercier_threshold=3e-5
-diff_method="centered"
+diff_method="forward"
 use_previous_results_if_available = True
 plot_result = True
 ##########################################################################################

@@ -1,69 +1,69 @@
  ====================== PARALLEL TIMINGS ====================
-               total  :      679.853953
+               total  :      360.327484
                 rank  :               0
-mgrid file read time  :        0.286244
+mgrid file read time  :        0.523555
         No. of procs  :               1
 
-      --- non-vacuum  :             679              9              1      -1.145833
-      --- non-vacuum  :             553             29              1       4.170360
-      --- non-vacuum  :             789             49              1      10.351894
-      --- non-vacuum  :            1783            101              1      70.025426
+      --- non-vacuum  :            4001              9              1      -6.394750
+      --- non-vacuum  :            2763             29              1      17.765572
+      --- non-vacuum  :             607             49              1       6.898991
+      --- non-vacuum  :            1673            101              1      39.476966
 
             VNRANKS   :               1
-         --- vacuum   :               9     110.192976
-         --- vacuum   :              29      92.983271
-         --- vacuum   :              49     137.290601
-         --- vacuum   :             101     251.018788
+         --- vacuum   :               9     181.539128
+         --- vacuum   :              29      57.564023
+         --- vacuum   :              49      12.231826
+         --- vacuum   :             101      33.191800
 
-             runvmec  :      679.852601
+             runvmec  :      360.327205
 
          init radial  :        0.000000
-             eqsolve  :      679.034251
-             fileout  :        0.491567
+             eqsolve  :      359.437216
+             fileout  :        0.323361
 
-              evolve  :      678.761603
-             funct3d  :      674.887483
-            nfunct3d  :            3822
+              evolve  :      359.329601
+             funct3d  :      342.273556
+            nfunct3d  :            9431
 
-             totzsps  :       17.504138
+             totzsps  :       16.669070
              totzspa  :        0.000000
               symrzl  :        0.000000
-            jacobian  :        2.782622
-              bcovar  :       16.297862
-              vacuum  :      591.485636
+            jacobian  :        2.079817
+              bcovar  :       10.370425
+              vacuum  :      284.526777
 
-            - precal  :        0.000601
-           - surface  :        3.267441
+            - precal  :        0.000771
+           - surface  :        2.743034
 
-           - bextern  :        9.932556
+           - bextern  :        6.305943
 
-           -- becoil  :        0.430245
+           -- becoil  :        0.476772
            -- tolicu  :        0.000000
-           -- belicu  :        9.421065
+           -- belicu  :        5.674675
 
-           - scalpot  :      -34.032203
+           - scalpot  :     -101.020150
 
-           -- analyt  :       13.839144
-           -- greenf  :       10.125458
-            -- fourp  :        8.221756
-            -- fouri  :        1.598754
+           -- analyt  :       12.922496
+           -- greenf  :       44.735419
+            -- fourp  :       31.654819
+            -- fouri  :       10.433495
 
-            - solver  :      543.780713
+            - solver  :      173.103735
 
-               alias  :        5.469100
-              forces  :       10.729571
+               alias  :        6.693298
+              forces  :       11.856829
            symforces  :        0.000000
-             tomnsps  :       25.595394
+             tomnsps  :       19.149379
              tomnspa  :        0.000000
-             residue  :        6.186894
-          -- tridslv  :        5.373965
+             residue  :        6.251766
+          -- tridslv  :        5.700720
 
  ============================================================
 
            allgather  :        0.000000
-           allreduce  :        0.087480
-           broadcast  :        0.004269
-           sendrecv   :        0.022216
+           allreduce  :        0.076640
+           broadcast  :        0.010335
+           sendrecv   :        0.066563
 
      Fill_blocks      :        0.000000
      Compute blocks   :        0.000000
