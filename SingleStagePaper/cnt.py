@@ -40,22 +40,22 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [3]
+max_modes = [4]
 stage_1=False
 single_stage=True
 MAXITER_stage_1 = 20
-MAXITER_stage_2 = 150
-MAXITER_single_stage = 200
+MAXITER_stage_2 = 350
+MAXITER_single_stage = 100
 finite_beta=True
 mercier_stability=False
-circularTopBottom = True
-nphi_VMEC=96
-ntheta_VMEC=24
+circularTopBottom = False
+nphi_VMEC=112
+ntheta_VMEC=26
 nmodes_coils = 7
 CC_THRESHOLD = 0.15
-CURVATURE_THRESHOLD = [3.5,10.0]
-MSC_THRESHOLD = [4.5,10.0]
-LENGTH_THRESHOLD = [7.0,3.8]
+CURVATURE_THRESHOLD = [3.5,11.0]
+MSC_THRESHOLD = [4.5,11.0]
+LENGTH_THRESHOLD = [7.0,4.0]
 beta_target=0.1
 iota_target = -0.19
 aspect_ratio_target = 3.5
