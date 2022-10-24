@@ -7,20 +7,21 @@ from simsopt.mhd import Vmec, VirtualCasing
 from simsopt.util import MpiPartition
 mpi = MpiPartition()
 
-# dir = 'optimization_QH'
-dir = 'optimization_CNT'
-# dir = 'optimization_CNT_circular'
-finite_beta = True
-whole_torus = True
-stage1 = False
+# # dir = 'optimization_QH'
+# dir = 'optimization_CNT'
+# # dir = 'optimization_CNT_circular'
+# whole_torus = True
+# stage1 = False
 
-# dir = 'optimization_QH'
-# whole_torus = False
-# stage1 = True
+dir = 'optimization_QH'
+whole_torus = False
+stage1 = True
 
 nphi = 256
 ntheta = 128
 ncoils = 3
+
+finite_beta = True
 
 if finite_beta: dir += '_finitebeta'
 filename_final = dir+'/input.final'

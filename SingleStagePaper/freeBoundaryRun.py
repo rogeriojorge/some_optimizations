@@ -9,21 +9,22 @@ from subprocess import run
 import matplotlib.pyplot as plt
 from simsopt.util import MpiPartition
 from simsopt.field.coil import coils_to_makegrid
-from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual
+from simsopt.mhd import Vmec, Boozer, QuasisymmetryRatioResidual, VirtualCasing
+from simsopt.geo import curves_to_vtk
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
-folder = 'optimization_CNT'
-# folder = 'optimization_CNT_circular'
-QA_or_QH = 'QA'
-full_torus = True
+# folder = 'optimization_CNT'
+# # folder = 'optimization_CNT_circular'
+# QA_or_QH = 'QA'
+# full_torus = True
 
-# folder = 'optimization_QH'
-# QA_or_QH = 'QH'
-# full_torus = False
+folder = 'optimization_QH'
+QA_or_QH = 'QH'
+full_torus = False
 
 ncoils = 3
-nphi = 128
+nphi = 256
 ntheta = 128
 finite_beta = True
 
@@ -61,10 +62,10 @@ with open(os.path.join(outdir_coils,'input_xgrid.dat'), 'w') as f:
     f.write('opt_coils\n')
     f.write('S\n')
     f.write('y\n')
-    f.write(f'{0.8*np.min(r0)}\n')
-    f.write(f'{1.2*np.max(r0)}\n')
-    f.write(f'{1.2*np.min(z0)}\n')
-    f.write(f'{1.2*np.max(z0)}\n')
+    f.write(f'{0.9*np.min(r0)}\n')
+    f.write(f'{1.1*np.max(r0)}\n')
+    f.write(f'{1.1*np.min(z0)}\n')
+    f.write(f'{1.1*np.max(z0)}\n')
     f.write(f'{nzeta}\n')
     f.write('201\n')
     f.write('201\n')
@@ -105,7 +106,7 @@ if os.path.isfile(os.path.join(dir, f"wout_final_freeb.nc")):
     print("Plot VMEC result")
     import vmecPlot2
     vmecPlot2.main(file=os.path.join(dir, f"wout_final_freeb.nc"), name='free_b', figures_folder=outdir, coils_curves=[c.curve for c in bs_final.coils])
-    vmec_freeb = Vmec(os.path.join(dir, f"wout_final_freeb.nc"))
+    vmec_freeb = Vmec(os.path.join(dir, f"wout_final_freeb.nc"), nphi=nphi, ntheta=ntheta)
     quasisymmetry_target_surfaces = [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1]
     if QA_or_QH == 'QA':
         qs = QuasisymmetryRatioResidual(vmec_freeb, quasisymmetry_target_surfaces, helicity_m=1, helicity_n=0)
@@ -140,6 +141,24 @@ if os.path.isfile(os.path.join(dir, f"wout_final_freeb.nc")):
         fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
         plt.savefig(os.path.join(outdir, "Boozxform_modeplot_free_b.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
     except Exception as e: print(e)
+
+    bs_final = load(os.path.join(outdir_coils,"biot_savart_opt.json"))
+    s_final = vmec_freeb.boundary
+    B_on_surface_final = bs_final.set_points(s_final.gamma().reshape((-1, 3))).AbsB()
+    # norm_final = np.linalg.norm(s_final.normal().reshape((-1, 3)), axis=1)
+    # meanb_final = np.mean(B_on_surface_final * norm_final)/np.mean(norm_final)
+    # absb_final = bs_final.AbsB().reshape(s_final.gamma().shape[:2] + (1,))
+    Bbs = bs_final.B().reshape((nphi, ntheta, 3))
+    vc_src_nphi = int(nphi/2/vmec_freeb.wout.nfp)
+    vc_final = VirtualCasing.from_vmec(vmec_freeb, src_nphi=vc_src_nphi, src_ntheta=ntheta)
+    BdotN_surf = np.sum(Bbs * s_final.unitnormal(), axis=2) - vc_final.B_external_normal_extended
+    # pointData_final = {"B·n/|B|": BdotN_surf[:, :, None]/absb_final,
+    #             "|B|": bs_final.AbsB().reshape(s_final.gamma().shape[:2] + (1,))/meanb_final}
+    curves = [c.curve for c in bs_final.coils]
+    curves_to_vtk(curves, os.path.join(outdir_coils, "curves_freeb"))
+    pointData = {"B_N": BdotN_surf[:, :, None]}
+    s_final.to_vtk(os.path.join(outdir_coils, "surf_freeb"), extra_data=pointData)
+
     os.chdir(this_path)
 
 files_to_remove = [os.path.join(this_path,'input.final_000_000000'),
