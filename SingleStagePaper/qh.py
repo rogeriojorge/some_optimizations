@@ -39,22 +39,22 @@ start = time.time()
 ############## Input parameters
 ##########################################################################################
 max_modes = [3]
-stage_1=False
+stage_1=True
 single_stage=True
 MAXITER_stage_1 = 100
 MAXITER_stage_2 = 1500
-MAXITER_single_stage = 250
+MAXITER_single_stage = 350
 finite_beta=True
 mercier_stability=False
-ncoils = 3
+ncoils = 4
 # beta_target = 0.03
 aspect_ratio_target = 8.0
-CC_THRESHOLD = 0.13
-LENGTH_THRESHOLD = 3.7
+CC_THRESHOLD = 0.10
+LENGTH_THRESHOLD = 3.1
 CURVATURE_THRESHOLD = 6
-MSC_THRESHOLD = 10
-nphi_VMEC=34
-ntheta_VMEC=34
+MSC_THRESHOLD = 12
+nphi_VMEC=26
+ntheta_VMEC=30
 vc_src_nphi=ntheta_VMEC
 nmodes_coils = 7
 coils_objective_weight = 5e+3
@@ -79,7 +79,7 @@ LENGTH_CON_WEIGHT = 0.1 # Weight on the quadratic penalty for the curve length
 CC_WEIGHT = 1e+0 # Weight for the coil-to-coil distance penalty in the objective function
 CURVATURE_WEIGHT = 1e-3 # Weight for the curvature penalty in the objective function
 MSC_WEIGHT = 1e-3 # Weight for the mean squared curvature penalty in the objective function
-ARCLENGTH_WEIGHT = 1e-6 # Weight for the arclength variation penalty in the objective function
+ARCLENGTH_WEIGHT = 1e-7 # Weight for the arclength variation penalty in the objective function
 plot_result = True
 ##########################################################################################
 ##########################################################################################
@@ -152,9 +152,9 @@ if use_previous_results_if_available and os.path.isfile(os.path.join(coils_resul
         total_current = Current(total_current_vmec)
         total_current.fix_all()
         currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
-        # base_currents = currents[0:ncoils-1]
-        # base_currents += [total_current - sum(base_currents)]
-        base_currents = currents[0:ncoils]
+        base_currents = currents[0:ncoils-1]
+        base_currents += [total_current - sum(base_currents)]
+        # base_currents = currents[0:ncoils]
     else:
         currents = [Current(coil._current.x[0])*1e5 for coil in bs.coils]
         base_currents = currents[0:ncoils]
