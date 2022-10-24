@@ -23,19 +23,20 @@ logger.setLevel(1)
 def pprint(*args, **kwargs):
     if comm.rank == 0: print(*args, **kwargs)
 
-# main_directory = 'optimization_CNT'
-main_directory = 'optimization_QH_finitebeta'
+# main_directory = 'optimization_CNT_circular_finitebeta'
+main_directory = 'optimization_CNT_finitebeta'
+# main_directory = 'optimization_QH_finitebeta'
 volume_scale = 1.0
 nfieldlines = 8
-tmax_fl = 2200
+tmax_fl = 300
 tol_qfm = 1e-14
 tol_poincare = 1e-14
-nphi_QFM = 30
-ntheta_QFM = 35
-mpol = 8
-ntor = 8
-maxiter_qfm = 700
-constraint_weight=1e-0
+nphi_QFM = 38
+ntheta_QFM = 38
+mpol = 18
+ntor = 18
+maxiter_qfm = 1000
+constraint_weight=1e+0
 ntheta_VMEC = 300
 create_QFM = False
 create_Poincare = True
@@ -72,10 +73,9 @@ if create_QFM:
     pprint(f"Initial ||vol constraint||={0.5*(s.volume()-vol_target)**2:.8e}, ||residual||={np.linalg.norm(qfm.J()):.8e}")
     res = qfm_surface.minimize_qfm_penalty_constraints_LBFGS(tol=tol_qfm, maxiter=maxiter_qfm, constraint_weight=constraint_weight)
     pprint(f"||vol constraint||={0.5*(s.volume()-vol_target)**2:.8e}, ||residual||={np.linalg.norm(qfm.J()):.8e}")
-    res = qfm_surface.minimize_qfm_exact_constraints_SLSQP(tol=tol_qfm, maxiter=maxiter_qfm)
+    res = qfm_surface.minimize_qfm_exact_constraints_SLSQP(tol=tol_qfm, maxiter=maxiter_qfm/10)
     pprint(f"||vol constraint||={0.5*(s.volume()-vol_target)**2:.8e}, ||residual||={np.linalg.norm(qfm.J()):.8e}")
     pprint(f"Found QFM surface in {time.time()-t1}s.")
-
     s.to_vtk(os.path.join(OUT_DIR, 'QFM_found'))
     s_gamma = s.gamma()
     s_R = np.sqrt(s_gamma[:, :, 0]**2 + s_gamma[:, :, 1]**2)
@@ -182,8 +182,8 @@ if create_Poincare:
             phis=phis, stopping_criteria=[])
         t2 = time.time()
         pprint(f"Time for fieldline tracing={t2-t1:.3f}s. Num steps={sum([len(l) for l in fieldlines_tys])//nfieldlines}", flush=True)
-        if comm is None or comm.rank == 0:
-            particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
+        # if comm is None or comm.rank == 0:
+        #     particles_to_vtk(fieldlines_tys, os.path.join(OUT_DIR,f'fieldlines_optimized_coils'))
         return fieldlines_tys, fieldlines_phi_hits, phis
 
     if vmec_ran_QFM or os.path.isfile(os.path.join(this_path, f"wout_QFM.nc")):
