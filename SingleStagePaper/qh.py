@@ -39,7 +39,7 @@ start = time.time()
 ############## Input parameters
 ##########################################################################################
 max_modes = [3]
-stage_1=True
+stage_1=False
 single_stage=True
 MAXITER_stage_1 = 100
 MAXITER_stage_2 = 1500

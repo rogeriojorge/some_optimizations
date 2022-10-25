@@ -7,9 +7,8 @@ from simsopt.mhd import Vmec, VirtualCasing
 from simsopt.util import MpiPartition
 mpi = MpiPartition()
 
-# # dir = 'optimization_QH'
-# dir = 'optimization_CNT'
-# # dir = 'optimization_CNT_circular'
+# # dir = 'optimization_CNT'
+# dir = 'optimization_CNT_circular'
 # whole_torus = True
 # stage1 = False
 
@@ -17,9 +16,11 @@ dir = 'optimization_QH'
 whole_torus = False
 stage1 = True
 
+coils_stage1 = "biot_savart_inner_loop_max_mode_3.json"
+
 nphi = 256
 ntheta = 128
-ncoils = 3
+ncoils = 4
 
 finite_beta = True
 
@@ -74,7 +75,7 @@ if stage1:
     s_stage1 = vmec_stage1.boundary
     if finite_beta: vc_stage1 = VirtualCasing.from_vmec(vmec_stage1, src_nphi=vc_src_nphi, src_ntheta=ntheta)
 
-    bs_stage1 = load(outdir + "biot_savart_inner_loop_max_mode_1.json")
+    bs_stage1 = load(outdir + coils_stage1)
     B_on_surface_stage1 = bs_stage1.set_points(s_stage1.gamma().reshape((-1, 3))).AbsB()
     norm_stage1 = np.linalg.norm(s_stage1.normal().reshape((-1, 3)), axis=1)
     meanb_stage1 = np.mean(B_on_surface_stage1 * norm_stage1)/np.mean(norm_stage1)

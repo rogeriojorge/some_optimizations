@@ -24,11 +24,11 @@ def pprint(*args, **kwargs):
     if comm.rank == 0: print(*args, **kwargs)
 
 # main_directory = 'optimization_CNT_circular_finitebeta'
-main_directory = 'optimization_CNT_finitebeta'
-# main_directory = 'optimization_QH_finitebeta'
+# main_directory = 'optimization_CNT_finitebeta'
+main_directory = 'optimization_QH_finitebeta'
 volume_scale = 1.0
 nfieldlines = 8
-tmax_fl = 300
+tmax_fl = 2300
 tol_qfm = 1e-14
 tol_poincare = 1e-14
 nphi_QFM = 38
