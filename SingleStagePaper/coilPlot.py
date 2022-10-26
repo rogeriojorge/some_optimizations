@@ -7,14 +7,14 @@ from simsopt.mhd import Vmec, VirtualCasing
 from simsopt.util import MpiPartition
 mpi = MpiPartition()
 
-# # dir = 'optimization_CNT'
-# dir = 'optimization_CNT_circular'
-# whole_torus = True
-# stage1 = False
+# dir = 'optimization_CNT'
+dir = 'optimization_CNT_circular'
+whole_torus = True
+stage1 = False
 
-dir = 'optimization_QH'
-whole_torus = False
-stage1 = True
+# dir = 'optimization_QH'
+# whole_torus = False
+# stage1 = True
 
 coils_stage1 = "biot_savart_inner_loop_max_mode_3.json"
 

@@ -1,69 +1,63 @@
  ====================== PARALLEL TIMINGS ====================
-               total  :      304.197832
+               total  :       13.472784
                 rank  :               0
-mgrid file read time  :        0.166419
+mgrid file read time  :        0.030338
         No. of procs  :               1
 
-      --- non-vacuum  :            4002              9              1       5.684525
-      --- non-vacuum  :             331             29              1       2.203168
-      --- non-vacuum  :             803             49              1       8.021840
-      --- non-vacuum  :            2430            101              1      53.714269
+      --- non-vacuum  :             431              9              1       0.097830
 
             VNRANKS   :               1
-         --- vacuum   :               9     122.731859
-         --- vacuum   :              29      12.259569
-         --- vacuum   :              49      26.024719
-         --- vacuum   :             101      71.141754
+         --- vacuum   :               9      12.206171
 
-             runvmec  :      304.197569
+             runvmec  :       13.472549
 
          init radial  :        0.000000
-             eqsolve  :      303.627048
-             fileout  :        0.341778
+             eqsolve  :       13.384912
+             fileout  :        0.052103
 
-              evolve  :      303.418689
-             funct3d  :      301.781703
-            nfunct3d  :            7595
+              evolve  :       13.335680
+             funct3d  :       12.304001
+            nfunct3d  :             454
 
-             totzsps  :       16.062796
+             totzsps  :        0.318722
              totzspa  :        0.000000
               symrzl  :        0.000000
-            jacobian  :        2.501432
-              bcovar  :       10.824981
-              vacuum  :      232.157901
+            jacobian  :        0.037084
+              bcovar  :        0.160166
+              vacuum  :       12.206171
 
-            - precal  :        0.000521
-           - surface  :        1.842551
+            - precal  :        0.000714
+           - surface  :        0.187657
 
-           - bextern  :        6.556678
+           - bextern  :        0.492722
 
-           -- becoil  :        0.349511
+           -- becoil  :        0.015440
            -- tolicu  :        0.000000
-           -- belicu  :        6.060672
+           -- belicu  :        0.471012
 
-           - scalpot  :      -31.304984
+           - scalpot  :      -11.124846
 
-           -- analyt  :        7.735108
-           -- greenf  :       13.771435
-            -- fourp  :        7.422045
-            -- fouri  :        2.020860
+           -- analyt  :        0.823695
+           -- greenf  :        5.535888
+            -- fourp  :        3.719940
+            -- fouri  :        0.952416
 
-            - solver  :      191.288996
+            - solver  :        0.298848
 
-               alias  :        5.050299
-              forces  :       12.192008
+               alias  :        0.101292
+              forces  :        0.180262
            symforces  :        0.000000
-             tomnsps  :       14.617747
+             tomnsps  :        0.265954
              tomnspa  :        0.000000
-             residue  :        8.113110
-          -- tridslv  :        7.372516
+             residue  :        0.077336
+          -- tridslv  :        0.065566
 
  ============================================================
 
            allgather  :        0.000000
-           allreduce  :        0.054149
-           broadcast  :        0.009706
-           sendrecv   :        0.063552
+           allreduce  :        0.001552
+           broadcast  :        0.000283
+           sendrecv   :        0.002881
 
      Fill_blocks      :        0.000000
      Compute blocks   :        0.000000

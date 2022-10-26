@@ -1,114 +1,15 @@
-Last login: Tue Oct 18 18:19:59 on ttys001
-rogeriojorge@Rogerios-MacBook-Pro-2 ~ % ssh m100
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
-Someone could be eavesdropping on you right now (man-in-the-middle attack)!
-It is also possible that a host key has just been changed.
-The fingerprint for the ED25519 key sent by the remote host is
-SHA256:ZSgWpCCOCFG7tMew1mtyZ5p1kM1Pdj7HLRzCFQE+1OQ.
-Please contact your system administrator.
-Add correct host key in /Users/rogeriojorge/.ssh/known_hosts to get rid of this message.
-Offending ECDSA key in /Users/rogeriojorge/.ssh/known_hosts:7
-Password authentication is disabled to avoid man-in-the-middle attacks.
-Keyboard-interactive authentication is disabled to avoid man-in-the-middle attacks.
-UpdateHostkeys is disabled because the host key is not trusted.
-Last login: Tue Oct 18 18:41:10 2022 from 193.136.136.253
-*******************************************************************************
-* Welcome to MARCONI100 Cluster /                                             *
-*            IBM Power AC922 (Whiterspoon) -                                  *
-*            Red Hat Enterprise Linux Server release 8.1 (Ootpa)              *
-*                                                                             *
-* 980 compute nodes with:                                                     *
-*       - 2x16 cores IBM POWER9 AC922 at 3.1 GHz                              *
-*       - 4 x NVIDIA Volta V100 GPUs, Nvlink 2.0, 16GB                        *
-*       - 256 GB RAM                                                          *
-*                                                                             *
-* Disk Space: 8PB GPFS storage                                                *
-*                                                                             *
-* Internal Network: Mellanox Infiniband EDR DragonFly+                        *
-* SLURM 21.08                                                                 *
-*                                                                             *
-* For a guide on Marconi100:                                                  *
-* https://wiki.u-gov.it/confluence/pages/viewpage.action?pageId=336727645     *
-* For support: superc@cineca.it                                               *
-*******************************************************************************
-* This system is in its complete configuration and is in full-production      *
-===============================================================================
-  IN EVIDENCE:
-  - You can find the installed software on modules organized with different
-    profiles. Use the "modmap" command to identify the correct profile for 
-    your module ("modmap -h" for help)
-  - spack/0.14.2 is installed. Spack is a package management tool designed to
-    support multiple versions and configurations of software on a wide variety 
-    of platforms and environments.
-  - On March 24th, 2021 the cluster has been updated to OS RedHat 8.1 . 
-    You may need to recompile your code if you experience any problem that 
-    wasn't present before the upgrade. 
-===============================================================================
-  IMPORTANT:
-  Bug report: the hpc-sdk compilers may induce kernel panic. DON'T USE THEM on
-  the login nodes but ONLY on the compute nodes in batch jobs.
-===============================================================================
--------------------------------------------------------------------------------
-WARNING: Marconi100 will be down on Tuesday, Oct 25 for scheduled maintenance
-operations
-------------------------------------------------------------------------------
-perl: warning: Setting locale failed.
-perl: warning: Please check that your locale settings:
-	LANGUAGE = (unset),
-	LC_ALL = (unset),
-	LC_CTYPE = "UTF-8",
-	LANG = (unset)
-    are supported and installed on your system.
-perl: warning: Falling back to the standard locale ("C").
-manpath: can't set the locale; make sure $LC_* and $LANG are correct
-(simsopt) [rjorge00@login03 ~]$ cd gx
-(simsopt) [rjorge00@login03 gx]$ ls
-Doxyfile  Makefile  Makefiles  README.md  benchmarks  cgx  docs  geometry_modules  gx  include  libgx.a  obj  post_processing  src  unit_tests
-(simsopt) [rjorge00@login03 gx]$ cd geometry_modules/
-(simsopt) [rjorge00@login03 geometry_modules]$ ls
-miller  vmec
-(simsopt) [rjorge00@login03 geometry_modules]$ cd vmec/
-(simsopt) [rjorge00@login03 vmec]$ ls
-README.md  convert_VMEC_to_GX  equilibria  include  input_files  src  tests
-(simsopt) [rjorge00@login03 vmec]$ cd in
--bash: cd: in: No such file or directory
-(simsopt) [rjorge00@login03 vmec]$ cd input_files/
-(simsopt) [rjorge00@login03 input_files]$ ls
-sample_inpfile1.ing  sample_inpfile2.ing
-(simsopt) [rjorge00@login03 input_files]$ less sample_inpfile
-sample_inpfile: No such file or directory
-(simsopt) [rjorge00@login03 input_files]$ less sample_inpfile
-sample_inpfile1.ing  sample_inpfile2.ing  
-(simsopt) [rjorge00@login03 input_files]$ less sample_inpfile1.ing 
-(simsopt) [rjorge00@login03 input_files]$ ls
-sample_inpfile1.ing  sample_inpfile2.ing
-(simsopt) [rjorge00@login03 input_files]$ cd ../
-(simsopt) [rjorge00@login03 vmec]$ ls
-README.md  convert_VMEC_to_GX  equilibria  include  input_files  src  tests
-(simsopt) [rjorge00@login03 vmec]$ cd include/
-(simsopt) [rjorge00@login03 include]$ ls
-catch.h  geometric_coefficients.h  parameters.h  solver.h  toml  toml.hpp  vmec_variables.h
-(simsopt) [rjorge00@login03 include]$ cd ..
-(simsopt) [rjorge00@login03 vmec]$ cd input_files/
-(simsopt) [rjorge00@login03 input_files]$ ls
-sample_inpfile1.ing  sample_inpfile2.ing
-(simsopt) [rjorge00@login03 input_files]$ vi sample_inpfile1.ing 
-
 # To get the geometry input file run
 #  path/to/convert_vmec_to_GX path/to/this/file
 
 
 # Name of the vmec file
-vmec_file = "wout_w7x_standardConfig.nc"
+vmec_file = "wout_gx.nc"
 
 # Absolute path of the vmec file (change accordingly)
-vmec_path = "/scratch/gpfs/rg6256/gx/geometry_modules/vmec/equilibria/"
+vmec_path = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT"
 
 # Output path of the generated input files for GX/GS2
-out_path  = "/scratch/gpfs/rg6256/gx/geometry_modules/vmec/input_files/"
+out_path  = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT"
 
 #Field line label zeta - q*theta. alpha = 0.0 usually coerresponds to a
 #field line on the outboard side

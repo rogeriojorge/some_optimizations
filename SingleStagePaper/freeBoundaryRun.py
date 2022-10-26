@@ -14,16 +14,16 @@ from simsopt.geo import curves_to_vtk
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
-# # folder = 'optimization_CNT'
-# folder = 'optimization_CNT_circular'
-# QA_or_QH = 'QA'
-# full_torus = True
+# folder = 'optimization_CNT'
+folder = 'optimization_CNT_circular'
+QA_or_QH = 'QA'
+full_torus = True
 
-folder = 'optimization_QH'
-QA_or_QH = 'QH'
-full_torus = False
+# folder = 'optimization_QH'
+# QA_or_QH = 'QH'
+# full_torus = False
 
-ncoils = 3
+ncoils = 4
 nphi = 256
 ntheta = 128
 finite_beta = True
@@ -42,8 +42,17 @@ vmec_final = Vmec(filename_final, mpi=mpi, verbose=True, nphi=nphi, ntheta=nthet
 nfp = vmec_final.indata.nfp
 s_final = vmec_final.boundary
 bs_final = load(os.path.join(outdir_coils,"biot_savart_opt.json"))
-
 ncoils_total = len(bs_final.coils)
+
+r0 = np.sqrt(s_final.gamma()[:, :, 0] ** 2 + s_final.gamma()[:, :, 1] ** 2)
+z0 = s_final.gamma()[:, :, 2]
+nzeta = 101
+nr = 101
+nz = 101
+# print('Creating to_mgrid file')
+# bs_final.to_mgrid(os.path.join(outdir_coils,'tomgrid_opt_coils.nc'), nr=nr, nphi=nzeta, nz=nr, rmin=0.9*np.min(r0), rmax=1.1*np.max(r0), zmin=1.1*np.min(z0), zmax=1.1*np.max(z0), nfp=nfp)
+# print('Done')
+
 if full_torus:
     curves = [c.curve for c in bs_final.coils]
     currents = [c.current for c in bs_final.coils]
@@ -55,7 +64,7 @@ if full_torus:
     coils_to_makegrid(os.path.join(outdir_coils,'coils.opt_coils'), curves, currents, true_nfp=nfp)
 else:
     coils_to_makegrid(os.path.join(outdir_coils,'coils.opt_coils'), curves, currents, nfp=nfp, stellsym=True)
-nzeta = 36
+
 r0 = np.sqrt(s_final.gamma()[:, :, 0] ** 2 + s_final.gamma()[:, :, 1] ** 2)
 z0 = s_final.gamma()[:, :, 2]
 with open(os.path.join(outdir_coils,'input_xgrid.dat'), 'w') as f:
@@ -67,8 +76,8 @@ with open(os.path.join(outdir_coils,'input_xgrid.dat'), 'w') as f:
     f.write(f'{1.1*np.min(z0)}\n')
     f.write(f'{1.1*np.max(z0)}\n')
     f.write(f'{nzeta}\n')
-    f.write('201\n')
-    f.write('201\n')
+    f.write(f'{nr}\n')
+    f.write(f'{nz}\n')
 
 print("Running makegrid")
 os.chdir(outdir_coils)
@@ -79,6 +88,7 @@ print(" done")
 
 vmec_final.indata.lfreeb = True
 vmec_final.indata.mgrid_file = os.path.join(outdir_coils,'mgrid_opt_coils.nc')
+# vmec_final.indata.mgrid_file = os.path.join(outdir_coils,'tomgrid_opt_coils.nc')
 vmec_final.indata.extcur[0:ncoils_total] = [c.current.get_value() for c in bs_final.coils]
 vmec_final.indata.nvacskip = 6
 vmec_final.indata.nzeta = nzeta
@@ -86,7 +96,7 @@ vmec_final.indata.phiedge = -np.abs(vmec_final.indata.phiedge)
 
 vmec_final.indata.ns_array[:4]    = [   9,    29,    49,   101]
 vmec_final.indata.niter_array[:4] = [4000,  6000,  6000,  8000]
-vmec_final.indata.ftol_array[:4]  = [1e-8, 1e-10, 1e-12, 1e-15]
+vmec_final.indata.ftol_array[:4]  = [1e-5,  1e-6, 1e-12, 1e-15]
 
 vmec_final.write_input(os.path.join(dir,'input.final_freeb'))
 
@@ -163,7 +173,8 @@ if os.path.isfile(os.path.join(dir, f"wout_final_freeb.nc")):
 
 files_to_remove = [os.path.join(this_path,'input.final_000_000000'),
                    os.path.join(this_path,'threed1.final'),
-                   os.path.join(outdir_coils,'mgrid_opt_coils.nc')]
+                   os.path.join(outdir_coils,'mgrid_opt_coils.nc'),
+                   os.path.join(outdir_coils,'tomgrid_opt_coils.nc')]
 for file in files_to_remove:
     try: os.remove(file)
     except Exception as e: print(e)

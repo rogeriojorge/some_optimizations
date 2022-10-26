@@ -76,7 +76,7 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
 ##### CALCULATE HEAT FLUX HERE #######
 ######################################
 ######################################
-def CalculateHeatFlux(v: Vmec):
+def CalculateHeatFlux(v: Vmec, first_restart=False):
     """
         get wout, 
         make fluxtube, 
@@ -84,13 +84,11 @@ def CalculateHeatFlux(v: Vmec):
         wait, 
         read output
     """
-    first_restart=False
     v.run()
-
     f_wout = v.output_file.split('/')[-1]
     print(' found', f_wout)
 
-    gx = GX_Runner("gx-sample.in")
+    gx = GX_Runner("gx-input.in")
     gx.make_fluxtube(f_wout)
 
     cmd = "convert_VMEC_to_GX geometry.ing"
@@ -98,17 +96,13 @@ def CalculateHeatFlux(v: Vmec):
 
     tag = f_wout[5:-3]
     ntheta = gx.inputs['Dimensions']['ntheta']
-    f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc" # todo: dont hard code this
+    f_geo = f"gx_wout.nc"
     gx.set_gx_wout(f_geo)
-
-
-    # run
 
     if (first_restart):
         print(' GX: First restart')
         gx.inputs['Controls']['init_amp'] = 1.0e-3
         gx.inputs['Restart']['restart'] = 'false'
-
 
     #slurm_sample = 'batch-gx-stellar.sh'
     #gx.load_slurm( slurm_sample )
@@ -125,7 +119,7 @@ def CalculateHeatFlux(v: Vmec):
     #gx_cmd = ["srun", "gx", f"{fname}.in"]
 
     # use this for login node
-    gx_cmd = ["srun", "-t", "3:00:00", #"--reservation=gpu2022",
+    gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
                 "--gpus-per-task=1", "--ntasks=1", "gx", f"{fname}.in"]
     f_log = f"{fname}.log"
     with open(f_log, 'w') as fp:
