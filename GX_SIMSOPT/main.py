@@ -7,24 +7,24 @@ import subprocess
 import vmecPlot2
 import numpy as np
 import pandas as pd
-from mpi4py import MPI
+# from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
 from datetime import datetime
 import matplotlib.pyplot as plt
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
-from simsopt.util import MpiPartition
+# from simsopt.util import MpiPartition
 from simsopt.solve import least_squares_mpi_solve
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
 from simsopt.turbulence.GX_io import GX_Runner, GX_Output
 from scipy.optimize import dual_annealing
-mpi = MpiPartition()
+# mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
-    if MPI.COMM_WORLD.rank == 0:
-        print(*args, **kwargs)
+    # if MPI.COMM_WORLD.rank == 0:
+    print(*args, **kwargs)
 ############################################################################
 #### Input Parameters
 ############################################################################
@@ -48,19 +48,19 @@ os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
 dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
 if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'input.final')) or os.path.isfile(os.path.join(dest,'input.final'))):
-    if MPI.COMM_WORLD.rank == 0:
-        os.makedirs(dest, exist_ok=True)
-        if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
-            files = os.listdir(OUT_DIR)
-            for f in files:
-                shutil.move(os.path.join(OUT_DIR, f), dest)
-    else:
-        time.sleep(0.5)
+    # if MPI.COMM_WORLD.rank == 0:
+    os.makedirs(dest, exist_ok=True)
+    if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
+        files = os.listdir(OUT_DIR)
+        for f in files:
+            shutil.move(os.path.join(OUT_DIR, f), dest)
+    # else:
+    #     time.sleep(0.5)
     filename = os.path.join(dest, 'input.final')
 else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
-vmec = Vmec(filename, mpi=mpi, verbose=False)
+vmec = Vmec(filename, verbose=False) #, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
@@ -160,9 +160,9 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-if MPI.COMM_WORLD.rank == 0:
-    heat_flux = CalculateHeatFlux(vmec)
-    pprint("Initial heat flux:", heat_flux)
+# if MPI.COMM_WORLD.rank == 0:
+heat_flux = CalculateHeatFlux(vmec)
+pprint("Initial heat flux:", heat_flux)
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -179,7 +179,7 @@ for max_mode in max_modes:
     opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
-    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
+    pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
@@ -192,21 +192,21 @@ for max_mode in max_modes:
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     else: print('Optimizer not available')
     ######################################
-    if MPI.COMM_WORLD.rank == 0:
-        try: 
-            pprint("Final aspect ratio:", vmec.aspect())
-            pprint("Final mean iota:", vmec.mean_iota())
-            pprint("Final magnetic well:", vmec.vacuum_well())
-            heat_flux = CalculateHeatFlux(vmec)
-            pprint("Final heat flux:", heat_flux)
-        except Exception as e: pprint(e)
+    try: 
+        pprint("Final aspect ratio:", vmec.aspect())
+        pprint("Final mean iota:", vmec.mean_iota())
+        pprint("Final magnetic well:", vmec.vacuum_well())
+        heat_flux = CalculateHeatFlux(vmec)
+        pprint("Final heat flux:", heat_flux)
+    except Exception as e: pprint(e)
     ######################################
-if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
+# if MPI.COMM_WORLD.rank == 0:
+vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
 ######################################
-if plot_result and MPI.COMM_WORLD.rank==0:
-    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'), mpi=mpi)
+if plot_result:# and MPI.COMM_WORLD.rank==0:
+    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'))#, mpi=mpi)
     vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
     vmec_final.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
     vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
