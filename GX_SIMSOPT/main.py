@@ -76,6 +76,7 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
 ##### CALCULATE HEAT FLUX HERE #######
 ######################################
 ######################################
+gx_ran = False
 def CalculateHeatFlux(v: Vmec, first_restart=False):
     """
         get wout, 
@@ -129,8 +130,11 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     ## use this for login node
     ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
     ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
-
-    gx_cmd = ["./gx", f"{fnamein}", "1"]
+    if not gx_ran:
+        gx_cmd = ["./gx", f"{fnamein}"]
+        gx_ran = True
+    else:
+        gx_cmd = ["./gx", f"{fnamein}", "1"]
 
     f_log = os.path.join(OUT_DIR,fname+".log")
     with open(f_log, 'w') as fp:
