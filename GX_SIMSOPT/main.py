@@ -4,6 +4,7 @@ import glob
 import time
 import shutil
 import subprocess
+from SingleStagePaper.cnt import HEATFLUX_THRESHOLD
 import vmecPlot2
 import numpy as np
 import pandas as pd
@@ -40,6 +41,7 @@ diff_rel_step = 1e-5
 diff_abs_step = 1e-7
 no_local_search = True
 output_path_parameters=f'output_{optimizer}.csv'
+HEATFLUX_THRESHOLD = 1e28
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output'
@@ -85,74 +87,78 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
         wait, 
         read output
     """
-    v.run()
-    f_wout = v.output_file.split('/')[-1]
-    # print(' found', f_wout)
+    try:
+        v.run()
+        f_wout = v.output_file.split('/')[-1]
+        # print(' found', f_wout)
 
-    gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
+        gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
 
-    shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
-    shutil.copy(os.path.join(this_path,'convert_VMEC_to_GX'),os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+        shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
+        shutil.copy(os.path.join(this_path,'convert_VMEC_to_GX'),os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
 
-    gx.make_fluxtube(f_wout)
+        gx.make_fluxtube(f_wout)
 
-    # cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'scan-gx-simsopt-psi-0.50')}"
-    # # os.system(cmd)
-    # subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+        # cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'scan-gx-simsopt-psi-0.50')}"
+        # # os.system(cmd)
+        # subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
-    tag = f_wout[5:-3]
-    ntheta = gx.inputs['Dimensions']['ntheta']
-    f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
-    gx.set_gx_wout(f_geo)
+        tag = f_wout[5:-3]
+        ntheta = gx.inputs['Dimensions']['ntheta']
+        f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
+        gx.set_gx_wout(f_geo)
 
-    if (first_restart):
-        print(' GX: First restart')
-        gx.inputs['Controls']['init_amp'] = 1.0e-5
-        gx.inputs['Restart']['restart'] = 'false'
+        if (first_restart):
+            print(' GX: First restart')
+            gx.inputs['Controls']['init_amp'] = 1.0e-5
+            gx.inputs['Restart']['restart'] = 'false'
 
-    #slurm_sample = 'batch-gx-stellar.sh'
-    #gx.load_slurm( slurm_sample )
+        #slurm_sample = 'batch-gx-stellar.sh'
+        #gx.load_slurm( slurm_sample )
 
-    fname = f"GX-{tag}"
-    fnamein = os.path.join(OUT_DIR,fname+'.in')
-    gx.write(fout=fnamein, skip_overwrite=False)
-    #f_slurm = f"{tag}.sh"
-    #gx.run_slurm( f_slurm, fname )
+        fname = f"GX-{tag}"
+        fnamein = os.path.join(OUT_DIR,fname+'.in')
+        gx.write(fout=fnamein, skip_overwrite=False)
+        #f_slurm = f"{tag}.sh"
+        #gx.run_slurm( f_slurm, fname )
 
-    #gx_cmd = f"srun -t 3:00:00 --reservation=gpu2022 --gpus-per-task=1 --ntasks=1 gx {fnamein}"
-    #os.system(gx_cmd)
+        #gx_cmd = f"srun -t 3:00:00 --reservation=gpu2022 --gpus-per-task=1 --ntasks=1 gx {fnamein}"
+        #os.system(gx_cmd)
 
-    # use this for salloc
-    shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
+        # use this for salloc
+        shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
 
-    ## gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
-    ## gx_cmd = ["srun","./gx", f"{fnamein}"]
-    ## use this for login node
-    ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
-    ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
-    global gx_ran
-    if not gx_ran:
-        gx_cmd = ["./gx", f"{fnamein}"]
-        gx_ran = True
-    else:
-        gx_cmd = ["./gx", f"{fnamein}", "1"]
-    os.remove(os.path.join(OUT_DIR,fname+".nc")) if os.path.exists(os.path.join(OUT_DIR,fname+".nc")) else None
-    f_log = os.path.join(OUT_DIR,fname+".log")
-    with open(f_log, 'w') as fp:
-        p = subprocess.Popen(gx_cmd,stdout=fp)
-    # pprint(' *** Waiting for GX ***', flush=True)
-    p.wait()
-    # pprint(' *** GX finished ***')
-    # print(' *** GX finished, waiting 3 more s ***')
-    # print( datetime.now().strftime("%H:%M:%S") )
-    # os.system("sleep 3")
+        ## gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
+        ## gx_cmd = ["srun","./gx", f"{fnamein}"]
+        ## use this for login node
+        ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
+        ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
+        global gx_ran
+        if not gx_ran:
+            gx_cmd = ["./gx", f"{fnamein}"]
+            gx_ran = True
+        else:
+            gx_cmd = ["./gx", f"{fnamein}", "1"]
+        os.remove(os.path.join(OUT_DIR,fname+".nc")) if os.path.exists(os.path.join(OUT_DIR,fname+".nc")) else None
+        f_log = os.path.join(OUT_DIR,fname+".log")
+        with open(f_log, 'w') as fp:
+            p = subprocess.Popen(gx_cmd,stdout=fp)
+        # pprint(' *** Waiting for GX ***', flush=True)
+        p.wait()
+        # pprint(' *** GX finished ***')
+        # print(' *** GX finished, waiting 3 more s ***')
+        # print( datetime.now().strftime("%H:%M:%S") )
+        # os.system("sleep 3")
 
-    # read
-    fout = os.path.join(OUT_DIR,fname+".nc")
-    gx_out = GX_Output(fout)
+        # read
+        fout = os.path.join(OUT_DIR,fname+".nc")
+        gx_out = GX_Output(fout)
 
-    qavg, dqavg = gx_out.exponential_window_estimator()
-    # print(f" *** GX non-linear qflux: {qavg} ***")
+        qavg, dqavg = gx_out.exponential_window_estimator()
+        # print(f" *** GX non-linear qflux: {qavg} ***")
+    except Exception as e:
+        pprint(e)
+        qavg = HEATFLUX_THRESHOLD
 
     return qavg
 ######################################
@@ -163,8 +169,11 @@ def TurbulenceCostFunction(v: Vmec):
     try: v.run()
     except Exception as e:
         print(e)
-        return 1e3
-    heat_flux = CalculateHeatFlux(v)
+        return HEATFLUX_THRESHOLD
+    try:
+        heat_flux = CalculateHeatFlux(v)
+    except Exception as e:
+        heat_flux = HEATFLUX_THRESHOLD
     out_str = f'Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),heat_flux)
