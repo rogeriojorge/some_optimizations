@@ -95,7 +95,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     gx.make_fluxtube(f_wout)
 
-    cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'gx-geometry-sample.ing')}"
+    cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'gx-geometry-sample')}"
     os.system(cmd)
 
     tag = f_wout[5:-3]
