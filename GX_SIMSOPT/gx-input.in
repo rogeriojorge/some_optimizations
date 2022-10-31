@@ -3,7 +3,7 @@
 
 [Dimensions]
  ntheta = 32
- nperiod = 2
+ nperiod = 1
  nky = 12
  nkx = 1
 
