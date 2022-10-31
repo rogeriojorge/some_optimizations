@@ -122,6 +122,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     #os.system(gx_cmd)
 
     # use this for salloc
+    shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
     gx_cmd = ["srun", "gx", f"{fnamein}"]
 
     # use this for login node
