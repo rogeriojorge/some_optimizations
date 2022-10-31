@@ -6,17 +6,17 @@
 vmec_file = "wout_gx.nc"
 
 # Absolute path of the vmec file (change accordingly)
-vmec_path = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT"
+vmec_path = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output/"
 
 # Output path of the generated input files for GX/GS2
-out_path  = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT"
+out_path  = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output/"
 
 #Field line label zeta - q*theta. alpha = 0.0 usually coerresponds to a
 #field line on the outboard side
 alpha = 0.0
 
 # Number of points along the field line = 2*nzgrid + 1
-nzgrid = 32
+nzgrid = 64
 
 # Number of poloidal turns.
 # The field line goes from (-npol*PI, npol*PI]
