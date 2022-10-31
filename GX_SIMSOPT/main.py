@@ -4,7 +4,6 @@ import glob
 import time
 import shutil
 import subprocess
-from SingleStagePaper.cnt import HEATFLUX_THRESHOLD
 import vmecPlot2
 import numpy as np
 import pandas as pd
