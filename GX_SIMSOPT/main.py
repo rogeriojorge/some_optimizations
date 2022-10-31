@@ -131,11 +131,14 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
     ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
     global gx_ran
+    print(gx_ran)
     if not gx_ran:
         gx_cmd = ["./gx", f"{fnamein}"]
         gx_ran = True
     else:
         gx_cmd = ["./gx", f"{fnamein}", "1"]
+    print(gx_ran)
+    print('gx_cmd =',gx_cmd)
 
     f_log = os.path.join(OUT_DIR,fname+".log")
     with open(f_log, 'w') as fp:
