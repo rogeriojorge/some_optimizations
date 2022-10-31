@@ -87,7 +87,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     """
     v.run()
     f_wout = v.output_file.split('/')[-1]
-    print(' found', f_wout)
+    # print(' found', f_wout)
 
     gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
 
@@ -140,9 +140,9 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     f_log = os.path.join(OUT_DIR,fname+".log")
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
-    pprint(' *** Waiting for GX ***', flush=True)
+    # pprint(' *** Waiting for GX ***', flush=True)
     p.wait()
-    pprint(' *** GX finished ***')
+    # pprint(' *** GX finished ***')
     # print(' *** GX finished, waiting 3 more s ***')
     # print( datetime.now().strftime("%H:%M:%S") )
     # os.system("sleep 3")
@@ -152,7 +152,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     gx_out = GX_Output(fout)
 
     qavg, dqavg = gx_out.exponential_window_estimator()
-    print(f" *** GX non-linear qflux: {qavg} ***")
+    # print(f" *** GX non-linear qflux: {qavg} ***")
 
     return qavg
 ######################################
