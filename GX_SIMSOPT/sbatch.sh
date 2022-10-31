@@ -11,4 +11,4 @@
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
 cd /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT
 
-mpirun ./main.py
+mpirun -n 1 ./main.py
