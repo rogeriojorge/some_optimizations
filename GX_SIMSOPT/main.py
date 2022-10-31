@@ -139,24 +139,13 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     os.remove(os.path.join(OUT_DIR,fname+".nc")) if os.path.exists(os.path.join(OUT_DIR,fname+".nc")) else None
     f_log = os.path.join(OUT_DIR,fname+".log")
     with open(f_log, 'w') as fp:
-        p = subprocess.Popen(gx_cmd)#,stdout=fp)
-    print(' *** Waiting for GX ***', flush=True)
-    p.wait()
-    print(' *** GX finished, waiting 3 more s ***')
-    print( datetime.now().strftime("%H:%M:%S") )
-    os.system("sleep 3")
-
-    # import psutil
-    # a = subprocess.Popen(gx_cmd)
-    # procs_list = [psutil.Process(a.pid)]
-    # def on_terminate(proc):
-    #     print("process {} terminated".format(proc))
-    # # waits for multiple processes to terminate
-    # # gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate)
-    # while True: 
-    #     gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate) 
-    #     if len(gone)>0: 
-    #         break
+        p = subprocess.Popen(gx_cmd,stdout=fp)
+    pprint(' *** Waiting for GX ***', flush=True)
+    pprint(' *** GX finished ***')
+    # p.wait()
+    # print(' *** GX finished, waiting 3 more s ***')
+    # print( datetime.now().strftime("%H:%M:%S") )
+    # os.system("sleep 3")
 
     # read
     fout = os.path.join(OUT_DIR,fname+".nc")
@@ -209,7 +198,6 @@ for max_mode in max_modes:
     pprint('## Now calculating total objective function ##')
     pprint("Total objective before optimization:", prob.objective())
     print('reached here')
-    exit()
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
