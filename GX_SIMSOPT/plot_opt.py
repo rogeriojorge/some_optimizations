@@ -15,9 +15,10 @@ import booz_xform as bx
 max_mode = 1
 QA_or_QH = 'QA'
 optimizer = 'dual_annealing'
+MAXITER=100
 
 plt_opt_res = False
-plot_vmec = False
+plot_vmec = True
 run_simple = True
 
 use_final = True
@@ -30,7 +31,7 @@ nsamples = 10000  # number of time steps
 if QA_or_QH == 'QA': nfp=2
 elif QA_or_QH == 'QH': nfp=4
 elif QA_or_QH == 'QI': nfp=3
-out_dir = f'output'
+out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
 location_min = df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
@@ -38,7 +39,7 @@ location_min = df['heat_flux'].nsmallest(3).index[0] # chose the index to see sm
 if plt_opt_res:
     df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
-    df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),1.5]), axis=1)
+    df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),2.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
     df['heat_flux'] = df[df['heat_flux']<1e17]['heat_flux']
     df.plot(use_index=True, y=['heat_flux'])#,'iota'])#,'normalized_time'])
@@ -71,7 +72,7 @@ if plot_vmec:
     elif os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
         vmec = Vmec(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc')
     else:
-        vmec = Vmec(f'../../initial_configs/input.nfp{nfp}_{QA_or_QH}')
+        vmec = Vmec(f'../../input.nfp{nfp}_{QA_or_QH}')
         surf = vmec.boundary
         surf.fix_all()
         surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
@@ -127,7 +128,7 @@ if run_simple:
     elif os.path.isfile(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc') and use_previous_results_if_available:
         vmec = Vmec(f'wout_nfp{nfp}_{QA_or_QH}_000_000000.nc')
     else:
-        vmec = Vmec(f'../../initial_configs/input.nfp{nfp}_{QA_or_QH}')
+        vmec = Vmec(f'../../input.nfp{nfp}_{QA_or_QH}')
         surf = vmec.boundary
         surf.fix_all()
         surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
