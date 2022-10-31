@@ -173,7 +173,6 @@ except Exception as e: pprint(e)
 # if MPI.COMM_WORLD.rank == 0:
 heat_flux = CalculateHeatFlux(vmec)
 pprint("Initial heat flux:", heat_flux)
-exit()
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -189,6 +188,8 @@ for max_mode in max_modes:
     ######################################  
     opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
+    print('reached here')
+    exit()
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
