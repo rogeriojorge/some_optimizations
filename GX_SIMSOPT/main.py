@@ -28,9 +28,9 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 100
+MAXITER = 80
 max_modes = [1]
-initial_config = 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 plot_result = True
 optimizer = 'least_squares'# 'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
