@@ -28,9 +28,9 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 6
+MAXITER = 30
 max_modes = [1]
-initial_config = 'input.nfp4_QH'
+initial_config = 'input.nfp2_QA' #'input.nfp4_QH'
 plot_result = True
 optimizer = 'least_squares' #'dual_annealing'
 use_previous_results_if_available = False
@@ -256,3 +256,8 @@ if plot_result:# and MPI.COMM_WORLD.rank==0:
     plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
 ############################################################################
 ############################################################################
+try:
+    os.remove(os.path.join(OUT_DIR,"gx"))
+    os.remove(os.path.join(OUT_DIR,"convert_VMEC_to_GX"))
+except Exception as e:
+    pprint(e)
