@@ -8,13 +8,14 @@ from subprocess import run
 import matplotlib.pyplot as plt
 from simsopt.mhd import Vmec, Boozer
 from simsopt.mhd import QuasisymmetryRatioResidual
+from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
 from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 1
 QA_or_QH = 'QA'
-optimizer = 'dual_annealing'
+optimizer = 'least_squares'
 MAXITER=100
 
 plt_opt_res = False
@@ -95,6 +96,10 @@ if plot_vmec:
     print("Mean iota:", vmec.mean_iota())
     print("Magnetic well:", vmec.vacuum_well())
     print("Quasisymmetry objective after optimization:", qs.total())
+    s_EP = 0.5;alphas_EP=[0]
+    fl1 = vmec_fieldlines(vmec, s_EP, alphas_EP, theta1d=np.linspace(-4*np.pi, 4*np.pi, 250), plot=True, show=False)
+    plt.savefig(f'Initial_profiles_s{s_EP}_alpha{alphas_EP[0]}.png');plt.close()
+    exit()
     sys.path.insert(1, '../../')
     print("Plot VMEC result")
     import vmecPlot2
