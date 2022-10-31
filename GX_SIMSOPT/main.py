@@ -173,6 +173,7 @@ except Exception as e: pprint(e)
 # if MPI.COMM_WORLD.rank == 0:
 heat_flux = CalculateHeatFlux(vmec)
 pprint("Initial heat flux:", heat_flux)
+exit()
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
