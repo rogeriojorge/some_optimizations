@@ -2,13 +2,13 @@
  debug = false
 
 [Dimensions]
- ntheta = 32
+ ntheta = 64
  nperiod = 1
  nky = 12
  nkx = 1
 
- nhermite  = 12
- nlaguerre = 8
+ nhermite  = 16
+ nlaguerre = 10
  nspecies = 1
 
 

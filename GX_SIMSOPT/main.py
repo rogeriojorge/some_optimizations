@@ -36,8 +36,8 @@ optimizer = 'least_squares' #'dual_annealing'
 use_previous_results_if_available = False
 weight_optTurbulence = 100.0
 aspect_ratio_target = 7
-diff_rel_step = 1e-3
-diff_abs_step = 1e-5
+diff_rel_step = 1e-5
+diff_abs_step = 1e-7
 no_local_search = True
 output_path_parameters=f'output_{optimizer}.csv'
 ######################################

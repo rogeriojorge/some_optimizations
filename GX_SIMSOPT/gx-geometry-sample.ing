@@ -16,7 +16,7 @@ out_path  = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/outp
 alpha = 0.0
 
 # Number of points along the field line = 2*nzgrid + 1
-nzgrid = 16
+nzgrid = 32
 
 # Number of poloidal turns.
 # The field line goes from (-npol*PI, npol*PI]
