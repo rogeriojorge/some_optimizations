@@ -192,6 +192,7 @@ for max_mode in max_modes:
     pprint('## Now calculating total objective function ##')
     pprint("Total objective before optimization:", prob.objective())
     print('reached here')
+    MPI.COMM_WORLD.Abort()
     exit()
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
