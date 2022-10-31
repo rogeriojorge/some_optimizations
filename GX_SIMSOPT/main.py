@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 import glob
 import time
@@ -7,20 +7,20 @@ import subprocess
 import vmecPlot2
 import numpy as np
 import pandas as pd
-# from mpi4py import MPI
+from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
 from datetime import datetime
 import matplotlib.pyplot as plt
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
-# from simsopt.util import MpiPartition
+from simsopt.util import MpiPartition
 from simsopt.solve import least_squares_mpi_solve
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
 from simsopt.turbulence.GX_io import GX_Runner, GX_Output
 from scipy.optimize import dual_annealing
-# mpi = MpiPartition()
+mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
     # if MPI.COMM_WORLD.rank == 0:
