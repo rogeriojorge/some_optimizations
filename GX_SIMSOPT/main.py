@@ -205,7 +205,6 @@ for max_mode in max_modes:
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
     pprint("Total objective before optimization:", prob.objective())
-    print('reached here')
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
