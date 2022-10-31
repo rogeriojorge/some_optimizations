@@ -2,7 +2,7 @@
  debug = false
 
 [Dimensions]
- ntheta = 24
+ ntheta = 64
  nperiod = 1
  ny = 32
  nx = 32
