@@ -99,7 +99,6 @@ if plot_vmec:
     s_EP = 0.5;alphas_EP=[0]
     fl1 = vmec_fieldlines(vmec, s_EP, alphas_EP, theta1d=np.linspace(-4*np.pi, 4*np.pi, 250), plot=True, show=False)
     plt.savefig(f'Initial_profiles_s{s_EP}_alpha{alphas_EP[0]}.png');plt.close()
-    exit()
     sys.path.insert(1, '../../')
     print("Plot VMEC result")
     import vmecPlot2
