@@ -106,7 +106,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     if (first_restart):
         print(' GX: First restart')
-        gx.inputs['Controls']['init_amp'] = 1.0e-3
+        gx.inputs['Controls']['init_amp'] = 1.0e-5
         gx.inputs['Restart']['restart'] = 'false'
 
     #slurm_sample = 'batch-gx-stellar.sh'
