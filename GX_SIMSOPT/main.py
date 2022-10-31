@@ -88,10 +88,10 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     f_wout = v.output_file.split('/')[-1]
     print(' found', f_wout)
 
-    gx = GX_Runner("gx-input.in")
+    gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
     gx.make_fluxtube(f_wout)
 
-    cmd = "convert_VMEC_to_GX geometry.ing"
+    cmd = f"convert_VMEC_to_GX {os.path.join(this_path,'geometry.ing')}"
     os.system(cmd)
 
     tag = f_wout[5:-3]
@@ -108,20 +108,21 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     #gx.load_slurm( slurm_sample )
 
     fname = f"GX-{tag}"
-    gx.write(fout=f"{fname}.in", skip_overwrite=False)
+    fnamein = os.path.join(this_path,fname+'.in')
+    gx.write(fout=f"{os.path.join(this_path,fname+'.in')}", skip_overwrite=False)
     #f_slurm = f"{tag}.sh"
     #gx.run_slurm( f_slurm, fname )
 
-    #gx_cmd = f"srun -t 3:00:00 --reservation=gpu2022 --gpus-per-task=1 --ntasks=1 gx {fname}.in"
+    #gx_cmd = f"srun -t 3:00:00 --reservation=gpu2022 --gpus-per-task=1 --ntasks=1 gx {fnamein}"
     #os.system(gx_cmd)
 
     # use this for salloc
-    #gx_cmd = ["srun", "gx", f"{fname}.in"]
+    gx_cmd = ["srun", "gx", f"{fnamein}"]
 
     # use this for login node
-    gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
-                "--gpus-per-task=1", "--ntasks=1", "gx", f"{fname}.in"]
-    f_log = f"{fname}.log"
+    # gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
+    #             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
+    f_log = os.path.join(this_path,fname+".log")
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
 
@@ -133,7 +134,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
 
     # read
-    fout = f"{fname}.nc"
+    fout = os.path.join(this_path,fname+".nc")
     gx_out = GX_Output(fout)
 
     qavg, dqavg = gx_out.exponential_window_estimator()
