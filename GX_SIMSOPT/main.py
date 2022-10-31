@@ -28,22 +28,22 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 30
+MAXITER = 100
 max_modes = [1]
 initial_config = 'input.nfp2_QA' #'input.nfp4_QH'
 plot_result = True
 optimizer = 'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 weight_optTurbulence = 100.0
-aspect_ratio_target = 7
+aspect_ratio_target = 6
 diff_rel_step = 1e-5
 diff_abs_step = 1e-7
 no_local_search = True
 output_path_parameters=f'output_{optimizer}.csv'
-HEATFLUX_THRESHOLD = 1e28
+HEATFLUX_THRESHOLD = 1e18
 ######################################
 ######################################
-OUT_DIR_APPENDIX=f'output'
+OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
