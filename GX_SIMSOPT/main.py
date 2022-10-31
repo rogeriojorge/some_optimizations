@@ -269,3 +269,17 @@ try:
     os.remove(os.path.join(OUT_DIR,"convert_VMEC_to_GX"))
 except Exception as e:
     pprint(e)
+
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"grid.gx_wout_{initial_config[6:]}_000_000*")):
+        os.remove(objective_file)
+    for residuals_file in glob.glob(os.path.join(OUT_DIR,f"gx_wout_{initial_config[6:]}_000_000*")):
+        os.remove(residuals_file)
+    for jac_file in glob.glob(os.path.join(OUT_DIR,f"GX-{initial_config[6:]}_000_000*")):
+        os.remove(jac_file)
+    for threed_file in glob.glob(os.path.join(OUT_DIR,f"input.{initial_config[6:]}_000_000*")):
+        os.remove(threed_file)
+    for threed_file in glob.glob(os.path.join(OUT_DIR,f"wout_{initial_config[6:]}_000_000*")):
+        os.remove(threed_file)
+except Exception as e:
+    pprint(e)
