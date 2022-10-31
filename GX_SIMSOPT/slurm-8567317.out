@@ -1,0 +1,54 @@
+Initial aspect ratio: 6.006890429489593
+Initial mean iota: 0.412023021975741
+Initial magnetic well: -0.04824613128469597
+Initial heat flux: 28445874.86106211
+## Now calculating total objective function ##
+Heat flux = 28445874.861062 with aspect ratio=6.006890 took 11.798267s
+Total objective before optimization: 8.091677966112053e+16
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+Heat flux = 28445874.861062 with aspect ratio=6.006890 took 11.395551s
+Heat flux = 28445874.861062 with aspect ratio=6.006890 took 11.512551s
+Heat flux = 28445874.861062 with aspect ratio=6.006890 took 11.439976s
+Heat flux = 28447297.007739 with aspect ratio=6.006891 took 11.526063s
+Heat flux = 28448733.693612 with aspect ratio=6.006890 took 11.503266s
+Heat flux = 28457680.700140 with aspect ratio=6.006855 took 11.868823s
+Heat flux = 28455167.901948 with aspect ratio=6.006885 took 11.378291s
+Heat flux = 28445670.487564 with aspect ratio=6.006890 took 11.529149s
+Heat flux = 28447908.123524 with aspect ratio=6.006890 took 11.437582s
+Heat flux = 28441048.295470 with aspect ratio=6.006849 took 11.526603s
+Heat flux = 28447842.453400 with aspect ratio=6.006902 took 11.367089s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         4.0458e+16                                    2.43e+19    
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Heat flux = 734.037300 with aspect ratio=6.227528 took 11.471580s
+Heat flux = 734.037300 with aspect ratio=6.227528 took 11.396472s
+Heat flux = 733.998440 with aspect ratio=6.227527 took 11.470407s
+Heat flux = 734.025189 with aspect ratio=6.227529 took 11.542826s
+Heat flux = 734.283755 with aspect ratio=6.227491 took 11.615681s
+Heat flux = 734.103814 with aspect ratio=6.227523 took 11.445598s
+Heat flux = 734.032299 with aspect ratio=6.227528 took 11.366538s
+Heat flux = 734.054090 with aspect ratio=6.227528 took 11.470876s
+Heat flux = 734.062513 with aspect ratio=6.227483 took 11.503145s
+Heat flux = 733.932566 with aspect ratio=6.227542 took 11.297804s
+       1              4         2.6941e+07      4.05e+16       2.31e-02       1.17e+10    
+Heat flux = 281.763975 with aspect ratio=6.212139 took 11.545478s
+Heat flux = 281.763975 with aspect ratio=6.212139 took 11.384517s
+Heat flux = 281.748682 with aspect ratio=6.212138 took 11.598117s
+Heat flux = 281.758307 with aspect ratio=6.212140 took 11.380291s
+Heat flux = 281.858369 with aspect ratio=6.212102 took 11.603823s
+Heat flux = 281.788308 with aspect ratio=6.212133 took 11.649762s
+Heat flux = 281.762578 with aspect ratio=6.212139 took 11.531065s
+Heat flux = 281.767771 with aspect ratio=6.212139 took 11.585180s
+Heat flux = 281.779465 with aspect ratio=6.212094 took 11.586700s
+Heat flux = 281.721964 with aspect ratio=6.212153 took 11.719510s
+       2              5         3.9695e+06      2.30e+07       5.79e-03       1.74e+09    
+Heat flux = 101.924985 with aspect ratio=6.089067 took 11.396435s
+Heat flux = 101.924985 with aspect ratio=6.089067 took 11.457279s
+Heat flux = 101.918629 with aspect ratio=6.089066 took 11.408232s
+Heat flux = 101.921901 with aspect ratio=6.089068 took 11.381228s
+Heat flux = 101.958538 with aspect ratio=6.089030 took 11.511009s
+Heat flux = 101.932910 with aspect ratio=6.089061 took 11.438217s
+Heat flux = 101.924195 with aspect ratio=6.089067 took 11.161404s
