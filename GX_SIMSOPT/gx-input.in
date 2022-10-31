@@ -40,7 +40,7 @@
  Rmaj = 1.0
  shift = 0.0
  qinp = 1.4
- geo_file = "gx_wout.nc"
+ geofile = "gx_wout.nc"
 
 [Boltzmann]
  add_Boltzmann_species = true

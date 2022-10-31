@@ -101,7 +101,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     tag = f_wout[5:-3]
     ntheta = gx.inputs['Dimensions']['ntheta']
-    f_geo = f"gx_wout.nc"
+    f_geo = f"gx_wout_{tag}_psiN_0.500_nt_128_geo.nc"
     gx.set_gx_wout(f_geo)
 
     if (first_restart):
