@@ -123,20 +123,33 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     # use this for salloc
     shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
-    # gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
+
+    ## gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
+    ## gx_cmd = ["srun","./gx", f"{fnamein}"]
+    ## use this for login node
+    ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
+    ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
+
     gx_cmd = ["./gx", f"{fnamein}"]
-    # gx_cmd = ["srun","./gx", f"{fnamein}"]
 
-    # use this for login node
-    # gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
-    #             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
-    f_log = os.path.join(OUT_DIR,fname+".log")
-    # exit()
-    with open(f_log, 'w') as fp:
-        p = subprocess.Popen(gx_cmd,stdout=fp)
+    # f_log = os.path.join(OUT_DIR,fname+".log")
+    # with open(f_log, 'w') as fp:
+    #     p = subprocess.Popen(gx_cmd,stdout=fp)
+    # print(' *** Waiting for GX ***', flush=True)
+    # p.wait()
 
-    print(' *** Waiting for GX ***', flush=True)
-    p.wait()
+    import psutil
+    a = subprocess.Popen(gx_cmd)
+    procs_list = [psutil.Process(a.pid)]
+    def on_terminate(proc):
+        print("process {} terminated".format(proc))
+    # waits for multiple processes to terminate
+    # gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate)
+    while True: 
+        gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate) 
+        if len(gone)>0: 
+            break
+
     print(' *** GX finished, waiting 3 more s ***')
     print( datetime.now().strftime("%H:%M:%S") )
     os.system("sleep 3")
