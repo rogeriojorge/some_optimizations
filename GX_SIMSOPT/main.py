@@ -161,7 +161,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     qavg, dqavg = gx_out.exponential_window_estimator()
     print(f" *** GX non-linear qflux: {qavg} ***")
-    MPI.Finalize()
+
     return qavg
 ######################################
 ######################################
