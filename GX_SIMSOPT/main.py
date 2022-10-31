@@ -189,6 +189,7 @@ for max_mode in max_modes:
     opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
+    pprint('## Now calculating total objective function ##')
     pprint("Total objective before optimization:", prob.objective())
     print('reached here')
     exit()
