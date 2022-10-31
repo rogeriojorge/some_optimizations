@@ -130,6 +130,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     ## use this for login node
     ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
     ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
+    global gx_ran
     if not gx_ran:
         gx_cmd = ["./gx", f"{fnamein}"]
         gx_ran = True
