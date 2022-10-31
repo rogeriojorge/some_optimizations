@@ -141,8 +141,8 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     pprint(' *** Waiting for GX ***', flush=True)
+    p.wait()
     pprint(' *** GX finished ***')
-    # p.wait()
     # print(' *** GX finished, waiting 3 more s ***')
     # print( datetime.now().strftime("%H:%M:%S") )
     # os.system("sleep 3")
