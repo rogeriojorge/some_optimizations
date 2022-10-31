@@ -96,9 +96,9 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     gx.make_fluxtube(f_wout)
 
-    cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'scan-gx-simsopt-psi-0.50')}"
-    # os.system(cmd)
-    subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
+    # cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'scan-gx-simsopt-psi-0.50')}"
+    # # os.system(cmd)
+    # subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
     tag = f_wout[5:-3]
     ntheta = gx.inputs['Dimensions']['ntheta']
