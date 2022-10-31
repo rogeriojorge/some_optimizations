@@ -112,8 +112,8 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     #gx.load_slurm( slurm_sample )
 
     fname = f"GX-{tag}"
-    fnamein = os.path.join(this_path,fname+'.in')
-    gx.write(fout=f"{os.path.join(this_path,fname+'.in')}", skip_overwrite=False)
+    fnamein = os.path.join(OUT_DIR,fname+'.in')
+    gx.write(fout=fnamein, skip_overwrite=False)
     #f_slurm = f"{tag}.sh"
     #gx.run_slurm( f_slurm, fname )
 
@@ -126,7 +126,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     # use this for login node
     # gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
     #             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
-    f_log = os.path.join(this_path,fname+".log")
+    f_log = os.path.join(OUT_DIR,fname+".log")
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
 
@@ -138,7 +138,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
 
     # read
-    fout = os.path.join(this_path,fname+".nc")
+    fout = os.path.join(OUT_DIR,fname+".nc")
     gx_out = GX_Output(fout)
 
     qavg, dqavg = gx_out.exponential_window_estimator()
