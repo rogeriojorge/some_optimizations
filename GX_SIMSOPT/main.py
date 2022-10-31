@@ -132,28 +132,26 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     gx_cmd = ["./gx", f"{fnamein}"]
 
-    # f_log = os.path.join(OUT_DIR,fname+".log")
-    # with open(f_log, 'w') as fp:
-    #     p = subprocess.Popen(gx_cmd,stdout=fp)
-    # print(' *** Waiting for GX ***', flush=True)
-    # p.wait()
-
-    import psutil
-    a = subprocess.Popen(gx_cmd)
-    procs_list = [psutil.Process(a.pid)]
-    def on_terminate(proc):
-        print("process {} terminated".format(proc))
-    # waits for multiple processes to terminate
-    # gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate)
-    while True: 
-        gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate) 
-        if len(gone)>0: 
-            break
-
+    f_log = os.path.join(OUT_DIR,fname+".log")
+    with open(f_log, 'w') as fp:
+        p = subprocess.Popen(gx_cmd,stdout=fp)
+    print(' *** Waiting for GX ***', flush=True)
+    p.wait()
     print(' *** GX finished, waiting 3 more s ***')
     print( datetime.now().strftime("%H:%M:%S") )
     os.system("sleep 3")
 
+    # import psutil
+    # a = subprocess.Popen(gx_cmd)
+    # procs_list = [psutil.Process(a.pid)]
+    # def on_terminate(proc):
+    #     print("process {} terminated".format(proc))
+    # # waits for multiple processes to terminate
+    # # gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate)
+    # while True: 
+    #     gone, alive = psutil.wait_procs(procs_list, timeout=3, callback=on_terminate) 
+    #     if len(gone)>0: 
+    #         break
 
     # read
     fout = os.path.join(OUT_DIR,fname+".nc")
