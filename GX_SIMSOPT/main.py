@@ -129,7 +129,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
     # gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
     #             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
     f_log = os.path.join(OUT_DIR,fname+".log")
-    exit()
+    # exit()
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
 
