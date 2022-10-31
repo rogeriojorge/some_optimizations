@@ -123,7 +123,7 @@ def CalculateHeatFlux(v: Vmec, first_restart=False):
 
     # use this for salloc
     shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
-    gx_cmd = ["mpirun","-n","1", "gx", f"{fnamein}"]
+    gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
 
     # use this for login node
     # gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
