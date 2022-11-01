@@ -1,0 +1,1732 @@
+Initial aspect ratio: 7.0003459694771015
+Initial mean iota: -1.0455236555324343
+Initial magnetic well: -0.18303293286802091
+Initial heat flux: 0.11495734148952186
+## Now calculating total objective function ##
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.368010s
+Total objective before optimization: 2.3222110948829364
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.382598s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.913430 with aspect ratio=7.025374 took 11.361774s
+Heat flux = 0.804130 with aspect ratio=7.073258 took 11.580670s
+Heat flux = 57.816374 with aspect ratio=6.009991 took 11.383583s
+Heat flux = 98.571686 with aspect ratio=7.006140 took 11.405966s
+Heat flux = 6.692106 with aspect ratio=7.073258 took 11.517125s
+Heat flux = 0.676665 with aspect ratio=6.941454 took 11.447590s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 5.493821 with aspect ratio=6.996688 took 11.549755s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.005980 with aspect ratio=6.825117 took 11.612399s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000027.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.918177 took 1.328545s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 43.616445 with aspect ratio=6.825117 took 11.282892s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000042.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=7.035763 took 1.446097s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000044.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.106709 took 1.355105s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1690.826318 with aspect ratio=6.825117 took 11.361007s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000050.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=9.411609 took 1.339513s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.022456 with aspect ratio=7.022026 took 11.330098s
+Heat flux = 0.012035 with aspect ratio=7.176880 took 12.040514s
+Heat flux = 0.001087 with aspect ratio=6.748139 took 11.358511s
+Heat flux = 0.697624 with aspect ratio=6.726160 took 10.624914s
+Heat flux = 12867308.535531 with aspect ratio=6.748139 took 10.686361s
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.643985 took 11.568531s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000064.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.325840 took 1.366519s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000074.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.779115 took 1.490285s
+Heat flux = 0.002696 with aspect ratio=6.858503 took 11.524169s
+Heat flux = 68792.571116 with aspect ratio=5.798516 took 10.731516s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 67.181495 with aspect ratio=6.858503 took 11.466683s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 388999613.049246 with aspect ratio=5.825691 took 11.374801s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000016 with aspect ratio=6.625709 took 11.408536s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000091.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.587785 took 1.367571s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000180 with aspect ratio=6.625709 took 11.643930s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000103.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.936292 took 1.401158s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1.586006 with aspect ratio=6.781697 took 11.485668s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000107.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.711441 took 1.285810s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 25160.663285 with aspect ratio=6.625709 took 10.711846s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 141518.929241 with aspect ratio=6.817536 took 11.575375s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000025 with aspect ratio=6.625709 took 11.493679s
+Heat flux = 2.334254 with aspect ratio=6.978302 took 11.455314s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.656793 took 11.399878s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 12.112488 with aspect ratio=6.656793 took 11.383376s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.289269 took 11.678388s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 3234094.790035 with aspect ratio=5.410378 took 11.609810s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000156.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.376815 took 1.399526s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 456.001589 with aspect ratio=5.289269 took 11.437823s
+Heat flux = 0.000015 with aspect ratio=5.123215 took 11.327158s
+Heat flux = 0.000014 with aspect ratio=6.587043 took 11.312538s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.013847 with aspect ratio=6.643768 took 11.839361s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 142.356985 with aspect ratio=6.643768 took 10.604835s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1385.479706 with aspect ratio=6.739288 took 11.478941s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.029474 with aspect ratio=6.643768 took 11.584569s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 19.235855 with aspect ratio=6.677499 took 11.411345s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 159.802823 with aspect ratio=5.736067 took 11.292934s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 124.391032 with aspect ratio=6.643768 took 11.434659s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 2233907.641739 with aspect ratio=5.670817 took 11.422657s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 771715.578146 with aspect ratio=6.880385 took 11.537992s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000219.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.426142 took 1.362980s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 650.631886 with aspect ratio=6.643768 took 10.715108s
+Heat flux = 8498.083567 with aspect ratio=6.186180 took 10.743456s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.021791 with aspect ratio=6.642679 took 11.533592s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1613.009606 with aspect ratio=6.642679 took 11.473528s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.074199 took 11.448050s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 20.532175 with aspect ratio=6.712336 took 11.610863s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 14711.720244 with aspect ratio=5.562852 took 11.403665s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 25.905495 with aspect ratio=6.642679 took 11.679007s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.239480 took 11.427279s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.507339 took 11.443244s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 6.449227 with aspect ratio=6.507339 took 11.800273s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000019 with aspect ratio=6.595416 took 11.460323s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000283.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.145734 took 1.427106s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 8.028129 with aspect ratio=6.595416 took 11.414440s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000288.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.537995 took 1.425852s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 10.195909 with aspect ratio=6.681814 took 11.538481s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000299.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.033500 took 1.480344s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.006178 with aspect ratio=6.595416 took 11.503924s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.011911 with aspect ratio=5.518173 took 11.475528s
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.854560 took 10.603403s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.357483 with aspect ratio=5.540851 took 11.387516s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 4.577597 with aspect ratio=5.854377 took 11.455042s
+Heat flux = 2191.691893 with aspect ratio=5.518173 took 11.408502s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.022439 with aspect ratio=5.530258 took 11.471955s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 2074.978961 with aspect ratio=5.950294 took 11.458990s
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.530258 took 11.035270s
+Heat flux = 0.004414 with aspect ratio=5.566653 took 11.402307s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000341.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=3.761867 took 1.432528s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 23940173.113245 with aspect ratio=5.740307 took 11.531013s
+Heat flux = 0.060566 with aspect ratio=5.504550 took 11.360538s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 7.129871 with aspect ratio=5.984735 took 12.771295s
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.566653 took 10.685665s
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.851439 took 10.731293s
+Heat flux = 0.000252 with aspect ratio=6.360032 took 10.900409s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.252241 took 11.333591s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000001 with aspect ratio=6.252241 took 11.467340s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 21737446.108193 with aspect ratio=6.808684 took 10.638676s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.164615 with aspect ratio=6.579909 took 11.484044s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.252241 took 12.097197s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 17570977.565292 with aspect ratio=6.592944 took 11.484741s
+Heat flux = 24176.609844 with aspect ratio=6.045174 took 11.540859s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000402.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.384730 took 0.906876s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000405.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=3.972468 took 1.434171s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1375.806525 with aspect ratio=6.483409 took 11.470889s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000411.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.709696 took 1.359061s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.252241 took 11.600798s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 147928.607275 with aspect ratio=6.588944 took 11.619306s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 49.514630 with aspect ratio=6.252241 took 11.482201s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000434.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.641135 took 1.377018s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 7.584037 with aspect ratio=6.252241 took 11.625981s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.820543 with aspect ratio=6.464352 took 11.459559s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.263538 took 11.407470s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000459.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.894502 took 1.339532s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000460.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.328133 took 1.483936s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 58541.683867 with aspect ratio=6.587779 took 11.489388s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.263538 took 11.339934s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1495.384044 with aspect ratio=6.603071 took 11.465474s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000491.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.692821 took 1.545100s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.263538 took 11.461074s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.022254 with aspect ratio=4.990723 took 11.415255s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000506.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.652134 took 0.929004s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000507.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.684924 took 1.374957s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.255329 took 11.377787s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 6.560063 with aspect ratio=6.435550 took 11.606607s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000548.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=9.429645 took 1.290154s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1816049.019996 with aspect ratio=6.626137 took 11.437475s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000557.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=7.023080 took 1.437695s
+Heat flux = 0.000000 with aspect ratio=6.255329 took 11.484782s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000570.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.684771 took 1.422138s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=6.255329 took 11.394571s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 568029274.039065 with aspect ratio=6.749465 took 11.396506s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000585.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=3.681938 took 1.383383s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000587.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.704016 took 1.517416s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.734144 with aspect ratio=6.255329 took 11.501666s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000005 with aspect ratio=6.357925 took 11.440990s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 26.031142 with aspect ratio=6.546790 took 11.085022s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.289555 with aspect ratio=6.357925 took 11.719019s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000003 with aspect ratio=6.364511 took 11.429455s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 133.853665 with aspect ratio=6.656603 took 11.428322s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.002418 with aspect ratio=6.992114 took 11.942433s
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000625.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.819167 took 1.003092s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 73.948333 with aspect ratio=6.457516 took 11.424952s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.480276 with aspect ratio=6.364511 took 11.442041s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.804791 took 11.546069s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.029386 with aspect ratio=6.364511 took 11.556749s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.003088 with aspect ratio=6.027601 took 11.451432s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 12515.021475 with aspect ratio=6.211130 took 11.494764s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000668.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.021304 took 1.488168s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000037 with aspect ratio=6.027601 took 11.471374s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000682.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.314933 took 0.948042s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 18.088691 with aspect ratio=6.132622 took 11.461220s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000699.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.481622 took 1.288448s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.100237 with aspect ratio=6.027601 took 11.370709s
+Heat flux = 7185.880231 with aspect ratio=6.670912 took 11.469401s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 90.122754 with aspect ratio=6.027601 took 11.417822s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000731.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.357279 took 1.518413s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.173958 with aspect ratio=6.027601 took 11.404055s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.007471 with aspect ratio=7.410818 took 11.376234s
+Heat flux = 2681.741819 with aspect ratio=6.177591 took 11.450729s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000748.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.099166 took 1.261434s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000006 with aspect ratio=6.027601 took 11.521465s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 3059.292922 with aspect ratio=6.154020 took 11.430915s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000764.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.513898 took 1.342444s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 129517.376354 with aspect ratio=6.027601 took 11.384089s
+Heat flux = 0.000474 with aspect ratio=6.280704 took 11.520020s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 3.529846 with aspect ratio=6.236466 took 11.500694s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000780.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.429251 took 1.346014s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000781.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.580341 took 1.498317s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.001652 with aspect ratio=7.148707 took 11.339815s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 117182.783252 with aspect ratio=6.027601 took 11.525364s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000011 with aspect ratio=5.946452 took 11.408767s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 621.654169 with aspect ratio=6.105708 took 11.540159s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 11360365.711950 with aspect ratio=6.177020 took 11.503304s
+Heat flux = 5630.298295 with aspect ratio=5.695588 took 11.466834s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 15.313365 with aspect ratio=5.946452 took 11.497516s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000080 with aspect ratio=6.786295 took 11.547186s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000839.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.683119 took 1.449019s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.006689 with aspect ratio=5.946452 took 10.545714s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 696.918484 with aspect ratio=6.090609 took 11.441496s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.952005 with aspect ratio=6.043103 took 10.851132s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000860.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.031467 took 1.280710s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 10577650.436860 with aspect ratio=6.687447 took 10.686253s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 74818272.638236 with aspect ratio=6.270596 took 10.772196s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000875.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.298912 took 1.370367s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000423 with aspect ratio=6.028911 took 11.755619s
+Heat flux = 0.017377 with aspect ratio=6.028911 took 11.481630s
+Heat flux = 1.571415 with aspect ratio=5.953302 took 11.396535s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.039889 with aspect ratio=6.019561 took 11.404090s
+Heat flux = 605150.189065 with aspect ratio=5.822104 took 11.708738s
+Heat flux = 0.098918 with aspect ratio=6.368288 took 11.764406s
+Heat flux = 0.060785 with aspect ratio=6.202462 took 11.514381s
+Heat flux = 0.107796 with aspect ratio=6.028911 took 11.495013s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000897.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.327924 took 0.878566s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000899.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.944679 took 0.885300s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 216.761088 with aspect ratio=6.158953 took 11.594253s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.139237 with aspect ratio=5.115475 took 11.441365s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.005173 with aspect ratio=6.028911 took 11.342924s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.052197 with aspect ratio=6.491332 took 11.483179s
+Heat flux = 98007.127489 with aspect ratio=6.151043 took 11.546494s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 51297.789438 with aspect ratio=6.143468 took 11.522007s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 20.856083 with aspect ratio=6.028911 took 11.574266s
+Heat flux = 0.004965 with aspect ratio=6.026737 took 11.370630s
+Heat flux = 0.840401 with aspect ratio=6.922784 took 11.408662s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 259037.037512 with aspect ratio=6.157812 took 11.526038s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000939.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.305832 took 1.505979s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000940.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.390352 took 1.309202s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.018269 with aspect ratio=6.026737 took 11.447215s
+Heat flux = 0.583169 with aspect ratio=5.765718 took 11.507353s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000944.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.270388 took 1.394364s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000953.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.877802 took 1.462746s
+Heat flux = 5.091206 with aspect ratio=6.067495 took 11.404707s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000956.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.938834 took 1.471739s
+Heat flux = 1.458195 with aspect ratio=6.154056 took 11.447874s
+Heat flux = 0.040522 with aspect ratio=6.026737 took 11.463001s
+Heat flux = 0.011736 with aspect ratio=5.989995 took 11.336950s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000966.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.851812 took 1.354711s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 4744.625609 with aspect ratio=6.085858 took 11.882526s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.319546 with aspect ratio=5.741981 took 11.497085s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 836231190.995503 with aspect ratio=5.989995 took 11.515670s
+Heat flux = 4.277629 with aspect ratio=5.487225 took 11.545215s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000976.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.574164 took 1.366491s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 36639.082464 with aspect ratio=6.118124 took 11.417871s
+Heat flux = 10378.092002 with aspect ratio=5.855757 took 11.354290s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_000988.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.141605 took 1.419578s
+Heat flux = 2.851255 with aspect ratio=6.186538 took 11.420609s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 5289423.849982 with aspect ratio=6.144296 took 11.404495s
+Heat flux = 16933.188342 with aspect ratio=5.767489 took 11.462247s
+Heat flux = 0.529331 with aspect ratio=5.709045 took 11.316410s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 411.916770 with aspect ratio=5.989995 took 11.291414s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 144681319.757960 with aspect ratio=6.187696 took 11.404642s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 3448970.151866 with aspect ratio=6.143783 took 11.419452s
+Heat flux = 0.000190 with aspect ratio=6.011744 took 11.416217s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 56987.750144 with aspect ratio=6.011744 took 11.484397s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001034.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.267951 took 1.718366s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000001 with aspect ratio=6.271704 took 11.505735s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.005344 with aspect ratio=5.334203 took 11.421830s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.100625 took 10.636655s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.004979 with aspect ratio=6.031283 took 11.537299s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 6681.858978 with aspect ratio=5.331419 took 11.424049s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 141.862672 with aspect ratio=6.031283 took 11.473956s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001055.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.975029 took 1.351197s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 7.617886 with aspect ratio=6.087289 took 11.462481s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000496 with aspect ratio=6.497653 took 11.390410s
+Heat flux = 0.491044 with aspect ratio=5.919142 took 11.502443s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001076.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=7.478782 took 1.487627s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001084.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.675365 took 1.377020s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001085.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.438574 took 1.293347s
+Heat flux = 37.792534 with aspect ratio=6.031283 took 11.469111s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000236 with aspect ratio=6.157378 took 11.358896s
+Heat flux = 0.000135 with aspect ratio=6.147217 took 11.412010s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001096.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.139759 took 1.445855s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000124 with aspect ratio=6.131698 took 11.462313s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001099.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.368967 took 1.355852s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001100.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.752517 took 1.499434s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000015 with aspect ratio=6.131698 took 11.380154s
+Heat flux = 87.468800 with aspect ratio=5.174575 took 11.536199s
+Heat flux = 0.001330 with aspect ratio=6.822284 took 11.556479s
+Heat flux = 0.000003 with aspect ratio=6.065151 took 11.568964s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001113.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.006453 took 1.385288s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001114.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.460075 took 1.346186s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001115.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.349383 took 1.510149s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000006 with aspect ratio=6.079095 took 11.323211s
+Heat flux = 0.000000 with aspect ratio=6.079095 took 11.487164s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000002 with aspect ratio=5.089791 took 11.571522s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 3885237.839736 with aspect ratio=6.342910 took 11.397324s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.880338 took 11.620844s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001137.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.206563 took 0.924507s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.002029 with aspect ratio=5.974543 took 11.589610s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 432.040329 with aspect ratio=5.974543 took 11.207664s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000378 with aspect ratio=5.959293 took 11.146259s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001163.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.256973 took 1.330152s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 26.539817 with aspect ratio=6.138514 took 11.287222s
+Heat flux = 128.388205 with aspect ratio=5.959293 took 11.418245s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001175.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=11.761277 took 1.346670s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 5.647481 with aspect ratio=6.003594 took 12.082617s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.046234 with aspect ratio=5.959293 took 11.574895s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000006 with aspect ratio=5.431400 took 11.548017s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 24613.370625 with aspect ratio=6.071675 took 11.466417s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 7.203599 with aspect ratio=5.370968 took 11.415035s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 1.362724 with aspect ratio=5.959293 took 11.484375s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 603.779846 with aspect ratio=6.016705 took 11.478148s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001206.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.032447 took 1.348486s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.912331 took 11.499688s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001211.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.272423 took 1.420855s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001212.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.323359 took 1.474504s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001213.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=6.500239 took 1.415229s
+Heat flux = 1.549461 with aspect ratio=5.912331 took 11.379787s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001216.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.882928 took 1.508224s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+name 'fname' is not defined
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.549224 took 11.498121s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.872143 took 11.551763s
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001227.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.376022 took 1.505781s
+Heat flux = 0.000038 with aspect ratio=5.249207 took 11.430232s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 27.752026 with aspect ratio=5.872143 took 11.557006s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 802113982.089648 with aspect ratio=6.126270 took 11.688030s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.000000 with aspect ratio=5.904551 took 11.459563s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001244.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=5.005452 took 1.381522s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 33.289251 with aspect ratio=5.904551 took 11.331581s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+gsl: brent.c:74: ERROR: endpoints do not straddle y=0
+Default GSL error handler invoked.
+  read_GX_output: could not read /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/GX-nfp4_QH_000_001248.nc
+'GX_Output' object has no attribute 'qflux'
+Heat flux = 1000000000000000000.000000 with aspect ratio=4.358479 took 1.453146s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 434.503547 with aspect ratio=6.020324 took 11.413093s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.322084 with aspect ratio=5.257706 took 11.495231s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 0.513099 with aspect ratio=5.904551 took 11.387836s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Heat flux = 6319.515135 with aspect ratio=5.904551 took 11.490857s
+Heat flux = 0.000033 with aspect ratio=5.724600 took 11.366372s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+VMEC did not converge. ierr=2
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER: powerpc64le-conda_cos7-linux-gnu   OS:    RELEASE:   DATE = Nov 01,2022  TIME = 04:54:34
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =    1.0000000000000000       0.17662020866605105        1.3457935360146642E-016   9.0280316374317065E-016   9.0280316374317065E-016   1.7943913813528857E-016
+      ZAXIS_CS =   -0.0000000000000000       0.24612449404919087       -8.2710227734234571E-017  -1.2336440746801089E-016   5.3270994133913785E-017   1.3598122186814834E-016
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  2.56E-02  1.41E-02  7.31E-02  1.177E+00  9.00E-01  1.7772E-01
+  200  3.72E-07  1.57E-07  4.99E-08  1.148E+00  7.86E-01  1.6351E-01
+  400  1.83E-08  4.95E-09  2.77E-09  1.150E+00  7.86E-01  1.6351E-01
+  600  6.43E-09  1.02E-09  1.33E-10  1.150E+00  7.86E-01  1.6351E-01
+  800  2.50E-09  3.26E-10  1.65E-11  1.150E+00  7.86E-01  1.6351E-01
+ 1000  7.76E-10  1.04E-10  3.55E-12  1.150E+00  7.86E-01  1.6351E-01
+ 1200  1.81E-10  2.35E-11  2.85E-13  1.150E+00  7.86E-01  1.6351E-01
+ 1400  3.47E-11  4.50E-12  6.53E-14  1.150E+00  7.86E-01  1.6351E-01
+ 1600  3.71E-12  4.97E-13  1.60E-14  1.150E+00  7.86E-01  1.6351E-01
+ 1706  9.89E-13  1.28E-13  6.65E-15  1.150E+00  7.86E-01  1.6351E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  8.43E-03  1.15E-02  3.12E-06  1.150E+00  9.00E-01  1.6350E-01
+  200  9.14E-02  6.26E-02  1.95E-04  1.150E+00  7.86E-01  1.6350E-01
+  400  7.26E-03  4.93E-03  8.43E-06  1.150E+00  7.86E-01  1.6350E-01
+  600  2.01E-01  1.37E-01  1.76E-04  1.150E+00  7.86E-01  1.6350E-01
+  800  2.46E-02  1.75E-02  4.73E-06  1.150E+00  7.86E-01  1.6350E-01
+ 1000  1.75E-01  1.21E-01  9.15E-05  1.150E+00  7.86E-01  1.6350E-01
+ 1200  1.43E-02  9.75E-03  1.41E-05  1.150E+00  7.86E-01  1.6350E-01
+ 1400  3.42E-02  2.31E-02  1.73E-05  1.150E+00  7.86E-01  1.6350E-01
+ 1600  2.29E-02  1.55E-02  2.55E-05  1.150E+00  7.86E-01  1.6350E-01
+ 1800  1.94E-01  1.33E-01  7.14E-05  1.150E+00  7.86E-01  1.6350E-01
+ 2000  2.59E-01  1.76E-01  2.90E-04  1.150E+00  7.86E-01  1.6350E-01
+ 2200  4.50E-02  2.95E-02  2.89E-05  1.150E+00  7.86E-01  1.6350E-01
+ 2400  3.71E-01  2.49E-01  2.55E-04  1.150E+00  7.86E-01  1.6350E-01
+ 2600  5.54E-02  3.77E-02  2.21E-05  1.150E+00  7.86E-01  1.6350E-01
+ 2800  2.27E-01  1.55E-01  2.82E-04  1.150E+00  7.86E-01  1.6350E-01
+ 3000  3.63E-02  2.47E-02  6.26E-06  1.151E+00  7.86E-01  1.6350E-01
+ 3200  2.61E-02  1.79E-02  2.56E-05  1.150E+00  7.86E-01  1.6350E-01
+ 3400  8.39E-03  5.79E-03  8.30E-06  1.150E+00  7.86E-01  1.6350E-01
+ 3600  1.54E-07  6.69E-08  1.00E-10  1.150E+00  7.64E-01  1.6350E-01
+ 3800  7.63E-09  3.52E-09  2.56E-11  1.150E+00  7.64E-01  1.6350E-01
+ 4000  7.85E-10  1.61E-10  4.89E-12  1.151E+00  7.64E-01  1.6350E-01
+ 4200  3.63E-10  5.71E-11  1.43E-12  1.151E+00  7.64E-01  1.6350E-01
+ 4400  1.95E-10  2.50E-11  4.66E-13  1.151E+00  7.64E-01  1.6350E-01
+ 4600  1.06E-10  1.34E-11  1.54E-13  1.151E+00  7.64E-01  1.6350E-01
+ 4800  5.31E-11  6.67E-12  5.02E-14  1.151E+00  7.64E-01  1.6350E-01
+ 5000  2.42E-11  3.06E-12  1.62E-14  1.151E+00  7.64E-01  1.6350E-01
+ 5200  9.84E-12  1.25E-12  4.94E-15  1.151E+00  7.64E-01  1.6350E-01
+ 5400  3.53E-12  4.50E-13  1.41E-15  1.151E+00  7.64E-01  1.6350E-01
+ 5600  1.12E-12  1.43E-13  3.77E-16  1.151E+00  7.64E-01  1.6350E-01
+ 5800  3.19E-13  4.04E-14  9.26E-17  1.151E+00  7.64E-01  1.6350E-01
+ 5971  9.96E-14  1.26E-14  2.67E-17  1.151E+00  7.64E-01  1.6350E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  8.54E-03  7.77E-03  3.80E-08  1.151E+00  9.00E-01  1.6350E-01
+  200  3.89E-07  8.01E-08  2.56E-12  1.151E+00  7.64E-01  1.6350E-01
+  400  1.44E-08  3.47E-09  7.02E-13  1.151E+00  7.64E-01  1.6350E-01
+  600  8.63E-10  1.70E-10  8.44E-14  1.151E+00  7.64E-01  1.6350E-01
+  800  1.08E-10  1.98E-11  1.97E-14  1.151E+00  7.64E-01  1.6350E-01
+ 1000  3.69E-11  5.45E-12  6.86E-15  1.151E+00  7.64E-01  1.6350E-01
+ 1200  1.43E-11  1.92E-12  2.44E-15  1.151E+00  7.64E-01  1.6350E-01
+ 1400  5.19E-12  7.26E-13  7.55E-16  1.151E+00  7.64E-01  1.6350E-01
+ 1600  2.51E-12  3.24E-13  3.23E-16  1.151E+00  7.64E-01  1.6350E-01
+ 1800  1.32E-12  1.68E-13  1.57E-16  1.151E+00  7.64E-01  1.6350E-01
+ 2000  5.97E-13  7.64E-14  6.66E-17  1.151E+00  7.64E-01  1.6350E-01
+ 2200  2.12E-13  2.71E-14  2.21E-17  1.151E+00  7.64E-01  1.6350E-01
+ 2400  5.05E-14  6.52E-15  5.15E-18  1.151E+00  7.64E-01  1.6350E-01
+ 2541  9.93E-15  1.28E-15  1.26E-18  1.151E+00  7.64E-01  1.6350E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    1
+
+    TOTAL COMPUTATIONAL TIME (SEC)        35.11
+    TIME TO INPUT/OUTPUT                   0.05
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.05
+    TIME IN FUNCT3D                       34.84
+       BCOVAR FIELDS                       5.41
+       FOURIER TRANSFORM                   6.05
+       INVERSE FOURIER TRANSFORM           5.73
+       FORCES AND SYMMETRIZE               6.06
+       RESIDUE                             8.90
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.16485744294766486
+Rmajor_p:  0.9561373857452833
+aspect:             5.7997829436722235
+Rmajor_p/Aminor_p:  5.7997829436722235
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    -1.6475632143369744e-10
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 4
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     3  30   0  9.593e-01  9.593e-01  1.018e-14  1.141e+00  1.141e+00  1.382e-14
+                pi  5.862e-01  5.862e-01  1.761e-14  4.404e-01  4.404e-01  1.891e-14
+   3     8  79   0  8.846e-01  8.846e-01  3.301e-14  1.175e+00  1.175e+00  5.611e-14
+                pi  6.186e-01  6.186e-01  7.538e-15  3.848e-01  3.848e-01  7.841e-13
+   2     6  60   0  9.107e-01  9.107e-01  3.048e-15  1.165e+00  1.165e+00  5.525e-15
+                pi  6.087e-01  6.087e-01  7.478e-15  4.050e-01  4.050e-01  7.909e-14
+   0     0   0   0  1.050e+00  1.050e+00  2.114e-15  1.074e+00  1.074e+00  1.034e-14
+                pi  5.279e-01  5.279e-01  3.785e-15  5.092e-01  5.092e-01  3.052e-15
+   1     4  39   0  9.433e-01  9.433e-01  1.424e-14  1.150e+00  1.150e+00  3.283e-15
+                pi  5.942e-01  5.942e-01  2.055e-15  4.288e-01  4.288e-01  1.644e-14
+   3     9  89   0  8.717e-01  8.717e-01  7.323e-14  1.179e+00  1.179e+00  3.239e-13
+                pi  6.230e-01  6.230e-01  4.206e-14  3.741e-01  3.741e-01  1.760e-13
+   2     7  70   0  8.967e-01  8.967e-01  5.448e-15  1.171e+00  1.171e+00  1.346e-14
+                pi  6.142e-01  6.142e-01  1.374e-14  3.943e-01  3.943e-01  2.858e-14
+   0     1  10   0  1.005e+00  1.005e+00  3.758e-15  1.111e+00  1.111e+00  1.139e-14
+                pi  5.601e-01  5.601e-01  1.586e-15  4.738e-01  4.738e-01  1.875e-14
+   1     5  49   0  9.272e-01  9.272e-01  9.101e-15  1.158e+00  1.158e+00  4.218e-15
+                pi  6.017e-01  6.017e-01  1.476e-15  4.171e-01  4.171e-01  2.183e-14
+   0     2  20   0  9.795e-01  9.795e-01  2.267e-16  1.129e+00  1.129e+00  7.082e-15
+                pi  5.752e-01  5.752e-01  1.544e-15  4.551e-01  4.551e-01  1.464e-14
+Writing output to /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER80_dual_annealing_nfp4_QH/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+slurmstepd: error: *** JOB 8567609 ON login06 CANCELLED AT 2022-11-01T07:59:06 DUE TO TIME LIMIT ***
