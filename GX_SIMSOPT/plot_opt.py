@@ -14,11 +14,11 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 1
-QA_or_QH = 'QA'
-optimizer = 'least_squares'
-MAXITER=100
+QA_or_QH = 'QH'
+optimizer = 'dual_annealing'
+MAXITER=80
 
-plt_opt_res = False
+plt_opt_res = True
 plot_vmec = True
 run_simple = True
 

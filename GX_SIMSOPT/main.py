@@ -16,6 +16,7 @@ from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
 from simsopt.solve import least_squares_mpi_solve
+from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
 from simsopt.turbulence.GX_io import GX_Runner, GX_Output
@@ -28,14 +29,15 @@ def pprint(*args, **kwargs):
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 80
+MAXITER = 150
 max_modes = [1]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+aspect_ratio_target = 7
+opt_quasisymmetry = True
 plot_result = True
-optimizer = 'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
-weight_optTurbulence = 100.0
-aspect_ratio_target = 6
+weight_optTurbulence = 10.0
 diff_rel_step = 1e-5
 diff_abs_step = 1e-7
 no_local_search = True
@@ -202,6 +204,9 @@ for max_mode in max_modes:
     ######################################  
     opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
+    if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
+    else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
+    if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
     pprint("Total objective before optimization:", prob.objective())
