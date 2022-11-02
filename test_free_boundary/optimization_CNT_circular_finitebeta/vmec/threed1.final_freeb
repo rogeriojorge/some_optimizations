@@ -1,0 +1,81 @@
+ THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+ Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+ COMPUTER:    OS:    RELEASE:   DATE = Nov 02,2022  TIME = 15:10:48
+ SHOT ID.: final_freeb  SEQ. NO.:   0
+ TIME SLICE =    0. ms
+
+
+ VACUUM FIELD PARAMETERS:
+ ------------------------
+  nr-grid  nz-grid  np-grid      rmin      rmax      zmin      zmax     input-file
+       13       15       11     0.148     0.393    -0.161     0.161     /Users/rogeriojorge/local/some_optimizations/test_free_boundary/optimization_CNT_circular_finitebeta/coils/mgrid_opt_coils.nc
+
+ COMPUTATION PARAMETERS: (u = theta, v = zeta)
+ ---------------------------------------------
+     ns     nu     nv     mu     mv
+    101     18     11      6      6
+
+ CONFIGURATION PARAMETERS:
+ ---------------------------------------
+    nfp      gamma      spres_ped    phiedge(wb)     curtor(A)        lRFP
+      2  0.000E+00      1.000E+00     -1.965E-02     0.000E+00           F
+
+ RUN CONTROL PARAMETERS:
+ -----------------------
+  ncurr  niter   nsin  nstep  nvacskip      ftol     tcon0    lasym  lforbal lmove_axis lconm1
+      1   8000      9    200         6  1.00E-15  1.00E+00        F        F        T        T
+  mfilter_fbdy nfilter_fbdy lfull3d1out max_main_iterations lgiveup fgiveup
+           -1           -1           F                   1       F  3.0E+01
+
+ PRECONDITIONER CONTROL PARAMETERS:
+ ----------------------------------
+  precon_type   prec2d_threshold
+  NONE                  1.00E-30
+
+ EXTERNAL CURRENTS
+ -----------------
+    CurveXYZFourier1    CurveXYZFourier2       RotatedCurve1       RotatedCurve2
+          9.2393E+05          1.3140E+06         -9.2393E+05          1.3140E+06
+
+ MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
+ PMASS parameterization type is 'power_series'
+ -----------------------------------
+   7.630E+03  -7.630E+03
+
+ TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
+ PCURR parameterization type is 'power_series'
+ --------------------------------------
+
+
+ NORMALIZED TOROIDAL FLUX COEFFICIENTS aphi (EXPANSION IN S):
+ -----------------------------------
+   1.000E+00
+
+ R-Z FOURIER BOUNDARY COEFFICIENTS AND MAGNETIC AXIS INITIAL GUESS
+ R = RBC*COS(m*u - n*v) + RBS*SIN(m*u - n*v), Z = ZBC*COS(m*u - n*v) + ZBS*SIN(m*u-n*v)
+ --------------------------------------------------------------------------------------
+   nb  mb     rbc         rbs         zbc         zbs       raxis(c)    raxis(s)    zaxis(c)    zaxis(s)
+    0   0  2.8064E-01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    1   0  2.2885E-02  0.0000E+00  0.0000E+00  1.6037E-02  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    2   0 -5.0567E-04  0.0000E+00  0.0000E+00 -1.3956E-03  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    3   0 -3.8200E-04  0.0000E+00  0.0000E+00 -3.4009E-04  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    4   0 -1.0602E-05  0.0000E+00  0.0000E+00 -4.3353E-05  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    5   0 -6.9688E-06  0.0000E+00  0.0000E+00 -6.2834E-06  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+   -5   1 -3.0054E-06  0.0000E+00  0.0000E+00 -1.2435E-06
+   -4   1 -7.5517E-06  0.0000E+00  0.0000E+00 -1.8448E-05
+   -3   1 -1.5984E-04  0.0000E+00  0.0000E+00  1.1584E-04
+   -2   1  2.0018E-05  0.0000E+00  0.0000E+00 -7.2485E-06
+   -1   1  5.0221E-03  0.0000E+00  0.0000E+00 -3.2385E-03
+    0   1  7.0594E-02  0.0000E+00  0.0000E+00 -9.9438E-02
+    1   1 -2.6677E-02  0.0000E+00  0.0000E+00 -3.1422E-02
+    2   1 -3.8213E-03  0.0000E+00  0.0000E+00 -5.0100E-03
+    3   1 -2.4827E-04  0.0000E+00  0.0000E+00 -7.0550E-04
+    4   1 -7.8145E-05  0.0000E+00  0.0000E+00 -9.0645E-05
+    5   1 -2.0490E-06  0.0000E+00  0.0000E+00 -1.5329E-05
+   -5   2  1.6722E-06  0.0000E+00  0.0000E+00 -9.4816E-06
+   -4   2 -1.4083E-05  0.0000E+00  0.0000E+00 -1.6553E-05
+   -3   2  8.1215E-05  0.0000E+00  0.0000E+00 -1.5503E-04
+   -2   2 -8.5355E-05  0.0000E+00  0.0000E+00  1.0359E-05
+   -1   2 -6.2546E-04  0.0000E+00  0.0000E+00  9.4450E-04
+    0   2 -8.9585E-04  0.0000E+00  0.0000E+00  5.4348E-03

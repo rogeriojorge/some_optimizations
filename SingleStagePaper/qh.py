@@ -38,13 +38,13 @@ start = time.time()
 ##########################################################################################
 ############## Input parameters
 ##########################################################################################
-max_modes = [3]
-stage_1=False
+max_modes = [2]
+stage_1=True
 single_stage=True
 MAXITER_stage_1 = 100
 MAXITER_stage_2 = 1500
 MAXITER_single_stage = 350
-finite_beta=True
+finite_beta=False
 mercier_stability=False
 ncoils = 4
 # beta_target = 0.03
@@ -376,7 +376,7 @@ def fun(dofss, prob_jacobian=None, info={'Nfeval':0}, max_mode=1, oustr_dict=[])
 
     if mpi.proc0_world:
         if debug_coils_outputtxt:
-            if not finite_beta: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
+            # if not finite_beta: outstr += f", ║∇J coils║={np.linalg.norm(grad_with_respect_to_coils/coils_objective_weight):.1e}"
             outstr += f", C-C-Sep={Jccdist.shortest_distance():.2f}"
             outstr += f"\n J_CC={(J_CC.J()):.1e}, J_LENGTH_PENALTY={J_LENGTH_PENALTY.J():.1e}"
             outstr += f", J_CURVATURE={J_CURVATURE.J():.1e}, J_MSC={J_MSC.J():.1e}, J_ALS={J_ALS.J():.1e}"
