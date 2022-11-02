@@ -1,0 +1,317 @@
+Initial aspect ratio: 7.0003459694771015
+Initial mean iota: -1.0455236555324343
+Initial magnetic well: -0.18303293286802091
+Initial heat flux: 0.11495734148952186
+## Now calculating total objective function ##
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.450498s
+Total objective before optimization: 0.43468965905694423
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.377474s
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.369669s
+Heat flux = 0.114957 with aspect ratio=7.000346 took 11.473695s
+Heat flux = 0.114954 with aspect ratio=7.000346 took 11.324503s
+Heat flux = 0.115040 with aspect ratio=7.000336 took 11.437982s
+Heat flux = 0.115061 with aspect ratio=7.000302 took 11.326043s
+Heat flux = 0.114966 with aspect ratio=7.000347 took 11.425749s
+Heat flux = 0.114942 with aspect ratio=7.000346 took 11.358308s
+Heat flux = 0.114981 with aspect ratio=7.000363 took 11.375444s
+Heat flux = 0.114942 with aspect ratio=7.000295 took 11.483028s
+Heat flux = 0.114970 with aspect ratio=7.000347 took 11.427102s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         2.1734e-01                                    1.20e+02    
+Heat flux = 0.015910 with aspect ratio=7.069644 took 11.396412s
+Heat flux = 0.015910 with aspect ratio=7.069644 took 12.097244s
+Heat flux = 0.015911 with aspect ratio=7.069644 took 11.371972s
+Heat flux = 0.015924 with aspect ratio=7.069628 took 11.439340s
+Heat flux = 0.015928 with aspect ratio=7.069593 took 11.418487s
+Heat flux = 0.015911 with aspect ratio=7.069644 took 11.509303s
+Heat flux = 0.015909 with aspect ratio=7.069644 took 11.426147s
+Heat flux = 0.015915 with aspect ratio=7.069666 took 11.514840s
+Heat flux = 0.015905 with aspect ratio=7.069587 took 11.560648s
+Heat flux = 0.015911 with aspect ratio=7.069644 took 11.481792s
+       1              2         1.3874e-01      7.86e-02       5.41e-02       1.68e+01    
+Heat flux = 0.020911 with aspect ratio=7.091537 took 11.441388s
+Heat flux = 0.020911 with aspect ratio=7.091537 took 11.455487s
+Heat flux = 0.020912 with aspect ratio=7.091537 took 11.330468s
+Heat flux = 0.020928 with aspect ratio=7.091523 took 11.562056s
+Heat flux = 0.020932 with aspect ratio=7.091488 took 11.460429s
+Heat flux = 0.020913 with aspect ratio=7.091537 took 11.387474s
+Heat flux = 0.020910 with aspect ratio=7.091537 took 11.465899s
+Heat flux = 0.020915 with aspect ratio=7.091557 took 11.307342s
+Heat flux = 0.020905 with aspect ratio=7.091481 took 11.354817s
+Heat flux = 0.020912 with aspect ratio=7.091537 took 11.771680s
+       2              3         1.2456e-01      1.42e-02       2.57e-02       8.06e+00    
+Heat flux = 0.025257 with aspect ratio=7.044672 took 11.508557s
+Heat flux = 0.013543 with aspect ratio=7.058729 took 11.423246s
+Heat flux = 0.013543 with aspect ratio=7.058729 took 11.424984s
+Heat flux = 0.013543 with aspect ratio=7.058729 took 11.473328s
+Heat flux = 0.013554 with aspect ratio=7.058714 took 11.691479s
+Heat flux = 0.013557 with aspect ratio=7.058679 took 11.489852s
+Heat flux = 0.013544 with aspect ratio=7.058729 took 11.394996s
+Heat flux = 0.013542 with aspect ratio=7.058729 took 11.436327s
+Heat flux = 0.013546 with aspect ratio=7.058750 took 11.519527s
+Heat flux = 0.013538 with aspect ratio=7.058673 took 11.509624s
+Heat flux = 0.013543 with aspect ratio=7.058729 took 11.546408s
+       3              5         1.2054e-01      4.02e-03       8.10e-03       4.10e-01    
+Heat flux = 0.026294 with aspect ratio=7.042871 took 11.422113s
+Heat flux = 0.016502 with aspect ratio=7.053638 took 11.433784s
+Heat flux = 0.016502 with aspect ratio=7.053638 took 11.456943s
+Heat flux = 0.016502 with aspect ratio=7.053638 took 11.437890s
+Heat flux = 0.016516 with aspect ratio=7.053624 took 11.505464s
+Heat flux = 0.016519 with aspect ratio=7.053589 took 11.460511s
+Heat flux = 0.016503 with aspect ratio=7.053639 took 11.408844s
+Heat flux = 0.016501 with aspect ratio=7.053638 took 11.359233s
+Heat flux = 0.016505 with aspect ratio=7.053659 took 11.418380s
+Heat flux = 0.016496 with aspect ratio=7.053582 took 11.488627s
+Heat flux = 0.016503 with aspect ratio=7.053639 took 11.497125s
+       4              7         1.2014e-01      3.98e-04       4.05e-03       9.16e-01    
+Heat flux = 0.014084 with aspect ratio=7.054460 took 11.409228s
+Heat flux = 0.014084 with aspect ratio=7.054460 took 11.415793s
+Heat flux = 0.014084 with aspect ratio=7.054460 took 11.435351s
+Heat flux = 0.014096 with aspect ratio=7.054445 took 11.436875s
+Heat flux = 0.014099 with aspect ratio=7.054410 took 11.647607s
+Heat flux = 0.014085 with aspect ratio=7.054460 took 11.510085s
+Heat flux = 0.014082 with aspect ratio=7.054460 took 11.847558s
+Heat flux = 0.014087 with aspect ratio=7.054481 took 11.532138s
+Heat flux = 0.014079 with aspect ratio=7.054404 took 11.513368s
+Heat flux = 0.014084 with aspect ratio=7.054460 took 11.581958s
+       5              8         1.1969e-01      4.47e-04       4.05e-03       5.03e-01    
+Heat flux = 0.014860 with aspect ratio=7.053703 took 11.491926s
+Heat flux = 0.014860 with aspect ratio=7.053703 took 11.508699s
+Heat flux = 0.014860 with aspect ratio=7.053703 took 11.611942s
+Heat flux = 0.014873 with aspect ratio=7.053688 took 11.421560s
+Heat flux = 0.014876 with aspect ratio=7.053653 took 11.481534s
+Heat flux = 0.014861 with aspect ratio=7.053703 took 11.432120s
+Heat flux = 0.014858 with aspect ratio=7.053703 took 11.402576s
+Heat flux = 0.014863 with aspect ratio=7.053724 took 11.516011s
+Heat flux = 0.014854 with aspect ratio=7.053646 took 11.493599s
+Heat flux = 0.014861 with aspect ratio=7.053703 took 11.472269s
+       6              9         1.1938e-01      3.14e-04       4.05e-03       5.88e-01    
+Heat flux = 0.013572 with aspect ratio=7.054375 took 11.533962s
+Heat flux = 0.013572 with aspect ratio=7.054375 took 11.501132s
+Heat flux = 0.013572 with aspect ratio=7.054375 took 11.532790s
+Heat flux = 0.013585 with aspect ratio=7.054360 took 11.427052s
+Heat flux = 0.013587 with aspect ratio=7.054325 took 11.514441s
+Heat flux = 0.013573 with aspect ratio=7.054375 took 11.645262s
+Heat flux = 0.013571 with aspect ratio=7.054375 took 11.454858s
+Heat flux = 0.013575 with aspect ratio=7.054396 took 11.730857s
+Heat flux = 0.013567 with aspect ratio=7.054318 took 11.456265s
+Heat flux = 0.013573 with aspect ratio=7.054375 took 11.350097s
+       7             10         1.1915e-01      2.30e-04       4.05e-03       5.16e-01    
+Heat flux = 0.015541 with aspect ratio=7.054326 took 11.523155s
+Heat flux = 0.015541 with aspect ratio=7.054326 took 11.505252s
+Heat flux = 0.015541 with aspect ratio=7.054326 took 11.305666s
+Heat flux = 0.015556 with aspect ratio=7.054312 took 11.345672s
+Heat flux = 0.015558 with aspect ratio=7.054276 took 11.513617s
+Heat flux = 0.015542 with aspect ratio=7.054326 took 11.468199s
+Heat flux = 0.015540 with aspect ratio=7.054326 took 11.623258s
+Heat flux = 0.015544 with aspect ratio=7.054347 took 11.569068s
+Heat flux = 0.015535 with aspect ratio=7.054270 took 11.527222s
+Heat flux = 0.015542 with aspect ratio=7.054326 took 11.493025s
+       8             11         1.1901e-01      1.36e-04       3.97e-03       6.90e-01    
+Heat flux = 0.013986 with aspect ratio=7.054955 took 11.468402s
+Heat flux = 0.013996 with aspect ratio=7.055796 took 11.672705s
+Heat flux = 0.013996 with aspect ratio=7.055796 took 11.397239s
+Heat flux = 0.013996 with aspect ratio=7.055796 took 11.431810s
+Heat flux = 0.014010 with aspect ratio=7.055782 took 11.514517s
+Heat flux = 0.014012 with aspect ratio=7.055747 took 11.531670s
+Heat flux = 0.013997 with aspect ratio=7.055797 took 11.358204s
+Heat flux = 0.013995 with aspect ratio=7.055796 took 11.475664s
+Heat flux = 0.014000 with aspect ratio=7.055818 took 11.510294s
+Heat flux = 0.013991 with aspect ratio=7.055740 took 11.420569s
+Heat flux = 0.013997 with aspect ratio=7.055797 took 11.385649s
+       9             13         1.1900e-01      1.72e-05       4.24e-04       1.51e-01    
+Heat flux = 0.014693 with aspect ratio=7.054870 took 11.455273s
+Heat flux = 0.014448 with aspect ratio=7.054764 took 11.547693s
+Heat flux = 0.014264 with aspect ratio=7.055014 took 11.510602s
+Heat flux = 0.014264 with aspect ratio=7.055014 took 11.576787s
+Heat flux = 0.014264 with aspect ratio=7.055014 took 11.439114s
+Heat flux = 0.014278 with aspect ratio=7.055000 took 11.462576s
+Heat flux = 0.014280 with aspect ratio=7.054965 took 11.645801s
+Heat flux = 0.014265 with aspect ratio=7.055015 took 11.431573s
+Heat flux = 0.014263 with aspect ratio=7.055014 took 11.486959s
+Heat flux = 0.014267 with aspect ratio=7.055035 took 11.602071s
+Heat flux = 0.014259 with aspect ratio=7.054958 took 11.377342s
+Heat flux = 0.014265 with aspect ratio=7.055015 took 11.412055s
+      10             16         1.1899e-01      1.44e-06       2.65e-05       2.21e-01    
+Heat flux = 0.014308 with aspect ratio=7.055026 took 11.506630s
+Heat flux = 0.014308 with aspect ratio=7.055026 took 11.470337s
+Heat flux = 0.014308 with aspect ratio=7.055025 took 11.415450s
+Heat flux = 0.014322 with aspect ratio=7.055011 took 11.495821s
+Heat flux = 0.014324 with aspect ratio=7.054976 took 11.480256s
+Heat flux = 0.014309 with aspect ratio=7.055026 took 11.521980s
+Heat flux = 0.014307 with aspect ratio=7.055026 took 11.455933s
+Heat flux = 0.014312 with aspect ratio=7.055047 took 11.440795s
+Heat flux = 0.014303 with aspect ratio=7.054969 took 11.531360s
+Heat flux = 0.014309 with aspect ratio=7.055026 took 11.454400s
+      11             17         1.1899e-01      7.18e-07       2.65e-05       2.43e-01    
+Heat flux = 0.014238 with aspect ratio=7.054994 took 11.433512s
+Heat flux = 0.014238 with aspect ratio=7.054994 took 11.533475s
+Heat flux = 0.014238 with aspect ratio=7.054993 took 11.650029s
+Heat flux = 0.014252 with aspect ratio=7.054979 took 11.383495s
+Heat flux = 0.014254 with aspect ratio=7.054944 took 11.323725s
+Heat flux = 0.014239 with aspect ratio=7.054994 took 11.412964s
+Heat flux = 0.014237 with aspect ratio=7.054994 took 11.386920s
+Heat flux = 0.014241 with aspect ratio=7.055015 took 11.387658s
+Heat flux = 0.014232 with aspect ratio=7.054937 took 11.430379s
+Heat flux = 0.014239 with aspect ratio=7.054994 took 11.471608s
+      12             18         1.1899e-01      1.23e-07       6.63e-06       7.46e-02    
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.550945s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.647285s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.467452s
+Heat flux = 0.014270 with aspect ratio=7.054954 took 11.538755s
+Heat flux = 0.014272 with aspect ratio=7.054919 took 11.395890s
+Heat flux = 0.014257 with aspect ratio=7.054969 took 11.401899s
+Heat flux = 0.014255 with aspect ratio=7.054969 took 11.428974s
+Heat flux = 0.014260 with aspect ratio=7.054990 took 11.391901s
+Heat flux = 0.014251 with aspect ratio=7.054912 took 11.513804s
+Heat flux = 0.014257 with aspect ratio=7.054969 took 11.388858s
+      13             19         1.1899e-01      4.93e-08       1.66e-06       1.09e-01    
+Heat flux = 0.014243 with aspect ratio=7.054961 took 11.621491s
+Heat flux = 0.014252 with aspect ratio=7.054967 took 11.518087s
+Heat flux = 0.014255 with aspect ratio=7.054968 took 11.476954s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.392516s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.335068s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.532494s
+Heat flux = 0.014256 with aspect ratio=7.054969 took 11.417916s
+Heat flux = 0.014256 with aspect ratio=7.054968 took 11.307439s
+Heat flux = 0.014270 with aspect ratio=7.054954 took 11.589184s
+Heat flux = 0.014272 with aspect ratio=7.054919 took 11.473304s
+Heat flux = 0.014257 with aspect ratio=7.054969 took 11.349905s
+Heat flux = 0.014255 with aspect ratio=7.054969 took 11.522453s
+Heat flux = 0.014260 with aspect ratio=7.054990 took 11.794792s
+Heat flux = 0.014251 with aspect ratio=7.054912 took 11.423975s
+Heat flux = 0.014257 with aspect ratio=7.054969 took 11.425066s
+      14             25         1.1899e-01      2.93e-09       1.62e-09       2.07e-01    
+`xtol` termination condition is satisfied.
+Function evaluations 25, initial cost 2.1734e-01, final cost 1.1899e-01, first-order optimality 2.07e-01.
+Final aspect ratio: 7.054968603286783
+Final mean iota: -1.0714193066119428
+Final magnetic well: -0.17657979820476105
+Final heat flux: 0.0142562056926589
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER: powerpc64le-conda_cos7-linux-gnu   OS:    RELEASE:   DATE = Nov 01,2022  TIME = 13:21:27
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =   0.99999999999999978       0.10833587912018271        1.2336440746801089E-016   7.7943875627515976E-016   8.4112096000916506E-016   1.0093451520109981E-016
+      ZAXIS_CS =   -0.0000000000000000       0.10425935708511967       -4.9065389333867966E-017  -5.3971928267254766E-017   1.5420550933501362E-017   5.0467257600549904E-017
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.06E-02  5.24E-03  3.58E-02  1.108E+00  9.00E-01  1.4537E-01
+  200  2.70E-08  6.79E-09  4.94E-09  1.099E+00  9.00E-01  1.4184E-01
+  400  2.25E-09  2.86E-10  2.16E-10  1.099E+00  9.00E-01  1.4184E-01
+  600  5.14E-10  6.30E-11  1.47E-11  1.099E+00  9.00E-01  1.4184E-01
+  800  4.00E-11  5.10E-12  8.22E-13  1.099E+00  9.00E-01  1.4184E-01
+  976  9.81E-13  1.31E-13  5.98E-14  1.099E+00  9.00E-01  1.4184E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  2.71E-03  2.49E-03  3.22E-06  1.099E+00  9.00E-01  1.4184E-01
+  200  7.20E-09  1.67E-09  7.42E-11  1.099E+00  9.00E-01  1.4184E-01
+  400  5.41E-10  9.65E-11  5.10E-12  1.099E+00  9.00E-01  1.4184E-01
+  600  1.30E-10  1.74E-11  7.58E-13  1.100E+00  9.00E-01  1.4184E-01
+  800  3.19E-11  3.94E-12  1.22E-13  1.100E+00  9.00E-01  1.4184E-01
+ 1000  5.94E-12  7.36E-13  1.48E-14  1.100E+00  9.00E-01  1.4184E-01
+ 1200  9.37E-13  1.09E-13  1.83E-15  1.100E+00  9.00E-01  1.4184E-01
+ 1395  9.99E-14  1.21E-14  2.38E-16  1.100E+00  9.00E-01  1.4184E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.07E-02  4.63E-03  4.61E-08  1.100E+00  9.00E-01  1.4184E-01
+  200  2.23E-07  9.35E-08  3.55E-12  1.100E+00  7.54E-01  1.4184E-01
+  400  6.78E-09  1.22E-09  6.14E-13  1.100E+00  7.54E-01  1.4184E-01
+  600  4.35E-10  7.54E-11  9.08E-14  1.100E+00  7.54E-01  1.4184E-01
+  800  4.40E-11  7.27E-12  2.12E-14  1.100E+00  7.54E-01  1.4184E-01
+ 1000  7.67E-12  1.26E-12  4.41E-15  1.100E+00  7.54E-01  1.4184E-01
+ 1200  1.94E-12  2.61E-13  1.02E-15  1.100E+00  7.54E-01  1.4184E-01
+ 1400  4.95E-13  6.12E-14  2.02E-16  1.100E+00  7.54E-01  1.4184E-01
+ 1600  9.00E-14  1.10E-14  3.48E-17  1.100E+00  7.54E-01  1.4184E-01
+ 1800  1.40E-14  1.74E-15  4.39E-18  1.100E+00  7.54E-01  1.4184E-01
+ 1839  9.97E-15  1.22E-15  2.52E-18  1.100E+00  7.54E-01  1.4184E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    0
+
+    TOTAL COMPUTATIONAL TIME (SEC)        16.36
+    TIME TO INPUT/OUTPUT                   0.05
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.05
+    TIME IN FUNCT3D                       16.19
+       BCOVAR FIELDS                       2.51
+       FOURIER TRANSFORM                   2.81
+       INVERSE FOURIER TRANSFORM           2.67
+       FORCES AND SYMMETRIZE               2.81
+       RESIDUE                             4.13
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.14152708720595747
+Rmajor_p:  0.9984691567526625
+aspect:             7.054968603286797
+Rmajor_p/Aminor_p:  7.054968603286797
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    1.166876276157406e-10
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 4
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     3  30   0  8.186e-01  8.186e-01  7.323e-15  9.521e-01  9.521e-01  1.073e-14
+                pi  8.996e-01  8.996e-01  7.158e-15  7.831e-01  7.831e-01  7.372e-15
+   3     8  79   0  7.837e-01  7.837e-01  1.842e-15  9.917e-01  9.917e-01  1.332e-14
+                pi  8.905e-01  8.905e-01  4.364e-15  6.849e-01  6.849e-01  1.897e-14
+   0     0   0   0  8.742e-01  8.742e-01  1.588e-14  8.915e-01  8.915e-01  2.005e-14
+                pi  8.783e-01  8.783e-01  1.138e-15  8.639e-01  8.639e-01  2.326e-14
+   2     6  60   0  7.951e-01  7.951e-01  1.941e-14  9.793e-01  9.793e-01  2.823e-14
+                pi  8.956e-01  8.956e-01  1.178e-14  7.236e-01  7.236e-01  1.795e-14
+   1     4  39   0  8.105e-01  8.105e-01  9.178e-15  9.615e-01  9.615e-01  2.113e-14
+                pi  8.992e-01  8.992e-01  3.087e-15  7.650e-01  7.650e-01  5.080e-15
+   3     9  89   0  7.783e-01  7.783e-01  7.989e-15  9.970e-01  9.970e-01  1.626e-14
+                pi  8.872e-01  8.872e-01  7.008e-15  6.629e-01  6.629e-01  7.034e-15
+   2     7  70   0  7.889e-01  7.889e-01  1.154e-14  9.862e-01  9.862e-01  2.229e-14
+                pi  8.931e-01  8.931e-01  0.000e+00  7.036e-01  7.036e-01  1.704e-14
+   0     1  10   0  8.441e-01  8.441e-01  1.342e-14  9.233e-01  9.233e-01  1.395e-14
+                pi  8.947e-01  8.947e-01  1.737e-15  8.280e-01  8.280e-01  1.555e-14
+   1     5  49   0  8.027e-01  8.027e-01  8.991e-15  9.706e-01  9.706e-01  2.345e-14
+                pi  8.979e-01  8.979e-01  3.586e-15  7.452e-01  7.452e-01  2.518e-14
+   0     2  20   0  8.295e-01  8.295e-01  1.205e-15  9.396e-01  9.396e-01  2.729e-14
+                pi  8.985e-01  8.985e-01  3.707e-16  8.043e-01  8.043e-01  1.615e-14
+Writing output to /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+slurmstepd: error: *** JOB 8568819 ON login06 CANCELLED AT 2022-11-01T16:47:08 DUE TO TIME LIMIT ***
