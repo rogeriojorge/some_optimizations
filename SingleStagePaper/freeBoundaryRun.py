@@ -14,6 +14,10 @@ from simsopt.geo import curves_to_vtk
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
+####
+# BENCHMARK WITH THE VACUUM CASE
+####
+
 # folder = 'optimization_CNT'
 folder = 'optimization_CNT_circular'
 QA_or_QH = 'QA'
