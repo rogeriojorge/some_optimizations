@@ -1,0 +1,129 @@
+ Enter extension of "coils" file     :  Scale (S) bfield to unit current/turn OR
+ use raw (R) currents from coils file:  Assume stellarator symmetry (Y/N)?  :  Enter rmin (min radial grid dimension)  :  Enter rmax (max radial grid dimension)  :  Enter zmin (min vertical grid dimension):  Enter zmax (max vertical grid dimension):  Enter number of toroidal planes/period  :  Enter number of r (radial) mesh points  :  Enter number of z mesh points  : 
+ COIL GROUP          :  CurveXYZFourier1
+ TOTAL COILS IN GROUP:      1 TOTAL FILAMENTS:    128
+ K =    1 (OUT OF   11)
+ K =    2
+ K =    3
+ K =    4
+ K =    5
+ K =    6
+
+ COIL GROUP          :  CurveXYZFourier2
+ TOTAL COILS IN GROUP:      1 TOTAL FILAMENTS:    128
+ K =    1 (OUT OF   11)
+ K =    2
+ K =    3
+ K =    4
+ K =    5
+ K =    6
+
+ COIL GROUP          :  RotatedCurve1
+ TOTAL COILS IN GROUP:      1 TOTAL FILAMENTS:    128
+ K =    1 (OUT OF   11)
+ K =    2
+ K =    3
+ K =    4
+ K =    5
+ K =    6
+
+ COIL GROUP          :  RotatedCurve2
+ TOTAL COILS IN GROUP:      1 TOTAL FILAMENTS:    128
+ K =    1 (OUT OF   11)
+ K =    2
+ K =    3
+ K =    4
+ K =    5
+ K =    6
+
+********************************************************************************
+Coil group #    1, with group ID CurveXYZFourier1              
+
+               Loops     Circles   Other   Total
+ # coils          1         0         0         1
+
+ Filamentary loops, number of filaments:
+      Min     Max      Average          SD 
+     128        128        128.0          0.0
+
+ Filamentary loops, current:
+      Min          Max         Average          SD 
+   1.84785E+06   1.84785E+06   1.84785E+06   0.00E+00
+
+Magnetic field with unit current multiplier, at R,Z=   2.70202E-01   0.00000E+00
+      phi              B . rhat      B . phihat    B . zhat
+    0.00000E+00    1.17245E-01   -1.07986E-17    8.95665E-01
+    2.85599E-01    1.17245E-01   -5.55112E-17    8.95665E-01
+    5.71199E-01    1.17245E-01   -6.93889E-18    8.95665E-01
+    8.56798E-01    1.17245E-01    1.24900E-16    8.95665E-01
+    1.14240E+00    1.17245E-01   -2.08167E-17    8.95665E-01
+    1.42800E+00    1.17245E-01   -5.89806E-17    8.95665E-01
+
+********************************************************************************
+Coil group #    2, with group ID CurveXYZFourier2              
+
+               Loops     Circles   Other   Total
+ # coils          1         0         0         1
+
+ Filamentary loops, number of filaments:
+      Min     Max      Average          SD 
+     128        128        128.0          0.0
+
+ Filamentary loops, current:
+      Min          Max         Average          SD 
+   2.62800E+06   2.62800E+06   2.62800E+06   0.00E+00
+
+Magnetic field with unit current multiplier, at R,Z=   2.70202E-01   0.00000E+00
+      phi              B . rhat      B . phihat    B . zhat
+    0.00000E+00    1.25255E-03   -1.98596E+00   -2.10105E+00
+    2.85599E-01   -3.81321E-01   -1.97140E+00   -2.06627E+00
+    5.71199E-01   -7.49116E-01   -1.93069E+00   -1.96348E+00
+    8.56798E-01   -1.08836E+00   -1.87079E+00   -1.79793E+00
+    1.14240E+00   -1.38883E+00   -1.80563E+00   -1.57438E+00
+    1.42800E+00   -1.64619E+00   -1.75345E+00   -1.29279E+00
+
+********************************************************************************
+Coil group #    3, with group ID RotatedCurve1                 
+
+               Loops     Circles   Other   Total
+ # coils          1         0         0         1
+
+ Filamentary loops, number of filaments:
+      Min     Max      Average          SD 
+     128        128        128.0          0.0
+
+ Filamentary loops, current:
+      Min          Max         Average          SD 
+  -1.84785E+06  -1.84785E+06  -1.84785E+06   0.00E+00
+
+Magnetic field with unit current multiplier, at R,Z=   2.70202E-01   0.00000E+00
+      phi              B . rhat      B . phihat    B . zhat
+    0.00000E+00   -1.17245E-01    1.12293E-17    8.95665E-01
+    2.85599E-01   -1.17245E-01    4.16334E-17    8.95665E-01
+    5.71199E-01   -1.17245E-01    4.16334E-17    8.95665E-01
+    8.56798E-01   -1.17245E-01   -9.71445E-17    8.95665E-01
+    1.14240E+00   -1.17245E-01    2.77556E-17    8.95665E-01
+    1.42800E+00   -1.17245E-01    4.16334E-17    8.95665E-01
+
+********************************************************************************
+Coil group #    4, with group ID RotatedCurve2                 
+
+               Loops     Circles   Other   Total
+ # coils          1         0         0         1
+
+ Filamentary loops, number of filaments:
+      Min     Max      Average          SD 
+     128        128        128.0          0.0
+
+ Filamentary loops, current:
+      Min          Max         Average          SD 
+   2.62800E+06   2.62800E+06   2.62800E+06   0.00E+00
+
+Magnetic field with unit current multiplier, at R,Z=   2.70202E-01   0.00000E+00
+      phi              B . rhat      B . phihat    B . zhat
+    0.00000E+00    1.63345E-04   -2.49925E+00    1.49921E+00
+    2.85599E-01    1.11146E+00   -2.35578E+00    1.23214E+00
+    5.71199E-01    1.76992E+00   -2.08831E+00    6.39613E-01
+    8.56798E-01    2.00475E+00   -1.87918E+00    1.68921E-02
+    1.14240E+00    1.99376E+00   -1.76583E+00   -5.13749E-01
+    1.42800E+00    1.85555E+00   -1.73187E+00   -9.42288E-01

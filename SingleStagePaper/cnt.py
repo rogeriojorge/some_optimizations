@@ -40,15 +40,15 @@ start = time.time()
 ##########################################################################################
 #################################### Input parameters ####################################
 ##########################################################################################
-max_modes = [5]
-stage_1=False
+max_modes = [2]
+stage_1=True
 single_stage=True
 MAXITER_stage_1 = 20
 MAXITER_stage_2 = 550
 MAXITER_single_stage = 350
-finite_beta=True
+finite_beta=False
 mercier_stability=False
-circularTopBottom = False
+circularTopBottom = True
 nphi_VMEC=128
 ntheta_VMEC=30
 nmodes_coils = 7
@@ -107,7 +107,7 @@ if circularTopBottom: directory +='_circular'
 if finite_beta: directory +='_finitebeta'
 vmec_verbose=False
 if finite_beta: vmec_input_filename='input.CNT_finiteBeta'
-else: vmec_input_filename='input.CNT_qfm'
+else: vmec_input_filename='input.CNT'
 # Create output directories
 if not use_previous_results_if_available:
     if comm.rank == 0:
