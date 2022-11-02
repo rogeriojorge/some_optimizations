@@ -15,8 +15,8 @@ import booz_xform as bx
 #################################
 max_mode = 1
 QA_or_QH = 'QH'
-optimizer = 'dual_annealing'
-MAXITER=80
+optimizer = 'least_squares'
+MAXITER=150
 
 plt_opt_res = True
 plot_vmec = True
@@ -35,7 +35,7 @@ elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+location_min = len(df.index)-1#df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
 if plt_opt_res:
     df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)

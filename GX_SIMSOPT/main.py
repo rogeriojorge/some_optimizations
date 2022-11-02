@@ -26,11 +26,12 @@ this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
     # if MPI.COMM_WORLD.rank == 0:
     print(*args, **kwargs)
+start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
 MAXITER = 150
-max_modes = [1]
+max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = True
@@ -175,7 +176,7 @@ def TurbulenceCostFunction(v: Vmec):
         heat_flux = CalculateHeatFlux(v)
     except Exception as e:
         heat_flux = HEATFLUX_THRESHOLD
-    out_str = f'Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),heat_flux)
     return heat_flux
@@ -287,3 +288,6 @@ try:
         os.remove(threed_file)
 except Exception as e:
     pprint(e)
+##############################################################################
+##############################################################################
+print(f'Whole optimization took {(time.time()-start_time):1f}s')
