@@ -31,7 +31,7 @@ start_time = time.time()
 #### Input Parameters
 ############################################################################
 MAXITER = 150
-max_modes = [2]
+max_modes = [3]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = True

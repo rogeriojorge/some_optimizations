@@ -155,6 +155,126 @@
  >>> xc/gc size:                2880
  ------------------------------------------------------------
 
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
  >>> grid resolution:              3
  >>> active processors:            1
  >>> xc/gc size:                 540
@@ -1285,13 +1405,4788 @@
  >>> xc/gc size:                2880
  ------------------------------------------------------------
 
- >>> grid resolution:             51
+ >>> grid resolution:             16
  >>> active processors:            1
- >>> xc/gc size:                9180
+ >>> xc/gc size:                2880
  ------------------------------------------------------------
 
- >>> grid resolution:            101
+ >>> grid resolution:             16
  >>> active processors:            1
- >>> xc/gc size:               18180
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                2880
  ------------------------------------------------------------
 
