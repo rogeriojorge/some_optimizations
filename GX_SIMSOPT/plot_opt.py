@@ -13,9 +13,9 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 1
+max_mode = 3
 QA_or_QH = 'QH'
-optimizer = 'least_squares'
+optimizer = 'dual_annealing'
 MAXITER=150
 
 plt_opt_res = True
@@ -35,7 +35,7 @@ elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = len(df.index)-1#df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+location_min = df['heat_flux'].nsmallest(3).index[0]#len(df.index)-1#df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
 if plt_opt_res:
     df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
@@ -87,6 +87,13 @@ if plot_vmec:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)'],
                     df_min['x(8)'],df_min['x(9)'],df_min['x(10)'],df_min['x(11)'],df_min['x(12)'],df_min['x(13)'],df_min['x(14)'],df_min['x(15)'],
                     df_min['x(16)'],df_min['x(17)'],df_min['x(18)'],df_min['x(19)'],df_min['x(20)'],df_min['x(21)'],df_min['x(22)'],df_min['x(23)']]
+        elif max_mode==3:
+            vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)'],
+                    df_min['x(8)'],df_min['x(9)'],df_min['x(10)'],df_min['x(11)'],df_min['x(12)'],df_min['x(13)'],df_min['x(14)'],df_min['x(15)'],
+                    df_min['x(16)'],df_min['x(17)'],df_min['x(18)'],df_min['x(19)'],df_min['x(20)'],df_min['x(21)'],df_min['x(22)'],df_min['x(23)'],
+                    df_min['x(24)'],df_min['x(25)'],df_min['x(26)'],df_min['x(27)'],df_min['x(28)'],df_min['x(29)'],df_min['x(30)'],df_min['x(31)'],
+                    df_min['x(32)'],df_min['x(33)'],df_min['x(34)'],df_min['x(35)'],df_min['x(36)'],df_min['x(37)'],df_min['x(38)'],df_min['x(39)'],
+                    df_min['x(40)'],df_min['x(41)'],df_min['x(42)'],df_min['x(43)'],df_min['x(44)'],df_min['x(45)'],df_min['x(46)'],df_min['x(47)']]
         else:
             print('Not available with that max_mode yet')
             exit()
@@ -146,6 +153,13 @@ if run_simple:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)'],
                     df_min['x(8)'],df_min['x(9)'],df_min['x(10)'],df_min['x(11)'],df_min['x(12)'],df_min['x(13)'],df_min['x(14)'],df_min['x(15)'],
                     df_min['x(16)'],df_min['x(17)'],df_min['x(18)'],df_min['x(19)'],df_min['x(20)'],df_min['x(21)'],df_min['x(22)'],df_min['x(23)']]
+        elif max_mode==3:
+            vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)'],
+                    df_min['x(8)'],df_min['x(9)'],df_min['x(10)'],df_min['x(11)'],df_min['x(12)'],df_min['x(13)'],df_min['x(14)'],df_min['x(15)'],
+                    df_min['x(16)'],df_min['x(17)'],df_min['x(18)'],df_min['x(19)'],df_min['x(20)'],df_min['x(21)'],df_min['x(22)'],df_min['x(23)'],
+                    df_min['x(24)'],df_min['x(25)'],df_min['x(26)'],df_min['x(27)'],df_min['x(28)'],df_min['x(29)'],df_min['x(30)'],df_min['x(31)'],
+                    df_min['x(32)'],df_min['x(33)'],df_min['x(34)'],df_min['x(35)'],df_min['x(36)'],df_min['x(37)'],df_min['x(38)'],df_min['x(39)'],
+                    df_min['x(40)'],df_min['x(41)'],df_min['x(42)'],df_min['x(43)'],df_min['x(44)'],df_min['x(45)'],df_min['x(46)'],df_min['x(47)']]
         else:
             print('Not available with that max_mode yet')
             exit()

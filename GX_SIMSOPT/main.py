@@ -31,7 +31,7 @@ start_time = time.time()
 #### Input Parameters
 ############################################################################
 MAXITER = 150
-max_modes = [3]
+max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = True
@@ -41,7 +41,7 @@ use_previous_results_if_available = False
 weight_optTurbulence = 10.0
 diff_rel_step = 1e-5
 diff_abs_step = 1e-7
-no_local_search = True
+no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 ######################################
