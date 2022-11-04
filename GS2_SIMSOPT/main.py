@@ -19,7 +19,7 @@ from os import path, fdopen, remove
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
-from simsopt.solve import least_squares_mpi_solve
+from simsopt.solve import least_squares_mpi_solve, least_squares_serial_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import to_gs2
@@ -30,10 +30,14 @@ def pprint(*args, **kwargs):
     if MPI.COMM_WORLD.rank == 0:
         print(*args, **kwargs)
 start_time = time.time()
+#########
+## FOR GS2 to work with SIMSOPT's MPI, USE_MPI should be undefined during GS2's compilation
+## override USE_MPI = 
+#########
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 10
+MAXITER = 20
 max_modes = [1]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
@@ -45,12 +49,13 @@ s_radius = 0.5
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-2*np.pi, 2*np.pi, 51)
 nlambda = 15
-weight_optTurbulence = 1e4
+weight_optTurbulence = 10
 diff_rel_step = 1e-5
 diff_abs_step = 1e-7
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
+GROWTHRATE_THRESHOLD = 10
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
@@ -72,7 +77,7 @@ if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'i
 else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
-vmec = Vmec(filename, verbose=False) #, mpi=mpi)
+vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
@@ -89,7 +94,6 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
 ######################################
 ######################################
 def replace(file_path, pattern, subst):
-    #Create temp file
     fh, abs_path = mkstemp()
     with fdopen(fh,'w') as new_file:
         with open(file_path) as old_file:
@@ -99,51 +103,44 @@ def replace(file_path, pattern, subst):
     remove(file_path)
     move(abs_path, file_path)
 def CalculateHeatFlux(v: Vmec):
-    """
-        get wout, 
-        make fluxtube, 
-        run gx, 
-        wait, 
-        read output
-    """
     try:
         v.run()
         f_wout = v.output_file.split('/')[-1]
         gs2_input_name = f"gs2-{f_wout[5:-3]}"
-        shutil.copy(os.path.join(this_path,'gs2Input.in'),os.path.join(OUT_DIR,f'{gs2_input_name}.in'))
+        gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
+        shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
         gridout_file = os.path.join(OUT_DIR,f'grid_{gs2_input_name}.out')
-        replace(os.path.join(OUT_DIR,f'{gs2_input_name}.in'),' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
+        replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
-        f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
-        bashCommand = f"{gs2_executable} {os.path.join(OUT_DIR,f'{gs2_input_name}.in')}"
-        with open(f_log, 'w') as fp:
-            p = subprocess.Popen(bashCommand.split(),stdout=fp)
+        bashCommand = f"{gs2_executable} {gs2_input_file}"
+        # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
+        # with open(f_log, 'w') as fp:
+        p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
+        # subprocess.call(bashCommand, shell=True)
         fractionToConsider = 0.6 # fraction of time from the simulation period to consider
         file2read = netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r')
         tX = file2read.variables['t'][()]
         qparflux2_by_ky = file2read.variables['qparflux2_by_ky'][()]
+        omega_average = file2read.variables['omega_average'][()]
         startIndexX  = int(len(tX)*(1-fractionToConsider))
         qavg = np.mean(qparflux2_by_ky[startIndexX:,0,:])
+        growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
 
-        # appendices_to_remove = ['amoments','eigenfunc','error','exit_reason','fields','g','lpc','mom2','moments','out','used_inputs.in','vres','vres2','vspace_integration_error']
-        # for appendix in appendices_to_remove:
-        #     try: os.remove(os.path.join(OUT_DIR,f'{gs2_input_name}.{appendix}'))
-        #     except Exception as e: print(e)
         try:
             for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")):
                 os.remove(objective_file)
             for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")):
                 os.remove(objective_file)
-            os.remove(v.output_file)
-            os.remove(v.input_file)
-        except Exception as e: print(e)
+            os.remove(os.path.join(OUT_DIR,v.output_file))
+            os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
+        except Exception as e: pass#print(e)
     except Exception as e:
         pprint(e)
         qavg = HEATFLUX_THRESHOLD
+        growth_rate = GROWTHRATE_THRESHOLD
     
-
-    return qavg
+    return growth_rate#qavg
 ######################################
 ######################################
 ######################################
@@ -168,9 +165,7 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-# if MPI.COMM_WORLD.rank == 0:
-heat_flux = CalculateHeatFlux(vmec)
-pprint("Initial heat flux:", heat_flux)
+if MPI.COMM_WORLD.rank == 0: pprint("Initial heat flux:", CalculateHeatFlux(vmec))
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -191,7 +186,7 @@ for max_mode in max_modes:
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
-    pprint("Total objective before optimization:", prob.objective())
+    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
@@ -202,6 +197,7 @@ for max_mode in max_modes:
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
+        # least_squares_serial_solve(prob, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     else: print('Optimizer not available')
     ######################################
     try: 
@@ -217,7 +213,7 @@ vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
 ######################################
-if plot_result:# and MPI.COMM_WORLD.rank==0:
+if plot_result and MPI.COMM_WORLD.rank==0:
     vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'))#, mpi=mpi)
     vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
     vmec_final.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
