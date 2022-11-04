@@ -1,0 +1,42 @@
+Phi_vmec at LCFS = 0.048
+Reference Length = 0.141527
+Reference B Field = 0.762803
+Interpolating using radial indices 8 and 9 of 15 from VMEC's half mesh
+Weight for half mesh = 1 and 0
+Interpolating using radial indicies 8 and 9 of 16 from VMEC's full mesh
+Weight for full mesh = 1.5 and -0.5
+iota = -1.10113
+ds = 0.0666667
+shat = -0.0651729
+d iota / ds = -0.0717641
+d pressure / ds = 0
+theta pest = [-6.28319, -6.08684, -5.89049, -5.69414, -5.49779, -5.30144, -5.10509, -4.90874, -4.71239, -4.51604, -4.31969, -4.12334, -3.92699, -3.73064, -3.53429, -3.33794, -3.14159, -2.94524, -2.74889, -2.55254, -2.35619, -2.15984, -1.9635, -1.76715, -1.5708, -1.37445, -1.1781, -0.981748, -0.785398, -0.589049, -0.392699, -0.19635, 0, 0.19635, 0.392699, 0.589049, 0.785398, 0.981748, 1.1781, 1.37445, 1.5708, 1.76715, 1.9635, 2.15984, 2.35619, 2.55254, 2.74889, 2.94524, 3.14159, 3.33794, 3.53429, 3.73064, 3.92699, 4.12334, 4.31969, 4.51604, 4.71239, 4.90874, 5.10509, 5.30144, 5.49779, 5.69414, 5.89049, 6.08684, 6.28319, ]
+
+
+---------------------------------------------
+Beginning root solves to determine theta_vmec
+Values of theta_vmec from GSL solver:
+[-6.3233, -6.03878, -5.75122, -5.48368, -5.249, -5.04498, -4.85999, -4.68019, -4.49174, -4.28409, -4.06265, -3.84894, -3.66539, -3.5226, -3.4139, -3.31931, -3.21397, -3.07532, -2.89699, -2.69345, -2.49181, -2.31551, -2.16857, -2.03231, -1.88291, -1.70478, -1.48843, -1.2365, -0.965859, -0.700403, -0.45611, -0.227922, 0, 0.227922, 0.45611, 0.700403, 0.965859, 1.2365, 1.48843, 1.70478, 1.88291, 2.03231, 2.16857, 2.31551, 2.49181, 2.69345, 2.89699, 3.07532, 3.21397, 3.31931, 3.4139, 3.5226, 3.66539, 3.84894, 4.06265, 4.28409, 4.49174, 4.68019, 4.85999, 5.04498, 5.249, 5.48368, 5.75122, 6.03878, 6.3233, ]
+---------------------------------------------
+
+Relative difference between two methods for computing iota = 2.75578e-05 (should be << 1)
+Relative difference between two methods for computing grad_zeta_X = 0.000982431 (should be << 1)
+Relative difference between two methods for computing grad_zeta_Y = 0.000832009 (should be << 1)
+maxval(abs(grad_zeta_Z)) = 1.26945e-16 (should be < 1.)
+Relative difference between two methods for computing sqrt_g = 0.000913262 (should be << 1)
+Relative difference between two methods for computing 1/sqrt_g = 0.000919737 (should be << 1)
+Relative difference between two methods for computing B_sub_theta_vmec = 0.00143156 (should be << 1)
+Relative difference between two methods for computing B_sub_zeta = 0.000364482 (should be << 1)
+Relative difference between two methods for computing B_sub_s = 0.00119119 (should be << 1)
+Relative difference between two methods for computing B_sup_theta_vmec = 0.00105435 (should be << 1)
+Relative difference between two methods for computing B_sup_zeta = 2.86629e-05 (should be << 1)
+maxval(abs(B_sup_s)) = 1.16573e-15 (should be < 1.)
+Relative difference between two methods for computing B_cross_grad_s_dot_grad_alpha = 0.000832772 (should be << 1)
+Relative difference between two methods for computing B_cross_grad_B_dot_grad_alpha = 0.00074173 (should be << 1)
+
+
+
+**************************************************
+You have chosen not to take a subset of the flux tube. The (unscaled) flux tube will go from [-6.28319,6.28319]
+**************************************************
+Finished creating grid file
