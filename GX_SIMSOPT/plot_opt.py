@@ -13,7 +13,7 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 1
+max_mode = 2
 QA_or_QH = 'QH'
 optimizer = 'least_squares'
 MAXITER=150
