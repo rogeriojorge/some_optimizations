@@ -5,12 +5,14 @@
 /
 
 &kt_grids_knobs
- grid_option = "single" ! The general layout of the perpendicular grid.
+ grid_option = "range" ! The general layout of the perpendicular grid.
 /
 
-&kt_grids_single_parameters
- aky = 0.5 ! The actual value of ky rho
- akx = 0.0 
+&kt_grids_range_parameters
+ aky_min = 0.05
+ aky_max = 5.0
+ naky = 10
+ kyspacing_option='exponential'
 /
 
 &theta_grid_knobs
@@ -23,7 +25,7 @@
 
 &le_grids_knobs
  ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.
- negrid = 12 ! Total number of energy grid points
+ negrid = 10 ! Total number of energy grid points
 /
 
 &dist_fn_knobs
@@ -44,17 +46,13 @@
  fphi = 1.0 ! Multiplies Phi (electrostatic potential).
  fapar = 0.0 ! Multiplies A_par. Use 1 for finite beta (electromagnetic), 0 otherwise (electrostatic)
  faperp = 0.0 ! Multiplies A_perp. Use 1 for high beta, 0 otherwise. Deprecated: use fbpar instead
- delt = 0.2 ! Time step
- nstep = 500 ! Maximum number of timesteps
+ delt = 0.1 ! Time step
+ nstep = 100 ! Maximum number of timesteps
 /
 
 &reinit_knobs
  delt_adj = 2.0 ! When the time step needs to be changed, it is adjusted 
  delt_minimum = 1.0e-06 ! The minimum time step is delt_minimum.
-/
-
-&layouts_knobs
- layout = "lexys" ! 'yxles', 'lxyes', 'lyxes', 'lexys' Determines the way the grids are laid out in memory.
 /
 
 &collisions_knobs
@@ -63,7 +61,6 @@
 
 &nonlinear_terms_knobs
  nonlinear_mode = "off" ! Include nonlinear terms? ('on','off')
- flow_mode = "off" 
  cfl = 0.5 ! The maximum delt < cfl * min(Delta_perp/v_perp)
 /
 
@@ -90,15 +87,15 @@
 
 &init_g_knobs
  chop_side = .false. ! Rarely needed. Forces asymmetry into initial condition.
- width0 = 3.0 ! Initial perturbation has Gaussian envelope in theta with width width0,
  phiinit = 0.001 ! Average amplitude of initial perturbation of each Fourier mode.
  ginit_option = "default" ! Sets the way that the distribution function is initialized.
+ constant_random_flag = .true. ! Uses gs2 internal psuedo-random numbers to ensure the same noise is produced on all systems
 /
 
 &gs2_diagnostics_knobs
  print_flux_line = .F. ! Instantaneous fluxes output to screen
  write_nl_flux = .true. ! Write nonlinear fluxes as a function of time.
- print_line = .false. ! Estimated frequencies and growth rates to the screen/stdout
+ print_line = .true. ! Estimated frequencies and growth rates to the screen/stdout
  write_verr = .true. ! Write velocity space diagnostics to '.lpc' and '.verr' files
  write_line = .false. ! If (write_ascii = T) write estimated frequencies and growth rates to the output file
  write_hrate = .false. ! Write heating rate, collisonal entropy generation etc to '.heat'
