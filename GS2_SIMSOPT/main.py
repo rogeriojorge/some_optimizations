@@ -15,11 +15,11 @@ from tempfile import mkstemp
 from datetime import datetime
 import matplotlib.pyplot as plt
 from shutil import move, copymode
-from os import path, fdopen, remove
+from os import fdopen, remove
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
-from simsopt.solve import least_squares_mpi_solve, least_squares_serial_solve
+from simsopt.solve import least_squares_mpi_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import to_gs2
@@ -81,18 +81,18 @@ vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['heat_flux']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[heat_flux]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
     df.to_csv(output_path_parameters, mode='a', header=False, index=False)
-######################################
-######################################
-##### CALCULATE HEAT FLUX HERE #######
-######################################
-######################################
+########################################
+########################################
+##### CALCULATE GROWTH RATE HERE #######
+########################################
+########################################
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
     with fdopen(fh,'w') as new_file:
@@ -102,7 +102,7 @@ def replace(file_path, pattern, subst):
     copymode(file_path, abs_path)
     remove(file_path)
     move(abs_path, file_path)
-def CalculateHeatFlux(v: Vmec):
+def CalculateGrowthRate(v: Vmec):
     try:
         v.run()
         f_wout = v.output_file.split('/')[-1]
@@ -149,15 +149,17 @@ def TurbulenceCostFunction(v: Vmec):
     try: v.run()
     except Exception as e:
         print(e)
-        return HEATFLUX_THRESHOLD
+        return GROWTHRATE_THRESHOLD
     try:
-        heat_flux = CalculateHeatFlux(v)
+        growth_rate = CalculateGrowthRate(v)
     except Exception as e:
-        heat_flux = HEATFLUX_THRESHOLD
-    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+        growth_rate = GROWTHRATE_THRESHOLD
+    if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
+    else: qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
+    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),heat_flux)
-    return heat_flux
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate)
+    return growth_rate
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
 try:
@@ -165,7 +167,7 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-if MPI.COMM_WORLD.rank == 0: pprint("Initial heat flux:", CalculateHeatFlux(vmec))
+if MPI.COMM_WORLD.rank == 0: pprint("Initial growth rate:", CalculateGrowthRate(vmec))
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -197,24 +199,22 @@ for max_mode in max_modes:
         res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
-        # least_squares_serial_solve(prob, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     else: print('Optimizer not available')
     ######################################
     try: 
         pprint("Final aspect ratio:", vmec.aspect())
         pprint("Final mean iota:", vmec.mean_iota())
         pprint("Final magnetic well:", vmec.vacuum_well())
-        heat_flux = CalculateHeatFlux(vmec)
-        pprint("Final heat flux:", heat_flux)
+        pprint("Final quasisymmetry:", qs.total())
+        if MPI.COMM_WORLD.rank == 0: pprint("Final growth rate:", CalculateGrowthRate(vmec))
     except Exception as e: pprint(e)
     ######################################
-# if MPI.COMM_WORLD.rank == 0:
-vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
+if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
 ######################################
 if plot_result and MPI.COMM_WORLD.rank==0:
-    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'))#, mpi=mpi)
+    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'), mpi=mpi)
     vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
     vmec_final.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
     vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
@@ -244,27 +244,6 @@ if plot_result and MPI.COMM_WORLD.rank==0:
     plt.savefig(os.path.join(OUT_DIR, "Boozxform_symplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
     fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
     plt.savefig(os.path.join(OUT_DIR, "Boozxform_modeplot_single_stage.pdf"), bbox_inches = 'tight', pad_inches = 0); plt.close()
-############################################################################
-############################################################################
-try:
-    os.remove(os.path.join(OUT_DIR,"gx"))
-    os.remove(os.path.join(OUT_DIR,"convert_VMEC_to_GX"))
-except Exception as e:
-    pprint(e)
-
-try:
-    for objective_file in glob.glob(os.path.join(OUT_DIR,f"grid.gx_wout_{initial_config[6:]}_000_000*")):
-        os.remove(objective_file)
-    for residuals_file in glob.glob(os.path.join(OUT_DIR,f"gx_wout_{initial_config[6:]}_000_000*")):
-        os.remove(residuals_file)
-    for jac_file in glob.glob(os.path.join(OUT_DIR,f"GX-{initial_config[6:]}_000_000*")):
-        os.remove(jac_file)
-    for threed_file in glob.glob(os.path.join(OUT_DIR,f"input.{initial_config[6:]}_000_000*")):
-        os.remove(threed_file)
-    for threed_file in glob.glob(os.path.join(OUT_DIR,f"wout_{initial_config[6:]}_000_000*")):
-        os.remove(threed_file)
-except Exception as e:
-    pprint(e)
 ##############################################################################
 ##############################################################################
-print(f'Whole optimization took {(time.time()-start_time):1f}s')
+pprint(f'Whole optimization took {(time.time()-start_time):1f}s')
