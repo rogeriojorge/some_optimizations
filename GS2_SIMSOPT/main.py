@@ -37,21 +37,21 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 20
-max_modes = [1]
+MAXITER = 100
+max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = True
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.5
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-2*np.pi, 2*np.pi, 51)
 nlambda = 15
-weight_optTurbulence = 10
-diff_rel_step = 1e-5
-diff_abs_step = 1e-7
+weight_optTurbulence = 1
+diff_rel_step = 1e-3
+diff_abs_step = 1e-5
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
@@ -127,18 +127,18 @@ def CalculateGrowthRate(v: Vmec):
         qavg = np.mean(qparflux2_by_ky[startIndexX:,0,:])
         growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
 
-        try:
-            for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")):
-                os.remove(objective_file)
-            for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")):
-                os.remove(objective_file)
-            os.remove(os.path.join(OUT_DIR,v.output_file))
-            os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
-        except Exception as e: pass#print(e)
     except Exception as e:
         pprint(e)
         qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
+    try:
+        os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")):
+            os.remove(objective_file)
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")):
+            os.remove(objective_file)
+        os.remove(os.path.join(OUT_DIR,v.output_file))
+    except Exception as e: pass#print(e)
     
     return growth_rate#qavg
 ######################################
@@ -196,7 +196,7 @@ for max_mode in max_modes:
         initial_temp = 1000
         visit = 2.0
         bounds = [(-0.25,0.25) for _ in dofs]
-        res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
+        if MPI.COMM_WORLD.rank == 0: res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
     elif optimizer == 'least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     else: print('Optimizer not available')
