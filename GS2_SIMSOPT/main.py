@@ -37,13 +37,13 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 100
+MAXITER = 50
 max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = True
 plot_result = True
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.5
 alpha_fieldline = 0
@@ -52,10 +52,13 @@ nlambda = 15
 weight_optTurbulence = 1
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
+MAXITER_LOCAL = 3
+MAXFUN_LOCAL = 20
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
+aspect_ratio_weight = 1e-4
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
@@ -81,9 +84,9 @@ vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,quasisymmetry_total):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry_total']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry_total]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -131,6 +134,7 @@ def CalculateGrowthRate(v: Vmec):
         pprint(e)
         qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
+
     try:
         os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
         for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")):
@@ -138,7 +142,7 @@ def CalculateGrowthRate(v: Vmec):
         for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")):
             os.remove(objective_file)
         os.remove(os.path.join(OUT_DIR,v.output_file))
-    except Exception as e: pass#print(e)
+    except Exception as e: pass
     
     return growth_rate#qavg
 ######################################
@@ -158,7 +162,7 @@ def TurbulenceCostFunction(v: Vmec):
     else: qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
     out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate)
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total())
     return growth_rate
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
@@ -172,7 +176,25 @@ if MPI.COMM_WORLD.rank == 0: pprint("Initial growth rate:", CalculateGrowthRate(
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
     prob.x = dofss
-    return prob.objective()
+    objective = prob.objective()
+
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"input*")): os.remove(objective_file)
+    except Exception as e: pass
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"wout*")): os.remove(objective_file)
+    except Exception as e: pass
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"gs2-*")): os.remove(objective_file)
+    except Exception as e: pass
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f".gs2-*")): os.remove(objective_file)
+    except Exception as e: pass
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"grid_gs2-*")): os.remove(objective_file)
+    except Exception as e: pass
+
+    return objective
 for max_mode in max_modes:
     output_path_parameters=f'output_{optimizer}_maxmode{max_mode}.csv'
     surf.fix_all()
@@ -181,7 +203,7 @@ for max_mode in max_modes:
     initial_dofs=np.copy(surf.x)
     dofs=surf.x
     ######################################  
-    opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
+    opt_tuple = [(vmec.aspect, aspect_ratio_target, aspect_ratio_weight)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
     else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
@@ -196,7 +218,8 @@ for max_mode in max_modes:
         initial_temp = 1000
         visit = 2.0
         bounds = [(-0.25,0.25) for _ in dofs]
-        if MPI.COMM_WORLD.rank == 0: res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs)
+        minimizer_kwargs = {"method": "Nelder-Mead", "bounds": bounds, "options": {'maxiter': MAXITER_LOCAL, 'maxfev': MAXFUN_LOCAL, 'disp': True}}
+        if MPI.COMM_WORLD.rank == 0: res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs, minimizer_kwargs=minimizer_kwargs)
     elif optimizer == 'least_squares':
         least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
     else: print('Optimizer not available')
