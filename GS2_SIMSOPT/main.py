@@ -37,23 +37,23 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
-MAXITER = 50
+MAXITER = 350
 max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
-opt_quasisymmetry = True
+opt_quasisymmetry = False
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.5
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-2*np.pi, 2*np.pi, 51)
-nlambda = 15
+nlambda = 17
 weight_optTurbulence = 1
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
 MAXITER_LOCAL = 3
-MAXFUN_LOCAL = 20
+MAXFUN_LOCAL = 30
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
@@ -129,19 +129,23 @@ def CalculateGrowthRate(v: Vmec):
         startIndexX  = int(len(tX)*(1-fractionToConsider))
         qavg = np.mean(qparflux2_by_ky[startIndexX:,0,:])
         growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
+        if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
+        if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
 
     except Exception as e:
         pprint(e)
         qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
 
+    try: os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
+    except Exception as e: pass
+    try: os.remove(os.path.join(OUT_DIR,v.output_file))
+    except Exception as e: pass
     try:
-        os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
-        for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")):
-            os.remove(objective_file)
-        for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")):
-            os.remove(objective_file)
-        os.remove(os.path.join(OUT_DIR,v.output_file))
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")): os.remove(objective_file)
+    except Exception as e: pass
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")): os.remove(objective_file)
     except Exception as e: pass
     
     return growth_rate#qavg

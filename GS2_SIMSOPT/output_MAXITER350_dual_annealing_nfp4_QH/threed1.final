@@ -1,0 +1,70 @@
+ THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+ Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+ COMPUTER:    OS:    RELEASE:   DATE = Nov 07,2022  TIME = 00:37:44
+ SHOT ID.: final  SEQ. NO.:   0
+ TIME SLICE =    0. ms
+
+ COMPUTATION PARAMETERS: (u = theta, v = zeta)
+ ---------------------------------------------
+     ns     nu     nv     mu     mv
+     16     16     14      5      5
+
+ CONFIGURATION PARAMETERS:
+ ---------------------------------------
+    nfp      gamma      spres_ped    phiedge(wb)     curtor(A)        lRFP
+      4  0.000E+00      1.000E+00      4.800E-02     0.000E+00           F
+
+ RUN CONTROL PARAMETERS:
+ -----------------------
+  ncurr  niter   nsin  nstep  nvacskip      ftol     tcon0    lasym  lforbal lmove_axis lconm1
+      1   1200     16    200         1  1.00E-11  1.00E+00        F        F        T        T
+  mfilter_fbdy nfilter_fbdy lfull3d1out max_main_iterations lgiveup fgiveup
+           -1           -1           F                   1       F  3.0E+01
+
+ PRECONDITIONER CONTROL PARAMETERS:
+ ----------------------------------
+  precon_type   prec2d_threshold
+  NONE                  1.00E-30
+
+ MASS PROFILE COEFFICIENTS - newton/m**2 (EXPANSION IN NORMALIZED RADIUS):
+ PMASS parameterization type is 'power_series'
+ -----------------------------------
+
+
+ TOROIDAL CURRENT DENSITY (*V') COEFFICIENTS ac (EXPANSION IN NORMALIZED RADIUS):
+ PCURR parameterization type is 'power_series'
+ --------------------------------------
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00   0.000E+00
+   0.000E+00   0.000E+00   0.000E+00
+
+
+ NORMALIZED TOROIDAL FLUX COEFFICIENTS aphi (EXPANSION IN S):
+ -----------------------------------
+   1.000E+00
+
+ R-Z FOURIER BOUNDARY COEFFICIENTS AND MAGNETIC AXIS INITIAL GUESS
+ R = RBC*COS(m*u - n*v) + RBS*SIN(m*u - n*v), Z = ZBC*COS(m*u - n*v) + ZBS*SIN(m*u-n*v)
+ --------------------------------------------------------------------------------------
+   nb  mb     rbc         rbs         zbc         zbs       raxis(c)    raxis(s)    zaxis(c)    zaxis(s)
+    0   0  1.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    1   0 -8.2410E-02  0.0000E+00  0.0000E+00 -2.2263E-01  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+    2   0 -1.9331E-01  0.0000E+00  0.0000E+00 -3.4499E-02  0.0000E+00  0.0000E+00  0.0000E+00  0.0000E+00
+   -2   1  1.0033E-01  0.0000E+00  0.0000E+00  1.4108E-01
+   -1   1 -2.1009E-01  0.0000E+00  0.0000E+00 -1.9710E-01
+    0   1  2.4284E-01  0.0000E+00  0.0000E+00  1.2797E-01
+    1   1  2.0858E-01  0.0000E+00  0.0000E+00  1.6835E-01
+    2   1  4.6366E-02  0.0000E+00  0.0000E+00  1.8442E-01
+   -2   2  8.0297E-02  0.0000E+00  0.0000E+00 -3.8271E-02
+   -1   2 -4.1264E-02  0.0000E+00  0.0000E+00  5.0452E-02
+    0   2  6.7119E-02  0.0000E+00  0.0000E+00 -6.3283E-02
+    1   2  7.7122E-04  0.0000E+00  0.0000E+00 -1.9040E-02
+    2   2  5.3990E-02  0.0000E+00  0.0000E+00 -1.5613E-01
+ FSQR, FSQZ = Normalized Physical Force Residuals
+ fsqr, fsqz = Preconditioned Force Residuals
+ -----------------------
+ BEGIN FORCE ITERATIONS
+ -----------------------
+

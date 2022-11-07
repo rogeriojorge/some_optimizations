@@ -16,7 +16,9 @@ import booz_xform as bx
 max_mode = 2
 QA_or_QH = 'QH'
 optimizer = 'dual_annealing'
-MAXITER=50
+MAXITER=350
+
+growth_rate_weight=1e6
 
 plt_opt_res = True
 plot_vmec = True
@@ -35,7 +37,7 @@ elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = (100*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
 if plt_opt_res:
     df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
@@ -43,7 +45,7 @@ if plt_opt_res:
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),2.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
     df['growth_rate'] = df[df['growth_rate']<1e17]['growth_rate']
-    df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e17]['quasisymmetry_total']
+    df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e4]['quasisymmetry_total']
     df.plot(use_index=True, y=['growth_rate'])#,'iota'])#,'normalized_time'])
     plt.yscale('log')
     # plt.ylim([0,1.])
@@ -63,6 +65,9 @@ if plt_opt_res:
     plt.yscale('log')
     plt.legend()
     plt.savefig(out_dir+'/qs_total_over_opt.pdf')
+    df.plot.scatter(x='growth_rate', y='quasisymmetry_total')
+    plt.yscale('log');plt.xscale('log')
+    plt.savefig(out_dir+'/qs_total_vs_growth_rate.pdf')
     plt.show()
 #################################
 df_min = df.iloc[location_min]
