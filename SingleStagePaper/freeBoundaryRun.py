@@ -53,9 +53,9 @@ z0 = s_final.gamma()[:, :, 2]
 nzeta = 101
 nr = 101
 nz = 101
-# print('Creating to_mgrid file')
-# bs_final.to_mgrid(os.path.join(outdir_coils,'tomgrid_opt_coils.nc'), nr=nr, nphi=nzeta, nz=nr, rmin=0.9*np.min(r0), rmax=1.1*np.max(r0), zmin=1.1*np.min(z0), zmax=1.1*np.max(z0), nfp=nfp)
-# print('Done')
+print('Creating to_mgrid file')
+bs_final.to_mgrid(os.path.join(outdir_coils,'tomgrid_opt_coils.nc'), nr=nr, nphi=nzeta, nz=nr, rmin=0.9*np.min(r0), rmax=1.1*np.max(r0), zmin=1.1*np.min(z0), zmax=1.1*np.max(z0), nfp=nfp)
+print('Done')
 
 if full_torus:
     curves = [c.curve for c in bs_final.coils]

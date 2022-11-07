@@ -1,14 +1,14 @@
  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
 
- COMPUTER:    OS:    RELEASE:   DATE = Nov 07,2022  TIME = 07:54:47
+ COMPUTER:    OS:    RELEASE:   DATE = Nov 07,2022  TIME = 17:27:31
  SHOT ID.: nfp4_QH  SEQ. NO.:   0
  TIME SLICE =    0. ms
 
  COMPUTATION PARAMETERS: (u = theta, v = zeta)
  ---------------------------------------------
      ns     nu     nv     mu     mv
-     16     16     14      5      5
+     51     16     14      5      5
 
  CONFIGURATION PARAMETERS:
  ---------------------------------------
@@ -18,7 +18,7 @@
  RUN CONTROL PARAMETERS:
  -----------------------
   ncurr  niter   nsin  nstep  nvacskip      ftol     tcon0    lasym  lforbal lmove_axis lconm1
-      1   1200     16    200         6  1.00E-11  2.00E+00        F        F        T        T
+      1   1500     16    200         6  1.00E-13  2.00E+00        F        F        T        T
   mfilter_fbdy nfilter_fbdy lfull3d1out max_main_iterations lgiveup fgiveup
            -1           -1           F                   1       F  3.0E+01
 

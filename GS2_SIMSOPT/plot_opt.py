@@ -14,7 +14,8 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 2
-QA_or_QH = 'QH'
+QA_or_QH = 'QA'
+nfp = 2
 optimizer = 'dual_annealing'
 MAXITER=350
 
@@ -31,9 +32,9 @@ nparticles = 1500  # number of particles
 tfinal = 1e-3  # seconds
 nsamples = 10000  # number of time steps
 #################################
-if QA_or_QH == 'QA': nfp=2
-elif QA_or_QH == 'QH': nfp=4
-elif QA_or_QH == 'QI': nfp=3
+# if QA_or_QH == 'QA': nfp=2
+# elif QA_or_QH == 'QH': nfp=4
+# elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
