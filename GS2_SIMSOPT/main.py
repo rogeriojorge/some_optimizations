@@ -47,8 +47,8 @@ optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-2*np.pi, 2*np.pi, 61)
-nlambda = 19
+phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 71)
+nlambda = 17
 weight_optTurbulence = 1
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
@@ -121,14 +121,22 @@ def CalculateGrowthRate(v: Vmec):
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
         # subprocess.call(bashCommand, shell=True)
-        fractionToConsider = 0.6 # fraction of time from the simulation period to consider
+        fractionToConsider = 0.4 # fraction of time from the simulation period to consider
         file2read = netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r')
         tX = file2read.variables['t'][()]
         qparflux2_by_ky = file2read.variables['qparflux2_by_ky'][()]
-        omega_average = file2read.variables['omega_average'][()]
         startIndexX  = int(len(tX)*(1-fractionToConsider))
         qavg = np.mean(qparflux2_by_ky[startIndexX:,0,:])
-        growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
+        # omega_average = file2read.variables['omega_average'][()]
+        # growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
+        phi2 = np.log(file2read.variables['phi2'][()])
+        t = file2read.variables['t'][()]
+        startIndex = int(len(t)*(1-fractionToConsider))
+        mask = np.isfinite(phi2)
+        data_x = t[mask]
+        data_y = phi2[mask]
+        fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
+        growth_rate = fit[0]/2
         if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
         if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
 

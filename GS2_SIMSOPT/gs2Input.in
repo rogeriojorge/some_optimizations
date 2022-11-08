@@ -10,8 +10,8 @@
 
 &kt_grids_range_parameters
  aky_min = 0.05
- aky_max = 5.0
- naky = 10
+ aky_max = 10.0
+ naky = 9
  kyspacing_option='exponential'
 /
 
@@ -46,7 +46,7 @@
  fphi = 1.0 ! Multiplies Phi (electrostatic potential).
  fapar = 0.0 ! Multiplies A_par. Use 1 for finite beta (electromagnetic), 0 otherwise (electrostatic)
  faperp = 0.0 ! Multiplies A_perp. Use 1 for high beta, 0 otherwise. Deprecated: use fbpar instead
- delt = 0.1 ! Time step
+ delt = 0.4 ! Time step
  nstep = 100 ! Maximum number of timesteps
 /
 
