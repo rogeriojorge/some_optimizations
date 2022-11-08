@@ -14,12 +14,12 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 2
-QA_or_QH = 'QA'
-nfp = 2
+QA_or_QH = 'QH'
+nfp = 4
 optimizer = 'dual_annealing'
 MAXITER=350
 
-growth_rate_weight=1e6
+growth_rate_weight=1e3
 
 plt_opt_res = True
 plot_vmec = True
@@ -90,7 +90,7 @@ if plot_vmec:
         surf.fix("rc(0,0)")
         vmec.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
         vmec.indata.niter_array[:3] = [ 1000,  1000, 10000]#,  5000, 10000]
-        vmec.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
+        vmec.indata.ftol_array[:3]  = [1e-13, 1e-14, 1e-15]#, 1e-15, 1e-15]
         if max_mode==1:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)']]
         elif max_mode==2:
