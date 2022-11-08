@@ -337,40 +337,44 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     # Rescale to lie in [0,1]:
     B_rescaled = (B - B.min()) / (B.max() - B.min())
 
-    fig.patch.set_facecolor('white')
-    ax = plt.axes(projection='3d')
-    ax.plot_surface(X, Y, Z, facecolors = cm.jet(B_rescaled), rstride=1, cstride=1, antialiased=False)
-    ax.auto_scale_xyz([X.min(), X.max()], [X.min(), X.max()], [X.min(), X.max()])
+    # fig.patch.set_facecolor('white')
+    # ax = plt.axes(projection='3d')
+    # ax.plot_surface(X, Y, Z, facecolors = cm.jet(B_rescaled), rstride=1, cstride=1, antialiased=False)
+    # ax.auto_scale_xyz([X.min(), X.max()], [X.min(), X.max()], [X.min(), X.max()])
+    # plt.tight_layout()
 
+    # plt.figtext(0.5,0.99,os.path.abspath(filename),ha='center',va='top',fontsize=6)
+    # if savefig: plt.savefig(os.path.join(figures_folder, name+'_VMEC_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
+    # else: plt.show()
 
-    plt.figtext(0.5,0.99,os.path.abspath(filename),ha='center',va='top',fontsize=6)
-    if savefig: plt.savefig(os.path.join(figures_folder, name+'_VMEC_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
-    else: plt.show()
+    #### Mayavi plot ######
+    try:
+        import mayavi.mlab as mlab
+        fig = mlab.figure(bgcolor=(1,1,1), size=(950,850))
 
-    if coils_curves is not None:
-        xmax=X.max()
-        xmin=X.min()
-        for curve in coils_curves:
-            gamma = curve.gamma()
-            xmax_temp = np.max(gamma)
-            xmin_temp = np.min(gamma)
-            if xmax_temp>xmax: xmax=xmax_temp
-            if xmin_temp<xmin: xmin=xmin_temp
-            plt.plot(gamma[:, 0], gamma[:, 1], gamma[:, 2])
-        ax.auto_scale_xyz([xmin, xmax], [xmin, xmax], [xmin, xmax])
-        if savefig: plt.savefig(os.path.join(figures_folder, name+'_VMECandCoils_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
-    
-        fig = plt.figure()
-        fig.patch.set_facecolor('white')
-        ax = plt.axes(projection='3d')
-        for curve in coils_curves:
-            gamma = curve.gamma()
-            plt.plot(gamma[:, 0], gamma[:, 1], gamma[:, 2])
-        ax.auto_scale_xyz([xmin, xmax], [xmin, xmax], [xmin, xmax])
-        if savefig: plt.savefig(os.path.join(figures_folder, name+'_Coils_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
-        else: plt.show()
+        mlab.mesh(X, Y, Z, scalars=B, colormap='jet', opacity=1.0)
+        # mlab.plot3d(X[0, :], Y[0, :], Z[0, :], color=(0,0,0), line_width=0.002, tube_radius=0.005)
+        mlab.view(azimuth=0, elevation=40, distance=6.5, focalpoint=(-0.15,0,0), figure=fig)
+        # Create the colorbar and change its properties
+        cb = mlab.colorbar(orientation='horizontal', title='|B| [T]', nb_labels=7)
+        cb.scalar_bar_representation.position = [0.1, 0.85]
+        cb.scalar_bar_representation.position2 = [0.8, 0.05]
+        cb.scalar_bar.unconstrained_font_size = True
+        cb.label_text_property.font_family = 'times'
+        cb.label_text_property.bold = 0
+        cb.label_text_property.font_size=24
+        cb.label_text_property.color=(0,0,0)
+        cb.title_text_property.font_family = 'times'
+        cb.title_text_property.font_size=20
+        cb.title_text_property.color=(0,0,0)
+        cb.title_text_property.bold = 1
+
+        if savefig: mlab.savefig(filename=file+'_simple_3Dplot_VMEC.png', figure=fig)
+    except Exception as e:
+        print(e)
+
     plt.close()
-
+    # exit()
 if __name__ == "__main__":
     # Create results folders if not present
     try:
