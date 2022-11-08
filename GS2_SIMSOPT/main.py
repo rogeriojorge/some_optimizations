@@ -41,9 +41,9 @@ MAXITER = 350
 max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
-opt_quasisymmetry = False
+opt_quasisymmetry = True
 plot_result = True
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
@@ -58,7 +58,7 @@ no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
-aspect_ratio_weight = 1e-4
+aspect_ratio_weight = 1e-1
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
