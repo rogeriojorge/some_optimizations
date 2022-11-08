@@ -39,9 +39,9 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [2]
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
-opt_quasisymmetry = False
+opt_quasisymmetry = True
 plot_result = True
 optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
@@ -49,7 +49,7 @@ s_radius = 0.25
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 71)
 nlambda = 17
-weight_optTurbulence = 1
+weight_optTurbulence = 10
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
 MAXITER_LOCAL = 3
@@ -63,6 +63,7 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
+if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################

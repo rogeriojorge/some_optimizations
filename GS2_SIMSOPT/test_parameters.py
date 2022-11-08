@@ -164,7 +164,7 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt):
     gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
     shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
     replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
-    replace(gs2_input_file,' nstep = 100 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps"')
+    replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps"')
     replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
     replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')

@@ -337,15 +337,15 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     # Rescale to lie in [0,1]:
     B_rescaled = (B - B.min()) / (B.max() - B.min())
 
-    # fig.patch.set_facecolor('white')
-    # ax = plt.axes(projection='3d')
-    # ax.plot_surface(X, Y, Z, facecolors = cm.jet(B_rescaled), rstride=1, cstride=1, antialiased=False)
-    # ax.auto_scale_xyz([X.min(), X.max()], [X.min(), X.max()], [X.min(), X.max()])
-    # plt.tight_layout()
+    fig.patch.set_facecolor('white')
+    ax = plt.axes(projection='3d')
+    ax.plot_surface(X, Y, Z, facecolors = cm.jet(B_rescaled), rstride=1, cstride=1, antialiased=False)
+    ax.auto_scale_xyz([X.min(), X.max()], [X.min(), X.max()], [X.min(), X.max()])
+    plt.tight_layout()
 
-    # plt.figtext(0.5,0.99,os.path.abspath(filename),ha='center',va='top',fontsize=6)
-    # if savefig: plt.savefig(os.path.join(figures_folder, name+'_VMEC_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
-    # else: plt.show()
+    plt.figtext(0.5,0.99,os.path.abspath(filename),ha='center',va='top',fontsize=6)
+    if savefig: plt.savefig(os.path.join(figures_folder, name+'_VMEC_3Dplot.pdf'), bbox_inches = 'tight', pad_inches = 0)
+    else: plt.show()
 
     #### Mayavi plot ######
     try:

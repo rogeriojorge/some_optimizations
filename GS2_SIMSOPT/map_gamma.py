@@ -170,7 +170,7 @@ def run_gs2(ln, lt):
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_gs2.out"')
         replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {ln} ! -1/n (dn/drho)')
         replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {lt} ! -1/T (dT/drho)')
-        replace(gs2_input_file,' nstep = 100 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps')
+        replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps')
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
