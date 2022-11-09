@@ -39,7 +39,7 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [2]
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 aspect_ratio_target = 7
 opt_quasisymmetry = False
 plot_result = True
@@ -48,7 +48,8 @@ use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 71)
-nlambda = 17
+nlambda = 15
+nstep = 100
 weight_optTurbulence = 10
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
@@ -115,6 +116,7 @@ def CalculateGrowthRate(v: Vmec):
         shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
         gridout_file = os.path.join(OUT_DIR,f'grid_{gs2_input_name}.out')
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
+        replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")

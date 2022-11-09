@@ -18,8 +18,9 @@ QA_or_QH = 'QA'
 nfp = 2
 optimizer = 'dual_annealing'
 MAXITER=350
+quasisymmetry = True
 
-growth_rate_weight=1e3
+growth_rate_weight=1e0
 
 plt_opt_res = True
 plot_vmec = True
@@ -36,6 +37,7 @@ nsamples = 10000  # number of time steps
 # elif QA_or_QH == 'QH': nfp=4
 # elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
+if quasisymmetry: out_dir+=f'_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
 location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc

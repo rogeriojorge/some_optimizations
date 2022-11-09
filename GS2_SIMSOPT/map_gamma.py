@@ -19,19 +19,22 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
+# output_dir = 'out_map_nfp2_QA_dual_annealing'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
 # output_dir = 'out_map_nfp4_QH_dual_annealing'
-# phi_GS2 = np.linspace(-1*np.pi, 1*np.pi, 131)
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
-output_dir = 'out_map_nfp4_QH_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
+output_dir = 'out_map_nfp2_QA_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
+# output_dir = 'out_map_nfp4_QH_initial'
 phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 81)
 s_radius = 0.25
 alpha_fieldline = 0
 nlambda = 17
 nstep = 150
-LN_array = np.linspace(0.5,6,4)
-LT_array = np.linspace(0.5,6,4)
-n_processes_parallel = 4
+LN_array = np.linspace(0.5,6,8)
+LT_array = np.linspace(0.5,6,8)
+n_processes_parallel = 8
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
