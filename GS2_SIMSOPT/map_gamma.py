@@ -23,22 +23,24 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # output_dir = 'out_map_nfp2_QA_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
 # output_dir = 'out_map_nfp2_QA_QA_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
-# output_dir = 'out_map_nfp4_QH_least_squares'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
+output_dir = 'out_map_nfp4_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
 # output_dir = 'out_map_nfp2_QA_initial'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
-output_dir = 'out_map_nfp4_QH_initial'
-phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 81)
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
+# output_dir = 'out_map_nfp4_QH_initial'
+phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 91)
 s_radius = 0.25
 alpha_fieldline = 0
-nlambda = 17
-nstep = 150
+nlambda = 19
+nstep = 200
 LN_array = np.linspace(0.5,6,8)
 LT_array = np.linspace(0.5,6,8)
-n_processes_parallel = 8
+n_processes_parallel = 4
+plot_min = 0
+plot_max = 0.2
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -175,8 +177,8 @@ def run_gs2(ln, lt):
         gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
         shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_gs2.out"')
-        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {ln} ! -1/n (dn/drho)')
-        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {lt} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' fprim = 1.5 ! -1/n (dn/drho)',f' fprim = {ln} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 4.5 ! -1/T (dT/drho)',f' tprim = {lt} ! -1/T (dT/drho)')
         replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps')
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
@@ -211,6 +213,7 @@ clb.ax.set_title(r'$\gamma$', usetex=True)
 plt.xlabel(r'$a/L_n$')
 plt.ylabel(r'$a/L_T$')
 matplotlib.rc('font', size=16)
+plt.clim(plot_min,plot_max) 
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan.pdf'), format='pdf', bbox_inches='tight')
 # plt.show()
 plt.close()
