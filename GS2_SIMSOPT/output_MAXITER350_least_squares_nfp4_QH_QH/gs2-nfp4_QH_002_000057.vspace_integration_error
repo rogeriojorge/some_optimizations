@@ -1,0 +1,5 @@
+Lambda weights errors, max/mean/mean(|error|)  : 0.516086E+000  0.131977E+000  0.187176E+000 
+Energy weights errors, max/mean/mean(|error|)  : 0.748136E-007 -0.748136E-007  0.748136E-007 
+Energy_Sub weights errors, max/mean/mean(|error|)  : 0.284930E-007 -0.284930E-007  0.284930E-007 
+Energy_Super weights errors, max/mean/mean(|error|)  : 0.463206E-007 -0.463206E-007  0.463206E-007 
+Mixed weights errors, max/mean/mean(|error|)  : 0.129022E+000  0.329938E-001  0.467939E-001 

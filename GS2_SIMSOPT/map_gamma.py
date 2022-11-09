@@ -19,14 +19,18 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
-# output_dir = 'out_map_nfp2_QA_dual_annealing'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
-# output_dir = 'out_map_nfp4_QH_dual_annealing'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
-output_dir = 'out_map_nfp2_QA_initial'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
-# output_dir = 'out_map_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA/wout_final.nc'
+# output_dir = 'out_map_nfp2_QA_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+# output_dir = 'out_map_nfp2_QA_QA_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
+# output_dir = 'out_map_nfp4_QH_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+# output_dir = 'out_map_nfp4_QH_QH_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
+# output_dir = 'out_map_nfp2_QA_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
+output_dir = 'out_map_nfp4_QH_initial'
 phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 81)
 s_radius = 0.25
 alpha_fieldline = 0
