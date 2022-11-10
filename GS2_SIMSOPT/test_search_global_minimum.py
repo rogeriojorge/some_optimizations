@@ -32,7 +32,7 @@ phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
 nlambda = 21
 nstep = 200
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
