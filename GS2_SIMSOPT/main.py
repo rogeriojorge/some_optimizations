@@ -41,7 +41,7 @@ MAXITER = 350
 max_modes = [3]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
-else: aspect_ratio_target = 7
+else: aspect_ratio_target = 8
 opt_quasisymmetry = False
 plot_result = True
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
@@ -49,8 +49,8 @@ use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
 phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 91)
-nlambda = 21
-nstep = 200
+nlambda = 17
+nstep = 150
 weight_optTurbulence = 10
 diff_rel_step = 1e-3
 diff_abs_step = 1e-5
@@ -60,7 +60,7 @@ no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
-aspect_ratio_weight = 1e-2
+aspect_ratio_weight = 1e-4
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
@@ -125,7 +125,7 @@ def CalculateGrowthRate(v: Vmec):
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
         # subprocess.call(bashCommand, shell=True)
-        fractionToConsider = 0.4 # fraction of time from the simulation period to consider
+        fractionToConsider = 0.3 # fraction of time from the simulation period to consider
         file2read = netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r')
         tX = file2read.variables['t'][()]
         qparflux2_by_ky = file2read.variables['qparflux2_by_ky'][()]

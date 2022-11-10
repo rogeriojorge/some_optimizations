@@ -28,9 +28,9 @@ npoints_scan = 35
 ftol = 1e-2
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 71)
-nlambda = 17
-nstep = 150
+phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
+nlambda = 21
+nstep = 200
 
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 
