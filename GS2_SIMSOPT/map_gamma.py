@@ -21,10 +21,10 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA/wout_final.nc'
 # output_dir = 'out_map_nfp2_QA_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
-# output_dir = 'out_map_nfp2_QA_QA_least_squares'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
-output_dir = 'out_map_nfp4_QH_least_squares'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+output_dir = 'out_map_nfp2_QA_QA_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
+# output_dir = 'out_map_nfp4_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
@@ -234,6 +234,8 @@ for f in glob.glob('*.out'): remove(f)
 for f in glob.glob('*.scratch'): remove(f)
 for f in glob.glob('*.used_inputs.in'): remove(f)
 for f in glob.glob('*.vspace_integration_error'): remove(f)
+## THIS SHOULD ONLY REMOVE FILES STARTING WTH .gs2
+for f in glob.glob('.gs2*'): remove(f)
 ## REMOVE ALSO INPUT FILES
 for f in glob.glob('*.in'): remove(f)
 ## REMOVE ALSO OUTPUT FILES

@@ -14,13 +14,13 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 3
-QA_or_QH = 'QH'
-nfp = 4
-optimizer = 'dual_annealing'#'dual_annealing'
+QA_or_QH = 'QA'
+nfp = 2
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 MAXITER=350
-quasisymmetry = False
+quasisymmetry = True
 
-growth_rate_weight=1e1
+growth_rate_weight=1e0
 
 plt_opt_res = True
 plot_vmec = True
@@ -115,7 +115,7 @@ if plot_vmec:
     print("Mean iota:", vmec.mean_iota())
     print("Magnetic well:", vmec.vacuum_well())
     print("Quasisymmetry objective after optimization:", qs.total())
-    s_EP = 0.5;alphas_EP=[0]
+    s_EP = 0.25;alphas_EP=[0]
     fl1 = vmec_fieldlines(vmec, s_EP, alphas_EP, theta1d=np.linspace(-4*np.pi, 4*np.pi, 250), plot=True, show=False)
     plt.savefig(f'Initial_profiles_s{s_EP}_alpha{alphas_EP[0]}.png');plt.close()
     sys.path.insert(1, '../../')
@@ -178,7 +178,7 @@ if run_simple:
         vmec.run()
 
     wout_filename = vmec.output_file
-    s_initial = 0.3 # Same s_initial as precise quasisymmetry paper
+    s_initial = 0.25 # Same s_initial as precise quasisymmetry paper
     B_scale = 5.7/vmec.wout.b0  # Scale the magnetic field by a factor
     Aminor_scale = 1.7/vmec.wout.Aminor_p  # Scale the machine size by a factor
     notrace_passing = 0  # If 1 skip tracing of passing particles

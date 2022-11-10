@@ -39,7 +39,7 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = True
@@ -48,9 +48,9 @@ optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 91)
-nlambda = 17
-nstep = 150
+phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
+nlambda = 21
+nstep = 200
 weight_optTurbulence = 10
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
@@ -60,7 +60,7 @@ no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
-aspect_ratio_weight = 1e-4
+aspect_ratio_weight = 1e-1
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
