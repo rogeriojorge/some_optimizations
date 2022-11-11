@@ -23,7 +23,7 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # output_dir = 'out_map_nfp2_QA_QA_least_squares'
 vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
 output_dir = 'out_map_nfp2_QA_initial'
-phi_GS2 = np.linspace(-13*np.pi, 13*np.pi, 121)
+phi_GS2 = np.linspace(-10*np.pi, 10*np.pi, 121)
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
@@ -32,11 +32,12 @@ phi_GS2 = np.linspace(-13*np.pi, 13*np.pi, 121)
 s_radius = 0.25
 alpha_fieldline = 0
 nlambda = 25
-nstep = 250
-delt = 0.2
+nstep = 350
+delt = 0.1
 LN_array = np.linspace(0.5,6,8)
 LT_array = np.linspace(0.5,6,8)
 n_processes_parallel = 8
+plot_extent_fix = False
 plot_min = 0
 plot_max = 0.40
 ########################################
@@ -211,7 +212,7 @@ clb.ax.set_title(r'$\gamma$', usetex=True)
 plt.xlabel(r'$a/L_n$')
 plt.ylabel(r'$a/L_T$')
 matplotlib.rc('font', size=16)
-plt.clim(plot_min,plot_max) 
+if plot_extent_fix: plt.clim(plot_min,plot_max) 
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan.pdf'), format='pdf', bbox_inches='tight')
 # plt.show()
 plt.close()
