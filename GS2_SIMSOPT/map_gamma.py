@@ -19,28 +19,25 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA/wout_final.nc'
-# output_dir = 'out_map_nfp2_QA_least_squares'
 vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
 output_dir = 'out_map_nfp2_QA_QA_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH/wout_final.nc'
-# output_dir = 'out_map_nfp4_QH_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
-# output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
 # output_dir = 'out_map_nfp2_QA_initial'
+phi_GS2 = np.linspace(-13*np.pi, 13*np.pi, 121)
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+# output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp4_QH.nc'
 # output_dir = 'out_map_nfp4_QH_initial'
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
+# phi_GS2 = np.linspace(-8*np.pi, 8*np.pi, 121)
 s_radius = 0.25
 alpha_fieldline = 0
-nlambda = 23
-nstep = 220
-LN_array = np.linspace(0.5,6,8)
-LT_array = np.linspace(0.5,6,8)
+nlambda = 25
+nstep = 250
+LN_array = np.linspace(0.5,6,16)
+LT_array = np.linspace(0.5,6,16)
 n_processes_parallel = 8
 plot_min = 0
-plot_max = 0.35
+plot_max = 0.40
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
