@@ -162,23 +162,30 @@ def replace(file_path, pattern, subst):
 # Function to create GS2 gridout and input file
 def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     f_wout = vmec_file.split('/')[-1]
-    gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
+    shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
+    #gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
     shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
     replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
     replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = {vmec_file}')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
     replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'alpha = 0.0"',f'alpha = {alpha_fieldline}')
-    # shutil.copy(os.path.join(this_path,'convert_VMEC_to_GX'),os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    gx.make_fluxtube(vmec_file)
-    tag = f_wout[5:-3]
-    ntheta = gx.inputs['Dimensions']['ntheta']
-    f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
-    gx.set_gx_wout(f_geo)
-    fname = f"gxInput_nphi{nphi}_nperiod{nperiod}_nlambda{nlambda}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
+    shutil.copy(os.path.join(this_path,'convert_VMEC_to_GX'),os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+    p.wait()
+    gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
+    #gx.make_fluxtube(f_wout)
+    #tag = f_wout[5:-3]
+    #ntheta = gx.inputs['Dimensions']['ntheta']
+    #f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
+    #gx.set_gx_wout(f_geo)
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nlambda{nlambda}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    gx.write(fout=fnamein, skip_overwrite=False)
-    # replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
+    print(f'gx input create_gx_inputs = {fnamein}')
+    #gx.write(fout=fnamein, skip_overwrite=False)
+    shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
+    replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
+    replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(fnamein,' nstep  = 12000',f' nstep  = {nstep}')
     replace(fnamein,' fprim = [ 1.0,       1.0     ]',f' fprim = [ {LN},       {LN}     ]')
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
@@ -186,6 +193,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     replace(fnamein,' ntheta = 64',f' ntheta = {2*nzgrid}')
     replace(fnamein,' nhermite  = 16',f' nhermite = {nhermite}')
     replace(fnamein,' nlaguerre = 8',f' nlaguerre = {nlaguerre}')
+    #os.remove(f_wout)
     return fname
 # Function to remove spurious GS2 files
 # def remove_gx_files(gs2_input_name):
@@ -217,7 +225,12 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, growth_rate, ln,
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
-    p = subprocess.Popen(f"{gx_executable} {gx_input_name}.in".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+    print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
+    f_log = os.path.join(OUT_DIR,gx_input_name+".log")
+    gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
+    with open(f_log, 'w') as fp:
+        p = subprocess.Popen(gx_cmd,stdout=fp)
+    #p = subprocess.Popen(f"{gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     gx_out = GX_Output(fout)
