@@ -103,7 +103,7 @@ def gammabyky(stellFile):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['time'][()]
     kyX  = fX.variables['ky'][()]
-    omega_average_array = np.array(fX.variables['omega'][()])
+    omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
     realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
     growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
     max_index = np.argmax(growthRateX)
