@@ -224,14 +224,17 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, growth
     df.to_csv(output_csv, mode='a', header=False, index=False)
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
+    print('Creating gx inputs')
     gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper)
     #print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
+    print('Running GX')
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     #p = subprocess.Popen(f"{gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
+    print('Done. Outputing growth rate and saving to file')
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     # gx_out = GX_Output(fout)
