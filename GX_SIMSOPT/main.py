@@ -186,6 +186,7 @@ def TurbulenceCostFunction(v: Vmec):
     try:
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = run_gx(v)
     except Exception as e:
+        print(e)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     out_str = f'{datetime.now().strftime("%H:%M:%S")} - growth rate = {max_growthrate_gamma:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
