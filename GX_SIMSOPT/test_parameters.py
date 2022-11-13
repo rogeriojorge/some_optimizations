@@ -250,7 +250,7 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
     # remove_gs2_files(gs2_input_name)
     print(f'Done in {time()-start_time_local}s. Outputing to CSV');start_time_local = time()
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT)
-    print(f'Done in {time()-start_time_local}s)
+    print(f'Done in {time()-start_time_local}s')
     return max_growthrate_gamma
 ###
 ### Run GS2
