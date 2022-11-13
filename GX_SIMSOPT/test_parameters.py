@@ -83,7 +83,7 @@ def gammabyky(stellFile):
     plt.rc('font', size=8)
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
-    plt.legend(frameon=False,prop=dict(size=12),loc=0)
+    # plt.legend(frameon=False,prop=dict(size=12),loc=0)
 
     plt.tight_layout()
     plt.savefig(stellFile+"_GammaOmegaKy.png")
