@@ -176,7 +176,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     #ntheta = gx.inputs['Dimensions']['ntheta']
     #f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
     #gx.set_gx_wout(f_geo)
-    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     #print(f'gx input create_gx_inputs = {fnamein}')
     #gx.write(fout=fnamein, skip_overwrite=False)
