@@ -181,7 +181,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     #gx.set_gx_wout(f_geo)
     fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nlambda{nlambda}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    print(f'gx input create_gx_inputs = {fnamein}')
+    #print(f'gx input create_gx_inputs = {fnamein}')
     #gx.write(fout=fnamein, skip_overwrite=False)
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
@@ -225,7 +225,7 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, growth_rate, ln,
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
-    print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
+    #print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:

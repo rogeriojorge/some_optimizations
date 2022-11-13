@@ -18,7 +18,7 @@ Allocated a G_lm array of size 2.69 MB
 Allocated a G_lm array of size 2.69 MB
 Allocated a G_lm array of size 2.69 MB
 Allocated a G_lm array of size 2.69 MB
-GPU memory usage: used = 512.000000 MB (3.174603 %), free = 15616.000000 MB (96.825397 %), total = 16128.000000 MB
+GPU memory usage: used = 503.125000 MB (3.119575 %), free = 15624.875000 MB (96.880425 %), total = 16128.000000 MB
 /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid81_npol2_nlambda15_nstep24000_dt0.01_ln1.0_lt3.0: Step 0: Time = 0.000000 	Heat flux = -1.995374e-20 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
@@ -332,4 +332,4 @@ ky	kx		omega		gamma
 1.8000	0.0000		0.783582	0.239884
 2.0000	0.0000		0.848045	0.237993
 /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid81_npol2_nlambda15_nstep24000_dt0.01_ln1.0_lt3.0: Step 24000: Time = 239.999995 	Heat flux = nan 	 Particle flux = nan 	 
-Total runtime = 16.124610 s (0.000672 s / timestep)
+Total runtime = 16.239455 s (0.000677 s / timestep)
