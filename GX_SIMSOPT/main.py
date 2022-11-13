@@ -39,14 +39,14 @@ if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = True
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 weight_optTurbulence = 10.0
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
-HEATFLUX_THRESHOLD = 1e18
+HEATFLUX_THRESHOLD = 1e2
 aspect_ratio_weight = 1e-1
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
@@ -157,8 +157,9 @@ def remove_gx_files(gx_input_name):
     for f in glob.glob('*.restart.nc'): remove(f)
     for f in glob.glob('*.log'): remove(f)
     for f in glob.glob('grid.*'): remove(f)
-    for f in glob.glob('gx_wout.*'): remove(f)
-    for f in glob.glob('gxRun_.*'): remove(f)
+    for f in glob.glob('gx_wout*'): remove(f)
+    for f in glob.glob('gxRun_*'): remove(f)
+    for f in glob.glob('input.*'): remove(f)
     ## REMOVE ALSO INPUT FILE
     for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
