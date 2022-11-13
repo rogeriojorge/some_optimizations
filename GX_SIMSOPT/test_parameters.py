@@ -31,7 +31,7 @@ npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 14
-nlaguerre = 2
+nlaguerre = 6
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
