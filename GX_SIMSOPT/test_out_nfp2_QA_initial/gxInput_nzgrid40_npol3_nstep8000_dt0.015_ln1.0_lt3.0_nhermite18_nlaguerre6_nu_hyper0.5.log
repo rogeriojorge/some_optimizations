@@ -148,4 +148,4 @@ ky	kx		omega		gamma
 2.4000	0.0000		0.907700	0.247147
 2.6000	0.0000		0.936296	0.253743
 /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid40_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre6_nu_hyper0.5: Step 8000: Time = 119.999997 	Heat flux = 2.937401e+19 	 Particle flux = 0.000000e+00 	 
-Total runtime = 3.880670 s (0.000485 s / timestep)
+Total runtime = 3.896832 s (0.000487 s / timestep)
