@@ -133,7 +133,7 @@ def gammabyky(stellFile):
     plt.rc('xtick', labelsize=8)
 
     plt.subplot(numRows, numCols, 3)
-    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}'))
+    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
     plt.xlabel('time')
     plt.ylabel('gamma')
     # plt.xscale('log')
