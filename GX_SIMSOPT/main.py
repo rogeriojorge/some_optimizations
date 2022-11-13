@@ -198,8 +198,9 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-if MPI.COMM_WORLD.rank == 0: growth_rate = run_gx(vmec)
-pprint("Initial growth rate:", growth_rate[0])
+if MPI.COMM_WORLD.rank == 0:
+    growth_rate = run_gx(vmec)
+    pprint("Initial growth rate:", growth_rate[0])
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
