@@ -4,7 +4,7 @@
 [Dimensions]
  ntheta = 64
  nperiod = 1
- ny = 32
+ ny = 40
  nx = 1
 
  nhermite  = 16

@@ -26,11 +26,11 @@ LN = 1.0
 LT = 3.0
 nstep = 8000
 dt = 0.015
-nzgrid = 30
+nzgrid = 40
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 14
+nhermite  = 18
 nlaguerre = 6
 ########################################
 # Go into the output directory
