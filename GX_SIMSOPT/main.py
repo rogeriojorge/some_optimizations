@@ -26,14 +26,14 @@ from scipy.optimize import dual_annealing
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
-    # if MPI.COMM_WORLD.rank == 0:
-    print(*args, **kwargs)
+    if MPI.COMM_WORLD.rank == 0:
+        print(*args, **kwargs)
 start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
 MAXITER = 150
-max_modes = [2]
+max_modes = [1]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
@@ -71,19 +71,19 @@ os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
 dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
 if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'input.final')) or os.path.isfile(os.path.join(dest,'input.final'))):
-    # if MPI.COMM_WORLD.rank == 0:
-    os.makedirs(dest, exist_ok=True)
-    if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
-        files = os.listdir(OUT_DIR)
-        for f in files:
-            shutil.move(os.path.join(OUT_DIR, f), dest)
-    # else:
-    #     time.sleep(0.5)
+    if MPI.COMM_WORLD.rank == 0:
+        os.makedirs(dest, exist_ok=True)
+        if os.path.isfile(os.path.join(OUT_DIR, 'input.final')) and not os.path.isfile(os.path.join(dest, 'input.final')):
+            files = os.listdir(OUT_DIR)
+            for f in files:
+                shutil.move(os.path.join(OUT_DIR, f), dest)
+    else:
+        time.sleep(0.2)
     filename = os.path.join(dest, 'input.final')
 else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
-vmec = Vmec(filename, verbose=False) #, mpi=mpi)
+vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
@@ -126,7 +126,6 @@ def replace(file_path, pattern, subst):
 def create_gx_inputs(vmec_file):
     f_wout = vmec_file.split('/')[-1]
     if not os.path.isfile(os.path.join(OUT_DIR,f_wout)): shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
-    #gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
     shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
     replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
     replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
@@ -199,8 +198,7 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-# if MPI.COMM_WORLD.rank == 0:
-growth_rate = run_gx(vmec)
+if MPI.COMM_WORLD.rank == 0: growth_rate = run_gx(vmec)
 pprint("Initial growth rate:", growth_rate[0])
 ######################################
 initial_dofs=np.copy(surf.x)
@@ -243,13 +241,12 @@ for max_mode in max_modes:
         pprint("Final growth rate:", growth_rate)
     except Exception as e: pprint(e)
     ######################################
-# if MPI.COMM_WORLD.rank == 0:
-vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
+if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
 ######################################
-if plot_result:# and MPI.COMM_WORLD.rank==0:
-    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'))#, mpi=mpi)
+if plot_result and MPI.COMM_WORLD.rank==0:
+    vmec_final = Vmec(os.path.join(OUT_DIR, f'input.final'), mpi=mpi)
     vmec_final.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
     vmec_final.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
     vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
