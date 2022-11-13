@@ -84,7 +84,7 @@ else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
 vmec = Vmec(filename, verbose=False, mpi=mpi)
-vmec.keep_all_files = True
+# vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
 def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,quasisymmetry_total):

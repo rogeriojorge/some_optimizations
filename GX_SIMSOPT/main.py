@@ -47,10 +47,9 @@ diff_abs_step = 1e-6
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
+aspect_ratio_weight = 1e-1
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
@@ -84,7 +83,7 @@ else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
 vmec = Vmec(filename, verbose=False, mpi=mpi)
-vmec.keep_all_files = True
+# vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
 def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,omega,ky):
@@ -157,10 +156,13 @@ def create_gx_inputs(vmec_file):
 def remove_gx_files(gx_input_name):
     for f in glob.glob('*.restart.nc'): remove(f)
     for f in glob.glob('*.log'): remove(f)
+    for f in glob.glob('grid.*'): remove(f)
+    for f in glob.glob('gx_wout.*'): remove(f)
+    for f in glob.glob('gxRun_.*'): remove(f)
     ## REMOVE ALSO INPUT FILE
     for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
-    for f in glob.glob('*.out.nc'): remove(f)
+    for f in glob.glob(f'{gx_input_name}.nc'): remove(f)
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
@@ -187,7 +189,7 @@ def TurbulenceCostFunction(v: Vmec):
     except Exception as e:
         print(e)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
-    out_str = f'{datetime.now().strftime("%H:%M:%S")} - growth rate = {max_growthrate_gamma:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {max_growthrate_gamma:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky)
     return max_growthrate_gamma
@@ -214,14 +216,14 @@ for max_mode in max_modes:
     initial_dofs=np.copy(surf.x)
     dofs=surf.x
     ######################################  
-    opt_tuple = [(vmec.aspect, aspect_ratio_target, 1)]
+    opt_tuple = [(vmec.aspect, aspect_ratio_target, aspect_ratio_weight)]
     opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
     else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
-    pprint("Total objective before optimization:", prob.objective())
+    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
