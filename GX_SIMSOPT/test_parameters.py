@@ -24,14 +24,14 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 10000
-dt = 0.02
-nzgrid = 30
-npol = 2
+nstep = 8000
+dt = 0.015
+nzgrid = 20
+npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 16
-nlaguerre = 8
+nhermite  = 14
+nlaguerre = 6
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
