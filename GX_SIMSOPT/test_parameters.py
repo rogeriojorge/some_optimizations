@@ -26,12 +26,12 @@ LN = 1.0
 LT = 3.0
 nstep = 8000
 dt = 0.015
-nzgrid = 20
+nzgrid = 30
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 14
-nlaguerre = 6
+nlaguerre = 2
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -141,7 +141,8 @@ def gammabyky(stellFile):
 
     plt.tight_layout()
     #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
-    plt.savefig(stellFile+"_GammaOmegaKy.pdf", format='pdf')
+    # plt.savefig(stellFile+"_GammaOmegaKy.pdf", format='pdf')
+    plt.savefig(stellFile+"_GammaOmegaKy.png")
     plt.close()
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 # Function to replace text in a file
