@@ -3,23 +3,25 @@ import os
 import glob
 import time
 import shutil
-import subprocess
+import netCDF4
 import vmecPlot2
+import subprocess
 import numpy as np
 import pandas as pd
 from mpi4py import MPI
 import booz_xform as bx
 from pathlib import Path
+from tempfile import mkstemp
 from datetime import datetime
+from os import fdopen, remove
 import matplotlib.pyplot as plt
+from shutil import move, copymode
 from simsopt import make_optimizable
 from simsopt.mhd import Vmec, Boozer
 from simsopt.util import MpiPartition
 from simsopt.solve import least_squares_mpi_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
-from simsopt.mhd.vmec_diagnostics import vmec_fieldlines
-from simsopt.turbulence.GX_io import GX_Runner, GX_Output
 from scipy.optimize import dual_annealing
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
@@ -33,17 +35,34 @@ start_time = time.time()
 MAXITER = 150
 max_modes = [2]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
-aspect_ratio_target = 7
+if initial_config[-2:]=='QA': aspect_ratio_target = 6
+else: aspect_ratio_target = 8
 opt_quasisymmetry = True
 plot_result = True
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 weight_optTurbulence = 10.0
-diff_rel_step = 1e-5
-diff_abs_step = 1e-7
+diff_rel_step = 1e-4
+diff_abs_step = 1e-6
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
+gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
+##
+LN = 1.0
+LT = 3.0
+nstep = 6000
+dt = 0.015
+nzgrid = 40
+npol = 3
+desired_normalized_toroidal_flux = 0.25
+alpha_fieldline = 0
+nhermite  = 18
+nlaguerre = 6
+nu_hyper = 1.0
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -68,101 +87,93 @@ vmec = Vmec(filename, verbose=False) #, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,heat_flux):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['heat_flux']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[heat_flux]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,omega,ky):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['omega'],['ky']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[omega],[ky]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
     df.to_csv(output_path_parameters, mode='a', header=False, index=False)
 ######################################
 ######################################
-##### CALCULATE HEAT FLUX HERE #######
+##### CALCULATE growth rate HERE #######
 ######################################
 ######################################
 gx_ran = False
-def CalculateHeatFlux(v: Vmec, first_restart=False):
-    """
-        get wout, 
-        make fluxtube, 
-        run gx, 
-        wait, 
-        read output
-    """
-    try:
-        v.run()
-        f_wout = v.output_file.split('/')[-1]
-        # print(' found', f_wout)
-
-        gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
-
-        shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
-        shutil.copy(os.path.join(this_path,'convert_VMEC_to_GX'),os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-
-        gx.make_fluxtube(f_wout)
-
-        # cmd = f"{os.path.join(this_path, 'convert_VMEC_to_GX')} {os.path.join(OUT_DIR,'scan-gx-simsopt-psi-0.50')}"
-        # # os.system(cmd)
-        # subprocess.call(cmd, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
-
-        tag = f_wout[5:-3]
-        ntheta = gx.inputs['Dimensions']['ntheta']
-        f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
-        gx.set_gx_wout(f_geo)
-
-        if (first_restart):
-            print(' GX: First restart')
-            gx.inputs['Controls']['init_amp'] = 1.0e-5
-            gx.inputs['Restart']['restart'] = 'false'
-
-        #slurm_sample = 'batch-gx-stellar.sh'
-        #gx.load_slurm( slurm_sample )
-
-        fname = f"GX-{tag}"
-        fnamein = os.path.join(OUT_DIR,fname+'.in')
-        gx.write(fout=fnamein, skip_overwrite=False)
-        #f_slurm = f"{tag}.sh"
-        #gx.run_slurm( f_slurm, fname )
-
-        #gx_cmd = f"srun -t 3:00:00 --reservation=gpu2022 --gpus-per-task=1 --ntasks=1 gx {fnamein}"
-        #os.system(gx_cmd)
-
-        # use this for salloc
-        shutil.copy(os.path.join(this_path,'gx'),os.path.join(OUT_DIR,'gx'))
-
-        ## gx_cmd = ["mpiexec","-n","1", "gx", f"{fnamein}"]
-        ## gx_cmd = ["srun","./gx", f"{fnamein}"]
-        ## use this for login node
-        ## gx_cmd = ["srun", "-t", "1:00:00", #"--reservation=gpu2022",
-        ##             "--gpus-per-task=1", "--ntasks=1", "gx", f"{fnamein}"]
-        global gx_ran
-        if not gx_ran:
-            gx_cmd = ["./gx", f"{fnamein}"]
-            gx_ran = True
-        else:
-            gx_cmd = ["./gx", f"{fnamein}", "1"]
-        os.remove(os.path.join(OUT_DIR,fname+".nc")) if os.path.exists(os.path.join(OUT_DIR,fname+".nc")) else None
-        f_log = os.path.join(OUT_DIR,fname+".log")
-        with open(f_log, 'w') as fp:
-            p = subprocess.Popen(gx_cmd,stdout=fp)
-        # pprint(' *** Waiting for GX ***', flush=True)
-        p.wait()
-        # pprint(' *** GX finished ***')
-        # print(' *** GX finished, waiting 3 more s ***')
-        # print( datetime.now().strftime("%H:%M:%S") )
-        # os.system("sleep 3")
-
-        # read
-        fout = os.path.join(OUT_DIR,fname+".nc")
-        gx_out = GX_Output(fout)
-
-        qavg, dqavg = gx_out.exponential_window_estimator()
-        # print(f" *** GX non-linear qflux: {qavg} ***")
-    except Exception as e:
-        pprint(e)
-        qavg = HEATFLUX_THRESHOLD
-
-    return qavg
+def gammabyky(stellFile):
+    fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
+    # tX   = fX.variables['time'][()]
+    kyX  = fX.variables['ky'][()]
+    omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
+    realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
+    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
+    max_index = np.argmax(growthRateX)
+    max_growthrate_gamma = growthRateX[max_index]
+    max_growthrate_omega = realFrequencyX[max_index]
+    max_growthrate_ky = kyX[max_index]
+    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
+# Function to replace text in a file
+def replace(file_path, pattern, subst):
+    fh, abs_path = mkstemp()
+    with fdopen(fh,'w') as new_file:
+        with open(file_path) as old_file:
+            for line in old_file:
+                new_file.write(line.replace(pattern, subst))
+    copymode(file_path, abs_path)
+    remove(file_path)
+    move(abs_path, file_path)
+# Function to create GS2 gridout and input file
+def create_gx_inputs(vmec_file):
+    f_wout = vmec_file.split('/')[-1]
+    if not os.path.isfile(os.path.join(OUT_DIR,f_wout)): shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
+    #gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
+    shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
+    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'alpha = 0.0"',f'alpha = {alpha_fieldline}')
+    shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+    p.wait()
+    gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
+    os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}"
+    fnamein = os.path.join(OUT_DIR,fname+'.in')
+    shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
+    replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
+    replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
+    replace(fnamein,' nstep  = 7000',f' nstep  = {nstep}')
+    replace(fnamein,' fprim = [ 1.0,       1.0     ]',f' fprim = [ {LN},       {LN}     ]')
+    replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
+    replace(fnamein,' dt = 0.015',f' dt = {dt}')
+    replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
+    replace(fnamein,' nhermite  = 18',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
+    return fname
+# Function to remove spurious GX files
+def remove_gx_files(gx_input_name):
+    for f in glob.glob('*.restart.nc'): remove(f)
+    for f in glob.glob('*.log'): remove(f)
+    ## REMOVE ALSO INPUT FILE
+    for f in glob.glob('*.in'): remove(f)
+    ## REMOVE ALSO OUTPUT FILE
+    for f in glob.glob('*.out.nc'): remove(f)
+# Function to run GS2 and extract growth rate
+def run_gx(vmec: Vmec):
+    gx_input_name = create_gx_inputs(vmec.output_file)
+    f_log = os.path.join(OUT_DIR,gx_input_name+".log")
+    gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
+    with open(f_log, 'w') as fp:
+        p = subprocess.Popen(gx_cmd,stdout=fp)
+    p.wait()
+    fout = os.path.join(OUT_DIR,gx_input_name+".nc")
+    max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+    remove_gx_files(gx_input_name)
+    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 ######################################
 ######################################
 ######################################
@@ -171,15 +182,15 @@ def TurbulenceCostFunction(v: Vmec):
     try: v.run()
     except Exception as e:
         print(e)
-        return HEATFLUX_THRESHOLD
+        return HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     try:
-        heat_flux = CalculateHeatFlux(v)
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = run_gx(v)
     except Exception as e:
-        heat_flux = HEATFLUX_THRESHOLD
-    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Heat flux = {heat_flux:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
+    out_str = f'{datetime.now().strftime("%H:%M:%S")} - growth rate = {max_growthrate_gamma:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),heat_flux)
-    return heat_flux
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky)
+    return max_growthrate_gamma
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
 try:
@@ -188,8 +199,8 @@ try:
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
 # if MPI.COMM_WORLD.rank == 0:
-heat_flux = CalculateHeatFlux(vmec)
-pprint("Initial heat flux:", heat_flux)
+growth_rate = run_gx(vmec)
+pprint("Initial growth rate:", growth_rate)
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -227,8 +238,8 @@ for max_mode in max_modes:
         pprint("Final aspect ratio:", vmec.aspect())
         pprint("Final mean iota:", vmec.mean_iota())
         pprint("Final magnetic well:", vmec.vacuum_well())
-        heat_flux = CalculateHeatFlux(vmec)
-        pprint("Final heat flux:", heat_flux)
+        growth_rate = CalculateHeatFlux(vmec)
+        pprint("Final growth rate:", growth_rate)
     except Exception as e: pprint(e)
     ######################################
 # if MPI.COMM_WORLD.rank == 0:
