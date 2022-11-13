@@ -1,4 +1,4 @@
-Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0 
+Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6 
 Version: e01db66-dirty 	 Compiled: Mon Oct 31 16:46:05 CET 2022 
 [35mUsing hypercollisions.
 [0mREADING NC GEO
@@ -19,7 +19,7 @@ Allocated a G_lm array of size 1.29 MB
 Allocated a G_lm array of size 1.29 MB
 Allocated a G_lm array of size 1.29 MB
 GPU memory usage: used = 496.000000 MB (3.075397 %), free = 15632.000000 MB (96.924603 %), total = 16128.000000 MB
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 0: Time = 0.000000 	Heat flux = 1.276173e-20 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 0: Time = 0.000000 	Heat flux = 1.276173e-20 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		-0.046432	0.067449
@@ -32,7 +32,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691908	0.248881
 1.8000	0.0000		0.779357	0.230969
 2.0000	0.0000		0.842634	0.226653
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 1000: Time = 15.000000 	Heat flux = 2.175064e-08 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 1000: Time = 15.000000 	Heat flux = 2.175064e-08 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.006742	0.070688
@@ -45,7 +45,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691337	0.247915
 1.8000	0.0000		0.780047	0.229630
 2.0000	0.0000		0.844226	0.226003
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 2000: Time = 29.999999 	Heat flux = 1.004203e-04 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 2000: Time = 29.999999 	Heat flux = 1.004203e-04 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.001739	0.053507
@@ -58,7 +58,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691327	0.247923
 1.8000	0.0000		0.780037	0.229630
 2.0000	0.0000		0.844245	0.226003
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 3000: Time = 44.999999 	Heat flux = 7.239445e-01 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 3000: Time = 44.999999 	Heat flux = 7.239445e-01 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		-0.000390	0.057445
@@ -71,7 +71,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691342	0.247923
 1.8000	0.0000		0.780039	0.229638
 2.0000	0.0000		0.844237	0.226003
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 4000: Time = 59.999999 	Heat flux = 5.965995e+03 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 4000: Time = 59.999999 	Heat flux = 5.965995e+03 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.001485	0.055428
@@ -84,7 +84,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691342	0.247931
 1.8000	0.0000		0.780038	0.229638
 2.0000	0.0000		0.844242	0.225987
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 5000: Time = 74.999998 	Heat flux = 5.147388e+07 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 5000: Time = 74.999998 	Heat flux = 5.147388e+07 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.000470	0.054499
@@ -97,7 +97,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691342	0.247915
 1.8000	0.0000		0.780039	0.229654
 2.0000	0.0000		0.844249	0.225995
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 6000: Time = 89.999998 	Heat flux = 4.521179e+11 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 6000: Time = 89.999998 	Heat flux = 4.521179e+11 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.000419	0.054460
@@ -110,7 +110,7 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691339	0.247923
 1.8000	0.0000		0.780043	0.229630
 2.0000	0.0000		0.844236	0.226003
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 7000: Time = 104.999998 	Heat flux = 4.002578e+15 	 Particle flux = 0.000000e+00 	 
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 7000: Time = 104.999998 	Heat flux = 4.002578e+15 	 Particle flux = 0.000000e+00 	 
 ky	kx		omega		gamma
 0.0000	0.0000
 0.2000	0.0000		0.000296	0.054007
@@ -123,5 +123,5 @@ ky	kx		omega		gamma
 1.6000	0.0000		0.691338	0.247923
 1.8000	0.0000		0.780041	0.229630
 2.0000	0.0000		0.844240	0.225995
-/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0: Step 8000: Time = 119.999997 	Heat flux = 3.557625e+19 	 Particle flux = 0.000000e+00 	 
-Total runtime = 3.998744 s (0.000500 s / timestep)
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid59_npol3_nstep8000_dt0.015_ln1.0_lt3.0_nhermite14_nlaguerre6: Step 8000: Time = 119.999997 	Heat flux = 3.557625e+19 	 Particle flux = 0.000000e+00 	 
+Total runtime = 4.150096 s (0.000519 s / timestep)
