@@ -241,7 +241,7 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     # growth_rate = np.max(np.array(netCDF4.Dataset(fout,'r').variables['omega_average'][()])[-1,:,0,1])
     # remove_gs2_files(gs2_input_name)
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT)
-    return growth_rate
+    return max_growthrate_gamma
 ###
 ### Run GS2
 ###
