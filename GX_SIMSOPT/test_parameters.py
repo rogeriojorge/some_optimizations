@@ -24,12 +24,9 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nphi= 81
-nlambda = 15
-nperiod = 6
-nstep = 12000
-dt = 0.01
-nzgrid = 32
+nstep = 10000
+dt = 0.02
+nzgrid = 30
 npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
@@ -133,7 +130,7 @@ def gammabyky(stellFile):
     plt.rc('xtick', labelsize=8)
 
     plt.subplot(numRows, numCols, 3)
-    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,0],'.-', label=r'$\gamma$ at ky=$'+str(ky))
+    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=r'$\gamma$ at ky=$'+str(ky))
     plt.xlabel(r'$t$')
     plt.ylabel(r'$\gamma$')
     # plt.xscale('log')
@@ -178,7 +175,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     #ntheta = gx.inputs['Dimensions']['ntheta']
     #f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
     #gx.set_gx_wout(f_geo)
-    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nlambda{nlambda}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     #print(f'gx input create_gx_inputs = {fnamein}')
     #gx.write(fout=fnamein, skip_overwrite=False)
@@ -215,8 +212,8 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre):
     # for f in glob.glob('*.out.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
 def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, growth_rate, frequency, ky, ln, lt):
-    keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nlambda'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky']])
-    values=np.concatenate([[ln],[lt],[nzgrid],[npol],[nlambda],[nstep],[nhermite],[nlaguerre],[dt],[growth_rate],[frequency],[ky]])
+    keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky']])
+    values=np.concatenate([[ln],[lt],[nzgrid],[npol],[nstep],[nhermite],[nlaguerre],[dt],[growth_rate],[frequency],[ky]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
@@ -250,11 +247,11 @@ print('Starting GS2 runs')
 start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 # Double nzgrid
-nzgrid = 2*nphi-1;start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
+nzgrid = 2*nzgrid-1;start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nzgrid = int((nzgrid+1)/2)
 # Double npol
-nzgrid = 2*nphi-1;npol=2*npol;start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
+nzgrid = 2*nzgrid-1;npol=2*npol;start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nzgrid = int((nzgrid+1)/2);npol=int(npol/2)
 # Double nstep
