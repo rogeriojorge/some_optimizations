@@ -2,7 +2,7 @@
  debug = false
 
 [Dimensions]
- ntheta = 64
+ ntheta = 80
  nperiod = 1
  ny = 32
  nx = 16
@@ -20,8 +20,8 @@
  nonlinear_mode = true
 
 [Time]
- dt = 0.015
- nstep  = 12000
+ dt = 0.0155
+ nstep  = 7000
  nwrite = 500
  nsave  = 10000000
  scheme = "sspx3"

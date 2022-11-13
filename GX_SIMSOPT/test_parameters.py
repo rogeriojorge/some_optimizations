@@ -26,7 +26,7 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
+nstep = 6000
 dt = 0.015
 nzgrid = 40
 npol = 3
@@ -42,65 +42,8 @@ output_csv = os.path.join(OUT_DIR,output_dir+'.csv')
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
 vmec = Vmec(vmec_file)
-## Auxiliary functions
-# Get growth rates
-# def getgamma(stellFile, fractionToConsider=0.35):
-#     f = netCDF4.Dataset(stellFile,'r',mmap=False)
-#     phi2 = np.log(f.variables['phi2'][()])
-#     t = f.variables['time'][()]
-#     startIndex = int(len(t)*(1-fractionToConsider))
-#     mask = np.isfinite(phi2)
-#     data_x = t[mask]
-#     data_y = phi2[mask]
-#     fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
-#     poly = np.poly1d(fit)
-#     GrowthRate = fit[0]/2
-#     omega_average_array = np.array(f.variables['omega_v_time'][()])
-#     omega_average_array_omega = omega_average_array[-1,:,0,0] # only looking at one kx
-#     omega_average_array_gamma = omega_average_array[-1,:,0,1] # only looking at one kx
-#     max_index = np.argmax(omega_average_array_gamma)
-#     gamma = omega_average_array_gamma[max_index]
-#     omega = omega_average_array_omega[max_index]
-#     # gamma  = np.mean(f.variables['omega'][()][startIndex:,0,0,1])
-#     # omega  = np.mean(f.variables['omega'][()][startIndex:,0,0,0])
-#     #fitRes = np.poly1d(coeffs)
-#     # if not os.path.exists(stellFile+'_phi2.pdf'):
-#     plt.figure(figsize=(7.5,4.0))
-#     ##############
-#     plt.plot(t, phi2,'.', label=r'data - $\gamma_{GS2} = $'+str(gamma))
-#     plt.plot(t, poly(t),'-', label=r'fit - $\gamma = $'+str(GrowthRate))
-#     ##############
-#     plt.legend(loc=0,fontsize=14)
-#     plt.xlabel(r'$t$');plt.ylabel(r'$\ln |\hat \phi|^2$')
-#     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.97)
-#     plt.savefig(stellFile+'_phi2.pdf', format='pdf')
-#     plt.close()
-#     return GrowthRate, abs(omega)
-# # Save final eigenfunction
-# def eigenPlot(stellFile):
-#     f = netCDF4.Dataset(stellFile,'r',mmap=False)
-#     y = f.variables['phi'][()]
-#     x = f.variables['theta'][()]
-#     plt.figure(figsize=(7.5,4.0))
-#     phiR0= y[0,0,int((len(x)-1)/2+1),0]
-#     phiI0= y[0,0,int((len(x)-1)/2+1),1]
-#     phi02= phiR0**2+phiI0**2
-#     phiR = (y[0,0,:,0]*phiR0+y[0,0,:,1]*phiI0)/phi02
-#     phiI = (y[0,0,:,1]*phiR0-y[0,0,:,0]*phiI0)/phi02
-#     ##############
-#     plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
-#     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
-#     ##############
-#     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
-#     plt.legend(loc="upper right")
-#     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
-#     plt.savefig(stellFile+'_eigenphi.pdf', format='pdf')
-#     plt.close()
-#     return 0
 ##### Function to obtain gamma and omega for each ky
 def gammabyky(stellFile):
-    # Compute growth rate:
-    #print(' . reading netcdf file')
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['time'][()]
     kyX  = fX.variables['ky'][()]
@@ -111,12 +54,10 @@ def gammabyky(stellFile):
     max_growthrate_gamma = growthRateX[max_index]
     max_growthrate_omega = realFrequencyX[max_index]
     max_growthrate_ky = kyX[max_index]
-    #print(' . creating plot')
 
     numRows = 1
     numCols = 3
 
-    #print('  - first subplot')
     plt.subplot(numRows, numCols, 1)
     plt.plot(kyX,growthRateX,'.-')
     plt.xlabel('ky')
@@ -126,7 +67,6 @@ def gammabyky(stellFile):
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
 
-    #print('  - second subplot')
     plt.subplot(numRows, numCols, 2)
     plt.plot(kyX,realFrequencyX,'.-')
     plt.xlabel('ky')
@@ -136,23 +76,17 @@ def gammabyky(stellFile):
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
 
-    #print('  - third subplot')
     plt.subplot(numRows, numCols, 3)
     for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
     plt.xlabel('time')
     plt.ylabel('gamma')
-    # plt.xscale('log')
     plt.rc('font', size=8)
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
-    # plt.legend(frameon=False,prop=dict(size=12),loc=0)
+    plt.legend(frameon=False,prop=dict(size=12),loc=0)
 
     plt.tight_layout()
-    #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
-    # plt.savefig(stellFile+"_GammaOmegaKy.pdf", format='pdf')
-    #print(' . saving plot')
     plt.savefig(stellFile+"_GammaOmegaKy.png")
-    #print(' . done')
     plt.close()
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 # Function to replace text in a file
@@ -181,48 +115,30 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    #gx.make_fluxtube(f_wout)
-    #tag = f_wout[5:-3]
-    #ntheta = gx.inputs['Dimensions']['ntheta']
-    #f_geo = f"gx_wout_{tag}_psiN_0.500_nt_{ntheta}_geo.nc"
-    #gx.set_gx_wout(f_geo)
     fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    #print(f'gx input create_gx_inputs = {fnamein}')
-    #gx.write(fout=fnamein, skip_overwrite=False)
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
-    replace(fnamein,' nstep  = 12000',f' nstep  = {nstep}')
+    replace(fnamein,' nstep  = 7000',f' nstep  = {nstep}')
     replace(fnamein,' fprim = [ 1.0,       1.0     ]',f' fprim = [ {LN},       {LN}     ]')
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
-    replace(fnamein,' dt = 0.01',f' dt = {dt}')
-    replace(fnamein,' ntheta = 64',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 16',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 8',f' nlaguerre = {nlaguerre}')
-    replace(fnamein,' nu_hyper_m = 0.5',f' nu_hyper_m = {nu_hyper}')
-    replace(fnamein,' nu_hyper_l = 0.5',f' nu_hyper_l = {nu_hyper}')
-    #os.remove(f_wout)
+    replace(fnamein,' dt = 0.015',f' dt = {dt}')
+    replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
+    replace(fnamein,' nhermite  = 18',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
-# Function to remove spurious GS2 files
-# def remove_gx_files(gs2_input_name):
-    # for f in glob.glob('*.amoments'): remove(f)
-    # for f in glob.glob('*.eigenfunc'): remove(f)
-    # for f in glob.glob('*.error'): remove(f)
-    # for f in glob.glob('*.fields'): remove(f)
-    # for f in glob.glob('*.g'): remove(f)
-    # for f in glob.glob('*.lpc'): remove(f)
-    # for f in glob.glob('*.mom2'): remove(f)
-    # for f in glob.glob('*.moments'): remove(f)
-    # for f in glob.glob('*.vres'): remove(f)
-    # for f in glob.glob('*.vres2'): remove(f)
-    # for f in glob.glob('*.exit_reason'): remove(f)
-    # for f in glob.glob('*.optim'): remove(f)
-    # for f in glob.glob('*.out'): remove(f)
-    # for f in glob.glob('*.used_inputs.in'): remove(f)
-    # for f in glob.glob('*.vspace_integration_error'): remove(f)
-    # ## REMOVE ALSO OUTPUT FILE
-    # for f in glob.glob('*.out.nc'): remove(f)
+# Function to remove spurious GX files
+def remove_gx_files(gx_input_name):
+    for f in glob.glob('*.restart.nc'): remove(f)
+    for f in glob.glob('*.log'): remove(f)
+    ## REMOVE ALSO INPUT FILE
+    for f in glob.glob('*.in'): remove(f)
+    ## REMOVE ALSO OUTPUT FILE
+    for f in glob.glob('*.out.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
 def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, growth_rate, frequency, ky, ln, lt):
     keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky'],['nu_hyper']])
@@ -233,29 +149,16 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, growth
     df.to_csv(output_csv, mode='a', header=False, index=False)
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
-    #print('Creating gx inputs');start_time_local = time()
     gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper)
-    #print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
-    #print(f'Took {time()-start_time_local}s. Running GX');start_time_local = time()
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
-    #p = subprocess.Popen(f"{gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
-    #print(f'Done in {time()-start_time_local}s. Checking growth rates and plotting');start_time_local = time()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
-    # gx_out = GX_Output(fout)
-    # qavg, dqavg = gx_out.exponential_window_estimator()
-    # eigenPlot(fout)
-    # growth_rate, omega = getgamma(fout)
-    # kyX, growthRateX, realFrequencyX = gammabyky(fout)
-    # growth_rate = np.max(np.array(netCDF4.Dataset(fout,'r').variables['omega_average'][()])[-1,:,0,1])
-    # remove_gs2_files(gs2_input_name)
-    #print(f'Done in {time()-start_time_local}s. Outputing to CSV');start_time_local = time()
+    remove_gx_files(gx_input_name)
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT)
-    #print(f'Done in {time()-start_time_local}s')
     return max_growthrate_gamma
 ###
 ### Run GS2

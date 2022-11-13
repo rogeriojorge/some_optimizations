@@ -20,7 +20,7 @@
  nonlinear_mode = false
 
 [Time]
- dt = 0.015
+ dt = 0.0155
  nstep  = 8000
  nwrite = 500
  nsave  = 10000000

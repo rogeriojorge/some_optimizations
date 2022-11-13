@@ -2,13 +2,13 @@
  debug = false
 
 [Dimensions]
- ntheta = 64
+ ntheta = 80
  nperiod = 1
  ny = 40
  nx = 1
 
- nhermite  = 16
- nlaguerre = 8
+ nhermite  = 18
+ nlaguerre = 6
  nspecies = 1
 
 [Domain]
@@ -20,8 +20,8 @@
  nonlinear_mode = false
 
 [Time]
- dt = 0.01
- nstep  = 12000
+ dt = 0.015
+ nstep  = 7000
  nwrite = 500
  nsave  = 10000000
  scheme = "sspx3"
@@ -49,9 +49,9 @@
 [Dissipation]
  closure_model = "none"
  hypercollisions = true 
- nu_hyper_m = 0.5
+ nu_hyper_m = 1.0
  p_hyper_m = 6
- nu_hyper_l = 0.5
+ nu_hyper_l = 1.0
  p_hyper_l = 6
 
  hyper = false
