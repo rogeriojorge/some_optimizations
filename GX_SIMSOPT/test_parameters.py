@@ -98,6 +98,7 @@ vmec = Vmec(vmec_file)
 ##### Function to obtain gamma and omega for each ky
 def gammabyky(stellFile):
     # Compute growth rate:
+    print(' . reading netcdf file')
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['time'][()]
     kyX  = fX.variables['ky'][()]
@@ -108,6 +109,7 @@ def gammabyky(stellFile):
     max_growthrate_gamma = growthRateX[max_index]
     max_growthrate_omega = realFrequencyX[max_index]
     max_growthrate_ky = kyX[max_index]
+    print(' . creating plot')
 
     numRows = 1
     numCols = 3
@@ -143,7 +145,9 @@ def gammabyky(stellFile):
     plt.tight_layout()
     #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
     # plt.savefig(stellFile+"_GammaOmegaKy.pdf", format='pdf')
+    print(' saving plot')
     plt.savefig(stellFile+"_GammaOmegaKy.png")
+    print(' done')
     plt.close()
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 # Function to replace text in a file
@@ -224,17 +228,17 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, growth
     df.to_csv(output_csv, mode='a', header=False, index=False)
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
-    print('Creating gx inputs')
+    print('Creating gx inputs');start_time_local = time()
     gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper)
     #print(f"gx run command {gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}")
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
-    print('Running GX')
+    print(f'Took {time()-start_time_local}s. Running GX');start_time_local = time()
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     #p = subprocess.Popen(f"{gx_executable} {os.path.join(OUT_DIR,gx_input_name+'.in')}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
-    print('Done. Outputing growth rate and saving to file')
+    print(f'Done in {time()-start_time_local}s. Checking growth rates and plotting');start_time_local = time()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     # gx_out = GX_Output(fout)
@@ -244,7 +248,9 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
     # kyX, growthRateX, realFrequencyX = gammabyky(fout)
     # growth_rate = np.max(np.array(netCDF4.Dataset(fout,'r').variables['omega_average'][()])[-1,:,0,1])
     # remove_gs2_files(gs2_input_name)
+    print(f'Done in {time()-start_time_local}s. Outputing to CSV');start_time_local = time()
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT)
+    print(f'Done in {time()-start_time_local}s)
     return max_growthrate_gamma
 ###
 ### Run GS2
