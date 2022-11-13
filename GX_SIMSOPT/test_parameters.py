@@ -15,7 +15,7 @@ from shutil import move, copymode
 from joblib import Parallel, delayed
 from simsopt.mhd import Vmec
 import matplotlib
-matplotlib.use('GTKAgg') 
+matplotlib.use('GTK3Agg') 
 # from simsopt.turbulence.GX_io import GX_Runner, GX_Output
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
