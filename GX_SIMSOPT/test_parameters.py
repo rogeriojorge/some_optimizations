@@ -114,6 +114,7 @@ def gammabyky(stellFile):
     numRows = 1
     numCols = 3
 
+    print('  - first subplot')
     plt.subplot(numRows, numCols, 1)
     plt.plot(kyX,growthRateX,'.-')
     plt.xlabel('ky')
@@ -123,6 +124,7 @@ def gammabyky(stellFile):
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
 
+    print('  - second subplot')
     plt.subplot(numRows, numCols, 2)
     plt.plot(kyX,realFrequencyX,'.-')
     plt.xlabel('ky')
@@ -132,6 +134,7 @@ def gammabyky(stellFile):
     plt.rc('axes', labelsize=8)
     plt.rc('xtick', labelsize=8)
 
+    print('  - third subplot')
     plt.subplot(numRows, numCols, 3)
     for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
     plt.xlabel('time')
