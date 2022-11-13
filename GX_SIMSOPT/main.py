@@ -83,7 +83,7 @@ else:
     filename = os.path.join(this_path, initial_config)
 os.chdir(OUT_DIR)
 vmec = Vmec(filename, verbose=False, mpi=mpi)
-# vmec.keep_all_files = True
+vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
 def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,omega,ky):
@@ -207,6 +207,9 @@ if MPI.COMM_WORLD.rank == 0:
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
     prob.x = dofss
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"wout*")): os.remove(objective_file)
+    except Exception as e: pass
     return prob.objective()
 for max_mode in max_modes:
     output_path_parameters=f'output_{optimizer}_maxmode{max_mode}.csv'
