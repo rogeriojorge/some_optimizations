@@ -201,7 +201,7 @@ try:
 except Exception as e: pprint(e)
 # if MPI.COMM_WORLD.rank == 0:
 growth_rate = run_gx(vmec)
-pprint("Initial growth rate:", growth_rate)
+pprint("Initial growth rate:", growth_rate[0])
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -239,7 +239,7 @@ for max_mode in max_modes:
         pprint("Final aspect ratio:", vmec.aspect())
         pprint("Final mean iota:", vmec.mean_iota())
         pprint("Final magnetic well:", vmec.vacuum_well())
-        growth_rate = CalculateHeatFlux(vmec)
+        growth_rate = run_gx(vmec)[0]
         pprint("Final growth rate:", growth_rate)
     except Exception as e: pprint(e)
     ######################################
