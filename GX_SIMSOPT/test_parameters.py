@@ -21,15 +21,15 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-# vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-# output_dir = 'test_out_nfp2_QA_initial'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
+# vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
+# output_dir = 'test_out_nfp4_QH_initial'
 ##
-LN = 6.0
-LT = 6.0
-nstep = 6000
-dt = 0.018
+LN = 1.0
+LT = 3.0
+nstep = 8000
+dt = 0.01
 nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
@@ -37,7 +37,7 @@ alpha_fieldline = 0
 nhermite  = 26
 nlaguerre = 12
 nu_hyper = 1.0
-ny = 50
+ny = 30
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
