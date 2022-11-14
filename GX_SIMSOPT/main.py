@@ -164,17 +164,17 @@ def create_gx_inputs(vmec_file):
 def remove_gx_files(gx_input_name):
     f_wout_only = gx_input_name[11:]
     try: os.remove(f'grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     try: os.remove(f'{gx_input_name}.in')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     try: os.remove(f'{gx_input_name}.nc')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     try: os.remove(f'{gx_input_name}.log')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     try: os.remove(f'{gx_input_name}.restart.nc')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     try: os.remove(f'gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc')
-    except Exception as e: print(e)
+    except Exception as e: pass#print(e)
     # for f in glob.glob('*.restart.nc'): remove(f)
     # for f in glob.glob('*.log'): remove(f)
     # for f in glob.glob('grid.*'): remove(f)
@@ -329,15 +329,15 @@ except Exception as e:
     pprint(e)
 
 try:
-    for objective_file in glob.glob(os.path.join(OUT_DIR,f"grid.gx_wout_{initial_config[6:]}_000_000*")):
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"grid.gx_wout_{initial_config[6:]}*")):
         os.remove(objective_file)
-    for residuals_file in glob.glob(os.path.join(OUT_DIR,f"gx_wout_{initial_config[6:]}_000_000*")):
+    for residuals_file in glob.glob(os.path.join(OUT_DIR,f"gx_wout_{initial_config[6:]}*")):
         os.remove(residuals_file)
-    for jac_file in glob.glob(os.path.join(OUT_DIR,f"GX-{initial_config[6:]}_000_000*")):
+    for jac_file in glob.glob(os.path.join(OUT_DIR,f"gx-{initial_config[6:]}*")):
         os.remove(jac_file)
-    for threed_file in glob.glob(os.path.join(OUT_DIR,f"input.{initial_config[6:]}_000_000*")):
+    for threed_file in glob.glob(os.path.join(OUT_DIR,f"input.{initial_config[6:]}*")):
         os.remove(threed_file)
-    for threed_file in glob.glob(os.path.join(OUT_DIR,f"wout_{initial_config[6:]}_000_000*")):
+    for threed_file in glob.glob(os.path.join(OUT_DIR,f"wout_{initial_config[6:]}*")):
         os.remove(threed_file)
 except Exception as e:
     pprint(e)
