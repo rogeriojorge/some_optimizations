@@ -1,0 +1,34 @@
+Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/gxRun_wout_nfp4_QH_000_000047 
+Version: e01db66-dirty 	 Compiled: Mon Oct 31 16:46:05 CET 2022 
+[35mUsing hypercollisions.
+[0mREADING NC GEO
+set_jtwist_x0: shat_in = -0.016345
+Warning: shat was set so small that it was giving jtwist=0
+Setting x0=y0 and zero_shat=true
+Using no magnetic shear because zero_shat = true. Setting boundary_option='periodic' 
+jtwist = 0, x0 = 5.000000
+[34mAllocated a field array of size 0.02 MB
+Allocated a field array of size 0.02 MB
+Allocated a field array of size 0.02 MB
+[0mAllocated a G_lm array of size 3.30 MB
+Allocated a field array of size 0.02 MB
+Allocated a field array of size 0.02 MB
+Allocated a field array of size 0.02 MB
+Allocated a G_lm array of size 3.30 MB
+Allocated a G_lm array of size 3.30 MB
+Allocated a G_lm array of size 3.30 MB
+Allocated a G_lm array of size 3.30 MB
+GPU memory usage: used = 515.125000 MB (3.193979 %), free = 15612.875000 MB (96.806021 %), total = 16128.000000 MB
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/gxRun_wout_nfp4_QH_000_000047: Step 0: Time = 0.000000 	Heat flux = -8.169880e-20 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.073750	-0.007150
+0.4000	0.0000		0.041933	0.113805
+0.6000	0.0000		0.119588	0.215650
+0.8000	0.0000		0.243974	0.280259
+1.0000	0.0000		0.386488	0.308751
+1.2000	0.0000		0.528396	0.295555
+1.4000	0.0000		0.662470	0.255753
+1.6000	0.0000		0.784532	0.207926
+1.8000	0.0000		0.894230	0.171964
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/gxRun_wout_nfp4_QH_000_000047: Step 1000: Time = 15.000000 	Heat flux = 3.331194e+00 	 Particle flux = 0.000000e+00 	 

@@ -1,0 +1,119 @@
+Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0 
+Version: e01db66-dirty 	 Compiled: Mon Oct 31 16:46:05 CET 2022 
+[35mUsing hypercollisions.
+[0mREADING NC GEO
+set_jtwist_x0: shat_in = 0.006959
+Warning: shat was set so small that it was giving jtwist=0
+Setting x0=y0 and zero_shat=true
+Using no magnetic shear because zero_shat = true. Setting boundary_option='periodic' 
+jtwist = 0, x0 = 5.000000
+[34mAllocated a field array of size 0.04 MB
+Allocated a field array of size 0.04 MB
+Allocated a field array of size 0.04 MB
+[0mAllocated a G_lm array of size 7.87 MB
+Allocated a field array of size 0.04 MB
+Allocated a field array of size 0.04 MB
+Allocated a field array of size 0.04 MB
+Allocated a G_lm array of size 7.87 MB
+Allocated a G_lm array of size 7.87 MB
+Allocated a G_lm array of size 7.87 MB
+Allocated a G_lm array of size 7.87 MB
+GPU memory usage: used = 556.000000 MB (3.447421 %), free = 15572.000000 MB (96.552579 %), total = 16128.000000 MB
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 0: Time = 0.000000 	Heat flux = 3.050079e-20 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.046490	0.067520
+0.4000	0.0000		0.036143	0.157481
+0.6000	0.0000		0.117445	0.230985
+0.8000	0.0000		0.217039	0.280948
+1.0000	0.0000		0.336009	0.302383
+1.2000	0.0000		0.462976	0.297573
+1.4000	0.0000		0.586111	0.276689
+1.6000	0.0000		0.695444	0.253624
+1.8000	0.0000		0.783856	0.238389
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 1000: Time = 15.000000 	Heat flux = 1.901928e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		0.006545	0.070728
+0.4000	0.0000		0.046759	0.162602
+0.6000	0.0000		0.119707	0.232814
+0.8000	0.0000		0.218189	0.281929
+1.0000	0.0000		0.336475	0.303324
+1.2000	0.0000		0.462644	0.298396
+1.4000	0.0000		0.585214	0.276761
+1.6000	0.0000		0.695008	0.252745
+1.8000	0.0000		0.784572	0.237629
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 2000: Time = 29.999999 	Heat flux = 1.785057e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		0.001347	0.053467
+0.4000	0.0000		0.047091	0.162618
+0.6000	0.0000		0.119810	0.232862
+0.8000	0.0000		0.218211	0.281937
+1.0000	0.0000		0.336472	0.303348
+1.2000	0.0000		0.462625	0.298372
+1.4000	0.0000		0.585235	0.276761
+1.6000	0.0000		0.695016	0.252769
+1.8000	0.0000		0.784544	0.237629
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 3000: Time = 44.999999 	Heat flux = 1.602193e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.000636	0.057294
+0.4000	0.0000		0.047109	0.162524
+0.6000	0.0000		0.119833	0.232877
+0.8000	0.0000		0.218199	0.281937
+1.0000	0.0000		0.336467	0.303340
+1.2000	0.0000		0.462637	0.298372
+1.4000	0.0000		0.585230	0.276769
+1.6000	0.0000		0.695018	0.252761
+1.8000	0.0000		0.784548	0.237629
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 4000: Time = 59.999999 	Heat flux = 1.547453e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		0.001009	0.055246
+0.4000	0.0000		0.047075	0.162484
+0.6000	0.0000		0.119841	0.232862
+0.8000	0.0000		0.218197	0.281937
+1.0000	0.0000		0.336465	0.303348
+1.2000	0.0000		0.462630	0.298364
+1.4000	0.0000		0.585225	0.276761
+1.6000	0.0000		0.695013	0.252753
+1.8000	0.0000		0.784551	0.237629
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 5000: Time = 74.999998 	Heat flux = 1.527305e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.000062	0.054364
+0.4000	0.0000		0.047047	0.162444
+0.6000	0.0000		0.119837	0.232854
+0.8000	0.0000		0.218202	0.281945
+1.0000	0.0000		0.336462	0.303348
+1.2000	0.0000		0.462621	0.298364
+1.4000	0.0000		0.585225	0.276761
+1.6000	0.0000		0.695007	0.252761
+1.8000	0.0000		0.784549	0.237636
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 6000: Time = 89.999998 	Heat flux = 1.431103e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.000177	0.054277
+0.4000	0.0000		0.047019	0.162421
+0.6000	0.0000		0.119842	0.232862
+0.8000	0.0000		0.218209	0.281937
+1.0000	0.0000		0.336473	0.303348
+1.2000	0.0000		0.462630	0.298356
+1.4000	0.0000		0.585227	0.276761
+1.6000	0.0000		0.695009	0.252769
+1.8000	0.0000		0.784554	0.237636
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 7000: Time = 104.999998 	Heat flux = 1.342079e+00 	 Particle flux = 0.000000e+00 	 
+ky	kx		omega		gamma
+0.0000	0.0000
+0.2000	0.0000		-0.000391	0.053801
+0.4000	0.0000		0.046998	0.162413
+0.6000	0.0000		0.119838	0.232862
+0.8000	0.0000		0.218195	0.281929
+1.0000	0.0000		0.336466	0.303340
+1.2000	0.0000		0.462629	0.298356
+1.4000	0.0000		0.585233	0.276753
+1.6000	0.0000		0.695011	0.252769
+1.8000	0.0000		0.784550	0.237636
+/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid179_npol8_nstep8000_dt0.015_ln1.0_lt3.0_nhermite18_nlaguerre10_nu_hyper1.0: Step 8000: Time = 119.999997 	Heat flux = 1.258769e+00 	 Particle flux = 0.000000e+00 	 
+Total runtime = 14.358529 s (0.001795 s / timestep)
