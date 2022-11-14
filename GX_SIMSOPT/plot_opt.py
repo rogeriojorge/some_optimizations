@@ -37,7 +37,7 @@ if QA_or_QH == 'QA':
     aspect=6
 elif QA_or_QH == 'QH':
     nfp=4
-    aspect=7
+    aspect=8
 elif QA_or_QH == 'QI':
     nfp=3
     aspect=7

@@ -4,15 +4,15 @@
 [Dimensions]
  ntheta = 80
  nperiod = 1
- ny = 60
+ ny = 30
  nx = 1
 
- nhermite  = 28
- nlaguerre = 16
+ nhermite  = 18
+ nlaguerre = 10
  nspecies = 1
 
 [Domain]
- y0 = 3.0
+ y0 = 5.0
  boundary = "linked"
 
 [Physics]
@@ -49,9 +49,9 @@
 [Dissipation]
  closure_model = "none"
  hypercollisions = true 
- nu_hyper_m = 0.5
+ nu_hyper_m = 1.0
  p_hyper_m = 6
- nu_hyper_l = 0.5
+ nu_hyper_l = 1.0
  p_hyper_l = 6
 
  hyper = false

@@ -27,16 +27,16 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 output_dir = 'out_map_nfp2_QA_initial'
 
-nstep = 12000
-dt = 0.012
+nstep = 8000
+dt = 0.015
 nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 28
-nlaguerre = 16
-nu_hyper = 0.5
-ny = 50
+nhermite  = 18
+nlaguerre = 10
+nu_hyper = 1.0
+ny = 30
 
 LN_array = np.linspace(0.5,6,4)
 LT_array = np.linspace(0.5,6,4)
@@ -139,11 +139,11 @@ def create_gx_inputs(ln, lt):
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {lt},       {lt}     ]')
     replace(fnamein,' dt = 0.010',f' dt = {dt}')
     replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 28',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 16',f' nlaguerre = {nlaguerre}')
-    replace(fnamein,' nu_hyper_m = 0.5',f' nu_hyper_m = {nu_hyper}')
-    replace(fnamein,' nu_hyper_l = 0.5',f' nu_hyper_l = {nu_hyper}')
-    replace(fnamein,' ny = 60',f' ny = {ny}')
+    replace(fnamein,' nhermite  = 18',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 10',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' ny = 30',f' ny = {ny}')
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):

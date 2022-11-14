@@ -33,15 +33,15 @@ start_time = time.time()
 #### Input Parameters
 ############################################################################
 MAXITER = 150
-max_modes = [1]
+max_modes = [3]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
-else: aspect_ratio_target = 7
+else: aspect_ratio_target = 8
 opt_quasisymmetry = True
 plot_result = True
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
-weight_optTurbulence = 100.0
+weight_optTurbulence = 10.0
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -55,15 +55,16 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 6000
+nstep = 7000
 dt = 0.015
-nzgrid = 40
-npol = 3
+nzgrid = 50
+npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 18
-nlaguerre = 6
+nlaguerre = 10
 nu_hyper = 1.0
+ny = 30
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -149,10 +150,11 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
     replace(fnamein,' dt = 0.010',f' dt = {dt}')
     replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 28',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 16',f' nlaguerre = {nlaguerre}')
-    replace(fnamein,' nu_hyper_m = 0.5',f' nu_hyper_m = {nu_hyper}')
-    replace(fnamein,' nu_hyper_l = 0.5',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' nhermite  = 18',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 10',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' ny = 30',f' ny = {ny}')
     if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
