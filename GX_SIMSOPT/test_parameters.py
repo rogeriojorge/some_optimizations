@@ -57,8 +57,7 @@ def gammabyky(stellFile):
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
     realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
     growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
-    print(growthRateX)
-    growthRateX[growthRateX == np.inf] = 0
+    growthRateX[growthRateX == np.nan] = 0
     max_index = np.argmax(growthRateX)
     max_growthrate_gamma = growthRateX[max_index]
     max_growthrate_omega = realFrequencyX[max_index]
