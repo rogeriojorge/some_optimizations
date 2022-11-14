@@ -23,6 +23,8 @@ from simsopt.solve import least_squares_mpi_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from scipy.optimize import dual_annealing
+import matplotlib
+matplotlib.use('Agg') 
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):

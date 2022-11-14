@@ -18,6 +18,8 @@ from matplotlib.animation import FuncAnimation
 from simsopt.mhd import Vmec
 from simsopt import make_optimizable
 from simsopt.mhd import QuasisymmetryRatioResidual
+import matplotlib
+matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 
 min_bound = -0.25
@@ -84,6 +86,41 @@ def gammabyky(stellFile):
     max_growthrate_gamma = growthRateX[max_index]
     max_growthrate_omega = realFrequencyX[max_index]
     max_growthrate_ky = kyX[max_index]
+    
+    numRows = 1
+    numCols = 3
+
+    plt.subplot(numRows, numCols, 1)
+    plt.plot(kyX,growthRateX,'.-')
+    plt.xlabel('ky')
+    plt.ylabel('gamma')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+
+    plt.subplot(numRows, numCols, 2)
+    plt.plot(kyX,realFrequencyX,'.-')
+    plt.xlabel('ky')
+    plt.ylabel('omega')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+
+    plt.subplot(numRows, numCols, 3)
+    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
+    plt.xlabel('time')
+    plt.ylabel('gamma')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+    # plt.legend(frameon=False,prop=dict(size=12),loc=0)
+
+    plt.tight_layout()
+    plt.savefig(stellFile+"_GammaOmegaKy.png")
+    plt.close()
+
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
