@@ -13,10 +13,13 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 2
+max_mode = 1
 QA_or_QH = 'QH'
-optimizer = 'dual_annealing'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 MAXITER=150
+quasisymmetry = False
+
+growth_rate_weight=1e0
 
 plt_opt_res = True
 plot_vmec = True
@@ -29,26 +32,35 @@ nparticles = 1500  # number of particles
 tfinal = 1e-3  # seconds
 nsamples = 10000  # number of time steps
 #################################
-if QA_or_QH == 'QA': nfp=2
-elif QA_or_QH == 'QH': nfp=4
-elif QA_or_QH == 'QI': nfp=3
+if QA_or_QH == 'QA':
+    nfp=2
+    aspect=8
+elif QA_or_QH == 'QH':
+    nfp=4
+    aspect=6
+elif QA_or_QH == 'QI':
+    nfp=3
+    aspect=7
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
+if quasisymmetry: out_dir+=f'_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = df['heat_flux'].nsmallest(3).index[0]#len(df.index)-1#df['heat_flux'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
+HEATFLUX_THRESHOLD = 1e2
 if plt_opt_res:
-    df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
+    df[f'aspect-{aspect}'] = df.apply(lambda row: np.abs(row.aspect - aspect), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
-    df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),2.5]), axis=1)
+    df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),4.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
-    df['heat_flux'] = df[df['heat_flux']<1e17]['heat_flux']
-    df.plot(use_index=True, y=['heat_flux'])#,'iota'])#,'normalized_time'])
+    df['growth_rate'] = df[df['growth_rate']<HEATFLUX_THRESHOLD]['growth_rate']
+    df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e4]['quasisymmetry_total']
+    df.plot(use_index=True, y=['growth_rate'])#,'iota'])#,'normalized_time'])
     plt.yscale('log')
     # plt.ylim([0,1.])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
     plt.legend()
-    plt.savefig(out_dir+'/heat_flux_over_opt.pdf')
+    plt.savefig(out_dir+'/growth_rate_over_opt.pdf')
     df.plot(use_index=True, y=['aspect'])#,'iota'])#,'normalized_time'])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
     plt.legend()
@@ -57,8 +69,14 @@ if plt_opt_res:
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
     plt.legend()
     plt.savefig(out_dir+'/iota_over_opt.pdf')
-    # df.plot.scatter(y='heat_flux', x='iota')
-    # plt.savefig(out_dir+'/heatflux_vs_iota.pdf')
+    df.plot(use_index=True, y=['quasisymmetry_total'])#,'iota'])#,'normalized_time'])
+    plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
+    plt.yscale('log')
+    plt.legend()
+    plt.savefig(out_dir+'/qs_total_over_opt.pdf')
+    df.plot.scatter(x='growth_rate', y='quasisymmetry_total')
+    plt.yscale('log');plt.xscale('log')
+    plt.savefig(out_dir+'/qs_total_vs_growth_rate.pdf')
     plt.show()
 #################################
 df_min = df.iloc[location_min]
@@ -80,7 +98,7 @@ if plot_vmec:
         surf.fix("rc(0,0)")
         vmec.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
         vmec.indata.niter_array[:3] = [ 1000,  1000, 10000]#,  5000, 10000]
-        vmec.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
+        vmec.indata.ftol_array[:3]  = [1e-13, 1e-14, 1e-15]#, 1e-15, 1e-15]
         if max_mode==1:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)']]
         elif max_mode==2:
@@ -103,7 +121,7 @@ if plot_vmec:
     print("Mean iota:", vmec.mean_iota())
     print("Magnetic well:", vmec.vacuum_well())
     print("Quasisymmetry objective after optimization:", qs.total())
-    s_EP = 0.5;alphas_EP=[0]
+    s_EP = 0.25;alphas_EP=[0]
     fl1 = vmec_fieldlines(vmec, s_EP, alphas_EP, theta1d=np.linspace(-4*np.pi, 4*np.pi, 250), plot=True, show=False)
     plt.savefig(f'Initial_profiles_s{s_EP}_alpha{alphas_EP[0]}.png');plt.close()
     sys.path.insert(1, '../../')
@@ -145,8 +163,8 @@ if run_simple:
         surf.fixed_range(mmin=0, mmax=max_mode, nmin=-max_mode, nmax=max_mode, fixed=False)
         surf.fix("rc(0,0)")
         vmec.indata.ns_array[:3]    = [  16,    51,    101]#,   151,   201]
-        vmec.indata.niter_array[:3] = [ 4000, 10000,  4000]#,  5000, 10000]
-        vmec.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
+        vmec.indata.niter_array[:3] = [ 4000, 10000, 14000]#,  5000, 10000]
+        vmec.indata.ftol_array[:3]  = [1e-13, 1e-14, 1e-15]#, 1e-15, 1e-15]
         if max_mode==1:
             vmec.x = [df_min['x(0)'],df_min['x(1)'],df_min['x(2)'],df_min['x(3)'],df_min['x(4)'],df_min['x(5)'],df_min['x(6)'],df_min['x(7)']]
         elif max_mode==2:
@@ -166,7 +184,7 @@ if run_simple:
         vmec.run()
 
     wout_filename = vmec.output_file
-    s_initial = 0.3 # Same s_initial as precise quasisymmetry paper
+    s_initial = 0.25 # Same s_initial as precise quasisymmetry paper
     B_scale = 5.7/vmec.wout.b0  # Scale the magnetic field by a factor
     Aminor_scale = 1.7/vmec.wout.Aminor_p  # Scale the machine size by a factor
     notrace_passing = 0  # If 1 skip tracing of passing particles

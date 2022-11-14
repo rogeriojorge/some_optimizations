@@ -67,6 +67,7 @@ nu_hyper = 1.0
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
+if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
@@ -88,9 +89,9 @@ vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,omega,ky):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['omega'],['ky']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[omega],[ky]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,quasisymmetry_total,growth_rate,omega,ky):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['omega'],['ky'],['quasisymmetry_total']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[omega],[ky],[quasisymmetry_total]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -194,7 +195,7 @@ def TurbulenceCostFunction(v: Vmec):
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {max_growthrate_gamma:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky)
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),qs.total(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky)
     return max_growthrate_gamma
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
