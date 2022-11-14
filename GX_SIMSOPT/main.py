@@ -37,9 +37,9 @@ max_modes = [3]
 initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
-opt_quasisymmetry = True
+opt_quasisymmetry = False
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 weight_optTurbulence = 10.0
 diff_rel_step = 1e-4
