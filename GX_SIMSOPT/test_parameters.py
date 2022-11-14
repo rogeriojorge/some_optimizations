@@ -21,10 +21,14 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/wout_nfp2_QA_000_000000.nc'
+output_dir = 'test_out_nfp2_QA_dual_annealing'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/wout_nfp4_QH_000_000000.nc'
+output_dir = 'test_out_nfp4_QH_dual_annealing'
 #vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 #output_dir = 'test_out_nfp2_QA_initial'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+#vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
+#output_dir = 'test_out_nfp4_QH_initial'
 ##
 LN = 1.0
 LT = 3.0
