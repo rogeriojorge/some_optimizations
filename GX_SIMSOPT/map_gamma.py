@@ -25,11 +25,11 @@ output_dir = 'out_map_nfp4_QH_initial'
 
 nstep = 10000
 dt = 0.015
-nzgrid = 40
-npol = 3
+nzgrid = 60
+npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 22
+nhermite  = 26
 nlaguerre = 8
 nu_hyper = 1.5
 ny = 60
