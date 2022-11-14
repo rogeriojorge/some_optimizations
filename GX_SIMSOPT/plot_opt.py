@@ -34,10 +34,10 @@ nsamples = 10000  # number of time steps
 #################################
 if QA_or_QH == 'QA':
     nfp=2
-    aspect=8
+    aspect=6
 elif QA_or_QH == 'QH':
     nfp=4
-    aspect=6
+    aspect=7
 elif QA_or_QH == 'QI':
     nfp=3
     aspect=7

@@ -36,7 +36,7 @@ MAXITER = 150
 max_modes = [1]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
-else: aspect_ratio_target = 8
+else: aspect_ratio_target = 7
 opt_quasisymmetry = True
 plot_result = True
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
