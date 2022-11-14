@@ -24,8 +24,8 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 output_dir = 'test_out_nfp2_QA_initial'
 ##
-LN = 6.0
-LT = 6.0
+LN = 1.0
+LT = 3.0
 nstep = 6000
 dt = 0.02
 nzgrid = 50
