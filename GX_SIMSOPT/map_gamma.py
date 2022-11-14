@@ -7,7 +7,7 @@ import subprocess
 import matplotlib
 import numpy as np
 import pandas as pd
-from time import time
+from time import time, sleep
 from pathlib import Path
 from tempfile import mkstemp
 from os import fdopen, remove
@@ -121,7 +121,7 @@ def create_gx_inputs(ln, lt):
             shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
             p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
             p.wait()
-        else: time.sleep(0.2)
+        else: sleep(0.3)
     fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{ln}_lt{lt}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
