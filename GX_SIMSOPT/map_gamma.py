@@ -181,6 +181,7 @@ growth_rate_array = np.zeros((len(LN_array),len(LT_array)))
 for i, ln in enumerate(LN_array):
     for j, lt in enumerate(LT_array):
         growth_rate_array[i,j]=run_gx(ln, lt)
+growth_rate_array = growth_rate_array.transpose()
 print(f'Running GX scan took {time()-start_time}s')
 ## Save growth rates to csv file
 print('growth rates:')

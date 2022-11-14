@@ -26,8 +26,8 @@ output_dir = 'test_out_nfp2_QA_initial'
 # vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
 # output_dir = 'test_out_nfp4_QH_initial'
 ##
-LN = 1.0
-LT = 3.0
+LN = 6.0
+LT = 0.5
 nstep = 12000
 dt = 0.012
 nzgrid = 50
