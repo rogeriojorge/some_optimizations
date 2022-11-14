@@ -195,7 +195,11 @@ def run_gx(vmec: Vmec):
         p = subprocess.Popen(gx_cmd,stdout=fp)
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
-    max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+    try:
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+    except Exception as e:
+        print(e)
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     remove_gx_files(gx_input_name)
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 ######################################
