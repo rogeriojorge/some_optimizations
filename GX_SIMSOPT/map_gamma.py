@@ -24,8 +24,8 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
 output_dir = 'out_map_nfp4_QH_initial'
 
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-output_dir = 'out_map_nfp2_QA_initial'
+# vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
+# output_dir = 'out_map_nfp2_QA_initial'
 
 nstep = 9000
 dt = 0.01
