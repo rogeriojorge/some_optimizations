@@ -1,0 +1,486 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Initial aspect ratio: 6.000114150210393
+Initial mean iota: 0.4190692975001252
+Initial magnetic well: -0.030892210701449766
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000000_psiN_0.25_nt_100'
+Initial growth rate: 0.30390978
+## Now calculating total objective function ##
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000000_psiN_0.25_nt_100'
+16:33:02 - Growth rate = 0.303910, quasisymmetry = 0.000822 with aspect ratio=6.000114 took 6.364368s
+Total objective before optimization: 0.9236124027666114
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000001_psiN_0.25_nt_100'
+16:33:11 - Growth rate = 0.303910, quasisymmetry = 0.000822 with aspect ratio=6.000114 took 6.201520s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000050_psiN_0.25_nt_100'
+16:33:21 - Growth rate = 0.201873, quasisymmetry = 0.906324 with aspect ratio=5.990993 took 6.507558s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000051_psiN_0.25_nt_100'
+16:33:30 - Growth rate = 0.187848, quasisymmetry = 3.419000 with aspect ratio=5.992939 took 6.297626s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000053.nc'
+16:33:48 - Growth rate = 100.000000, quasisymmetry = 17.166296 with aspect ratio=6.011888 took 1.585760s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000057_psiN_0.25_nt_100'
+16:34:15 - Growth rate = 0.222391, quasisymmetry = 9.890947 with aspect ratio=5.463867 took 6.601966s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000073_psiN_0.25_nt_100'
+16:34:43 - Growth rate = 0.212996, quasisymmetry = 10.666831 with aspect ratio=5.464288 took 6.526923s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000074.nc'
+16:34:47 - Growth rate = 100.000000, quasisymmetry = 9.509567 with aspect ratio=5.464288 took 1.548286s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000075_psiN_0.25_nt_100'
+16:35:00 - Growth rate = 0.224649, quasisymmetry = 16.199573 with aspect ratio=5.464288 took 6.883955s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000076.nc'
+16:35:07 - Growth rate = 100.000000, quasisymmetry = 24.357323 with aspect ratio=5.464288 took 1.603722s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000081_psiN_0.25_nt_100'
+16:35:42 - Growth rate = 0.219001, quasisymmetry = 12.905742 with aspect ratio=5.432888 took 6.568907s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000087_psiN_0.25_nt_100'
+16:36:00 - Growth rate = 0.246300, quasisymmetry = 9.443076 with aspect ratio=5.508842 took 6.473066s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000088_psiN_0.25_nt_100'
+16:36:13 - Growth rate = 0.287524, quasisymmetry = 10.425207 with aspect ratio=5.349546 took 6.431539s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000096.nc'
+16:36:20 - Growth rate = 100.000000, quasisymmetry = 9.527117 with aspect ratio=5.346270 took 3.339517s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000098_psiN_0.25_nt_100'
+16:36:30 - Growth rate = 0.187848, quasisymmetry = 3.419000 with aspect ratio=5.992939 took 6.518290s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000099_psiN_0.25_nt_100'
+16:36:39 - Growth rate = 0.167581, quasisymmetry = 3.574940 with aspect ratio=5.992711 took 6.456357s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000100_psiN_0.25_nt_100'
+16:36:49 - Growth rate = 0.169063, quasisymmetry = 3.702228 with aspect ratio=5.993026 took 6.430248s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000101_psiN_0.25_nt_100'
+16:36:59 - Growth rate = 0.186999, quasisymmetry = 3.419010 with aspect ratio=5.992939 took 6.392029s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000102_psiN_0.25_nt_100'
+16:37:08 - Growth rate = 0.167818, quasisymmetry = 3.428985 with aspect ratio=5.992906 took 6.376845s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000103_psiN_0.25_nt_100'
+16:37:18 - Growth rate = 0.167382, quasisymmetry = 3.429067 with aspect ratio=5.991841 took 6.405955s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000104_psiN_0.25_nt_100'
+16:37:28 - Growth rate = 0.168596, quasisymmetry = 3.458534 with aspect ratio=5.977285 took 6.497611s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000105_psiN_0.25_nt_100'
+16:37:37 - Growth rate = 0.168334, quasisymmetry = 3.536453 with aspect ratio=5.801556 took 6.268681s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000106_psiN_0.25_nt_100'
+16:37:47 - Growth rate = 0.164529, quasisymmetry = 3.446990 with aspect ratio=6.059510 took 6.378761s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000107_psiN_0.25_nt_100'
+16:37:56 - Growth rate = 0.296623, quasisymmetry = 3.459313 with aspect ratio=5.999074 took 6.344601s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000108_psiN_0.25_nt_100'
+16:38:06 - Growth rate = 0.201683, quasisymmetry = 3.410633 with aspect ratio=5.993103 took 6.319274s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000109_psiN_0.25_nt_100'
+16:38:16 - Growth rate = 0.187673, quasisymmetry = 3.419126 with aspect ratio=5.992939 took 6.546232s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000110_psiN_0.25_nt_100'
+16:38:25 - Growth rate = 0.198957, quasisymmetry = 3.414791 with aspect ratio=5.992941 took 6.411856s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000111_psiN_0.25_nt_100'
+16:38:35 - Growth rate = 0.188672, quasisymmetry = 3.418923 with aspect ratio=5.992941 took 6.306336s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000112_psiN_0.25_nt_100'
+16:38:44 - Growth rate = 0.226462, quasisymmetry = 3.419569 with aspect ratio=5.993366 took 6.424431s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000113_psiN_0.25_nt_100'
+16:38:54 - Growth rate = 0.335507, quasisymmetry = 3.450738 with aspect ratio=5.991316 took 6.198444s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000114_psiN_0.25_nt_100'
+16:39:04 - Growth rate = 0.168167, quasisymmetry = 3.428105 with aspect ratio=5.992993 took 6.354768s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000115_psiN_0.25_nt_100'
+16:39:14 - Growth rate = 0.167953, quasisymmetry = 3.437767 with aspect ratio=5.992960 took 6.686450s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000116_psiN_0.25_nt_100'
+16:39:23 - Growth rate = 0.189773, quasisymmetry = 3.419039 with aspect ratio=5.992939 took 6.271167s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000117_psiN_0.25_nt_100'
+16:39:33 - Growth rate = 0.183402, quasisymmetry = 3.418659 with aspect ratio=5.992939 took 6.478091s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/scipy/optimize/_dual_annealing.py:418: RuntimeWarning: Maximum number of function evaluations has been exceeded.
+  mres = self.minimizer(self.func_wrapper.fun, x, **self.kwargs)
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000166_psiN_0.25_nt_100'
+16:39:43 - Growth rate = 0.205430, quasisymmetry = 2.913221 with aspect ratio=6.029988 took 6.331618s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000167.nc'
+16:39:52 - Growth rate = 100.000000, quasisymmetry = 30.095721 with aspect ratio=6.017901 took 1.731517s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000168_psiN_0.25_nt_100'
+16:40:02 - Growth rate = 0.197325, quasisymmetry = 4.878054 with aspect ratio=6.029901 took 6.698381s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000172.nc'
+16:40:22 - Growth rate = 100.000000, quasisymmetry = 10.869862 with aspect ratio=7.250581 took 1.812658s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000173_psiN_0.25_nt_100'
+16:40:31 - Growth rate = 0.207974, quasisymmetry = 4.201465 with aspect ratio=5.983370 took 6.519952s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000177.nc'
+16:40:37 - Growth rate = 100.000000, quasisymmetry = 2.768596 with aspect ratio=5.982653 took 1.646454s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000179.nc'
+16:40:45 - Growth rate = 100.000000, quasisymmetry = 3.782873 with aspect ratio=5.999023 took 1.660393s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000180_psiN_0.25_nt_100'
+16:40:54 - Growth rate = 0.215088, quasisymmetry = 3.855456 with aspect ratio=6.018641 took 6.536081s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000190_psiN_0.25_nt_100'
+16:41:03 - Growth rate = 0.225108, quasisymmetry = 4.371190 with aspect ratio=6.018641 took 6.381938s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000191_psiN_0.25_nt_100'
+16:41:14 - Growth rate = 0.247218, quasisymmetry = 8.227042 with aspect ratio=6.018641 took 6.796949s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000192.nc'
+16:41:19 - Growth rate = 100.000000, quasisymmetry = 11.278091 with aspect ratio=6.018641 took 1.637439s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000201_psiN_0.25_nt_100'
+16:41:39 - Growth rate = 0.245651, quasisymmetry = 8.019944 with aspect ratio=6.019932 took 6.590283s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000203_psiN_0.25_nt_100'
+16:41:49 - Growth rate = 0.244051, quasisymmetry = 7.703462 with aspect ratio=6.006928 took 6.487878s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000262_psiN_0.25_nt_100'
+16:42:00 - Growth rate = 0.219904, quasisymmetry = 5.750103 with aspect ratio=6.009516 took 6.353850s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000263.nc'
+16:42:05 - Growth rate = 100.000000, quasisymmetry = 7.817150 with aspect ratio=6.011645 took 1.612546s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000264.nc'
+16:42:11 - Growth rate = 100.000000, quasisymmetry = 10.201140 with aspect ratio=6.010553 took 1.527586s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000268_psiN_0.25_nt_100'
+16:42:32 - Growth rate = 0.339398, quasisymmetry = 6.963629 with aspect ratio=7.077529 took 6.491037s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000269_psiN_0.25_nt_100'
+16:42:42 - Growth rate = 0.254114, quasisymmetry = 10.390287 with aspect ratio=6.236038 took 6.408353s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000270.nc'
+16:42:48 - Growth rate = 100.000000, quasisymmetry = 12.188588 with aspect ratio=6.382709 took 1.779124s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000281.nc'
+16:42:55 - Growth rate = 100.000000, quasisymmetry = 9.192648 with aspect ratio=6.248935 took 1.708013s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000286_psiN_0.25_nt_100'
+16:43:04 - Growth rate = 0.281391, quasisymmetry = 18.599761 with aspect ratio=6.236038 took 6.405681s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000287.nc'
+16:43:13 - Growth rate = 100.000000, quasisymmetry = 5.439749 with aspect ratio=6.236038 took 1.789366s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000291.nc'
+16:43:29 - Growth rate = 100.000000, quasisymmetry = 19.796796 with aspect ratio=6.698494 took 3.075917s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000293.nc'
+16:43:37 - Growth rate = 100.000000, quasisymmetry = 99.203956 with aspect ratio=6.534180 took 1.547394s
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000294_psiN_0.25_nt_100'
+16:43:46 - Growth rate = 0.281905, quasisymmetry = 16.644946 with aspect ratio=6.223998 took 6.275682s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: 'grid.gx_wout_nfp2_QA_000_000358_psiN_0.25_nt_100'
+16:43:56 - Growth rate = 0.230573, quasisymmetry = 16.071544 with aspect ratio=6.271505 took 6.527706s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000359.nc'
+16:44:03 - Growth rate = 100.000000, quasisymmetry = 18.384194 with aspect ratio=6.273472 took 1.550381s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+free(): invalid next size (fast)
+[login06:84337] *** Process received signal ***
+[login06:84337] Signal: Aborted (6)
+[login06:84337] Signal code:  (-6)
+[login06:84337] [ 0] linux-vdso64.so.1(__kernel_sigtramp_rt64+0x0)[0x2000000504d8]
+[login06:84337] [ 1] /lib64/power9/libc.so.6(gsignal+0xd8)[0x2000002e3798]
+[login06:84337] [ 2] /lib64/power9/libc.so.6(abort+0x164)[0x2000002c3bac]
+[login06:84337] [ 3] /lib64/power9/libc.so.6(+0x8f8bc)[0x20000032f8bc]
+[login06:84337] [ 4] /lib64/power9/libc.so.6(+0x992b8)[0x2000003392b8]
+[login06:84337] [ 5] /lib64/power9/libc.so.6(+0x9b410)[0x20000033b410]
+[login06:84337] [ 6] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(cleanup_+0x4bc)[0x20004da08d9c]
+[login06:84337] [ 7] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(f90wrap_cleanup_+0x18)[0x20004d9c9b28]
+[login06:84337] [ 8] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(+0x714fc)[0x20004d9914fc]
+[login06:84337] [ 9] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(+0xa74a4)[0x20004d9c74a4]
+[login06:84337] [10] python3(_PyObject_MakeTpCall+0xec)[0x10724077c]
+[login06:84337] [11] python3(_PyEval_EvalFrameDefault+0x7e5c)[0x1072287fc]
+[login06:84337] [12] python3(PyEval_EvalFrameEx+0x34)[0x107326564]
+[login06:84337] [13] python3(+0x5f1d4)[0x10721f1d4]
+[login06:84337] [14] python3(_PyEval_EvalFrameDefault+0x86b4)[0x107229054]
+[login06:84337] [15] python3(PyEval_EvalFrameEx+0x34)[0x107326564]
+[login06:84337] [16] python3(+0x5f1d4)[0x10721f1d4]
+[login06:84337] [17] python3(_PyEval_EvalFrameDefault+0x8590)[0x107228f30]
+[login06:84337] [18] python3(PyEval_EvalFrameEx+0x34)[0x107326564]
+[login06:84337] [19] python3(+0x5f1d4)[0x10721f1d4]
+[login06:84337] [20] python3(+0x2aa608)[0x10746a608]
+[login06:84337] [21] python3(PyVectorcall_Call+0xa0)[0x1072432f0]
+[login06:84337] [22] python3(PyObject_Call+0x1ec)[0x1072436cc]
+[login06:84337] [23] python3(_PyEval_EvalFrameDefault+0x302c)[0x1072239cc]
+[login06:84337] [24] python3(PyEval_EvalFrameEx+0x34)[0x107326564]
+[login06:84337] [25] python3(_PyEval_EvalCodeWithName+0xec0)[0x1073274a0]
+[login06:84337] [26] python3(_PyFunction_Vectorcall+0xcc)[0x10724032c]
+[login06:84337] [27] python3(+0x2aa44c)[0x10746a44c]
+[login06:84337] [28] python3(PyVectorcall_Call+0xa0)[0x1072432f0]
+[login06:84337] [29] python3(PyObject_Call+0x1ec)[0x1072436cc]
+[login06:84337] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 84337 on node login06 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

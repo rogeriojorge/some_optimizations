@@ -1,0 +1,6 @@
+Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/gxRun_wout_nfp2_QA_000_000291 
+Version: e01db66-dirty 	 Compiled: Mon Oct 31 16:46:05 CET 2022 
+[35mUsing hypercollisions.
+[0mREADING NC GEO
+file: gx_wout_nfp2_QA_000_000291_psiN_0.250_nt_100_geo.nc 
+Error: No such file or directory. See file: src/geometry.cu, line 367
