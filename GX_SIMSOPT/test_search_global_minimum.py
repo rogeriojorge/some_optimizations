@@ -16,8 +16,7 @@ from shutil import move, copymode
 from scipy.optimize import dual_annealing
 from matplotlib.animation import FuncAnimation
 from simsopt.mhd import Vmec
-from simsopt import make_optimizable
-from simsopt.mhd.vmec_diagnostics import to_gs2
+from simsopt import make_optimizabl
 from simsopt.mhd import QuasisymmetryRatioResidual
 this_path = Path(__file__).parent.resolve()
 
@@ -26,11 +25,6 @@ max_bound = 0.25
 vmec_index_scan_opt = 0
 npoints_scan = 35
 ftol = 1e-2
-s_radius = 0.25
-alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
-nlambda = 21
-nstep = 200
 
 initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 
