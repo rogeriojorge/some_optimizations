@@ -27,7 +27,7 @@ output_dir = 'test_out_nfp2_QA_initial'
 LN = 6.0
 LT = 6.0
 nstep = 6000
-dt = 0.015
+dt = 0.02
 nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
@@ -35,7 +35,7 @@ alpha_fieldline = 0
 nhermite  = 26
 nlaguerre = 12
 nu_hyper = 1.0
-ny = 40
+ny = 50
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -165,7 +165,7 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
 ###
 ### Run GS2
 ###
-print('Starting GS2 runs')
+print('Starting GX runs')
 # Default run
 start_time = time();growth_rate=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
