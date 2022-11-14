@@ -33,9 +33,9 @@ nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 26
-nlaguerre = 10
-nu_hyper = 1.5
+nhermite  = 28
+nlaguerre = 16
+nu_hyper = 0.5
 ny = 50
 
 LN_array = np.linspace(0.5,6,4)
@@ -139,10 +139,10 @@ def create_gx_inputs(ln, lt):
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {lt},       {lt}     ]')
     replace(fnamein,' dt = 0.010',f' dt = {dt}')
     replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 24',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 10',f' nlaguerre = {nlaguerre}')
-    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
-    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' nhermite  = 28',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 16',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 0.5',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 0.5',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 60',f' ny = {ny}')
     return fname
 # Function to remove spurious GX files

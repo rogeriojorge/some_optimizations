@@ -149,10 +149,10 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
     replace(fnamein,' dt = 0.010',f' dt = {dt}')
     replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 24',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 10',f' nlaguerre = {nlaguerre}')
-    replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
-    replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' nhermite  = 28',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 16',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nu_hyper_m = 0.5',f' nu_hyper_m = {nu_hyper}')
+    replace(fnamein,' nu_hyper_l = 0.5',f' nu_hyper_l = {nu_hyper}')
     if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
