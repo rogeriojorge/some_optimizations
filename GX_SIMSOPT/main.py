@@ -128,15 +128,16 @@ def replace(file_path, pattern, subst):
 # Function to create GS2 gridout and input file
 def create_gx_inputs(vmec_file):
     f_wout = vmec_file.split('/')[-1]
-    if not os.path.isfile(os.path.join(OUT_DIR,f_wout)): shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
-    shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'alpha = 0.0"',f'alpha = {alpha_fieldline}')
+    # if not os.path.isfile(os.path.join(OUT_DIR,f_wout)): shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
+    geometry_file = os.path.join(OUT_DIR,f'gx-geometry_wout_{f_wout[5:-3]}.ing')
+    shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),geometry_file)
+    replace(geometry_file,'nzgrid = 32',f'nzgrid = {nzgrid}')
+    replace(geometry_file,'npol = 2',f'npol = {npol}')
+    replace(geometry_file,'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
+    replace(geometry_file,'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
+    replace(geometry_file,'alpha = 0.0"',f'alpha = {alpha_fieldline}')
     shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+    p = subprocess.Popen(f"./convert_VMEC_to_GX f'gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
@@ -155,7 +156,7 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 30',f' ny = {ny}')
-    if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
+    # if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
@@ -164,7 +165,7 @@ def remove_gx_files(gx_input_name):
     for f in glob.glob('grid.*'): remove(f)
     for f in glob.glob('gx_wout*'): remove(f)
     for f in glob.glob('gxRun_*'): remove(f)
-    for f in glob.glob('input.*'): remove(f)
+    # for f in glob.glob('input.*'): remove(f)
     ## REMOVE ALSO INPUT FILE
     for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
@@ -255,6 +256,8 @@ for max_mode in max_modes:
         pprint("Final growth rate:", growth_rate)
     except Exception as e: pprint(e)
     ######################################
+for f in glob.glob('input.*'): remove(f)
+for f in glob.glob('wout*'): remove(f)
 if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
