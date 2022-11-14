@@ -29,12 +29,13 @@ nzgrid = 40
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 18
-nlaguerre = 6
-nu_hyper = 1.0
+nhermite  = 22
+nlaguerre = 8
+nu_hyper = 1.5
+ny = 60
 
-LN_array = np.linspace(0.5,6,3)
-LT_array = np.linspace(0.5,6,3)
+LN_array = np.linspace(0.5,6,2)
+LT_array = np.linspace(0.5,6,2)
 # n_processes_parallel = 8
 
 plot_extent_fix = False
@@ -138,6 +139,7 @@ def create_gx_inputs(ln, lt):
     replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' ny = 40',f' ny = {ny}')
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
