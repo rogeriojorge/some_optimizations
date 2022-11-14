@@ -24,17 +24,18 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 output_dir = 'test_out_nfp2_QA_initial'
 ##
-LN = 1.0
-LT = 3.0
-nstep = 6000
+LN = 6.0
+LT = 6.0
+nstep = 10000
 dt = 0.015
 nzgrid = 40
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 18
-nlaguerre = 6
+nhermite  = 26
+nlaguerre = 8
 nu_hyper = 1.0
+ny = 60
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -129,6 +130,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
     replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
+    replace(fnamein,' ny = 40',f' ny = {ny}')
     os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
