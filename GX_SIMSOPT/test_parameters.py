@@ -28,15 +28,26 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
-dt = 0.015
-nzgrid = 30
-npol = 1
-desired_normalized_toroidal_flux = 0.25
-alpha_fieldline = 0
-nhermite  = 16
-nlaguerre = 6
-nu_hyper = 0.5
+if vmec_file[-5:-3]=='QA':
+    nstep = 8000
+    dt = 0.015
+    nzgrid = 30
+    npol = 1
+    desired_normalized_toroidal_flux = 0.25
+    alpha_fieldline = 0
+    nhermite  = 16
+    nlaguerre = 6
+    nu_hyper = 0.5
+else:
+    nstep = 8000
+    dt = 0.015
+    nzgrid = 60
+    npol = 2
+    desired_normalized_toroidal_flux = 0.25
+    alpha_fieldline = 0
+    nhermite  = 16
+    nlaguerre = 6
+    nu_hyper = 0.5
 ny = 30
 ########################################
 # Go into the output directory
