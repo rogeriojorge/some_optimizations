@@ -20,3 +20,215 @@ Optimizing with max_mode = 1
 10:51:14 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 5.199778s
 10:51:24 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 4.949580s
 10:51:34 - Growth rate = 0.236100, quasisymmetry = 0.233673 with aspect ratio=7.054968 took 5.275316s
+10:51:44 - Growth rate = 0.236077, quasisymmetry = 0.233649 with aspect ratio=7.054825 took 5.189123s
+10:51:54 - Growth rate = 0.236045, quasisymmetry = 0.233681 with aspect ratio=7.054471 took 5.275630s
+10:52:04 - Growth rate = 0.236100, quasisymmetry = 0.233669 with aspect ratio=7.054972 took 5.137188s
+10:52:14 - Growth rate = 0.236085, quasisymmetry = 0.233676 with aspect ratio=7.054969 took 5.211642s
+10:52:24 - Growth rate = 0.236108, quasisymmetry = 0.233641 with aspect ratio=7.055179 took 5.293993s
+10:52:35 - Growth rate = 0.236092, quasisymmetry = 0.233751 with aspect ratio=7.054404 took 5.317119s
+10:52:45 - Growth rate = 0.236085, quasisymmetry = 0.233669 with aspect ratio=7.054971 took 5.311741s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         2.9485e+00                                    1.86e+02    
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/gxRun_wout_nfp4_QH_000_000012.nc'
+10:52:51 - Growth rate = 100.000000, quasisymmetry = 118.587701 with aspect ratio=12.435597 took 1.408820s
+10:52:59 - Growth rate = 0.222169, quasisymmetry = 0.702586 with aspect ratio=6.566580 took 5.183699s
+10:53:07 - Growth rate = 0.222169, quasisymmetry = 0.702586 with aspect ratio=6.566580 took 5.211628s
+10:53:15 - Growth rate = 0.223136, quasisymmetry = 0.702552 with aspect ratio=6.566577 took 5.307771s
+10:53:23 - Growth rate = 0.219484, quasisymmetry = 0.702131 with aspect ratio=6.566516 took 5.015131s
+10:53:31 - Growth rate = 0.217987, quasisymmetry = 0.702118 with aspect ratio=6.566194 took 5.457623s
+10:53:39 - Growth rate = 0.222146, quasisymmetry = 0.702445 with aspect ratio=6.566586 took 5.293016s
+10:53:47 - Growth rate = 0.223516, quasisymmetry = 0.702584 with aspect ratio=6.566580 took 5.166056s
+10:53:55 - Growth rate = 0.225172, quasisymmetry = 0.702012 with aspect ratio=6.566683 took 5.358071s
+10:54:03 - Growth rate = 0.219420, quasisymmetry = 0.703059 with aspect ratio=6.566155 took 5.073256s
+10:54:11 - Growth rate = 0.222185, quasisymmetry = 0.702518 with aspect ratio=6.566586 took 5.234821s
+       1              3         2.9220e+00      2.65e-02       6.18e-02       8.75e+03    
+10:54:18 - Growth rate = 0.194076, quasisymmetry = 0.314828 with aspect ratio=6.909677 took 5.176394s
+10:54:26 - Growth rate = 0.194076, quasisymmetry = 0.314828 with aspect ratio=6.909677 took 4.798624s
+10:54:33 - Growth rate = 0.194053, quasisymmetry = 0.314848 with aspect ratio=6.909676 took 5.029425s
+10:54:40 - Growth rate = 0.194798, quasisymmetry = 0.314857 with aspect ratio=6.909610 took 4.750491s
+10:54:47 - Growth rate = 0.194505, quasisymmetry = 0.314964 with aspect ratio=6.909269 took 4.780325s
+10:54:55 - Growth rate = 0.194076, quasisymmetry = 0.314831 with aspect ratio=6.909682 took 4.951806s
+10:55:02 - Growth rate = 0.193894, quasisymmetry = 0.314793 with aspect ratio=6.909677 took 4.727800s
+10:55:09 - Growth rate = 0.193110, quasisymmetry = 0.314823 with aspect ratio=6.909784 took 4.759288s
+10:55:16 - Growth rate = 0.194846, quasisymmetry = 0.314823 with aspect ratio=6.909231 took 4.980577s
+10:55:23 - Growth rate = 0.194045, quasisymmetry = 0.314829 with aspect ratio=6.909683 took 4.647766s
+       2              4         2.1001e+00      8.22e-01       1.55e-02       2.55e+03    
+10:55:31 - Growth rate = 0.159296, quasisymmetry = 0.232915 with aspect ratio=7.399510 took 5.032887s
+10:55:38 - Growth rate = 0.159296, quasisymmetry = 0.232915 with aspect ratio=7.399510 took 5.011053s
+10:55:46 - Growth rate = 0.159296, quasisymmetry = 0.232919 with aspect ratio=7.399509 took 4.831136s
+10:55:53 - Growth rate = 0.159273, quasisymmetry = 0.232919 with aspect ratio=7.399432 took 4.996187s
+10:56:01 - Growth rate = 0.159280, quasisymmetry = 0.232991 with aspect ratio=7.399066 took 5.173851s
+10:56:08 - Growth rate = 0.159280, quasisymmetry = 0.232914 with aspect ratio=7.399515 took 4.824019s
+10:56:16 - Growth rate = 0.159273, quasisymmetry = 0.232898 with aspect ratio=7.399510 took 5.152056s
+10:56:23 - Growth rate = 0.159288, quasisymmetry = 0.232887 with aspect ratio=7.399632 took 4.902575s
+10:56:30 - Growth rate = 0.159288, quasisymmetry = 0.232941 with aspect ratio=7.399024 took 5.021435s
+10:56:37 - Growth rate = 0.159280, quasisymmetry = 0.232912 with aspect ratio=7.399516 took 4.804840s
+       3              5         1.4033e+00      6.97e-01       1.55e-02       2.54e+02    
+10:56:45 - Growth rate = 0.168635, quasisymmetry = 0.177461 with aspect ratio=7.836147 took 5.053457s
+10:56:53 - Growth rate = 0.185066, quasisymmetry = 0.346119 with aspect ratio=7.407816 took 4.968987s
+10:57:01 - Growth rate = 0.160240, quasisymmetry = 0.243708 with aspect ratio=7.403674 took 4.895979s
+10:57:08 - Growth rate = 0.159550, quasisymmetry = 0.233199 with aspect ratio=7.400635 took 4.859113s
+10:57:16 - Growth rate = 0.159360, quasisymmetry = 0.232823 with aspect ratio=7.399796 took 5.083972s
+10:57:24 - Growth rate = 0.159304, quasisymmetry = 0.232882 with aspect ratio=7.399582 took 4.747354s
+10:57:32 - Growth rate = 0.159304, quasisymmetry = 0.232906 with aspect ratio=7.399528 took 5.215795s
+10:57:40 - Growth rate = 0.159280, quasisymmetry = 0.232913 with aspect ratio=7.399514 took 5.360678s
+10:57:48 - Growth rate = 0.159280, quasisymmetry = 0.232913 with aspect ratio=7.399514 took 4.971879s
+10:57:55 - Growth rate = 0.159288, quasisymmetry = 0.232917 with aspect ratio=7.399514 took 4.849971s
+10:58:03 - Growth rate = 0.159288, quasisymmetry = 0.232917 with aspect ratio=7.399436 took 5.073276s
+10:58:10 - Growth rate = 0.159280, quasisymmetry = 0.232988 with aspect ratio=7.399071 took 5.058684s
+10:58:18 - Growth rate = 0.159288, quasisymmetry = 0.232912 with aspect ratio=7.399520 took 4.996618s
+10:58:25 - Growth rate = 0.159273, quasisymmetry = 0.232896 with aspect ratio=7.399514 took 5.091885s
+10:58:33 - Growth rate = 0.159288, quasisymmetry = 0.232885 with aspect ratio=7.399636 took 4.975099s
+10:58:40 - Growth rate = 0.159296, quasisymmetry = 0.232939 with aspect ratio=7.399028 took 4.958996s
+10:58:47 - Growth rate = 0.159273, quasisymmetry = 0.232910 with aspect ratio=7.399520 took 4.904660s
+       4             13         1.4030e+00      2.55e-04       9.44e-07       1.26e+02    
+10:58:55 - Growth rate = 0.159273, quasisymmetry = 0.232911 with aspect ratio=7.399523 took 5.185076s
+10:59:03 - Growth rate = 0.159273, quasisymmetry = 0.232911 with aspect ratio=7.399523 took 4.970338s
+10:59:10 - Growth rate = 0.159280, quasisymmetry = 0.232915 with aspect ratio=7.399522 took 5.107642s
+10:59:18 - Growth rate = 0.159280, quasisymmetry = 0.232915 with aspect ratio=7.399445 took 4.973895s
+10:59:25 - Growth rate = 0.159273, quasisymmetry = 0.232987 with aspect ratio=7.399079 took 4.922284s
+10:59:32 - Growth rate = 0.159296, quasisymmetry = 0.232910 with aspect ratio=7.399528 took 4.834458s
+10:59:40 - Growth rate = 0.159273, quasisymmetry = 0.232894 with aspect ratio=7.399523 took 4.883179s
+10:59:47 - Growth rate = 0.159304, quasisymmetry = 0.232883 with aspect ratio=7.399645 took 5.078904s
+10:59:55 - Growth rate = 0.159280, quasisymmetry = 0.232937 with aspect ratio=7.399037 took 5.043500s
+11:00:02 - Growth rate = 0.159280, quasisymmetry = 0.232908 with aspect ratio=7.399529 took 5.280647s
+       5             14         1.4029e+00      1.28e-04       1.89e-06       3.79e+02    
+11:00:10 - Growth rate = 0.159273, quasisymmetry = 0.232915 with aspect ratio=7.399509 took 4.979408s
+11:00:18 - Growth rate = 0.159265, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 4.955935s
+11:00:25 - Growth rate = 0.159265, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 4.933003s
+11:00:33 - Growth rate = 0.159288, quasisymmetry = 0.232916 with aspect ratio=7.399518 took 4.836175s
+11:00:40 - Growth rate = 0.159288, quasisymmetry = 0.232916 with aspect ratio=7.399441 took 5.242690s
+11:00:48 - Growth rate = 0.159296, quasisymmetry = 0.232988 with aspect ratio=7.399076 took 4.967142s
+11:00:55 - Growth rate = 0.159280, quasisymmetry = 0.232911 with aspect ratio=7.399525 took 5.113056s
+11:01:03 - Growth rate = 0.159273, quasisymmetry = 0.232895 with aspect ratio=7.399519 took 5.018595s
+11:01:10 - Growth rate = 0.159304, quasisymmetry = 0.232884 with aspect ratio=7.399641 took 4.877090s
+11:01:17 - Growth rate = 0.159296, quasisymmetry = 0.232938 with aspect ratio=7.399033 took 5.027994s
+11:01:25 - Growth rate = 0.159273, quasisymmetry = 0.232909 with aspect ratio=7.399525 took 5.018714s
+       6             16         1.4027e+00      1.26e-04       4.72e-07       2.52e+02    
+11:01:32 - Growth rate = 0.159280, quasisymmetry = 0.232913 with aspect ratio=7.399519 took 5.133969s
+11:01:40 - Growth rate = 0.159288, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 4.846821s
+11:01:48 - Growth rate = 0.159280, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 5.010598s
+11:01:56 - Growth rate = 0.159288, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 5.003252s
+11:02:03 - Growth rate = 0.159288, quasisymmetry = 0.232912 with aspect ratio=7.399519 took 4.855257s
+       7             21         1.4027e+00      0.00e+00       0.00e+00       2.52e+02    
+`xtol` termination condition is satisfied.
+Function evaluations 21, initial cost 2.9485e+00, final cost 1.4027e+00, first-order optimality 2.52e+02.
+Final aspect ratio: 7.399519375966968
+Final mean iota: -0.8468844617167604
+Final magnetic well: -0.13382264730253657
+Final growth rate: 0.15926455
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER: powerpc64le-conda_cos7-linux-gnu   OS:    RELEASE:   DATE = Nov 14,2022  TIME = 11:02:11
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =    1.0000000000000000       0.10215819074875282        7.8504622934188746E-017   9.1401810987662605E-016   8.8598074454298726E-016   1.2336440746801089E-016
+      ZAXIS_CS =   -0.0000000000000000       0.11029377965116449       -3.8551377333753398E-017  -4.6261652800504085E-017   3.7850443200412429E-017   6.3084072000687384E-017
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  9.53E-03  7.07E-03  2.23E-02  1.102E+00  9.00E-01  1.5571E-01
+  200  4.81E-09  1.54E-09  1.17E-09  1.087E+00  9.00E-01  1.5297E-01
+  400  5.46E-11  1.65E-11  4.00E-12  1.085E+00  9.00E-01  1.5297E-01
+  574  9.78E-13  2.91E-13  7.32E-14  1.085E+00  9.00E-01  1.5297E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  8.75E-04  8.27E-04  1.33E-06  1.085E+00  9.00E-01  1.5297E-01
+  200  1.10E-09  4.54E-10  1.30E-11  1.085E+00  9.00E-01  1.5297E-01
+  400  9.64E-12  4.48E-12  1.56E-13  1.086E+00  9.00E-01  1.5297E-01
+  600  1.40E-13  5.91E-14  6.11E-15  1.086E+00  9.00E-01  1.5297E-01
+  617  9.77E-14  4.22E-14  4.74E-15  1.086E+00  9.00E-01  1.5297E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.15E-03  7.78E-04  1.80E-08  1.086E+00  9.00E-01  1.5297E-01
+  200  1.46E-08  4.71E-09  6.39E-13  1.086E+00  7.54E-01  1.5297E-01
+  400  5.41E-11  1.51E-11  6.13E-14  1.086E+00  7.54E-01  1.5297E-01
+  600  2.41E-12  8.54E-13  4.31E-15  1.086E+00  7.54E-01  1.5297E-01
+  800  1.03E-13  3.99E-14  6.31E-16  1.086E+00  7.54E-01  1.5297E-01
+  990  9.90E-15  4.07E-15  9.30E-17  1.086E+00  7.54E-01  1.5297E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    0
+
+    TOTAL COMPUTATIONAL TIME (SEC)         8.46
+    TIME TO INPUT/OUTPUT                   0.04
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.04
+    TIME IN FUNCT3D                        8.35
+       BCOVAR FIELDS                       1.30
+       FOURIER TRANSFORM                   1.46
+       INVERSE FOURIER TRANSFORM           1.37
+       FORCES AND SYMMETRIZE               1.46
+       RESIDUE                             2.11
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.13496773716052418
+Rmajor_p:  0.9986963862497157
+aspect:             7.399519375966968
+Rmajor_p/Aminor_p:  7.399519375966968
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    -2.285808328321153e-11
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 4
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     3  30   0  8.639e-01  8.639e-01  9.767e-15  1.048e+00  1.048e+00  2.459e-14
+                pi  9.706e-01  9.706e-01  3.546e-15  8.559e-01  8.559e-01  1.764e-14
+   3     8  79   0  8.125e-01  8.125e-01  1.776e-15  1.101e+00  1.101e+00  1.614e-15
+                pi  9.540e-01  9.540e-01  4.888e-15  7.587e-01  7.587e-01  3.951e-15
+   2     6  60   0  8.293e-01  8.293e-01  1.071e-14  1.084e+00  1.084e+00  5.737e-15
+                pi  9.622e-01  9.622e-01  4.269e-15  7.960e-01  7.960e-01  5.858e-15
+   0     0   0   0  9.427e-01  9.427e-01  1.672e-14  9.666e-01  9.666e-01  9.419e-15
+                pi  9.532e-01  9.532e-01  1.444e-14  9.388e-01  9.388e-01  2.365e-15
+   1     4  39   0  8.520e-01  8.520e-01  8.731e-15  1.060e+00  1.060e+00  1.173e-14
+                pi  9.689e-01  9.689e-01  1.604e-15  8.375e-01  8.375e-01  1.419e-14
+   0     1  10   0  9.006e-01  9.006e-01  8.013e-15  1.009e+00  1.009e+00  2.002e-14
+                pi  9.684e-01  9.684e-01  5.732e-16  9.020e-01  9.020e-01  5.293e-15
+   3     9  89   0  8.046e-01  8.046e-01  2.346e-15  1.109e+00  1.109e+00  9.013e-15
+                pi  9.491e-01  9.491e-01  1.720e-14  7.385e-01  7.385e-01  1.954e-15
+   2     7  70   0  8.201e-01  8.201e-01  8.664e-15  1.093e+00  1.093e+00  1.666e-14
+                pi  9.581e-01  9.581e-01  6.837e-15  7.765e-01  7.765e-01  5.719e-16
+   1     5  49   0  8.405e-01  8.405e-01  1.149e-14  1.072e+00  1.072e+00  1.574e-14
+                pi  9.661e-01  9.661e-01  3.333e-15  8.176e-01  8.176e-01  6.926e-15
+   0     2  20   0  8.797e-01  8.797e-01  3.786e-15  1.031e+00  1.031e+00  2.799e-15
+                pi  9.709e-01  9.709e-01  8.118e-15  8.776e-01  8.776e-01  2.024e-15
+Writing output to /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH/gx'
+Whole optimization took 793.743552s
