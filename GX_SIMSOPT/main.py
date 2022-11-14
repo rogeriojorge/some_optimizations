@@ -136,11 +136,11 @@ def create_gx_inputs(vmec_file):
     replace(geometry_file,'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
     replace(geometry_file,'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
     replace(geometry_file,'alpha = 0.0"',f'alpha = {alpha_fieldline}')
-    shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    p = subprocess.Popen(f"./convert_VMEC_to_GX f'gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+    if not os.path.isfile(os.path.join(OUT_DIR,'convert_VMEC_to_GX')): shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
-    os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    # os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxRun_wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
@@ -256,8 +256,11 @@ for max_mode in max_modes:
         pprint("Final growth rate:", growth_rate)
     except Exception as e: pprint(e)
     ######################################
+# Remove final files
+os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
 for f in glob.glob('input.*'): remove(f)
 for f in glob.glob('wout*'): remove(f)
+# Create final VMEC input
 if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
