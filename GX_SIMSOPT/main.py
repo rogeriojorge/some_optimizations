@@ -163,8 +163,8 @@ def create_gx_inputs(vmec_file):
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
     f_wout_only = gx_input_name[11:]
-    print(f'removing grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}')
-    try: os.remove(f'grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}')
+    # print(f'removing grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}')
+    try: os.remove(f'grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}')
     except Exception as e: print(e)
     try: os.remove(f'{gx_input_name}.in')
     except Exception as e: print(e)
