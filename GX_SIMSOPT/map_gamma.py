@@ -15,6 +15,7 @@ import matplotlib.pyplot as plt
 from shutil import move, copymode
 from joblib import Parallel, delayed
 from simsopt.mhd import Vmec
+matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
