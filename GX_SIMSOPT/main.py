@@ -139,8 +139,8 @@ def create_gx_inputs(vmec_file):
     if not os.path.isfile(os.path.join(OUT_DIR,'convert_VMEC_to_GX')): shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
-    try: os.remove(geometry_file)
-    except Exception as e: print(e)
+    # try: os.remove(geometry_file)
+    # except Exception as e: print(e)
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     # os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxRun_wout_{f_wout[5:-3]}"
