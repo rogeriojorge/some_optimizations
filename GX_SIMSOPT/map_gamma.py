@@ -33,9 +33,9 @@ nhermite  = 18
 nlaguerre = 6
 nu_hyper = 1.0
 
-LN_array = np.linspace(0.5,6,16)
-LT_array = np.linspace(0.5,6,16)
-n_processes_parallel = 8
+LN_array = np.linspace(0.5,6,3)
+LT_array = np.linspace(0.5,6,3)
+# n_processes_parallel = 8
 plot_min = 0
 plot_max = 0.40
 
@@ -168,10 +168,11 @@ def run_gx(ln, lt):
     return max_growthrate_gamma
 print('Starting GX scan')
 start_time = time()
-growth_rate_array = np.reshape(Parallel(n_jobs=n_processes_parallel)(delayed(run_gx)(ln, lt) for lt in LT_array for ln in LN_array),(len(LT_array),len(LN_array)))
-# for i, ln in enumerate(LN_array):
-#     for j, lt in enumerate(LT_array):
-#         growth_rate_array[i,j]=run_gs2(ln, lt)
+# growth_rate_array = np.reshape(Parallel(n_jobs=n_processes_parallel)(delayed(run_gx)(ln, lt) for lt in LT_array for ln in LN_array),(len(LT_array),len(LN_array)))
+growth_rate_array = np.zeros((len(LN_array),len(LT_array)))
+for i, ln in enumerate(LN_array):
+    for j, lt in enumerate(LT_array):
+        growth_rate_array[i,j]=run_gx(ln, lt)
 print(f'Running GX scan took {time()-start_time}s')
 ## Save growth rates to csv file
 print('growth rates:')
