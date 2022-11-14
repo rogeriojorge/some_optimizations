@@ -15,11 +15,11 @@ import booz_xform as bx
 #################################
 max_mode = 1
 QA_or_QH = 'QH'
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 MAXITER=150
-quasisymmetry = False
+quasisymmetry = True
 
-growth_rate_weight=1e0
+growth_rate_weight=1e1
 
 plt_opt_res = True
 plot_vmec = True
