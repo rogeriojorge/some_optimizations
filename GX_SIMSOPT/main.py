@@ -139,6 +139,8 @@ def create_gx_inputs(vmec_file):
     if not os.path.isfile(os.path.join(OUT_DIR,'convert_VMEC_to_GX')): shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
+    try: os.remove(geometry_file)
+    except Exception as e: print(e)
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     # os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxRun_wout_{f_wout[5:-3]}"
@@ -160,8 +162,21 @@ def create_gx_inputs(vmec_file):
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
-    for f in glob.glob('*.restart.nc'): remove(f)
-    for f in glob.glob('*.log'): remove(f)
+    f_wout_only = gx_input_name[11:]
+    try: os.remove(f'grid.gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}')
+    except Exception as e: print(e)
+    try: os.remove(f'{gx_input_name}.in')
+    except Exception as e: print(e)
+    try: os.remove(f'{gx_input_name}.nc')
+    except Exception as e: print(e)
+    try: os.remove(f'{gx_input_name}.log')
+    except Exception as e: print(e)
+    try: os.remove(f'{gx_input_name}.restart.nc')
+    except Exception as e: print(e)
+    try: os.remove(f'gx_wout_{f_wout_only}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc')
+    except Exception as e: print(e)
+    # for f in glob.glob('*.restart.nc'): remove(f)
+    # for f in glob.glob('*.log'): remove(f)
     # for f in glob.glob('grid.*'): remove(f)
     # for f in glob.glob('gx_wout*'): remove(f)
     # for f in glob.glob('gxRun_*'): remove(f)
@@ -214,10 +229,16 @@ if MPI.COMM_WORLD.rank == 0:
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
     prob.x = dofss
+    objective = prob.objective()
+    try:
+        for objective_file in glob.glob(os.path.join(OUT_DIR,f"input*")): os.remove(objective_file)
+    except Exception as e: pass
     try:
         for objective_file in glob.glob(os.path.join(OUT_DIR,f"wout*")): os.remove(objective_file)
     except Exception as e: pass
-    return prob.objective()
+    try: os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    except Exception as e: pass
+    return objective
 for max_mode in max_modes:
     output_path_parameters=f'output_{optimizer}_maxmode{max_mode}.csv'
     surf.fix_all()
@@ -257,9 +278,12 @@ for max_mode in max_modes:
     except Exception as e: pprint(e)
     ######################################
 # Remove final files
-os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-for f in glob.glob('input.*'): remove(f)
-for f in glob.glob('wout*'): remove(f)
+try: os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+except Exception as e: pprint(e)
+try:
+    for f in glob.glob('input.*'): remove(f)
+    for f in glob.glob('wout*'): remove(f)
+except Exception as e: pprint(e)
 # Create final VMEC input
 if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
