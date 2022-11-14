@@ -162,14 +162,14 @@ def create_gx_inputs(vmec_file):
 def remove_gx_files(gx_input_name):
     for f in glob.glob('*.restart.nc'): remove(f)
     for f in glob.glob('*.log'): remove(f)
-    for f in glob.glob('grid.*'): remove(f)
-    for f in glob.glob('gx_wout*'): remove(f)
-    for f in glob.glob('gxRun_*'): remove(f)
+    # for f in glob.glob('grid.*'): remove(f)
+    # for f in glob.glob('gx_wout*'): remove(f)
+    # for f in glob.glob('gxRun_*'): remove(f)
     # for f in glob.glob('input.*'): remove(f)
     ## REMOVE ALSO INPUT FILE
-    for f in glob.glob('*.in'): remove(f)
+    # for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
-    for f in glob.glob(f'{gx_input_name}.nc'): remove(f)
+    # for f in glob.glob(f'{gx_input_name}.nc'): remove(f)
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
