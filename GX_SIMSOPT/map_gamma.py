@@ -27,19 +27,19 @@ output_dir = 'out_map_nfp4_QH_initial'
 # vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 # output_dir = 'out_map_nfp2_QA_initial'
 
-nstep = 9000
-dt = 0.01
+nstep = 12000
+dt = 0.012
 nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 26
 nlaguerre = 10
-nu_hyper = 1.0
-ny = 60
+nu_hyper = 1.5
+ny = 50
 
-LN_array = np.linspace(0.5,6,3)
-LT_array = np.linspace(0.5,6,3)
+LN_array = np.linspace(0.5,6,4)
+LT_array = np.linspace(0.5,6,4)
 # n_processes_parallel = 8
 
 plot_extent_fix = False
