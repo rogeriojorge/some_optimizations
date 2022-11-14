@@ -23,7 +23,7 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
 output_dir = 'out_map_nfp4_QH_initial'
 
-nstep = 6000
+nstep = 10000
 dt = 0.015
 nzgrid = 40
 npol = 3
@@ -36,6 +36,8 @@ nu_hyper = 1.0
 LN_array = np.linspace(0.5,6,3)
 LT_array = np.linspace(0.5,6,3)
 # n_processes_parallel = 8
+
+plot_extent_fix = False
 plot_min = 0
 plot_max = 0.40
 
@@ -186,7 +188,7 @@ clb.ax.set_title(r'$\gamma$', usetex=True)
 plt.xlabel(r'$a/L_n$')
 plt.ylabel(r'$a/L_T$')
 matplotlib.rc('font', size=16)
-plt.clim(plot_min,plot_max) 
+if plot_extent_fix: plt.clim(plot_min,plot_max) 
 plt.savefig(os.path.join(OUT_DIR,'gx_scan.pdf'), format='pdf', bbox_inches='tight')
 # plt.show()
 plt.close()
