@@ -16,7 +16,7 @@ from shutil import move, copymode
 from scipy.optimize import dual_annealing
 from matplotlib.animation import FuncAnimation
 from simsopt.mhd import Vmec
-from simsopt import make_optimizabl
+from simsopt import make_optimizable
 from simsopt.mhd import QuasisymmetryRatioResidual
 this_path = Path(__file__).parent.resolve()
 
