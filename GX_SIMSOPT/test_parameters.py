@@ -28,16 +28,16 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
+nstep = 9000
 dt = 0.01
 nzgrid = 50
 npol = 2
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 26
-nlaguerre = 12
+nhermite  = 24
+nlaguerre = 10
 nu_hyper = 1.0
-ny = 30
+ny = 60
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -123,16 +123,16 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper):
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
-    replace(fnamein,' nstep  = 7000',f' nstep  = {nstep}')
+    replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')
     replace(fnamein,' fprim = [ 1.0,       1.0     ]',f' fprim = [ {LN},       {LN}     ]')
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
-    replace(fnamein,' dt = 0.015',f' dt = {dt}')
+    replace(fnamein,' dt = 0.010',f' dt = {dt}')
     replace(fnamein,' ntheta = 80',f' ntheta = {2*nzgrid}')
-    replace(fnamein,' nhermite  = 18',f' nhermite = {nhermite}')
-    replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
+    replace(fnamein,' nhermite  = 24',f' nhermite = {nhermite}')
+    replace(fnamein,' nlaguerre = 10',f' nlaguerre = {nlaguerre}')
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
-    replace(fnamein,' ny = 40',f' ny = {ny}')
+    replace(fnamein,' ny = 60',f' ny = {ny}')
     os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
