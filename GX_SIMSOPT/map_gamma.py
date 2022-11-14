@@ -107,19 +107,19 @@ def replace(file_path, pattern, subst):
 # Function to create GX gridout and input file
 def create_gx_inputs(ln, lt):
     f_wout = vmec_file.split('/')[-1]
-    shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
-    #gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
-    shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
-    replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'alpha = 0.0"',f'alpha = {alpha_fieldline}')
-    shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
-    p.wait()
+    if not os.path.isfile(os.path.join(OUT_DIR,f_wout)):
+        shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
-    os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    if not os.path.isfile(os.path.join(OUT_DIR,gridout_file)):
+        shutil.copy(os.path.join(this_path,'gx-geometry-sample.ing'),os.path.join(OUT_DIR,'gx-geometry-sample.ing'))
+        replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'nzgrid = 32',f'nzgrid = {nzgrid}')
+        replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'npol = 2',f'npol = {npol}')
+        replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'desired_normalized_toroidal_flux = 0.12755',f'desired_normalized_toroidal_flux = {desired_normalized_toroidal_flux:.3f}')
+        replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'vmec_file = "wout_gx.nc"',f'vmec_file = "{f_wout}"')
+        replace(os.path.join(OUT_DIR,'gx-geometry-sample.ing'),'alpha = 0.0"',f'alpha = {alpha_fieldline}')
+        shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+        p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry-sample".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
+        p.wait()
     fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{ln}_lt{lt}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
@@ -134,7 +134,6 @@ def create_gx_inputs(ln, lt):
     replace(fnamein,' nlaguerre = 6',f' nlaguerre = {nlaguerre}')
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
-    os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
@@ -189,6 +188,9 @@ plt.savefig(os.path.join(OUT_DIR,'gx_scan.pdf'), format='pdf', bbox_inches='tigh
 # plt.show()
 plt.close()
 
+f_wout = vmec_file.split('/')[-1]
+os.remove(os.path.join(OUT_DIR,f_wout))
+os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
 
 for f in glob.glob('*.out'): remove(f)
 ## REMOVE ALSO INPUT FILES
