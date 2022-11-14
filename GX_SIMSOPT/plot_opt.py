@@ -13,14 +13,18 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 3
-QA_or_QH = 'QH'
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
-MAXITER=150
-quasisymmetry = False
+QA_or_QH = 'QA'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 
-if optimizer == 'dual_annealing': growth_rate_weight=1e3
-else: growth_rate_weight=1e1
+max_mode = 3
+MAXITER=150
+
+if optimizer == 'dual_annealing':
+    growth_rate_weight=1e3
+    quasisymmetry = False
+else:
+    quasisymmetry = True
+    growth_rate_weight=1e1
 
 plt_opt_res = True
 plot_vmec = True
@@ -60,23 +64,26 @@ if plt_opt_res:
     plt.yscale('log')
     # plt.ylim([0,1.])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
-    plt.legend()
+    plt.legend();plt.tight_layout()
     plt.savefig(out_dir+'/growth_rate_over_opt.pdf')
+    
     df.plot(use_index=True, y=['aspect'])#,'iota'])#,'normalized_time'])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
-    plt.legend()
+    plt.legend();plt.tight_layout()
     plt.savefig(out_dir+'/aspect_over_opt.pdf')
+    
     df.plot(use_index=True, y=['iota'])#,'iota'])#,'normalized_time'])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
-    plt.legend()
+    plt.legend();plt.tight_layout()
     plt.savefig(out_dir+'/iota_over_opt.pdf')
+    
     df.plot(use_index=True, y=['quasisymmetry_total'])#,'iota'])#,'normalized_time'])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
-    plt.yscale('log')
-    plt.legend()
+    plt.yscale('log');plt.legend();plt.tight_layout()
     plt.savefig(out_dir+'/qs_total_over_opt.pdf')
+    
     df.plot.scatter(x='growth_rate', y='quasisymmetry_total')
-    plt.yscale('log');plt.xscale('log')
+    plt.yscale('log');plt.xscale('log');plt.tight_layout()
     plt.savefig(out_dir+'/qs_total_vs_growth_rate.pdf')
     plt.show()
 #################################
