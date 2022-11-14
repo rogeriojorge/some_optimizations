@@ -1,0 +1,22 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Initial aspect ratio: 7.054968603286797
+Initial mean iota: -1.069371712290816
+Initial magnetic well: -0.17849760370469805
+Initial growth rate: 0.23609218
+## Now calculating total objective function ##
+10:50:53 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 5.332879s
+Total objective before optimization: 5.896932589707983
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+10:51:04 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 5.240307s
+10:51:14 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 5.199778s
+10:51:24 - Growth rate = 0.236092, quasisymmetry = 0.233672 with aspect ratio=7.054969 took 4.949580s
+10:51:34 - Growth rate = 0.236100, quasisymmetry = 0.233673 with aspect ratio=7.054968 took 5.275316s
