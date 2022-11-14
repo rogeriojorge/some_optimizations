@@ -290,7 +290,8 @@ try:
     for f in glob.glob('wout*'): remove(f)
 except Exception as e: pprint(e)
 # Create final VMEC input
-if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
+# if MPI.COMM_WORLD.rank == 0: 
+vmec.write_input(os.path.join(OUT_DIR, f'input.final'))
 ######################################
 ### PLOT RESULT
 ######################################
@@ -301,7 +302,8 @@ if plot_result and MPI.COMM_WORLD.rank==0:
     vmec_final.indata.ftol_array[:3]  = [1e-12, 1e-13, 1e-14]#, 1e-15, 1e-15]
     vmec_final.run()
     shutil.move(os.path.join(OUT_DIR, f"wout_final_000_000000.nc"), os.path.join(OUT_DIR, f"wout_final.nc"))
-    os.remove(os.path.join(OUT_DIR, f'input.final_000_000000'))
+    try: os.remove(os.path.join(OUT_DIR, f'input.final_000_000000'))
+    except Exception as e: pass
     try: vmecPlot2.main(file=os.path.join(OUT_DIR, f"wout_final.nc"), name='EP_opt', figures_folder=OUT_DIR)
     except Exception as e: print(e)
     pprint('Creating Boozer class for vmec_final')
