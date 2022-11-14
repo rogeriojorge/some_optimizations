@@ -86,7 +86,7 @@ def gammabyky(stellFile):
     max_growthrate_gamma = growthRateX[max_index]
     max_growthrate_omega = realFrequencyX[max_index]
     max_growthrate_ky = kyX[max_index]
-    
+
     numRows = 1
     numCols = 3
 
@@ -263,6 +263,8 @@ if run_scan:
     for point1 in np.linspace(min_bound,max_bound,npoints_scan):
         vmec.x = [point1 if count==vmec_index_scan_opt else vx for count,vx in enumerate(vmec.x)]
         growth_rate = optTurbulence.J()
+try: os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+except Exception as e: print(e)
 if plot_result:
     df_scan = pd.read_csv(output_path_parameters_scan)
 

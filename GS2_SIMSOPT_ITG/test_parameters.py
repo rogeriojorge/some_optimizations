@@ -25,7 +25,7 @@ s_radius = 0.25
 alpha_fieldline = 0
 ##
 LN = 1.0
-LT = 4.0
+LT = 3.0
 nphi= 81
 nlambda = 15
 nperiod = 6
