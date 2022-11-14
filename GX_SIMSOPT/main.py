@@ -34,14 +34,14 @@ start_time = time.time()
 ############################################################################
 MAXITER = 150
 max_modes = [1]
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = True
 plot_result = True
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
-weight_optTurbulence = 10.0
+weight_optTurbulence = 100.0
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
