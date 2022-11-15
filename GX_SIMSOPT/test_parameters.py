@@ -20,8 +20,10 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/see_min/wout_nfp2_QA_000_000000.nc'
-output_dir = 'test_out_nfp2_QA_QA_GS2'
+# vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/see_min/wout_nfp2_QA_000_000000.nc'
+# output_dir = 'test_out_nfp2_QA_QA_GS2'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp2_QA_QA/wout_final.nc'
+output_dir = 'test_out_nfp2_QA_QA_least_squares'
 # vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
 # output_dir = 'test_out_nfp2_QA_dual_annealing'
 # vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA/see_min/wout_nfp2_QA_000_000000.nc'
