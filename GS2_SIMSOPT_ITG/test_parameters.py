@@ -19,7 +19,7 @@ from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT/wout_nfp2_QA.nc'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
 output_dir = 'test_out_nfp2_QA_initial'
 s_radius = 0.25
 alpha_fieldline = 0
