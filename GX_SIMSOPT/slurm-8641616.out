@@ -1,0 +1,913 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Initial aspect ratio: 8.000967056664201
+Initial mean iota: -1.2414619577370025
+Initial magnetic well: -0.014518732731757817
+Initial growth rate: 0.32905445
+## Now calculating total objective function ##
+19:14:54 - Growth rate = 0.329054, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 7.237281s
+Total objective before optimization: 10.827682872808442
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+19:15:04 - Growth rate = 0.329054, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 7.145840s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:15:15 - Growth rate = 0.231515, quasisymmetry = 18.449110 with aspect ratio=7.957624 took 7.199222s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000051.nc'
+19:15:22 - Growth rate = 100.000000, quasisymmetry = 116.037835 with aspect ratio=7.963921 took 1.520338s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:15:40 - Growth rate = 0.172820, quasisymmetry = 7.919912 with aspect ratio=7.878255 took 7.239587s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000057.nc'
+19:15:53 - Growth rate = 100.000000, quasisymmetry = 45.075223 with aspect ratio=7.459232 took 1.478340s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:16:04 - Growth rate = 0.174628, quasisymmetry = 9.286397 with aspect ratio=7.895456 took 7.768606s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:16:16 - Growth rate = 0.152985, quasisymmetry = 12.131448 with aspect ratio=7.863756 took 7.804599s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000074.nc'
+19:16:37 - Growth rate = 100.000000, quasisymmetry = 13.723034 with aspect ratio=7.863756 took 1.386492s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000076.nc'
+19:16:52 - Growth rate = 100.000000, quasisymmetry = 175.317725 with aspect ratio=7.863756 took 0.966210s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000081.nc'
+19:17:01 - Growth rate = 100.000000, quasisymmetry = 21.146319 with aspect ratio=8.131904 took 0.951713s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000082.nc'
+19:17:07 - Growth rate = 100.000000, quasisymmetry = 140.587313 with aspect ratio=7.815907 took 0.918532s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:17:19 - Growth rate = 0.152985, quasisymmetry = 12.131448 with aspect ratio=7.863756 took 7.902393s
+19:17:31 - Growth rate = 0.152882, quasisymmetry = 12.186881 with aspect ratio=7.863502 took 7.757058s
+19:17:44 - Growth rate = 0.153398, quasisymmetry = 12.263866 with aspect ratio=7.864042 took 7.797436s
+19:17:56 - Growth rate = 0.153001, quasisymmetry = 12.198816 with aspect ratio=7.863760 took 7.754812s
+19:18:08 - Growth rate = 0.152819, quasisymmetry = 12.271652 with aspect ratio=7.863886 took 7.878792s
+19:18:20 - Growth rate = 0.152375, quasisymmetry = 12.322113 with aspect ratio=7.865937 took 8.174132s
+19:18:33 - Growth rate = 0.149171, quasisymmetry = 11.799487 with aspect ratio=7.899575 took 7.795877s
+19:18:45 - Growth rate = 0.156307, quasisymmetry = 11.959560 with aspect ratio=7.665565 took 7.907415s
+19:18:57 - Growth rate = 0.154064, quasisymmetry = 12.395065 with aspect ratio=7.852676 took 7.904250s
+19:19:09 - Growth rate = 0.153326, quasisymmetry = 12.156944 with aspect ratio=7.863505 took 7.795764s
+19:19:21 - Growth rate = 0.153001, quasisymmetry = 12.112192 with aspect ratio=7.863756 took 7.816857s
+19:19:34 - Growth rate = 0.152938, quasisymmetry = 12.115172 with aspect ratio=7.863876 took 7.842468s
+19:19:46 - Growth rate = 0.152724, quasisymmetry = 12.316354 with aspect ratio=7.865429 took 7.954066s
+19:19:58 - Growth rate = 0.152930, quasisymmetry = 12.198648 with aspect ratio=7.853036 took 7.851938s
+19:20:10 - Growth rate = 0.154127, quasisymmetry = 12.538924 with aspect ratio=7.861258 took 7.771182s
+19:20:22 - Growth rate = 0.152922, quasisymmetry = 12.132180 with aspect ratio=7.863623 took 7.770636s
+19:20:35 - Growth rate = 0.153041, quasisymmetry = 12.113501 with aspect ratio=7.863771 took 7.822759s
+19:20:47 - Growth rate = 0.152977, quasisymmetry = 12.131424 with aspect ratio=7.863756 took 7.794074s
+19:20:59 - Growth rate = 0.152977, quasisymmetry = 12.131742 with aspect ratio=7.863756 took 8.032287s
+19:21:11 - Growth rate = 0.153009, quasisymmetry = 12.126902 with aspect ratio=7.863803 took 7.841964s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/scipy/optimize/_dual_annealing.py:418: RuntimeWarning: Maximum number of function evaluations has been exceeded.
+  mres = self.minimizer(self.func_wrapper.fun, x, **self.kwargs)
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:21:24 - Growth rate = 0.144112, quasisymmetry = 13.344115 with aspect ratio=7.894147 took 7.931221s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:21:44 - Growth rate = 0.141844, quasisymmetry = 12.115872 with aspect ratio=7.894074 took 7.763931s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000180.nc'
+19:21:56 - Growth rate = 100.000000, quasisymmetry = 24.988497 with aspect ratio=7.806088 took 0.933565s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000190.nc'
+19:22:01 - Growth rate = 100.000000, quasisymmetry = 7.355244 with aspect ratio=7.894074 took 0.879885s
+19:22:13 - Growth rate = 0.148029, quasisymmetry = 11.109428 with aspect ratio=7.894074 took 7.890244s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:22:33 - Growth rate = 0.132128, quasisymmetry = 66.195900 with aspect ratio=7.810290 took 7.753158s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:23:00 - Growth rate = 0.132128, quasisymmetry = 66.195900 with aspect ratio=7.810290 took 7.783013s
+19:23:12 - Growth rate = 0.131779, quasisymmetry = 66.621707 with aspect ratio=7.809440 took 7.828781s
+19:23:24 - Growth rate = 0.131613, quasisymmetry = 66.510269 with aspect ratio=7.809897 took 7.785121s
+19:23:35 - Growth rate = 0.132120, quasisymmetry = 66.205795 with aspect ratio=7.810289 took 7.802814s
+19:23:47 - Growth rate = 0.132089, quasisymmetry = 66.793106 with aspect ratio=7.810425 took 7.829095s
+19:23:59 - Growth rate = 0.132430, quasisymmetry = 67.620800 with aspect ratio=7.809973 took 7.974382s
+19:24:11 - Growth rate = 0.128520, quasisymmetry = 67.774134 with aspect ratio=7.847955 took 7.798764s
+19:24:23 - Growth rate = 0.132073, quasisymmetry = 62.045761 with aspect ratio=7.613971 took 7.715170s
+19:24:34 - Growth rate = 0.153477, quasisymmetry = 66.823856 with aspect ratio=7.798834 took 7.787313s
+19:24:46 - Growth rate = 0.131795, quasisymmetry = 65.625536 with aspect ratio=7.809911 took 7.816081s
+19:24:58 - Growth rate = 0.132152, quasisymmetry = 66.098426 with aspect ratio=7.810287 took 7.827234s
+19:25:09 - Growth rate = 0.132097, quasisymmetry = 66.144131 with aspect ratio=7.810455 took 7.807153s
+19:25:21 - Growth rate = 0.131399, quasisymmetry = 66.725616 with aspect ratio=7.811464 took 7.765979s
+19:25:33 - Growth rate = 0.132335, quasisymmetry = 66.533563 with aspect ratio=7.799442 took 7.774745s
+19:25:45 - Growth rate = 0.133699, quasisymmetry = 68.351030 with aspect ratio=7.807652 took 8.076365s
+19:25:57 - Growth rate = 0.132081, quasisymmetry = 66.247871 with aspect ratio=7.810160 took 7.815405s
+19:26:08 - Growth rate = 0.132097, quasisymmetry = 66.066394 with aspect ratio=7.810304 took 7.824911s
+19:26:20 - Growth rate = 0.132128, quasisymmetry = 66.195389 with aspect ratio=7.810290 took 7.815232s
+19:26:32 - Growth rate = 0.132120, quasisymmetry = 66.196580 with aspect ratio=7.810290 took 7.876983s
+19:26:44 - Growth rate = 0.132120, quasisymmetry = 66.196062 with aspect ratio=7.810356 took 7.746133s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/scipy/optimize/_dual_annealing.py:418: RuntimeWarning: Maximum number of function evaluations has been exceeded.
+  mres = self.minimizer(self.func_wrapper.fun, x, **self.kwargs)
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:26:58 - Growth rate = 0.753151, quasisymmetry = 350.086745 with aspect ratio=7.608881 took 7.207727s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000284.nc'
+19:27:13 - Growth rate = 100.000000, quasisymmetry = 466.097145 with aspect ratio=7.842179 took 0.969079s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000290.nc'
+19:27:37 - Growth rate = 100.000000, quasisymmetry = 235.642988 with aspect ratio=7.768816 took 1.378986s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000294.nc'
+19:27:42 - Growth rate = 100.000000, quasisymmetry = 70.044228 with aspect ratio=7.781149 took 1.051563s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:27:57 - Growth rate = 0.118375, quasisymmetry = 59.598002 with aspect ratio=7.849585 took 7.795604s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000305.nc'
+19:28:03 - Growth rate = 100.000000, quasisymmetry = 174.450850 with aspect ratio=7.850455 took 0.886480s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000306.nc'
+19:28:10 - Growth rate = 100.000000, quasisymmetry = 35.510357 with aspect ratio=7.849585 took 1.368706s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:28:39 - Growth rate = 0.133762, quasisymmetry = 16.497073 with aspect ratio=7.915127 took 7.777860s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000314.nc'
+19:28:46 - Growth rate = 100.000000, quasisymmetry = 68.144241 with aspect ratio=7.882505 took 0.987558s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000318.nc'
+19:28:53 - Growth rate = 100.000000, quasisymmetry = 21.827850 with aspect ratio=7.676248 took 0.981612s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:29:13 - Growth rate = 0.118375, quasisymmetry = 59.598002 with aspect ratio=7.849585 took 7.806414s
+19:29:25 - Growth rate = 0.118525, quasisymmetry = 59.957560 with aspect ratio=7.848822 took 7.779897s
+19:29:38 - Growth rate = 0.117875, quasisymmetry = 60.020458 with aspect ratio=7.849164 took 7.862505s
+19:29:50 - Growth rate = 0.118367, quasisymmetry = 59.605354 with aspect ratio=7.849584 took 7.851583s
+19:30:02 - Growth rate = 0.118025, quasisymmetry = 60.076318 with aspect ratio=7.849722 took 7.714353s
+19:30:15 - Growth rate = 0.117827, quasisymmetry = 60.967581 with aspect ratio=7.849260 took 7.718765s
+19:30:27 - Growth rate = 0.170665, quasisymmetry = 61.815350 with aspect ratio=7.889625 took 7.727009s
+19:30:39 - Growth rate = 0.168120, quasisymmetry = 55.853288 with aspect ratio=7.650084 took 7.829117s
+19:30:52 - Growth rate = 0.116748, quasisymmetry = 59.918237 with aspect ratio=7.838042 took 7.933541s
+19:31:04 - Growth rate = 0.119469, quasisymmetry = 58.938919 with aspect ratio=7.849255 took 7.696497s
+19:31:16 - Growth rate = 0.118406, quasisymmetry = 59.513846 with aspect ratio=7.849579 took 7.725340s
+19:31:28 - Growth rate = 0.118731, quasisymmetry = 59.531443 with aspect ratio=7.849753 took 7.745441s
+19:31:41 - Growth rate = 0.120945, quasisymmetry = 60.049776 with aspect ratio=7.850751 took 7.818769s
+19:31:53 - Growth rate = 0.119041, quasisymmetry = 59.980966 with aspect ratio=7.838451 took 7.816590s
+19:32:05 - Growth rate = 0.120524, quasisymmetry = 61.389129 with aspect ratio=7.847200 took 7.843059s
+19:32:18 - Growth rate = 0.118589, quasisymmetry = 59.656299 with aspect ratio=7.849421 took 7.843388s
+19:32:30 - Growth rate = 0.118247, quasisymmetry = 59.500800 with aspect ratio=7.849612 took 7.785414s
+19:32:43 - Growth rate = 0.118367, quasisymmetry = 59.598475 with aspect ratio=7.849585 took 7.957952s
+19:32:55 - Growth rate = 0.118375, quasisymmetry = 59.598435 with aspect ratio=7.849585 took 7.834380s
+19:33:07 - Growth rate = 0.118303, quasisymmetry = 59.591501 with aspect ratio=7.849655 took 7.819377s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/scipy/optimize/_dual_annealing.py:418: RuntimeWarning: Maximum number of function evaluations has been exceeded.
+  mres = self.minimizer(self.func_wrapper.fun, x, **self.kwargs)
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:33:20 - Growth rate = 0.193403, quasisymmetry = 72.368751 with aspect ratio=7.813150 took 8.010014s
+19:33:32 - Growth rate = 0.121318, quasisymmetry = 66.922125 with aspect ratio=7.824931 took 7.710928s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000403.nc'
+19:33:42 - Growth rate = 100.000000, quasisymmetry = 99.344580 with aspect ratio=8.158141 took 0.955212s
+19:33:55 - Growth rate = 0.246632, quasisymmetry = 53.984709 with aspect ratio=7.060299 took 7.782619s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000415.nc'
+19:34:07 - Growth rate = 100.000000, quasisymmetry = 53.874160 with aspect ratio=7.062199 took 0.905118s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:34:20 - Growth rate = 0.254558, quasisymmetry = 59.217847 with aspect ratio=7.060299 took 7.967192s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000423.nc'
+19:34:28 - Growth rate = 100.000000, quasisymmetry = 389.354870 with aspect ratio=7.060299 took 1.379721s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:34:48 - Growth rate = 0.199457, quasisymmetry = 50.658412 with aspect ratio=6.838257 took 7.802914s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000440.nc'
+19:34:54 - Growth rate = 100.000000, quasisymmetry = 53.793145 with aspect ratio=6.835892 took 0.927713s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:35:32 - Growth rate = 0.390481, quasisymmetry = 51.633625 with aspect ratio=6.722303 took 7.788915s
+19:35:45 - Growth rate = 0.235048, quasisymmetry = 41.353627 with aspect ratio=6.287000 took 7.805289s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:36:07 - Growth rate = 0.238706, quasisymmetry = 41.545332 with aspect ratio=6.288607 took 7.753234s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:36:19 - Growth rate = 0.143644, quasisymmetry = 56.792533 with aspect ratio=6.287790 took 7.876181s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000518.nc'
+19:36:27 - Growth rate = 100.000000, quasisymmetry = 16.749052 with aspect ratio=6.287790 took 1.411636s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000519.nc'
+19:36:33 - Growth rate = 100.000000, quasisymmetry = 214.496407 with aspect ratio=6.287790 took 1.329767s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000520.nc'
+19:36:40 - Growth rate = 100.000000, quasisymmetry = 245.003426 with aspect ratio=6.287790 took 0.967383s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:37:00 - Growth rate = 0.145857, quasisymmetry = 42.130951 with aspect ratio=6.329109 took 7.855061s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000534.nc'
+19:37:12 - Growth rate = 100.000000, quasisymmetry = 38.935715 with aspect ratio=6.329562 took 1.386445s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:37:25 - Growth rate = 0.156347, quasisymmetry = 8.888656 with aspect ratio=6.460373 took 7.768245s
+19:37:36 - Growth rate = 0.140948, quasisymmetry = 6.660296 with aspect ratio=6.454370 took 7.758492s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000594.nc'
+19:37:52 - Growth rate = 100.000000, quasisymmetry = 28.623386 with aspect ratio=6.409375 took 0.893682s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:38:03 - Growth rate = 0.128425, quasisymmetry = 7.435877 with aspect ratio=6.176982 took 7.778604s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:38:15 - Growth rate = 0.135484, quasisymmetry = 8.802230 with aspect ratio=6.171155 took 7.865381s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:38:28 - Growth rate = 0.128822, quasisymmetry = 10.939221 with aspect ratio=5.943373 took 7.728970s
+19:38:40 - Growth rate = 0.190400, quasisymmetry = 7.955762 with aspect ratio=5.908678 took 7.676813s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:38:59 - Growth rate = 0.210200, quasisymmetry = 10.296203 with aspect ratio=5.908436 took 7.498317s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:39:10 - Growth rate = 0.272416, quasisymmetry = 10.276082 with aspect ratio=5.908436 took 7.174329s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000615.nc'
+19:39:17 - Growth rate = 100.000000, quasisymmetry = 194.362905 with aspect ratio=5.908436 took 0.950934s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000617.nc'
+19:39:32 - Growth rate = 100.000000, quasisymmetry = 153.213706 with aspect ratio=5.903598 took 0.928698s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000618.nc'
+19:39:36 - Growth rate = 100.000000, quasisymmetry = 23.950231 with aspect ratio=5.900541 took 0.916538s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000619.nc'
+19:39:43 - Growth rate = 100.000000, quasisymmetry = 21.073137 with aspect ratio=5.111122 took 1.565049s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000621.nc'
+19:39:48 - Growth rate = 100.000000, quasisymmetry = 22.468814 with aspect ratio=5.901774 took 0.994091s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000686.nc'
+19:39:53 - Growth rate = 100.000000, quasisymmetry = 57.733413 with aspect ratio=5.784732 took 0.936669s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000688.nc'
+19:40:05 - Growth rate = 100.000000, quasisymmetry = 17.335699 with aspect ratio=5.908613 took 0.952986s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000694.nc'
+19:40:17 - Growth rate = 100.000000, quasisymmetry = 43.080996 with aspect ratio=5.918212 took 1.349883s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:40:43 - Growth rate = 0.216553, quasisymmetry = 11.752009 with aspect ratio=5.908436 took 7.246711s
+19:40:54 - Growth rate = 0.263598, quasisymmetry = 30.140950 with aspect ratio=5.908436 took 7.184541s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000718.nc'
+19:41:14 - Growth rate = 100.000000, quasisymmetry = 27.676940 with aspect ratio=5.910002 took 1.117989s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000722.nc'
+19:41:22 - Growth rate = 100.000000, quasisymmetry = 30.317289 with aspect ratio=6.764521 took 1.396203s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:41:33 - Growth rate = 0.209812, quasisymmetry = 31.489305 with aspect ratio=5.900426 took 7.233098s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000733.nc'
+19:41:37 - Growth rate = 100.000000, quasisymmetry = 39.662173 with aspect ratio=5.900067 took 1.194738s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:41:48 - Growth rate = 0.254629, quasisymmetry = 33.689457 with aspect ratio=5.889801 took 7.241316s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000784.nc'
+19:42:03 - Growth rate = 100.000000, quasisymmetry = 256.607130 with aspect ratio=5.888840 took 0.959529s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+19:42:15 - Growth rate = 0.224419, quasisymmetry = 82.416587 with aspect ratio=5.837671 took 7.752397s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000794.nc'
+19:42:23 - Growth rate = 100.000000, quasisymmetry = 79.634565 with aspect ratio=5.941061 took 0.912964s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000803.nc'
+19:42:28 - Growth rate = 100.000000, quasisymmetry = 86.584471 with aspect ratio=5.837649 took 0.937359s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000806.nc'
+19:42:33 - Growth rate = 100.000000, quasisymmetry = 37.481327 with aspect ratio=5.837671 took 1.082651s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp4_QH/gxRun_wout_nfp4_QH_000_000807.nc'
+19:42:38 - Growth rate = 100.000000, quasisymmetry = 252.453065 with aspect ratio=5.837671 took 0.961069s
+free(): invalid next size (fast)
+[r233n02:44179] *** Process received signal ***
+[r233n02:44179] Signal: Aborted (6)
+[r233n02:44179] Signal code:  (-6)
+[r233n02:44179] [ 0] linux-vdso64.so.1(__kernel_sigtramp_rt64+0x0)[0x2000000504d8]
+[r233n02:44179] [ 1] /lib64/power9/libc.so.6(gsignal+0xd8)[0x2000002d3798]
+[r233n02:44179] [ 2] /lib64/power9/libc.so.6(abort+0x164)[0x2000002b3bac]
+[r233n02:44179] [ 3] /lib64/power9/libc.so.6(+0x8f8bc)[0x20000031f8bc]
+[r233n02:44179] [ 4] /lib64/power9/libc.so.6(+0x992b8)[0x2000003292b8]
+[r233n02:44179] [ 5] /lib64/power9/libc.so.6(+0x9b410)[0x20000032b410]
+[r233n02:44179] [ 6] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(cleanup_+0x4bc)[0x20004da08d9c]
+[r233n02:44179] [ 7] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(f90wrap_cleanup_+0x18)[0x20004d9c9b28]
+[r233n02:44179] [ 8] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(+0x714fc)[0x20004d9914fc]
+[r233n02:44179] [ 9] /m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/vmec-0.0.4-py3.8-linux-ppc64le.egg/vmec/_vmec.cpython-38-powerpc64le-linux-gnu.so(+0xa74a4)[0x20004d9c74a4]
+[r233n02:44179] [10] python3(_PyObject_MakeTpCall+0xec)[0x138b1077c]
+[r233n02:44179] [11] python3(_PyEval_EvalFrameDefault+0x7e5c)[0x138af87fc]
+[r233n02:44179] [12] python3(PyEval_EvalFrameEx+0x34)[0x138bf6564]
+[r233n02:44179] [13] python3(+0x5f1d4)[0x138aef1d4]
+[r233n02:44179] [14] python3(_PyEval_EvalFrameDefault+0x86b4)[0x138af9054]
+[r233n02:44179] [15] python3(PyEval_EvalFrameEx+0x34)[0x138bf6564]
+[r233n02:44179] [16] python3(+0x5f1d4)[0x138aef1d4]
+[r233n02:44179] [17] python3(_PyEval_EvalFrameDefault+0x8590)[0x138af8f30]
+[r233n02:44179] [18] python3(PyEval_EvalFrameEx+0x34)[0x138bf6564]
+[r233n02:44179] [19] python3(+0x5f1d4)[0x138aef1d4]
+[r233n02:44179] [20] python3(+0x2aa608)[0x138d3a608]
+[r233n02:44179] [21] python3(PyVectorcall_Call+0xa0)[0x138b132f0]
+[r233n02:44179] [22] python3(PyObject_Call+0x1ec)[0x138b136cc]
+[r233n02:44179] [23] python3(_PyEval_EvalFrameDefault+0x302c)[0x138af39cc]
+[r233n02:44179] [24] python3(PyEval_EvalFrameEx+0x34)[0x138bf6564]
+[r233n02:44179] [25] python3(_PyEval_EvalCodeWithName+0xec0)[0x138bf74a0]
+[r233n02:44179] [26] python3(_PyFunction_Vectorcall+0xcc)[0x138b1032c]
+[r233n02:44179] [27] python3(+0x2aa44c)[0x138d3a44c]
+[r233n02:44179] [28] python3(PyVectorcall_Call+0xa0)[0x138b132f0]
+[r233n02:44179] [29] python3(PyObject_Call+0x1ec)[0x138b136cc]
+[r233n02:44179] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 44179 on node r233n02 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------

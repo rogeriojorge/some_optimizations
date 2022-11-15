@@ -28,7 +28,7 @@ vmec_index_scan_opt = 0
 npoints_scan = 35
 ftol = 1e-2
 
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -77,7 +77,7 @@ output_to_csv = True
 
 def gammabyky(stellFile):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
-    # tX   = fX.variables['time'][()]
+    tX   = fX.variables['time'][()]
     kyX  = fX.variables['ky'][()]
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
     realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
