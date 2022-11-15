@@ -198,31 +198,51 @@ def run_gx(ln, lt):
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     remove_gx_files(gx_input_name)
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, ln, lt)
-    return max_growthrate_gamma
+    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 print('Starting GX scan')
 start_time = time()
 # growth_rate_array = np.reshape(Parallel(n_jobs=n_processes_parallel)(delayed(run_gx)(ln, lt) for lt in LT_array for ln in LN_array),(len(LT_array),len(LN_array)))
 growth_rate_array = np.zeros((len(LN_array),len(LT_array)))
+omega_array = np.zeros((len(LN_array),len(LT_array)))
+ky_array = np.zeros((len(LN_array),len(LT_array)))
 for i, ln in enumerate(LN_array):
     for j, lt in enumerate(LT_array):
-        growth_rate_array[i,j]=run_gx(ln, lt)
+        growth_rate_array[i,j], omega_array[i,j], ky_array[i,j]=run_gx(ln, lt)
 growth_rate_array = growth_rate_array.transpose()
+omega_array = omega_array.transpose()
+ky_array = ky_array.transpose()
 print(f'Running GX scan took {time()-start_time}s')
 ## Save growth rates to csv file
 print('growth rates:')
 print(growth_rate_array.transpose())
 # Plot
-plt.figure(figsize=(6, 6))
 plotExtent=[min(LN_array),max(LN_array),min(LT_array),max(LT_array)]
+
+plt.figure(figsize=(6, 6))
 im = plt.imshow(growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04)
 clb.ax.set_title(r'$\gamma$', usetex=True)
-plt.xlabel(r'$a/L_n$')
-plt.ylabel(r'$a/L_T$')
-matplotlib.rc('font', size=16)
+plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
 if plot_extent_fix: plt.clim(plot_min,plot_max) 
-plt.savefig(os.path.join(OUT_DIR,'gx_scan.pdf'), format='pdf', bbox_inches='tight')
-# plt.show()
+plt.savefig(os.path.join(OUT_DIR,'gx_scan_gamma.pdf'), format='pdf', bbox_inches='tight')
+plt.close()
+
+plt.figure(figsize=(6, 6))
+im = plt.imshow(omega_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
+clb = plt.colorbar(im,fraction=0.046, pad=0.04)
+clb.ax.set_title(r'$\omega$', usetex=True)
+plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
+if plot_extent_fix: plt.clim(plot_min,plot_max) 
+plt.savefig(os.path.join(OUT_DIR,'gx_scan_omega.pdf'), format='pdf', bbox_inches='tight')
+plt.close()
+
+plt.figure(figsize=(6, 6))
+im = plt.imshow(ky_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
+clb = plt.colorbar(im,fraction=0.046, pad=0.04)
+clb.ax.set_title(r'$k_y$', usetex=True)
+plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
+if plot_extent_fix: plt.clim(plot_min,plot_max) 
+plt.savefig(os.path.join(OUT_DIR,'gx_scan_ky.pdf'), format='pdf', bbox_inches='tight')
 plt.close()
 
 f_wout = vmec_file.split('/')[-1]
