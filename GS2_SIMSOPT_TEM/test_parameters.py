@@ -16,6 +16,8 @@ from shutil import move, copymode
 from joblib import Parallel, delayed
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
+import matplotlib
+matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
@@ -24,13 +26,13 @@ output_dir = 'test_out_nfp2_QA_initial'
 s_radius = 0.25
 alpha_fieldline = 0
 ##
-LN = 4.0
+LN = 3.0
 LT = 1.0
-nphi= 91
-nlambda = 15
-nperiod = 6
-nstep = 150
-dt = 0.1
+nphi= 161
+nlambda = 23
+nperiod = 20
+nstep = 210
+dt = 0.10
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -78,11 +80,14 @@ def eigenPlot(stellFile):
     y = f.variables['phi'][()]
     x = f.variables['theta'][()]
     plt.figure(figsize=(7.5,4.0))
-    phiR0= y[0,0,int((len(x)-1)/2+1),0]
-    phiI0= y[0,0,int((len(x)-1)/2+1),1]
+    omega_average_array = np.array(f.variables['omega_average'][()])
+    omega_average_array_gamma = omega_average_array[-1,:,0,1]
+    max_index = np.nanargmax(omega_average_array_gamma)
+    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
+    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
     phi02= phiR0**2+phiI0**2
-    phiR = (y[0,0,:,0]*phiR0+y[0,0,:,1]*phiI0)/phi02
-    phiI = (y[0,0,:,1]*phiR0-y[0,0,:,0]*phiI0)/phi02
+    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
+    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
     ##############
     plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
