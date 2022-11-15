@@ -67,6 +67,7 @@
  nwrite = 1000
  fluxes = true
  omega  = true
+ fields = true
  free_energy = false
  all_zonal_scalars = false
  all_zonal = false
