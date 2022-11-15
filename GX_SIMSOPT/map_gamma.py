@@ -27,19 +27,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
 output_dir = 'out_map_nfp2_QA_initial'
 
-nstep = 8000
-dt = 0.015
-nzgrid = 50
-npol = 2
+nstep = 12000
+dt = 0.012
+nzgrid = 75
+npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 18
 nlaguerre = 10
 nu_hyper = 1.0
-ny = 30
+ny = 60
 
-LN_array = np.linspace(0.5,6,4)
-LT_array = np.linspace(0.5,6,4)
+LN_array = np.linspace(0.5,6,3)
+LT_array = np.linspace(0.5,6,3)
 # n_processes_parallel = 8
 
 plot_extent_fix = False
