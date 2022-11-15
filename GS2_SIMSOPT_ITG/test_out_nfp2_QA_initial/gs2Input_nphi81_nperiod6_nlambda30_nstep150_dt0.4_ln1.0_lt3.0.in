@@ -10,8 +10,8 @@
 
 &kt_grids_range_parameters
  aky_min = 0.05
- aky_max = 20.0
- naky = 10
+ aky_max = 10.0
+ naky = 9
  kyspacing_option='exponential'
 /
 
@@ -20,7 +20,7 @@
 /
 
 &theta_grid_file_knobs
- gridout_file = "grid.out"
+ gridout_file = "/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/test_out_nfp2_QA_initial/grid_gs2_nphi81_nperiod6.out"
 /
 
 &le_grids_knobs
@@ -47,7 +47,7 @@
  fapar = 0.0 ! Multiplies A_par. Use 1 for finite beta (electromagnetic), 0 otherwise (electrostatic)
  faperp = 0.0 ! Multiplies A_perp. Use 1 for high beta, 0 otherwise. Deprecated: use fbpar instead
  delt = 0.4 ! Time step
- nstep = 150 ! Maximum number of timesteps
+ nstep = 150 ! Maximum number of timesteps"
 /
 
 &reinit_knobs
@@ -65,7 +65,7 @@
 /
 
 &species_knobs
- nspec = 2 ! Number of kinetic species evolved.
+ nspec = 1 ! Number of kinetic species evolved.
 /
 
 &species_parameters_1
@@ -73,31 +73,14 @@
  mass = 1.0 ! Mass
  dens = 1.0 ! Density	
  temp = 1.0 ! Temperature
- tprim = 3.0 ! -1/T (dT/drho) ! Set tprim=0 to turn off ITG
+ tprim = 3.0 ! -1/T (dT/drho)
  fprim = 1.0 ! -1/n (dn/drho)
  uprim = 0.0 ! ?
  vnewk = 0.01 ! collisionality parameter
  type = "ion" ! Type of species, e.g. 'ion', 'electron', 'beam'
 /
 
-&species_parameters_1
- z = -1.0 ! Charge
- mass = 0.0027 ! Mass
- dens = 1.0 ! Density	
- temp = 1.0 ! Temperature
- tprim = 3.0 ! -1/T (dT/drho)
- fprim = 1.0 ! -1/n (dn/drho)
- uprim = 0.0 ! ?
- vnewk = 0.01 ! collisionality parameter
- type = "electron" ! Type of species, e.g. 'ion', 'electron', 'beam'
-/
-
 &dist_fn_species_knobs_1
- fexpr = 0.48 ! Temporal implicitness parameter. Recommended value: 0.48
- bakdif = 0.05 ! Spatial implicitness parameter. Recommended value: 0.05
-/
-
-&dist_fn_species_knobs_2
  fexpr = 0.48 ! Temporal implicitness parameter. Recommended value: 0.48
  bakdif = 0.05 ! Spatial implicitness parameter. Recommended value: 0.05
 /

@@ -39,18 +39,18 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
-opt_quasisymmetry = True
+opt_quasisymmetry = False
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
-nlambda = 21
-nstep = 200
+phi_GS2 = np.linspace(-9*np.pi, 9*np.pi, 111)
+nlambda = 23
+nstep = 210
 weight_optTurbulence = 10
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
@@ -224,6 +224,7 @@ for max_mode in max_modes:
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
     else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
+    if initial_config[-2:] == 'QA': opt_tuple.append((vmec.mean_iota, 0.42, 1))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
     if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
