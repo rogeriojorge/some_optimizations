@@ -28,10 +28,10 @@ alpha_fieldline = 0
 ##
 LN = 3.0
 LT = 1.0
-nphi= 161
-nlambda = 23
-nperiod = 20
-nstep = 210
+nphi= 131
+nlambda = 21
+nperiod = 19
+nstep = 230
 dt = 0.10
 ########################################
 # Go into the output directory
@@ -171,6 +171,8 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt):
     replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps"')
     replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+    replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+    replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
     return gs2_input_name

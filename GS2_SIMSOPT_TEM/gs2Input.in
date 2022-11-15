@@ -77,7 +77,7 @@
  mass = 1.0 ! Mass
  dens = 1.0 ! Density	
  temp = 1.0 ! Temperature
- tprim = 0.0 ! -1/T (dT/drho) ! Set tprim=0 to turn off ITG
+ tprim = 3.0 ! -1/T (dT/drho) ! Set tprim=0 to turn off ITG
  fprim = 1.0 ! -1/n (dn/drho)
  uprim = 0.0 ! ?
  vnewk = 0.01 ! collisionality parameter
