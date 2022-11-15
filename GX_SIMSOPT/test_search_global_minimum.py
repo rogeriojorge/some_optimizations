@@ -75,6 +75,30 @@ surf.fixed_range(mmin=0, mmax=1, nmin=-1, nmax=1, fixed=False)
 surf.fix("rc(0,0)")
 output_to_csv = True
 
+# Save final eigenfunction
+def eigenPlot(stellFile):
+    f = netCDF4.Dataset(stellFile,'r',mmap=False)
+    y = np.array(f.groups['Special']['Phi_z'][()])
+    x = np.array(f.variables['theta'][()])
+    omega_average_array = np.array(f.groups['Special']['omega_v_time'][()])
+    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
+    max_index = np.nanargmax(growthRateX)
+    plt.figure(figsize=(7.5,4.0))
+    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
+    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
+    phi02= phiR0**2+phiI0**2
+    phiR = (y[max_index,0,:,0]*phiR0+y[0,0,:,1]*phiI0)/phi02
+    phiI = (y[max_index,0,:,1]*phiR0-y[0,0,:,0]*phiI0)/phi02
+    ##############
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
+    ##############
+    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
+    plt.legend(loc="upper right")
+    plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
+    plt.savefig(stellFile+'_eigenphi.png')
+    plt.close()
+    return 0
 def gammabyky(stellFile):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['time'][()]
@@ -208,6 +232,7 @@ def run_gx(vmec: Vmec):
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     try:
+        eigenPlot(fout)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     except Exception as e:
         print(e)
