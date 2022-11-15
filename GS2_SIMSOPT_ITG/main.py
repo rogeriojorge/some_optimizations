@@ -44,13 +44,13 @@ if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = False
 plot_result = True
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 use_previous_results_if_available = False
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
-nlambda = 21
-nstep = 200
+phi_GS2 = np.linspace(-9*np.pi, 9*np.pi, 111)
+nlambda = 23
+nstep = 210
 weight_optTurbulence = 10
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
