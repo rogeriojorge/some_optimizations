@@ -19,20 +19,31 @@ from simsopt.mhd import Vmec
 from simsopt import make_optimizable
 from simsopt.mhd.vmec_diagnostics import to_gs2
 from simsopt.mhd import QuasisymmetryRatioResidual
+import matplotlib
+matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 
-min_bound = -0.25
-max_bound = 0.25
+min_bound = -0.20
+max_bound = 0.20
 vmec_index_scan_opt = 0
-npoints_scan = 35
+npoints_scan = 15
 ftol = 1e-2
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
-nlambda = 21
-nstep = 200
+LN = 3.0
+LT = 1.0
 
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'
+phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 131)
+nlambda = 29
+nstep = 200
+dt = 0.06
+
+# initial_config = 'input.nfp2_QA'
+# phi_GS2 = np.linspace(-19*np.pi, 19*np.pi, 141)
+# nlambda = 22
+# nstep = 310
+# dt = 0.08
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -51,7 +62,7 @@ output_path_parameters_min = 'min_dofs_loss.csv'
 
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
-OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
+OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}_ln{LN}_lt{LT}')
 
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
@@ -64,7 +75,112 @@ surf.fix_all()
 surf.fixed_range(mmin=0, mmax=1, nmin=-1, nmax=1, fixed=False)
 surf.fix("rc(0,0)")
 output_to_csv = True
+# Get growth rates
+def getgamma(stellFile, fractionToConsider=0.35, plot=False):
+    f = netCDF4.Dataset(stellFile,'r',mmap=False)
+    phi2 = np.log(f.variables['phi2'][()])
+    t = f.variables['t'][()]
+    startIndex = int(len(t)*(1-fractionToConsider))
+    mask = np.isfinite(phi2)
+    data_x = t[mask]
+    data_y = phi2[mask]
+    fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
+    poly = np.poly1d(fit)
+    GrowthRate = fit[0]/2
+    omega_average_array = np.array(f.variables['omega_average'][()])
+    omega_average_array_omega = omega_average_array[-1,:,0,0]
+    omega_average_array_gamma = omega_average_array[-1,:,0,1]
+    max_index = np.nanargmax(omega_average_array_gamma)
+    gamma = omega_average_array_gamma[max_index]
+    omega = omega_average_array_omega[max_index]
+    if plot:
+        plt.figure(figsize=(7.5,4.0))
+        ##############
+        plt.plot(t, phi2,'.', label=r'data - $\gamma_{GS2} = $'+str(gamma))
+        plt.plot(t, poly(t),'-', label=r'fit - $\gamma = $'+str(GrowthRate))
+        ##############
+        plt.legend(loc=0,fontsize=14)
+        plt.xlabel(r'$t$');plt.ylabel(r'$\ln |\hat \phi|^2$')
+        plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.97)
+        plt.savefig(stellFile+'_phi2.png')
+        plt.close()
+    return GrowthRate, abs(omega)
+# Save final eigenfunction
+def eigenPlot(stellFile):
+    f = netCDF4.Dataset(stellFile,'r',mmap=False)
+    y = f.variables['phi'][()]
+    x = f.variables['theta'][()]
+    plt.figure(figsize=(7.5,4.0))
+    omega_average_array = np.array(f.variables['omega_average'][()])
+    omega_average_array_gamma = omega_average_array[-1,:,0,1]
+    max_index = np.nanargmax(omega_average_array_gamma)
+    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
+    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
+    phi02= phiR0**2+phiI0**2
+    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
+    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
+    ##############
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
+    ##############
+    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
+    plt.legend(loc="upper right")
+    plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
+    plt.savefig(stellFile+'_eigenphi.png')
+    plt.close()
+    return 0
+##### Function to obtain gamma and omega for each ky
+def gammabyky(stellFile,fractionToConsider=0.6):
+    # Compute growth rate:
+    fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
+    tX   = fX.variables['t'][()]
+    kyX  = fX.variables['ky'][()]
+    phi2_by_kyX  = fX.variables['phi2_by_ky'][()]
+    omegaX  = fX.variables['omega'][()]
+    startIndexX  = int(len(tX)*(1-fractionToConsider))
+    growthRateX  = []
+    ## assume that kyX=kyNA
+    for i in range(len(kyX)):
+        maskX  = np.isfinite(phi2_by_kyX[:,i])
+        data_xX = tX[maskX]
+        data_yX = phi2_by_kyX[maskX,i]
+        fitX  = np.polyfit(data_xX[startIndexX:], np.log(data_yX[startIndexX:]), 1)
+        thisGrowthRateX  = fitX[0]/2
+        growthRateX.append(thisGrowthRateX)
+    # Compute real frequency:
+    realFreqVsTimeX  = []
+    realFrequencyX   = []
+    for i in range(len(kyX)):
+        realFreqVsTimeX.append(omegaX[:,i,0,0])
+        realFrequencyX.append(np.mean(realFreqVsTimeX[i][startIndexX:]))
+    numRows = 1
+    numCols = 2
 
+    plt.subplot(numRows, numCols, 1)
+    plt.plot(kyX,growthRateX,'.-')
+    plt.xlabel(r'$k_y$')
+    plt.ylabel(r'$\gamma$')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+    # plt.legend(frameon=False,prop=dict(size='xx-small'),loc=0)
+
+    plt.subplot(numRows, numCols, 2)
+    plt.plot(kyX,realFrequencyX,'.-')
+    plt.xlabel(r'$k_y$')
+    plt.ylabel(r'$\omega$')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+    # plt.legend(frameon=False,prop=dict(size=12),loc=0)
+
+    plt.tight_layout()
+    #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
+    plt.savefig(stellFile+"_GammaOmegaKy.png")
+    plt.close()
+    return kyX, growthRateX, realFrequencyX
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
     with fdopen(fh,'w') as new_file:
@@ -74,6 +190,25 @@ def replace(file_path, pattern, subst):
     copymode(file_path, abs_path)
     remove(file_path)
     move(abs_path, file_path)
+def remove_gs2_files(gs2_input_name):
+    for f in glob.glob('*.amoments'): remove(f)
+    for f in glob.glob('*.eigenfunc'): remove(f)
+    for f in glob.glob('*.error'): remove(f)
+    for f in glob.glob('*.fields'): remove(f)
+    for f in glob.glob('*.g'): remove(f)
+    for f in glob.glob('*.lpc'): remove(f)
+    for f in glob.glob('*.mom2'): remove(f)
+    for f in glob.glob('*.moments'): remove(f)
+    for f in glob.glob('*.vres'): remove(f)
+    for f in glob.glob('*.vres2'): remove(f)
+    for f in glob.glob('*.exit_reason'): remove(f)
+    for f in glob.glob('*.optim'): remove(f)
+    for f in glob.glob('*.out'): remove(f)
+    for f in glob.glob('*.used_inputs.in'): remove(f)
+    for f in glob.glob(f'{gs2_input_name}.in'): remove(f)
+    for f in glob.glob('*.vspace_integration_error'): remove(f)
+    ## REMOVE ALSO OUTPUT FILE
+    for f in glob.glob('*.out.nc'): remove(f)
 def output_dofs_to_csv(csv_path,dofs,mean_iota,aspect,growth_rate,quasisymmetry,well,effective_1o_time=0):
     keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry'],['well'],['effective_1o_time']])
     values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry],[well],[effective_1o_time]])
@@ -89,45 +224,35 @@ def CalculateGrowthRate(v: Vmec):
         gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
         shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
         gridout_file = os.path.join(OUT_DIR,f'grid_{gs2_input_name}.out')
-        replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
-        replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
+        replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
+        replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps"')
+        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
         # with open(f_log, 'w') as fp:
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
-        # subprocess.call(bashCommand, shell=True)
-        fractionToConsider = 0.4 # fraction of time from the simulation period to consider
-        file2read = netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r')
-        tX = file2read.variables['t'][()]
-        qparflux2_by_ky = file2read.variables['qparflux2_by_ky'][()]
-        startIndexX  = int(len(tX)*(1-fractionToConsider))
-        qavg = np.mean(qparflux2_by_ky[startIndexX:,0,:])
-        # omega_average = file2read.variables['omega_average'][()]
-        # growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
-        phi2 = np.log(file2read.variables['phi2'][()])
-        t = file2read.variables['t'][()]
-        startIndex = int(len(t)*(1-fractionToConsider))
-        mask = np.isfinite(phi2)
-        data_x = t[mask]
-        data_y = phi2[mask]
-        fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
-        growth_rate = fit[0]/2
-        if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
+        file2read = os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc")#netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r')
+        # eigenPlot(file2read)
+        growth_rate, omega = getgamma(file2read)
+        # kyX, growthRateX, realFrequencyX = gammabyky(file2read)
+        remove_gs2_files(file2read)
         if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
 
     except Exception as e:
         print(e)
-        qavg = HEATFLUX_THRESHOLD
+        # qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
 
-    try:
-        for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")): os.remove(objective_file)
-    except Exception as e: pass
-    try:
-        for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")): os.remove(objective_file)
-    except Exception as e: pass
+    # try:
+    #     for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")): os.remove(objective_file)
+    # except Exception as e: pass
+    # try:
+    #     for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")): os.remove(objective_file)
+    # except Exception as e: pass
     
     return growth_rate#qavg
 def TurbulenceCostFunction(v: Vmec):

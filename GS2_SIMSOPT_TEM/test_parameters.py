@@ -21,22 +21,29 @@ matplotlib.use('Agg')
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
-s_radius = 0.25
-alpha_fieldline = 0
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+# output_dir = 'test_out_nfp2_QA_initial'
+# nphi= 121
+# nlambda = 22
+# nperiod = 19
+# nstep = 230
+# dt = 0.09
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
+output_dir = 'test_out_nfp4_QH_initial'
+nphi= 121
+nlambda = 29
+nperiod = 6
+nstep = 200
+dt = 0.06
 ##
 LN = 3.0
-LT = 1.0
-nphi= 131
-nlambda = 21
-nperiod = 19
-nstep = 230
-dt = 0.10
+LT = 3.0
+s_radius = 0.25
+alpha_fieldline = 0
 ########################################
 # Go into the output directory
-OUT_DIR = os.path.join(this_path,output_dir)
-output_csv = os.path.join(OUT_DIR,output_dir+'.csv')
+OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
+output_csv = os.path.join(OUT_DIR,f'{output_dir}_ln{LN}_lt{LT}.csv')
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
 vmec = Vmec(vmec_file)
