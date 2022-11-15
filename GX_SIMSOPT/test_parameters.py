@@ -74,7 +74,7 @@ def eigenPlot(stellFile):
     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
     plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
-    plt.savefig(stellFile+'_eigenphi.pdf', format='pdf')
+    plt.savefig(stellFile+'_eigenphi.png')
     plt.close()
     return 0
 def gammabyky(stellFile):
