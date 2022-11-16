@@ -26,7 +26,7 @@ output_dir = 'test_out_nfp4_QH_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 5000
+nstep = 8000
 dt = 0.05
 nzgrid = 75
 npol = 5
