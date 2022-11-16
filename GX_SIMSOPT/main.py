@@ -70,8 +70,7 @@ if nonlinear:
     nu_hyper = 0.5
     D_hyper = 0.03
     ny = 50
-    ny = 40
-    nx = 1
+    nx = 20
 else:
     LN = 1.0
     LT = 3.0

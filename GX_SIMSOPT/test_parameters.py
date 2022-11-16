@@ -37,7 +37,7 @@ nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.03
 ny = 50
-nx = 40
+nx = 20
 nonlinear = True
 ########################################
 # Go into the output directory
