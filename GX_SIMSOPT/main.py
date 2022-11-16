@@ -230,6 +230,7 @@ def run_gx(vmec: Vmec):
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     try:
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+        qflux = get_qflux(fout)
     except Exception as e:
         print(e)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
