@@ -16,12 +16,12 @@ vmec_file = "wout_nfp4_QH.nc"
 alpha = 0.0
 
 # Number of points along the field line = 2*nzgrid + 1
-nzgrid = 75
+nzgrid = 55
 
 # Number of poloidal turns.
 # The field line goes from (-npol*PI, npol*PI]
 # Extra info : In GS2 or GX files this would correspond to  nperiod = (npol+1)/2.
-npol = 5
+npol = 3
 
 # Normalized toroidal flux (or s) is how vmec labels surfaces.
 # s goes from [0,1] where 0 is the magnetic axis and 1 is the
