@@ -39,19 +39,32 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
-if initial_config[-2:]=='QA': aspect_ratio_target = 6
-else: aspect_ratio_target = 8
-opt_quasisymmetry = False
-plot_result = True
+QA_or_QH = 'QA'
 optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
-use_previous_results_if_available = False
+opt_quasisymmetry = False
+
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-9*np.pi, 9*np.pi, 111)
-nlambda = 23
-nstep = 210
-weight_optTurbulence = 10
+
+phi_GS2 = np.linspace(-4.5*np.pi, 4.5*np.pi, 111)
+nlambda = 19
+nstep = 200
+dt = 0.4
+
+if QA_or_QH=='QA':
+    aspect_ratio_target = 6
+    nfp = 2
+else:
+    aspect_ratio_target = 8
+    nfp = 4
+
+initial_config = f'input.nfp{nfp}_{QA_or_QH}'
+
+plot_result = True
+use_previous_results_if_available = False
+
+weight_mirror = 10
+weight_optTurbulence = 1
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -60,7 +73,7 @@ no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
-aspect_ratio_weight = 1e-1
+aspect_ratio_weight = 1e+0
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
@@ -87,9 +100,9 @@ vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,quasisymmetry_total):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry_total']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry_total]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,growth_rate,quasisymmetry_total,mirror_ratio):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry_total'],['mirror_ratio']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry_total],[mirror_ratio]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -118,6 +131,7 @@ def CalculateGrowthRate(v: Vmec):
         gridout_file = os.path.join(OUT_DIR,f'grid_{gs2_input_name}.out')
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
         replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
+        replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
@@ -176,12 +190,45 @@ def TurbulenceCostFunction(v: Vmec):
         growth_rate = GROWTHRATE_THRESHOLD
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
     else: qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
-    if np.isnan(qs.total()) or qs.total()>1e18: growth_rate = GROWTHRATE_THRESHOLD
-    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
-    print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total())
+    quasisymmetry_total = qs.total()
+    if np.isnan(quasisymmetry_total) or quasisymmetry_total>1e18: return GROWTHRATE_THRESHOLD
+    mirror_ratio = MirrorRatioPen(v)
+    print(f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {quasisymmetry_total:1f}, mirror = {mirror_ratio:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s')
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate,quasisymmetry_total,mirror_ratio)
     return growth_rate
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
+# Penalize the configuration's mirror ratio
+def MirrorRatioPen(v, mirror_threshold=0.20, output_mirror=False):
+    """
+    Return (Δ - t) if Δ > t, else return zero.
+    vmec        -   VMEC object
+    t           -   Threshold mirror ratio, above which the penalty is nonzero
+    """
+    try: v.run()
+    except Exception as e: return GROWTHRATE_THRESHOLD
+    xm_nyq = v.wout.xm_nyq
+    xn_nyq = v.wout.xn_nyq
+    bmnc = v.wout.bmnc.T
+    bmns = 0*bmnc
+    nfp = v.wout.nfp
+    
+    Ntheta = 80
+    Nphi = 80
+    thetas = np.linspace(0,2*np.pi,Ntheta)
+    phis = np.linspace(0,2*np.pi/nfp,Nphi)
+    phis2D,thetas2D=np.meshgrid(phis,thetas)
+    b = np.zeros([Ntheta,Nphi])
+    for imode in range(len(xn_nyq)):
+        angles = xm_nyq[imode]*thetas2D - xn_nyq[imode]*phis2D
+        b += bmnc[1,imode]*np.cos(angles) + bmns[1,imode]*np.sin(angles)
+    Bmax = np.max(b)
+    Bmin = np.min(b)
+    m = (Bmax-Bmin)/(Bmax+Bmin)
+    # print("Mirror =",m)
+    pen = np.max([0,m-mirror_threshold])
+    if output_mirror: return m
+    else: return pen
+optMirror = make_optimizable(MirrorRatioPen, vmec)
 ######################################
 try:
     pprint("Initial aspect ratio:", vmec.aspect())
@@ -226,6 +273,7 @@ for max_mode in max_modes:
     else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
     if initial_config[-2:] == 'QA': opt_tuple.append((vmec.mean_iota, 0.42, 1))
+    if not opt_quasisymmetry: opt_tuple.append((optMirror.J,0,weight_mirror)) # reduce mirror ratio for non-quasisymmetric configurations
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
     pprint('## Now calculating total objective function ##')
     if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())

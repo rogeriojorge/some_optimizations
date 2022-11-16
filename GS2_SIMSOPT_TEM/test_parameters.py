@@ -21,22 +21,22 @@ matplotlib.use('Agg')
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-# output_dir = 'test_out_nfp2_QA_initial'
-# nphi= 121
-# nlambda = 22
-# nperiod = 19
-# nstep = 230
-# dt = 0.09
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
 nphi= 121
-nlambda = 29
-nperiod = 6
-nstep = 200
-dt = 0.06
+nlambda = 22
+nperiod = 19
+nstep = 230
+dt = 0.09
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
+# output_dir = 'test_out_nfp4_QH_initial'
+# nphi= 131
+# nlambda = 21
+# nperiod = 8
+# nstep = 210
+# dt = 0.08
 ##
-LN = 3.0
+LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
@@ -178,8 +178,6 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt):
     replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps"')
     replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
-    replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
-    replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
     return gs2_input_name

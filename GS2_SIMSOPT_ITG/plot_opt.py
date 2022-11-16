@@ -14,19 +14,29 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 3
-QA_or_QH = 'QA'
-nfp = 2
+QA_or_QH = 'QH'
 optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
-MAXITER=350
 quasisymmetry = False
 
-if quasisymmetry: growth_rate_weight=1e1
-else: growth_rate_weight=1e9
-
 plt_opt_res = True
-plot_vmec = False
-run_simple = False
+plot_vmec = True
+run_simple = True
 
+MAXITER=350
+
+if QA_or_QH == 'QA':
+    nfp=2
+    aspect_target = 6.0
+else:
+    nfp=4
+    aspect_target = 8.0
+
+if quasisymmetry: quasisymmetry_weight=1e-1
+else: quasisymmetry_weight=1e-8
+
+
+aspect_weight = 1e0
+mirror_weight = 1e1
 use_final = True
 use_previous_results_if_available = False
 
@@ -41,10 +51,10 @@ out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 if quasisymmetry: out_dir+=f'_{QA_or_QH}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+location_min = (df['growth_rate']**2+(quasisymmetry_weight*df['quasisymmetry_total'])**2+aspect_weight*(df['aspect']-aspect_target)**2+mirror_weight*(df['mirror_ratio'])**2).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
 if plt_opt_res:
-    df['aspect-7'] = df.apply(lambda row: np.abs(row.aspect - 7), axis=1)
+    df['aspect-aspect_target'] = df.apply(lambda row: np.abs(row.aspect - aspect_target), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),2.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
@@ -69,6 +79,11 @@ if plt_opt_res:
     plt.yscale('log')
     plt.legend()
     plt.savefig(out_dir+'/qs_total_over_opt.pdf')
+    df.plot(use_index=True, y=['mirror_ratio'])#,'iota'])#,'normalized_time'])
+    plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
+    # plt.yscale('log')
+    plt.legend()
+    plt.savefig(out_dir+'/mirror_ratio_over_opt.pdf')
     df.plot.scatter(x='growth_rate', y='quasisymmetry_total')
     plt.yscale('log');plt.xscale('log')
     plt.savefig(out_dir+'/qs_total_vs_growth_rate.pdf')

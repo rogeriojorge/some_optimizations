@@ -19,18 +19,24 @@ from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
-s_radius = 0.25
-alpha_fieldline = 0
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+# output_dir = 'test_out_nfp2_QA_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
+# output_dir = 'test_out_nfp2_QA_test'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+# output_dir = 'test_out_nfp4_QH_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
+output_dir = 'test_out_nfp4_QH_test'
+nphi= 111
+nlambda = 21
+nperiod = 4.5
+nstep = 200
+dt = 0.4
 ##
 LN = 1.0
 LT = 3.0
-nphi= 81
-nlambda = 15
-nperiod = 6
-nstep = 150
-dt = 0.4
+s_radius = 0.25
+alpha_fieldline = 0
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -69,7 +75,7 @@ def getgamma(stellFile, fractionToConsider=0.35):
     plt.legend(loc=0,fontsize=14)
     plt.xlabel(r'$t$');plt.ylabel(r'$\ln |\hat \phi|^2$')
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.97)
-    plt.savefig(stellFile+'_phi2.pdf', format='pdf')
+    plt.savefig(stellFile+'_phi2.png')
     plt.close()
     return GrowthRate, abs(omega)
 # Save final eigenfunction
@@ -93,7 +99,7 @@ def eigenPlot(stellFile):
     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
     plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
-    plt.savefig(stellFile+'_eigenphi.pdf', format='pdf')
+    plt.savefig(stellFile+'_eigenphi.png')
     plt.close()
     return 0
 ##### Function to obtain gamma and omega for each ky
@@ -145,7 +151,7 @@ def gammabyky(stellFile,fractionToConsider=0.6):
 
     plt.tight_layout()
     #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
-    plt.savefig(stellFile+"_GammaOmegaKy.pdf", format='pdf')
+    plt.savefig(stellFile+"_GammaOmegaKy.png")
     plt.close()
     return kyX, growthRateX, realFrequencyX
 # Function to replace text in a file
@@ -223,9 +229,9 @@ nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, 
 print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nphi = int((nphi+1)/2)
 # Double nperiod
-nperiod = int(2*nperiod);nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
+nperiod = 2*nperiod;nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
 print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
-nperiod = int(nperiod/2);nphi = int((nphi+1)/2)
+nperiod = nperiod/2;nphi = int((nphi+1)/2)
 # Double nlambda
 nlambda = 2*nlambda;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
 print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
