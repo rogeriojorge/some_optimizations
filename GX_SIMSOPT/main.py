@@ -40,8 +40,9 @@ initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = False
-plot_result = True
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+nonlinear = True
+plot_result = True
 use_previous_results_if_available = False
 weight_optTurbulence = 100.0
 diff_rel_step = 1e-4
@@ -55,18 +56,38 @@ aspect_ratio_weight = 1e-1
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
 ##
-LN = 1.0
-LT = 3.0
-nstep = 7000
-dt = 0.015
-nzgrid = 75
-npol = 3
-desired_normalized_toroidal_flux = 0.25
-alpha_fieldline = 0
-nhermite  = 18
-nlaguerre = 10
-nu_hyper = 1.0
-ny = 30
+if nonlinear:
+    LN = 1.0
+    LT = 3.0
+    nstep = 7000
+    dt = 0.015
+    nzgrid = 75
+    npol = 3
+    desired_normalized_toroidal_flux = 0.25
+    alpha_fieldline = 0
+    nhermite  = 18
+    nlaguerre = 10
+    nu_hyper = 1.0
+    ny = 30
+    D_hyper = 0.05
+    ny = 30
+    nx = 1
+else:
+    LN = 1.0
+    LT = 3.0
+    nstep = 7000
+    dt = 0.015
+    nzgrid = 75
+    npol = 3
+    desired_normalized_toroidal_flux = 0.25
+    alpha_fieldline = 0
+    nhermite  = 18
+    nlaguerre = 10
+    nu_hyper = 1.0
+    ny = 30
+    D_hyper = 0.05
+    ny = 30
+    nx = 1
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -92,9 +113,9 @@ vmec = Vmec(filename, verbose=False, mpi=mpi)
 vmec.keep_all_files = True
 surf = vmec.boundary
 ######################################
-def output_dofs_to_csv(dofs,mean_iota,aspect,quasisymmetry_total,growth_rate,omega,ky):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['omega'],['ky'],['quasisymmetry_total']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[omega],[ky],[quasisymmetry_total]])
+def output_dofs_to_csv(dofs,mean_iota,aspect,quasisymmetry_total,growth_rate,omega,ky,qflux):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['omega'],['ky'],['quasisymmetry_total'],['qflux']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[omega],[ky],[quasisymmetry_total],[qflux]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_path_parameters): pd.DataFrame(columns=df.columns).to_csv(output_path_parameters, index=False)
@@ -104,7 +125,6 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,quasisymmetry_total,growth_rate,ome
 ##### CALCULATE growth rate HERE #######
 ######################################
 ######################################
-gx_ran = False
 def gammabyky(stellFile):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     # tX   = fX.variables['time'][()]
@@ -117,6 +137,13 @@ def gammabyky(stellFile):
     max_growthrate_omega = realFrequencyX[max_index]
     max_growthrate_ky = kyX[max_index]
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
+def get_qflux(stellFile, tau=100, fractionToConsider=0.4):
+    fX = netCDF4.Dataset(stellFile,'r',mmap=False)
+    qflux = np.nan_to_num(np.array(fX.groups['Fluxes'].variables['qflux'][:,0]))
+    time = np.array(fX.variables['time'][:])
+    startIndexX  = int(len(time)*(1-fractionToConsider))
+    Q_avg = np.mean(qflux[startIndexX:])
+    return Q_avg
 # Function to replace text in a file
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
@@ -147,7 +174,8 @@ def create_gx_inputs(vmec_file):
     # os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxRun_wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
+    if nonlinear: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
+    else: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')
@@ -160,6 +188,8 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 30',f' ny = {ny}')
+    replace(fnamein,' nx = 1',f' nx = {nx}')
+    replace(fnamein,' D_hyper = 0.05',f' D_hyper = {D_hyper}')
     # if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
@@ -201,9 +231,9 @@ def run_gx(vmec: Vmec):
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     except Exception as e:
         print(e)
-        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     remove_gx_files(gx_input_name)
-    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
+    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux
 ######################################
 ######################################
 ######################################
@@ -214,14 +244,15 @@ def TurbulenceCostFunction(v: Vmec):
         print(e)
         return HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     try:
-        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = run_gx(v)
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = run_gx(v)
     except Exception as e:
         print(e)
-        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
-    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {max_growthrate_gamma:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
+    out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {max_growthrate_gamma:1f}, qflux = {qflux:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),qs.total(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky)
-    return max_growthrate_gamma
+    output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),qs.total(),max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux)
+    if nonlinear: return qflux
+    else: return max_growthrate_gamma
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 ######################################
 try:
@@ -230,8 +261,9 @@ try:
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
 if MPI.COMM_WORLD.rank == 0:
-    growth_rate = run_gx(vmec)
-    pprint("Initial growth rate:", growth_rate[0])
+    max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = run_gx(vmec)
+    if nonlinear: pprint("Initial heat flux:", qflux)
+    else: pprint("Initial growth rate:", max_growthrate_gamma)
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -280,8 +312,9 @@ for max_mode in max_modes:
         pprint("Final aspect ratio:", vmec.aspect())
         pprint("Final mean iota:", vmec.mean_iota())
         pprint("Final magnetic well:", vmec.vacuum_well())
-        growth_rate = run_gx(vmec)[0]
-        pprint("Final growth rate:", growth_rate)
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = run_gx(vmec)
+        if nonlinear: pprint("Final heat flux:", qflux)
+        else: pprint("Final growth rate:", max_growthrate_gamma)
     except Exception as e: pprint(e)
     ######################################
 # Remove final files
