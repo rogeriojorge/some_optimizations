@@ -13,9 +13,9 @@
 /
 
 &kt_grids_range_parameters
- aky_min = 0.5
- aky_max = 2.5
- naky = 3
+ aky_min = 0.1
+ aky_max = 3.5
+ naky = 4
  kyspacing_option='exponential'
 /
 

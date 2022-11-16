@@ -13,33 +13,34 @@ from tempfile import mkstemp
 from os import fdopen, remove
 import matplotlib.pyplot as plt
 from shutil import move, copymode
-from joblib import Parallel, delayed
 from simsopt.mhd import Vmec
-from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
+from simsopt.mhd.vmec_diagnostics import to_gs2
 import matplotlib
 matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
-nphi= 121
-nlambda = 22
-nperiod = 19
-nstep = 230
-dt = 0.09
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
-# output_dir = 'test_out_nfp4_QH_initial'
-# nphi= 131
-# nlambda = 21
-# nperiod = 8
-# nstep = 210
-# dt = 0.08
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+# output_dir = 'test_out_nfp2_QA_initial'
+# nphi= 161
+# nlambda = 19
+# nperiod = 12
+# nstep = 200
+# dt = 0.1
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
+output_dir = 'test_out_nfp4_QH_initial'
+nphi= 181
+nlambda = 23
+nperiod = 5
+nstep = 200
+dt = 0.1
 ##
-LN = 1.0
-LT = 3.0
+LN = 2.0
+LT = 2.0
 s_radius = 0.25
 alpha_fieldline = 0
+ngauss = 3
+negrid = 10
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
@@ -106,7 +107,7 @@ def eigenPlot(stellFile):
     plt.close()
     return 0
 ##### Function to obtain gamma and omega for each ky
-def gammabyky(stellFile,fractionToConsider=0.6):
+def gammabyky(stellFile,fractionToConsider=0.3):
     # Compute growth rate:
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['t'][()]
@@ -168,11 +169,11 @@ def replace(file_path, pattern, subst):
     remove(file_path)
     move(abs_path, file_path)
 # Function to create GS2 gridout and input file
-def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt):
+def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     gridout_file = os.path.join(OUT_DIR,f'grid_gs2_nphi{nphi}_nperiod{nperiod}.out')
     phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
     to_gs2(gridout_file, vmec, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
-    gs2_input_name = f"gs2Input_nphi{nphi}_nperiod{nperiod}_nlambda{nlambda}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
+    gs2_input_name = f"gs2Input_nphi{nphi}_nperiod{nperiod}_nlambda{nlambda}_negrid{negrid}_ngauss{ngauss}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
     gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
     shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
     replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
@@ -180,6 +181,10 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt):
     replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
     replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+    replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
+    f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
+    replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
+    f' negrid = {negrid} ! Total number of energy grid points')
     return gs2_input_name
 # Function to remove spurious GS2 files
 def remove_gs2_files(gs2_input_name):
@@ -201,16 +206,16 @@ def remove_gs2_files(gs2_input_name):
     ## REMOVE ALSO OUTPUT FILE
     for f in glob.glob('*.out.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
-def output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, dt, ln, lt):
-    keys=np.concatenate([['ln'],['lt'],['nphi'],['nperiod'],['nlambda'],['nstep'],['dt'],['growth_rate']])
-    values=np.concatenate([[ln],[lt],[nphi],[nperiod],[nlambda],[nstep],[dt],[growth_rate]])
+def output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, ln, lt):
+    keys=np.concatenate([['ln'],['lt'],['nphi'],['nperiod'],['nlambda'],['nstep'],['dt'],['growth_rate'],['negrid'],['ngauss']])
+    values=np.concatenate([[ln],[lt],[nphi],[nperiod],[nlambda],[nstep],[dt],[growth_rate],[negrid],[ngauss]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
     df.to_csv(output_csv, mode='a', header=False, index=False)
 # Function to run GS2 and extract growth rate
-def run_gs2(nphi, nperiod, nlambda, nstep, dt):
-    gs2_input_name = create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt)
+def run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
+    gs2_input_name = create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
     p = subprocess.Popen(f"{gs2_executable} {gs2_input_name}.in".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
     eigenPlot(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"))
@@ -218,35 +223,43 @@ def run_gs2(nphi, nperiod, nlambda, nstep, dt):
     kyX, growthRateX, realFrequencyX = gammabyky(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"))
     # growth_rate = np.max(np.array(netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r').variables['omega_average'][()])[-1,:,0,1])
     remove_gs2_files(gs2_input_name)
-    output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, dt, LN, LT)
+    output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, LN, LT)
     return growth_rate
 ###
 ### Run GS2
 ###
 print('Starting GS2 runs')
 # Default run
-start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 # Double nphi
-nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nphi = int((nphi+1)/2)
 # Double nperiod
-nperiod = int(2*nperiod);nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nperiod = int(2*nperiod);nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nperiod = int(nperiod/2);nphi = int((nphi+1)/2)
 # Double nlambda
-nlambda = 2*nlambda;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nlambda = 2*nlambda;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nlambda = int(nlambda/2)
 # Double nstep
-nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 nstep = int(nstep/2)
 # Half dt
-dt = dt/2;nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+dt = dt/2;nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
 dt = dt*2;nstep = int(nstep/2)
+# Double negrid
+negrid = 2*negrid;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+negrid = int(negrid/2)
+# Double ngauss
+ngauss = 2*ngauss;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+ngauss = int(ngauss/2)
 ###
 ### Plot result
 ###
