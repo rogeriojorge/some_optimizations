@@ -71,6 +71,7 @@
  free_energy = false
  all_zonal_scalars = false
  all_zonal = false
+ fixed_amplitude = true
 
 [Wspectra]
 species          = false
