@@ -16,15 +16,16 @@ import booz_xform as bx
 max_mode = 3
 QA_or_QH = 'QA'
 nfp = 2
-optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
 MAXITER=350
-quasisymmetry = True
+quasisymmetry = False
 
-growth_rate_weight=1e0
+if quasisymmetry: growth_rate_weight=1e1
+else: growth_rate_weight=1e9
 
 plt_opt_res = True
-plot_vmec = True
-run_simple = True
+plot_vmec = False
+run_simple = False
 
 use_final = True
 use_previous_results_if_available = False
@@ -48,7 +49,7 @@ if plt_opt_res:
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),2.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
     df['growth_rate'] = df[df['growth_rate']<1e17]['growth_rate']
-    df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e4]['quasisymmetry_total']
+    # df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e8]['quasisymmetry_total']
     df.plot(use_index=True, y=['growth_rate'])#,'iota'])#,'normalized_time'])
     plt.yscale('log')
     # plt.ylim([0,1.])

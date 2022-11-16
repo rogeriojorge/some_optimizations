@@ -9,10 +9,10 @@
 /
 
 &kt_grids_range_parameters
- aky_min = 0.05
- aky_max = 10.0
- naky = 9
- kyspacing_option='exponential'
+ aky_min = 0.5
+ aky_max = 2.0
+ naky = 4
+ kyspacing_option='linear'
 /
 
 &theta_grid_knobs

@@ -39,7 +39,7 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = False
@@ -175,7 +175,8 @@ def TurbulenceCostFunction(v: Vmec):
     except Exception as e:
         growth_rate = GROWTHRATE_THRESHOLD
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
-    else: qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
+    else: qs = QuasisymmetryRatioResidual(v, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)
+    if np.isnan(qs.total()) or qs.total()>1e18: growth_rate = GROWTHRATE_THRESHOLD
     out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     print(out_str)
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total())
