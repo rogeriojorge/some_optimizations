@@ -39,9 +39,9 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-QA_or_QH = 'QA'
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
-opt_quasisymmetry = False
+QA_or_QH = 'QH'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
+opt_quasisymmetry = True
 
 s_radius = 0.25
 alpha_fieldline = 0
@@ -50,17 +50,17 @@ LN = 3.0
 LT = 3.0
 
 if QA_or_QH=='QA':
-    phi_GS2 = np.linspace(-17*np.pi, 17*np.pi, 91)
-    nlambda = 23
-    nstep = 200
-    dt = 0.09
+    phi_GS2 = np.linspace(-20*np.pi, 20*np.pi, 121)
+    nlambda = 25
+    nstep = 220
+    dt = 0.08
     aspect_ratio_target = 6
     nfp = 2
 else:
-    phi_GS2 = np.linspace(-10*np.pi, 10*np.pi, 91)
-    nlambda = 23
-    nstep = 200
-    dt = 0.07
+    phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 161)
+    nlambda = 25
+    nstep = 210
+    dt = 0.08
     aspect_ratio_target = 8
     nfp = 4
 
@@ -70,7 +70,7 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 1
+weight_optTurbulence = 10
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -140,7 +140,7 @@ def CalculateGrowthRate(v: Vmec):
         replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
         replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
         replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
-        replace(gs2_input_file,' grid_option = "range" ! The general layout of the perpendicular grid.',f' grid_option = "single" ! The general layout of the perpendicular grid.')
+        # replace(gs2_input_file,' grid_option = "range" ! The general layout of the perpendicular grid.',f' grid_option = "single" ! The general layout of the perpendicular grid.')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
@@ -202,7 +202,7 @@ def TurbulenceCostFunction(v: Vmec):
     quasisymmetry_total = qs.total()
     if np.isnan(quasisymmetry_total) or quasisymmetry_total>1e18: return GROWTHRATE_THRESHOLD
     mirror_ratio = MirrorRatioPen(v)
-    print(f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {quasisymmetry_total:1f}, mirror = {mirror_ratio:1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s')
+    print(f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:.2f}, quasisymmetry = {quasisymmetry_total:.2f}, mirror = {mirror_ratio:.2f} with aspect ratio={v.aspect():.2f} took {(time.time()-start_time):1f}s')
     output_dofs_to_csv(v.x,v.mean_iota(),v.aspect(),growth_rate,quasisymmetry_total,mirror_ratio)
     return growth_rate
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
