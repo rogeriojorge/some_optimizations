@@ -65,12 +65,12 @@ if nonlinear:
     npol = 3
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
-    nhermite  = 8
-    nlaguerre = 4
+    nhermite  = 10
+    nlaguerre = 5
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 50
-    nx = 20
+    ny = 100
+    nx = 100
 else:
     LN = 1.0
     LT = 3.0
