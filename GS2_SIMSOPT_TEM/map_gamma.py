@@ -86,11 +86,14 @@ def eigenPlot(stellFile):
     y = f.variables['phi'][()]
     x = f.variables['theta'][()]
     plt.figure(figsize=(7.5,4.0))
-    phiR0= y[0,0,int((len(x)-1)/2+1),0]
-    phiI0= y[0,0,int((len(x)-1)/2+1),1]
+    omega_average_array = np.array(f.variables['omega_average'][()])
+    omega_average_array_gamma = omega_average_array[-1,:,0,1]
+    max_index = np.nanargmax(omega_average_array_gamma)
+    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
+    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
     phi02= phiR0**2+phiI0**2
-    phiR = (y[0,0,:,0]*phiR0+y[0,0,:,1]*phiI0)/phi02
-    phiI = (y[0,0,:,1]*phiR0-y[0,0,:,0]*phiI0)/phi02
+    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
+    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
     ##############
     plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')

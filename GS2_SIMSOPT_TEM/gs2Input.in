@@ -5,13 +5,17 @@
 /
 
 &kt_grids_knobs
- grid_option = "range" ! The general layout of the perpendicular grid.
+ grid_option = "single"! "range" ! The general layout of the perpendicular grid.
+/
+
+&kt_grids_single_parameters
+ aky = 1.0
 /
 
 &kt_grids_range_parameters
  aky_min = 0.05
- aky_max = 20.0
- naky = 10
+ aky_max = 3.0
+ naky = 4
  kyspacing_option='exponential'
 /
 
@@ -80,7 +84,7 @@
  type = "ion" ! Type of species, e.g. 'ion', 'electron', 'beam'
 /
 
-&species_parameters_1
+&species_parameters_2
  z = -1.0 ! Charge
  mass = 0.0027 ! Mass
  dens = 1.0 ! Density	

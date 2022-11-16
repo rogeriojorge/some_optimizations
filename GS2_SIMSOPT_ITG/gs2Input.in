@@ -8,6 +8,10 @@
  grid_option = "range" ! The general layout of the perpendicular grid.
 /
 
+&kt_grids_single_parameters
+ aky = 1.0
+/
+
 &kt_grids_range_parameters
  aky_min = 0.5
  aky_max = 2.0

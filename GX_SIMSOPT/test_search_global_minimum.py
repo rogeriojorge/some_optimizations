@@ -87,8 +87,8 @@ def eigenPlot(stellFile):
     phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
     phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
     phi02= phiR0**2+phiI0**2
-    phiR = (y[max_index,0,:,0]*phiR0+y[0,0,:,1]*phiI0)/phi02
-    phiI = (y[max_index,0,:,1]*phiR0-y[0,0,:,0]*phiI0)/phi02
+    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
+    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
     ##############
     plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
