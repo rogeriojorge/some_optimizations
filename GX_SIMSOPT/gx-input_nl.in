@@ -5,7 +5,7 @@
  ntheta = 80
  nperiod = 1
  ny = 30
- nx = 16
+ nx = 1
 
  nhermite  = 8
  nlaguerre = 4
