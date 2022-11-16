@@ -26,10 +26,10 @@ output_dir = 'test_out_nfp4_QH_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 4000
+nstep = 5000
 dt = 0.05
 nzgrid = 75
-npol = 3
+npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 8

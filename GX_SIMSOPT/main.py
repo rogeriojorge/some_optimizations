@@ -125,16 +125,17 @@ def output_dofs_to_csv(dofs,mean_iota,aspect,quasisymmetry_total,growth_rate,ome
 ##### CALCULATE growth rate HERE #######
 ######################################
 ######################################
-def gammabyky(stellFile):
+def gammabyky(stellFile, fractionToConsider=0.4):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
-    # tX   = fX.variables['time'][()]
+    tX   = fX.variables['time'][()]
+    startIndexX  = int(len(tX)*(1-fractionToConsider))
     kyX  = fX.variables['ky'][()]
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
     realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
     growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
     max_index = np.nanargmax(growthRateX)
-    max_growthrate_gamma = growthRateX[max_index]
-    max_growthrate_omega = realFrequencyX[max_index]
+    max_growthrate_omega = np.mean(omega_average_array[startIndexX:,max_index,0,0])
+    max_growthrate_gamma = np.mean(omega_average_array[startIndexX:,max_index,0,1])
     max_growthrate_ky = kyX[max_index]
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 def get_qflux(stellFile, tau=100, fractionToConsider=0.4):
