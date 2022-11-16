@@ -146,8 +146,8 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    if nonlinear: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
-    else: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
+    if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
+    else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')

@@ -55,7 +55,7 @@
  p_hyper_l = 6
 
  hyper = false
- D_hyper = 0.1
+ D_hyper = 0.05
  p_hyper = 2
 
 [Restart]

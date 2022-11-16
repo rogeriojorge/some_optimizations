@@ -7,8 +7,8 @@
  ny = 30
  nx = 1
 
- nhermite  = 8
- nlaguerre = 4
+ nhermite  = 18
+ nlaguerre = 10
  nspecies = 1
 
 [Domain]
