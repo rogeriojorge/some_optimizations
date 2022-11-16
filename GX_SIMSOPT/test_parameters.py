@@ -143,7 +143,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}"
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     if nonlinear:
         shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
@@ -192,6 +192,8 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, 
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
     eigenPlot(fout)
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+    # fX = netCDF4.Dataset(fout,'r',mmap=False)
+    # qflux = fX.data.groups['Fluxes'].variables['qflux'][:,0]
     remove_gx_files(gx_input_name)
     output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT)
     return max_growthrate_gamma
