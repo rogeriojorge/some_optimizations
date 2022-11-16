@@ -36,7 +36,7 @@ start_time = time.time()
 ############################################################################
 MAXITER = 150
 max_modes = [3]
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = False
@@ -59,18 +59,18 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 3000
-    dt = 0.06
-    nzgrid = 55
+    nstep = 2500
+    dt = 0.07
+    nzgrid = 50
     npol = 3
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
-    nhermite  = 10
-    nlaguerre = 5
+    nhermite  = 8
+    nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 100
-    nx = 100
+    ny = 60
+    nx = 35
 else:
     LN = 1.0
     LT = 3.0

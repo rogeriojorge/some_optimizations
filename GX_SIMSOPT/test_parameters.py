@@ -26,18 +26,18 @@ output_dir = 'test_out_nfp4_QH_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 3000
-dt = 0.06
-nzgrid = 55
+nstep = 2500
+dt = 0.07
+nzgrid = 50
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 10
-nlaguerre = 5
+nhermite  = 8
+nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.02
-ny = 100
-nx = 100
+ny = 60
+nx = 35
 nonlinear = True
 ########################################
 # Go into the output directory
