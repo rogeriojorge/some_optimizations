@@ -207,7 +207,7 @@ def create_gx_inputs(vmec_file):
     except Exception as e: print(e)
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    fname = f"gxInput__wout_{f_wout[5:-3]}"
+    fname = f"gxInput_wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
     else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
@@ -332,6 +332,9 @@ if run_scan:
         growth_rate = optTurbulence.J()
 try: os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
 except Exception as e: print(e)
+for f in glob.glob('grid.gx_wout*'): remove(f)
+for f in glob.glob('gx_wout*'): remove(f)
+for f in glob.glob('input.*'): remove(f)
 if plot_result:
     df_scan = pd.read_csv(output_path_parameters_scan)
 
