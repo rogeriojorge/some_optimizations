@@ -4,7 +4,7 @@
 #SBATCH --time 04:00:00     # format: HH:MM:SS
 #SBATCH -N 1                # nodes
 #SBATCH --ntasks-per-node=4 # tasks out of 128
-#SBATCH --gres=gpu:4        # gpus per node out of 4
+#SBATCH --gpus-per-task=1 # tasks out of 128
 #SBATCH --mem=100000        # memory per node out of 246000MB
 #SBATCH --job-name=gx_opt_mpi
 #SBATCH --mail-type=ALL
