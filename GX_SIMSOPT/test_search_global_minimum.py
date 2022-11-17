@@ -50,18 +50,18 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
-dt = 0.03
-nzgrid = 71
+nstep = 5000
+dt = 0.04
+nzgrid = 51
 npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 9
+nhermite  = 8
 nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.03
-ny = 30
-nx = 30
+ny = 10
+nx = 10
 nonlinear = True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
@@ -70,6 +70,7 @@ os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
 filename = os.path.join(this_path, initial_config)
 vmec = Vmec(filename, verbose=False)
+vmec.keep_all_files = True
 if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
 else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
 surf = vmec.boundary
