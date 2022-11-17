@@ -59,8 +59,8 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 2500
-    dt = 0.07
+    nstep = 250
+    dt = 0.05
     nzgrid = 50
     npol = 3
     desired_normalized_toroidal_flux = 0.25
@@ -69,8 +69,8 @@ if nonlinear:
     nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 60
-    nx = 35
+    ny = 5
+    nx = 5
 else:
     LN = 1.0
     LT = 3.0
@@ -222,6 +222,7 @@ def remove_gx_files(gx_input_name):
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
+    os.environ['CUDA_VISIBLE_DEVICES']=MPI.COMM_WORLD.Get_rank()
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)

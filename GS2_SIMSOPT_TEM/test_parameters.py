@@ -29,14 +29,14 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # dt = 0.1
 vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
 output_dir = 'test_out_nfp4_QH_initial'
-nphi= 181
-nlambda = 23
-nperiod = 5
-nstep = 200
+nphi= 121
+nlambda = 17
+nperiod = 26
+nstep = 250
 dt = 0.1
 ##
-LN = 2.0
-LT = 2.0
+LN = 1.0
+LT = 1.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
@@ -101,7 +101,7 @@ def eigenPlot(stellFile):
     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
     ##############
     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
-    plt.legend(loc="upper right")
+    plt.legend(loc="upper right");#plt.yscale('log')
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
     plt.savefig(stellFile+'_eigenphi.pdf', format='pdf')
     plt.close()

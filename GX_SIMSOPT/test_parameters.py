@@ -36,8 +36,9 @@ nhermite  = 9
 nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.03
-ny = 80
-nx = 80
+ny = 64
+nx = 150
+y0 = 20.0 ### Check if doubling y0 at the same time as doubling ny leads to the same result
 nonlinear = True
 ########################################
 # Go into the output directory
