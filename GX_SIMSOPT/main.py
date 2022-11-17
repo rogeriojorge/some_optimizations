@@ -222,7 +222,7 @@ def remove_gx_files(gx_input_name):
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
-    os.environ['CUDA_VISIBLE_DEVICES']=MPI.COMM_WORLD.Get_rank()
+    os.environ['CUDA_VISIBLE_DEVICES']=str(MPI.COMM_WORLD.Get_rank())
     print(f'On rank {MPI.COMM_WORLD.Get_rank()}')
     print(os.environ['CUDA_VISIBLE_DEVICES'])
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
