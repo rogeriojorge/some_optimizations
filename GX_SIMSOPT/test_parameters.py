@@ -26,19 +26,19 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 4000
-dt = 0.12
-nzgrid = 61
-npol = 2
+nstep = 2500
+dt = 0.13
+nzgrid = 101
+npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 8
 nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.03
-ny = 30
-nx = 60
-y0 = 30.0 ### Check if doubling y0 at the same time as doubling ny leads to the same result
+ny = 60
+nx = 70
+y0 = 35.0 ### Check if doubling y0 at the same time as doubling ny leads to the same result
 nonlinear = True
 ########################################
 # Go into the output directory
