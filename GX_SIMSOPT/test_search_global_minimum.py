@@ -25,7 +25,7 @@ this_path = Path(__file__).parent.resolve()
 min_bound = -0.25
 max_bound = 0.25
 vmec_index_scan_opt = 0
-npoints_scan = 35
+npoints_scan = 12
 ftol = 1e-2
 
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
@@ -50,16 +50,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 7000
-dt = 0.015
-nzgrid = 75
-npol = 3
+nstep = 8000
+dt = 0.03
+nzgrid = 71
+npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 18
-nlaguerre = 10
-nu_hyper = 1.0
+nhermite  = 9
+nlaguerre = 4
+nu_hyper = 0.5
+D_hyper = 0.03
 ny = 30
+nx = 30
+nonlinear = True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
 
@@ -76,46 +79,62 @@ surf.fix("rc(0,0)")
 output_to_csv = True
 
 # Save final eigenfunction
-def eigenPlot(stellFile):
+def eigenPlot(stellFile, fractionToConsider=0.4):
     f = netCDF4.Dataset(stellFile,'r',mmap=False)
     y = np.array(f.groups['Special']['Phi_z'][()])
     x = np.array(f.variables['theta'][()])
+    tX   = f.variables['time'][()]
+    kyX  = f.variables['ky'][()]
+    kxX  = f.variables['kx'][()]
+    startIndexX  = int(len(tX)*(1-fractionToConsider))
     omega_average_array = np.array(f.groups['Special']['omega_v_time'][()])
-    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
-    max_index = np.nanargmax(growthRateX)
-    plt.figure(figsize=(7.5,4.0))
-    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
-    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
+    growthRateX = np.mean(omega_average_array[startIndexX:,:,:,1],axis=0)
+    max_index = np.unravel_index(growthRateX.argmax(),growthRateX.shape)
+    max_growthrate_ky = kyX[max_index[0]]
+    max_growthrate_kx = kxX[max_index[1]]
+    plt.figure()
+    #######
+    phiR0= y[max_index[0],max_index[1],int((len(x)-1)/2),0]
+    phiI0= y[max_index[0],max_index[1],int((len(x)-1)/2),1]
     phi02= phiR0**2+phiI0**2
-    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
-    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
-    ##############
-    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
-    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
-    ##############
-    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
-    plt.legend(loc="upper right")
+    phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+    phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$) $k_x$='+str(max_growthrate_kx)+r' $k_y$='+str(max_growthrate_ky))
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$) $k_x$='+str(max_growthrate_kx)+r' $k_y$='+str(max_growthrate_ky))
+    #######
+    phiR0= y[max_index[0],int((len(kxX)-1)/2),int((len(x)-1)/2),0]
+    phiI0= y[max_index[0],int((len(kxX)-1)/2),int((len(x)-1)/2),1]
+    phi02= phiR0**2+phiI0**2
+    phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+    phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
+    #######
+    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$');plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
     plt.savefig(stellFile+'_eigenphi.png')
     plt.close()
     return 0
-def gammabyky(stellFile):
+def gammabyky(stellFile, fractionToConsider=0.4):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['time'][()]
+    startIndexX  = int(len(tX)*(1-fractionToConsider))
     kyX  = fX.variables['ky'][()]
+    kxX  = fX.variables['kx'][()]
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
-    realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
-    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
-    max_index = np.nanargmax(growthRateX)
-    max_growthrate_gamma = growthRateX[max_index]
-    max_growthrate_omega = realFrequencyX[max_index]
-    max_growthrate_ky = kyX[max_index]
+    realFrequencyX = np.mean(omega_average_array[startIndexX:,:,:,0],axis=0)
+    growthRateX = np.mean(omega_average_array[startIndexX:,:,:,1],axis=0)
+    max_index = np.unravel_index(growthRateX.argmax(),growthRateX.shape)
+    max_growthrate_omega = realFrequencyX[max_index[0],max_index[1]]
+    max_growthrate_gamma = growthRateX[max_index[0],max_index[1]]
+    max_growthrate_ky = kyX[max_index[0]]
+    max_growthrate_kx = kxX[max_index[1]]
 
-    numRows = 1
-    numCols = 3
+    numRows = 2
+    numCols = 2
 
     plt.subplot(numRows, numCols, 1)
-    plt.plot(kyX,growthRateX,'.-')
+    plt.plot(kyX,growthRateX[:,max_index[1]],'.-')
     plt.xlabel('ky')
     plt.ylabel('gamma')
     plt.xscale('log')
@@ -133,7 +152,16 @@ def gammabyky(stellFile):
     plt.rc('xtick', labelsize=8)
 
     plt.subplot(numRows, numCols, 3)
-    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
+    plt.plot(kxX,growthRateX[max_index[0],:],'.-')
+    plt.xlabel('kx')
+    plt.ylabel('gamma')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+
+    plt.subplot(numRows, numCols, 4)
+    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,max_index[1],1],'.-', label=f'gamma at ky={ky}')
     plt.xlabel('time')
     plt.ylabel('gamma')
     plt.rc('font', size=8)
@@ -144,7 +172,6 @@ def gammabyky(stellFile):
     plt.tight_layout()
     plt.savefig(stellFile+"_GammaOmegaKy.png")
     plt.close()
-
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
@@ -155,9 +182,9 @@ def replace(file_path, pattern, subst):
     copymode(file_path, abs_path)
     remove(file_path)
     move(abs_path, file_path)
-def output_dofs_to_csv(csv_path,dofs,mean_iota,aspect,growth_rate,quasisymmetry,well,effective_1o_time=0):
-    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry'],['well'],['effective_1o_time']])
-    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry],[well],[effective_1o_time]])
+def output_dofs_to_csv(csv_path,dofs,mean_iota,aspect,growth_rate,quasisymmetry,well,qflux,effective_1o_time=0):
+    keys=np.concatenate([[f'x({i})' for i, dof in enumerate(dofs)],['mean_iota'],['aspect'],['growth_rate'],['quasisymmetry'],['well'],['qflux'],['effective_1o_time']])
+    values=np.concatenate([dofs,[mean_iota],[aspect],[growth_rate],[quasisymmetry],[well],[qflux],[effective_1o_time]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(csv_path): pd.DataFrame(columns=df.columns).to_csv(csv_path, index=False)
@@ -178,10 +205,11 @@ def create_gx_inputs(vmec_file):
     try: os.remove(geometry_file)
     except Exception as e: print(e)
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
-    # os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    fname = f"gxRun_wout_{f_wout[5:-3]}"
+    os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
+    fname = f"gxInput__wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
+    if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
+    else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')
@@ -194,7 +222,9 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 30',f' ny = {ny}')
-    # if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
+    replace(fnamein,' nx = 1',f' nx = {nx}')
+    replace(fnamein,' D_hyper = 0.05',f' D_hyper = {D_hyper}')
+    os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files
 def remove_gx_files(gx_input_name):
@@ -222,6 +252,15 @@ def remove_gx_files(gx_input_name):
     # for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
     # for f in glob.glob(f'{gx_input_name}.nc'): remove(f)
+def get_qflux(stellFile, fractionToConsider=0.4):
+    fX = netCDF4.Dataset(stellFile,'r',mmap=False)
+    qflux = np.nan_to_num(np.array(fX.groups['Fluxes'].variables['qflux'][:,0]))
+    time = np.array(fX.variables['time'][:])
+    startIndexX  = int(len(time)*(1-fractionToConsider))
+    Q_avg = np.mean(qflux[startIndexX:])
+    plt.figure();plt.plot(time,qflux);plt.xlabel('time');plt.ylabel(f'Q (average = {Q_avg:.1f})')
+    plt.savefig(f'{stellFile}_heatFlux.png')
+    return Q_avg
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
@@ -234,11 +273,12 @@ def run_gx(vmec: Vmec):
     try:
         eigenPlot(fout)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
+        qflux = get_qflux(fout)
     except Exception as e:
         print(e)
-        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
+        max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
     remove_gx_files(gx_input_name)
-    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky
+    return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux
 def TurbulenceCostFunction(v: Vmec):
     start_time = time.time()
     try: v.run()
@@ -246,15 +286,16 @@ def TurbulenceCostFunction(v: Vmec):
         print(e)
         return GROWTHRATE_THRESHOLD
     try:
-        growth_rate, max_growthrate_omega, max_growthrate_ky = run_gx(v)
+        growth_rate, max_growthrate_omega, max_growthrate_ky, qflux = run_gx(v)
     except Exception as e:
         growth_rate, max_growthrate_omega, max_growthrate_ky = GROWTHRATE_THRESHOLD, GROWTHRATE_THRESHOLD, GROWTHRATE_THRESHOLD
     # out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
-    out_str = f'Growth rate = {growth_rate:1f} for point {(vmec.x[vmec_index_scan_opt]):1f}, aspect {np.abs(v.aspect()):1f}, quasisymmetry = {qs.total():1f} and iota {(v.mean_iota()):1f} took {(time.time()-start_time):1f}s'
+    out_str = f'Growth rate = {growth_rate:1f}, qflux = {qflux:1f} for point {(vmec.x[vmec_index_scan_opt]):1f}, aspect {np.abs(v.aspect()):1f}, quasisymmetry = {qs.total():1f} and iota {(v.mean_iota()):1f} took {(time.time()-start_time):1f}s'
     print(out_str)
-    if output_to_csv: output_dofs_to_csv(output_path_parameters_opt, v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total(),v.vacuum_well())
-    else: output_dofs_to_csv(output_path_parameters_scan, v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total(),v.vacuum_well())
-    return growth_rate
+    if output_to_csv: output_dofs_to_csv(output_path_parameters_opt, v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total(),v.vacuum_well(), qflux)
+    else: output_dofs_to_csv(output_path_parameters_scan, v.x,v.mean_iota(),v.aspect(),growth_rate,qs.total(),v.vacuum_well(), qflux)
+    if nonlinear: return qflux
+    else: return growth_rate
 optTurbulence = make_optimizable(TurbulenceCostFunction, vmec)
 def fun(dofss):
     vmec.x = [dofss[0] if count==vmec_index_scan_opt else vx for count,vx in enumerate(vmec.x)]
@@ -317,10 +358,17 @@ if plot_result:
         plt.plot(df_opt[f'x({vmec_index_scan_opt})'], df_opt['growth_rate'], 'ro', markersize=1, label='Optimizer')
         plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
         plt.ylabel('Growth Rate');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('growth_rate_over_opt_scan.pdf')
+
+        fig = plt.figure()
+        plt.plot(df_opt[f'x({vmec_index_scan_opt})'], df_opt['qflux'], 'ro', markersize=1, label='Optimizer')
+        plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['qflux'], label='Scan')
+        plt.ylabel('Heat flux');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('heat_flux_over_opt_scan.pdf')
     except Exception as e: print(e)
     points_scan = np.linspace(min_bound,max_bound,len(df_scan[f'x({vmec_index_scan_opt})']))
     fig = plt.figure();plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
     plt.ylabel('Growth Rate');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('growth_rate_scan.pdf')
+    fig = plt.figure();plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['qflux'], label='Scan')
+    plt.ylabel('Heat Flux');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('heat_flux_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['aspect'], label='Aspect ratio')
     plt.ylabel('Aspect ratio');plt.xlabel('RBC(1,0)');plt.savefig('aspect_ratio_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['mean_iota'], label='Rotational Transform (1/q)')
@@ -348,3 +396,20 @@ if plot_result:
     plt.legend(handles=[line1, line2])
     plt.tight_layout()
     plt.savefig('quasisymmetry_vs_growthrate.pdf')
+
+    fig=plt.figure(figsize=(6,4.5))
+    ax=fig.add_subplot(111, label="1")
+    ax2=fig.add_subplot(111, label="2", frame_on=False)
+    ax.set_xlabel('RBC(1,0)')
+    line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['qflux'], color="C0", label='Heat Flux')
+    ax.set_ylabel("Heat Flux", color="C0")
+    ax.tick_params(axis='y', colors="C0")
+    line2, = ax2.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['quasisymmetry'], color="C1", label='Quasisymmetry cost function')
+    ax2.yaxis.tick_right()
+    ax2.set_xticks([])
+    ax2.set_ylabel('Quasisymmetry cost function', color="C1") 
+    ax2.yaxis.set_label_position('right') 
+    ax2.tick_params(axis='y', colors="C1")
+    plt.legend(handles=[line1, line2])
+    plt.tight_layout()
+    plt.savefig('quasisymmetry_vs_heatflux.pdf')
