@@ -87,6 +87,7 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     Pky = np.array(f.groups['Spectra'].variables['Pkyst'][:,0,:])
     Pky = np.mean(Pky[int(len(tX)/2):], axis=0)
     plt.plot(kyX, Pky, 'o-');plt.xscale('log');plt.yscale('log')
+    plt.xlabel(r'$k_y$');plt.ylabel(r'$Q$');plt.tight_layout()
     plt.savefig(stellFile+'_spectra_pkyst.png')
     plt.close()
     return 0
