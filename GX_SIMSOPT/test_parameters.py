@@ -38,7 +38,7 @@ nu_hyper = 0.5
 D_hyper = 0.03
 ny = 60
 nx = 70
-y0 = 35.0 ### Check if doubling y0 at the same time as doubling ny leads to the same result
+y0 = 35.0
 nonlinear = True
 ########################################
 # Go into the output directory

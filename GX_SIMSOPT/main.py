@@ -59,19 +59,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 7000
-    dt = 0.04
-    nzgrid = 50
-    npol = 3
+    nstep = 2500
+    dt = 0.13
+    nzgrid = 101
+    npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
     nhermite  = 8
     nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 64
-    nx = 150
-    y0 = 20
+    ny = 60
+    nx = 70
+    y0 = 35.0
 else:
     LN = 1.0
     LT = 3.0
