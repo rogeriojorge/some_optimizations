@@ -48,25 +48,38 @@ os.chdir(OUT_DIR)
 vmec = Vmec(vmec_file)
 ##### Function to obtain gamma and omega for each ky
 # Save final eigenfunction
-def eigenPlot(stellFile):
+def eigenPlot(stellFile, fractionToConsider=0.4):
     f = netCDF4.Dataset(stellFile,'r',mmap=False)
     y = np.array(f.groups['Special']['Phi_z'][()])
     x = np.array(f.variables['theta'][()])
+    tX   = f.variables['time'][()]
+    kyX  = f.variables['ky'][()]
+    kxX  = f.variables['kx'][()]
+    startIndexX  = int(len(tX)*(1-fractionToConsider))
     omega_average_array = np.array(f.groups['Special']['omega_v_time'][()])
-    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
-    max_index = np.nanargmax(growthRateX)
-    plt.figure(figsize=(7.5,4.0))
-    phiR0= y[max_index,0,int((len(x)-1)/2+1),0]
-    phiI0= y[max_index,0,int((len(x)-1)/2+1),1]
+    growthRateX = np.mean(omega_average_array[startIndexX:,:,:,1],axis=0)
+    max_index = np.unravel_index(growthRateX.argmax(),growthRateX.shape)
+    max_growthrate_ky = kyX[max_index[0]]
+    max_growthrate_kx = kxX[max_index[1]]
+    plt.figure()
+    #######
+    phiR0= y[max_index[0],max_index[1],int((len(x)-1)/2),0]
+    phiI0= y[max_index[0],max_index[1],int((len(x)-1)/2),1]
     phi02= phiR0**2+phiI0**2
-    phiR = (y[max_index,0,:,0]*phiR0+y[max_index,0,:,1]*phiI0)/phi02
-    phiI = (y[max_index,0,:,1]*phiR0-y[max_index,0,:,0]*phiI0)/phi02
-    ##############
-    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$)')
-    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$)')
-    ##############
-    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$')
-    plt.legend(loc="upper right")
+    phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+    phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$) $k_x$='+str(max_growthrate_kx)+r' $k_y$='+str(max_growthrate_ky))
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$) $k_x$='+str(max_growthrate_kx)+r' $k_y$='+str(max_growthrate_ky))
+    #######
+    phiR0= y[max_index[0],int((len(kxX)-1)/2),int((len(x)-1)/2),0]
+    phiI0= y[max_index[0],int((len(kxX)-1)/2),int((len(x)-1)/2),1]
+    phi02= phiR0**2+phiI0**2
+    phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+    phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+    plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
+    plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
+    #######
+    plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$');plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
     plt.savefig(stellFile+'_eigenphi.png')
     plt.close()
@@ -76,19 +89,21 @@ def gammabyky(stellFile, fractionToConsider=0.4):
     tX   = fX.variables['time'][()]
     startIndexX  = int(len(tX)*(1-fractionToConsider))
     kyX  = fX.variables['ky'][()]
+    kxX  = fX.variables['kx'][()]
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
-    realFrequencyX = omega_average_array[-1,:,0,0] # only looking at one kx
-    growthRateX = omega_average_array[-1,:,0,1] # only looking at one kx
-    max_index = np.nanargmax(growthRateX)
-    max_growthrate_omega = np.mean(omega_average_array[startIndexX:,max_index,0,0])
-    max_growthrate_gamma = np.mean(omega_average_array[startIndexX:,max_index,0,1])
-    max_growthrate_ky = kyX[max_index]
+    realFrequencyX = np.mean(omega_average_array[startIndexX:,:,:,0],axis=0)
+    growthRateX = np.mean(omega_average_array[startIndexX:,:,:,1],axis=0)
+    max_index = np.unravel_index(growthRateX.argmax(),growthRateX.shape)
+    max_growthrate_omega = realFrequencyX[max_index[0],max_index[1]]
+    max_growthrate_gamma = growthRateX[max_index[0],max_index[1]]
+    max_growthrate_ky = kyX[max_index[0]]
+    max_growthrate_kx = kxX[max_index[1]]
 
-    numRows = 1
-    numCols = 3
+    numRows = 2
+    numCols = 2
 
     plt.subplot(numRows, numCols, 1)
-    plt.plot(kyX,growthRateX,'.-')
+    plt.plot(kyX,growthRateX[:,max_index[1]],'.-')
     plt.xlabel('ky')
     plt.ylabel('gamma')
     plt.xscale('log')
@@ -106,7 +121,16 @@ def gammabyky(stellFile, fractionToConsider=0.4):
     plt.rc('xtick', labelsize=8)
 
     plt.subplot(numRows, numCols, 3)
-    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,0,1],'.-', label=f'gamma at ky={ky}')
+    plt.plot(kxX,growthRateX[max_index[0],:],'.-')
+    plt.xlabel('kx')
+    plt.ylabel('gamma')
+    plt.xscale('log')
+    plt.rc('font', size=8)
+    plt.rc('axes', labelsize=8)
+    plt.rc('xtick', labelsize=8)
+
+    plt.subplot(numRows, numCols, 4)
+    for count, ky in enumerate(kyX): plt.plot(tX[2:],omega_average_array[2:,count,max_index[1],1],'.-', label=f'gamma at ky={ky}')
     plt.xlabel('time')
     plt.ylabel('gamma')
     plt.rc('font', size=8)
@@ -172,6 +196,7 @@ def remove_gx_files(gx_input_name):
     for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
     for f in glob.glob('*.out.nc'): remove(f)
+    # for f in glob.glob('*.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
 def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, growth_rate, frequency, ky, ln, lt, qflux):
     keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky'],['nu_hyper'],['D_hyper'],['nx'],['ny'],['qflux']])
@@ -180,12 +205,14 @@ def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hype
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
     df.to_csv(output_csv, mode='a', header=False, index=False)
-def get_qflux(stellFile, tau=100, fractionToConsider=0.4):
+def get_qflux(stellFile, fractionToConsider=0.4):
     fX = netCDF4.Dataset(stellFile,'r',mmap=False)
     qflux = np.nan_to_num(np.array(fX.groups['Fluxes'].variables['qflux'][:,0]))
     time = np.array(fX.variables['time'][:])
     startIndexX  = int(len(time)*(1-fractionToConsider))
     Q_avg = np.mean(qflux[startIndexX:])
+    plt.figure();plt.plot(time,qflux);plt.xlabel('time');plt.ylabel(f'Q (average = {Q_avg:.1f})')
+    plt.savefig(f'{stellFile}_heatFlux.png')
     return Q_avg
 # Function to run GS2 and extract growth rate
 def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx):
