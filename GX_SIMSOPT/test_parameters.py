@@ -26,7 +26,7 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 3500
+nstep = 4000
 dt = 0.12
 nzgrid = 61
 npol = 2
