@@ -87,7 +87,7 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     Pky = np.array(f.groups['Spectra'].variables['Pkyst'][:,0,:])
     Pky = np.mean(Pky[int(len(tX)/2):], axis=0)
     plt.plot(kyX, Pky, 'o-');plt.xscale('log');plt.yscale('log')
-    plt.savefig(stellFile+'_spectra_pkyst'.png)
+    plt.savefig(stellFile+'_spectra_pkyst.png')
     plt.close()
     return 0
 def gammabyky(stellFile, fractionToConsider=0.4):
