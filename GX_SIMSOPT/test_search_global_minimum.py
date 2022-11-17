@@ -22,13 +22,13 @@ import matplotlib
 matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 
-min_bound = -0.25
-max_bound = 0.25
+min_bound = -0.2
+max_bound = 0.2
 vmec_index_scan_opt = 0
 npoints_scan = 12
 ftol = 1e-2
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
