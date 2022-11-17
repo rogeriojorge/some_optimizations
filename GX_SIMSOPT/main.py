@@ -59,8 +59,8 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 250
-    dt = 0.05
+    nstep = 7000
+    dt = 0.04
     nzgrid = 50
     npol = 3
     desired_normalized_toroidal_flux = 0.25
@@ -69,8 +69,9 @@ if nonlinear:
     nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 5
-    nx = 5
+    ny = 64
+    nx = 150
+    y0 = 20
 else:
     LN = 1.0
     LT = 3.0
@@ -87,6 +88,7 @@ else:
     D_hyper = 0.05
     ny = 30
     nx = 1
+    y0 = 5
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -189,6 +191,7 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 30',f' ny = {ny}')
     replace(fnamein,' nx = 1',f' nx = {nx}')
+    replace(fnamein,' y0 = 20.0',f' y0 = {y0}')
     replace(fnamein,' D_hyper = 0.05',f' D_hyper = {D_hyper}')
     # if not os.path.join(OUT_DIR,f_wout)==vmec_file: os.remove(os.path.join(OUT_DIR,f_wout))
     return fname

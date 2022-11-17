@@ -26,13 +26,13 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 9000
-dt = 0.03
+nstep = 7000
+dt = 0.04
 nzgrid = 71
 npol = 6
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 9
+nhermite  = 8
 nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.03
@@ -83,6 +83,11 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$');plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
     plt.savefig(stellFile+'_eigenphi.png')
+    plt.figure()
+    Pky = np.array(f.groups['Spectra'].variables['Pkyst'][:,0,:])
+    Pky = np.mean(Pky[int(len(tX)/2):], axis=0)
+    plt.plot(kyX, Pky, 'o-');plt.xscale('log');plt.yscale('log')
+    plt.savefig(stellFile+'_spectra_pkyst'.png)
     plt.close()
     return 0
 def gammabyky(stellFile, fractionToConsider=0.4):
@@ -154,7 +159,7 @@ def replace(file_path, pattern, subst):
     remove(file_path)
     move(abs_path, file_path)
 # Function to create GS2 gridout and input file
-def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx):
+def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0):
     f_wout = vmec_file.split('/')[-1]
     shutil.copy(vmec_file,os.path.join(OUT_DIR,f_wout))
     #gx = GX_Runner(os.path.join(this_path,"gx-input.in"))
@@ -169,7 +174,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}"
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}_y0"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
     else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
@@ -185,6 +190,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     replace(fnamein,' nu_hyper_m = 1.0',f' nu_hyper_m = {nu_hyper}')
     replace(fnamein,' nu_hyper_l = 1.0',f' nu_hyper_l = {nu_hyper}')
     replace(fnamein,' ny = 30',f' ny = {ny}')
+    replace(fnamein,' y0 = 20.0',f' y0 = {y0}')
     replace(fnamein,' nx = 1',f' nx = {nx}')
     replace(fnamein,' D_hyper = 0.05',f' D_hyper = {D_hyper}')
     os.remove(os.path.join(OUT_DIR,f_wout))
@@ -199,9 +205,9 @@ def remove_gx_files(gx_input_name):
     for f in glob.glob('*.out.nc'): remove(f)
     # for f in glob.glob('*.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
-def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, growth_rate, frequency, ky, ln, lt, qflux):
-    keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky'],['nu_hyper'],['D_hyper'],['nx'],['ny'],['qflux']])
-    values=np.concatenate([[ln],[lt],[nzgrid],[npol],[nstep],[nhermite],[nlaguerre],[dt],[growth_rate],[frequency],[ky],[nu_hyper],[D_hyper],[nx],[ny],[qflux]])
+def output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, growth_rate, frequency, ky, ln, lt, qflux, y0):
+    keys=np.concatenate([['ln'],['lt'],['nzgrid'],['npol'],['nstep'],['nhermite'],['nlaguerre'],['dt'],['growth_rate'],['frequency'],['ky'],['nu_hyper'],['D_hyper'],['nx'],['ny'],['y0'],['qflux']])
+    values=np.concatenate([[ln],[lt],[nzgrid],[npol],[nstep],[nhermite],[nlaguerre],[dt],[growth_rate],[frequency],[ky],[nu_hyper],[D_hyper],[nx],[ny],[y0],[qflux]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
@@ -216,8 +222,8 @@ def get_qflux(stellFile, fractionToConsider=0.4):
     plt.savefig(f'{stellFile}_heatFlux.png')
     return Q_avg
 # Function to run GS2 and extract growth rate
-def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx):
-    gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
+def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0):
+    gx_input_name = create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:
@@ -228,56 +234,60 @@ def run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, 
     max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
     qflux = get_qflux(fout)
     remove_gx_files(gx_input_name)
-    output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT, qflux)
+    output_to_csv(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, nx, ny, max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, LN, LT, qflux, y0)
     return max_growthrate_gamma, qflux
 ###
 ### Run GS2
 ###
 print('Starting GX runs')
 # Default run
-start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 # Double nzgrid
-nzgrid = 2*nzgrid-1;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nzgrid = 2*nzgrid-1;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nzgrid = int((nzgrid+1)/2)
 # Double npol
-nzgrid = 2*nzgrid-1;npol=2*npol;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nzgrid = 2*nzgrid-1;npol=2*npol;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nzgrid = int((nzgrid+1)/2);npol=int(npol/2)
 # Double nstep
-nstep = 2*nstep;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nstep = 2*nstep;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nstep = int(nstep/2)
 # Half dt
-nstep = 2*nstep;dt=dt/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nstep = 2*nstep;dt=dt/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nstep = int(nstep/2);dt=dt*2
 # Double nhermite
-nhermite = 2*nhermite;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nhermite = 2*nhermite;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nhermite = int(nhermite/2)
 # Double nlaguerre
-nlaguerre = 2*nlaguerre;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nlaguerre = 2*nlaguerre;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nlaguerre = int(nlaguerre/2)
 # Half n_hyper
-nu_hyper = nu_hyper/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nu_hyper = nu_hyper/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nu_hyper = nu_hyper*2
 # Half D_hyper
 if nonlinear:
-    D_hyper = D_hyper/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-    print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+    D_hyper = D_hyper/2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+    print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
     D_hyper = D_hyper*2
 # Double ny
-ny = ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+ny = ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 ny = int(ny/2)
 # Double nx
-nx = nx*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx)
-print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+nx = nx*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 nx = int(nx/2)
+# Double y0
+y0 = y0*2;ny=ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+ny = int(ny/2);y0=y0/2
 ###
 ### Plot result
 ###
