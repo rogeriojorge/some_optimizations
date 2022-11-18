@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=4 # tasks out of 128
 #SBATCH --gres=gpu:4        # gpus per node out of 4
 #SBATCH --mem=100000        # memory per node out of 246000MB
-#SBATCH --accel-bind=g
+#SBATCH --gpu-bind=closest
 #SBATCH --job-name=gx_opt_mpi
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
