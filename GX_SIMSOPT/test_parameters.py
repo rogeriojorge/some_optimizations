@@ -26,9 +26,9 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 3100
-dt = 0.15
-nzgrid = 121
+nstep = 2900
+dt = 0.2
+nzgrid = 141
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
@@ -36,8 +36,8 @@ nhermite  = 7
 nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 100
-nx = 100
+ny = 80
+nx = 80
 y0 = 28.0
 nonlinear = True
 ########################################
