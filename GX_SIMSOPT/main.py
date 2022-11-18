@@ -69,10 +69,10 @@ if nonlinear:
     nhermite  = 7
     nlaguerre = 3
     nu_hyper = 0.5
-    D_hyper = 0.03
-    ny = 60
-    nx = 70
-    y0 = 20.0
+    D_hyper = 0.035
+    ny = 100
+    nx = 100
+    y0 = 15.0
 else:
     LN = 1.0
     LT = 3.0
