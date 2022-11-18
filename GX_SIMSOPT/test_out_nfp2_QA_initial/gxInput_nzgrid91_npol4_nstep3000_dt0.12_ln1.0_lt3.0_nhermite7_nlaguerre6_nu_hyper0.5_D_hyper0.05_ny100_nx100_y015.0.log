@@ -1,0 +1,22 @@
+Running /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp2_QA_initial/gxInput_nzgrid91_npol4_nstep3000_dt0.12_ln1.0_lt3.0_nhermite7_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx100_y015.0 
+Version: e01db66-dirty 	 Compiled: Mon Oct 31 16:46:05 CET 2022 
+[35mUsing hypercollisions.
+Using hyperdiffusion.
+[0mREADING NC GEO
+set_jtwist_x0: shat_in = 0.006959
+Warning: shat was set so small that it was giving jtwist=0
+Setting x0=y0 and zero_shat=true
+Using no magnetic shear because zero_shat = true. Setting boundary_option='periodic' 
+jtwist = 0, x0 = 15.000000
+[34mAllocated a field array of size 7.08 MB
+Allocated a field array of size 7.08 MB
+Allocated a field array of size 7.08 MB
+[0mAllocated a G_lm array of size 297.43 MB
+Allocated a field array of size 7.08 MB
+Allocated a field array of size 7.08 MB
+Allocated a field array of size 7.08 MB
+Allocated a G_lm array of size 297.43 MB
+Allocated a G_lm array of size 297.43 MB
+Allocated a G_lm array of size 297.43 MB
+Allocated a G_lm array of size 297.43 MB
+GPU memory usage: used = 3403.125000 MB (21.100725 %), free = 12724.875000 MB (78.899275 %), total = 16128.000000 MB
