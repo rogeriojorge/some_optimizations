@@ -6,7 +6,7 @@
 #SBATCH --ntasks-per-node=1 # 8 tasks out of 128
 #SBATCH --gres=gpu:1        # 1 gpus per node out of 4
 #SBATCH --mem=7500          # memory per node out of 246000MB
-#SBATCH --job-name=gx_opt
+#SBATCH --job-name=gx_test_p
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
 cd /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT
