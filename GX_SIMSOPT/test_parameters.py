@@ -36,9 +36,9 @@ nhermite  = 7
 nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 80
-y0 = 35.0
+ny = 100
+nx = 100
+y0 = 15.0
 nonlinear = True
 ########################################
 # Go into the output directory
