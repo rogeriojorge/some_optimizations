@@ -26,7 +26,7 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 2900
+nstep = 3500
 dt = 0.2
 nzgrid = 141
 npol = 4
@@ -36,9 +36,9 @@ nhermite  = 7
 nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 80
-y0 = 28.0
+ny = 150
+nx = 150
+y0 = 35.0
 nonlinear = True
 ########################################
 # Go into the output directory
