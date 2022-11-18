@@ -26,9 +26,9 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 3000
-dt = 0.12
-nzgrid = 91
+nstep = 5000
+dt = 0.3
+nzgrid = 141
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
@@ -36,9 +36,9 @@ nhermite  = 7
 nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 80
-y0 = 35.0
+ny = 120
+nx = 120
+y0 = 20.0
 nonlinear = True
 ########################################
 # Go into the output directory
@@ -86,7 +86,7 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     plt.figure()
     Pky = np.array(f.groups['Spectra'].variables['Pkyst'][:,0,:])
     Pky = np.mean(Pky[int(len(tX)/2):], axis=0)
-    plt.plot(kyX, Pky, 'o-');plt.xscale('log');plt.yscale('log')
+    plt.plot(kyX, Pky, 'o-');#plt.xscale('log');plt.yscale('log')
     plt.xlabel(r'$k_y$');plt.ylabel(r'$Q$');plt.tight_layout()
     plt.savefig(stellFile+'_spectra_pkyst.png')
     plt.close()
@@ -94,7 +94,7 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     plt.figure()
     Pkx = np.array(f.groups['Spectra'].variables['Pkxst'][:,0,:])
     Pkx = np.mean(Pkx[int(len(tX)/2):], axis=0)
-    plt.plot(kxX, Pkx, 'o-');plt.yscale('log')
+    plt.plot(kxX, Pkx, 'o-');#plt.yscale('log')
     plt.xlabel(r'$k_x$');plt.ylabel(r'$Q$');plt.tight_layout()
     plt.savefig(stellFile+'_spectra_pkxst.png')
     plt.close()
@@ -298,6 +298,10 @@ nx = int(nx/2)
 y0 = y0*2;ny=ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 ny = int(ny/2);y0=y0/2
+# Half y0
+y0 = y0/2;ny=ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+ny = int(ny/2);y0=y0*2
 ###
 ### Plot result
 ###
