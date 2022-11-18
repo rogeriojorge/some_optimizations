@@ -1,0 +1,608 @@
+Initial aspect ratio: 8.000967056664201
+Initial mean iota: -1.2414619577370025
+Initial magnetic well: -0.014518732731757817
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+Initial heat flux: 69.87681
+## Now calculating total objective function ##
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:08:14 - Growth rate = 2.750647, qflux = 69.876808, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 135.139915s
+Total objective before optimization: 488276.83195393224
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:10:40 - Growth rate = 2.750647, qflux = 69.876808, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 135.272714s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:13:06 - Growth rate = 2.750647, qflux = 69.876808, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 134.993640s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:15:32 - Growth rate = 2.750647, qflux = 69.876808, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 135.104544s
+On rank 15 and CUDA_VISIBLE_DEVICES=15
+On rank 14 and CUDA_VISIBLE_DEVICES=14
+On rank 28 and CUDA_VISIBLE_DEVICES=28
+On rank 31 and CUDA_VISIBLE_DEVICES=31
+On rank 30 and CUDA_VISIBLE_DEVICES=30
+On rank 26 and CUDA_VISIBLE_DEVICES=26
+On rank 29 and CUDA_VISIBLE_DEVICES=29
+On rank 25 and CUDA_VISIBLE_DEVICES=25
+On rank 24 and CUDA_VISIBLE_DEVICES=24
+On rank 27 and CUDA_VISIBLE_DEVICES=27
+On rank 12 and CUDA_VISIBLE_DEVICES=12
+On rank 13 and CUDA_VISIBLE_DEVICES=13
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 10 and CUDA_VISIBLE_DEVICES=10
+On rank 11 and CUDA_VISIBLE_DEVICES=11
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 9 and CUDA_VISIBLE_DEVICES=9
+On rank 8 and CUDA_VISIBLE_DEVICES=8
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_014_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_015_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_024_000001.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 23 and CUDA_VISIBLE_DEVICES=23
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_029_000001.nc'
+On rank 22 and CUDA_VISIBLE_DEVICES=22
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_028_000001.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_027_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_026_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_025_000001.nc'
+On rank 21 and CUDA_VISIBLE_DEVICES=21
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_012_000001.nc'
+On rank 20 and CUDA_VISIBLE_DEVICES=20
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_013_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_031_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_030_000001.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_021_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_023_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_020_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_022_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_008_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_011_000001.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_010_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_009_000001.nc'
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035077 with aspect ratio=8.000967 took 0.796539s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035090 with aspect ratio=8.000971 took 0.906641s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035080 with aspect ratio=8.000969 took 1.014374s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035132 with aspect ratio=8.000967 took 0.938427s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035165 with aspect ratio=8.000974 took 0.893677s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035094 with aspect ratio=8.000967 took 0.911723s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035051 with aspect ratio=8.000967 took 0.981004s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035040 with aspect ratio=8.000967 took 0.979954s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035076 with aspect ratio=8.000944 took 0.839736s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035072 with aspect ratio=8.000971 took 0.841329s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.034998 with aspect ratio=8.000468 took 0.943589s
+On rank 6 and CUDA_VISIBLE_DEVICES=6
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035114 with aspect ratio=8.001096 took 0.923297s
+On rank 19 and CUDA_VISIBLE_DEVICES=19
+On rank 5 and CUDA_VISIBLE_DEVICES=5
+On rank 18 and CUDA_VISIBLE_DEVICES=18
+On rank 7 and CUDA_VISIBLE_DEVICES=7
+On rank 16 and CUDA_VISIBLE_DEVICES=16
+On rank 4 and CUDA_VISIBLE_DEVICES=4
+On rank 17 and CUDA_VISIBLE_DEVICES=17
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035078 with aspect ratio=8.000968 took 0.919355s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035092 with aspect ratio=8.000967 took 0.927602s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035079 with aspect ratio=8.000969 took 0.923239s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_006_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_007_000001.nc'
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035094 with aspect ratio=8.000967 took 0.946280s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_019_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_017_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_016_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_018_000001.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_005_000001.nc'
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035114 with aspect ratio=8.000967 took 1.174469s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035063 with aspect ratio=8.000967 took 1.286399s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_004_000001.nc'
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035155 with aspect ratio=8.000961 took 1.324246s
+00:15:44 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035109 with aspect ratio=8.000968 took 1.204917s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035212 with aspect ratio=8.000566 took 1.421630s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035167 with aspect ratio=8.000955 took 1.421335s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035128 with aspect ratio=8.000967 took 1.592335s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035166 with aspect ratio=8.000960 took 1.442518s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035085 with aspect ratio=8.000967 took 1.619814s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035080 with aspect ratio=8.000966 took 1.617085s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035082 with aspect ratio=8.000967 took 1.615890s
+00:15:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035142 with aspect ratio=8.000967 took 1.458812s
+On rank 14 and CUDA_VISIBLE_DEVICES=14
+On rank 15 and CUDA_VISIBLE_DEVICES=15
+On rank 13 and CUDA_VISIBLE_DEVICES=13
+On rank 12 and CUDA_VISIBLE_DEVICES=12
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_014_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_015_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_012_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_013_000002.nc'
+On rank 8 and CUDA_VISIBLE_DEVICES=8
+On rank 9 and CUDA_VISIBLE_DEVICES=9
+On rank 11 and CUDA_VISIBLE_DEVICES=11
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+00:15:55 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035088 with aspect ratio=8.000967 took 0.778150s
+00:15:55 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035089 with aspect ratio=8.000967 took 0.777689s
+00:15:55 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035075 with aspect ratio=8.000969 took 0.779819s
+00:15:55 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035078 with aspect ratio=8.000968 took 0.782167s
+On rank 5 and CUDA_VISIBLE_DEVICES=5
+On rank 7 and CUDA_VISIBLE_DEVICES=7
+On rank 10 and CUDA_VISIBLE_DEVICES=10
+On rank 4 and CUDA_VISIBLE_DEVICES=4
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_008_000002.nc'
+On rank 6 and CUDA_VISIBLE_DEVICES=6
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_011_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_010_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_006_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_009_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_004_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_005_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_007_000002.nc'
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035128 with aspect ratio=8.000967 took 0.775550s
+On rank 16 and CUDA_VISIBLE_DEVICES=16
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_016_000002.nc'
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035080 with aspect ratio=8.000967 took 1.078135s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035073 with aspect ratio=8.000967 took 0.809512s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035075 with aspect ratio=8.000965 took 0.795913s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035082 with aspect ratio=8.000967 took 1.080466s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035079 with aspect ratio=8.000966 took 1.078191s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035077 with aspect ratio=8.000938 took 0.842461s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035065 with aspect ratio=8.000971 took 0.825530s
+00:15:56 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.035083 with aspect ratio=8.000967 took 0.701145s
+00:17:57 - Growth rate = 6.450294, qflux = 70.950180, quasisymmetry = 0.035068 with aspect ratio=8.000967 took 134.232515s
+00:17:58 - Growth rate = 2.208232, qflux = 69.608994, quasisymmetry = 0.035109 with aspect ratio=8.000967 took 134.622779s
+00:17:58 - Growth rate = 12.617992, qflux = 69.407982, quasisymmetry = 0.034989 with aspect ratio=8.000962 took 134.617647s
+00:17:58 - Growth rate = 4.679242, qflux = 70.821129, quasisymmetry = 0.035114 with aspect ratio=8.000971 took 134.919088s
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+00:20:21 - Growth rate = 13.660419, qflux = 69.362473, quasisymmetry = 0.035070 with aspect ratio=8.000968 took 133.876881s
+00:20:23 - Growth rate = 1.896864, qflux = 70.415848, quasisymmetry = 0.035151 with aspect ratio=8.000967 took 133.946160s
+00:20:24 - Growth rate = 15.886723, qflux = 70.990013, quasisymmetry = 0.035057 with aspect ratio=8.000967 took 135.410862s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         2.4414e+05                                    2.10e+11    
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:22:49 - Growth rate = -0.423778, qflux = 62.842239, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 134.973285s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:25:13 - Growth rate = -0.423778, qflux = 62.842239, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 135.146834s
+On rank 24 and CUDA_VISIBLE_DEVICES=24
+On rank 25 and CUDA_VISIBLE_DEVICES=25
+On rank 16 and CUDA_VISIBLE_DEVICES=16
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_025_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_024_000002.nc'
+On rank 27 and CUDA_VISIBLE_DEVICES=27
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_016_000003.nc'
+On rank 5 and CUDA_VISIBLE_DEVICES=5
+On rank 26 and CUDA_VISIBLE_DEVICES=26
+On rank 6 and CUDA_VISIBLE_DEVICES=6
+On rank 4 and CUDA_VISIBLE_DEVICES=4
+On rank 19 and CUDA_VISIBLE_DEVICES=19
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 21 and CUDA_VISIBLE_DEVICES=21
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 18 and CUDA_VISIBLE_DEVICES=18
+On rank 7 and CUDA_VISIBLE_DEVICES=7
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_019_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_021_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 17 and CUDA_VISIBLE_DEVICES=17
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_006_000003.nc'
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_027_000002.nc'
+On rank 23 and CUDA_VISIBLE_DEVICES=23
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_004_000003.nc'
+On rank 22 and CUDA_VISIBLE_DEVICES=22
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_026_000002.nc'
+On rank 20 and CUDA_VISIBLE_DEVICES=20
+On rank 8 and CUDA_VISIBLE_DEVICES=8
+On rank 14 and CUDA_VISIBLE_DEVICES=14
+On rank 11 and CUDA_VISIBLE_DEVICES=11
+On rank 13 and CUDA_VISIBLE_DEVICES=13
+On rank 10 and CUDA_VISIBLE_DEVICES=10
+On rank 29 and CUDA_VISIBLE_DEVICES=29
+On rank 28 and CUDA_VISIBLE_DEVICES=28
+On rank 31 and CUDA_VISIBLE_DEVICES=31
+On rank 30 and CUDA_VISIBLE_DEVICES=30
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_005_000003.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_018_000002.nc'
+On rank 12 and CUDA_VISIBLE_DEVICES=12
+On rank 15 and CUDA_VISIBLE_DEVICES=15
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_007_000003.nc'
+On rank 9 and CUDA_VISIBLE_DEVICES=9
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_014_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321912 with aspect ratio=6.970208 took 0.565048s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_017_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_023_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_022_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_011_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_020_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321865 with aspect ratio=6.970208 took 0.736786s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321985 with aspect ratio=6.970207 took 0.729869s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_028_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_031_000002.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_008_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_010_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_030_000002.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_015_000003.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_012_000003.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_009_000003.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_013_000003.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_029_000002.nc'
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321850 with aspect ratio=6.970209 took 0.668653s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321129 with aspect ratio=6.970222 took 0.817934s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321914 with aspect ratio=6.970208 took 0.852180s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321932 with aspect ratio=6.970207 took 0.845252s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321865 with aspect ratio=6.970206 took 0.796031s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321817 with aspect ratio=6.970207 took 0.845070s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321868 with aspect ratio=6.970207 took 0.734043s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321697 with aspect ratio=6.970203 took 0.886473s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321846 with aspect ratio=6.970209 took 0.682576s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321186 with aspect ratio=6.969885 took 0.749490s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321853 with aspect ratio=6.970208 took 0.848623s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321863 with aspect ratio=6.970208 took 0.854798s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321883 with aspect ratio=6.970207 took 0.868348s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321869 with aspect ratio=6.970208 took 0.847198s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321864 with aspect ratio=6.970209 took 0.843940s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321729 with aspect ratio=6.970204 took 0.851992s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.322252 with aspect ratio=6.969820 took 0.856444s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.322005 with aspect ratio=6.970207 took 0.855622s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321909 with aspect ratio=6.970208 took 0.838983s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321656 with aspect ratio=6.970276 took 0.873017s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321862 with aspect ratio=6.970211 took 0.889041s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321807 with aspect ratio=6.970211 took 0.876818s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321820 with aspect ratio=6.970212 took 0.899122s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321803 with aspect ratio=6.970208 took 0.873760s
+00:25:22 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321880 with aspect ratio=6.970185 took 0.881337s
+On rank 16 and CUDA_VISIBLE_DEVICES=16
+On rank 14 and CUDA_VISIBLE_DEVICES=14
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_016_000004.nc'
+On rank 7 and CUDA_VISIBLE_DEVICES=7
+On rank 4 and CUDA_VISIBLE_DEVICES=4
+On rank 5 and CUDA_VISIBLE_DEVICES=5
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+On rank 6 and CUDA_VISIBLE_DEVICES=6
+On rank 8 and CUDA_VISIBLE_DEVICES=8
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_014_000004.nc'
+On rank 10 and CUDA_VISIBLE_DEVICES=10
+On rank 11 and CUDA_VISIBLE_DEVICES=11
+On rank 9 and CUDA_VISIBLE_DEVICES=9
+On rank 15 and CUDA_VISIBLE_DEVICES=15
+On rank 12 and CUDA_VISIBLE_DEVICES=12
+On rank 13 and CUDA_VISIBLE_DEVICES=13
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_008_000004.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_010_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_006_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_004_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_007_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_005_000004.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_009_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_011_000004.nc'
+00:25:31 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321884 with aspect ratio=6.970207 took 0.581774s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_012_000004.nc'
+00:25:31 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321872 with aspect ratio=6.970208 took 0.684960s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_015_000004.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_013_000004.nc'
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321915 with aspect ratio=6.970208 took 0.707941s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321875 with aspect ratio=6.970207 took 0.764459s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321860 with aspect ratio=6.970207 took 0.827836s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321791 with aspect ratio=6.970211 took 0.825997s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321853 with aspect ratio=6.970208 took 0.843618s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321855 with aspect ratio=6.970179 took 0.841508s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321868 with aspect ratio=6.970207 took 0.810254s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321852 with aspect ratio=6.970208 took 0.786924s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321866 with aspect ratio=6.970209 took 0.794192s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321856 with aspect ratio=6.970207 took 0.812798s
+00:25:32 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 0.321849 with aspect ratio=6.970209 took 0.896947s
+00:27:36 - Growth rate = 1.249089, qflux = 63.371872, quasisymmetry = 0.321939 with aspect ratio=6.970207 took 134.083791s
+00:27:36 - Growth rate = 5.630614, qflux = 64.426010, quasisymmetry = 0.321606 with aspect ratio=6.970208 took 134.200742s
+00:27:36 - Growth rate = 1.750388, qflux = 64.137863, quasisymmetry = 0.321748 with aspect ratio=6.970205 took 134.184516s
+00:27:36 - Growth rate = 1.419910, qflux = 64.012993, quasisymmetry = 0.321863 with aspect ratio=6.970207 took 134.554678s
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+00:29:58 - Growth rate = 1.693878, qflux = 64.398911, quasisymmetry = 0.321845 with aspect ratio=6.970208 took 133.952740s
+00:29:58 - Growth rate = 2.107373, qflux = 63.710304, quasisymmetry = 0.321934 with aspect ratio=6.970208 took 134.102436s
+00:29:59 - Growth rate = 1.293457, qflux = 63.560417, quasisymmetry = 0.321768 with aspect ratio=6.970208 took 135.303457s
+       1              4         1.9746e+05      4.67e+04       2.04e-02       2.34e+11    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:32:25 - Growth rate = 1.193011, qflux = 71.753662, quasisymmetry = 0.032235 with aspect ratio=7.995027 took 135.010771s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:34:50 - Growth rate = 3.663617, qflux = 71.903503, quasisymmetry = 0.174043 with aspect ratio=7.198012 took 135.329373s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:37:14 - Growth rate = -0.033159, qflux = 67.437569, quasisymmetry = 0.281077 with aspect ratio=7.025643 took 135.203320s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:39:38 - Growth rate = 0.223801, qflux = 63.642921, quasisymmetry = 0.311442 with aspect ratio=6.983975 took 135.242116s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:42:03 - Growth rate = 2.487773, qflux = 64.371613, quasisymmetry = 0.319245 with aspect ratio=6.973643 took 135.187800s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:44:27 - Growth rate = 1.601304, qflux = 64.757637, quasisymmetry = 0.321208 with aspect ratio=6.971066 took 135.085363s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:46:50 - Growth rate = 2.258853, qflux = 63.179024, quasisymmetry = 0.321700 with aspect ratio=6.970421 took 134.931818s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:49:14 - Growth rate = 0.347912, qflux = 64.124557, quasisymmetry = 0.321824 with aspect ratio=6.970259 took 135.053229s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:51:38 - Growth rate = 1.033041, qflux = 63.821903, quasisymmetry = 0.321862 with aspect ratio=6.970210 took 135.089546s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:54:02 - Growth rate = 0.755334, qflux = 63.680344, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 135.308772s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:56:26 - Growth rate = 0.823737, qflux = 63.347271, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 135.171335s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:58:50 - Growth rate = 9.576213, qflux = 63.238159, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 134.990074s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+01:01:14 - Growth rate = 0.586755, qflux = 64.148438, quasisymmetry = 0.321866 with aspect ratio=6.970207 took 135.110428s
+       2             17         1.9746e+05      0.00e+00       0.00e+00       2.34e+11    
+`xtol` termination condition is satisfied.
+Function evaluations 17, initial cost 2.4414e+05, final cost 1.9746e+05, first-order optimality 2.34e+11.
+On rank 15 and CUDA_VISIBLE_DEVICES=15
+On rank 12 and CUDA_VISIBLE_DEVICES=12
+On rank 14 and CUDA_VISIBLE_DEVICES=14
+On rank 13 and CUDA_VISIBLE_DEVICES=13
+On rank 9 and CUDA_VISIBLE_DEVICES=9
+On rank 4 and CUDA_VISIBLE_DEVICES=4
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_009_000005.nc'
+On rank 16 and CUDA_VISIBLE_DEVICES=16
+On rank 28 and CUDA_VISIBLE_DEVICES=28
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+Final aspect ratio: 6.970207488576195
+Final mean iota: -1.1333581523713452
+Final magnetic well: -0.028331779779904677
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_015_000005.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_012_000005.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_014_000005.nc'
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_013_000005.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_004_000005.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_028_000003.nc'
+On rank 19 and CUDA_VISIBLE_DEVICES=19
+Whole optimization took 3472.646195s
+Whole optimization took 3472.650095s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+Whole optimization took 3472.703527s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_016_000005.nc'
+Whole optimization took 3472.725420s
+Whole optimization took 3472.772515s
+Whole optimization took 3472.772517s
+Whole optimization took 3472.775574s
+Whole optimization took 3472.778787s
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_019_000003.nc'
+Whole optimization took 3472.866386s
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/convert_VMEC_to_GX'
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/convert_VMEC_to_GX'
+On rank 24 and CUDA_VISIBLE_DEVICES=24
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_024_000003.nc'
+Whole optimization took 3473.047142s
+On rank 25 and CUDA_VISIBLE_DEVICES=25
+Whole optimization took 3473.107832s
+[Errno 2] No such file or directory: 'wout_nfp4_QH_010_000005.nc'
+Whole optimization took 3473.122427s
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER: powerpc64le-conda_cos7-linux-gnu   OS:    RELEASE:   DATE = Nov 18,2022  TIME = 01:01:24
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =   0.99659792109086565       0.22399238843863176        3.0314904342656140E-002   1.4059401844978986E-003   1.0746178069944924E-003  -3.1264713274169816E-003
+      ZAXIS_CS =   -0.0000000000000000       0.20923016674721034        2.5072034469229971E-002   1.7982467108120313E-003  -1.2327858493281069E-003  -9.2138949535586440E-004
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  4.80E-02  3.46E-02  4.75E-02  1.250E+00  9.00E-01  1.2324E-01
+Whole optimization took 3473.196601s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_025_000003.nc'
+Whole optimization took 3473.236909s
+Whole optimization took 3473.255850s
+Whole optimization took 3473.291973s
+Whole optimization took 3473.306699s
+Whole optimization took 3473.328990s
+Whole optimization took 3473.339265s
+Whole optimization took 3473.342767s
+Whole optimization took 3473.354916s
+Whole optimization took 3473.361627s
+Whole optimization took 3473.361748s
+On rank 29 and CUDA_VISIBLE_DEVICES=29
+Whole optimization took 3473.404068s
+On rank 17 and CUDA_VISIBLE_DEVICES=17
+On rank 18 and CUDA_VISIBLE_DEVICES=18
+Whole optimization took 3473.404505s
+Whole optimization took 3473.429052s
+Whole optimization took 3473.447400s
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_029_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_017_000003.nc'
+CUDA error: no CUDA-capable device is detected (code=100)  "cudaSetDevice(devid)" at src/main.cu:31 
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gxRun_wout_nfp4_QH_018_000003.nc'
+Whole optimization took 3473.585656s
+  200  3.72E-09  1.71E-09  9.98E-10  1.237E+00  8.10E-01  1.1948E-01
+Whole optimization took 3473.677421s
+Whole optimization took 3473.677307s
+  400  2.94E-11  1.60E-11  2.02E-11  1.237E+00  8.10E-01  1.1948E-01
+  536  9.77E-13  6.87E-13  9.48E-13  1.237E+00  8.10E-01  1.1948E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  6.44E-03  4.53E-03  6.00E-06  1.237E+00  9.00E-01  1.1948E-01
+Whole optimization took 3474.401235s
+  200  2.04E-09  1.12E-09  5.07E-11  1.237E+00  7.08E-01  1.1948E-01
+  400  1.78E-11  7.46E-12  2.94E-12  1.237E+00  7.08E-01  1.1948E-01
+  600  5.56E-13  4.43E-13  2.57E-13  1.237E+00  7.08E-01  1.1948E-01
+  732  9.79E-14  5.55E-14  2.14E-14  1.237E+00  7.08E-01  1.1948E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  5.05E-03  3.16E-03  8.09E-08  1.237E+00  9.00E-01  1.1948E-01
+  200  4.59E-09  4.50E-09  3.33E-12  1.237E+00  5.57E-01  1.1948E-01
+  400  7.79E-11  2.89E-11  3.74E-13  1.237E+00  5.57E-01  1.1948E-01
+  600  1.68E-11  7.59E-12  6.02E-14  1.237E+00  5.57E-01  1.1948E-01
+  800  7.60E-13  5.24E-13  1.85E-14  1.237E+00  5.57E-01  1.1948E-01
+ 1000  2.98E-13  1.22E-13  2.67E-15  1.237E+00  5.57E-01  1.1948E-01
+ 1200  6.54E-14  1.61E-14  4.43E-16  1.237E+00  5.57E-01  1.1948E-01
+ 1336  9.98E-15  3.02E-15  1.80E-16  1.237E+00  5.57E-01  1.1948E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    4
+
+    TOTAL COMPUTATIONAL TIME (SEC)        11.81
+    TIME TO INPUT/OUTPUT                   0.05
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.05
+    TIME IN FUNCT3D                       11.66
+       BCOVAR FIELDS                       1.80
+       FOURIER TRANSFORM                   2.04
+       INVERSE FOURIER TRANSFORM           1.88
+       FORCES AND SYMMETRIZE               2.03
+       RESIDUE                             3.00
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.14204617625046514
+Rmajor_p:  0.990091321424605
+aspect:             6.970207488576186
+Rmajor_p/Aminor_p:  6.970207488576186
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    -1.3248278563886182e-10
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 4
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     3  30   0  7.423e-01  7.423e-01  1.630e-14  9.282e-01  9.282e-01  2.033e-15
+                pi  8.282e-01  8.282e-01  6.568e-15  6.931e-01  6.931e-01  2.291e-14
+   3     8  79   0  6.953e-01  6.953e-01  1.613e-14  9.993e-01  9.993e-01  2.211e-14
+                pi  8.798e-01  8.798e-01  3.155e-15  6.499e-01  6.499e-01  2.443e-14
+   2     6  60   0  7.107e-01  7.107e-01  1.297e-14  9.748e-01  9.748e-01  9.681e-15
+                pi  8.618e-01  8.618e-01  1.675e-15  6.653e-01  6.653e-01  3.170e-15
+   0     0   0   0  8.159e-01  8.159e-01  1.769e-15  8.394e-01  8.394e-01  3.108e-14
+                pi  7.658e-01  7.658e-01  2.464e-15  7.490e-01  7.490e-01  1.586e-14
+   1     4  39   0  7.315e-01  7.315e-01  1.852e-14  9.436e-01  9.436e-01  0.000e+00
+                pi  8.393e-01  8.393e-01  5.027e-15  6.840e-01  6.840e-01  2.272e-14
+   2     7  70   0  7.023e-01  7.023e-01  1.249e-14  9.881e-01  9.881e-01  1.427e-14
+                pi  8.715e-01  8.715e-01  3.949e-15  6.571e-01  6.571e-01  2.281e-14
+   3     9  89   0  6.881e-01  6.881e-01  3.873e-15  1.011e+00  1.011e+00  3.074e-14
+                pi  8.886e-01  8.886e-01  1.249e-15  6.420e-01  6.420e-01  1.695e-14
+   0     1  10   0  7.759e-01  7.759e-01  1.703e-14  8.842e-01  8.842e-01  1.720e-14
+                pi  7.973e-01  7.973e-01  2.089e-15  7.196e-01  7.196e-01  1.034e-14
+   1     5  49   0  7.210e-01  7.210e-01  9.393e-15  9.592e-01  9.592e-01  1.725e-14
+                pi  8.504e-01  8.504e-01  3.264e-15  6.748e-01  6.748e-01  3.504e-14
+   0     2  20   0  7.567e-01  7.567e-01  7.189e-15  9.086e-01  9.086e-01  1.747e-14
+                pi  8.144e-01  8.144e-01  3.954e-15  7.047e-01  7.047e-01  2.032e-14
+Writing output to /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH/gx'
+Whole optimization took 3582.795149s

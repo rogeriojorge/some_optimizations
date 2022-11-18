@@ -2,7 +2,7 @@
 #SBATCH -A FUAC6_OHARS
 #SBATCH -p m100_fua_prod
 #SBATCH --time 01:00:00     # format: HH:MM:SS
-#SBATCH -N 8                # nodes
+#SBATCH -N 2                # nodes
 #SBATCH --ntasks-per-node=4 # tasks out of 128
 #SBATCH --gres=gpu:4        # gpus per node out of 4
 #SBATCH --mem=100000        # memory per node out of 246000MB
@@ -12,4 +12,4 @@
 
 cd /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT
 
-mpirun -n 32 ./main.py
+mpirun -n 4 ./main.py

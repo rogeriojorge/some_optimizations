@@ -1,0 +1,61 @@
+Starting GX runs
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=14.919498 qflux=55.509739 took 140.608808s
+nzgrid=201 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=24.220455 qflux=53.595932 took 287.717660s
+nzgrid=201 npol=8 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=10.818883 qflux=45.427025 took 288.715156s
+nzgrid=101 npol=4 nstep=5000 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=6.863308 qflux=62.784241 took 285.613865s
+nzgrid=101 npol=4 nstep=5000 dt=0.065 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=11.360527 qflux=61.947392 took 285.643428s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=16 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=12.697458 qflux=51.827141 took 266.167598s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=8 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=15.037210 qflux=53.618713 took 273.465988s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.25 D_hyper=0.03 ny=60 nx=70 y0=35.0 growth_rate=11.746399 qflux=53.742817 took 144.740504s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.015 ny=60 nx=70 y0=35.0 growth_rate=27.152901 qflux=54.204559 took 144.979345s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=120 nx=70 y0=35.0 growth_rate=21.041660 qflux=92.953812 took 266.722116s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=60 nx=140 y0=35.0 growth_rate=40.394173 qflux=47.324554 took 270.443439s
+nzgrid=101 npol=4 nstep=2500 dt=0.13 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=120 nx=70 y0=70.0 growth_rate=8.496173 qflux=118.658836 took 266.594165s
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:78: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_parameters.py:79: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:112: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)

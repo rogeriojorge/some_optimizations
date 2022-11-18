@@ -69,8 +69,8 @@ if nonlinear:
     nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.03
-    ny = 60
-    nx = 70
+    ny = 5#60
+    nx = 5#70
     y0 = 35.0
 else:
     LN = 1.0

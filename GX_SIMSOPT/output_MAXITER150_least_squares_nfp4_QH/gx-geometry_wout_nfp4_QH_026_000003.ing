@@ -3,7 +3,7 @@
 
 
 # Name of the vmec file
-vmec_file = "wout_nfp2_QA.nc"
+vmec_file = "wout_nfp4_QH_026_000003.nc"
 
 # Absolute path of the vmec file (change accordingly)
 #vmec_path = "/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output/"

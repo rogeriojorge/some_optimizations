@@ -1,5 +1,0 @@
-Starting GX runs
-nzgrid=51 npol=6 nstep=3000 dt=0.1 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=30 nx=30 y0=10.0 growth_rate=4.740160 qflux=10.491440 took 33.405784s
-nzgrid=101 npol=6 nstep=3000 dt=0.1 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=30 nx=30 y0=10.0 growth_rate=13.805795 qflux=12.643608 took 46.489810s
-nzgrid=101 npol=12 nstep=3000 dt=0.1 nhermite=8 nlaguerre=4 nu_hyper=0.5 D_hyper=0.03 ny=30 nx=30 y0=10.0 growth_rate=5.966704 qflux=7.206804 took 46.595862s
-slurmstepd: error: *** JOB 8659165 ON login06 CANCELLED AT 2022-11-17T23:23:28 ***
