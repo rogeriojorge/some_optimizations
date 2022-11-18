@@ -27,7 +27,7 @@ output_dir = 'test_out_nfp2_QA_initial'
 LN = 1.0
 LT = 3.0
 nstep = 3000
-dt = 0.12
+dt = 0.13
 nzgrid = 91
 npol = 4
 desired_normalized_toroidal_flux = 0.25
@@ -38,7 +38,7 @@ nu_hyper = 0.5
 D_hyper = 0.05
 ny = 100
 nx = 100
-y0 = 15.0
+y0 = 28.0
 nonlinear = True
 ########################################
 # Go into the output directory
@@ -298,6 +298,10 @@ nx = int(nx/2)
 y0 = y0*2;ny=ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
 print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
 ny = int(ny/2);y0=y0/2
+# Half y0
+y0 = y0/2;ny=ny*2;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+print(f'nzgrid={nzgrid} npol={npol} nstep={nstep} dt={dt} nhermite={nhermite} nlaguerre={nlaguerre} nu_hyper={nu_hyper} D_hyper={D_hyper} ny={ny} nx={nx} y0={y0} growth_rate={growth_rate:1f} qflux={qflux:1f} took {(time()-start_time):1f}s')
+ny = int(ny/2);y0=y0*2
 ###
 ### Plot result
 ###
