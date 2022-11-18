@@ -13,4 +13,4 @@
 
 cd /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT
 
-mpirun -n 8 ./main.py
+mpirun -n 8 --rank-by core ./main.py
