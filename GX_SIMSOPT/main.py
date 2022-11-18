@@ -42,7 +42,7 @@ if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = False
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-nonlinear = False#True
+nonlinear = True
 plot_result = True
 use_previous_results_if_available = False
 weight_optTurbulence = 100.0
@@ -60,9 +60,9 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 4000
-    dt = 0.3#0.2
-    nzgrid = 61#141
+    nstep = 5000
+    dt = 0.3
+    nzgrid = 141
     npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
@@ -70,9 +70,9 @@ if nonlinear:
     nlaguerre = 3
     nu_hyper = 0.5
     D_hyper = 0.035
-    ny = 5#80
-    nx = 5#80
-    y0 = 5.0#28.0
+    ny = 120
+    nx = 120
+    y0 = 20.0
 else:
     LN = 1.0
     LT = 3.0
