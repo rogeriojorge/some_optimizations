@@ -60,9 +60,9 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 3200
+    nstep = 1500#3200
     dt = 0.13
-    nzgrid = 91
+    nzgrid = 51#91
     npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
@@ -70,9 +70,9 @@ if nonlinear:
     nlaguerre = 3
     nu_hyper = 0.5
     D_hyper = 0.035
-    ny = 100
-    nx = 100
-    y0 = 15.0
+    ny = 2#100
+    nx = 2#100
+    y0 = 28.0
 else:
     LN = 1.0
     LT = 3.0
@@ -226,9 +226,10 @@ def remove_gx_files(gx_input_name):
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
+    print(f'Before os.environ set: On rank {MPI.COMM_WORLD.Get_rank()} and CUDA_VISIBLE_DEVICES={os.environ["CUDA_VISIBLE_DEVICES"]}')
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     os.environ['CUDA_VISIBLE_DEVICES']=str(np.mod(MPI.COMM_WORLD.Get_rank(),number_of_cores))
-    print(f'On rank {MPI.COMM_WORLD.Get_rank()} and CUDA_VISIBLE_DEVICES={os.environ["CUDA_VISIBLE_DEVICES"]}')
+    print(f'Before os.environ set: On rank {MPI.COMM_WORLD.Get_rank()} and CUDA_VISIBLE_DEVICES={os.environ["CUDA_VISIBLE_DEVICES"]}')
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
