@@ -31,6 +31,7 @@ def pprint(*args, **kwargs):
     if MPI.COMM_WORLD.rank == 0:
         print(*args, **kwargs)
 start_time = time.time()
+number_of_cores = 4 # MPI.COMM_WORLD.Get_size()
 ############################################################################
 #### Input Parameters
 ############################################################################
@@ -226,7 +227,7 @@ def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
-    os.environ['CUDA_VISIBLE_DEVICES']=str(np.mod(MPI.COMM_WORLD.Get_rank(),MPI.COMM_WORLD.Get_size()))
+    os.environ['CUDA_VISIBLE_DEVICES']=str(np.mod(MPI.COMM_WORLD.Get_rank(),number_of_cores))
     print(f'On rank {MPI.COMM_WORLD.Get_rank()} and CUDA_VISIBLE_DEVICES={os.environ["CUDA_VISIBLE_DEVICES"]}')
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:
