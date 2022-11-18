@@ -26,18 +26,18 @@ output_dir = 'test_out_nfp2_QA_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 2500
-dt = 0.13
-nzgrid = 101
+nstep = 3000
+dt = 0.12
+nzgrid = 91
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 8
-nlaguerre = 4
+nhermite  = 7
+nlaguerre = 3
 nu_hyper = 0.5
-D_hyper = 0.03
-ny = 60
-nx = 70
+D_hyper = 0.05
+ny = 80
+nx = 80
 y0 = 35.0
 nonlinear = True
 ########################################
@@ -175,7 +175,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     p.wait()
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
-    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}_y0"
+    fname = f"gxInput_nzgrid{nzgrid}_npol{npol}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}_nhermite{nhermite}_nlaguerre{nlaguerre}_nu_hyper{nu_hyper}_D_hyper{D_hyper}_ny{ny}_nx{nx}_y0{y0}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
     else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
