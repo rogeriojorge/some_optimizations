@@ -79,10 +79,10 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
     plt.plot(x, phiR, label=r'Re($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
     plt.plot(x, phiI, label=r'Im($\hat \phi/\hat \phi_0$) $k_x$='+str(kxX[int((len(kxX)-1)/2)])+r' $k_y$='+str(max_growthrate_ky))
-    #######
     plt.xlabel(r'$\theta$');plt.ylabel(r'$\hat \phi$');plt.legend(loc="upper right")
     plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.93)
     plt.savefig(stellFile+'_eigenphi.png')
+    #######
     plt.figure()
     Pky = np.array(f.groups['Spectra'].variables['Pkyst'][:,0,:])
     Pky = np.mean(Pky[int(len(tX)/2):], axis=0)
@@ -90,6 +90,15 @@ def eigenPlot(stellFile, fractionToConsider=0.4):
     plt.xlabel(r'$k_y$');plt.ylabel(r'$Q$');plt.tight_layout()
     plt.savefig(stellFile+'_spectra_pkyst.png')
     plt.close()
+    #######
+    plt.figure()
+    Pkx = np.array(f.groups['Spectra'].variables['Pkxst'][:,0,:])
+    Pkx = np.mean(Pkx[int(len(tX)/2):], axis=0)
+    plt.plot(kxX, Pkx, 'o-');plt.yscale('log')
+    plt.xlabel(r'$k_x$');plt.ylabel(r'$Q$');plt.tight_layout()
+    plt.savefig(stellFile+'_spectra_pkxst.png')
+    plt.close()
+    #######
     return 0
 def gammabyky(stellFile, fractionToConsider=0.4):
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
