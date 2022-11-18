@@ -10,3 +10,11 @@ Starting GX runs
 nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=24.089302 qflux=103.845459 took 145.820443s
 nzgrid=181 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=30.592751 qflux=99.273041 took 272.228522s
 nzgrid=181 npol=8 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=16.108944 qflux=84.524261 took 272.797633s
+nzgrid=91 npol=4 nstep=6000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=25.925318 qflux=101.403015 took 292.516478s
+nzgrid=91 npol=4 nstep=6000 dt=0.06 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=20.497122 qflux=99.976738 took 292.612649s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=14 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=28.418125 qflux=96.981079 took 266.167301s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=23.758608 qflux=104.071442 took 286.952269s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.25 D_hyper=0.05 ny=80 nx=80 y0=35.0 growth_rate=69.457802 qflux=96.252090 took 148.491394s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.025 ny=80 nx=80 y0=35.0 growth_rate=17.841274 qflux=99.814972 took 148.083586s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=160 nx=80 y0=35.0 growth_rate=215.075577 qflux=48.704113 took 276.821746s
+nzgrid=91 npol=4 nstep=3000 dt=0.12 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=160 y0=35.0 growth_rate=191.871506 qflux=15.198179 took 282.827434s

@@ -66,8 +66,8 @@ if nonlinear:
     npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
-    nhermite  = 8
-    nlaguerre = 4
+    nhermite  = 7
+    nlaguerre = 3
     nu_hyper = 0.5
     D_hyper = 0.03
     ny = 60
