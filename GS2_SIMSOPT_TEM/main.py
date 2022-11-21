@@ -39,15 +39,9 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-<<<<<<< HEAD
 QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
-=======
-QA_or_QH = 'QH'
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
-opt_quasisymmetry = False
->>>>>>> refs/remotes/origin/main
 
 LN = 3.0
 LT = 3.0
