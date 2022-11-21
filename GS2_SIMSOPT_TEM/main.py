@@ -39,7 +39,7 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-QA_or_QH = 'QH'
+QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
 
@@ -84,7 +84,7 @@ aspect_ratio_weight = 1e+0
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
-OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
+OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}_ln{LN}_lt{LT}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
