@@ -19,26 +19,26 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
 convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
-#vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
-#output_dir = 'test_out_nfp4_QH_initial'
+#vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
+#output_dir = 'test_out_nfp2_QA_initial'
+vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
+output_dir = 'test_out_nfp4_QH_initial'
 ##
 LN = 1.0
 LT = 3.0
-nstep = 5000
-dt = 0.3
-nzgrid = 141
-npol = 4
+nstep = 8000
+dt = 0.5
+nzgrid = 71
+npol = 6
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 7
 nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 120
-nx = 120
-y0 = 20.0
+ny = 100
+nx = 50
+y0 = 25.0
 nonlinear = True
 ########################################
 # Go into the output directory
