@@ -61,18 +61,18 @@ if nonlinear:
     LN = 1.0
     LT = 3.0
     nstep = 8000
-    dt = 0.4
-    nzgrid = 121
-    npol = 4
+    dt = 0.5
+    nzgrid = 71
+    npol = 6
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
     nhermite  = 7
     nlaguerre = 3
     nu_hyper = 0.5
-    D_hyper = 0.035
-    ny = 120
-    nx = 120
-    y0 = 20.0
+    D_hyper = 0.05
+    ny = 100
+    nx = 50
+    y0 = 25.0
 else:
     LN = 1.0
     LT = 3.0
