@@ -40,12 +40,12 @@ max_modes = [3]
 initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
-opt_quasisymmetry = False
+opt_quasisymmetry = True
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-nonlinear = True
+nonlinear = False
 plot_result = True
 use_previous_results_if_available = False
-weight_optTurbulence = 100.0
+weight_optTurbulence = 10.0
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -60,9 +60,9 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 if nonlinear:
     LN = 1.0
     LT = 3.0
-    nstep = 1500#5000
-    dt = 0.4#0.3
-    nzgrid = 61#141
+    nstep = 8000
+    dt = 0.4
+    nzgrid = 121
     npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
@@ -70,30 +70,31 @@ if nonlinear:
     nlaguerre = 3
     nu_hyper = 0.5
     D_hyper = 0.035
-    ny = 3#120
-    nx = 3#120
-    y0 = 10.0#20.0
+    ny = 120
+    nx = 120
+    y0 = 20.0
 else:
     LN = 1.0
     LT = 3.0
-    nstep = 5000#7000
-    dt = 0.03#0.015
-    nzgrid = 75
-    npol = 3
+    nstep = 7000
+    dt = 0.03
+    nzgrid = 91
+    npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
-    nhermite  = 18
-    nlaguerre = 10
+    nhermite  = 24
+    nlaguerre = 12
     nu_hyper = 1.0
-    ny = 30
     D_hyper = 0.05
-    ny = 30
+    ny = 40
     nx = 1
-    y0 = 5
+    y0 = 10
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
+if nonlinear: OUT_DIR_APPENDIX+='_nonlinear'
+else: OUT_DIR_APPENDIX+='_linear'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
@@ -301,8 +302,8 @@ for max_mode in max_modes:
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))
     if initial_config[-2:]=='QA': opt_tuple.append((vmec.mean_iota, 0.42, 1))
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
-    pprint('## Now calculating total objective function ##')
-    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
+    #pprint('## Now calculating total objective function ##')
+    #if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
