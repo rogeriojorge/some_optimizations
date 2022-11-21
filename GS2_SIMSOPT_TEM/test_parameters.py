@@ -20,30 +20,34 @@ matplotlib.use('Agg')
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-output_dir = 'test_out_nfp2_QA_initial'
-nphi= 81
-nlambda = 19
-nperiod = 4
-nstep = 120
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+output_dir = 'test_out_nfp2_QA_QA_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+# output_dir = 'test_out_nfp2_QA_initial'
+nphi= 101
+nlambda = 25
+nperiod = 23
+nstep = 170
 dt = 0.4
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+# output_dir = 'test_out_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
 # output_dir = 'test_out_nfp4_QH_initial'
-# nphi= 81
-# nlambda = 19
-# nperiod = 4
-# nstep = 120
+# nphi= 111
+# nlambda = 27
+# nperiod = 7
+# nstep = 170
 # dt = 0.4
 ##
-LN = 1.0
+LN = 3.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
 negrid = 9
 naky = 10
-aky_min = 0.4
-aky_max = 10.0
+aky_min = 0.2
+aky_max = 2.0
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
@@ -283,3 +287,4 @@ aky_max = aky_max/2;naky = int(naky/2)
 ###
 df = pd.read_csv(output_csv)
 df.plot(use_index=True, y=['growth_rate'])
+plt.savefig(os.path.join(OUT_DIR,'growth_rate.png'))
