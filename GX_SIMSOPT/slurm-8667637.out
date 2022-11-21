@@ -1,0 +1,83 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Initial aspect ratio: 8.000967056664201
+Initial mean iota: -1.2414619577370025
+Initial magnetic well: -0.014518732731757817
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+Initial heat flux: 29.218203
+## Now calculating total objective function ##
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:27:25 - Growth rate = 28.133072, qflux = 29.218203, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 813.905897s
+Total objective before optimization: 85370.33626462874
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:41:13 - Growth rate = 28.133072, qflux = 29.218203, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 816.735184s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:54:59 - Growth rate = 28.133072, qflux = 29.218203, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 814.924438s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:08:42 - Growth rate = 28.133072, qflux = 29.218203, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 812.841066s
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+21:22:24 - Growth rate = 24.981501, qflux = 29.452135, quasisymmetry = 0.035114 with aspect ratio=8.000971 took 810.656895s
+21:22:24 - Growth rate = 15.396556, qflux = 28.937546, quasisymmetry = 0.035068 with aspect ratio=8.000967 took 811.305088s
+21:22:26 - Growth rate = 7.836159, qflux = 29.579704, quasisymmetry = 0.035109 with aspect ratio=8.000967 took 813.104474s
+21:22:27 - Growth rate = 20.124466, qflux = 28.836601, quasisymmetry = 0.035155 with aspect ratio=8.000961 took 814.125599s
+21:22:28 - Growth rate = 22.813843, qflux = 29.126184, quasisymmetry = 0.035166 with aspect ratio=8.000960 took 814.376526s
+21:22:28 - Growth rate = 9.343570, qflux = 29.486963, quasisymmetry = 0.035212 with aspect ratio=8.000566 took 814.573977s
+21:22:28 - Growth rate = 11.876895, qflux = 29.701990, quasisymmetry = 0.035167 with aspect ratio=8.000955 took 814.634223s
+21:22:33 - Growth rate = 7.210172, qflux = 29.113256, quasisymmetry = 0.035142 with aspect ratio=8.000967 took 819.570253s
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+21:36:05 - Growth rate = 20.067726, qflux = 29.442131, quasisymmetry = 0.035114 with aspect ratio=8.000967 took 808.110901s
+21:36:05 - Growth rate = 32.106724, qflux = 29.540319, quasisymmetry = 0.035109 with aspect ratio=8.000968 took 810.597285s
+21:36:06 - Growth rate = 25.229620, qflux = 29.159903, quasisymmetry = 0.035063 with aspect ratio=8.000967 took 811.493016s
+21:36:09 - Growth rate = 19.037140, qflux = 29.659559, quasisymmetry = 0.035128 with aspect ratio=8.000967 took 810.955209s
+21:36:10 - Growth rate = 8.501211, qflux = 29.233458, quasisymmetry = 0.035080 with aspect ratio=8.000969 took 811.283446s
+21:36:12 - Growth rate = 16.021746, qflux = 29.470697, quasisymmetry = 0.035076 with aspect ratio=8.000944 took 814.165220s
+21:36:12 - Growth rate = 40.990391, qflux = 29.773977, quasisymmetry = 0.035090 with aspect ratio=8.000971 took 814.267800s
+21:36:14 - Growth rate = 16.122562, qflux = 29.426157, quasisymmetry = 0.035072 with aspect ratio=8.000971 took 810.938558s
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+21:49:45 - Growth rate = 48.513836, qflux = 29.240967, quasisymmetry = 0.035085 with aspect ratio=8.000967 took 809.740514s
+21:49:46 - Growth rate = 8.297844, qflux = 29.538422, quasisymmetry = 0.035082 with aspect ratio=8.000967 took 811.038811s
+21:49:49 - Growth rate = 20.222109, qflux = 29.271452, quasisymmetry = 0.035080 with aspect ratio=8.000966 took 811.852964s
+21:49:50 - Growth rate = 36.128498, qflux = 29.124489, quasisymmetry = 0.035094 with aspect ratio=8.000967 took 810.160001s
+21:49:54 - Growth rate = -11.764789, qflux = 29.479639, quasisymmetry = 0.035077 with aspect ratio=8.000967 took 813.843997s
+21:49:55 - Growth rate = 13.256349, qflux = 29.691301, quasisymmetry = 0.035079 with aspect ratio=8.000969 took 812.370174s
+21:49:55 - Growth rate = 60.999012, qflux = 29.370537, quasisymmetry = 0.035092 with aspect ratio=8.000967 took 812.789789s
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+21:50:01 - Growth rate = 64.932632, qflux = 29.284678, quasisymmetry = 0.035078 with aspect ratio=8.000968 took 816.239272s
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+slurmstepd: error: *** JOB 8667637 ON r231n04 CANCELLED AT 2022-11-18T21:59:03 DUE TO TIME LIMIT ***

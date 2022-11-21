@@ -1,0 +1,19 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Starting GX runs
+nzgrid=141 npol=4 nstep=5000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=370.004028 qflux=6.469654 took 862.705923s
+nzgrid=281 npol=4 nstep=5000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=58.160275 qflux=14.142437 took 1704.709746s
+nzgrid=281 npol=8 nstep=5000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=315.399261 qflux=5.050358 took 1710.347532s
+nzgrid=141 npol=4 nstep=10000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=229.569946 qflux=6.789511 took 1736.326779s
+nzgrid=141 npol=4 nstep=10000 dt=0.15 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=416.702576 qflux=6.056931 took 1731.262069s
+nzgrid=141 npol=4 nstep=5000 dt=0.3 nhermite=14 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=95.358665 qflux=24.955866 took 1587.970307s
+nzgrid=141 npol=4 nstep=5000 dt=0.3 nhermite=7 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=311.988251 qflux=13.263984 took 1771.288706s
+nzgrid=141 npol=4 nstep=5000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.25 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=443.494965 qflux=6.166162 took 882.434800s
+nzgrid=141 npol=4 nstep=5000 dt=0.3 nhermite=7 nlaguerre=3 nu_hyper=0.5 D_hyper=0.025 ny=120 nx=120 y0=20.0 growth_rate=446.403473 qflux=7.330622 took 880.015079s
+slurmstepd: error: *** JOB 8669018 ON login06 CANCELLED AT 2022-11-18T22:58:33 DUE TO TIME LIMIT ***
