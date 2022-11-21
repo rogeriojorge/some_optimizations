@@ -39,9 +39,15 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
+<<<<<<< HEAD
 QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
+=======
+QA_or_QH = 'QH'
+optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+opt_quasisymmetry = False
+>>>>>>> refs/remotes/origin/main
 
 LN = 3.0
 LT = 3.0
@@ -53,11 +59,11 @@ else:
     aspect_ratio_target = 8
     nfp = 4
 
-phi_GS2 = np.linspace(-4*np.pi, 4*np.pi, 81)
-nlambda = 19
-nstep = 120
-dt = 0.4
-naky = 8
+phi_GS2 = np.linspace(-5*np.pi, 5*np.pi, 101)
+nlambda = 21
+nstep = 150
+dt = 0.3
+naky = 10
 aky_min = 0.4
 aky_max = 3.0
 s_radius = 0.25
