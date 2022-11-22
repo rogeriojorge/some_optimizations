@@ -1,0 +1,103 @@
+
+ debug = false
+
+[Dimensions]
+ ntheta = 242
+ nperiod = 1
+ ny = 80
+ nx = 80
+
+ nhermite = 8
+ nlaguerre = 3
+ nspecies = 1
+
+[Domain]
+ y0 = 20.0
+ boundary = "linked"
+
+[Physics]
+ beta = 0.0
+ nonlinear_mode = true
+
+[Time]
+ dt = 0.6
+ nstep  = 6000
+ nwrite = 100
+ nsave  = 1000000
+ scheme = "sspx3"
+ cfl = 1.0
+
+[Initialization]
+ ikpar_init = 0
+ init_field = "density"
+ init_amp = 1.0e-5
+
+[Geometry]
+ geo_option = "nc"
+ eps = 0.18
+ shat = 0.8
+ Rmaj = 1.0
+ shift = 0.0
+ qinp = 1.4
+ geofile = "gx_wout_nfp2_QA_psiN_0.250_nt_242_geo.nc"
+
+[Boltzmann]
+ add_Boltzmann_species = true
+ Boltzmann_type = "electrons"
+ tau_fac = 1.0
+
+[Dissipation]
+ closure_model = "none"
+ hypercollisions = true 
+ nu_hyper_m = 0.5
+ p_hyper_m = 6
+ nu_hyper_l = 0.5
+ p_hyper_l = 6
+
+ hyper = true
+ D_hyper = 0.05
+ p_hyper = 2
+
+[Restart]
+ restart = false
+ save_for_restart = true
+ nsave  = 10000000
+
+[Diagnostics]
+ nwrite = 1000
+ fluxes = true
+ omega  = true
+ fields = true
+ free_energy = false
+ all_zonal_scalars = false
+ all_zonal = false
+ fixed_amplitude = true
+
+[Wspectra]
+species          = false
+hermite          = false
+laguerre         = false
+hermite_laguerre = true
+kx               = false
+ky               = true
+kxky             = false
+kperp            = false
+z                = true
+
+[Pspectra]
+species          = false
+kx               = true
+ky               = true
+kxky             = false
+kperp            = false
+
+[species]
+ z     = [ 1.0,      -1.0     ]
+ mass  = [ 1.0,       2.7e-4  ]
+ dens  = [ 1.0,       1.0     ]
+ temp  = [ 1.0,       1.0     ]
+ tprim = [ 3.0,       3.0     ]
+ fprim = [ 1.0,       1.0     ]
+ uprim = [ 0.0,       0.0     ]
+ vnewk = [ 0.01,      0.01    ]
+ type  = [ "ion",  "electron" ]
