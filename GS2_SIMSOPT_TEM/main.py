@@ -39,9 +39,9 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-QA_or_QH = 'QH'
+QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-opt_quasisymmetry = True
+opt_quasisymmetry = True # False True
 
 LN = 3.0
 LT = 3.0
