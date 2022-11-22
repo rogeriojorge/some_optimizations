@@ -20,17 +20,17 @@ matplotlib.use('Agg')
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
-output_dir = 'test_out_nfp2_QA_QA_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-# output_dir = 'test_out_nfp2_QA_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+# output_dir = 'test_out_nfp2_QA_QA_least_squares'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
 nphi= 101
 nlambda = 25
 nperiod = 23
 nstep = 170
 dt = 0.4
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
-# output_dir = 'test_out_nfp4_QH_QH_least_squares'
+# # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+# # output_dir = 'test_out_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
 # output_dir = 'test_out_nfp4_QH_initial'
 # nphi= 111
@@ -40,7 +40,7 @@ dt = 0.4
 # dt = 0.4
 ##
 LN = 3.0
-LT = 3.0
+LT = 1.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3

@@ -39,18 +39,18 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-QA_or_QH = 'QA'
+QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True # False True
 
 LN = 3.0
-LT = 3.0
+LT = 1.0
 
 if QA_or_QH=='QA':
     aspect_ratio_target = 6
     nfp = 2
     phi_GS2 = np.linspace(-23*np.pi, 23*np.pi, 101)
-    nlambda = 23
+    nlambda = 25
     nstep = 170
     dt = 0.4
 else:
