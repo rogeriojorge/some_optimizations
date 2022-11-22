@@ -41,7 +41,7 @@ MAXITER = 350
 max_modes = [3]
 QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-opt_quasisymmetry = True
+opt_quasisymmetry = True # False True
 
 LN = 3.0
 LT = 3.0
@@ -49,17 +49,21 @@ LT = 3.0
 if QA_or_QH=='QA':
     aspect_ratio_target = 6
     nfp = 2
+    phi_GS2 = np.linspace(-23*np.pi, 23*np.pi, 101)
+    nlambda = 23
+    nstep = 170
+    dt = 0.4
 else:
     aspect_ratio_target = 8
     nfp = 4
+    phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
+    nlambda = 27
+    nstep = 170
+    dt = 0.4
 
-phi_GS2 = np.linspace(-5*np.pi, 5*np.pi, 101)
-nlambda = 21
-nstep = 150
-dt = 0.3
 naky = 10
-aky_min = 0.4
-aky_max = 3.0
+aky_min = 0.2
+aky_max = 2.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
@@ -71,7 +75,7 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 10
+weight_optTurbulence = 100
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -84,7 +88,7 @@ aspect_ratio_weight = 1e+0
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
-OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}_ln{LN}_lt{LT}'
+OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
