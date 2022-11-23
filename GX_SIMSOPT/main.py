@@ -394,4 +394,4 @@ except Exception as e:
     pprint(e)
 ##############################################################################
 ##############################################################################
-print(f'Whole optimization took {(time.time()-start_time):1f}s')
+pprint(f'Whole optimization took {(time.time()-start_time):1f}s')
