@@ -44,7 +44,7 @@ optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True # False True
 
 LN = 3.0
-LT = 1.0
+LT = 3.0
 
 if QA_or_QH=='QA':
     aspect_ratio_target = 6
