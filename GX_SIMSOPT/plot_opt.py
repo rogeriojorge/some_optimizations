@@ -15,17 +15,18 @@ import booz_xform as bx
 #################################
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-quasisymmetry = False
+quasisymmetry = True
 
 max_mode = 3
 MAXITER=150
+nonlinear = True
 
 if quasisymmetry: growth_rate_weight=1e1
 else: growth_rate_weight=1e3
 
 plt_opt_res = True
-plot_vmec = True
-run_simple = True
+plot_vmec = False
+run_simple = False
 
 use_final = True
 use_previous_results_if_available = False
@@ -45,24 +46,36 @@ elif QA_or_QH == 'QI':
     aspect=7
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 if quasisymmetry: out_dir+=f'_{QA_or_QH}'
+if nonlinear: out_dir+=f'_nonlinear'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+if nonlinear: location_min = (growth_rate_weight*df['qflux']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+else: location_min = (growth_rate_weight*df['growth_rate']+df['quasisymmetry_total']).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
-HEATFLUX_THRESHOLD = 1e2
+GROWTHRATE_THRESHOLD = 1e2
+HEATFLUX_THRESHOLD = 1e3
 if plt_opt_res:
     df[f'aspect-{aspect}'] = df.apply(lambda row: np.abs(row.aspect - aspect), axis=1)
     df['-iota'] = df.apply(lambda row: -np.abs(row.mean_iota), axis=1)
     df['iota'] = df.apply(lambda row: np.min([np.abs(row.mean_iota),4.5]), axis=1)
     df['iota'] = df[df['iota']!=1.5]['iota']
-    df['growth_rate'] = df[df['growth_rate']<HEATFLUX_THRESHOLD]['growth_rate']
+    df['growth_rate'] = df[df['growth_rate']<GROWTHRATE_THRESHOLD]['growth_rate']
+    df['qflux'] = df[df['qflux']<HEATFLUX_THRESHOLD]['qflux']
     df['quasisymmetry_total'] = df[df['quasisymmetry_total']<1e4]['quasisymmetry_total']
+
     df.plot(use_index=True, y=['growth_rate'])#,'iota'])#,'normalized_time'])
     plt.yscale('log')
     # plt.ylim([0,1.])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
     plt.legend();plt.tight_layout()
     plt.savefig(out_dir+'/growth_rate_over_opt.pdf')
+
+    df.plot(use_index=True, y=['qflux'])#,'iota'])#,'normalized_time'])
+    # plt.yscale('log')
+    # plt.ylim([0,1.])
+    plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
+    plt.legend();plt.tight_layout()
+    plt.savefig(out_dir+'/qflux_over_opt.pdf')
     
     df.plot(use_index=True, y=['aspect'])#,'iota'])#,'normalized_time'])
     plt.axvline(x = location_min, color = 'b', label = 'minimum Q')
@@ -82,6 +95,12 @@ if plt_opt_res:
     df.plot.scatter(x='growth_rate', y='quasisymmetry_total')
     plt.yscale('log');plt.xscale('log');plt.tight_layout()
     plt.savefig(out_dir+'/qs_total_vs_growth_rate.pdf')
+
+    df.plot.scatter(x='qflux', y='quasisymmetry_total')
+    # plt.yscale('log');
+    # plt.xscale('log');
+    plt.tight_layout()
+    plt.savefig(out_dir+'/qs_total_vs_qflux.pdf')
     plt.show()
 #################################
 df_min = df.iloc[location_min]
