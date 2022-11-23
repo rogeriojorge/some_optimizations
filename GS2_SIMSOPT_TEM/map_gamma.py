@@ -24,30 +24,32 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
-# output_dir = 'out_map_nfp2_QA_QA_least_squares'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
-output_dir = 'out_map_nfp2_QA_initial'
-phi_GS2 = np.linspace(-23*np.pi, 23*np.pi, 101)
-nlambda = 25
-nstep = 170
-dt = 0.4
-# # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
-# # output_dir = 'out_map_nfp4_QH_QH_least_squares'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
-# output_dir = 'out_map_nfp4_QH_initial'
-# phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
-# nlambda = 27
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp2_QA_QA_ln3_lt3/wout_final.nc'
+# output_dir = 'out_map_nfp2_QA_QA_least_squares_ln3_lt3'
+# # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp2_QA.nc'
+# # output_dir = 'out_map_nfp2_QA_initial'
+# phi_GS2 = np.linspace(-23*np.pi, 23*np.pi, 101)
+# nlambda = 25
 # nstep = 170
 # dt = 0.4
+
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH_ln3_lt3/wout_final.nc'
+output_dir = 'out_map_nfp4_QH_QH_least_squares_ln3_lt3'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
+# output_dir = 'out_map_nfp4_QH_initial'
+phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
+nlambda = 27
+nstep = 170
+dt = 0.4
+
 s_radius = 0.25
 alpha_fieldline = 0
-LN_array = np.linspace(0.5,6,8)
-LT_array = np.linspace(0.5,6,8)
+LN_array = np.linspace(0.5,6,12)
+LT_array = np.linspace(0.5,6,12)
 n_processes_parallel = 8
-plot_extent_fix = False
+plot_extent_fix = True
 plot_min = 0
-plot_max = 0.40
+plot_max = 0.9
 ngauss = 3
 negrid = 9
 naky = 10
@@ -258,14 +260,14 @@ plt.figure()
 im = plt.imshow(omega_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\omega$', usetex=True)
 plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
-if plot_extent_fix: plt.clim(plot_min,plot_max) 
+# if plot_extent_fix: plt.clim(plot_min,plot_max) 
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_omega.pdf'), format='pdf', bbox_inches='tight')
 
 plt.figure()
 im = plt.imshow(ky_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$k_y$', usetex=True)
 plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
-if plot_extent_fix: plt.clim(plot_min,plot_max) 
+# if plot_extent_fix: plt.clim(plot_min,plot_max) 
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_ky.pdf'), format='pdf', bbox_inches='tight')
 
 for f in glob.glob('*.amoments'): remove(f)
