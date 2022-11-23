@@ -45,7 +45,7 @@ optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 nonlinear = True
 plot_result = True
 use_previous_results_if_available = False
-weight_optTurbulence = 10.0
+weight_optTurbulence = 100.0
 diff_rel_step = 1e-4
 diff_abs_step = 1e-6
 MAXITER_LOCAL = 3
@@ -62,16 +62,16 @@ if nonlinear:
     LT = 3.0
     nstep = 7000
     dt = 0.5
-    nzgrid = 71
-    npol = 3
+    nzgrid = 91
+    npol = 5
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
     nhermite  = 8
-    nlaguerre = 3
+    nlaguerre = 4
     nu_hyper = 0.5
     D_hyper = 0.05
-    ny = 120
-    nx = 120
+    ny = 140
+    nx = 140
     y0 = 25.0
 else:
     LN = 1.0
@@ -394,4 +394,4 @@ except Exception as e:
     pprint(e)
 ##############################################################################
 ##############################################################################
-print(f'Whole optimization took {(time.time()-start_time):1f}s')
+pprint(f'Whole optimization took {(time.time()-start_time):1f}s')
