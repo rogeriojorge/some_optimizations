@@ -25,8 +25,8 @@ if quasisymmetry: growth_rate_weight=1e1
 else: growth_rate_weight=1e3
 
 plt_opt_res = True
-plot_vmec = False
-run_simple = False
+plot_vmec = True
+run_simple = True
 
 use_final = True
 use_previous_results_if_available = False
