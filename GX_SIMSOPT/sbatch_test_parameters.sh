@@ -13,14 +13,14 @@ cd /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT
 
 mpirun -n 1 ./test_parameters.py &
 mpirun -n 1 ./test_parameters.py --nstep 12000 &
-mpirun -n 1 ./test_parameters.py --nstep 12000 --dt 0.15 &
-mpirun -n 1 ./test_parameters.py --nzgrid 101 &
-mpirun -n 1 ./test_parameters.py --nzgrid 101 --npol 6 &
-mpirun -n 1 ./test_parameters.py --nhermite 20 &
+mpirun -n 1 ./test_parameters.py --nstep 12000 --dt 0.175 &
+mpirun -n 1 ./test_parameters.py --nzgrid 121 &
+mpirun -n 1 ./test_parameters.py --nzgrid 121 --npol 6 &
+mpirun -n 1 ./test_parameters.py --nhermite 18 &
 mpirun -n 1 ./test_parameters.py --nlaguerre 8 &
 mpirun -n 1 ./test_parameters.py --nu_hyper 0.25 &
 mpirun -n 1 ./test_parameters.py --D_hyper 0.025 &
-mpirun -n 1 ./test_parameters.py --ny 140 &
-mpirun -n 1 ./test_parameters.py --nx 100 &
-mpirun -n 1 ./test_parameters.py --ny 140 --y0 20.0 &
+mpirun -n 1 ./test_parameters.py --ny 80 &
+mpirun -n 1 ./test_parameters.py --nx 200 &
+mpirun -n 1 ./test_parameters.py --ny 80 --y0 20.0 &
 wait
