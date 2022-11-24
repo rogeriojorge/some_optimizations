@@ -1,0 +1,719 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Initial aspect ratio: 8.000967056664201
+Initial mean iota: -1.2414619577370025
+Initial magnetic well: -0.014518732731757817
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+Initial heat flux: 23.498648
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:27:00 - Growth rate = 8.840282, qflux = 23.498648, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 974.104832s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:43:27 - Growth rate = 8.840282, qflux = 23.498648, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 974.813515s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:59:51 - Growth rate = 8.840282, qflux = 23.498648, quasisymmetry = 0.035078 with aspect ratio=8.000967 took 973.090604s
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+21:16:10 - Growth rate = 14.488402, qflux = 23.770645, quasisymmetry = 0.035092 with aspect ratio=8.000967 took 967.454687s
+21:16:10 - Growth rate = 6.236032, qflux = 23.820618, quasisymmetry = 0.035128 with aspect ratio=8.000967 took 968.035637s
+21:16:10 - Growth rate = 6.204700, qflux = 23.699600, quasisymmetry = 0.035075 with aspect ratio=8.000965 took 968.032646s
+21:16:10 - Growth rate = 4.142716, qflux = 23.061695, quasisymmetry = 0.035212 with aspect ratio=8.000566 took 967.877042s
+21:16:11 - Growth rate = 35.182663, qflux = 23.559189, quasisymmetry = 0.035080 with aspect ratio=8.000969 took 968.332144s
+21:16:11 - Growth rate = 10.641161, qflux = 23.612486, quasisymmetry = 0.035109 with aspect ratio=8.000967 took 968.171702s
+21:16:11 - Growth rate = 4.277231, qflux = 23.378178, quasisymmetry = 0.035075 with aspect ratio=8.000969 took 968.694693s
+21:16:11 - Growth rate = 4.835189, qflux = 23.624622, quasisymmetry = 0.035072 with aspect ratio=8.000971 took 968.584655s
+21:16:11 - Growth rate = 13.514696, qflux = 24.044157, quasisymmetry = 0.035079 with aspect ratio=8.000969 took 968.638695s
+21:16:12 - Growth rate = 6.829058, qflux = 22.807436, quasisymmetry = 0.035057 with aspect ratio=8.000967 took 969.023951s
+21:16:12 - Growth rate = 19.455347, qflux = 24.001770, quasisymmetry = 0.035114 with aspect ratio=8.000967 took 969.386692s
+21:16:12 - Growth rate = 9.001204, qflux = 23.172424, quasisymmetry = 0.035073 with aspect ratio=8.000967 took 969.331946s
+21:16:12 - Growth rate = 36.140175, qflux = 23.770561, quasisymmetry = 0.035051 with aspect ratio=8.000967 took 969.361091s
+21:16:12 - Growth rate = 12.382261, qflux = 23.562027, quasisymmetry = 0.035155 with aspect ratio=8.000961 took 969.586059s
+21:16:12 - Growth rate = 3.324100, qflux = 23.391985, quasisymmetry = 0.035068 with aspect ratio=8.000967 took 969.398371s
+21:16:12 - Growth rate = 57.034508, qflux = 24.120770, quasisymmetry = 0.035078 with aspect ratio=8.000968 took 969.589869s
+21:16:12 - Growth rate = 11.604679, qflux = 23.546923, quasisymmetry = 0.035076 with aspect ratio=8.000944 took 969.610207s
+21:16:12 - Growth rate = 17.854736, qflux = 23.367310, quasisymmetry = 0.034998 with aspect ratio=8.000468 took 969.571827s
+21:16:12 - Growth rate = 7.004224, qflux = 23.205055, quasisymmetry = 0.035040 with aspect ratio=8.000967 took 969.680857s
+21:16:12 - Growth rate = 24.659199, qflux = 23.104445, quasisymmetry = 0.035109 with aspect ratio=8.000968 took 969.732925s
+21:16:12 - Growth rate = 19.964693, qflux = 22.929323, quasisymmetry = 0.035085 with aspect ratio=8.000967 took 970.183221s
+21:16:13 - Growth rate = 4.263531, qflux = 23.449753, quasisymmetry = 0.035079 with aspect ratio=8.000966 took 969.989975s
+21:16:13 - Growth rate = 15.716179, qflux = 23.485964, quasisymmetry = 0.035094 with aspect ratio=8.000967 took 969.941334s
+21:16:13 - Growth rate = -47.770996, qflux = 23.374208, quasisymmetry = 0.035094 with aspect ratio=8.000967 took 970.205592s
+21:16:13 - Growth rate = 3.366222, qflux = 23.601454, quasisymmetry = 0.035166 with aspect ratio=8.000960 took 970.101427s
+21:16:13 - Growth rate = 16.390182, qflux = 22.899403, quasisymmetry = 0.035114 with aspect ratio=8.001096 took 970.081894s
+21:16:13 - Growth rate = 0.927660, qflux = 23.118641, quasisymmetry = 0.035082 with aspect ratio=8.000967 took 970.712783s
+21:16:13 - Growth rate = 23.591742, qflux = 23.188473, quasisymmetry = 0.035077 with aspect ratio=8.000938 took 970.385872s
+21:16:13 - Growth rate = 3.224099, qflux = 23.066952, quasisymmetry = 0.035114 with aspect ratio=8.000971 took 970.353450s
+21:16:13 - Growth rate = 11.432935, qflux = 23.586510, quasisymmetry = 0.035063 with aspect ratio=8.000967 took 970.588787s
+21:16:13 - Growth rate = 1.532437, qflux = 23.577099, quasisymmetry = 0.035165 with aspect ratio=8.000974 took 970.454524s
+21:16:13 - Growth rate = 9.680360, qflux = 23.639893, quasisymmetry = 0.035088 with aspect ratio=8.000967 took 970.781494s
+21:16:13 - Growth rate = -4.288266, qflux = 23.156029, quasisymmetry = 0.035078 with aspect ratio=8.000968 took 970.721752s
+21:16:13 - Growth rate = 10.893245, qflux = 23.570744, quasisymmetry = 0.035151 with aspect ratio=8.000967 took 970.630269s
+21:16:13 - Growth rate = 7.914773, qflux = 23.526884, quasisymmetry = 0.035077 with aspect ratio=8.000967 took 970.855377s
+21:16:14 - Growth rate = 5.081302, qflux = 23.452271, quasisymmetry = 0.035128 with aspect ratio=8.000967 took 971.147382s
+21:16:14 - Growth rate = 13.789509, qflux = 23.486675, quasisymmetry = 0.034989 with aspect ratio=8.000962 took 970.850592s
+21:16:14 - Growth rate = -23.448904, qflux = 23.443184, quasisymmetry = 0.035132 with aspect ratio=8.000967 took 971.078201s
+21:16:14 - Growth rate = 16.726898, qflux = 23.090595, quasisymmetry = 0.035083 with aspect ratio=8.000967 took 971.262923s
+21:16:14 - Growth rate = 3.253604, qflux = 23.699228, quasisymmetry = 0.035080 with aspect ratio=8.000967 took 971.475124s
+21:16:14 - Growth rate = 5.484747, qflux = 23.640560, quasisymmetry = 0.035089 with aspect ratio=8.000967 took 971.495898s
+21:16:15 - Growth rate = 12.832222, qflux = 23.703344, quasisymmetry = 0.035167 with aspect ratio=8.000955 took 971.846041s
+21:16:15 - Growth rate = 3.639296, qflux = 23.442707, quasisymmetry = 0.035065 with aspect ratio=8.000971 took 972.024958s
+21:16:15 - Growth rate = 8.415447, qflux = 22.879353, quasisymmetry = 0.035080 with aspect ratio=8.000966 took 972.192717s
+21:16:15 - Growth rate = 22.085556, qflux = 23.296852, quasisymmetry = 0.035070 with aspect ratio=8.000968 took 972.219165s
+21:16:15 - Growth rate = 11.073606, qflux = 23.304092, quasisymmetry = 0.035142 with aspect ratio=8.000967 took 972.367974s
+21:16:17 - Growth rate = 29.639942, qflux = 23.208559, quasisymmetry = 0.035082 with aspect ratio=8.000967 took 974.068088s
+21:16:22 - Growth rate = 14.385155, qflux = 23.037979, quasisymmetry = 0.035090 with aspect ratio=8.000971 took 979.994721s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.3805e+05                                    8.12e+09    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:32:51 - Growth rate = 52.238998, qflux = 29.074480, quasisymmetry = 0.001914 with aspect ratio=7.991309 took 971.121401s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:49:18 - Growth rate = 47.673038, qflux = 13.593651, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 974.672914s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:05:43 - Growth rate = 47.673038, qflux = 13.593651, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 972.790625s
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+22:22:03 - Growth rate = 24.716610, qflux = 13.254233, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 967.909078s
+22:22:03 - Growth rate = -61.625214, qflux = 12.542255, quasisymmetry = 0.000642 with aspect ratio=8.000438 took 968.611840s
+22:22:03 - Growth rate = 28.029373, qflux = 14.733271, quasisymmetry = 0.000641 with aspect ratio=8.000432 took 968.614399s
+22:22:03 - Growth rate = 18.698997, qflux = 12.995864, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 968.629918s
+22:22:03 - Growth rate = 11.700308, qflux = 13.445059, quasisymmetry = 0.000641 with aspect ratio=8.000439 took 968.837490s
+22:22:03 - Growth rate = 12.179848, qflux = 13.357475, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 969.088930s
+22:22:03 - Growth rate = 16.135548, qflux = 14.171286, quasisymmetry = 0.000640 with aspect ratio=8.000442 took 968.925029s
+22:22:04 - Growth rate = 14.297289, qflux = 13.876584, quasisymmetry = 0.000642 with aspect ratio=8.000438 took 969.062100s
+22:22:04 - Growth rate = 22.321320, qflux = 12.957394, quasisymmetry = 0.000640 with aspect ratio=8.000438 took 969.058648s
+22:22:04 - Growth rate = 15.749366, qflux = 13.566143, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 969.119192s
+22:22:04 - Growth rate = 31.803238, qflux = 13.607374, quasisymmetry = 0.000642 with aspect ratio=8.000437 took 969.359863s
+22:22:04 - Growth rate = 15.997159, qflux = 12.890781, quasisymmetry = 0.000641 with aspect ratio=8.000442 took 969.462215s
+22:22:04 - Growth rate = 9.155457, qflux = 14.261032, quasisymmetry = 0.000640 with aspect ratio=8.000437 took 969.537959s
+22:22:04 - Growth rate = -7.124102, qflux = 13.507821, quasisymmetry = 0.000641 with aspect ratio=8.000435 took 969.419020s
+22:22:04 - Growth rate = 40.963387, qflux = 13.355746, quasisymmetry = 0.000640 with aspect ratio=8.000445 took 969.581124s
+22:22:04 - Growth rate = 130.939316, qflux = 12.638511, quasisymmetry = 0.000641 with aspect ratio=8.000436 took 969.913143s
+22:22:04 - Growth rate = 15.976625, qflux = 13.270913, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 969.866453s
+22:22:04 - Growth rate = 54.639053, qflux = 12.864306, quasisymmetry = 0.000641 with aspect ratio=8.000439 took 969.731226s
+22:22:04 - Growth rate = 9.649752, qflux = 13.357223, quasisymmetry = 0.000642 with aspect ratio=8.000438 took 969.951301s
+22:22:04 - Growth rate = 1.693856, qflux = 14.070149, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 969.840145s
+22:22:04 - Growth rate = 16.034613, qflux = 13.821096, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 969.806294s
+22:22:04 - Growth rate = 36.811409, qflux = 13.650602, quasisymmetry = 0.000642 with aspect ratio=8.000437 took 969.857300s
+22:22:05 - Growth rate = 67.845711, qflux = 13.682087, quasisymmetry = 0.000628 with aspect ratio=8.000425 took 969.998354s
+22:22:05 - Growth rate = 14.743715, qflux = 13.338451, quasisymmetry = 0.000641 with aspect ratio=8.000430 took 970.168241s
+22:22:05 - Growth rate = 20.289911, qflux = 13.566324, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 970.209246s
+22:22:05 - Growth rate = 9.296881, qflux = 13.598186, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 970.302474s
+22:22:05 - Growth rate = 19.009003, qflux = 13.295288, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 970.506274s
+22:22:05 - Growth rate = 4.145017, qflux = 13.522361, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 970.265734s
+22:22:05 - Growth rate = 12.593915, qflux = 13.965267, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 970.321497s
+22:22:05 - Growth rate = 25.780500, qflux = 13.598698, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 970.483188s
+22:22:05 - Growth rate = 28.657425, qflux = 12.929782, quasisymmetry = 0.000627 with aspect ratio=8.000036 took 970.663122s
+22:22:05 - Growth rate = 31.431551, qflux = 13.684065, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 970.858208s
+22:22:05 - Growth rate = 21.106184, qflux = 14.132179, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 970.835874s
+22:22:06 - Growth rate = -4.079956, qflux = 14.215431, quasisymmetry = 0.000641 with aspect ratio=8.000565 took 970.781425s
+22:22:06 - Growth rate = 14.503595, qflux = 13.293629, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 970.967945s
+22:22:06 - Growth rate = 13.904299, qflux = 12.786188, quasisymmetry = 0.000642 with aspect ratio=8.000432 took 971.050057s
+22:22:06 - Growth rate = 52.373474, qflux = 13.969153, quasisymmetry = 0.000640 with aspect ratio=8.000438 took 971.253058s
+22:22:06 - Growth rate = 5.431291, qflux = 13.559711, quasisymmetry = 0.000641 with aspect ratio=8.000410 took 971.278244s
+22:22:06 - Growth rate = 119.465958, qflux = 13.717094, quasisymmetry = 0.000641 with aspect ratio=7.999938 took 971.307506s
+22:22:06 - Growth rate = 13.187572, qflux = 13.845719, quasisymmetry = 0.000642 with aspect ratio=8.000437 took 971.474435s
+22:22:06 - Growth rate = 26.938057, qflux = 13.832775, quasisymmetry = 0.000641 with aspect ratio=8.000415 took 971.691650s
+22:22:06 - Growth rate = 15.949704, qflux = 13.860052, quasisymmetry = 0.000641 with aspect ratio=8.000440 took 971.648202s
+22:22:06 - Growth rate = 19.373852, qflux = 13.883495, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 971.931001s
+22:22:06 - Growth rate = 32.651604, qflux = 13.992368, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 971.819242s
+22:22:07 - Growth rate = -1.493608, qflux = 12.601484, quasisymmetry = 0.000641 with aspect ratio=8.000438 took 972.244560s
+22:22:07 - Growth rate = 14.622616, qflux = 13.134001, quasisymmetry = 0.000641 with aspect ratio=8.000437 took 972.609623s
+22:22:08 - Growth rate = 20.934494, qflux = 13.676315, quasisymmetry = 0.000640 with aspect ratio=8.000441 took 973.047858s
+22:22:11 - Growth rate = 36.533691, qflux = 13.418037, quasisymmetry = 0.000641 with aspect ratio=8.000441 took 976.553447s
+       1              3         4.6197e+04      9.18e+04       2.59e-03       7.15e+09    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:38:40 - Growth rate = 16.202557, qflux = 14.342892, quasisymmetry = 0.000298 with aspect ratio=7.998565 took 972.998981s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:55:06 - Growth rate = 36.908554, qflux = 13.493647, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 973.559219s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+23:11:31 - Growth rate = 36.908554, qflux = 13.493647, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 972.053045s
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+23:27:50 - Growth rate = 8.020626, qflux = 13.806402, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 967.997830s
+23:27:50 - Growth rate = 39.629753, qflux = 13.875555, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 968.286138s
+23:27:50 - Growth rate = 29.970043, qflux = 14.386736, quasisymmetry = 0.000420 with aspect ratio=7.999227 took 968.573812s
+23:27:50 - Growth rate = 54.135506, qflux = 14.306446, quasisymmetry = 0.000420 with aspect ratio=7.999231 took 968.598159s
+23:27:50 - Growth rate = -16.830395, qflux = 13.266065, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 968.474349s
+23:27:51 - Growth rate = 12.041149, qflux = 13.798183, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.196104s
+23:27:51 - Growth rate = 57.806473, qflux = 13.524605, quasisymmetry = 0.000420 with aspect ratio=7.999357 took 968.946451s
+23:27:51 - Growth rate = 65.642860, qflux = 13.964252, quasisymmetry = 0.000419 with aspect ratio=7.999233 took 969.574058s
+23:27:51 - Growth rate = 9.483160, qflux = 14.440868, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.024050s
+23:27:51 - Growth rate = 106.408737, qflux = 13.669062, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.129600s
+23:27:51 - Growth rate = 4.647408, qflux = 14.111660, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.180675s
+23:27:51 - Growth rate = 18.065174, qflux = 14.274391, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.526671s
+23:27:51 - Growth rate = 8.933466, qflux = 13.513115, quasisymmetry = 0.000420 with aspect ratio=7.998828 took 969.298523s
+23:27:51 - Growth rate = -9.655420, qflux = 13.258539, quasisymmetry = 0.000420 with aspect ratio=7.999224 took 969.167524s
+23:27:51 - Growth rate = 64.455574, qflux = 13.769045, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.529664s
+23:27:51 - Growth rate = -52.451023, qflux = 13.120951, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.611880s
+23:27:51 - Growth rate = 16.266527, qflux = 14.659589, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.524627s
+23:27:51 - Growth rate = 15.271715, qflux = 14.224102, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.531381s
+23:27:51 - Growth rate = 16.852892, qflux = 14.065374, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.478890s
+23:27:52 - Growth rate = 31.448433, qflux = 13.415049, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.624340s
+23:27:52 - Growth rate = 29.572639, qflux = 13.863001, quasisymmetry = 0.000420 with aspect ratio=7.999237 took 969.793328s
+23:27:52 - Growth rate = 25.669106, qflux = 15.173805, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 970.121308s
+23:27:52 - Growth rate = 3.421254, qflux = 14.419327, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 969.991984s
+23:27:52 - Growth rate = 15.306562, qflux = 13.025979, quasisymmetry = 0.000420 with aspect ratio=7.999233 took 970.257731s
+23:27:52 - Growth rate = 96.893936, qflux = 14.096157, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 970.352440s
+23:27:52 - Growth rate = 4.811662, qflux = 13.934993, quasisymmetry = 0.000420 with aspect ratio=7.999224 took 969.899669s
+23:27:52 - Growth rate = 0.391559, qflux = 13.542667, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 969.931867s
+23:27:52 - Growth rate = 19.782288, qflux = 13.203579, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 970.500281s
+23:27:52 - Growth rate = 12.343906, qflux = 12.724012, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 970.567147s
+23:27:52 - Growth rate = 62.932068, qflux = 14.712862, quasisymmetry = 0.000420 with aspect ratio=7.999222 took 970.542506s
+23:27:52 - Growth rate = 65.750839, qflux = 13.320115, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 970.474672s
+23:27:52 - Growth rate = 28.723167, qflux = 13.545210, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 970.749535s
+23:27:53 - Growth rate = 7.126748, qflux = 14.054756, quasisymmetry = 0.000420 with aspect ratio=7.999207 took 970.995975s
+23:27:53 - Growth rate = 17.350899, qflux = 13.353786, quasisymmetry = 0.000420 with aspect ratio=7.999231 took 971.032374s
+23:27:53 - Growth rate = 14.635530, qflux = 14.037765, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 971.276371s
+23:27:53 - Growth rate = 29.192205, qflux = 14.320290, quasisymmetry = 0.000420 with aspect ratio=7.999234 took 971.129797s
+23:27:53 - Growth rate = 49.595070, qflux = 13.430861, quasisymmetry = 0.000420 with aspect ratio=7.998730 took 970.994725s
+23:27:53 - Growth rate = 40.947189, qflux = 13.672981, quasisymmetry = 0.000420 with aspect ratio=7.999232 took 971.127899s
+23:27:53 - Growth rate = 20.350153, qflux = 12.864071, quasisymmetry = 0.000420 with aspect ratio=7.999202 took 971.627831s
+23:27:53 - Growth rate = 23.454304, qflux = 14.006296, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 971.441658s
+23:27:53 - Growth rate = 18.268200, qflux = 13.868076, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 971.837949s
+23:27:54 - Growth rate = 13.402928, qflux = 13.815861, quasisymmetry = 0.000421 with aspect ratio=7.999217 took 971.732551s
+23:27:54 - Growth rate = 17.466625, qflux = 13.597997, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 972.169842s
+23:27:54 - Growth rate = 30.277012, qflux = 14.453979, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 971.636989s
+23:27:54 - Growth rate = 41.512054, qflux = 13.408522, quasisymmetry = 0.000420 with aspect ratio=7.999228 took 972.509311s
+23:27:55 - Growth rate = -12.911509, qflux = 13.876823, quasisymmetry = 0.000420 with aspect ratio=7.999230 took 973.180823s
+23:27:56 - Growth rate = 18.146294, qflux = 14.556504, quasisymmetry = 0.000420 with aspect ratio=7.999229 took 973.748861s
+23:28:01 - Growth rate = 26.220062, qflux = 13.733000, quasisymmetry = 0.000420 with aspect ratio=7.999232 took 979.344803s
+       2              5         4.5520e+04      6.77e+02       6.47e-04       1.13e+10    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+23:44:26 - Growth rate = 11.946335, qflux = 13.574675, quasisymmetry = 0.000390 with aspect ratio=7.999448 took 973.324653s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:00:54 - Growth rate = 31.201397, qflux = 13.937181, quasisymmetry = 0.000411 with aspect ratio=7.999302 took 975.748379s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:17:20 - Growth rate = 21.247360, qflux = 13.203924, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 973.486704s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+00:33:45 - Growth rate = 21.247360, qflux = 13.203924, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 972.689864s
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+00:50:04 - Growth rate = 19.283722, qflux = 14.155634, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 967.717273s
+00:50:05 - Growth rate = 50.095631, qflux = 13.829760, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 968.772987s
+00:50:05 - Growth rate = 48.037598, qflux = 13.868489, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 968.815058s
+00:50:06 - Growth rate = 19.787413, qflux = 13.005548, quasisymmetry = 0.000418 with aspect ratio=7.998842 took 968.528531s
+00:50:06 - Growth rate = 6.446331, qflux = 13.480234, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.019929s
+00:50:06 - Growth rate = 22.458389, qflux = 12.688068, quasisymmetry = 0.000417 with aspect ratio=7.999245 took 968.645366s
+00:50:06 - Growth rate = 17.798279, qflux = 13.865516, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 968.864046s
+00:50:06 - Growth rate = 66.151276, qflux = 14.141273, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 968.768517s
+00:50:06 - Growth rate = 13.088222, qflux = 12.996630, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.153244s
+00:50:06 - Growth rate = 7.777247, qflux = 14.204605, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.201709s
+00:50:06 - Growth rate = 21.616310, qflux = 13.519615, quasisymmetry = 0.000418 with aspect ratio=7.999251 took 969.082729s
+00:50:06 - Growth rate = 16.059599, qflux = 13.302118, quasisymmetry = 0.000417 with aspect ratio=7.999216 took 969.052116s
+00:50:06 - Growth rate = 116.750107, qflux = 14.760467, quasisymmetry = 0.000417 with aspect ratio=7.999245 took 969.070633s
+00:50:06 - Growth rate = -4.471714, qflux = 14.026238, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.122757s
+00:50:06 - Growth rate = 27.506298, qflux = 13.935726, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.254369s
+00:50:07 - Growth rate = 24.031879, qflux = 13.076985, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.729343s
+00:50:07 - Growth rate = 6.349319, qflux = 14.336205, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.714247s
+00:50:07 - Growth rate = 11.382164, qflux = 13.541643, quasisymmetry = 0.000417 with aspect ratio=7.999242 took 969.995617s
+00:50:07 - Growth rate = -6.225610, qflux = 14.331110, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.639608s
+00:50:07 - Growth rate = 11.844802, qflux = 13.053217, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.698440s
+00:50:07 - Growth rate = 27.459728, qflux = 12.880036, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.632401s
+00:50:07 - Growth rate = 17.951754, qflux = 13.513218, quasisymmetry = 0.000418 with aspect ratio=7.999243 took 969.672021s
+00:50:07 - Growth rate = 9.463692, qflux = 12.668764, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.708207s
+00:50:07 - Growth rate = -16.367088, qflux = 13.016461, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.736411s
+00:50:07 - Growth rate = -21.965866, qflux = 13.158361, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 970.297776s
+00:50:07 - Growth rate = 15.028749, qflux = 14.693398, quasisymmetry = 0.000417 with aspect ratio=7.999246 took 969.876897s
+00:50:07 - Growth rate = 33.775684, qflux = 13.479431, quasisymmetry = 0.000418 with aspect ratio=7.999243 took 969.895658s
+00:50:07 - Growth rate = 13.126869, qflux = 13.636270, quasisymmetry = 0.000418 with aspect ratio=7.999238 took 970.184394s
+00:50:07 - Growth rate = 19.418203, qflux = 13.897188, quasisymmetry = 0.000418 with aspect ratio=7.999371 took 970.146534s
+00:50:08 - Growth rate = 19.046326, qflux = 14.256048, quasisymmetry = 0.000417 with aspect ratio=7.999248 took 970.860152s
+00:50:08 - Growth rate = 34.358128, qflux = 14.479630, quasisymmetry = 0.000418 with aspect ratio=7.999231 took 971.064403s
+00:50:08 - Growth rate = 29.193411, qflux = 13.645236, quasisymmetry = 0.000417 with aspect ratio=7.999241 took 971.358364s
+00:50:08 - Growth rate = 5.015682, qflux = 14.179491, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 971.190430s
+00:50:08 - Growth rate = 19.638376, qflux = 13.649888, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.470748s
+00:50:08 - Growth rate = 68.957169, qflux = 13.476866, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.537380s
+00:50:09 - Growth rate = 51.779556, qflux = 13.122463, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.572665s
+00:50:09 - Growth rate = 10.874182, qflux = 13.372329, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.982743s
+00:50:09 - Growth rate = 13.223121, qflux = 13.818321, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.660444s
+00:50:09 - Growth rate = 15.562992, qflux = 14.404160, quasisymmetry = 0.000417 with aspect ratio=7.999247 took 971.893699s
+00:50:09 - Growth rate = 3.067394, qflux = 12.928104, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 972.038431s
+00:50:09 - Growth rate = 16.301422, qflux = 13.717837, quasisymmetry = 0.000418 with aspect ratio=7.999238 took 971.912104s
+00:50:09 - Growth rate = 14.628063, qflux = 13.939484, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.879874s
+00:50:09 - Growth rate = 20.849464, qflux = 13.267831, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.886809s
+00:50:09 - Growth rate = 12.451010, qflux = 13.696290, quasisymmetry = 0.000417 with aspect ratio=7.999247 took 972.183118s
+00:50:09 - Growth rate = 18.605061, qflux = 12.645413, quasisymmetry = 0.000418 with aspect ratio=7.999236 took 972.254927s
+00:50:09 - Growth rate = 24.034901, qflux = 13.978161, quasisymmetry = 0.000418 with aspect ratio=7.998744 took 972.340221s
+00:50:09 - Growth rate = 10.592245, qflux = 12.854939, quasisymmetry = 0.000417 with aspect ratio=7.999221 took 972.523102s
+00:50:16 - Growth rate = 39.156918, qflux = 14.556946, quasisymmetry = 0.000417 with aspect ratio=7.999246 took 978.966748s
+       3              8         4.3586e+04      1.93e+03       1.01e-05       1.03e+10    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+01:06:42 - Growth rate = 46.587765, qflux = 13.331602, quasisymmetry = 0.000418 with aspect ratio=7.999230 took 971.037838s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+01:23:08 - Growth rate = 8.759609, qflux = 13.773630, quasisymmetry = 0.000417 with aspect ratio=7.999240 took 974.154119s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+01:39:33 - Growth rate = 5.229446, qflux = 13.444515, quasisymmetry = 0.000417 with aspect ratio=7.999242 took 972.419526s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+01:56:00 - Growth rate = 51.538857, qflux = 13.197778, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 975.349154s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+02:12:24 - Growth rate = 51.538857, qflux = 13.197778, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.153174s
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+02:28:42 - Growth rate = 7.781667, qflux = 13.319790, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 966.555163s
+02:28:43 - Growth rate = 25.909073, qflux = 14.002786, quasisymmetry = 0.000418 with aspect ratio=7.998842 took 967.414244s
+02:28:43 - Growth rate = 89.346329, qflux = 13.266808, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 967.808487s
+02:28:43 - Growth rate = 8.571632, qflux = 13.872251, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 967.681083s
+02:28:43 - Growth rate = 28.781532, qflux = 13.371147, quasisymmetry = 0.000418 with aspect ratio=7.999370 took 968.527864s
+02:28:44 - Growth rate = 14.920231, qflux = 13.690892, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 968.702426s
+02:28:44 - Growth rate = 31.835281, qflux = 12.974089, quasisymmetry = 0.000418 with aspect ratio=7.999243 took 968.826921s
+02:28:44 - Growth rate = 18.619547, qflux = 13.812922, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 968.841959s
+02:28:44 - Growth rate = 12.994573, qflux = 14.523207, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 968.969280s
+02:28:44 - Growth rate = 21.465294, qflux = 13.422290, quasisymmetry = 0.000418 with aspect ratio=7.999243 took 969.108160s
+02:28:44 - Growth rate = 11.868950, qflux = 13.945379, quasisymmetry = 0.000418 with aspect ratio=7.999237 took 969.199245s
+02:28:44 - Growth rate = 8.254623, qflux = 13.554699, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.253065s
+02:28:44 - Growth rate = -11.540117, qflux = 13.391194, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.455379s
+02:28:44 - Growth rate = 54.614719, qflux = 13.395082, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.439043s
+02:28:44 - Growth rate = 11.574876, qflux = 13.023011, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.242886s
+02:28:45 - Growth rate = 73.602692, qflux = 13.470823, quasisymmetry = 0.000417 with aspect ratio=7.999240 took 969.343477s
+02:28:45 - Growth rate = 26.674866, qflux = 12.491638, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.847673s
+02:28:45 - Growth rate = 32.705608, qflux = 14.131479, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.618984s
+02:28:45 - Growth rate = 21.309349, qflux = 13.913893, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.572344s
+02:28:45 - Growth rate = 15.496693, qflux = 13.133612, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.599067s
+02:28:45 - Growth rate = 12.946367, qflux = 14.229961, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.653599s
+02:28:45 - Growth rate = 12.912618, qflux = 13.769732, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 970.001383s
+02:28:45 - Growth rate = 28.832071, qflux = 13.500422, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 969.847353s
+02:28:45 - Growth rate = 13.668545, qflux = 13.941060, quasisymmetry = 0.000417 with aspect ratio=7.999245 took 970.044584s
+02:28:45 - Growth rate = 49.400410, qflux = 14.078962, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 969.849514s
+02:28:45 - Growth rate = 18.829311, qflux = 13.557965, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 970.264735s
+02:28:45 - Growth rate = 9.684870, qflux = 14.124447, quasisymmetry = 0.000417 with aspect ratio=7.999245 took 970.150243s
+02:28:45 - Growth rate = 57.592323, qflux = 13.495367, quasisymmetry = 0.000417 with aspect ratio=7.999247 took 970.110496s
+02:28:45 - Growth rate = 54.197041, qflux = 13.003172, quasisymmetry = 0.000418 with aspect ratio=7.999231 took 970.193483s
+02:28:45 - Growth rate = 39.363628, qflux = 13.849182, quasisymmetry = 0.000418 with aspect ratio=7.999250 took 970.459101s
+02:28:46 - Growth rate = 18.532484, qflux = 13.520885, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 970.433325s
+02:28:46 - Growth rate = 78.502350, qflux = 13.503880, quasisymmetry = 0.000417 with aspect ratio=7.999242 took 970.828140s
+02:28:46 - Growth rate = 166.120270, qflux = 14.454461, quasisymmetry = 0.000417 with aspect ratio=7.999221 took 970.873033s
+02:28:46 - Growth rate = 19.850397, qflux = 13.263381, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.249732s
+02:28:46 - Growth rate = 10.613190, qflux = 13.123323, quasisymmetry = 0.000417 with aspect ratio=7.999244 took 971.331208s
+02:28:47 - Growth rate = 36.322517, qflux = 13.510996, quasisymmetry = 0.000417 with aspect ratio=7.999247 took 971.185707s
+02:28:47 - Growth rate = 34.116398, qflux = 13.405262, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 971.467769s
+02:28:47 - Growth rate = -8.979898, qflux = 14.221817, quasisymmetry = 0.000417 with aspect ratio=7.999247 took 971.426510s
+02:28:47 - Growth rate = 87.509903, qflux = 13.692064, quasisymmetry = 0.000417 with aspect ratio=7.999242 took 971.765800s
+02:28:47 - Growth rate = -2.668484, qflux = 13.456373, quasisymmetry = 0.000417 with aspect ratio=7.999245 took 971.956802s
+02:28:47 - Growth rate = 13.429756, qflux = 12.831766, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 972.576053s
+02:28:48 - Growth rate = 7.767684, qflux = 13.958980, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 972.342752s
+02:28:48 - Growth rate = 61.453766, qflux = 13.056702, quasisymmetry = 0.000418 with aspect ratio=7.998744 took 972.610899s
+02:28:48 - Growth rate = 6.822251, qflux = 13.107459, quasisymmetry = 0.000417 with aspect ratio=7.999215 took 972.468712s
+02:28:48 - Growth rate = 39.422680, qflux = 13.754339, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 972.765558s
+02:28:49 - Growth rate = 21.680363, qflux = 13.634239, quasisymmetry = 0.000418 with aspect ratio=7.999236 took 973.164649s
+02:28:49 - Growth rate = 9.026008, qflux = 14.510036, quasisymmetry = 0.000418 with aspect ratio=7.999238 took 973.400715s
+02:28:55 - Growth rate = 163.012680, qflux = 14.025280, quasisymmetry = 0.000417 with aspect ratio=7.999246 took 979.504230s
+       4             12         4.3545e+04      4.06e+01       3.95e-08       8.75e+09    
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+02:45:22 - Growth rate = 16.754358, qflux = 13.824654, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 970.322021s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+03:01:50 - Growth rate = 7.144158, qflux = 13.576695, quasisymmetry = 0.000417 with aspect ratio=7.999243 took 975.461388s
+       5             14         4.3545e+04      0.00e+00       0.00e+00       8.75e+09    
+`xtol` termination condition is satisfied.
+Function evaluations 14, initial cost 1.3805e+05, final cost 4.3545e+04, first-order optimality 8.75e+09.
+Final aspect ratio: 7.999243093840087
+Final mean iota: -1.2387032045570352
+Final magnetic well: -0.014635735437010992
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+On rank 3 and CUDA_VISIBLE_DEVICES=3
+On rank 34 and CUDA_VISIBLE_DEVICES=2
+On rank 1 and CUDA_VISIBLE_DEVICES=1
+On rank 32 and CUDA_VISIBLE_DEVICES=0
+On rank 35 and CUDA_VISIBLE_DEVICES=3
+On rank 19 and CUDA_VISIBLE_DEVICES=3
+On rank 33 and CUDA_VISIBLE_DEVICES=1
+On rank 16 and CUDA_VISIBLE_DEVICES=0
+On rank 18 and CUDA_VISIBLE_DEVICES=2
+On rank 23 and CUDA_VISIBLE_DEVICES=3
+On rank 20 and CUDA_VISIBLE_DEVICES=0
+On rank 21 and CUDA_VISIBLE_DEVICES=1
+On rank 22 and CUDA_VISIBLE_DEVICES=2
+On rank 2 and CUDA_VISIBLE_DEVICES=2
+On rank 17 and CUDA_VISIBLE_DEVICES=1
+On rank 38 and CUDA_VISIBLE_DEVICES=2
+On rank 36 and CUDA_VISIBLE_DEVICES=0
+On rank 10 and CUDA_VISIBLE_DEVICES=2
+On rank 41 and CUDA_VISIBLE_DEVICES=1
+On rank 9 and CUDA_VISIBLE_DEVICES=1
+On rank 40 and CUDA_VISIBLE_DEVICES=0
+On rank 37 and CUDA_VISIBLE_DEVICES=1
+On rank 8 and CUDA_VISIBLE_DEVICES=0
+On rank 39 and CUDA_VISIBLE_DEVICES=3
+On rank 11 and CUDA_VISIBLE_DEVICES=3
+On rank 43 and CUDA_VISIBLE_DEVICES=3
+On rank 42 and CUDA_VISIBLE_DEVICES=2
+On rank 5 and CUDA_VISIBLE_DEVICES=1
+On rank 27 and CUDA_VISIBLE_DEVICES=3
+On rank 24 and CUDA_VISIBLE_DEVICES=0
+On rank 25 and CUDA_VISIBLE_DEVICES=1
+On rank 26 and CUDA_VISIBLE_DEVICES=2
+On rank 4 and CUDA_VISIBLE_DEVICES=0
+On rank 30 and CUDA_VISIBLE_DEVICES=2
+On rank 31 and CUDA_VISIBLE_DEVICES=3
+On rank 7 and CUDA_VISIBLE_DEVICES=3
+On rank 28 and CUDA_VISIBLE_DEVICES=0
+On rank 29 and CUDA_VISIBLE_DEVICES=1
+On rank 6 and CUDA_VISIBLE_DEVICES=2
+On rank 13 and CUDA_VISIBLE_DEVICES=1
+On rank 15 and CUDA_VISIBLE_DEVICES=3
+On rank 14 and CUDA_VISIBLE_DEVICES=2
+On rank 12 and CUDA_VISIBLE_DEVICES=0
+On rank 44 and CUDA_VISIBLE_DEVICES=0
+On rank 46 and CUDA_VISIBLE_DEVICES=2
+On rank 47 and CUDA_VISIBLE_DEVICES=3
+On rank 45 and CUDA_VISIBLE_DEVICES=1
+Final heat flux: 13.197778
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH_nonlinear/convert_VMEC_to_GX'
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  VMEC OUTPUT FILES ALREADY EXIST: OVERWRITING THEM ...
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER: powerpc64le-conda_cos7-linux-gnu   OS:    RELEASE:   DATE = Nov 24,2022  TIME = 03:18:13
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =   0.99979667337606359       0.22190350634625702        2.7343291684260012E-002  -2.5581144822899005E-003   3.5562036992987537E-004   2.3134200133432732E-003
+      ZAXIS_CS =   -0.0000000000000000       0.19584522632458018        2.0960260663554803E-002   1.3325884369977628E-004  -8.6971379858480629E-004  -9.2981378564369564E-004
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  3.21E-02  2.47E-02  3.32E-02  1.249E+00  9.00E-01  1.5643E-01
+  200  3.62E-09  2.15E-09  1.56E-09  1.237E+00  8.10E-01  1.5268E-01
+  400  6.55E-11  3.89E-11  3.34E-11  1.238E+00  8.10E-01  1.5268E-01
+  600  4.06E-12  1.80E-12  1.61E-12  1.238E+00  8.10E-01  1.5268E-01
+  664  9.83E-13  5.87E-13  5.35E-13  1.238E+00  8.10E-01  1.5268E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  3.91E-03  1.89E-03  3.97E-06  1.238E+00  9.00E-01  1.5268E-01
+  200  5.04E-09  4.78E-09  5.34E-11  1.238E+00  7.20E-01  1.5268E-01
+  400  3.48E-11  1.19E-11  2.83E-12  1.238E+00  7.20E-01  1.5268E-01
+  600  1.69E-12  9.70E-13  5.05E-13  1.238E+00  7.20E-01  1.5268E-01
+  800  2.85E-13  1.63E-13  4.46E-14  1.238E+00  7.20E-01  1.5268E-01
+  917  9.89E-14  5.50E-14  2.10E-14  1.238E+00  7.20E-01  1.5268E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  3.19E-03  1.32E-03  6.17E-08  1.238E+00  9.00E-01  1.5268E-01
+  200  3.59E-09  4.74E-09  2.98E-12  1.238E+00  5.83E-01  1.5268E-01
+  400  1.26E-10  9.78E-11  2.06E-13  1.238E+00  5.83E-01  1.5268E-01
+  600  2.41E-11  1.89E-11  3.24E-14  1.238E+00  5.83E-01  1.5268E-01
+  800  1.08E-12  1.09E-12  1.40E-14  1.238E+00  5.83E-01  1.5268E-01
+ 1000  7.44E-13  2.68E-13  3.16E-15  1.238E+00  5.83E-01  1.5268E-01
+ 1200  1.91E-13  4.93E-14  1.00E-15  1.238E+00  5.83E-01  1.5268E-01
+ 1400  3.10E-14  9.09E-15  3.23E-16  1.238E+00  5.83E-01  1.5268E-01
+ 1515  9.87E-15  2.83E-15  1.30E-16  1.238E+00  5.83E-01  1.5268E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    3
+
+    TOTAL COMPUTATIONAL TIME (SEC)        13.88
+    TIME TO INPUT/OUTPUT                   0.02
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.02
+    TIME IN FUNCT3D                       13.75
+       BCOVAR FIELDS                       2.11
+       FOURIER TRANSFORM                   2.39
+       INVERSE FOURIER TRANSFORM           2.20
+       FORCES AND SYMMETRIZE               2.39
+       RESIDUE                             3.58
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.12465095626905934
+Rmajor_p:  0.9971133010758324
+aspect:             7.999243093840061
+Rmajor_p/Aminor_p:  7.999243093840061
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    1.5928903144617816e-11
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 4
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     3  30   0  9.152e-01  9.152e-01  8.249e-15  1.102e+00  1.102e+00  2.479e-14
+                pi  1.101e+00  1.101e+00  5.848e-15  9.165e-01  9.165e-01  3.392e-14
+   2     6  60   0  8.822e-01  8.822e-01  2.504e-14  1.146e+00  1.146e+00  1.879e-14
+                pi  1.146e+00  1.146e+00  7.747e-16  8.828e-01  8.828e-01  1.735e-14
+   0     0   0   0  9.909e-01  9.909e-01  1.602e-14  1.014e+00  1.014e+00  1.904e-14
+                pi  1.014e+00  1.014e+00  1.292e-14  9.908e-01  9.908e-01  1.289e-14
+   3     8  79   0  8.661e-01  8.661e-01  8.204e-15  1.170e+00  1.170e+00  1.196e-14
+                pi  1.170e+00  1.170e+00  7.400e-15  8.654e-01  8.654e-01  1.309e-14
+   1     4  39   0  9.039e-01  9.039e-01  1.032e-14  1.117e+00  1.117e+00  1.094e-14
+                pi  1.116e+00  1.116e+00  8.356e-15  9.052e-01  9.052e-01  3.005e-14
+   0     1  10   0  9.500e-01  9.500e-01  1.484e-14  1.059e+00  1.059e+00  1.426e-14
+                pi  1.058e+00  1.058e+00  0.000e+00  9.510e-01  9.510e-01  1.576e-14
+   2     7  70   0  8.734e-01  8.734e-01  3.178e-15  1.159e+00  1.159e+00  2.624e-14
+                pi  1.159e+00  1.159e+00  1.130e-14  8.734e-01  8.734e-01  4.284e-14
+   3     9  89   0  8.586e-01  8.586e-01  7.629e-15  1.181e+00  1.181e+00  1.523e-14
+                pi  1.182e+00  1.182e+00  1.860e-14  8.569e-01  8.569e-01  2.319e-14
+   1     5  49   0  8.929e-01  8.929e-01  1.069e-14  1.131e+00  1.131e+00  5.102e-15
+                pi  1.131e+00  1.131e+00  8.637e-15  8.940e-01  8.940e-01  1.614e-15
+   0     2  20   0  9.301e-01  9.301e-01  2.924e-14  1.083e+00  1.083e+00  3.650e-14
+                pi  1.082e+00  1.082e+00  1.231e-15  9.314e-01  9.314e-01  1.132e-14
+Writing output to /m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH_nonlinear/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_least_squares_nfp4_QH_QH_nonlinear/gx'
+Whole optimization took 26750.099982s

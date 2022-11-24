@@ -28,7 +28,7 @@ vmec_index_scan_opt = 0
 npoints_scan = 16
 ftol = 1e-2
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -50,18 +50,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
-dt = 0.4
+nstep = 7000
+dt = 0.3
 nzgrid = 101
-npol = 4
+npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 8
-nlaguerre = 4
+nhermite  = 9
+nlaguerre = 3
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 150
-nx = 150
+ny = 120
+nx = 120
+y0 = 20.0
 nonlinear = True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
@@ -225,6 +226,7 @@ def create_gx_inputs(vmec_file):
     replace(fnamein,' ny = 30',f' ny = {ny}')
     replace(fnamein,' nx = 1',f' nx = {nx}')
     replace(fnamein,' D_hyper = 0.05',f' D_hyper = {D_hyper}')
+    replace(fnamein,' y0 = 20.0',f' y0 = {y0}')
     os.remove(os.path.join(OUT_DIR,f_wout))
     return fname
 # Function to remove spurious GX files

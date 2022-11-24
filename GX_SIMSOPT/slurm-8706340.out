@@ -1,0 +1,48 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Starting GX runs
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=234.330643 qflux=9.617145 took 906.509259s
+nzgrid=181 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=191.863480 qflux=9.825889 took 1661.582465s
+nzgrid=181 npol=10 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=368.103699 qflux=9.704548 took 1659.319040s
+nzgrid=91 npol=5 nstep=14000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=213.972092 qflux=10.347682 took 1811.734311s
+nzgrid=91 npol=5 nstep=14000 dt=0.15 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=431.261383 qflux=9.581040 took 1816.038297s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=18 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=150.246307 qflux=29.488258 took 1685.053780s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=526.260376 qflux=13.704034 took 1803.392017s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.25 D_hyper=0.05 ny=120 nx=120 y0=20.0 growth_rate=446.018585 qflux=8.341617 took 910.718229s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.025 ny=120 nx=120 y0=20.0 growth_rate=432.008850 qflux=8.786455 took 907.313054s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=240 nx=120 y0=20.0 growth_rate=1366.730713 qflux=7.388212 took 1711.497843s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=240 y0=20.0 growth_rate=830.155640 qflux=7.408800 took 1762.560702s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=240 nx=120 y0=40.0 growth_rate=373.857880 qflux=41.884338 took 1714.549694s
+nzgrid=91 npol=5 nstep=7000 dt=0.3 nhermite=9 nlaguerre=3 nu_hyper=0.5 D_hyper=0.05 ny=240 nx=120 y0=10.0 growth_rate=9263.970703 qflux=16.843250 took 1708.872046s
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_parameters.py:122: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
