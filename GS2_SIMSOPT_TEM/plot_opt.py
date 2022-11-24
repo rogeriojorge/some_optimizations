@@ -13,7 +13,7 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-QA_or_QH = 'QA'
+QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
 

@@ -1,0 +1,141 @@
+
+&parameters
+ beta = 0.0
+ zeff = 1.0
+/
+
+&kt_grids_knobs
+ grid_option = "range"
+/
+
+&kt_grids_single_parameters
+ aky = 0.8
+/
+
+&kt_grids_range_parameters
+ aky_min = 0.2
+ aky_max = 2.0
+ naky = 10
+ kyspacing_option='exponential'
+/
+
+&theta_grid_knobs
+ equilibrium_option = "file"
+/
+
+&theta_grid_file_knobs
+ gridout_file = "/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/test_optimization_nfp2_QA_ln3.0_lt3.0/grid_gs2-nfp2_QA_000_000001.out"
+/
+
+&le_grids_knobs
+ ngauss = 3
+ negrid = 9
+/
+
+&dist_fn_knobs
+ gridfac = 1.0
+ omprimfac = 1.0
+ boundary_option = "linked"
+ adiabatic_option = "iphi00=2"
+ g_exb = 0.0
+ nonad_zero = .true.
+/
+
+&fields_knobs
+ field_option = "implicit"
+/
+
+&knobs
+ wstar_units = .false.
+ fphi = 1.0
+ fapar = 0.0
+ faperp = 0.0
+ delt = 0.4
+ nstep = 170
+/
+
+&reinit_knobs
+ delt_adj = 2.0
+ delt_minimum = 1.0e-06
+/
+
+&collisions_knobs
+ collision_model = "none"
+/
+
+&nonlinear_terms_knobs
+ nonlinear_mode = "off"
+ cfl = 0.5
+/
+
+&species_knobs
+ nspec = 2
+/
+
+&species_parameters_1
+ z = 1.0
+ mass = 1.0
+ dens = 1.0
+ temp = 1.0
+ tprim = 3.0
+ fprim = 3.0
+ uprim = 0.0
+ vnewk = 0.01
+ type = "ion"
+/
+
+&species_parameters_2
+ z = -1.0
+ mass = 0.0027
+ dens = 1.0
+ temp = 1.0
+ tprim = 3.0
+ fprim = 3.0
+ uprim = 0.0
+ vnewk = 0.01
+ type = "electron"
+/
+
+&dist_fn_species_knobs_1
+ fexpr = 0.48
+ bakdif = 0.05
+/
+
+&dist_fn_species_knobs_2
+ fexpr = 0.48
+ bakdif = 0.05
+/
+
+&init_g_knobs
+ chop_side = .false.
+ phiinit = 0.001
+ ginit_option = "default"
+ constant_random_flag = .true.
+/
+
+&gs2_diagnostics_knobs
+ print_flux_line = .F.
+ write_nl_flux = .true.
+ print_line = .true.
+ write_verr = .true.
+ write_line = .false.
+ write_hrate = .false.
+ write_avg_moments = .F.
+ write_omega = .false.
+ write_omavg = .false.
+ write_eigenfunc = .true.
+ write_final_fields = .true.
+ write_final_moments = .true.
+ nsave = 100
+ nwrite = 8
+ navg = 8
+ omegatol = -0.001
+ omegatinst = 500.0
+ save_for_restart = .false.
+ write_phi_over_time = .false.
+/
+
+&general_f0_parameters
+ alpha_f0 = "analytic"
+ energy_0 = 0.01
+/

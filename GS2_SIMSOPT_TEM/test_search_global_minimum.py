@@ -26,24 +26,32 @@ this_path = Path(__file__).parent.resolve()
 min_bound = -0.20
 max_bound = 0.20
 vmec_index_scan_opt = 0
-npoints_scan = 15
+npoints_scan = 25
 ftol = 1e-2
 s_radius = 0.25
 alpha_fieldline = 0
 LN = 3.0
-LT = 1.0
+LT = 3.0
 
-initial_config = 'input.nfp4_QH'
-phi_GS2 = np.linspace(-6*np.pi, 6*np.pi, 131)
-nlambda = 29
-nstep = 200
-dt = 0.06
+# initial_config = 'input.nfp4_QH'
+# phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
+# nlambda = 27
+# nstep = 170
+# dt = 0.4
 
-# initial_config = 'input.nfp2_QA'
-# phi_GS2 = np.linspace(-19*np.pi, 19*np.pi, 141)
-# nlambda = 22
-# nstep = 310
-# dt = 0.08
+initial_config = 'input.nfp2_QA'
+phi_GS2 = np.linspace(-23*np.pi, 23*np.pi, 101)
+nlambda = 25
+nstep = 170
+dt = 0.4
+
+naky = 10
+aky_min = 0.2
+aky_max = 2.0
+s_radius = 0.25
+alpha_fieldline = 0
+ngauss = 3
+negrid = 9
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -229,6 +237,13 @@ def CalculateGrowthRate(v: Vmec):
         replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
         replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
         replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+        replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
+        f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
+        replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
+        f' negrid = {negrid} ! Total number of energy grid points')
+        replace(gs2_input_file,' naky = 6',f' naky = {naky}')
+        replace(gs2_input_file,' aky_min = 0.3',f' aky_min = {aky_min}')
+        replace(gs2_input_file,' aky_max = 10.0',f' aky_max = {aky_max}')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
