@@ -29,17 +29,17 @@ LT = 3.0
 output_dir+=f'_LN{LN}_LT{LT}'
 nstep = 6000
 dt = 0.3
-nzgrid = 71
+nzgrid = 61
 npol = 3
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 16
+nhermite  = 14
 nlaguerre = 4
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 60
-nx = 30
-y0 = 15.0
+ny = 70
+nx = 50
+y0 = 10.0
 nonlinear = True
 ########################################
 # Go into the output directory

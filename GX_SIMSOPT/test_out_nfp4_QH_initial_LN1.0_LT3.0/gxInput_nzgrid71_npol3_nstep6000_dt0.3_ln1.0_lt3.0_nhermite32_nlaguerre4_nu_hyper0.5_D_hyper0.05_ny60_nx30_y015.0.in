@@ -7,7 +7,7 @@
  ny = 60
  nx = 30
 
- nhermite = 16
+ nhermite = 32
  nlaguerre = 4
  nspecies = 1
 
@@ -20,8 +20,8 @@
  nonlinear_mode = true
 
 [Time]
- dt = 0.15
- nstep  = 12000
+ dt = 0.3
+ nstep  = 6000
  nwrite = 100
  nsave  = 1000000
  scheme = "sspx3"
