@@ -3,7 +3,7 @@
 #SBATCH -p m100_all_serial
 #SBATCH --time 04:00:00     # format: HH:MM:SS
 #SBATCH -N 1                # 1 node
-#SBATCH --ntasks-per-node=1 # 8 tasks out of 128
+#SBATCH --ntasks-per-node=4 # 8 tasks out of 128
 #SBATCH --gres=gpu:1        # 1 gpus per node out of 4
 #SBATCH --mem=7600          # memory per node out of 246000MB
 #SBATCH --job-name=gx_test_p
