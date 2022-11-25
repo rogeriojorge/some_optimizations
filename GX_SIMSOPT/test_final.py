@@ -19,8 +19,8 @@ this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gx_executable = '/home/rogerio/gx/gx'
 convert_VMEC_to_GX = '/home/rogerio/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-# vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
+vmec_file = '/home/rogerio/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
+# vmec_file = '/home/rogerio/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
 ##
 LN = 1.0
 LT = 3.0
