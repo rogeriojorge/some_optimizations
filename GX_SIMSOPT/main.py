@@ -37,7 +37,7 @@ number_of_cores = 4 # MPI.COMM_WORLD.Get_size()
 ############################################################################
 MAXITER = 150
 max_modes = [3]
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 if initial_config[-2:]=='QA': aspect_ratio_target = 6
 else: aspect_ratio_target = 8
 opt_quasisymmetry = True
@@ -61,17 +61,17 @@ if nonlinear:
     LN = 1.0
     LT = 3.0
     nstep = 8000
-    dt = 0.3
-    nzgrid = 81
+    dt = 0.35
+    nzgrid = 91
     npol = 4
     desired_normalized_toroidal_flux = 0.25
     alpha_fieldline = 0
-    nhermite  = 14
+    nhermite  = 15
     nlaguerre = 5
     nu_hyper = 0.5
     D_hyper = 0.05
-    ny = 50
-    nx = 100
+    ny = 80
+    nx = 80
     y0 = 10.0
 else:
     LN = 1.0

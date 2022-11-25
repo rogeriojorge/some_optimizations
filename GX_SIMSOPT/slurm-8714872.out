@@ -1,0 +1,56 @@
+Growth rate = 59.522446, qflux = 11.796312 for point -0.200000, aspect 5.989996, quasisymmetry = 1.196054 and iota 0.324865 took 1177.983406s
+Growth rate = 62.225273, qflux = 6.245068 for point -0.173333, aspect 5.990738, quasisymmetry = 0.972163 and iota 0.334163 took 1178.814193s
+Growth rate = 77.148849, qflux = 14.993861 for point -0.146667, aspect 5.991480, quasisymmetry = 0.793564 and iota 0.343191 took 1179.661180s
+Growth rate = 259.072723, qflux = 46.477196 for point -0.120000, aspect 5.992223, quasisymmetry = 0.648946 and iota 0.351908 took 1178.489007s
+Growth rate = 35.731190, qflux = 18.415806 for point -0.093333, aspect 5.992965, quasisymmetry = 0.529827 and iota 0.360278 took 1175.044007s
+Growth rate = 87.315086, qflux = 13.219608 for point -0.066667, aspect 5.993707, quasisymmetry = 0.429829 and iota 0.368270 took 1169.406275s
+Growth rate = 22.512096, qflux = 15.873137 for point -0.040000, aspect 5.994449, quasisymmetry = 0.344235 and iota 0.375856 took 1171.857034s
+Growth rate = 29.798155, qflux = 7.030960 for point -0.013333, aspect 5.995191, quasisymmetry = 0.269713 and iota 0.383015 took 1173.028541s
+Growth rate = 44.087002, qflux = 23.068926 for point 0.013333, aspect 5.995933, quasisymmetry = 0.204118 and iota 0.389730 took 1171.593415s
+Growth rate = 195.036606, qflux = 28.078379 for point 0.040000, aspect 5.996675, quasisymmetry = 0.146338 and iota 0.395993 took 1171.677562s
+Growth rate = 299.621521, qflux = 31.717789 for point 0.066667, aspect 5.997417, quasisymmetry = 0.096234 and iota 0.401796 took 1169.577917s
+Growth rate = 151.153748, qflux = 18.217541 for point 0.093333, aspect 5.998159, quasisymmetry = 0.054575 and iota 0.407140 took 1173.591470s
+Growth rate = 68.184875, qflux = 15.235183 for point 0.120000, aspect 5.998902, quasisymmetry = 0.023051 and iota 0.412029 took 1171.508938s
+Growth rate = 85.038261, qflux = 18.913462 for point 0.146667, aspect 5.999644, quasisymmetry = 0.004350 and iota 0.416471 took 1171.819347s
+Growth rate = 81.000732, qflux = 19.115898 for point 0.173333, aspect 6.000386, quasisymmetry = 0.002299 and iota 0.420479 took 1172.274868s
+Growth rate = 133.785782, qflux = 21.558189 for point 0.200000, aspect 6.001128, quasisymmetry = 0.022119 and iota 0.424065 took 1171.494917s
+[Errno 2] No such file or directory: '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_optimization_nfp2_QA/convert_VMEC_to_GX'
+[Errno 2] No such file or directory: 'opt_dofs_loss.csv'
+./test_search_global_minimum.py:110: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_search_global_minimum.py:111: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:110: RuntimeWarning: invalid value encountered in divide
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_search_global_minimum.py:111: RuntimeWarning: invalid value encountered in divide
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+./test_search_global_minimum.py:138: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)

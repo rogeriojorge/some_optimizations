@@ -28,7 +28,7 @@ vmec_index_scan_opt = 0
 npoints_scan = 16
 ftol = 1e-2
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1000
 GROWTHRATE_THRESHOLD = 10
@@ -37,7 +37,7 @@ MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = False
+run_scan = True
 run_optimization = False
 plot_result = True
 
@@ -50,19 +50,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 7000
-dt = 0.3
-nzgrid = 101
-npol = 5
+nstep = 8000
+dt = 0.35
+nzgrid = 91
+npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 9
-nlaguerre = 3
+nhermite  = 15
+nlaguerre = 5
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 120
-nx = 120
-y0 = 20.0
+ny = 80
+nx = 80
+y0 = 10.0
 nonlinear = True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
