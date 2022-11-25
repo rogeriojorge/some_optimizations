@@ -25,19 +25,19 @@ this_path = Path(__file__).parent.resolve()
 min_bound = -0.2
 max_bound = 0.2
 vmec_index_scan_opt = 0
-npoints_scan = 16
+npoints_scan = 20
 ftol = 1e-2
 
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 
-HEATFLUX_THRESHOLD = 1000
+HEATFLUX_THRESHOLD = 500
 GROWTHRATE_THRESHOLD = 10
 
 MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = True
+run_scan = False
 run_optimization = False
 plot_result = True
 
