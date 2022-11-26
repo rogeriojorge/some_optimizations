@@ -37,7 +37,7 @@ MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = False
+run_scan = True
 run_optimization = False
 plot_result = True
 
