@@ -1,0 +1,10 @@
+Starting GX run
+nzgrid=121 npol=4 nstep=10000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=171.678833 qflux=34.557674 took 3147.452585s
+nzgrid=241 npol=4 nstep=10000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=70.277031 qflux=16.332546 took 5632.024079s
+nzgrid=241 npol=8 nstep=10000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=233.462280 qflux=17.362709 took 5636.810296s
+nzgrid=121 npol=4 nstep=20000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=165.067047 qflux=35.677818 took 6286.037456s
+nzgrid=121 npol=4 nstep=20000 dt=0.175 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=209.723434 qflux=25.548601 took 6283.345194s
+nzgrid=121 npol=4 nstep=10000 dt=0.35 nhermite=28 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=385.519958 qflux=42.968037 took 6008.080314s
+nzgrid=121 npol=4 nstep=10000 dt=0.35 nhermite=14 nlaguerre=12 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=138.593231 qflux=44.650566 took 6045.294578s
+nzgrid=121 npol=4 nstep=10000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.25 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=300.495178 qflux=33.836243 took 3144.041533s
+slurmstepd: error: *** JOB 8716715 ON r231n05 CANCELLED AT 2022-11-25T22:39:54 DUE TO TIME LIMIT ***
