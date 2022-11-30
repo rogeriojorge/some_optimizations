@@ -33,7 +33,7 @@ nphi= 111
 nlambda = 21
 nperiod = 4.5
 nstep = 10000
-dt = 0.3
+dt = 0.015
 ##
 LN = 1.0
 LT = 3.0
@@ -41,9 +41,9 @@ s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
 negrid = 10
-ny=100
-nx=100
-y0=15.0
+ny=50
+nx=30
+y0=10.0
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
