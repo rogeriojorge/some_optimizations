@@ -18,31 +18,39 @@ from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 this_path = Path(__file__).parent.resolve()
 matplotlib.use('Agg') 
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
+LN = 1.0
+LT = 3.0
 ######## INPUT PARAMETERS ########
-gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
-# vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-# output_dir = 'nonlinear_nfp2_QA_initial'
-# vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
-# output_dir = 'nonlinear_nfp2_QA_test'
-# vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-# output_dir = 'nonlinear_nfp4_QH_initial'
-vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
-output_dir = 'nonlinear_nfp4_QH_test'
+gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2NOT'
+if args.type == 1:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+    output_dir = 'nonlinear_nfp2_QA_initial_LN{LN}_LT{LT}'
+elif args.type == 2:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+    output_dir = 'nonlinear_nfp2_QA_final_LN{LN}_LT{LT}'
+elif args.type == 3:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+    output_dir = 'nonlinear_nfp4_QH_initial_LN{LN}_LT{LT}'
+elif args.type == 4:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+    output_dir = 'nonlinear_nfp4_QH_final_LN{LN}_LT{LT}'
 nphi= 111
 nlambda = 21
 nperiod = 4.5
-nstep = 10000
+nstep = 20000
 dt = 0.015
 ##
-LN = 1.0
-LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
 negrid = 10
-ny=50
-nx=30
-y0=10.0
+ny=100
+nx=100
+y0=15.0
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
