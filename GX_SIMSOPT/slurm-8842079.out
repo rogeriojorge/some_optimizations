@@ -1,0 +1,124 @@
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+perl: warning: Setting locale failed.
+perl: warning: Please check that your locale settings:
+	LANGUAGE = (unset),
+	LC_ALL = (unset),
+	LC_CTYPE = "UTF-8",
+	LANG = "en_US.UTF-8"
+    are supported and installed on your system.
+perl: warning: Falling back to a fallback locale ("en_US.UTF-8").
+Starting GX run
+Starting GX run
+Starting GX run
+Starting GX run
+CUDA error: out of memory (code=2)  "cudaMalloc(&tmp_c, sizeof(cuComplex)*grids_->NxNycNz*grids_->Nl)" at src/nonlinear.cu:40 
+CUDA error: out of memory (code=2)  "cudaMalloc(&tmp_c, sizeof(cuComplex)*grids_->NxNycNz*grids_->Nl)" at src/nonlinear.cu:40 
+CUDA error: out of memory (code=2)  "cudaMalloc(&tmp_c, sizeof(cuComplex)*grids_->NxNycNz*grids_->Nl)" at src/nonlinear.cu:40 
+CUDA error: out of memory (code=2)  "cudaMalloc(&tmp_c, sizeof(cuComplex)*grids_->NxNycNz*grids_->Nl)" at src/nonlinear.cu:40 
+nzgrid=121 npol=4 nstep=70000 dt=0.2 nhermite=20 nlaguerre=10 nu_hyper=0.5 D_hyper=0.05 ny=100 nx=100 y0=15.0 growth_rate=nan qflux=nan took 10.109302s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:182: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+./test_final.py:84: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:92: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:182: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+./test_final.py:84: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:92: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+nzgrid=121 npol=4 nstep=70000 dt=0.2 nhermite=20 nlaguerre=10 nu_hyper=0.5 D_hyper=0.05 ny=100 nx=100 y0=15.0 growth_rate=nan qflux=nan took 10.127269s
+nzgrid=121 npol=4 nstep=70000 dt=0.2 nhermite=20 nlaguerre=10 nu_hyper=0.5 D_hyper=0.05 ny=100 nx=100 y0=15.0 growth_rate=nan qflux=nan took 10.146581s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:182: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+./test_final.py:84: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:92: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+nzgrid=121 npol=4 nstep=70000 dt=0.2 nhermite=20 nlaguerre=10 nu_hyper=0.5 D_hyper=0.05 ny=100 nx=100 y0=15.0 growth_rate=nan qflux=nan took 10.185609s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/fromnumeric.py:3432: RuntimeWarning: Mean of empty slice.
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:182: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+./test_final.py:84: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],max_index[1],:,0]*phiR0+y[max_index[0],max_index[1],:,1]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:85: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],max_index[1],:,1]*phiR0-y[max_index[0],max_index[1],:,0]*phiI0)/phi02
+./test_final.py:92: RuntimeWarning: overflow encountered in multiply
+  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: overflow encountered in multiply
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:93: RuntimeWarning: invalid value encountered in subtract
+  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
+./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/numpy/core/_methods.py:190: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
