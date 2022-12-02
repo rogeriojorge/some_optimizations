@@ -46,12 +46,12 @@ nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 20
-nlaguerre = 10
+nhermite  = 16
+nlaguerre = 7
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 100
-nx = 100
+ny = 120
+nx = 120
 y0 = 15.0
 nonlinear = True
 ########################################
