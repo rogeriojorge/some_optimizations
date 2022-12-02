@@ -3,10 +3,10 @@ import netCDF4
 import numpy as np
 import matplotlib.pyplot as plt
 
-QAinitial = "/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/nonlinear_nfp2_QA_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
-QAfinal = "/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/nonlinear_nfp2_QA_test_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
-QHinitial = "/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/nonlinear_nfp4_QH_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
-QHfinal = "/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/nonlinear_nfp4_QH_test_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
+QAinitial = "/marconi/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT_ITG/nonlinear_nfp2_QA_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
+QAfinal = "/marconi/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT_ITG/nonlinear_nfp2_QA_final_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
+QHinitial = "/marconi/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT_ITG/nonlinear_nfp4_QH_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
+QHfinal = "/marconi/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT_ITG/nonlinear_nfp4_QH_final_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
 
 flux_QA_initial = np.array(netCDF4.Dataset(QAinitial,'r',mmap=False).variables['es_heat_flux'][()])
 time_QA_initial = np.array(netCDF4.Dataset(QAinitial,'r',mmap=False).variables['t'][()])

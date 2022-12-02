@@ -16,28 +16,45 @@ from simsopt.mhd import Vmec
 import matplotlib
 matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
 ######## INPUT PARAMETERS ########
-gx_executable = '/home/rogerio/gx/gx'
-convert_VMEC_to_GX = '/home/rogerio/gx/geometry_modules/vmec/convert_VMEC_to_GX'
-vmec_file = '/home/rogerio/some_optimizations/GX_SIMSOPT/wout_nfp2_QA.nc'
-# vmec_file = '/home/rogerio/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
+gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+###
+if args.type == 1:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+    output_dir = 'nonlinear_nfp2_QA_initial'
+elif args.type == 2:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+    output_dir = 'nonlinear_nfp2_QA_final'
+elif args.type == 3:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+    output_dir = 'nonlinear_nfp4_QH_initial'
+elif args.type == 4:
+    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+    output_dir = 'nonlinear_nfp4_QH_final'
+else:
+    exit()
 ##
 LN = 1.0
 LT = 3.0
-output_dir=f'test_final_LN{LN}_LT{LT}'
-nstep = 20000
-dt = 0.3
+output_dir=f'test_final_LN{LN}_LT{LT}_{vmec_file[-10:-3]}'
+nstep = 70000
+dt = 0.2
 nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 14
-nlaguerre = 6
+nhermite  = 20
+nlaguerre = 10
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 120
-nx = 80
-y0 = 12.0
+ny = 100
+nx = 100
+y0 = 15.0
 nonlinear = True
 ########################################
 # Go into the output directory
