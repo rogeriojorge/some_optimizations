@@ -27,16 +27,16 @@ LN = 1.0
 LT = 3.0
 ###
 if args.type == 1:
-    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+    vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
     output_dir = f'nonlinear_nfp2_QA_initial_LN{LN}_LT{LT}'
 elif args.type == 2:
-    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+    vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
     output_dir = f'nonlinear_nfp2_QA_final_LN{LN}_LT{LT}'
 elif args.type == 3:
-    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+    vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
     output_dir = f'nonlinear_nfp4_QH_initial_LN{LN}_LT{LT}'
 elif args.type == 4:
-    vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
+    vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
     output_dir = f'nonlinear_nfp4_QH_final_LN{LN}_LT{LT}'
 else:
     exit()
