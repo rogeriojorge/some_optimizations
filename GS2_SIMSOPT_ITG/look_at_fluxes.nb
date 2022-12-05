@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     60393,       1097]
-NotebookOptionsPosition[     59747,       1077]
-NotebookOutlinePosition[     60083,       1092]
-CellTagsIndexPosition[     60040,       1089]
+NotebookDataLength[     53481,        983]
+NotebookOptionsPosition[     53006,        966]
+NotebookOutlinePosition[     53397,        982]
+CellTagsIndexPosition[     53354,        979]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -23,69 +23,74 @@ Cell[CellGroupData[{
 Cell[BoxData[{
  RowBox[{
   RowBox[{
-  "file", "=", 
+  "QAinitial", "=", 
    "\"\</Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/\
-nonlinear_nfp4_QH_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc\>\""}], 
+nonlinear_nfp2_QA_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc\>\""}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"datasets", "=", 
-   RowBox[{"Import", "[", 
-    RowBox[{"file", ",", 
-     RowBox[{"{", "\"\<Datasets\>\"", "}"}]}], "]"}]}], 
+  RowBox[{
+  "QAfinal", "=", 
+   "\"\</Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/\
+nonlinear_nfp2_QA_test_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc\>\""}], 
   ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"flux", "=", 
+  RowBox[{
+  "QHinitial", "=", 
+   "\"\</Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/\
+nonlinear_nfp2_QH_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc\>\""}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+   "QHfinal", "=", 
+    "\"\</Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/\
+nonlinear_nfp2_QH_test_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc\>\""}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"fluxQAin", "=", 
    RowBox[{
     RowBox[{"Import", "[", 
-     RowBox[{"file", ",", 
+     RowBox[{"QAinitial", ",", 
       RowBox[{"{", 
        RowBox[{"\"\<Datasets\>\"", ",", "\"\<es_heat_flux\>\""}], "}"}]}], 
      "]"}], "//", "Transpose"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"fluxky", "=", 
+  RowBox[{"fluxQAfin", "=", 
    RowBox[{
     RowBox[{"Import", "[", 
-     RowBox[{"file", ",", 
+     RowBox[{"QAfinal", ",", 
       RowBox[{"{", 
-       RowBox[{"\"\<Datasets\>\"", ",", "\"\<total_es_heat_flux_by_ky\>\""}], 
-       "}"}]}], "]"}], "//", "Transpose"}]}], ";"}], "\[IndentingNewLine]", 
+       RowBox[{"\"\<Datasets\>\"", ",", "\"\<es_heat_flux\>\""}], "}"}]}], 
+     "]"}], "//", "Transpose"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"fluxkx", "=", 
+  RowBox[{"fluxQHin", "=", 
    RowBox[{
     RowBox[{"Import", "[", 
-     RowBox[{"file", ",", 
+     RowBox[{"QHinitial", ",", 
       RowBox[{"{", 
-       RowBox[{"\"\<Datasets\>\"", ",", "\"\<total_es_heat_flux_by_kx\>\""}], 
-       "}"}]}], "]"}], "//", "Transpose"}]}], ";"}], "\[IndentingNewLine]", 
+       RowBox[{"\"\<Datasets\>\"", ",", "\"\<es_heat_flux\>\""}], "}"}]}], 
+     "]"}], "//", "Transpose"}]}], ";"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"ky", "=", 
-   RowBox[{"Import", "[", 
-    RowBox[{"file", ",", 
-     RowBox[{"{", 
-      RowBox[{"\"\<Datasets\>\"", ",", "\"\<ky\>\""}], "}"}]}], "]"}]}], ";", 
-  
-  RowBox[{"kx", "=", 
-   RowBox[{"Import", "[", 
-    RowBox[{"file", ",", 
-     RowBox[{"{", 
-      RowBox[{"\"\<Datasets\>\"", ",", "\"\<kx\>\""}], "}"}]}], "]"}]}], 
-  ";"}], "\[IndentingNewLine]", 
- RowBox[{"Grid", "[", 
-  RowBox[{"{", 
-   RowBox[{"{", 
+  RowBox[{
+   RowBox[{"fluxQHfin", "=", 
     RowBox[{
-     RowBox[{"ListPlot", "[", 
-      RowBox[{"flux", ",", 
-       RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}], ",", 
-     RowBox[{"ListPlot", "[", 
-      RowBox[{"fluxky", ",", 
-       RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "}"}], "}"}], 
-  "]"}]}], "Input",
+     RowBox[{"Import", "[", 
+      RowBox[{"QHfinal", ",", 
+       RowBox[{"{", 
+        RowBox[{"\"\<Datasets\>\"", ",", "\"\<es_heat_flux\>\""}], "}"}]}], 
+      "]"}], "//", "Transpose"}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{"ListPlot", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"fluxQAin", ",", "fluxQAfin", ",", "fluxQHin", ",", "fluxQHin"}], 
+    "}"}], ",", 
+   RowBox[{"ImageSize", "\[Rule]", "Medium"}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.8787973771252327`*^9, 3.878797514487145*^9}, {
   3.878797551247191*^9, 3.878797574316399*^9}, {3.87879766686303*^9, 
-  3.878797768110018*^9}},
- CellLabel->
-  "In[122]:=",ExpressionUUID->"482699e6-e70d-4314-9560-bb13559a68e6"],
+  3.878797768110018*^9}, {3.878980838482891*^9, 
+  3.87898094754805*^9}},ExpressionUUID->"482699e6-e70d-4314-9560-\
+bb13559a68e6"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -957,128 +962,13 @@ i78oO40S3MPwJ2HRf0s=
  
  CellLabel->
   "Out[128]=",ExpressionUUID->"c4014849-eac5-4ebe-9746-fd7269db8f37"]
-}, Open  ]],
-
-Cell[CellGroupData[{
-
-Cell[BoxData["datasets"], "Input",
- CellChangeTimes->{{3.878797581756426*^9, 3.878797582559293*^9}},
- CellLabel->"In[51]:=",ExpressionUUID->"e52dcb63-d54d-46ec-b625-e7b4ef2ad85e"],
-
-Cell[BoxData[
- RowBox[{"{", 
-  RowBox[{"\<\"/density2\"\>", ",", "\<\"/es_mom_flux_perp\"\>", 
-   ",", "\<\"/upar\"\>", ",", "\<\"/qparflux_igomega_by_mode\"\>", 
-   ",", "\<\"/upar_by_mode\"\>", ",", "\<\"/density_flxsurf_avg\"\>", 
-   ",", "\<\"/y\"\>", ",", "\<\"/vpa\"\>", ",", "\<\"/gbdrift0\"\>", 
-   ",", "\<\"/ntot\"\>", ",", "\<\"/tpar_by_mode\"\>", ",", "\<\"/bpol\"\>", 
-   ",", "\<\"/tperp2\"\>", ",", "\<\"/upar_flxsurf_avg\"\>", 
-   ",", "\<\"/qval\"\>", ",", "\<\"/kx\"\>", ",", "\<\"/phi\"\>", 
-   ",", "\<\"/qpperpj1_by_mode\"\>", 
-   ",", "\<\"/es_energy_exchange_by_mode\"\>", ",", "\<\"/ntot_by_mode\"\>", 
-   ",", "\<\"/5\"\>", ",", "\<\"/phi2\"\>", 
-   ",", "\<\"/total_es_heat_flux_by_kx\"\>", ",", "\<\"/zref\"\>", 
-   ",", "\<\"/es_energy_exchange\"\>", ",", "\<\"/tpar_igomega_by_mode\"\>", 
-   ",", "\<\"/eps_trapped\"\>", ",", "\<\"/qpperpj1_igomega_by_mode\"\>", 
-   ",", "\<\"/bmag\"\>", ",", "\<\"/tpar2_by_kx\"\>", 
-   ",", "\<\"/es_part_tormom_flux\"\>", ",", "\<\"/4\"\>", 
-   ",", "\<\"/tprim\"\>", ",", "\<\"/density_igomega_by_mode\"\>", 
-   ",", "\<\"/tperp2_by_kx\"\>", ",", "\<\"/pperpj1_by_mode\"\>", 
-   ",", "\<\"/total_es_part_flux\"\>", 
-   ",", "\<\"/es_heat_flux_par_by_mode\"\>", ",", "\<\"/type\"\>", 
-   ",", "\<\"/gds21\"\>", ",", "\<\"/total_es_mom_flux_par_by_kx\"\>", 
-   ",", "\<\"/beta\"\>", ",", "\<\"/upar2_by_mode\"\>", ",", "\<\"/nref\"\>", 
-   ",", "\<\"/fprim\"\>", ",", "\<\"/rprime\"\>", 
-   ",", "\<\"/total_es_heat_flux_perp_by_mode\"\>", 
-   ",", "\<\"/total_es_part_flux_by_mode\"\>", ",", "\<\"/phi_norm\"\>", 
-   ",", "\<\"/qpperpj1\"\>", ",", "\<\"/temp\"\>", 
-   ",", "\<\"/total_es_part_tormom_flux_by_kx\"\>", 
-   ",", "\<\"/qpperpj12_by_ky\"\>", ",", "\<\"/vflux_tot\"\>", 
-   ",", "\<\"/total_es_mom_flux_by_kx\"\>", ",", "\<\"/gbdrift\"\>", 
-   ",", "\<\"/rhoref\"\>", ",", "\<\"/total_es_mom_flux_by_mode\"\>", 
-   ",", "\<\"/hflux_tot\"\>", ",", "\<\"/bref\"\>", 
-   ",", "\<\"/total_es_heat_flux_par_by_mode\"\>", ",", "\<\"/aref\"\>", 
-   ",", "\<\"/tpar2\"\>", ",", "\<\"/es_heat_flux\"\>", 
-   ",", "\<\"/species\"\>", ",", "\<\"/upar2\"\>", 
-   ",", "\<\"/total_es_mom_flux_perp_by_kx\"\>", ",", "\<\"/pperpj12\"\>", 
-   ",", "\<\"/total_es_heat_flux_par\"\>", ",", "\<\"/pperpj12_by_ky\"\>", 
-   ",", "\<\"/pperpj1_igomega_by_mode\"\>", 
-   ",", "\<\"/total_es_energy_exchange_by_kx\"\>", ",", "\<\"/aprime\"\>", 
-   ",", "\<\"/total_es_energy_exchange\"\>", ",", "\<\"/es_mom_flux\"\>", 
-   ",", "\<\"/cdrift0\"\>", ",", "\<\"/total_es_energy_exchange_by_ky\"\>", 
-   ",", "\<\"/zplot\"\>", ",", "\<\"/phi_corr_2pi\"\>", 
-   ",", "\<\"/es_mom_flux_par\"\>", ",", "\<\"/upar2_by_kx\"\>", 
-   ",", "\<\"/layout\"\>", ",", "\<\"/ntot2_by_ky\"\>", 
-   ",", "\<\"/qparflux_flxsurf_avg\"\>", ",", "\<\"/es_heat_flux_perp\"\>", 
-   ",", "\<\"/jacob\"\>", ",", "\<\"/cvdrift\"\>", ",", "\<\"/theta\"\>", 
-   ",", "\<\"/total_es_energy_exchange_by_mode\"\>", 
-   ",", "\<\"/tpar2_by_mode\"\>", ",", "\<\"/tperp2_by_mode\"\>", 
-   ",", "\<\"/density\"\>", ",", "\<\"/total_es_mom_flux_par\"\>", 
-   ",", "\<\"/total_es_mom_flux_perp_by_mode\"\>", ",", "\<\"/rplot\"\>", 
-   ",", "\<\"/phi_igomega_by_mode\"\>", ",", "\<\"/drhodpsi\"\>", 
-   ",", "\<\"/es_part_flux\"\>", ",", "\<\"/zprime\"\>", 
-   ",", "\<\"/qparflux2_by_kx\"\>", 
-   ",", "\<\"/total_es_heat_flux_perp_by_kx\"\>", ",", "\<\"/dens\"\>", 
-   ",", "\<\"/qpperpj12_by_mode\"\>", 
-   ",", "\<\"/es_mom_flux_perp_by_mode\"\>", 
-   ",", "\<\"/total_es_mom_flux_par_by_ky\"\>", ",", "\<\"/gds2\"\>", 
-   ",", "\<\"/shat\"\>", ",", "\<\"/total_es_part_tormom_flux\"\>", 
-   ",", "\<\"/ky\"\>", ",", "\<\"/total_es_heat_flux\"\>", 
-   ",", "\<\"/tpar_flxsurf_avg\"\>", ",", "\<\"/qpperpj1_flxsurf_avg\"\>", 
-   ",", "\<\"/grho\"\>", ",", "\<\"/tperp_flxsurf_avg\"\>", 
-   ",", "\<\"/total_es_mom_flux_by_ky\"\>", ",", "\<\"/mref\"\>", 
-   ",", "\<\"/phi2_by_ky\"\>", ",", "\<\"/total_es_heat_flux_perp_by_ky\"\>", 
-   ",", "\<\"/energy\"\>", ",", "\<\"/total_es_heat_flux_par_by_ky\"\>", 
-   ",", "\<\"/qparflux2\"\>", ",", "\<\"/es_heat_flux_perp_by_mode\"\>", 
-   ",", "\<\"/upar2_by_ky\"\>", ",", "\<\"/mom_flux_tot\"\>", 
-   ",", "\<\"/input_file\"\>", ",", "\<\"/vnewk\"\>", 
-   ",", "\<\"/total_es_part_flux_by_kx\"\>", ",", "\<\"/gradpar\"\>", 
-   ",", "\<\"/ri\"\>", ",", "\<\"/omega\"\>", 
-   ",", "\<\"/es_part_flux_by_mode\"\>", ",", "\<\"/cvdrift0\"\>", 
-   ",", "\<\"/phi2_by_kx\"\>", ",", "\<\"/ntot_igomega_by_mode\"\>", 
-   ",", "\<\"/charge\"\>", ",", "\<\"/gds24\"\>", 
-   ",", "\<\"/tperp_igomega_by_mode\"\>", 
-   ",", "\<\"/total_es_mom_flux_par_by_mode\"\>", 
-   ",", "\<\"/ntot2_by_mode\"\>", ",", "\<\"/es_heat_flux_by_mode\"\>", 
-   ",", "\<\"/omega_average\"\>", ",", "\<\"/ntot2_by_kx\"\>", 
-   ",", "\<\"/gds22\"\>", ",", "\<\"/total_es_mom_flux_perp\"\>", 
-   ",", "\<\"/2\"\>", ",", "\<\"/vref\"\>", 
-   ",", "\<\"/upar_igomega_by_mode\"\>", ",", "\<\"/ntot2\"\>", 
-   ",", "\<\"/pperpj12_by_mode\"\>", ",", "\<\"/es_mom_flux_par_by_mode\"\>", 
-   ",", "\<\"/3\"\>", ",", "\<\"/t\"\>", ",", "\<\"/qparflux2_by_mode\"\>", 
-   ",", "\<\"/total_es_mom_flux_perp_by_ky\"\>", 
-   ",", "\<\"/total_es_part_tormom_flux_by_mode\"\>", 
-   ",", "\<\"/qparflux2_by_ky\"\>", ",", "\<\"/tperp_by_mode\"\>", 
-   ",", "\<\"/tref\"\>", ",", "\<\"/heat_flux_tot\"\>", 
-   ",", "\<\"/pperpj1_flxsurf_avg\"\>", ",", "\<\"/qpperpj12\"\>", 
-   ",", "\<\"/qpperpj12_by_kx\"\>", ",", "\<\"/pperpj1\"\>", 
-   ",", "\<\"/theta0\"\>", ",", "\<\"/total_es_heat_flux_by_mode\"\>", 
-   ",", "\<\"/density2_by_kx\"\>", ",", "\<\"/input_file_dim\"\>", 
-   ",", "\<\"/uprim\"\>", ",", "\<\"/mass\"\>", ",", "\<\"/es_flux_vs_e\"\>", 
-   ",", "\<\"/aplot\"\>", ",", "\<\"/qparflux\"\>", 
-   ",", "\<\"/density_by_mode\"\>", ",", "\<\"/total_es_mom_flux\"\>", 
-   ",", "\<\"/es_mom_flux_by_mode\"\>", ",", "\<\"/density2_by_ky\"\>", 
-   ",", "\<\"/zflux_tot\"\>", ",", "\<\"/density2_by_mode\"\>", 
-   ",", "\<\"/tperp\"\>", ",", "\<\"/phi2_by_mode\"\>", 
-   ",", "\<\"/total_es_heat_flux_par_by_kx\"\>", ",", "\<\"/theta_ext\"\>", 
-   ",", "\<\"/gds23\"\>", ",", "\<\"/ntot_flxsurf_avg\"\>", 
-   ",", "\<\"/total_es_heat_flux_perp\"\>", ",", "\<\"/tpar2_by_ky\"\>", 
-   ",", "\<\"/tperp2_by_ky\"\>", ",", "\<\"/qparflux_by_mode\"\>", 
-   ",", "\<\"/cdrift\"\>", ",", "\<\"/total_es_part_flux_by_ky\"\>", 
-   ",", "\<\"/es_part_tormom_flux_by_mode\"\>", 
-   ",", "\<\"/es_heat_flux_par\"\>", ",", "\<\"/phase\"\>", 
-   ",", "\<\"/total_es_part_tormom_flux_by_ky\"\>", 
-   ",", "\<\"/part_flux_tot\"\>", ",", "\<\"/total_es_heat_flux_by_ky\"\>", 
-   ",", "\<\"/tpar\"\>", ",", "\<\"/x\"\>", ",", "\<\"/pperpj12_by_kx\"\>", 
-   ",", "\<\"/lambda\"\>", ",", "\<\"/gds24_noq\"\>"}], "}"}]], "Output",
- CellChangeTimes->{3.878797582716655*^9},
- CellLabel->"Out[51]=",ExpressionUUID->"52cf60a1-9c08-4e3e-862b-9552e3845b54"]
 }, Open  ]]
 },
 WindowSize->{1323, 652},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
-FrontEndVersion->"12.0 for Mac OS X x86 (64-bit) (April 8, 2019)",
-StyleDefinitions->"Default.nb"
+FrontEndVersion->"12.3 for Mac OS X x86 (64-bit) (July 9, 2021)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"3c2e63d7-0ef3-470f-87b7-f09c756c6685"
 ]
 (* End of Notebook Content *)
 
@@ -1092,12 +982,8 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2218, 65, 157, "Input",ExpressionUUID->"482699e6-e70d-4314-9560-bb13559a68e6"],
-Cell[2801, 89, 49864, 869, 282, "Output",ExpressionUUID->"c4014849-eac5-4ebe-9746-fd7269db8f37"]
-}, Open  ]],
-Cell[CellGroupData[{
-Cell[52702, 963, 179, 2, 30, "Input",ExpressionUUID->"e52dcb63-d54d-46ec-b625-e7b4ef2ad85e"],
-Cell[52884, 967, 6847, 107, 497, "Output",ExpressionUUID->"52cf60a1-9c08-4e3e-862b-9552e3845b54"]
+Cell[580, 22, 2543, 70, 241, "Input",ExpressionUUID->"482699e6-e70d-4314-9560-bb13559a68e6"],
+Cell[3126, 94, 49864, 869, 247, "Output",ExpressionUUID->"c4014849-eac5-4ebe-9746-fd7269db8f37"]
 }, Open  ]]
 }
 ]
