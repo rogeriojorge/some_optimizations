@@ -101,7 +101,7 @@
  write_avg_moments = .F. ! Write flux surface averaged low-order moments of g to runname.out.nc and runname.moments (if write_ascii = T)
  write_omega = .true. ! If (write_ascii = T) instantaneous omega to output file. Very heavy output
  write_omavg = .true. ! If (write_ascii = T) time-averaged growth rate and frequency to the output file.
- write_eigenfunc = .true. ! If (write_ascii = T) Normalized phi written to runname.eigenfunc
+ write_eigenfunc = .false. ! If (write_ascii = T) Normalized phi written to runname.eigenfunc
  write_final_fields = .true. ! If (write_ascii = T) Phi(theta) written to '.fields'
  write_final_moments = .true. ! write final n, T
  nsave = 100 ! Write restart files every nsave timesteps
