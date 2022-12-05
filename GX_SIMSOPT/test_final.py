@@ -42,7 +42,7 @@ else:
     exit()
 nstep = 70000
 dt = 0.2
-nzgrid = 125
+nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
