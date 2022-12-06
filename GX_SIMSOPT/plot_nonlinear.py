@@ -10,7 +10,7 @@ file_labels = ['QH initial','QH final','QA initial','QA final']
 folders = ['nonlinear_nfp4_QH_initial_LN1.0_LT3.0','nonlinear_nfp4_QH_final_LN1.0_LT3.0',
            'nonlinear_nfp2_QA_initial_LN1.0_LT3.0','nonlinear_nfp2_QA_final_LN1.0_LT3.0']
 
-file_suffix = 'nzgrid121_npol4_nstep70000_dt0.2_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny120_nx80_y012.0.nc'
+file_suffix = 'nzgrid125_npol4_nstep200000_dt0.2_ln1.0_lt3.0_nhermite16_nlaguerre8_nu_hyper0.5_D_hyper0.05_ny80_nx140_y012.0.nc'
 
 plt.figure()
 for i, (label, folder) in enumerate(zip(file_labels,folders)):
