@@ -38,18 +38,18 @@ elif args.type == 3:
 elif args.type == 4:
     vmec_file = '/marconi/home/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
     output_dir = f'nonlinear_nfp4_QH_final'
-nphi= 111
-nlambda = 21
-nperiod = 4.5
-nstep = 20000
+nphi= 121
+nlambda = 23
+nperiod = 5
+nstep = 30000
 dt = 0.015
 ##
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
 negrid = 10
-ny=100
-nx=100
+ny=120
+nx=120
 y0=15.0
 ########################################
 # Go into the output directory
