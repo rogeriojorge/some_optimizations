@@ -32,7 +32,7 @@ phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
 nlambda = 21
 nstep = 200
 
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -41,7 +41,7 @@ MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = True
+run_scan = False
 run_optimization = False
 plot_result = True
 
@@ -224,16 +224,17 @@ if plot_result:
     fig=plt.figure(figsize=(6,4.5))
     ax=fig.add_subplot(111, label="1")
     ax2=fig.add_subplot(111, label="2", frame_on=False)
-    ax.set_xlabel('RBC(1,0)')
+    ax.set_xlabel('RBC(1,0)', fontsize=18)
+    ax.tick_params(axis='x', labelsize=14)
     line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='Growth Rate')
-    ax.set_ylabel("Growth Rate", color="C0")
-    ax.tick_params(axis='y', colors="C0")
+    ax.set_ylabel("Growth Rate", color="C0", fontsize=18)
+    ax.tick_params(axis='y', colors="C0", labelsize=14)
     line2, = ax2.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['quasisymmetry'], color="C1", label='Quasisymmetry cost function')
     ax2.yaxis.tick_right()
     ax2.set_xticks([])
-    ax2.set_ylabel('Quasisymmetry cost function', color="C1") 
+    ax2.set_ylabel('Quasisymmetry cost function', color="C1", fontsize=18) 
     ax2.yaxis.set_label_position('right') 
-    ax2.tick_params(axis='y', colors="C1")
-    plt.legend(handles=[line1, line2])
+    ax2.tick_params(axis='y', colors="C1", labelsize=14)
+    plt.legend(handles=[line1, line2], prop={'size': 14})
     plt.tight_layout()
     plt.savefig('quasisymmetry_vs_growthrate.pdf')
