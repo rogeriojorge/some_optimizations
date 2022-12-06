@@ -6,9 +6,10 @@ from pathlib import Path
 import matplotlib.pyplot as plt
 this_path = Path(__file__).parent.resolve()
 
-file_labels = ['QH initial','QH final']#,'QA initial','QA final']
-folders = ['nonlinear_nfp4_QH_initial_LN1.0_LT3.0','nonlinear_nfp4_QH_final_LN1.0_LT3.0']
-          #,'nonlinear_nfp2_QA_initial_LN1.0_LT3.0','nonlinear_nfp2_QA_final_LN1.0_LT3.0']
+file_labels = (['QH initial','QH final'])
+              #['QA initial','QA final'])
+folders = (['nonlinear_nfp4_QH_initial_LN1.0_LT3.0','nonlinear_nfp4_QH_final_LN1.0_LT3.0'])
+          #['nonlinear_nfp2_QA_initial_LN1.0_LT3.0','nonlinear_nfp2_QA_final_LN1.0_LT3.0'])
 
 file_suffix = 'nzgrid125_npol4_nstep200000_dt0.2_ln1.0_lt3.0_nhermite16_nlaguerre8_nu_hyper0.5_D_hyper0.05_ny80_nx140_y012.0.nc'
 
