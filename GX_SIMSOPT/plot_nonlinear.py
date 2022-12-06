@@ -16,8 +16,8 @@ plt.figure()
 for i, (label, folder) in enumerate(zip(file_labels,folders)):
     if np.mod(i,2)==0: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_{folder[10:17]}_{file_suffix}'),'r',mmap=False)
     else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_final_{file_suffix}'),'r',mmap=False)
-    time  = np.array(fX.variables['time'][4:])
-    qflux = np.array(fX.groups['Fluxes'].variables['qflux'][4:,0])
+    time  = np.array(fX.variables['time'][5:])
+    qflux = np.array(fX.groups['Fluxes'].variables['qflux'][5:,0])
     plt.plot(time,qflux,label=label)
 
 plt.xlabel('time')
