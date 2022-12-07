@@ -19,7 +19,7 @@ import matplotlib
 matplotlib.use('Agg') 
 import warnings
 import matplotlib.cbook
-warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)
+warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarning)
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
@@ -33,10 +33,10 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # nstep = 170
 # dt = 0.4
 
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH_ln3_lt3/wout_final.nc'
-output_dir = 'out_map_nfp4_QH_QH_least_squares_ln3_lt3'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
-# output_dir = 'out_map_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/output_MAXITER350_least_squares_nfp4_QH_QH_ln3_lt3/wout_final.nc'
+# output_dir = 'out_map_nfp4_QH_QH_least_squares_ln3_lt3'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_TEM/wout_nfp4_QH.nc'
+output_dir = 'out_map_nfp4_QH_initial'
 phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 111)
 nlambda = 27
 nstep = 170
@@ -46,7 +46,7 @@ s_radius = 0.25
 alpha_fieldline = 0
 LN_array = np.linspace(0.5,6,12)
 LT_array = np.linspace(0.5,6,12)
-n_processes_parallel = 8
+n_processes_parallel = 4
 plot_extent_fix = True
 plot_min = 0
 plot_max = 0.9
@@ -188,7 +188,7 @@ def replace(file_path, pattern, subst):
     remove(file_path)
     move(abs_path, file_path)
 def output_to_csv(growth_rate, omega, ky, ln, lt):
-    keys=np.concatenate([['ln'],['lt'],['growth_rate'],['omega'],['ky]']])
+    keys=np.concatenate([['ln'],['lt'],['growth_rate'],['omega'],['ky']])
     values=np.concatenate([[ln],[lt],[growth_rate],[omega],[ky]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
@@ -247,27 +247,31 @@ print(f'Running GS2 scan took {time()-start_time}s')
 print('growth rates:')
 print(growth_rate_array.transpose())
 # Plot
-plotExtent=[min(LN_array),max(LN_array),min(LT_array),max(LT_array)]
+plotExtent=[0*min(LN_array),max(LN_array),0*min(LT_array),max(LT_array)]
 
-plt.figure()
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma$', usetex=True)
-plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
+plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);matplotlib.rc('font', size=20)
 if plot_extent_fix: plt.clim(plot_min,plot_max) 
+plt.gca().set_aspect('equal')
+ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_gamma.pdf'), format='pdf', bbox_inches='tight')
 
-plt.figure()
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(omega_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\omega$', usetex=True)
-plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
-# if plot_extent_fix: plt.clim(plot_min,plot_max) 
+plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.gca().set_aspect('equal')
+ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_omega.pdf'), format='pdf', bbox_inches='tight')
 
-plt.figure()
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(ky_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$k_y$', usetex=True)
-plt.xlabel(r'$a/L_n$');plt.ylabel(r'$a/L_T$');matplotlib.rc('font', size=16)
-# if plot_extent_fix: plt.clim(plot_min,plot_max) 
+plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.gca().set_aspect('equal')
+ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_ky.pdf'), format='pdf', bbox_inches='tight')
 
 for f in glob.glob('*.amoments'): remove(f)

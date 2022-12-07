@@ -4,7 +4,7 @@
  COMPUTATION PARAMETERS: (u = theta, v = zeta)
  ---------------------------------------------
      ns     nu     nv     mu     mv
-     16     16     14      5      5
+     51     16     14      5      5
 
  CONFIGURATION PARAMETERS:
  ---------------------------------------
@@ -14,7 +14,7 @@
  RUN CONTROL PARAMETERS:
  -----------------------
   ncurr  niter   nsin  nstep  nvacskip      ftol     tcon0    lasym  lforbal lmove_axis lconm1
-      1   2000     16    200         6  1.00E-13  2.00E+00        F        F        T        T
+      1   2000     16    200         6  1.00E-12  2.00E+00        F        F        T        T
   mfilter_fbdy nfilter_fbdy lfull3d1out max_main_iterations lgiveup fgiveup
            -1           -1           F                   1       F  3.0E+01
 

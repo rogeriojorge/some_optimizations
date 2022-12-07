@@ -16,10 +16,12 @@ import booz_xform as bx
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
+ln=3;lt=3
 
-plt_opt_res = True
+plt_opt_res = False
 plot_vmec = True
-run_simple = True
+run_simple = False
+plot_loss_fractions = False
 
 max_mode = 3
 MAXITER=350
@@ -48,9 +50,13 @@ nsamples = 10000  # number of time steps
 # elif QA_or_QH == 'QI': nfp=3
 out_dir = f'output_MAXITER{MAXITER}_{optimizer}_nfp{nfp}_{QA_or_QH}'
 if quasisymmetry: out_dir+=f'_{QA_or_QH}'
+out_dir+=f'_ln{ln}_lt{lt}'
 out_csv = out_dir+f'/output_{optimizer}_maxmode{max_mode}.csv'
 df = pd.read_csv(out_csv)
-location_min = (df['growth_rate']**2+(quasisymmetry_weight*df['quasisymmetry_total'])**2+aspect_weight*(df['aspect']-aspect_target)**2+mirror_weight*(df['mirror_ratio'])**2).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+if optimizer=='dual_annealing':
+    location_min = (df['growth_rate']**2+(quasisymmetry_weight*df['quasisymmetry_total'])**2+aspect_weight*(df['aspect']-aspect_target)**2+mirror_weight*(df['mirror_ratio'])**2).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
+else:
+    location_min = (df['growth_rate']**2+(quasisymmetry_weight*df['quasisymmetry_total'])**2+aspect_weight*(df['aspect']-aspect_target)**2).nsmallest(3).index[0]#len(df.index)-1#df['growth_rate'].nsmallest(3).index[0] # chose the index to see smalest, second smallest, etc
 #################################
 if plt_opt_res:
     df['aspect-aspect_target'] = df.apply(lambda row: np.abs(row.aspect - aspect_target), axis=1)
@@ -149,15 +155,22 @@ if plot_vmec:
     b1.run()
     b1.bx.write_boozmn("boozmn_out.nc")
     print("Plot BOOZ_XFORM")
-    fig = plt.figure(); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
+    fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_1.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    fig = plt.figure(); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_2.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    fig = plt.figure(); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_3.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    fig = plt.figure(); bx.symplot(b1.bx, helical_detail = True, sqrts=True)
+    fig = plt.figure(); ax = plt.subplot(111); bx.symplot(b1.bx, helical_detail = True, sqrts=True)
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
     plt.savefig("Boozxform_symplot.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    fig = plt.figure(); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
+    fig = plt.figure(); ax = plt.subplot(111); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
+    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
     plt.savefig("Boozxform_modeplot.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
 #################################
 if run_simple:
@@ -215,3 +228,23 @@ if run_simple:
     data=np.column_stack([g_orbits.time, g_orbits.loss_fraction_array])
     datafile_path='./loss_history.dat'
     np.savetxt(datafile_path, data, fmt=['%s','%s'])
+
+if plot_loss_fractions:
+    initial_loss_fractions = np.loadtxt('../../../GS2_SIMSOPT_ITG/loss_history_QH_nfp4_initial.dat')
+    initial_loss_fractions_time = initial_loss_fractions[:,0]
+    initial_loss_fractions = initial_loss_fractions[:,1]
+    final_loss_fractions   = np.loadtxt('loss_history.dat')
+    final_loss_fractions_time = final_loss_fractions[:,0]
+    final_loss_fractions = final_loss_fractions[:,1]
+    fig = plt.figure()
+    ax = plt.subplot(111)
+    plt.plot(initial_loss_fractions_time,initial_loss_fractions,label='QH initial')
+    plt.plot(final_loss_fractions_time,final_loss_fractions,label='QH final')
+    plt.ylabel('Loss fraction', fontsize=22)
+    plt.xlabel('Time (s)', fontsize=22)
+    plt.legend(fontsize=18)
+    ax.tick_params(axis='x', labelsize=16)
+    ax.tick_params(axis='y', labelsize=16)
+    plt.tight_layout()
+    plt.savefig('loss_fractions.pdf')
+    plt.close()

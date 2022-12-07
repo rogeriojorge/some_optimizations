@@ -8,6 +8,6 @@
 #SBATCH --job-name=EP_opt
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
-cd /marconi/home/userexternal/rjorge00/some_optimizations/EPoptimization
+cd /marconi_scratch/userexternal/rjorge00/some_optimizations/EPoptimization
 export OMP_NUM_THREADS=36
 srun --with-pmix -N 1 ./main.py > output.txt
