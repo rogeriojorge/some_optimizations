@@ -8,6 +8,6 @@
 #SBATCH --job-name=QH_opt
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
-cd /marconi/home/userexternal/rjorge00/some_optimizations/SingleStagePaper
+cd /marconi_scratch/userexternal/rjorge00/some_optimizations/SingleStagePaper
 
 srun -N 9 python3 qh.py > output.txt

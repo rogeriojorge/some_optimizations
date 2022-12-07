@@ -248,7 +248,8 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     ########################################################
 
     fig = plt.figure()
-    fig.set_size_inches(8,8)
+    fig.set_size_inches(6,6)
+    ax=fig.add_subplot(111, label="1")
     fig.patch.set_facecolor('white')
     plt.plot(R[:,0], Z[:,0], '-',label=r'$\phi$=0')
     # plt.plot(R[:,1], Z[:,1], '-',label='_nolegend_')
@@ -260,8 +261,11 @@ def main(file,name='',figures_folder='.', coils_curves=None, s_plot_ignore=0.2,s
     # plt.plot(R[:,7], Z[:,7], '-',label='_nolegend_')
     plt.gca().set_aspect('equal',adjustable='box')
     plt.legend(fontsize=18)
-    plt.xlabel('R', fontsize=18)
-    plt.ylabel('Z', fontsize=18)
+    plt.xlabel('R', fontsize=22)
+    plt.ylabel('Z', fontsize=22)
+    ax.tick_params(axis='x', labelsize=16)
+    ax.tick_params(axis='y', labelsize=16)
+    plt.tight_layout()
     if savefig: plt.savefig(os.path.join(figures_folder, name+'_poloidal_plot.png'))
     R_boundary = R
     Z_boundary = Z
