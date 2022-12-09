@@ -3,7 +3,7 @@ import netCDF4
 import numpy as np
 import matplotlib.pyplot as plt
 
-initial_folder = "/marconi/home/userexternal/rjorge00/"
+initial_folder = "/marconi_scratch/userexternal/rjorge00/"
 # initial_folder = "/Users/rogeriojorge/local/"
 
 QAinitial = f"{initial_folder}some_optimizations/GS2_SIMSOPT_ITG/nonlinear_nfp2_QA_initial_ln1.0_lt3.0/gs2Input_ln1.0lt3.0.out.nc"
