@@ -1,0 +1,4 @@
+Starting GX run
+nzgrid=121 npol=4 nstep=320000 dt=0.2 nhermite=10 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=120 y0=15.0 growth_rate=17.518909 qflux=35.221241 took 80192.562367s
+./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
