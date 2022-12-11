@@ -38,19 +38,19 @@ elif args.type == 3:
 elif args.type == 4:
     vmec_file = '/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
     output_dir = f'nonlinear_nfp4_QH_final'
-nphi= 121
-nlambda = 23
+nphi= 141
+nlambda = 27
 nperiod = 5
-nstep = 30000
+nstep = 60000
 dt = 0.015
 ##
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
 negrid = 10
-ny=120
-nx=120
-y0=15.0
+ny=160
+nx=160
+y0=20.0
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
