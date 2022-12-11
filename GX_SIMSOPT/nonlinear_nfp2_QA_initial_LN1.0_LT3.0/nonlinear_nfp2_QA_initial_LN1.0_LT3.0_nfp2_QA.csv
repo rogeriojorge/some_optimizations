@@ -1,0 +1,2 @@
+ln,lt,nzgrid,npol,nstep,nhermite,nlaguerre,dt,growth_rate,frequency,ky,nu_hyper,D_hyper,nx,ny,y0,qflux
+1.0,3.0,121.0,4.0,320000.0,10.0,6.0,0.2,13.474740028381348,5.4222517013549805,0.0,0.5,0.05,120.0,80.0,15.0,36.62144088745117

@@ -16,7 +16,7 @@ vmec_file = "wout_nfp4_QH.nc"
 alpha = 0.0
 
 # Number of points along the field line = 2*nzgrid + 1
-nzgrid = 125
+nzgrid = 121
 
 # Number of poloidal turns.
 # The field line goes from (-npol*PI, npol*PI]

@@ -40,7 +40,7 @@ elif args.type == 4:
     output_dir = f'nonlinear_nfp4_QH_final_LN{LN}_LT{LT}'
 else:
     exit()
-nstep = 400000
+nstep = 320000
 dt = 0.2
 nzgrid = 121
 npol = 4
