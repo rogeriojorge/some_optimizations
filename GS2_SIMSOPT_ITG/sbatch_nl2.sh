@@ -4,7 +4,7 @@
 #SBATCH -A FUA36_OHARS
 #SBATCH -p skl_fua_prod
 #SBATCH --mem=160000 
-#SBATCH --time 12:00:00
+#SBATCH --time 24:00:00
 #SBATCH --job-name=QA_in_nl
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
