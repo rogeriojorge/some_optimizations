@@ -1,0 +1,415 @@
+Initial aspect ratio: 6.000114150210393
+Initial mean iota: 0.41906159268179516
+Initial magnetic well: -0.031014485788414044
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+Initial heat flux: 32.202065
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:20:31 - Growth rate = 3.083523, qflux = 32.202065, quasisymmetry = 0.000822 with aspect ratio=6.000114 took 237.476808s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:24:45 - Growth rate = 2.272468, qflux = 31.842579, quasisymmetry = 0.180746 with aspect ratio=5.996222 took 238.124307s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:28:45 - Growth rate = 7.778922, qflux = 28.469910, quasisymmetry = 2.386281 with aspect ratio=5.998242 took 236.933098s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000052.nc'
+18:28:51 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 14.356758 with aspect ratio=5.998277 took 0.935432s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:33:17 - Growth rate = 6.132901, qflux = 25.976429, quasisymmetry = 3.134489 with aspect ratio=5.961033 took 236.568083s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:37:18 - Growth rate = 2.486750, qflux = 19.515329, quasisymmetry = 2.622099 with aspect ratio=5.994940 took 237.451834s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:41:21 - Growth rate = 1.824240, qflux = 17.682076, quasisymmetry = 2.941174 with aspect ratio=5.994940 took 237.574852s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:45:22 - Growth rate = 1.824161, qflux = 16.254374, quasisymmetry = 3.624329 with aspect ratio=5.994940 took 236.859320s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000076.nc'
+18:45:27 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 3.842039 with aspect ratio=5.994940 took 0.977926s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000082.nc'
+18:45:35 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 28.659229 with aspect ratio=5.976625 took 0.968008s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000086.nc'
+18:45:40 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 2.271207 with aspect ratio=5.766177 took 0.911974s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:49:43 - Growth rate = 1.824161, qflux = 16.254374, quasisymmetry = 3.624329 with aspect ratio=5.994940 took 236.707259s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:53:43 - Growth rate = 0.250395, qflux = 15.493071, quasisymmetry = 3.614030 with aspect ratio=5.994804 took 236.306049s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+18:57:44 - Growth rate = 0.261374, qflux = 12.109850, quasisymmetry = 3.843374 with aspect ratio=5.994918 took 237.162518s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:01:45 - Growth rate = 1.614789, qflux = 16.186804, quasisymmetry = 3.624647 with aspect ratio=5.994940 took 237.875535s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:05:46 - Growth rate = 0.321648, qflux = 16.626936, quasisymmetry = 3.636966 with aspect ratio=5.994911 took 237.549320s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:09:46 - Growth rate = 2.183145, qflux = 16.781368, quasisymmetry = 3.626003 with aspect ratio=5.993964 took 237.288672s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:13:47 - Growth rate = 6.636310, qflux = 16.703220, quasisymmetry = 3.599646 with aspect ratio=5.986131 took 237.255718s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:17:47 - Growth rate = -0.062710, qflux = 17.197943, quasisymmetry = 3.581425 with aspect ratio=5.817240 took 237.076398s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:21:47 - Growth rate = 6.093461, qflux = 13.852373, quasisymmetry = 3.861889 with aspect ratio=6.040723 took 236.250593s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:25:48 - Growth rate = 1.758171, qflux = 16.022141, quasisymmetry = 3.685966 with aspect ratio=5.999605 took 237.548984s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:29:49 - Growth rate = 3.391427, qflux = 15.688559, quasisymmetry = 3.605083 with aspect ratio=5.995069 took 237.574115s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:33:50 - Growth rate = 3.465170, qflux = 16.190073, quasisymmetry = 3.624384 with aspect ratio=5.994940 took 237.258320s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:37:50 - Growth rate = 2.201712, qflux = 16.536325, quasisymmetry = 3.620099 with aspect ratio=5.994940 took 236.981364s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:41:51 - Growth rate = 3.691431, qflux = 12.911219, quasisymmetry = 3.690916 with aspect ratio=5.993082 took 237.788386s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:45:52 - Growth rate = 2.802157, qflux = 16.018740, quasisymmetry = 3.618954 with aspect ratio=5.995322 took 236.993028s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:49:53 - Growth rate = 0.773721, qflux = 16.391479, quasisymmetry = 3.622583 with aspect ratio=5.995443 took 237.434327s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:53:53 - Growth rate = 1.987673, qflux = 15.341913, quasisymmetry = 3.629153 with aspect ratio=5.994982 took 236.984813s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+19:57:53 - Growth rate = 0.272169, qflux = 15.541789, quasisymmetry = 3.640316 with aspect ratio=5.994932 took 236.934283s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:01:54 - Growth rate = 3.519518, qflux = 16.242298, quasisymmetry = 3.624356 with aspect ratio=5.994940 took 237.348643s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:05:54 - Growth rate = 1.723322, qflux = 16.411264, quasisymmetry = 3.624179 with aspect ratio=5.994938 took 236.855213s
+/m100/home/userexternal/rjorge00/.conda/envs/simsopt/lib/python3.8/site-packages/scipy/optimize/_dual_annealing.py:418: RuntimeWarning: Maximum number of function evaluations has been exceeded.
+  mres = self.minimizer(self.func_wrapper.fun, x, **self.kwargs)
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:10:08 - Growth rate = 3.419266, qflux = 12.153301, quasisymmetry = 3.616225 with aspect ratio=5.991753 took 237.748913s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:14:08 - Growth rate = 0.779491, qflux = 16.319855, quasisymmetry = 3.340334 with aspect ratio=5.994972 took 236.800792s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000171.nc'
+20:14:30 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 9.413939 with aspect ratio=5.795318 took 1.486581s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:18:58 - Growth rate = 3.063156, qflux = 12.268458, quasisymmetry = 3.688467 with aspect ratio=5.994918 took 236.795072s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:22:59 - Growth rate = 20.051250, qflux = 18.275883, quasisymmetry = 3.267390 with aspect ratio=5.994918 took 237.089477s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:27:00 - Growth rate = 11.057874, qflux = 12.783964, quasisymmetry = 3.007447 with aspect ratio=5.994918 took 237.278867s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000193.nc'
+20:27:05 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 8.968536 with aspect ratio=5.986000 took 0.936923s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000199.nc'
+20:27:27 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 26.736440 with aspect ratio=6.046818 took 0.884317s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:32:22 - Growth rate = 31.357693, qflux = 14.347812, quasisymmetry = 3.883999 with aspect ratio=6.059550 took 289.484772s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:36:23 - Growth rate = 1.926781, qflux = 13.794630, quasisymmetry = 4.240975 with aspect ratio=6.006962 took 237.095970s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:40:39 - Growth rate = -3.755695, qflux = 15.496716, quasisymmetry = 4.173696 with aspect ratio=5.998605 took 237.882094s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000263.nc'
+20:40:47 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 21.002382 with aspect ratio=5.996375 took 0.975420s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:45:22 - Growth rate = 7.013129, qflux = 13.902667, quasisymmetry = 2.143938 with aspect ratio=5.994303 took 235.737171s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000275.nc'
+20:45:29 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 4.060499 with aspect ratio=5.981793 took 1.030554s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:49:33 - Growth rate = 11.255410, qflux = 14.374907, quasisymmetry = 4.111501 with aspect ratio=5.994733 took 236.106760s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:53:34 - Growth rate = 4.061656, qflux = 12.018266, quasisymmetry = 3.559537 with aspect ratio=5.994918 took 237.715753s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000287.nc'
+20:53:40 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 7.835932 with aspect ratio=5.994918 took 1.041258s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000288.nc'
+20:53:45 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 15.434865 with aspect ratio=5.994918 took 0.979082s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+[Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/output_MAXITER150_dual_annealing_nfp2_QA_QA_nonlinear/gxRun_wout_nfp2_QA_000_000291.nc'
+20:54:00 - Growth rate = 100.000000, qflux = 100.000000, quasisymmetry = 10.280153 with aspect ratio=5.843797 took 0.954994s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+20:57:59 - Growth rate = 2.315052, qflux = 13.472692, quasisymmetry = 3.558634 with aspect ratio=5.948471 took 235.562047s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:02:10 - Growth rate = 17.413597, qflux = 10.883362, quasisymmetry = 3.608328 with aspect ratio=5.991341 took 237.317529s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:07:05 - Growth rate = 16.811480, qflux = 11.190781, quasisymmetry = 3.715921 with aspect ratio=5.974989 took 290.259386s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:11:06 - Growth rate = 7.265035, qflux = 11.346959, quasisymmetry = 3.623647 with aspect ratio=5.992648 took 237.359856s
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=5 ntor=5)>
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:15:09 - Growth rate = 17.413597, qflux = 10.883362, quasisymmetry = 3.608328 with aspect ratio=5.991341 took 238.232215s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:19:12 - Growth rate = 4.855621, qflux = 11.205317, quasisymmetry = 3.605556 with aspect ratio=5.991221 took 238.314551s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:24:07 - Growth rate = 1.451148, qflux = 19.134495, quasisymmetry = 3.894464 with aspect ratio=5.991403 took 290.555695s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:28:10 - Growth rate = 1.736700, qflux = 10.734975, quasisymmetry = 3.608804 with aspect ratio=5.991341 took 238.589150s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:32:11 - Growth rate = -2.523448, qflux = 11.305589, quasisymmetry = 3.611564 with aspect ratio=5.991311 took 236.629575s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:36:12 - Growth rate = 2.475094, qflux = 10.666608, quasisymmetry = 3.607180 with aspect ratio=5.990325 took 236.847279s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:40:14 - Growth rate = -0.948304, qflux = 11.217789, quasisymmetry = 3.562358 with aspect ratio=5.982426 took 237.509313s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:45:09 - Growth rate = 8.918390, qflux = 19.665257, quasisymmetry = 3.557614 with aspect ratio=5.813262 took 291.137163s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:49:09 - Growth rate = 9.430476, qflux = 14.795525, quasisymmetry = 3.888534 with aspect ratio=6.036478 took 235.308361s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:53:11 - Growth rate = 0.343143, qflux = 11.308753, quasisymmetry = 3.657332 with aspect ratio=5.996111 took 237.742758s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+21:57:14 - Growth rate = 1.100008, qflux = 11.063168, quasisymmetry = 3.607199 with aspect ratio=5.991474 took 237.797067s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:01:15 - Growth rate = 1.922058, qflux = 10.779116, quasisymmetry = 3.608395 with aspect ratio=5.991341 took 237.217873s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:05:16 - Growth rate = 11.799417, qflux = 11.133191, quasisymmetry = 3.604004 with aspect ratio=5.991340 took 236.491365s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+22:10:10 - Growth rate = 7.003325, qflux = 18.356562, quasisymmetry = 3.664241 with aspect ratio=5.989571 took 289.713034s
+On rank 0 and CUDA_VISIBLE_DEVICES=0
+slurmstepd: error: *** JOB 8894198 ON r232n05 CANCELLED AT 2022-12-12T22:12:34 DUE TO TIME LIMIT ***
