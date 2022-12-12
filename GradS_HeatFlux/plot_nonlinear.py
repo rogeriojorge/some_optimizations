@@ -18,10 +18,10 @@ file_suffix = 'nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguer
 
 fig= plt.figure(figsize = (8, 4), dpi = 200);ax=plt.subplot(111)
 for i, (label, folder) in enumerate(zip(file_labels,folders)):
-    if np.mod(i,2)==0: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_{folder[10:17]}_{file_suffix}'),'r',mmap=False)
-    else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_final_{file_suffix}'),'r',mmap=False)
-    time  = np.array(fX.variables['time'][5:])
-    qflux = np.array(fX.groups['Fluxes'].variables['qflux'][5:,0])
+    if label=='056':fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-056_desc_optimize_QA_magwell_maxmode5_nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx140_y015.0.nc'),'r',mmap=False)
+    else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-061_desc_optimize_QA_magwell_grad_rho_threshold_2.5_maxmode5_nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx140_y015.0.nc'),'r',mmap=False)
+    time  = np.array(fX.variables['time'][:])
+    qflux = np.array(fX.groups['Fluxes'].variables['qflux'][:,0])
     plt.plot(time,qflux,label=label)
 
 plt.xlabel('Time $(v_{ti}/a)$', fontsize=22)
