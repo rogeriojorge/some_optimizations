@@ -14,10 +14,6 @@ from simsopt.geo import curves_to_vtk
 this_path = str(Path(__file__).parent.resolve())
 mpi = MpiPartition()
 
-####
-# BENCHMARK WITH THE VACUUM CASE
-####
-
 # folder = 'optimization_CNT'
 folder = 'optimization_CNT_circular'
 QA_or_QH = 'QA'
@@ -107,7 +103,7 @@ vmec_final.write_input(os.path.join(dir,'input.final_freeb'))
 print("Running VMEC")
 os.chdir(os.path.join(dir,'vmec'))
 run_string = f"{vmec_executable} {os.path.join(dir,'input.final_freeb')}"
-# run(run_string, shell=True, check=True)
+run(run_string, shell=True, check=True)
 try: shutil.move(os.path.join(dir, 'vmec', f"wout_final_freeb.nc"), os.path.join(dir, f"wout_final_freeb.nc"))
 except Exception as e: print(e)
 os.chdir(this_path)

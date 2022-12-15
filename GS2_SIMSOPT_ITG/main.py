@@ -41,7 +41,7 @@ MAXITER = 350
 max_modes = [3]
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
-opt_quasisymmetry = False
+opt_quasisymmetry = True
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 
 s_radius = 0.25
