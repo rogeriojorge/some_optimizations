@@ -41,17 +41,17 @@ elif args.type == 4:
 else:
     exit()
 nstep = 320000
-dt = 0.2
-nzgrid = 121
-npol = 4
+dt = 0.05
+nzgrid = 181
+npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 10
-nlaguerre = 6
+nhermite  = 16
+nlaguerre = 8
 nu_hyper = 0.5
 D_hyper = 0.05
 ny = 80
-nx = 120
+nx = 140
 y0 = 15.0
 nonlinear = True
 ########################################
