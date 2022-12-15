@@ -36,16 +36,16 @@ else:
     exit()
 nstep = 200000
 dt = 0.20
-nzgrid = 125
+nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 16
-nlaguerre = 8
+nlaguerre = 6
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 120
-nx = 160
+ny = 110
+nx = 150
 y0 = 18.0
 nonlinear = True
 ########################################

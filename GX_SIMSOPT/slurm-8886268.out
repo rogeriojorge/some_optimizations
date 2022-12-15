@@ -1,8 +1,0 @@
-Starting GX run
-./test_final.py:92: RuntimeWarning: invalid value encountered in divide
-  phiR = (y[max_index[0],int((len(kxX)-1)/2),:,0]*phiR0+y[max_index[0],int((len(kxX)-1)/2),:,1]*phiI0)/phi02
-./test_final.py:93: RuntimeWarning: invalid value encountered in divide
-  phiI = (y[max_index[0],int((len(kxX)-1)/2),:,1]*phiR0-y[max_index[0],int((len(kxX)-1)/2),:,0]*phiI0)/phi02
-./test_final.py:135: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
-  plt.subplot(numRows, numCols, 1)
-nzgrid=121 npol=4 nstep=320000 dt=0.2 nhermite=10 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=80 nx=120 y0=15.0 growth_rate=13.474740 qflux=36.621441 took 80132.050131s
