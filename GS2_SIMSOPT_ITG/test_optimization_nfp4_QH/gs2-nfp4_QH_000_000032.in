@@ -24,7 +24,7 @@
 /
 
 &theta_grid_file_knobs
- gridout_file = "grid_gs2-nfp4_QH_000_000031.out"
+ gridout_file = "grid_gs2-nfp4_QH_000_000032.out"
 /
 
 &le_grids_knobs
