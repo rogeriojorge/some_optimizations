@@ -76,7 +76,7 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 10
+weight_optTurbulence = 100
 diff_rel_step = 1e-2
 diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
