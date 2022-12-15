@@ -21,8 +21,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--type", type=int, default=1)
 args = parser.parse_args()
 ######## INPUT PARAMETERS ########
-gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
-convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
 LN = 1.0
 LT = 3.0
 ###
@@ -50,9 +50,9 @@ nhermite  = 16
 nlaguerre = 8
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 140
-y0 = 15.0
+ny = 110
+nx = 150
+y0 = 18.0
 nonlinear = True
 ########################################
 # Go into the output directory

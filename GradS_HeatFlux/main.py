@@ -21,8 +21,8 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--type", type=int, default=1)
 args = parser.parse_args()
 ######## INPUT PARAMETERS ########
-gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
-convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
 LN = 1.0
 LT = 3.0
 ###
@@ -34,10 +34,10 @@ elif args.type == 2:
     output_dir = f'nonlinear_061_LN{LN}_LT{LT}'
 else:
     exit()
-nstep = 200000
-dt = 0.20
-nzgrid = 121
-npol = 4
+nstep = 320000
+dt = 0.05
+nzgrid = 181
+npol = 5
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
 nhermite  = 16

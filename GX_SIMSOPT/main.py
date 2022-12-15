@@ -54,8 +54,8 @@ no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e2
 aspect_ratio_weight = 1e-1
-gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
-convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
 ##
 if nonlinear:
     LN = 1.0

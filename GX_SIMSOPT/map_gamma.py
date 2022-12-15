@@ -18,8 +18,8 @@ from simsopt.mhd import Vmec
 matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
-gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
-convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
+gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
 
 # vmec_file = '/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/wout_nfp4_QH.nc'
 # output_dir = 'out_map_nfp4_QH_initial'
