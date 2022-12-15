@@ -1,5 +1,5 @@
 &INDATA
-! This file created by simsopt on December 15 2022, 14:42:53
+! This file created by simsopt on December 15 2022, 15:08:39
 
 ! ---- Geometric parameters ----
 NFP = 4
@@ -32,7 +32,7 @@ NSTEP = 200
 
 ! ---- Boundary shape. Array index order is (n, m) ----
 RBC(   0,   0) =  1.000000000000000e+00,    ZBS(   0,   0) = -0.000000000000000e+00
-RBC(   1,   0) = -2.000000000000000e-01,    ZBS(   1,   0) =  1.526874285925055e-01
+RBC(   1,   0) =  5.306122448979594e-02,    ZBS(   1,   0) =  1.526874285925055e-01
 RBC(   2,   0) =  1.734951154350431e-02,    ZBS(   2,   0) =  1.866334230413251e-02
 RBC(   3,   0) =  2.577160162049330e-03,    ZBS(   3,   0) =  1.199711292212324e-03
 RBC(  -3,   1) = -3.641359983759378e-03,    ZBS(  -3,   1) =  3.782490654681902e-03

@@ -364,7 +364,7 @@ if plot_result:
     fig=plt.figure()
     ax=fig.add_subplot(111, label="1")
     ax2=fig.add_subplot(111, label="2", frame_on=False)
-    ax.set_xlabel('$RBC_{1,0}$', fontsize=20)
+    ax.set_xlabel('$RBC_{0,1}$', fontsize=20)
     ax.tick_params(axis='x', labelsize=14)
     line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$\gamma$ ITG + TEM')
     ax.set_ylabel("Growth Rate", color="C0", fontsize=20)

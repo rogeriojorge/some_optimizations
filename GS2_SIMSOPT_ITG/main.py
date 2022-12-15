@@ -39,17 +39,29 @@ start_time = time.time()
 ############################################################################
 MAXITER = 350
 max_modes = [3]
-QA_or_QH = 'QA'
-optimizer = 'dual_annealing'#'dual_annealing' #'least_squares'
+QA_or_QH = 'QH'
+optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = False
+weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 
 s_radius = 0.25
 alpha_fieldline = 0
 
-phi_GS2 = np.linspace(-4.5*np.pi, 4.5*np.pi, 111)
-nlambda = 19
-nstep = 200
-dt = 0.4
+nphi= 121
+nlambda = 23
+nperiod = 4.0
+nstep = 280
+dt = 0.5
+aky_min = 0.2
+aky_max = 5.0
+naky = 8
+LN = 1.0
+LT = 3.0
+s_radius = 0.25
+alpha_fieldline = 0
+ngauss = 3
+negrid = 9
+phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 if QA_or_QH=='QA':
     aspect_ratio_target = 6
@@ -65,8 +77,8 @@ use_previous_results_if_available = False
 
 weight_mirror = 10
 weight_optTurbulence = 1
-diff_rel_step = 1e-4
-diff_abs_step = 1e-6
+diff_rel_step = 1e-2
+diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
 no_local_search = False
@@ -132,6 +144,15 @@ def CalculateGrowthRate(v: Vmec):
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
         replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
         replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' aky_min = 0.4',f' aky_min = {aky_min}')
+        replace(gs2_input_file,' aky_max = 5.0',f' aky_max = {aky_max}')
+        replace(gs2_input_file,' naky = 4',f' naky = {naky}')
+        replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
+        f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
+        replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
+        f' negrid = {negrid} ! Total number of energy grid points')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
@@ -155,13 +176,28 @@ def CalculateGrowthRate(v: Vmec):
         data_y = phi2[mask]
         fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
         growth_rate = fit[0]/2
+
+        kyX  = file2read.variables['ky'][()]
+        phi2_by_kyX  = file2read.variables['phi2_by_ky'][()]
+        growthRateX  = []
+        for i in range(len(kyX)):
+            maskX  = np.isfinite(phi2_by_kyX[:,i])
+            data_xX = tX[maskX]
+            data_yX = phi2_by_kyX[maskX,i]
+            fitX  = np.polyfit(data_xX[startIndexX:], np.log(data_yX[startIndexX:]), 1)
+            thisGrowthRateX  = fitX[0]/2
+            growthRateX.append(thisGrowthRateX)
+        weighted_growth_rate = np.sum(np.array(growthRateX)/np.array(kyX))/naky
+
         if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
         if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
+        if not np.isfinite(weighted_growth_rate): weighted_growth_rate = HEATFLUX_THRESHOLD
 
     except Exception as e:
         pprint(e)
         qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
+        weighted_growth_rate = GROWTHRATE_THRESHOLD
 
     try: os.remove(os.path.join(OUT_DIR,f'{v.input_file.split("/")[-1]}_{gs2_input_name[-10:]}'))
     except Exception as e: pass
@@ -174,7 +210,10 @@ def CalculateGrowthRate(v: Vmec):
         for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")): os.remove(objective_file)
     except Exception as e: pass
     
-    return growth_rate#qavg
+    if weighted_growth_rate:
+        return weighted_growth_rate
+    else:
+        return growth_rate
 ######################################
 ######################################
 ######################################

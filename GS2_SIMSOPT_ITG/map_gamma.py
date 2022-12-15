@@ -33,17 +33,32 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
 vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
 output_dir = 'out_map_nfp4_QH_initial'
-phi_GS2 = np.linspace(-8*np.pi, 8*np.pi, 121)
 s_radius = 0.25
 alpha_fieldline = 0
-nlambda = 25
-nstep = 250
-LN_array = np.linspace(0.5,6,12)
-LT_array = np.linspace(0.5,6,12)
+nphi= 121
+nlambda = 23
+nperiod = 4.0
+nstep = 280
+dt = 0.5
+aky_min = 0.2
+aky_max = 8.0
+naky = 8
+LN = 1.0
+LT = 3.0
+s_radius = 0.25
+alpha_fieldline = 0
+ngauss = 3
+negrid = 9
+phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
+LN_array = np.linspace(0.5,6,8)
+LT_array = np.linspace(0.5,6,8)
 n_processes_parallel = 4
-plot_extent_fix = True
-plot_min = 0
-plot_max = 0.40
+plot_extent_fix_gamma = True
+plot_gamma_min = 0
+plot_gamma_max = 0.55
+plot_extent_fix_weighted_gamma = True
+plot_weighted_gamma_min = 0
+plot_weighted_gamma_max = 0.12
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -165,7 +180,7 @@ def gammabyky(stellFile,fractionToConsider=0.6):
     #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
     plt.savefig(stellFile+"_GammaOmegaKy.png")
     plt.close()
-    return kyX, growthRateX, realFrequencyX
+    return np.array(kyX), np.array(growthRateX), np.array(realFrequencyX)
 # Function to replace text in a file
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
@@ -176,9 +191,9 @@ def replace(file_path, pattern, subst):
     copymode(file_path, abs_path)
     remove(file_path)
     move(abs_path, file_path)
-def output_to_csv(growth_rate, omega, ky, ln, lt):
-    keys=np.concatenate([['ln'],['lt'],['growth_rate'],['omega'],['ky']])
-    values=np.concatenate([[ln],[lt],[growth_rate],[omega],[ky]])
+def output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt):
+    keys=np.concatenate([['ln'],['lt'],['growth_rate'],['omega'],['ky'], ['weighted_growth_rate']])
+    values=np.concatenate([[ln],[lt],[growth_rate],[omega],[ky],[weighted_growth_rate]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
@@ -196,9 +211,17 @@ def run_gs2(ln, lt):
         gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
         shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_gs2.out"')
-        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {ln} ! -1/n (dn/drho)')
-        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {lt} ! -1/T (dT/drho)')
-        replace(gs2_input_file,' nstep = 150 ! Maximum number of timesteps',f' nstep = {nstep} ! Maximum number of timesteps')
+        replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
+        replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' aky_min = 0.4',f' aky_min = {aky_min}')
+        replace(gs2_input_file,' aky_max = 5.0',f' aky_max = {aky_max}')
+        replace(gs2_input_file,' naky = 4',f' naky = {naky}')
+        replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
+        f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
+        replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
+        f' negrid = {negrid} ! Total number of energy grid points')
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         p = subprocess.Popen(bashCommand.split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)#stdout=fp)
         p.wait()
@@ -208,18 +231,20 @@ def run_gs2(ln, lt):
         eigenPlot(file2read)
         growth_rate, omega, ky = getgamma(file2read)
         kyX, growthRateX, realFrequencyX = gammabyky(file2read)
-        output_to_csv(growth_rate, omega, ky, ln, lt)
+        weighted_growth_rate = np.sum(growthRateX/kyX)/naky
+        output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt)
     except Exception as e:
         print(e)
         exit()
     print(f'  LN={ln:1f}, LT={lt:1f}, growth rate={growth_rate:1f}, omega={omega:1f}, ky={ky:1f} took {(time()-start_time_local):1f}s')
-    return growth_rate, omega, ky
+    return growth_rate, omega, ky, weighted_growth_rate
 print('Starting GS2 scan')
 start_time = time()
-growth_rate_array_temp, omega_array_temp, ky_array_temp = np.array(Parallel(n_jobs=n_processes_parallel)(delayed(run_gs2)(ln, lt) for lt in LT_array for ln in LN_array)).transpose()
+growth_rate_array_temp, omega_array_temp, ky_array_temp, weighted_growth_rate_temp = np.array(Parallel(n_jobs=n_processes_parallel)(delayed(run_gs2)(ln, lt) for lt in LT_array for ln in LN_array)).transpose()
 growth_rate_array = np.reshape(growth_rate_array_temp, (len(LT_array),len(LN_array)))
 omega_array = np.reshape(omega_array_temp, (len(LT_array),len(LN_array)))
 ky_array = np.reshape(ky_array_temp, (len(LT_array),len(LN_array)))
+weighted_growth_rate_array = np.reshape(weighted_growth_rate_temp, (len(LT_array),len(LN_array)))
 # for i, ln in enumerate(LN_array):
 #     for j, lt in enumerate(LT_array):
 #         growth_rate_array[i,j]=run_gs2(ln, lt)
@@ -233,27 +258,36 @@ plotExtent=[0*min(LN_array),max(LN_array),0*min(LT_array),max(LT_array)]
 fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);matplotlib.rc('font', size=20)
-if plot_extent_fix: plt.clim(plot_min,plot_max)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);matplotlib.rc('font', size=20)
+if plot_extent_fix_gamma: plt.clim(plot_gamma_min,plot_gamma_max)
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_gamma.pdf'), format='pdf', bbox_inches='tight')
 
-fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(5.5, 5.5)
 im = plt.imshow(omega_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\omega$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_omega.pdf'), format='pdf', bbox_inches='tight')
 
-fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(5.5, 5.5)
 im = plt.imshow(ky_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$k_y$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_ky.pdf'), format='pdf', bbox_inches='tight')
+
+fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(5.5, 5.5)
+im = plt.imshow(weighted_growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
+clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma/k_y$', usetex=True)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+if plot_extent_fix_weighted_gamma: plt.clim(plot_weighted_gamma_min,plot_weighted_gamma_max)
+plt.gca().set_aspect('equal')
+ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
+plt.savefig(os.path.join(OUT_DIR,'gs2_scan_weighted_gamma.pdf'), format='pdf', bbox_inches='tight')
 
 for f in glob.glob('*.amoments'): remove(f)
 for f in glob.glob('*.eigenfunc'): remove(f)

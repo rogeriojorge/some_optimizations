@@ -21,18 +21,33 @@ from simsopt.mhd.vmec_diagnostics import to_gs2
 from simsopt.mhd import QuasisymmetryRatioResidual
 this_path = Path(__file__).parent.resolve()
 
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
+npoints_scan = 50
 min_bound = -0.20
 max_bound = 0.20
+run_scan = True
+run_optimization = False
+plot_result = True
 vmec_index_scan_opt = 0
-npoints_scan = 35
 ftol = 1e-2
 s_radius = 0.25
 alpha_fieldline = 0
-phi_GS2 = np.linspace(-7*np.pi, 7*np.pi, 101)
-nlambda = 21
-nstep = 200
-
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+nphi= 121
+nlambda = 23
+nperiod = 4.0
+nstep = 280
+dt = 0.5
+aky_min = 0.2
+aky_max = 5.0
+naky = 8
+LN = 1.0
+LT = 3.0
+s_radius = 0.25
+alpha_fieldline = 0
+ngauss = 3
+negrid = 9
+phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
@@ -41,9 +56,6 @@ MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = False
-run_optimization = False
-plot_result = True
 
 output_path_parameters_opt = 'opt_dofs_loss.csv'
 output_path_parameters_scan = 'scan_dofs_loss.csv'
@@ -91,6 +103,16 @@ def CalculateGrowthRate(v: Vmec):
         gridout_file = os.path.join(OUT_DIR,f'grid_{gs2_input_name}.out')
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_{gs2_input_name}.out"')
         replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
+        replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' aky_min = 0.4',f' aky_min = {aky_min}')
+        replace(gs2_input_file,' aky_max = 5.0',f' aky_max = {aky_max}')
+        replace(gs2_input_file,' naky = 4',f' naky = {naky}')
+        replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
+        f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
+        replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
+        f' negrid = {negrid} ! Total number of energy grid points')
         to_gs2(gridout_file, v, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
         bashCommand = f"{gs2_executable} {gs2_input_file}"
         # f_log = os.path.join(OUT_DIR,f"{gs2_input_name}.log")
@@ -114,13 +136,28 @@ def CalculateGrowthRate(v: Vmec):
         data_y = phi2[mask]
         fit = np.polyfit(data_x[startIndex:], data_y[startIndex:], 1)
         growth_rate = fit[0]/2
+
+        kyX  = file2read.variables['ky'][()]
+        phi2_by_kyX  = file2read.variables['phi2_by_ky'][()]
+        growthRateX  = []
+        for i in range(len(kyX)):
+            maskX  = np.isfinite(phi2_by_kyX[:,i])
+            data_xX = tX[maskX]
+            data_yX = phi2_by_kyX[maskX,i]
+            fitX  = np.polyfit(data_xX[startIndexX:], np.log(data_yX[startIndexX:]), 1)
+            thisGrowthRateX  = fitX[0]/2
+            growthRateX.append(thisGrowthRateX)
+        weighted_growth_rate = np.sum(np.array(growthRateX)/np.array(kyX))/naky
+
         if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
         if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
+        if not np.isfinite(weighted_growth_rate): weighted_growth_rate = HEATFLUX_THRESHOLD
 
     except Exception as e:
         print(e)
         qavg = HEATFLUX_THRESHOLD
         growth_rate = GROWTHRATE_THRESHOLD
+        weighted_growth_rate = GROWTHRATE_THRESHOLD
 
     try:
         for objective_file in glob.glob(os.path.join(OUT_DIR,f"*{gs2_input_name}*")): os.remove(objective_file)
@@ -129,7 +166,10 @@ def CalculateGrowthRate(v: Vmec):
         for objective_file in glob.glob(os.path.join(OUT_DIR,f".{gs2_input_name}*")): os.remove(objective_file)
     except Exception as e: pass
     
-    return growth_rate#qavg
+    if weighted_growth_rate:
+        return weighted_growth_rate
+    else:
+        return growth_rate
 def TurbulenceCostFunction(v: Vmec):
     start_time = time.time()
     try: v.run()
@@ -205,26 +245,26 @@ if plot_result:
         fig = plt.figure()
         plt.plot(df_opt[f'x({vmec_index_scan_opt})'], df_opt['growth_rate'], 'ro', markersize=1, label='Optimizer')
         plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
-        plt.ylabel('Growth Rate');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('growth_rate_over_opt_scan.pdf')
+        plt.ylabel('Growth Rate');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_over_opt_scan.pdf')
     except Exception as e: print(e)
     points_scan = np.linspace(min_bound,max_bound,len(df_scan[f'x({vmec_index_scan_opt})']))
     fig = plt.figure();plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
-    plt.ylabel('Growth Rate');plt.xlabel('RBC(1,0)');plt.legend();plt.savefig('growth_rate_scan.pdf')
+    plt.ylabel('Growth Rate');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['aspect'], label='Aspect ratio')
-    plt.ylabel('Aspect ratio');plt.xlabel('RBC(1,0)');plt.savefig('aspect_ratio_scan.pdf')
+    plt.ylabel('Aspect ratio');plt.xlabel('RBC(0,1)');plt.savefig('aspect_ratio_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['mean_iota'], label='Rotational Transform (1/q)')
-    plt.ylabel('Rotational Transform (1/q)');plt.xlabel('RBC(1,0)');plt.savefig('iota_scan.pdf')
+    plt.ylabel('Rotational Transform (1/q)');plt.xlabel('RBC(0,1)');plt.savefig('iota_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['quasisymmetry'], label='Quasisymmetry cost function')
-    plt.ylabel('Quasisymmetry cost function');plt.xlabel('RBC(1,0)');plt.savefig('quasisymmetry_scan.pdf')
+    plt.ylabel('Quasisymmetry cost function');plt.xlabel('RBC(0,1)');plt.savefig('quasisymmetry_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['well'], label='Magnetic well')
-    plt.ylabel('Magnetic well');plt.xlabel('RBC(1,0)');plt.savefig('magnetic_well_scan.pdf')
+    plt.ylabel('Magnetic well');plt.xlabel('RBC(0,1)');plt.savefig('magnetic_well_scan.pdf')
     # fig = plt.figure();plt.plot(points_scan, df_scan['effective_1o_time'], label='Effective 1/time')
-    # plt.ylabel('Effective time');plt.xlabel('RBC(1,0)');plt.savefig('effective_1o_time_scan.pdf')
+    # plt.ylabel('Effective time');plt.xlabel('RBC(0,1)');plt.savefig('effective_1o_time_scan.pdf')
 
     fig=plt.figure()
     ax=fig.add_subplot(111, label="1")
     ax2=fig.add_subplot(111, label="2", frame_on=False)
-    ax.set_xlabel('$RBC_{1,0}$', fontsize=20)
+    ax.set_xlabel('$RBC_{0,1}$', fontsize=20)
     ax.tick_params(axis='x', labelsize=14)
     line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$\gamma$ ITG')
     ax.set_ylabel("Growth Rate", color="C0", fontsize=20)

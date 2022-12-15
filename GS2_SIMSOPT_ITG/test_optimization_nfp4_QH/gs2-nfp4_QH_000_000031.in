@@ -13,9 +13,9 @@
 /
 
 &kt_grids_range_parameters
- aky_min = 0.4
+ aky_min = 0.2
  aky_max = 5.0
- naky = 4
+ naky = 8
  kyspacing_option='exponential'
 /
 
@@ -24,12 +24,12 @@
 /
 
 &theta_grid_file_knobs
- gridout_file = "grid.out"
+ gridout_file = "grid_gs2-nfp4_QH_000_000031.out"
 /
 
 &le_grids_knobs
  ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.
- negrid = 10 ! Total number of energy grid points
+ negrid = 9 ! Total number of energy grid points
 /
 
 &dist_fn_knobs
@@ -50,8 +50,8 @@
  fphi = 1.0 ! Multiplies Phi (electrostatic potential).
  fapar = 0.0 ! Multiplies A_par. Use 1 for finite beta (electromagnetic), 0 otherwise (electrostatic)
  faperp = 0.0 ! Multiplies A_perp. Use 1 for high beta, 0 otherwise. Deprecated: use fbpar instead
- delt = 0.4 ! Time step
- nstep = 150 ! Maximum number of timesteps
+ delt = 0.5 ! Time step
+ nstep = 280 ! Maximum number of timesteps
 /
 
 &reinit_knobs

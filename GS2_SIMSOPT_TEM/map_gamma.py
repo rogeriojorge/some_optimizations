@@ -252,7 +252,7 @@ plotExtent=[0*min(LN_array),max(LN_array),0*min(LT_array),max(LT_array)]
 fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);matplotlib.rc('font', size=20)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);matplotlib.rc('font', size=20)
 if plot_extent_fix: plt.clim(plot_min,plot_max) 
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
@@ -261,7 +261,7 @@ plt.savefig(os.path.join(OUT_DIR,'gs2_scan_gamma.pdf'), format='pdf', bbox_inche
 fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(omega_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\omega$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_omega.pdf'), format='pdf', bbox_inches='tight')
@@ -269,7 +269,7 @@ plt.savefig(os.path.join(OUT_DIR,'gs2_scan_omega.pdf'), format='pdf', bbox_inche
 fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(4.5, 4.5)
 im = plt.imshow(ky_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
 clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$k_y$', usetex=True)
-plt.xlabel(r'$1/L_n$', fontsize=16);plt.ylabel(r'$1/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
+plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
 plt.gca().set_aspect('equal')
 ax.tick_params(axis='x', labelsize=14);ax.tick_params(axis='y', labelsize=14);plt.tight_layout();
 plt.savefig(os.path.join(OUT_DIR,'gs2_scan_ky.pdf'), format='pdf', bbox_inches='tight')

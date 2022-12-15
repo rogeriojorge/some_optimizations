@@ -1,0 +1,665 @@
+! Created by GS2 at 2022-12-15T15:08:42.701Z+00:00
+! GS2 version: 8.1.2-dirty
+! Run UUID: 311C1103-1513-4B5B-8769-521651671C06
+! GK_SYSTEM: macports
+! Compiler: gfortran
+! Input parameters as used by /Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/test_optimization_nfp4_QH/gs2-nfp4_QH_000_000031
+&ballstab_knobs
+  beta_div                                 =  0.10000000000E+01
+  beta_mul                                 =  0.10000000000E+01
+  diff                                     =  0.00000000000E+00
+  make_salpha                              =  F
+  n_beta                                   =  1
+  n_shat                                   =  1
+  shat_max                                 =  0.00000000000E+00
+  shat_min                                 =  0.00000000000E+00
+/
+
+&collisions_knobs
+  adjust                                   =  T
+  cfac                                     =  0.10000000000E+01
+  collision_model                          =  "none"
+  conservative                             =  T
+  conserve_forbid_zero                     =  T
+  conserve_moments                         =  T
+  const_v                                  =  F
+  ediff_scheme                             =  "default"
+  ei_coll_only                             =  F
+  etol                                     =  0.20000000000E-01
+  etola                                    =  0.20000000000E-01
+  ewindow                                  =  0.10000000000E-01
+  ewindowa                                 =  0.10000000000E-01
+  force_collisions                         =  F
+  heating                                  =  F
+  hypermult                                =  F
+  le_nxilim_fix                            =  T
+  lorentz_scheme                           =  "default"
+  ncheck                                   =  100
+  resistivity                              =  T
+  special_wfb_lorentz                      =  F
+  split_collisions                         =  F
+  test                                     =  F
+  timesteps_between_collisions             =  1
+  use_le_layout                            =  T
+  vary_vnew                                =  F
+  vnfac                                    =  0.11000000000E+01
+  vnslow                                   =  0.90000000000E+00
+  vpar_zero_mean                           =  T
+/
+
+&dist_fn_knobs
+  adiabatic_option                         =  "iphi00=2"
+  afilter                                  =  0.00000000000E+00
+  apfac                                    =  0.10000000000E+01
+  boundary_option                          =  "linked"
+  btor_slab                                =  0.00000000000E+00
+  def_parity                               =  F
+  densfac_lin                              =  0.14142135624E+01
+  driftknob                                =  0.10000000000E+01
+  esv                                      =  F
+  even                                     =  T
+  g_exb                                    =  0.00000000000E+00
+  g_exb_error_limit                        =  0.00000000000E+00
+  g_exb_start_time                         = -0.10000000000E+01
+  g_exb_start_timestep                     = -1
+  g_exbfac                                 =  0.10000000000E+01
+  gf_lo_integrate                          =  F
+  gridfac                                  =  0.10000000000E+01
+  hyper_in_initialisation                  =  T
+  kfilter                                  =  0.00000000000E+00
+  lf_decompose                             =  F
+  lf_default                               =  T
+  mach                                     =  0.00000000000E+00
+  mult_imp                                 =  F
+  nonad_zero                               =  T
+  omprimfac                                =  0.10000000000E+01
+  opt_init_bc                              =  F
+  opt_source                               =  F
+  phifac_lin                               =  0.14142135624E+01
+  poisfac                                  =  0.00000000000E+00
+  qparfac_lin                              =  0.40000000000E+01
+  qprpfac_lin                              =  0.40000000000E+01
+  test                                     =  F
+  tparfac_lin                              =  0.28284271247E+01
+  tpdriftknob                              = -0.99000000000E+10
+  tprpfac_lin                              =  0.28284271247E+01
+  uparfac_lin                              =  0.20000000000E+01
+  vparknob                                 =  0.10000000000E+01
+  wfb                                      =  0.10000000000E+01
+  wfb_cmr                                  =  F
+  wfbbc_option                             =  "default"
+  zero_forbid                              =  F
+/
+
+&dist_fn_species_knobs_1
+  bakdif                                   =  0.50000000000E-01
+  bd_exp                                   =  0
+  fexpi                                    =  0.00000000000E+00
+  fexpr                                    =  0.48000000000E+00
+/
+
+&driver
+  amplitude                                =  0.00000000000E+00
+  ant_off                                  =  T
+  nk_stir                                  =  1
+  restarting                               =  F
+  t0                                       = -0.10000000000E+01
+  w_antenna                                = ( 0.10000000000E+01,  0.00000000000E+00)
+  w_dot                                    =  0.00000000000E+00
+  write_antenna                            =  F
+/
+
+&fields_knobs
+  do_smart_update                          =  F
+  dump_response                            =  F
+  field_local_allreduce                    =  F
+  field_local_allreduce_sub                =  F
+  field_local_nonblocking_collectives      =  F
+  field_local_tuneminnrow                  =  F
+  field_option                             =  "implicit"
+  field_subgath                            =  F
+  force_maxwell_reinit                     =  T
+  minnrow                                  =  16
+  read_response                            =  F
+  remove_zonal_flows_switch                =  F
+  response_dir                             =  ""
+  response_file                            =  ""
+/
+
+&gs2_diagnostics_knobs
+  append_old                               =  F
+  conv_max_step                            =  80000
+  conv_min_step                            =  4000
+  conv_nstep_av                            =  4000
+  conv_nsteps_converged                    =  10000
+  conv_test_multiplier                     =  0.40000000000E+00
+  dump_check1                              =  F
+  dump_check2                              =  F
+  dump_fields_periodically                 =  F
+  enable_parallel                          =  F
+  exit_when_converged                      =  T
+  file_safety_check                        =  T
+  igomega                                  =  0
+  make_movie                               =  F
+  navg                                     =  10
+  nc_sync_freq                             =  10
+  ncheck                                   =  10
+  nmovie                                   = -1
+  nsave                                    =  100
+  nwrite                                   =  10
+  nwrite_mult                              =  10
+  ob_midplane                              =  F
+  omegatinst                               =  0.50000000000E+03
+  omegatol                                 = -0.10000000000E-02
+  print_flux_line                          =  F
+  print_line                               =  T
+  save_distfn                              =  F
+  save_for_restart                         =  F
+  save_glo_info_and_grids                  =  F
+  save_many                                =  F
+  save_velocities                          =  F
+  serial_netcdf4                           =  F
+  use_nonlin_convergence                   =  F
+  write_any                                =  T
+  write_apar_over_time                     =  F
+  write_ascii                              =  T
+  write_avg_moments                        =  F
+  write_bpar_over_time                     =  F
+  write_cerr                               =  F
+  write_collisional                        =  F
+  write_correlation                        =  T
+  write_correlation_extend                 =  F
+  write_cross_phase                        =  F
+  write_density_over_time                  =  F
+  write_eigenfunc                          =  T
+  write_fields                             =  T
+  write_final_antot                        =  F
+  write_final_db                           =  F
+  write_final_epar                         =  F
+  write_final_fields                       =  T
+  write_final_moments                      =  T
+  write_flux_line                          =  T
+  write_fluxes                             =  F
+  write_fluxes_by_mode                     =  F
+  write_full_moments_notgc                 =  F
+  write_g                                  =  F
+  write_gg                                 =  F
+  write_gs                                 =  F
+  write_gyx                                =  F
+  write_heating                            =  F
+  write_jext                               =  F
+  write_kpar                               =  F
+  write_line                               =  F
+  write_lorentzian                         =  F
+  write_lpoly                              =  F
+  write_max_verr                           =  F
+  write_moments                            =  T
+  write_nl_flux                            =  T
+  write_nl_flux_dist                       =  F
+  write_ntot_over_time                     =  F
+  write_omavg                              =  F
+  write_omega                              =  F
+  write_parity                             =  F
+  write_pflux_sym                          =  F
+  write_pflux_tormom                       =  F
+  write_phi_over_time                      =  F
+  write_symmetry                           =  F
+  write_tperp_over_time                    =  F
+  write_upar_over_time                     =  F
+  write_verr                               =  T
+  write_zonal_transfer                     =  F
+/
+
+&hyper_knobs
+  const_amp                                =  F
+  d_hyper                                  = -0.10000000000E+02
+  d_hyper3d                                = -0.10000000000E+02
+  d_hyperres                               = -0.10000000000E+02
+  d_hypervisc                              = -0.10000000000E+02
+  damp_zonal_only                          =  F
+  gridnorm                                 =  T
+  hyper_option                             =  "default"
+  include_kpar                             =  F
+  isotropic_model                          =  T
+  isotropic_shear                          =  T
+  kx_cut                                   = -0.10000000000E+02
+  ky_cut                                   = -0.10000000000E+02
+  nexp                                     =  2
+  omega_osc                                =  0.40000000000E+00
+  p_hyper3d                                =  0.40000000000E+01
+/
+
+&ingen_knobs
+  ncut                                     =  100000
+  npmax                                    =  100000
+  scan                                     =  F
+  stdin                                    =  T
+/
+
+&init_knobs
+  in_memory                                =  F
+/
+
+&init_g_knobs
+  a0                                       =  0.00000000000E+00
+  adj_spec                                 =  0
+  apar0                                    =  0.00000000000E+00
+  aparamp(1)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  aparamp(2)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  aparamp(3)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  aparamp(4)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  aparamp(5)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  aparamp(6)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  b0                                       =  0.00000000000E+00
+  chop_side                                =  F
+  clean_init                               =  T
+  constant_random_flag                     =  T
+  den0                                     =  0.10000000000E+01
+  den1                                     =  0.00000000000E+00
+  den2                                     =  0.00000000000E+00
+  dphiinit                                 =  0.10000000000E+01
+  eq_mode_n                                =  0
+  eq_mode_u                                =  1
+  eq_type                                  =  "sinusoidal"
+  even                                     =  T
+  ginit_option                             =  "default"
+  ikk(1)                                   =  1
+  ikk(2)                                   =  2
+  ikkk(1)                                  =  1
+  ikkk(2)                                  =  2
+  ikkk(3)                                  =  2
+  ikpar_init                               =  0
+  ikx_init                                 = -1
+  imfac                                    =  0.00000000000E+00
+  include_explicit_source_in_restart       =  T
+  initial_condition_is_nonadiabatic_dfn    =  F
+  input_check_recon                        =  F
+  itt(1)                                   =  1
+  itt(2)                                   =  2
+  ittt(1)                                  =  1
+  ittt(2)                                  =  2
+  ittt(3)                                  =  2
+  kpar_init                                =  0.00000000000E+00
+  left                                     =  T
+  max_mode                                 =  128
+  new_field_init                           =  T
+  nkxy_pt(1)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  nkxy_pt(2)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  nkxy_pt(3)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  null_apar                                =  F
+  null_bpar                                =  F
+  null_phi                                 =  F
+  phiamp(1)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phiamp(2)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phiamp(3)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phiamp(4)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phiamp(5)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phiamp(6)                                = ( 0.00000000000E+00,  0.00000000000E+00)
+  phifrac                                  =  0.10000000000E+00
+  phiinit                                  =  0.10000000000E-02
+  phiinit0                                 =  0.00000000000E+00
+  phiinit_rand                             =  0.00000000000E+00
+  prof_width                               = -0.10000000000E+00
+  read_many                                =  F
+  refac                                    =  0.10000000000E+01
+  restart_dir                              =  "./"
+  restart_eig_id                           =  0
+  restart_file                             =  "/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/test_optimization_nfp4_QH/gs2-nfp4_QH_000_000031.nc"
+  scale                                    =  0.10000000000E+01
+  tpar0                                    =  0.00000000000E+00
+  tpar1                                    =  0.00000000000E+00
+  tpar2                                    =  0.00000000000E+00
+  tperp0                                   =  0.00000000000E+00
+  tperp1                                   =  0.00000000000E+00
+  tperp2                                   =  0.00000000000E+00
+  tstart                                   =  0.00000000000E+00
+  ukxy_pt(1)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  ukxy_pt(2)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  ukxy_pt(3)                               = ( 0.00000000000E+00,  0.00000000000E+00)
+  upar0                                    =  0.00000000000E+00
+  upar1                                    =  0.00000000000E+00
+  upar2                                    =  0.00000000000E+00
+  width0                                   = -0.35000000000E+01
+  zf_init                                  =  0.10000000000E+01
+/
+
+&knobs
+  avail_cpu_time                           =  0.10000000000E+11
+  beta                                     =  0.00000000000E+00
+  delt                                     =  0.50000000000E+00
+  delt_option                              =  "default"
+  do_eigsolve                              =  F
+  eqzip                                    =  F
+  eqzip_option                             =  "none"
+  fapar                                    =  0.00000000000E+00
+  faperp                                   =  0.00000000000E+00
+  fbpar                                    = -0.10000000000E+01
+  fphi                                     =  0.10000000000E+01
+  harris                                   =  F
+  immediate_reset                          =  T
+  k0                                       =  0.10000000000E+01
+  margin                                   =  0.50000000000E-01
+  margin_cpu_time                          =  0.30000000000E+03
+  max_sim_time                             =  0.10000000000E+07
+  neo_test                                 =  F
+  nstep                                    =  280
+  rhostar                                  =  0.30000000000E-02
+  secondary                                =  T
+  seed                                     =  0
+  tertiary                                 =  F
+  teti                                     = -0.10000000000E+03
+  tite                                     =  0.10000000000E+01
+  trinity_linear_fluxes                    =  F
+  trinity_ql_fluxes                        =  F
+  use_old_diagnostics                      =  F
+  user_comments                            =  ""
+  wstar_units                              =  F
+  zeff                                     =  0.10000000000E+01
+/
+
+&kt_grids_knobs
+  grid_option                              =  "range"
+/
+
+&kt_grids_box_parameters
+  gryfx                                    =  F
+  jtwist                                   =  1
+  ly                                       =  0.00000000000E+00
+  n0                                       =  0
+  naky                                     =  0
+  nkpolar                                  =  0
+  ntheta0                                  =  0
+  nx                                       =  0
+  ny                                       =  0
+  rhostar_box                              =  0.00000000000E+00
+  rtwist                                   =  0.00000000000E+00
+  x0                                       =  0.00000000000E+00
+  y0                                       =  0.20000000000E+01
+/
+
+&kt_grids_range_parameters
+  akx_max                                  =  0.00000000000E+00
+  akx_min                                  =  0.00000000000E+00
+  aky_max                                  =  0.50000000000E+01
+  aky_min                                  =  0.20000000000E+00
+  kyspacing_option                         =  "exponential"
+  n0_max                                   =  0
+  n0_min                                   =  0
+  naky                                     =  8
+  nn0                                      =  1
+  ntheta0                                  =  1
+  rhostar_range                            =  0.10000000000E-03
+  theta0_max                               =  0.00000000000E+00
+  theta0_min                               =  0.00000000000E+00
+/
+
+&kt_grids_single_parameters
+  akx                                      =  0.00000000000E+00
+  aky                                      =  0.10000000000E+01
+  n0                                       =  0
+  rhostar_single                           =  0.10000000000E-03
+  theta0                                   =  0.00000000000E+00
+/
+
+&kt_grids_specified_parameters
+  naky                                     =  1
+  ntheta0                                  =  1
+  nx                                       =  0
+  ny                                       =  0
+/
+
+&layouts_knobs
+  fft_measure_plan                         =  F
+  fft_use_wisdom                           =  T
+  fft_wisdom_file                          =  "default"
+  gf_local_fields                          =  F
+  intmom_sub                               =  F
+  intspec_sub                              =  F
+  layout                                   =  "lxyes"
+  local_field_solve                        =  F
+  max_unbalanced_xxf                       =  0.00000000000E+00
+  max_unbalanced_yxf                       =  0.00000000000E+00
+  opt_local_copy                           =  F
+  opt_redist_nbk                           =  T
+  opt_redist_persist                       =  F
+  opt_redist_persist_overlap               =  F
+  simple_gf_decomposition                  =  T
+  unbalanced_xxf                           =  F
+  unbalanced_yxf                           =  F
+/
+
+&le_grids_knobs
+  bouncefuzz                               =  0.22204460493E-14
+  genquad                                  =  F
+  negrid                                   =  9
+  nesub                                    =  8
+  nesuper                                  =  2
+  new_trap_int                             =  F
+  npassing                                 = -1
+  ngauss                                   =  3
+  nmax                                     =  500
+  nterp                                    =  100
+  radau_gauss_grid                         =  T
+  test                                     =  F
+  trapped_particles                        =  T
+  vcut                                     =  0.25000000000E+01
+  wgt_fac                                  =  0.10000000000E+02
+/
+
+&nonlinear_terms_knobs
+  cfl                                      =  0.50000000000E+00
+  densfac                                  =  0.10000000000E+01
+  error_target                             =  0.10000000000E+00
+  istep_error_start                        =  30
+  nl_forbid_force_zero                     =  T
+  nonlinear_mode                           =  "off"
+  qparfac                                  =  0.35355339059E+00
+  qprpfac                                  =  0.35355339059E+00
+  tparfac                                  =  0.50000000000E+00
+  tprpfac                                  =  0.50000000000E+00
+  uparfac                                  =  0.70710678119E+00
+  use_cfl_limit                            =  T
+  use_order_based_error                    =  F
+  zip                                      =  F
+/
+
+&normalisations_knobs
+  aref                                     = -0.99900000000E+03
+  bref                                     = -0.99900000000E+03
+  mref                                     = -0.99900000000E+03
+  nref                                     = -0.99900000000E+03
+  rhoref                                   = -0.99900000000E+03
+  tref                                     = -0.99900000000E+03
+  vref                                     = -0.99900000000E+03
+  zref                                     = -0.99900000000E+03
+/
+
+&optimisation_config
+  auto                                     =  T
+  estimate_timing_error                    =  T
+  max_imbalance                            = -0.10000000000E+01
+  max_unused_procs                         =  0
+  measure_all                              =  F
+  min_efficiency                           = -0.10000000000E+01
+  nstep_measure                            =  5
+  on                                       =  F
+  warm_up                                  =  F
+/
+
+&parameters
+  beta                                     =  0.00000000000E+00
+  k0                                       =  0.10000000000E+01
+  rhostar                                  =  0.30000000000E-02
+  teti                                     = -0.10000000000E+03
+  tite                                     =  0.10000000000E+01
+  user_comments                            =  ""
+  zeff                                     =  0.10000000000E+01
+/
+
+&parameter_scan_knobs
+  delta_t_inc                              =  0.00000000000E+00
+  delta_t_init                             =  0.00000000000E+00
+  inc_con                                  =  "delta_t"
+  nstep_inc                                =  0
+  nstep_init                               =  0
+  par_end                                  =  0.00000000000E+00
+  par_inc                                  =  0.00000000000E+00
+  par_start                                =  0.00000000000E+00
+  scan_par                                 =  "tprim"
+  scan_restarted                           =  F
+  scan_spec                                =  1
+  scan_type                                =  "none"
+  target_par                               =  "hflux_tot"
+  target_val                               =  0.00000000000E+00
+/
+
+&reinit_knobs
+  abort_rapid_time_step_change             =  T
+  delt_adj                                 =  0.20000000000E+01
+  delt_cushion                             =  0.15000000000E+01
+  delt_minimum                             =  0.10000000000E-05
+  dt0                                      =  0.50000000000E+00
+  in_memory                                =  F
+/
+
+&source_knobs
+  gamma0                                   =  0.00000000000E+00
+  omega0                                   =  0.00000000000E+00
+  phi_ext                                  =  0.00000000000E+00
+  source0                                  =  0.10000000000E+01
+  source_option                            =  "default"
+  t0                                       =  0.10000000000E+03
+/
+
+&species_knobs
+  me                                       = -0.10000000000E+01
+  nspec                                    =  1
+  zi_fac                                   = -0.10000000000E+01
+/
+
+&species_parameters_1
+  bess_fac                                 =  0.10000000000E+01
+  dens                                     =  0.10000000000E+01
+  dens0                                    =  0.10000000000E+01
+  f0type                                   =  "maxwellian"
+  fprim                                    =  0.10000000000E+01
+  mass                                     =  0.10000000000E+01
+  nu                                       = -0.10000000000E+01
+  nu_h                                     =  0.00000000000E+00
+  nustar                                   = -0.10000000000E+01
+  temp                                     =  0.10000000000E+01
+  tpar0                                    =  0.00000000000E+00
+  tperp0                                   =  0.00000000000E+00
+  tprim                                    =  0.30000000000E+01
+  type                                     =  "ion"
+  u0                                       =  0.10000000000E+01
+  uprim                                    =  0.00000000000E+00
+  uprim2                                   =  0.00000000000E+00
+  vcprim                                   = -0.99990000000E+03
+  vcrit                                    = -0.10000000000E+01
+  vnewk                                    =  0.10000000000E-01
+  z                                        =  0.10000000000E+01
+/
+
+&theta_grid_knobs
+  cvdriftknob                              =  0.10000000000E+01
+  equilibrium_option                       =  "file"
+  gb_to_cv                                 =  F
+  gbdriftknob                              =  0.10000000000E+01
+/
+
+&theta_grid_eik_knobs
+  alpha_input                              =  0.00000000000E+00
+  beta_prime_input                         =  0.00000000000E+00
+  bishop                                   =  5
+  chs_eq                                   =  F
+  delrho                                   =  0.10000000000E-02
+  dfit_eq                                  =  F
+  dp_mult                                  =  0.10000000000E+01
+  efit_eq                                  =  F
+  eqfile                                   =  "default_unset_value"
+  equal_arc                                =  T
+  gen_eq                                   =  F
+  gs2d_eq                                  =  F
+  idfit_eq                                 =  F
+  iflux                                    =  0
+  invlp_input                              =  0.00000000000E+00
+  irho                                     =  2
+  isym                                     =  0
+  itor                                     =  1
+  local_eq                                 =  T
+  ntheta_geometry                          = -1
+  ppl_eq                                   =  F
+  rmax                                     =  0.10000000000E+01
+  rmin                                     =  0.10000000000E-02
+  s_hat_input                              =  0.00000000000E+00
+  transp_eq                                =  F
+  writelots                                =  F
+/
+
+&theta_grid_file_knobs
+  gridout_file                             =  "grid_gs2-nfp4_QH_000_000031.out"
+  no_geo_info                              =  F
+/
+
+&theta_grid_gridgen_knobs
+  npadd                                    =  2
+  alknob                                   =  0.00000000000E+00
+  epsknob                                  =  0.10000000000E-04
+  bpknob                                   =  0.10000000000E-07
+  extrknob                                 =  0.00000000000E+00
+  skip_gridgen                             =  F
+  tension                                  =  0.10000000000E+01
+  thetamax                                 =  0.00000000000E+00
+  deltaw                                   =  0.00000000000E+00
+  widthw                                   =  0.10000000000E+01
+/
+
+&theta_grid_parameters
+  akappa                                   =  0.10000000000E+01
+  akappri                                  =  0.00000000000E+00
+  alpmhd                                   =  0.00000000000E+00
+  asurf                                    =  0.10000000000E+01
+  asym                                     =  0.00000000000E+00
+  asympri                                  =  0.00000000000E+00
+  btor_slab                                =  0.00000000000E+00
+  delta2                                   =  0.10000000000E+01
+  delta3                                   =  0.10000000000E+01
+  deltam                                   =  0.10000000000E+01
+  deltampri                                =  0.00000000000E+00
+  deltan                                   =  0.10000000000E+01
+  deltanpri                                =  0.00000000000E+00
+  eps                                      =  0.30000000000E+00
+  epsl                                     =  0.30000000000E+00
+  geotype                                  =  0
+  kp                                       = -0.10000000000E+01
+  mmode                                    =  2
+  nmode                                    =  3
+  nperiod                                  =  2
+  ntheta                                   =  24
+  pk                                       =  0.30000000000E+00
+  qinp                                     =  0.15000000000E+01
+  r_geo                                    =  0.30000000000E+01
+  raxis                                    =  0.30000000000E+01
+  rhoc                                     =  0.50000000000E+00
+  rmaj                                     =  0.30000000000E+01
+  shat                                     =  0.75000000000E+00
+  shift                                    =  0.00000000000E+00
+  shiftvert                                =  0.00000000000E+00
+  theta2                                   =  0.00000000000E+00
+  theta3                                   =  0.00000000000E+00
+  thetad                                   =  0.00000000000E+00
+  thetak                                   =  0.00000000000E+00
+  thetam                                   =  0.00000000000E+00
+  thetan                                   =  0.00000000000E+00
+  tri                                      =  0.00000000000E+00
+  tripri                                   =  0.00000000000E+00
+  zaxis                                    =  0.00000000000E+00
+/
+
+&theta_grid_salpha_knobs
+  alpha1                                   =  0.00000000000E+00
+  alpmhdfac                                =  0.00000000000E+00
+  model_option                             =  "default"
+/
+

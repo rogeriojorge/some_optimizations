@@ -24,22 +24,24 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # output_dir = 'test_out_nfp2_QA_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
 # output_dir = 'test_out_nfp2_QA_test'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-# output_dir = 'test_out_nfp4_QH_initial'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
-output_dir = 'test_out_nfp4_QH_test'
-nphi= 111
-nlambda = 21
-nperiod = 4.5
-nstep = 200
-dt = 0.4
-##
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+output_dir = 'test_out_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
+# output_dir = 'test_out_nfp4_QH_test'
+nphi= 121
+nlambda = 23
+nperiod = 4.0
+nstep = 280
+dt = 0.5
+aky_min = 0.2
+aky_max = 5.0
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 10
+negrid = 9
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
@@ -156,7 +158,7 @@ def gammabyky(stellFile,fractionToConsider=0.6):
     #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
     plt.savefig(stellFile+"_GammaOmegaKy.png")
     plt.close()
-    return kyX, growthRateX, realFrequencyX
+    return np.array(kyX), np.array(growthRateX), np.array(realFrequencyX)
 # Function to replace text in a file
 def replace(file_path, pattern, subst):
     fh, abs_path = mkstemp()
@@ -172,7 +174,7 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     gridout_file = os.path.join(OUT_DIR,f'grid_gs2_nphi{nphi}_nperiod{nperiod}.out')
     phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
     to_gs2(gridout_file, vmec, s_radius, alpha_fieldline, phi1d=phi_GS2, nlambda=nlambda)
-    gs2_input_name = f"gs2Input_nphi{nphi}_nperiod{nperiod}_nlambda{nlambda}negrid{negrid}ngauss{ngauss}_nstep{nstep}_dt{dt}_ln{LN}_lt{LT}"
+    gs2_input_name = f"gs2Input_nphi{nphi}_nperiod{nperiod}_nlambda{nlambda}negrid{negrid}ngauss{ngauss}_nstep{nstep}_dt{dt}_kymin{aky_min}_kymax{aky_max}_nky{naky}_ln{LN}_lt{LT}"
     gs2_input_file = os.path.join(OUT_DIR,f'{gs2_input_name}.in')
     shutil.copy(os.path.join(this_path,'gs2Input.in'),gs2_input_file)
     replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
@@ -180,6 +182,9 @@ def create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
     replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
     replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
+    replace(gs2_input_file,' aky_min = 0.4',f' aky_min = {aky_min}')
+    replace(gs2_input_file,' aky_max = 5.0',f' aky_max = {aky_max}')
+    replace(gs2_input_file,' naky = 4',f' naky = {naky}')
     replace(gs2_input_file,' ngauss = 3 ! Number of untrapped pitch-angles moving in one direction along field line.',
     f' ngauss = {ngauss} ! Number of untrapped pitch-angles moving in one direction along field line.')
     replace(gs2_input_file,' negrid = 10 ! Total number of energy grid points',
@@ -201,7 +206,10 @@ def remove_gs2_files(gs2_input_name):
     for f in glob.glob('*.optim'): remove(f)
     for f in glob.glob('*.out'): remove(f)
     for f in glob.glob('*.used_inputs.in'): remove(f)
+    for f in glob.glob('*.scratch'): remove(f)
     for f in glob.glob('*.vspace_integration_error'): remove(f)
+    ## REMOVE ALSO INPUT FILE
+    for f in glob.glob('*.in'): remove(f)
     ## REMOVE ALSO OUTPUT FILE
     for f in glob.glob('*.out.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
@@ -223,42 +231,54 @@ def run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     # growth_rate = np.max(np.array(netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r').variables['omega_average'][()])[-1,:,0,1])
     remove_gs2_files(gs2_input_name)
     output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, LN, LT)
-    return growth_rate
+    return growth_rate, np.sum(growthRateX/kyX)/naky
 ###
 ### Run GS2
 ###
 print('Starting GS2 runs')
 # Default run
-start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 # Double nphi
-nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nphi = 2*nphi-1;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 nphi = int((nphi+1)/2)
 # Double nperiod
-nperiod = int(2*nperiod);nphi = 2*nphi-1;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nperiod = int(2*nperiod);nphi = 2*nphi-1;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 nperiod = int(nperiod/2);nphi = int((nphi+1)/2)
 # Double nlambda
-nlambda = 2*nlambda;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nlambda = 2*nlambda;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 nlambda = int(nlambda/2)
 # Double nstep
-nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+nstep = 2*nstep;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 nstep = int(nstep/2)
 # Half dt
-dt = dt/2;nstep = 2*nstep;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+dt = dt/2;nstep = 2*nstep;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 dt = dt*2;nstep = int(nstep/2)
 # Double negrid
-negrid = 2*negrid;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+negrid = 2*negrid;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 negrid = int(negrid/2)
 # Double ngauss
-ngauss = 2*ngauss;start_time = time();growth_rate=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
-print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} growth_rate={growth_rate:1f} took {(time()-start_time):1f}s')
+ngauss = 2*ngauss;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
 ngauss = int(ngauss/2)
+# Half aky_min
+aky_min = aky_min/2;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
+aky_min = aky_min*2
+# Double aky_max
+aky_max = 2*aky_max;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
+aky_max = aky_max/2
+# Double naky
+naky = 2*naky;start_time = time();growth_rate, sum_gamma_o_ky=run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
+print(f'nphi={nphi} nperiod={nperiod} nlambda={nlambda} nstep={nstep} dt={dt} negrid={negrid} ngauss={ngauss} aky_min={aky_min} aky_max={aky_max} naky={naky} growth_rate={growth_rate:1f} sum(gamma/ky)={sum_gamma_o_ky:1f} took {(time()-start_time):1f}s')
+naky = int(naky/2)
 ###
 ### Plot result
 ###
