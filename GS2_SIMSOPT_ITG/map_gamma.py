@@ -13,6 +13,7 @@ from os import fdopen, remove
 import matplotlib.pyplot as plt
 from shutil import move, copymode
 from joblib import Parallel, delayed
+from quasilinear_estimate import quasilinear_estimate
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 import matplotlib
@@ -231,7 +232,7 @@ def run_gs2(ln, lt):
         eigenPlot(file2read)
         growth_rate, omega, ky = getgamma(file2read)
         kyX, growthRateX, realFrequencyX = gammabyky(file2read)
-        weighted_growth_rate = np.sum(growthRateX/kyX)/naky
+        weighted_growth_rate = np.sum(quasilinear_estimate(file2read))/naky
         output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt)
     except Exception as e:
         print(e)

@@ -23,6 +23,7 @@ from simsopt.solve import least_squares_mpi_solve
 from simsopt.mhd import QuasisymmetryRatioResidual
 from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import to_gs2
+from quasilinear_estimate import quasilinear_estimate
 from scipy.optimize import dual_annealing
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
@@ -187,7 +188,7 @@ def CalculateGrowthRate(v: Vmec):
             fitX  = np.polyfit(data_xX[startIndexX:], np.log(data_yX[startIndexX:]), 1)
             thisGrowthRateX  = fitX[0]/2
             growthRateX.append(thisGrowthRateX)
-        weighted_growth_rate = np.sum(np.array(growthRateX)/np.array(kyX))/naky
+        weighted_growth_rate = np.sum(quasilinear_estimate(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc")))/naky
 
         if not np.isfinite(qavg): qavg = HEATFLUX_THRESHOLD
         if not np.isfinite(growth_rate): growth_rate = HEATFLUX_THRESHOLD
