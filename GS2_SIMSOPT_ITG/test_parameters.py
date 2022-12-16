@@ -20,12 +20,12 @@ this_path = Path(__file__).parent.resolve()
 matplotlib.use('Agg') 
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-# output_dir = 'test_out_nfp2_QA_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
 # output_dir = 'test_out_nfp2_QA_test'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+# output_dir = 'test_out_nfp4_QH_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
 # output_dir = 'test_out_nfp4_QH_test'
 nphi= 121

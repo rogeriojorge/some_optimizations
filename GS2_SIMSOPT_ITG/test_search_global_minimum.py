@@ -21,9 +21,9 @@ from simsopt.mhd.vmec_diagnostics import to_gs2
 from simsopt.mhd import QuasisymmetryRatioResidual
 this_path = Path(__file__).parent.resolve()
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
-npoints_scan = 50
+npoints_scan = 350
 min_bound = -0.20
 max_bound = 0.20
 run_scan = True
@@ -37,7 +37,7 @@ nphi= 121
 nlambda = 23
 nperiod = 4.0
 nstep = 280
-dt = 0.5
+dt = 0.4
 aky_min = 0.2
 aky_max = 5.0
 naky = 8
@@ -245,11 +245,11 @@ if plot_result:
         fig = plt.figure()
         plt.plot(df_opt[f'x({vmec_index_scan_opt})'], df_opt['growth_rate'], 'ro', markersize=1, label='Optimizer')
         plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
-        plt.ylabel('Growth Rate');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_over_opt_scan.pdf')
+        plt.ylabel('Microstability Cost Function');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_over_opt_scan.pdf')
     except Exception as e: print(e)
     points_scan = np.linspace(min_bound,max_bound,len(df_scan[f'x({vmec_index_scan_opt})']))
     fig = plt.figure();plt.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], label='Scan')
-    plt.ylabel('Growth Rate');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_scan.pdf')
+    plt.ylabel('Microstability Cost Function');plt.xlabel('RBC(0,1)');plt.legend();plt.savefig('growth_rate_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['aspect'], label='Aspect ratio')
     plt.ylabel('Aspect ratio');plt.xlabel('RBC(0,1)');plt.savefig('aspect_ratio_scan.pdf')
     fig = plt.figure();plt.plot(points_scan, df_scan['mean_iota'], label='Rotational Transform (1/q)')
@@ -266,8 +266,8 @@ if plot_result:
     ax2=fig.add_subplot(111, label="2", frame_on=False)
     ax.set_xlabel('$RBC_{0,1}$', fontsize=20)
     ax.tick_params(axis='x', labelsize=14)
-    line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$\gamma$ ITG')
-    ax.set_ylabel("Growth Rate", color="C0", fontsize=20)
+    line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$f_\gamma$ ITG')
+    ax.set_ylabel("Microstability Cost Function", color="C0", fontsize=20)
     ax.tick_params(axis='y', colors="C0", labelsize=15)
     ax.set_xlim((min_bound,max_bound))
     ax.autoscale(enable=None, axis="y", tight=False)
