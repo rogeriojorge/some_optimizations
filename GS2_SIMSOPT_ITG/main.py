@@ -38,7 +38,7 @@ start_time = time.time()
 #### Input Parameters
 ############################################################################
 MAXITER = 350
-max_modes = [3]
+max_modes = [1,2,3]
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
@@ -47,20 +47,20 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 121
-nlambda = 23
+nphi= 71
+nlambda = 19
 nperiod = 4.0
-nstep = 280
-dt = 0.5
-aky_min = 0.2
-aky_max = 5.0
-naky = 8
+nstep = 200
+dt = 0.45
+aky_min = 0.1
+aky_max = 4.0
+naky = 10
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 9
+negrid = 8
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 if QA_or_QH=='QA':
@@ -76,9 +76,9 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 100
-diff_rel_step = 1e-2
-diff_abs_step = 1e-4
+weight_optTurbulence = 1e4
+diff_rel_step = 1e-3
+diff_abs_step = 1e-5
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
 no_local_search = False

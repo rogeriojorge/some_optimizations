@@ -19,8 +19,8 @@ optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
 
 plt_opt_res = False
-plot_vmec = True
-run_simple = False
+plot_vmec = False
+run_simple = True
 plot_loss_fractions = False
 
 MAXITER=350
@@ -41,9 +41,9 @@ mirror_weight = 1e1
 use_final = True
 use_previous_results_if_available = False
 
-nparticles = 1500  # number of particles
-tfinal = 1e-3  # seconds
-nsamples = 10000  # number of time steps
+nparticles = 2000  # number of particles
+tfinal = 1e-2  # seconds
+nsamples = 20000  # number of time steps
 #################################
 # if QA_or_QH == 'QA': nfp=2
 # elif QA_or_QH == 'QH': nfp=4
