@@ -13,29 +13,29 @@ from tempfile import mkstemp
 from os import fdopen, remove
 import matplotlib.pyplot as plt
 from shutil import move, copymode
-from joblib import Parallel, delayed
+from quasilinear_estimate import quasilinear_estimate
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 this_path = Path(__file__).parent.resolve()
 matplotlib.use('Agg') 
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-# output_dir = 'test_out_nfp2_QA_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+output_dir = 'test_out_nfp2_QA_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
 # output_dir = 'test_out_nfp2_QA_test'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+# output_dir = 'test_out_nfp4_QH_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
 # output_dir = 'test_out_nfp4_QH_test'
 nphi= 121
 nlambda = 23
 nperiod = 4.0
-nstep = 280
+nstep = 320
 dt = 0.5
-aky_min = 0.2
-aky_max = 5.0
-naky = 8
+aky_min = 0.1
+aky_max = 4.0
+naky = 10
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
@@ -225,13 +225,14 @@ def run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     gs2_input_name = create_gs2_inputs(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss)
     p = subprocess.Popen(f"{gs2_executable} {gs2_input_name}.in".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
-    eigenPlot(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"))
-    growth_rate, omega = getgamma(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"))
-    kyX, growthRateX, realFrequencyX = gammabyky(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"))
-    # growth_rate = np.max(np.array(netCDF4.Dataset(os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc"),'r').variables['omega_average'][()])[-1,:,0,1])
+    output_file = os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc")
+    eigenPlot(output_file)
+    growth_rate, omega = getgamma(output_file)
+    kyX, growthRateX, realFrequencyX = gammabyky(output_file)
+    # growth_rate = np.max(np.array(netCDF4.Dataset(output_file,'r').variables['omega_average'][()])[-1,:,0,1])
     remove_gs2_files(gs2_input_name)
     output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, LN, LT)
-    return growth_rate, np.sum(growthRateX/kyX)/naky
+    return growth_rate, np.sum(quasilinear_estimate(output_file))/naky#np.sum(growthRateX/kyX)/naky
 ###
 ### Run GS2
 ###

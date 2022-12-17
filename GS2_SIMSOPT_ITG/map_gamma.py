@@ -13,6 +13,7 @@ from os import fdopen, remove
 import matplotlib.pyplot as plt
 from shutil import move, copymode
 from joblib import Parallel, delayed
+from quasilinear_estimate import quasilinear_estimate
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 import matplotlib
@@ -26,13 +27,13 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
 # output_dir = 'out_map_nfp2_QA_QA_least_squares'
-# # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-# # output_dir = 'out_map_nfp2_QA_initial'
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+output_dir = 'out_map_nfp2_QA_initial'
 # phi_GS2 = np.linspace(-13*np.pi, 13*np.pi, 121)
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-output_dir = 'out_map_nfp4_QH_initial'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+# output_dir = 'out_map_nfp4_QH_initial'
 s_radius = 0.25
 alpha_fieldline = 0
 nphi= 121
@@ -50,8 +51,8 @@ alpha_fieldline = 0
 ngauss = 3
 negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
-LN_array = np.linspace(0.5,6,8)
-LT_array = np.linspace(0.5,6,8)
+LN_array = np.linspace(0.5,6,12)
+LT_array = np.linspace(0.5,6,12)
 n_processes_parallel = 4
 plot_extent_fix_gamma = True
 plot_gamma_min = 0
@@ -231,7 +232,7 @@ def run_gs2(ln, lt):
         eigenPlot(file2read)
         growth_rate, omega, ky = getgamma(file2read)
         kyX, growthRateX, realFrequencyX = gammabyky(file2read)
-        weighted_growth_rate = np.sum(growthRateX/kyX)/naky
+        weighted_growth_rate = np.sum(quasilinear_estimate(file2read))/naky
         output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt)
     except Exception as e:
         print(e)
