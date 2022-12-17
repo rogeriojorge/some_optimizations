@@ -4,7 +4,7 @@ import netCDF4
 import numpy as np
 import matplotlib.pyplot as plt
 
-def quasilinear_estimate(gs2File, fractionToConsider = 0.3,show=False):
+def quasilinear_estimate(gs2File, fractionToConsider = 0.3,show=False,savefig=False):
     # Read GS2 output file
     file2read = netCDF4.Dataset(gs2File,'r')
     # Index for the start of the fitting domain (fraction of time to consider)
@@ -45,6 +45,7 @@ def quasilinear_estimate(gs2File, fractionToConsider = 0.3,show=False):
         fig.set_size_inches(8.5, 5)
         # Plot growth rates
         ax[0].plot(ky, growthRates, label='$\gamma$')
+        ax[0].plot(ky, growthRates/ky, label='$\gamma/k_y$')
         ax[0].plot(ky, growthRates/ky/ky, label='$\gamma/k_y^2$')
         ax[0].plot(ky, weighted_gamma, label=r'$\gamma/\langle k_{\perp}^2 \rangle$')
         # Plot eigenfunctions
@@ -61,7 +62,9 @@ def quasilinear_estimate(gs2File, fractionToConsider = 0.3,show=False):
         ax[1].set_xlabel('$z$', fontsize=14)
         ax[1].legend(fontsize=10)
         plt.tight_layout()
-        plt.show()
+        if savefig: plt.savefig(gs2File+'_quasilinear.png')
+        else: plt.show()
+        plt.close()
     return weighted_gamma
 
 if __name__ == "__main__":

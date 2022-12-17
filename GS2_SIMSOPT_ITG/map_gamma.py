@@ -23,27 +23,27 @@ import matplotlib.cbook
 warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarning)
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
-gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
-# output_dir = 'out_map_nfp2_QA_QA_least_squares'
-vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-output_dir = 'out_map_nfp2_QA_initial'
-# phi_GS2 = np.linspace(-13*np.pi, 13*np.pi, 121)
+vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+output_dir = 'out_map_nfp2_QA_QA_least_squares'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+# output_dir = 'out_map_nfp2_QA_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'out_map_nfp4_QH_QH_least_squares'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
 # output_dir = 'out_map_nfp4_QH_initial'
 s_radius = 0.25
 alpha_fieldline = 0
-nphi= 121
-nlambda = 23
-nperiod = 4.0
-nstep = 280
-dt = 0.5
-aky_min = 0.2
-aky_max = 8.0
-naky = 8
+nphi= 165
+nlambda = 29
+nperiod = 6.0
+nstep = 300
+dt = 0.45
+aky_min = 0.1
+aky_max = 5.0
+naky = 12
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
@@ -51,13 +51,14 @@ alpha_fieldline = 0
 ngauss = 3
 negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
+## Ln, Lt, plotting options
 LN_array = np.linspace(0.5,6,12)
 LT_array = np.linspace(0.5,6,12)
 n_processes_parallel = 4
-plot_extent_fix_gamma = True
+plot_extent_fix_gamma = False
 plot_gamma_min = 0
 plot_gamma_max = 0.55
-plot_extent_fix_weighted_gamma = True
+plot_extent_fix_weighted_gamma = False
 plot_weighted_gamma_min = 0
 plot_weighted_gamma_max = 0.12
 ########################################
@@ -214,8 +215,8 @@ def run_gs2(ln, lt):
         replace(gs2_input_file,' gridout_file = "grid.out"',f' gridout_file = "grid_gs2.out"')
         replace(gs2_input_file,' nstep = 150',f' nstep = {nstep}')
         replace(gs2_input_file,' delt = 0.4 ! Time step',f' delt = {dt} ! Time step')
-        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {LN} ! -1/n (dn/drho)')
-        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {LT} ! -1/T (dT/drho)')
+        replace(gs2_input_file,' fprim = 1.0 ! -1/n (dn/drho)',f' fprim = {ln} ! -1/n (dn/drho)')
+        replace(gs2_input_file,' tprim = 3.0 ! -1/T (dT/drho)',f' tprim = {lt} ! -1/T (dT/drho)')
         replace(gs2_input_file,' aky_min = 0.4',f' aky_min = {aky_min}')
         replace(gs2_input_file,' aky_max = 5.0',f' aky_max = {aky_max}')
         replace(gs2_input_file,' naky = 4',f' naky = {naky}')
@@ -232,12 +233,12 @@ def run_gs2(ln, lt):
         eigenPlot(file2read)
         growth_rate, omega, ky = getgamma(file2read)
         kyX, growthRateX, realFrequencyX = gammabyky(file2read)
-        weighted_growth_rate = np.sum(quasilinear_estimate(file2read))/naky
+        weighted_growth_rate = np.sum(quasilinear_estimate(file2read,show=True,savefig=True))/naky
         output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt)
     except Exception as e:
         print(e)
         exit()
-    print(f'  LN={ln:1f}, LT={lt:1f}, growth rate={growth_rate:1f}, omega={omega:1f}, ky={ky:1f} took {(time()-start_time_local):1f}s')
+    print(f'  LN={ln:1f}, LT={lt:1f}, growth rate={growth_rate:1f}, omega={omega:1f}, ky={ky:1f}, weighted gamma={weighted_growth_rate:1f} took {(time()-start_time_local):1f}s')
     return growth_rate, omega, ky, weighted_growth_rate
 print('Starting GS2 scan')
 start_time = time()
@@ -283,7 +284,7 @@ plt.savefig(os.path.join(OUT_DIR,'gs2_scan_ky.pdf'), format='pdf', bbox_inches='
 
 fig=plt.figure();ax=plt.subplot(111);fig.set_size_inches(5.5, 5.5)
 im = plt.imshow(weighted_growth_rate_array, cmap='jet', extent=plotExtent, origin='lower', interpolation='hermite')
-clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma/k_y$', usetex=True)
+clb = plt.colorbar(im,fraction=0.046, pad=0.04);clb.ax.set_title(r'$\gamma/\langle k_{\perp}^2 \rangle$', usetex=True)
 plt.xlabel(r'$a/L_n$', fontsize=16);plt.ylabel(r'$a/L_T$', fontsize=16);#matplotlib.rc('font', size=20)
 if plot_extent_fix_weighted_gamma: plt.clim(plot_weighted_gamma_min,plot_weighted_gamma_max)
 plt.gca().set_aspect('equal')

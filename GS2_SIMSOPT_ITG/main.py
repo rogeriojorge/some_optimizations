@@ -38,9 +38,11 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
+# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
 max_modes = [1,2,3]
-QA_or_QH = 'QH'
+QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
@@ -48,10 +50,10 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 71
-nlambda = 19
-nperiod = 4.0
-nstep = 200
+nphi= 165
+nlambda = 29
+nperiod = 6.0
+nstep = 300
 dt = 0.45
 aky_min = 0.1
 aky_max = 4.0
@@ -87,7 +89,6 @@ output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
 aspect_ratio_weight = 1e+0
-gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'

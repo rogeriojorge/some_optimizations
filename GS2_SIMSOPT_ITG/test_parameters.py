@@ -22,18 +22,18 @@ matplotlib.use('Agg')
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
 output_dir = 'test_out_nfp2_QA_initial'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp2_QA/see_min/wout_nfp2_QA_000_000000.nc'
-# output_dir = 'test_out_nfp2_QA_test'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
 # output_dir = 'test_out_nfp4_QH_initial'
-# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_dual_annealing_nfp4_QH/see_min/wout_nfp4_QH_000_000000.nc'
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'test_out_nfp4_QH_test'
-nphi= 121
-nlambda = 23
-nperiod = 4.0
-nstep = 320
-dt = 0.5
-aky_min = 0.1
+# vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
+# output_dir = 'test_out_nfp2_QA_test'
+nphi= 165
+nlambda = 29
+nperiod = 6.0
+nstep = 300
+dt = 0.45
+aky_min = 0.2
 aky_max = 4.0
 naky = 10
 LN = 1.0
@@ -41,7 +41,7 @@ LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 9
+negrid = 8
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
@@ -213,9 +213,9 @@ def remove_gs2_files(gs2_input_name):
     ## REMOVE ALSO OUTPUT FILE
     for f in glob.glob('*.out.nc'): remove(f)
 # Function to output inputs and growth rates to a CSV file
-def output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, ln, lt):
-    keys=np.concatenate([['ln'],['lt'],['nphi'],['nperiod'],['nlambda'],['nstep'],['dt'],['growth_rate'],['negrid'],['ngauss']])
-    values=np.concatenate([[ln],[lt],[nphi],[nperiod],[nlambda],[nstep],[dt],[growth_rate],[negrid],[ngauss]])
+def output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, weighted_growth_rate, negrid, ngauss, dt, ln, lt):
+    keys=np.concatenate([['ln'],['lt'],['nphi'],['nperiod'],['nlambda'],['nstep'],['dt'],['growth_rate'], ['weighted_growth_rate'],['negrid'],['ngauss']])
+    values=np.concatenate([[ln],[lt],[nphi],[nperiod],[nlambda],[nstep],[dt],[growth_rate],[weighted_growth_rate],[negrid],[ngauss]])
     dictionary = dict(zip(keys, values))
     df = pd.DataFrame(data=[dictionary])
     if not os.path.exists(output_csv): pd.DataFrame(columns=df.columns).to_csv(output_csv, index=False)
@@ -230,9 +230,10 @@ def run_gs2(nphi, nperiod, nlambda, nstep, dt, negrid, ngauss):
     growth_rate, omega = getgamma(output_file)
     kyX, growthRateX, realFrequencyX = gammabyky(output_file)
     # growth_rate = np.max(np.array(netCDF4.Dataset(output_file,'r').variables['omega_average'][()])[-1,:,0,1])
+    weighted_growth_rate = np.sum(quasilinear_estimate(output_file,show=True,savefig=True))/naky
     remove_gs2_files(gs2_input_name)
-    output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, negrid, ngauss, dt, LN, LT)
-    return growth_rate, np.sum(quasilinear_estimate(output_file))/naky#np.sum(growthRateX/kyX)/naky
+    output_to_csv(nphi, nperiod, nlambda, nstep, growth_rate, weighted_growth_rate, negrid, ngauss, dt, LN, LT)
+    return growth_rate, weighted_growth_rate#np.sum(growthRateX/kyX)/naky
 ###
 ### Run GS2
 ###

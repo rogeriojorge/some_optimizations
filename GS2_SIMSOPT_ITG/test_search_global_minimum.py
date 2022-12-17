@@ -22,7 +22,10 @@ from simsopt.mhd.vmec_diagnostics import to_gs2
 from simsopt.mhd import QuasisymmetryRatioResidual
 this_path = Path(__file__).parent.resolve()
 
-initial_config = 'input.nfp2_QA'# 'input.nfp2_QA' #'input.nfp4_QH'
+# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
+
+initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 npoints_scan = 350
 min_bound = -0.20
@@ -37,11 +40,11 @@ alpha_fieldline = 0
 nphi= 121
 nlambda = 23
 nperiod = 4.0
-nstep = 280
+nstep = 320
 dt = 0.4
-aky_min = 0.2
-aky_max = 5.0
-naky = 8
+aky_min = 0.1
+aky_max = 4.0
+naky = 12
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
@@ -61,8 +64,6 @@ MAXFUN_LOCAL = 5
 output_path_parameters_opt = 'opt_dofs_loss.csv'
 output_path_parameters_scan = 'scan_dofs_loss.csv'
 output_path_parameters_min = 'min_dofs_loss.csv'
-
-gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
 
