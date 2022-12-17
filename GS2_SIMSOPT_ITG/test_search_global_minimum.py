@@ -20,12 +20,17 @@ from quasilinear_estimate import quasilinear_estimate
 from simsopt import make_optimizable
 from simsopt.mhd.vmec_diagnostics import to_gs2
 from simsopt.mhd import QuasisymmetryRatioResidual
+import argparse
 this_path = Path(__file__).parent.resolve()
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
 
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 
-initial_config = 'input.nfp4_QH'# 'input.nfp2_QA' #'input.nfp4_QH'
+if args.type == 1: initial_config = 'input.nfp4_QH'
+else: initial_config = 'input.nfp2_QA'
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 npoints_scan = 350
 min_bound = -0.20
