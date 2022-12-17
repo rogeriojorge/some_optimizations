@@ -25,11 +25,15 @@ from simsopt.objectives import LeastSquaresProblem
 from simsopt.mhd.vmec_diagnostics import to_gs2
 from quasilinear_estimate import quasilinear_estimate
 from scipy.optimize import dual_annealing
+import argparse
 mpi = MpiPartition()
 this_path = Path(__file__).parent.resolve()
 def pprint(*args, **kwargs):
     if MPI.COMM_WORLD.rank == 0:
         print(*args, **kwargs)
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
 start_time = time.time()
 #########
 ## FOR GS2 to work with SIMSOPT's MPI, USE_MPI should be undefined during GS2's compilation
@@ -42,7 +46,8 @@ start_time = time.time()
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
 max_modes = [1,2,3]
-QA_or_QH = 'QA'
+if args.type == 1: QA_or_QH = 'QH'
+else: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
