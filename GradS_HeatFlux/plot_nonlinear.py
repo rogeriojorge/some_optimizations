@@ -14,12 +14,12 @@ warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarnin
 file_labels = (['056','061'])
 folders = (['nonlinear_056_LN1.0_LT3.0','nonlinear_061_LN1.0_LT3.0'])
 
-file_suffix = 'nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx140_y015.0.nc'
+file_suffix = 'nzgrid151_npol5_nstep320000_dt0.05_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny80_nx140_y015.0.nc'
 
 fig= plt.figure(figsize = (8, 4), dpi = 200);ax=plt.subplot(111)
 for i, (label, folder) in enumerate(zip(file_labels,folders)):
-    if label=='056':fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-056_desc_optimize_QA_magwell_maxmode5_nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx140_y015.0.nc'),'r',mmap=False)
-    else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-061_desc_optimize_QA_magwell_grad_rho_threshold_2.5_maxmode5_nzgrid121_npol4_nstep200000_dt0.25_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny100_nx140_y015.0.nc'),'r',mmap=False)
+    if label=='056':fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-056_desc_optimize_QA_magwell_maxmode5_{file_suffix}'),'r',mmap=False)
+    else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_20221118-01-061_desc_optimize_QA_magwell_grad_rho_threshold_2.5_maxmode5_{file_suffix}'),'r',mmap=False)
     time  = np.array(fX.variables['time'][:])
     qflux = np.array(fX.groups['Fluxes'].variables['qflux'][:,0])
     plt.plot(time,qflux,label=label)
