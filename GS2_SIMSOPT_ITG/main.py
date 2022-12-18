@@ -42,8 +42,8 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
-# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
+gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+# gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
 max_modes = [1,2,3]
 if args.type == 1: QA_or_QH = 'QH'
