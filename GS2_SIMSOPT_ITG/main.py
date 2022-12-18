@@ -50,6 +50,7 @@ if args.type == 1: QA_or_QH = 'QH'
 else: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
+opt_turbulence = True
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 
 s_radius = 0.25
@@ -60,7 +61,7 @@ nlambda = 29
 nperiod = 6.0
 nstep = 300
 dt = 0.45
-aky_min = 0.1
+aky_min = 0.2
 aky_max = 4.0
 naky = 10
 LN = 1.0
@@ -84,9 +85,9 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 1e4
-diff_rel_step = 1e-3
-diff_abs_step = 1e-5
+weight_optTurbulence = 1e2
+diff_rel_step = 1e-2
+diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
 no_local_search = False
@@ -98,6 +99,7 @@ aspect_ratio_weight = 1e+0
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
+if not opt_turbulence:  OUT_DIR_APPENDIX+=f'_onlyQS'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
@@ -314,7 +316,7 @@ for max_mode in max_modes:
     dofs=surf.x
     ######################################  
     opt_tuple = [(vmec.aspect, aspect_ratio_target, aspect_ratio_weight)]
-    opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
+    if opt_turbulence: opt_tuple.append((optTurbulence.J, 0, weight_optTurbulence))
     if initial_config[-2:] == 'QA': qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=0)
     else: qs = QuasisymmetryRatioResidual(vmec, np.arange(0, 1.01, 0.1), helicity_m=1, helicity_n=-1)    
     if opt_quasisymmetry: opt_tuple.append((qs.residuals, 0, 1))

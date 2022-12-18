@@ -32,7 +32,7 @@ else:
     nfp=4
     aspect_target = 8.0
 
-if quasisymmetry: quasisymmetry_weight=1e-1
+if quasisymmetry: quasisymmetry_weight=1e-3
 else: quasisymmetry_weight=1e-8
 
 
