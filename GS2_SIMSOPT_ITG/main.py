@@ -46,20 +46,21 @@ gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
 max_modes = [1,2,3]
-if args.type == 1: QA_or_QH = 'QH'
-else: QA_or_QH = 'QA'
+if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
+elif args.type == 2 or args.type == 4: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 opt_quasisymmetry = True
-opt_turbulence = True
+if   args.type == 1 or args.type == 2: opt_turbulence = True
+elif args.type == 3 or args.type == 4: opt_turbulence = False
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 131
-nlambda = 33
+nphi= 141
+nlambda = 35
 nperiod = 5.0
-nstep = 320
+nstep = 330
 dt = 0.4
 aky_min = 0.2
 aky_max = 4.0
@@ -69,7 +70,7 @@ LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 8
+negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 if QA_or_QH=='QA':
@@ -85,8 +86,8 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 1e2
-diff_rel_step = 1e-2
+weight_optTurbulence = 1e+1
+diff_rel_step = 1e-1
 diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
@@ -100,6 +101,7 @@ aspect_ratio_weight = 1e+0
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 if not opt_turbulence:  OUT_DIR_APPENDIX+=f'_onlyQS'
+else: OUT_DIR_APPENDIX+=f'_qlweight{weight_optTurbulence:.3f}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
 ######################################
