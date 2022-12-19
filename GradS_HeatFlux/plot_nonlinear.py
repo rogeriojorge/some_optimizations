@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarnin
 file_labels = (['056','061'])
 folders = (['nonlinear_056_LN1.0_LT3.0','nonlinear_061_LN1.0_LT3.0'])
 
-file_suffix = 'nzgrid151_npol5_nstep320000_dt0.05_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny80_nx140_y015.0.nc'
+file_suffix = 'nzgrid151_npol5_nstep320000_dt0.1_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny90_nx140_y018.0.nc'
 
 fig= plt.figure(figsize = (8, 4), dpi = 200);ax=plt.subplot(111)
 for i, (label, folder) in enumerate(zip(file_labels,folders)):
