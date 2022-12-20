@@ -42,8 +42,8 @@ start_time = time.time()
 ############################################################################
 #### Input Parameters
 ############################################################################
-gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-# gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
+# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
 max_modes = [1,2,3]
 if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
@@ -57,14 +57,14 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 141
+nphi= 151
 nlambda = 35
-nperiod = 5.0
+nperiod = 5.5
 nstep = 330
 dt = 0.4
 aky_min = 0.2
 aky_max = 4.0
-naky = 8
+naky = 10 
 LN = 1.0
 LT = 3.0
 s_radius = 0.25

@@ -1,0 +1,242 @@
+Initial aspect ratio: 8.032497901971649
+Initial mean iota: -0.9073720911454474
+Initial magnetic well: -0.11350709579869207
+Initial growth rate: 0.13153976635326048
+## Now calculating total objective function ##
+Total objective before optimization: 0.1415420609155772
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         7.0771e-02                                    1.17e-02    
+       1             11         7.0771e-02      6.31e-13       4.75e-09       1.17e-02    
+       2             12         7.0771e-02      0.00e+00       0.00e+00       1.17e-02    
+`xtol` termination condition is satisfied.
+Function evaluations 12, initial cost 7.0771e-02, final cost 7.0771e-02, first-order optimality 1.17e-02.
+Final aspect ratio: 8.032497888525569
+Final mean iota: -0.9073720904086184
+Final magnetic well: -0.11350709468363236
+Final quasisymmetry: 0.14048594815569554
+Final growth rate: 0.13154021993341647
+## Now calculating total objective function ##
+Total objective before optimization: 0.14154206091431534
+-------------------------
+Optimizing with max_mode = 2
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         7.0771e-02                                    5.56e+00    
+       1              3         2.9792e-02      4.10e-02       1.92e-02       3.01e+01    
+       2              4         8.4531e-03      2.13e-02       1.92e-02       6.29e+00    
+       3              6         5.6980e-03      2.76e-03       9.60e-03       3.64e+00    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+       4              8         4.6619e-03      1.04e-03       4.80e-03       7.02e+12    
+       5              9         4.3096e-03      3.52e-04       9.60e-03       5.29e+00    
+       6             10         3.1189e-03      1.19e-03       2.40e-03       9.98e-01    
+       7             11         2.8186e-03      3.00e-04       4.80e-03       3.07e+00    
+       8             12         2.3583e-03      4.60e-04       4.80e-03       6.38e-01    
+       9             14         2.2107e-03      1.48e-04       2.40e-03       2.18e-01    
+      10             15         2.1031e-03      1.08e-04       2.40e-03       4.52e-01    
+      11             16         2.0523e-03      5.08e-05       2.40e-03       2.78e-01    
+      12             17         1.9244e-03      1.28e-04       2.40e-03       2.88e-01    
+      13             18         1.7800e-03      1.44e-04       4.80e-03       1.44e+00    
+      14             20         1.6688e-03      1.11e-04       2.40e-03       5.81e-01    
+      15             21         1.6119e-03      5.69e-05       4.80e-03       2.20e+00    
+      16             22         1.5280e-03      8.39e-05       4.80e-03       2.51e+00    
+      17             23         1.4582e-03      6.98e-05       4.80e-03       2.27e+00    
+      18             24         1.4272e-03      3.09e-05       4.80e-03       2.15e+00    
+      19             25         1.1760e-03      2.51e-04       1.20e-03       5.09e-01    
+      20             27         1.1575e-03      1.85e-05       6.00e-04       2.38e-01    
+      21             28         1.1511e-03      6.41e-06       1.20e-03       4.80e-01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      22             29         1.1361e-03      1.50e-05       1.20e-03       1.85e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      23             30         1.1223e-03      1.37e-05       1.20e-03       7.18e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      24             31         1.1140e-03      8.37e-06       1.20e-03       8.95e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      25             32         1.1086e-03      5.37e-06       1.20e-03       1.05e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      26             33         1.1029e-03      5.72e-06       1.20e-03       8.72e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      27             34         1.0994e-03      3.44e-06       1.20e-03       1.19e+11    
+      28             35         1.0924e-03      7.01e-06       1.20e-03       1.78e-01    
+      29             37         1.0811e-03      1.13e-05       6.00e-04       1.80e-01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      30             38         1.0774e-03      3.72e-06       1.20e-03       2.18e+11    
+      31             39         1.0671e-03      1.03e-05       1.20e-03       4.79e-01    
+      32             40         1.0551e-03      1.20e-05       1.20e-03       5.05e-01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      33             41         1.0463e-03      8.84e-06       1.20e-03       1.33e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      34             42         1.0384e-03      7.84e-06       1.20e-03       8.59e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      35             43         1.0279e-03      1.05e-05       1.20e-03       1.08e+11    
+      36             44         1.0199e-03      7.96e-06       1.20e-03       3.69e-01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      37             45         1.0191e-03      8.55e-07       1.20e-03       3.40e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=5 ntor=5)>
+      38             48         1.0136e-03      5.45e-06       1.87e-05       1.84e+11    
+      39             49         1.0131e-03      5.45e-07       3.75e-05       8.68e-02    
+      40             50         1.0129e-03      1.24e-07       3.75e-05       1.27e-02    
+      41             54         1.0129e-03      1.16e-09       5.86e-07       5.02e-03    
+      42             58         1.0129e-03      0.00e+00       0.00e+00       5.02e-03    
+`xtol` termination condition is satisfied.
+Function evaluations 58, initial cost 7.0771e-02, final cost 1.0129e-03, first-order optimality 5.02e-03.
+Final aspect ratio: 8.000595255065027
+Final mean iota: -1.150370383460954
+Final magnetic well: -0.009352211933283436
+Final quasisymmetry: 0.002025520272315244
+Final growth rate: 0.213139647360872
+## Now calculating total objective function ##
+Total objective before optimization: 0.002025874600907677
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.0129e-03                                    2.92e+00    
+       1              3         5.8830e-04      4.25e-04       9.85e-03       3.42e+00    
+       2              4         3.9799e-04      1.90e-04       9.85e-03       3.89e+00    
+       3              6         2.2526e-04      1.73e-04       2.46e-03       1.27e+00    
+       4              7         1.4335e-04      8.19e-05       2.46e-03       5.88e-01    
+       5              9         1.3886e-04      4.49e-06       6.16e-04       1.95e-01    
+       6             11         1.3815e-04      7.09e-07       3.85e-05       7.38e-02    
+       7             12         1.3792e-04      2.30e-07       9.62e-06       7.20e-02    
+       8             13         1.3785e-04      7.01e-08       2.40e-06       6.89e-02    
+       9             14         1.3784e-04      1.30e-08       6.01e-07       6.87e-02    
+      10             15         1.3783e-04      3.06e-09       1.50e-07       6.87e-02    
+      11             16         1.3783e-04      7.56e-10       3.76e-08       6.87e-02    
+      12             17         1.3783e-04      1.88e-10       9.39e-09       6.87e-02    
+      13             18         1.3783e-04      4.70e-11       2.35e-09       6.87e-02    
+`xtol` termination condition is satisfied.
+Function evaluations 18, initial cost 1.0129e-03, final cost 1.3783e-04, first-order optimality 6.87e-02.
+Final aspect ratio: 8.000121228284964
+Final mean iota: -1.1885751196260828
+Final magnetic well: -0.006007511605753789
+Final quasisymmetry: 0.0002756522370476819
+Final growth rate: 0.19757632632845984
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER:    OS:    RELEASE:   DATE = Dec 19,2022  TIME = 22:31:44
+
+  NS =   16 NO. FOURIER MODES =   50 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =    1.0061848113200369       0.19785943283121374        1.5125063274992502E-002  -3.3723977937502154E-003  -3.4907933110719594E-004   6.6906532775511411E-004
+      ZAXIS_CS =   -0.0000000000000000       0.15003970827703425        8.1580855558597842E-003  -2.4358824759727442E-003   1.1501994003146594E-003   1.8333680031686862E-003
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  3.59E-02  2.94E-02  3.21E-02  1.216E+00  9.00E-01  1.8232E-01
+  200  8.47E-09  4.37E-09  2.98E-09  1.208E+00  7.29E-01  1.7806E-01
+  400  1.11E-10  5.90E-11  5.43E-11  1.208E+00  7.29E-01  1.7805E-01
+  600  5.74E-12  2.72E-12  4.13E-12  1.208E+00  7.29E-01  1.7805E-01
+  694  9.94E-13  5.11E-13  8.91E-13  1.208E+00  7.29E-01  1.7805E-01
+
+  NS =   51 NO. FOURIER MODES =   50 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.46E-02  3.57E-03  8.05E-06  1.208E+00  9.00E-01  1.7806E-01
+  200  9.84E-09  5.12E-09  1.12E-10  1.208E+00  6.00E-01  1.7806E-01
+  400  1.11E-10  3.61E-11  6.11E-12  1.208E+00  6.00E-01  1.7806E-01
+  600  6.62E-12  2.61E-12  1.25E-12  1.208E+00  6.00E-01  1.7806E-01
+  800  8.16E-13  3.79E-13  1.62E-13  1.208E+00  6.00E-01  1.7806E-01
+ 1000  1.21E-13  4.70E-14  1.64E-14  1.208E+00  6.00E-01  1.7806E-01
+ 1025  9.48E-14  3.96E-14  1.46E-14  1.208E+00  6.00E-01  1.7806E-01
+
+  NS =  101 NO. FOURIER MODES =   50 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.25E-02  2.60E-03  8.96E-08  1.208E+00  9.00E-01  1.7806E-01
+  200  8.37E-09  9.10E-09  4.38E-12  1.208E+00  4.86E-01  1.7806E-01
+  400  8.07E-11  4.96E-11  3.04E-13  1.208E+00  4.86E-01  1.7806E-01
+  600  3.76E-11  2.15E-11  8.36E-14  1.208E+00  4.86E-01  1.7806E-01
+  800  1.23E-12  8.40E-13  2.58E-14  1.208E+00  4.86E-01  1.7806E-01
+ 1000  1.39E-12  5.34E-13  7.83E-15  1.208E+00  4.86E-01  1.7806E-01
+ 1200  4.47E-13  1.49E-13  1.55E-15  1.208E+00  4.86E-01  1.7806E-01
+ 1400  7.02E-14  2.94E-14  6.71E-16  1.208E+00  4.86E-01  1.7806E-01
+ 1600  1.63E-14  5.19E-15  2.30E-16  1.208E+00  4.86E-01  1.7806E-01
+ 1655  9.99E-15  3.40E-15  1.56E-16  1.208E+00  4.86E-01  1.7806E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    5
+
+    TOTAL COMPUTATIONAL TIME (SEC)        16.27
+    TIME TO INPUT/OUTPUT                   0.02
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.02
+    TIME IN FUNCT3D                       16.16
+       BCOVAR FIELDS                       2.43
+       FOURIER TRANSFORM                   3.09
+       INVERSE FOURIER TRANSFORM           2.80
+       FORCES AND SYMMETRIZE               2.88
+       RESIDUE                             3.55
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  5
+ntor:  5
+Aminor_p:  0.12466629124237082
+Rmajor_p:  0.997345443019643
+aspect:             8.000121228284934
+Rmajor_p/Aminor_p:  8.000121228284934
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    2.4123498337802474e-11
+bmnc.shape: (101, 128)
+bmns.shape: (101, 128)
+No module named 'mayavi'
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 50  len(xm): 50  len(xn): 50
+mnmax_nyq: 128  len(xm_nyq): 128  len(xn_nyq): 128
+Read ns=101, mpol=5, ntor=5, mnmax=50, mnmax_nyq=128
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 24
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   5     5  49   0  9.746e-01  9.746e-01  3.873e-15  1.208e+00  1.208e+00  1.158e-14
+                pi  1.207e+00  1.207e+00  1.269e-14  9.753e-01  9.753e-01  1.002e-14
+   0     0   0   0  1.069e+00  1.069e+00  1.475e-14  1.092e+00  1.092e+00  2.094e-14
+                pi  1.092e+00  1.092e+00  3.865e-15  1.068e+00  1.068e+00  6.443e-15
+   6     6  60   0  9.645e-01  9.645e-01  3.039e-14  1.223e+00  1.223e+00  1.126e-14
+                pi  1.221e+00  1.221e+00  4.000e-15  9.648e-01  9.648e-01  2.624e-14
+   7     7  70   0  9.563e-01  9.563e-01  5.341e-15  1.236e+00  1.236e+00  3.360e-14
+                pi  1.233e+00  1.233e+00  1.423e-14  9.561e-01  9.561e-01  1.161e-14
+   3     3  30   0  9.959e-01  9.959e-01  2.007e-15  1.178e+00  1.178e+00  3.072e-14
+                pi  1.178e+00  1.178e+00  4.711e-15  9.966e-01  9.966e-01  3.075e-14
+   8     8  79   0  9.494e-01  9.494e-01  3.157e-15  1.247e+00  1.247e+00  1.354e-14
+                pi  1.242e+00  1.242e+00  5.005e-15  9.487e-01  9.487e-01  5.266e-15
+   1     1  10   0  1.029e+00  1.029e+00  1.941e-15  1.136e+00  1.136e+00  3.695e-14
+                pi  1.136e+00  1.136e+00  8.015e-15  1.030e+00  1.030e+00  2.437e-14
+   2     2  20   0  1.010e+00  1.010e+00  8.132e-15  1.159e+00  1.159e+00  2.049e-14
+                pi  1.160e+00  1.160e+00  2.489e-15  1.011e+00  1.011e+00  3.449e-14
+   9     9  89   0  9.424e-01  9.424e-01  1.343e-14  1.258e+00  1.258e+00  5.470e-15
+                pi  1.252e+00  1.252e+00  1.507e-14  9.409e-01  9.409e-01  1.345e-14
+   4     4  39   0  9.851e-01  9.851e-01  9.805e-15  1.193e+00  1.193e+00  2.420e-15
+                pi  1.193e+00  1.193e+00  2.420e-15  9.859e-01  9.859e-01  1.746e-14
+Writing output to /marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+Whole optimization took 1676.172625s
