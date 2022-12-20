@@ -1,0 +1,12 @@
+Starting GS2 runs
+nphi=151 nperiod=5.5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.186607 sum(gamma/ky)=0.277227 took 107.704516s
+nphi=301 nperiod=5.5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.187214 sum(gamma/ky)=0.277360 took 247.754182s
+nphi=301 nperiod=11 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.186439 sum(gamma/ky)=0.278031 took 247.670872s
+nphi=151 nperiod=5 nlambda=70 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.187629 sum(gamma/ky)=0.278739 took 222.884443s
+nphi=151 nperiod=5 nlambda=35 nstep=660 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.188798 sum(gamma/ky)=0.276348 took 194.080074s
+nphi=151 nperiod=5 nlambda=35 nstep=660 dt=0.2 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.188245 sum(gamma/ky)=0.276672 took 194.385568s
+nphi=151 nperiod=5 nlambda=35 nstep=330 dt=0.4 negrid=18 ngauss=3 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.187939 sum(gamma/ky)=0.276593 took 217.248945s
+nphi=151 nperiod=5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=6 aky_min=0.2 aky_max=4.0 naky=10 growth_rate=0.187627 sum(gamma/ky)=0.275928 took 123.075095s
+nphi=151 nperiod=5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.1 aky_max=4.0 naky=10 growth_rate=0.181482 sum(gamma/ky)=0.362659 took 107.298356s
+nphi=151 nperiod=5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=8.0 naky=10 growth_rate=0.186632 sum(gamma/ky)=0.230678 took 106.690107s
+nphi=151 nperiod=5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.2 aky_max=4.0 naky=20 growth_rate=0.186529 sum(gamma/ky)=0.276365 took 216.023580s
