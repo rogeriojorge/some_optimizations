@@ -4,7 +4,7 @@ import sys
 import shutil
 import numpy as np
 import pandas as pd
-from subprocess import run
+import subprocess
 import matplotlib.pyplot as plt
 from simsopt.mhd import Vmec, Boozer
 from simsopt.mhd import QuasisymmetryRatioResidual
@@ -17,12 +17,13 @@ max_mode = 3
 QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
-opt_turbulence = True
+opt_turbulence = False
 
-plt_opt_res = True
-plot_vmec = True
-run_simple = True
+plt_opt_res = False
+plot_vmec = False
+run_simple = False
 plot_loss_fractions = False
+plot_neo = True
 
 MAXITER=350
 
@@ -251,3 +252,35 @@ if plot_loss_fractions:
     plt.tight_layout()
     plt.savefig('loss_fractions.pdf')
     plt.close()
+
+if plot_neo:
+    neo_executable = '/Users/rogeriojorge/local/STELLOPT/NEO/Release/xneo'
+    booz_file = "boozmn_out.nc"
+    neo_in_file = "../../neo_in.out"
+
+    shutil.copyfile(neo_in_file,'neo_in.out')
+    bashCommand = f'{neo_executable} out'
+    run_neo = subprocess.Popen(bashCommand.split())
+    run_neo.wait()
+
+    token = open('neo_out.out','r')
+    linestoken=token.readlines()
+    eps_eff=[]
+    s_radial=[]
+    for x in linestoken:
+        s_radial.append(float(x.split()[0])/150)
+        eps_eff.append(float(x.split()[1])**(2/3))
+    token.close()
+    s_radial = np.array(s_radial)
+    eps_eff = np.array(eps_eff)
+    s_radial = s_radial[np.argwhere(~np.isnan(eps_eff))[:,0]]
+    eps_eff = eps_eff[np.argwhere(~np.isnan(eps_eff))[:,0]]
+    fig = plt.figure(figsize=(7, 3), dpi=200)
+    ax = fig.add_subplot(111)
+    plt.plot(s_radial,eps_eff, label='eps eff '+QA_or_QH)
+    ax.set_yscale('log')
+    plt.xlabel(r'$s=\psi/\psi_b$', fontsize=12)
+    plt.ylabel(r'$\epsilon_{eff}$', fontsize=14)
+
+    plt.tight_layout()
+    fig.savefig('neo_out_'+QA_or_QH+'.pdf', dpi=fig.dpi)#, bbox_inches = 'tight', pad_inches = 0)
