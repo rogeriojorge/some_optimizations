@@ -86,7 +86,7 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 3e+2
+weight_optTurbulence = 1e+2
 diff_rel_step = 5e-2
 diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
@@ -386,3 +386,19 @@ if plot_result and MPI.COMM_WORLD.rank==0:
 ##############################################################################
 ##############################################################################
 pprint(f'Whole optimization took {(time.time()-start_time):1f}s')
+
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"objective_*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"residuals_*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"jac_*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"wout_nfp*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"input.nfp*")): os.remove(objective_file)
+except Exception as e: pass
