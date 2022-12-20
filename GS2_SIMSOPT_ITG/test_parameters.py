@@ -28,20 +28,20 @@ output_dir = 'test_out_nfp4_QH_initial'
 # output_dir = 'test_out_nfp4_QH_test'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
 # output_dir = 'test_out_nfp2_QA_test'
-nphi= 131
-nlambda = 33
-nperiod = 5.0
-nstep = 320
+nphi= 151
+nlambda = 35
+nperiod = 5.5
+nstep = 330
 dt = 0.4
 aky_min = 0.2
 aky_max = 4.0
-naky = 8
+naky = 10 
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
-ngauss = 4
-negrid = 10
+ngauss = 3
+negrid = 9
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,f'{output_dir}_ln{LN}_lt{LT}')
