@@ -13,8 +13,8 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 3
-QA_or_QH = 'QA'
+max_mode = 4
+QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
 opt_turbulence = False
@@ -22,7 +22,7 @@ opt_turbulence = False
 plt_opt_res = False
 plot_vmec = False
 run_simple = False
-plot_loss_fractions = False
+plot_loss_fractions = True
 plot_neo = True
 
 MAXITER=350
@@ -234,19 +234,19 @@ if run_simple:
     np.savetxt(datafile_path, data, fmt=['%s','%s'])
 
 if plot_loss_fractions:
-    initial_loss_fractions = np.loadtxt('../../loss_history_QH_nfp4_initial.dat')
-    initial_loss_fractions_time = initial_loss_fractions[:,0]
-    initial_loss_fractions = initial_loss_fractions[:,1]
+    # initial_loss_fractions = np.loadtxt('../../loss_history_QH_nfp4_initial.dat')
+    # initial_loss_fractions_time = initial_loss_fractions[:,0]
+    # initial_loss_fractions = initial_loss_fractions[:,1]
     final_loss_fractions   = np.loadtxt('loss_history.dat')
     final_loss_fractions_time = final_loss_fractions[:,0]
     final_loss_fractions = final_loss_fractions[:,1]
     fig = plt.figure()
     ax = plt.subplot(111)
-    plt.plot(initial_loss_fractions_time,initial_loss_fractions,label='QH initial')
+    # plt.plot(initial_loss_fractions_time,initial_loss_fractions,label='QH initial')
     plt.plot(final_loss_fractions_time,final_loss_fractions,label='QH final')
     plt.ylabel('Loss fraction', fontsize=22)
     plt.xlabel('Time (s)', fontsize=22)
-    plt.legend(fontsize=18)
+    # plt.legend(fontsize=18)
     ax.tick_params(axis='x', labelsize=16)
     ax.tick_params(axis='y', labelsize=16)
     plt.tight_layout()
