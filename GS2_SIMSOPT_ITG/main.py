@@ -86,8 +86,8 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 1e+1
-diff_rel_step = 1e-1
+weight_optTurbulence = 5e+1
+diff_rel_step = 3e-2
 diff_abs_step = 1e-4
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
@@ -101,9 +101,10 @@ aspect_ratio_weight = 1e+0
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 if not opt_turbulence:  OUT_DIR_APPENDIX+=f'_onlyQS'
-else: OUT_DIR_APPENDIX+=f'_qlweight{weight_optTurbulence:.3f}'
+# else: OUT_DIR_APPENDIX+=f'_qlweight{weight_optTurbulence:.3f}'
 OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
 os.makedirs(OUT_DIR, exist_ok=True)
+shutil.copyfile(os.path.join(this_path,'main.py'),os.path.join(OUT_DIR,'main.py'))
 ######################################
 dest = os.path.join(OUT_DIR,OUT_DIR_APPENDIX+'_previous')
 if use_previous_results_if_available and (os.path.isfile(os.path.join(OUT_DIR,'input.final')) or os.path.isfile(os.path.join(dest,'input.final'))):
@@ -401,4 +402,16 @@ try:
 except Exception as e: pass
 try:
     for objective_file in glob.glob(os.path.join(OUT_DIR,f"input.nfp*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"jxbout_nfp*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"mercier.nfp*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"threed*")): os.remove(objective_file)
+except Exception as e: pass
+try:
+    for objective_file in glob.glob(os.path.join(OUT_DIR,f"parvmecinfo*")): os.remove(objective_file)
 except Exception as e: pass

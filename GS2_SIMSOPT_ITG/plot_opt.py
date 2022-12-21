@@ -17,11 +17,11 @@ max_mode = 4
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
-opt_turbulence = False
+opt_turbulence = True
 
-plt_opt_res = False
-plot_vmec = False
-run_simple = False
+plt_opt_res = True
+plot_vmec = True
+run_simple = True
 plot_loss_fractions = True
 plot_neo = True
 
