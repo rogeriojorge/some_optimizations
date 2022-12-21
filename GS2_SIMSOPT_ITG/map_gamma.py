@@ -35,7 +35,7 @@ if args.type == 1:
     output_dir = 'out_map_nfp2_QA_QA_onlyQS'
 elif args.type == 2:
     vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS/wout_final.nc')
-    output_dir = 'out_map_nfp4_QH_QA_onlyQS'
+    output_dir = 'out_map_nfp4_QH_QH_onlyQS'
 elif args.type == 3:
     vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc')
     output_dir = 'out_map_nfp2_QA_QA_least_squares'
@@ -61,15 +61,15 @@ ngauss = 3
 negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 ## Ln, Lt, plotting options
-LN_array = [1]#np.linspace(0.5,6,12)
-LT_array = [3]#np.linspace(0.5,6,12)
-n_processes_parallel = 4
-plot_extent_fix_gamma = False
+LN_array = np.linspace(0.5,6,12)
+LT_array = np.linspace(0.5,6,12)
+n_processes_parallel = 8
+plot_extent_fix_gamma = True
 plot_gamma_min = 0
 plot_gamma_max = 0.55
-plot_extent_fix_weighted_gamma = False
+plot_extent_fix_weighted_gamma = True
 plot_weighted_gamma_min = 0
-plot_weighted_gamma_max = 0.12
+plot_weighted_gamma_max = 0.45
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
@@ -79,7 +79,7 @@ output_csv = os.path.join(OUT_DIR,f'{output_dir}.csv')
 vmec = Vmec(vmec_file)
 #### Auxiliary functions
 # Get growth rates
-def getgamma(stellFile, fractionToConsider=0.35):
+def getgamma(stellFile, fractionToConsider=0.35, savefig=False):
     f = netCDF4.Dataset(stellFile,'r',mmap=False)
     phi2 = np.log(f.variables['phi2'][()])
     t = f.variables['t'][()]
@@ -102,16 +102,17 @@ def getgamma(stellFile, fractionToConsider=0.35):
     # omega  = np.mean(f.variables['omega'][()][startIndex:,0,0,0])
     #fitRes = np.poly1d(coeffs)
     # if not os.path.exists(stellFile+'_phi2.pdf'):
-    plt.figure(figsize=(7.5,4.0))
-    ##############
-    plt.plot(t, phi2,'.', label=r'data - $\gamma_{GS2} = $'+str(gamma))
-    plt.plot(t, poly(t),'-', label=r'fit - $\gamma = $'+str(GrowthRate))
-    ##############
-    plt.legend(loc=0,fontsize=14)
-    plt.xlabel(r'$t$');plt.ylabel(r'$\ln |\hat \phi|^2$')
-    plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.97)
-    plt.savefig(stellFile+'_phi2.png')
-    plt.close()
+    if savefig:
+        plt.figure(figsize=(7.5,4.0))
+        ##############
+        plt.plot(t, phi2,'.', label=r'data - $\gamma_{GS2} = $'+str(gamma))
+        plt.plot(t, poly(t),'-', label=r'fit - $\gamma = $'+str(GrowthRate))
+        ##############
+        plt.legend(loc=0,fontsize=14)
+        plt.xlabel(r'$t$');plt.ylabel(r'$\ln |\hat \phi|^2$')
+        plt.subplots_adjust(left=0.16, bottom=0.19, right=0.98, top=0.97)
+        plt.savefig(stellFile+'_phi2.png')
+        plt.close()
     return GrowthRate, omega, ky_max
 # Save final eigenfunction
 def eigenPlot(stellFile):
@@ -141,7 +142,7 @@ def eigenPlot(stellFile):
     plt.close()
     return 0
 ##### Function to obtain gamma and omega for each ky
-def gammabyky(stellFile,fractionToConsider=0.6):
+def gammabyky(stellFile,fractionToConsider=0.6, savefig=False):
     # Compute growth rate:
     fX   = netCDF4.Dataset(stellFile,'r',mmap=False)
     tX   = fX.variables['t'][()]
@@ -164,33 +165,34 @@ def gammabyky(stellFile,fractionToConsider=0.6):
     for i in range(len(kyX)):
         realFreqVsTimeX.append(omegaX[:,i,0,0])
         realFrequencyX.append(np.mean(realFreqVsTimeX[i][startIndexX:]))
-    numRows = 1
-    numCols = 2
+    if savefig:
+        numRows = 1
+        numCols = 2
 
-    plt.subplot(numRows, numCols, 1)
-    plt.plot(kyX,growthRateX,'.-')
-    plt.xlabel(r'$k_y$')
-    plt.ylabel(r'$\gamma$')
-    plt.xscale('log')
-    plt.rc('font', size=8)
-    plt.rc('axes', labelsize=8)
-    plt.rc('xtick', labelsize=8)
-    # plt.legend(frameon=False,prop=dict(size='xx-small'),loc=0)
+        plt.subplot(numRows, numCols, 1)
+        plt.plot(kyX,growthRateX,'.-')
+        plt.xlabel(r'$k_y$')
+        plt.ylabel(r'$\gamma$')
+        plt.xscale('log')
+        plt.rc('font', size=8)
+        plt.rc('axes', labelsize=8)
+        plt.rc('xtick', labelsize=8)
+        # plt.legend(frameon=False,prop=dict(size='xx-small'),loc=0)
 
-    plt.subplot(numRows, numCols, 2)
-    plt.plot(kyX,realFrequencyX,'.-')
-    plt.xlabel(r'$k_y$')
-    plt.ylabel(r'$\omega$')
-    plt.xscale('log')
-    plt.rc('font', size=8)
-    plt.rc('axes', labelsize=8)
-    plt.rc('xtick', labelsize=8)
-    # plt.legend(frameon=False,prop=dict(size=12),loc=0)
+        plt.subplot(numRows, numCols, 2)
+        plt.plot(kyX,realFrequencyX,'.-')
+        plt.xlabel(r'$k_y$')
+        plt.ylabel(r'$\omega$')
+        plt.xscale('log')
+        plt.rc('font', size=8)
+        plt.rc('axes', labelsize=8)
+        plt.rc('xtick', labelsize=8)
+        # plt.legend(frameon=False,prop=dict(size=12),loc=0)
 
-    plt.tight_layout()
-    #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
-    plt.savefig(stellFile+"_GammaOmegaKy.png")
-    plt.close()
+        plt.tight_layout()
+        #plt.subplots_adjust(left=0.14, bottom=0.15, right=0.98, top=0.96)
+        plt.savefig(stellFile+"_GammaOmegaKy.png")
+        plt.close()
     return np.array(kyX), np.array(growthRateX), np.array(realFrequencyX)
 # Function to replace text in a file
 def replace(file_path, pattern, subst):
@@ -239,10 +241,15 @@ def run_gs2(ln, lt):
         file2read = os.path.join(OUT_DIR,f"{gs2_input_name}.out.nc")
         # omega_average = netCDF4.Dataset(file2read,'r').variables['omega_average'][()]
         # growth_rate = np.max(np.array(omega_average)[-1,:,0,1])
-        eigenPlot(file2read)
-        growth_rate, omega, ky = getgamma(file2read)
-        kyX, growthRateX, realFrequencyX = gammabyky(file2read)
-        weighted_growth_rate = np.sum(quasilinear_estimate(file2read,show=True,savefig=True))/naky
+        if ln==1 and lt==3:
+            eigenPlot(file2read)
+            growth_rate, omega, ky = getgamma(file2read,savefig=True)
+            kyX, growthRateX, realFrequencyX = gammabyky(file2read,savefig=True)
+            weighted_growth_rate = np.sum(quasilinear_estimate(file2read,show=True,savefig=True))/naky
+        else:
+            growth_rate, omega, ky = getgamma(file2read,savefig=False)
+            kyX, growthRateX, realFrequencyX = gammabyky(file2read,savefig=False)
+            weighted_growth_rate = np.sum(quasilinear_estimate(file2read,show=False,savefig=False))/naky
         output_to_csv(growth_rate, omega, ky, weighted_growth_rate, ln, lt)
     except Exception as e:
         print(e)
@@ -319,6 +326,7 @@ for f in glob.glob('*.vspace_integration_error'): remove(f)
 ## THIS SHOULD ONLY REMOVE FILES STARTING WTH .gs2
 for f in glob.glob('.gs2*'): remove(f)
 ## REMOVE ALSO INPUT FILES
-# for f in glob.glob('*.in'): remove(f)
+for f in glob.glob('*.in'): remove(f)
 ## REMOVE ALSO OUTPUT FILES
-# for f in glob.glob('*.out.nc'): remove(f)
+for f in glob.glob('*.out.nc'):
+    if f not in 'gs2Input-LN1.0-LT3.0.out.nc': remove(f)

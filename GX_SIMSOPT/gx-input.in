@@ -64,7 +64,7 @@
  nsave  = 10000000
 
 [Diagnostics]
- nwrite = 1000
+ nwrite = 10
  fluxes = true
  omega  = true
  fields = true
