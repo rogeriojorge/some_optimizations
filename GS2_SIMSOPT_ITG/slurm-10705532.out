@@ -1,0 +1,24 @@
+Initial aspect ratio: 8.548052173283555
+Initial mean iota: -1.064788208426734
+Initial magnetic well: -0.11659835583136523
+Initial growth rate: 0.15127960709573451
+## Now calculating total objective function ##
+11:41:21 - Growth rate = 0.151280, quasisymmetry = 6.286971, mirror = 0.016304 with aspect ratio=8.548052 took 131.687654s
+Total objective before optimization: 7.731608403515239
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+11:43:39 - Growth rate = 0.151280, quasisymmetry = 6.286971, mirror = 0.016304 with aspect ratio=8.548052 took 133.146119s
+11:45:56 - Growth rate = 0.151280, quasisymmetry = 6.286971, mirror = 0.016304 with aspect ratio=8.548052 took 131.445089s
+11:48:13 - Growth rate = 0.151280, quasisymmetry = 6.286971, mirror = 0.016304 with aspect ratio=8.548052 took 132.377107s
+11:50:31 - Growth rate = 0.145626, quasisymmetry = 6.503629, mirror = 0.026719 with aspect ratio=8.402815 took 133.323020s
+11:50:32 - Growth rate = 0.157105, quasisymmetry = 6.527119, mirror = 0.032022 with aspect ratio=8.522332 took 134.450278s
+11:50:32 - Growth rate = 0.148308, quasisymmetry = 5.372734, mirror = 0.000000 with aspect ratio=8.377828 took 133.881449s
+11:50:33 - Growth rate = 0.145362, quasisymmetry = 6.455697, mirror = 0.018950 with aspect ratio=8.548052 took 134.269076s
+11:50:33 - Growth rate = 0.149801, quasisymmetry = 6.321932, mirror = 0.020601 with aspect ratio=8.543048 took 134.624990s
+11:50:33 - Growth rate = 0.148818, quasisymmetry = 6.115104, mirror = 0.015398 with aspect ratio=8.550740 took 134.790075s
+11:50:33 - Growth rate = 0.149817, quasisymmetry = 6.553338, mirror = 0.026815 with aspect ratio=8.601052 took 135.011032s
+11:50:33 - Growth rate = 0.150118, quasisymmetry = 7.020860, mirror = 0.029984 with aspect ratio=8.542712 took 135.266390s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         3.8658e+00                                    3.22e+02    
+11:52:52 - Growth rate = 0.110083, quasisymmetry = 0.732555, mirror = 0.000000 with aspect ratio=7.852570 took 127.960668s

@@ -338,3 +338,14 @@ Growth rate = 0.147301 for point 0.185100, aspect 8.025320, quasisymmetry = 2.30
 Growth rate = 0.147953 for point 0.186246, aspect 8.025203, quasisymmetry = 2.382993 and iota -0.997652 took 111.170857s
 Growth rate = 0.146131 for point 0.187393, aspect 8.025087, quasisymmetry = 2.464654 and iota -0.998909 took 111.244757s
 Growth rate = 0.145585 for point 0.188539, aspect 8.024971, quasisymmetry = 2.548137 and iota -1.000160 took 111.638658s
+Growth rate = 0.144655 for point 0.189685, aspect 8.024854, quasisymmetry = 2.633461 and iota -1.001405 took 111.530558s
+Growth rate = 0.143175 for point 0.190831, aspect 8.024738, quasisymmetry = 2.720651 and iota -1.002645 took 111.665268s
+Growth rate = 0.141190 for point 0.191977, aspect 8.024622, quasisymmetry = 2.809726 and iota -1.003879 took 111.593935s
+Growth rate = 0.140590 for point 0.193123, aspect 8.024505, quasisymmetry = 2.900715 and iota -1.005108 took 111.654199s
+Growth rate = 0.140056 for point 0.194269, aspect 8.024389, quasisymmetry = 2.993635 and iota -1.006331 took 111.475986s
+Growth rate = 0.139398 for point 0.195415, aspect 8.024272, quasisymmetry = 3.088516 and iota -1.007548 took 111.536481s
+Growth rate = 0.148675 for point 0.196562, aspect 8.024156, quasisymmetry = 3.185373 and iota -1.008759 took 111.396401s
+Growth rate = 0.146151 for point 0.197708, aspect 8.024040, quasisymmetry = 3.284234 and iota -1.009965 took 111.683473s
+Growth rate = 0.144035 for point 0.198854, aspect 8.023923, quasisymmetry = 3.385126 and iota -1.011165 took 111.767038s
+Growth rate = 0.143264 for point 0.200000, aspect 8.023807, quasisymmetry = 3.488078 and iota -1.012360 took 111.806946s
+[Errno 2] No such file or directory: 'opt_dofs_loss.csv'

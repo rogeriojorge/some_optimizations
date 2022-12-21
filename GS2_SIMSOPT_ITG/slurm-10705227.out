@@ -340,3 +340,12 @@ Growth rate = 0.280638 for point 0.187393, aspect 6.000516, quasisymmetry = 0.09
 Growth rate = 0.281569 for point 0.188539, aspect 6.000484, quasisymmetry = 0.102590 and iota 0.419681 took 108.808073s
 Growth rate = 0.278347 for point 0.189685, aspect 6.000451, quasisymmetry = 0.105474 and iota 0.419925 took 109.017448s
 Growth rate = 0.278361 for point 0.190831, aspect 6.000419, quasisymmetry = 0.108416 and iota 0.420168 took 109.392480s
+Growth rate = 0.279052 for point 0.191977, aspect 6.000386, quasisymmetry = 0.111416 and iota 0.420411 took 109.374720s
+Growth rate = 0.278606 for point 0.193123, aspect 6.000354, quasisymmetry = 0.114476 and iota 0.420653 took 109.160161s
+Growth rate = 0.279012 for point 0.194269, aspect 6.000321, quasisymmetry = 0.117595 and iota 0.420895 took 109.284573s
+Growth rate = 0.279611 for point 0.195415, aspect 6.000289, quasisymmetry = 0.120775 and iota 0.421137 took 109.127662s
+Growth rate = 0.280317 for point 0.196562, aspect 6.000257, quasisymmetry = 0.124016 and iota 0.421377 took 109.439719s
+Growth rate = 0.281787 for point 0.197708, aspect 6.000224, quasisymmetry = 0.127319 and iota 0.421618 took 109.422254s
+Growth rate = 0.279185 for point 0.198854, aspect 6.000192, quasisymmetry = 0.130685 and iota 0.421858 took 109.391489s
+Growth rate = 0.279803 for point 0.200000, aspect 6.000159, quasisymmetry = 0.134114 and iota 0.422097 took 109.448089s
+[Errno 2] No such file or directory: 'opt_dofs_loss.csv'
