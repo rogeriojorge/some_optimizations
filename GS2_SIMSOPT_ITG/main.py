@@ -102,7 +102,7 @@ OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
 if opt_quasisymmetry: OUT_DIR_APPENDIX+=f'_{initial_config[-2:]}'
 if not opt_turbulence:  OUT_DIR_APPENDIX+=f'_onlyQS'
 # else: OUT_DIR_APPENDIX+=f'_qlweight{weight_optTurbulence:.3f}'
-OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX)
+OUT_DIR = os.path.join(this_path, OUT_DIR_APPENDIX+'_alternativeInput')
 os.makedirs(OUT_DIR, exist_ok=True)
 shutil.copyfile(os.path.join(this_path,'main.py'),os.path.join(OUT_DIR,'main.py'))
 ######################################
