@@ -14,7 +14,7 @@ from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
 max_mode = 4
-QA_or_QH = 'QH'
+QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
 opt_turbulence = True
