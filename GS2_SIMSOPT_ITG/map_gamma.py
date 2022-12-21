@@ -17,23 +17,32 @@ from quasilinear_estimate import quasilinear_estimate
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
 import matplotlib
-matplotlib.use('Agg') 
 import warnings
 import matplotlib.cbook
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
+matplotlib.use('Agg') 
 warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarning)
 this_path = Path(__file__).parent.resolve()
 ######## INPUT PARAMETERS ########
 gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 # gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 
-vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp2_QA_QA_onlyQS/wout_final.nc')
-output_dir = 'out_map_nfp2_QA_onlyQS'
-# vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS/wout_final.nc')
-# output_dir = 'out_map_nfp4_QH_onlyQS'
-# vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc')
-# output_dir = 'out_map_nfp2_QA_QA_least_squares'
-# vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc')
-# output_dir = 'out_map_nfp4_QH_QH_least_squares'
+if args.type == 1:
+    vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp2_QA_QA_onlyQS/wout_final.nc')
+    output_dir = 'out_map_nfp2_QA_QA_onlyQS'
+elif args.type == 2:
+    vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS/wout_final.nc')
+    output_dir = 'out_map_nfp4_QH_QA_onlyQS'
+elif args.type == 3:
+    vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc')
+    output_dir = 'out_map_nfp2_QA_QA_least_squares'
+elif args.type == 4:
+    vmec_file = os.path.join(this_path,'output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc')
+    output_dir = 'out_map_nfp4_QH_QH_least_squares'
+
 s_radius = 0.25
 alpha_fieldline = 0
 nphi= 151
@@ -52,8 +61,8 @@ ngauss = 3
 negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 ## Ln, Lt, plotting options
-LN_array = np.linspace(0.5,6,12)
-LT_array = np.linspace(0.5,6,12)
+LN_array = [1]#np.linspace(0.5,6,12)
+LT_array = [3]#np.linspace(0.5,6,12)
 n_processes_parallel = 4
 plot_extent_fix_gamma = False
 plot_gamma_min = 0
@@ -312,4 +321,4 @@ for f in glob.glob('.gs2*'): remove(f)
 ## REMOVE ALSO INPUT FILES
 # for f in glob.glob('*.in'): remove(f)
 ## REMOVE ALSO OUTPUT FILES
-for f in glob.glob('*.out.nc'): remove(f)
+# for f in glob.glob('*.out.nc'): remove(f)
