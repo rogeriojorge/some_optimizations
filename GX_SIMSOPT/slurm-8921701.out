@@ -1,0 +1,21 @@
+Starting GX run
+nzgrid=121 npol=4 nstep=10000 dt=0.35 nhermite=14 nlaguerre=6 nu_hyper=0.5 D_hyper=0.05 ny=120 nx=80 y0=12.0 growth_rate=14.670935 qflux=5.768216 took 3191.109780s
+[r228n01:92390] OPAL ERROR: Unreachable in file ext3x_client.c at line 112
+*** An error occurred in MPI_Init
+*** on a NULL communicator
+*** MPI_ERRORS_ARE_FATAL (processes in this communicator will now abort,
+***    and potentially your MPI job)
+[r228n01:92390] Local abort before MPI_INIT completed completed successfully, but am not able to aggregate error messages, and not able to guarantee that all other processes were killed!
+./test_parameters.py:142: MatplotlibDeprecationWarning: Auto-removal of overlapping axes is deprecated since 3.6 and will be removed two minor releases later; explicitly call ax.remove() as needed.
+  plt.subplot(numRows, numCols, 1)
+Traceback (most recent call last):
+  File "./test_parameters.py", line 278, in <module>
+    nzgrid = 2*nzgrid-1;start_time = time();growth_rate, qflux=run_gx(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_hyper, ny, nx, y0)
+  File "./test_parameters.py", line 264, in run_gx
+    eigenPlot(fout)
+  File "./test_parameters.py", line 74, in eigenPlot
+    f = netCDF4.Dataset(stellFile,'r',mmap=False)
+  File "src/netCDF4/_netCDF4.pyx", line 2463, in netCDF4._netCDF4.Dataset.__init__
+  File "src/netCDF4/_netCDF4.pyx", line 2026, in netCDF4._netCDF4._ensure_nc_success
+FileNotFoundError: [Errno 2] No such file or directory: b'/m100/home/userexternal/rjorge00/some_optimizations/GX_SIMSOPT/test_out_nfp4_QH_initial_LN1.0_LT3.0/gxInput_nzgrid241_npol4_nstep10000_dt0.35_ln1.0_lt3.0_nhermite14_nlaguerre6_nu_hyper0.5_D_hyper0.05_ny120_nx80_y012.0.nc'
+slurmstepd: error: *** JOB 8921701 ON r228n01 CANCELLED AT 2022-12-21T13:12:12 DUE TO TIME LIMIT ***
