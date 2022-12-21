@@ -2100,3 +2100,863 @@
  >>> xc/gc size:               12852
  ------------------------------------------------------------
 
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
+ >>> grid resolution:             16
+ >>> active processors:            1
+ >>> xc/gc size:                4032
+ ------------------------------------------------------------
+
+ >>> grid resolution:             51
+ >>> active processors:            1
+ >>> xc/gc size:               12852
+ ------------------------------------------------------------
+
