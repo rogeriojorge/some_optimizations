@@ -66,10 +66,12 @@ LT_array = np.linspace(0.5,6,12)
 n_processes_parallel = 8
 plot_extent_fix_gamma = True
 plot_gamma_min = 0
-plot_gamma_max = 0.55
+if 'QA' in output_dir: plot_gamma_max = 0.41
+else: plot_gamma_max = 0.46
 plot_extent_fix_weighted_gamma = True
 plot_weighted_gamma_min = 0
-plot_weighted_gamma_max = 0.45
+if 'QA' in output_dir: plot_weighted_gamma_max = 0.54
+else: plot_weighted_gamma_max = 0.42
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)
