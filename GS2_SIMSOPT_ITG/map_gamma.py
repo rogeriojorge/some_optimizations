@@ -45,14 +45,14 @@ elif args.type == 4:
 
 s_radius = 0.25
 alpha_fieldline = 0
-nphi= 151
-nlambda = 35
-nperiod = 5.5
+nphi= 141
+nlambda = 33
+nperiod = 5.0
 nstep = 330
 dt = 0.4
 aky_min = 0.3
 aky_max = 4.0
-naky = 12
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25

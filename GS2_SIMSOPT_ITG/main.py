@@ -44,7 +44,7 @@ start_time = time.time()
 ############################################################################
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
-MAXITER = 20
+MAXITER = 350
 max_modes = [1,2,3,4]
 if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
 elif args.type == 2 or args.type == 4: QA_or_QH = 'QA'
@@ -57,20 +57,20 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 121
-nlambda = 29
-nperiod = 4.5
-nstep = 260
-dt = 0.45
+nphi= 141
+nlambda = 33
+nperiod = 5.0
+nstep = 330
+dt = 0.4
 aky_min = 0.3
 aky_max = 3.0
-naky = 6
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 8
+negrid = 9
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 if QA_or_QH=='QA':
@@ -91,7 +91,7 @@ diff_rel_step = 1e-1
 diff_abs_step = 1e-2
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
-ftol=1e-4
+ftol=1e-5
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
