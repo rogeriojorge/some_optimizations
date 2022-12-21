@@ -40,19 +40,19 @@ elif args.type == 4:
     output_dir = f'nonlinear_nfp4_QH_final_LN{LN}_LT{LT}'
 else:
     exit()
-nstep = 320000
-dt = 0.1
-nzgrid = 151
-npol = 5
+nstep = 400 # actually t_max
+dt = 0.5
+nzgrid = 125
+npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 14
-nlaguerre = 6
+nhermite  = 16
+nlaguerre = 8
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 90
-nx = 140
-y0 = 18.0
+ny = 80
+nx = 130
+y0 = 16.0
 nonlinear = True
 ########################################
 # Go into the output directory
@@ -205,7 +205,7 @@ def create_gx_inputs(nzgrid, npol, nstep, dt, nhermite, nlaguerre, nu_hyper, D_h
     else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
-    replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')
+    replace(fnamein,' t_max = 400.0',f' t_max = {nstep}')
     replace(fnamein,' fprim = [ 1.0,       1.0     ]',f' fprim = [ {LN},       {LN}     ]')
     replace(fnamein,' tprim = [ 3.0,       3.0     ]',f' tprim = [ {LT},       {LT}     ]')
     replace(fnamein,' dt = 0.010',f' dt = {dt}')
