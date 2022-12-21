@@ -45,7 +45,7 @@ start_time = time.time()
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
-max_modes = [1,2,3,4]
+max_modes = [1,2,3,4,5]
 if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
 elif args.type == 2 or args.type == 4: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
