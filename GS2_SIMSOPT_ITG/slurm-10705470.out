@@ -1,0 +1,7 @@
+Starting GS2 runs
+nphi=151 nperiod=5.5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.184790 sum(gamma/ky)=0.242424 took 131.331427s
+nphi=301 nperiod=5.5 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.185316 sum(gamma/ky)=0.242647 took 297.234250s
+nphi=301 nperiod=11 nlambda=35 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.184614 sum(gamma/ky)=0.241999 took 297.032663s
+nphi=151 nperiod=5 nlambda=70 nstep=330 dt=0.4 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.185834 sum(gamma/ky)=0.245864 took 267.990628s
+nphi=151 nperiod=5 nlambda=35 nstep=660 dt=0.4 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.186602 sum(gamma/ky)=0.244150 took 232.391624s
+nphi=151 nperiod=5 nlambda=35 nstep=660 dt=0.2 negrid=9 ngauss=3 aky_min=0.3 aky_max=4.0 naky=12 growth_rate=0.186333 sum(gamma/ky)=0.244304 took 232.492060s
