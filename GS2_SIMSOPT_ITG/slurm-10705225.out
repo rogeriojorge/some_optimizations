@@ -1,0 +1,228 @@
+Initial aspect ratio: 6.0029902490248235
+Initial mean iota: 0.39940028561642876
+Initial magnetic well: -0.04553581079649515
+Initial growth rate: 0.24247023251385388
+## Now calculating total objective function ##
+Total objective before optimization: 0.009948412376369013
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         4.9742e-03                                    6.20e-03    
+       1              3         4.9588e-03      1.54e-05       8.76e-03       4.33e-01    
+       2              4         4.9059e-03      5.29e-05       8.76e-03       4.44e-01    
+       3              6         4.8418e-03      6.41e-05       2.19e-03       9.91e-02    
+       4              9         4.8392e-03      2.62e-06       2.74e-04       1.14e-02    
+       5             13         4.8392e-03      4.56e-08       4.28e-06       2.27e-03    
+       6             16         4.8392e-03      1.00e-10       5.34e-07       1.44e-03    
+       7             20         4.8392e-03      0.00e+00       0.00e+00       1.44e-03    
+`xtol` termination condition is satisfied.
+Function evaluations 20, initial cost 4.9742e-03, final cost 4.8392e-03, first-order optimality 1.44e-03.
+Final aspect ratio: 6.002732600134423
+Final mean iota: 0.40212419368393837
+Final magnetic well: -0.0436890525674889
+Final quasisymmetry: 0.0093512933726744
+Final growth rate: 0.2618488790126245
+## Now calculating total objective function ##
+Total objective before optimization: 0.009678304927618358
+-------------------------
+Optimizing with max_mode = 2
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         4.8392e-03                                    7.28e-01    
+       1              3         2.1898e-03      2.65e-03       1.86e-02       5.68e-01    
+       2              5         1.2300e-03      9.60e-04       9.30e-03       2.84e-01    
+       3              6         6.5499e-04      5.75e-04       1.86e-02       6.01e-01    
+       4              7         3.2240e-04      3.33e-04       1.86e-02       9.30e-01    
+       5              8         2.2758e-04      9.48e-05       1.86e-02       8.59e-01    
+       6             10         1.3002e-04      9.76e-05       4.65e-03       2.33e-02    
+       7             12         1.2702e-04      3.00e-06       2.33e-03       3.95e-02    
+       8             13         1.2294e-04      4.08e-06       2.33e-03       2.17e-02    
+       9             14         1.1923e-04      3.71e-06       2.33e-03       1.29e-02    
+      10             15         1.1677e-04      2.46e-06       4.65e-03       5.51e-02    
+      11             16         1.1278e-04      3.99e-06       4.65e-03       6.25e-02    
+      12             18         1.1012e-04      2.66e-06       1.16e-03       1.55e-02    
+      13             19         1.0807e-04      2.06e-06       1.16e-03       1.54e-02    
+      14             20         1.0728e-04      7.90e-07       1.16e-03       1.37e-02    
+      15             22         1.0671e-04      5.68e-07       2.91e-04       1.42e-02    
+      16             23         1.0656e-04      1.47e-07       2.91e-04       1.24e-02    
+      17             24         1.0654e-04      2.73e-08       2.91e-04       1.52e-02    
+      18             28         1.0654e-04      8.79e-10       1.14e-06       1.43e-02    
+      19             30         1.0654e-04      4.55e-12       7.10e-08       1.43e-02    
+      20             31         1.0654e-04      2.78e-12       1.77e-08       1.43e-02    
+      21             32         1.0654e-04      1.10e-12       4.44e-09       1.43e-02    
+      22             33         1.0654e-04      0.00e+00       0.00e+00       1.43e-02    
+`xtol` termination condition is satisfied.
+Function evaluations 33, initial cost 4.8392e-03, final cost 1.0654e-04, first-order optimality 1.43e-02.
+Final aspect ratio: 5.999991612572954
+Final mean iota: 0.4188657641266705
+Final magnetic well: -0.0821464575824524
+Final quasisymmetry: 0.00021178475530053752
+Final growth rate: 0.21305629378009897
+## Now calculating total objective function ##
+Total objective before optimization: 0.00021307131666581763
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.0654e-04                                    2.07e-01    
+       1              3         4.4467e-05      6.21e-05       6.00e-03       1.47e-01    
+       2              5         2.1915e-05      2.26e-05       3.00e-03       2.79e-02    
+       3              7         1.9026e-05      2.89e-06       1.50e-03       3.38e-02    
+       4              8         1.5414e-05      3.61e-06       1.50e-03       2.20e-02    
+       5              9         1.3687e-05      1.73e-06       3.00e-03       6.10e-02    
+       6             10         1.1691e-05      2.00e-06       3.00e-03       5.28e-02    
+       7             11         1.0013e-05      1.68e-06       3.00e-03       5.19e-02    
+       8             12         7.9845e-06      2.03e-06       3.00e-03       4.07e-02    
+       9             14         5.7339e-06      2.25e-06       7.51e-04       5.25e-03    
+      10             15         5.6009e-06      1.33e-07       1.50e-03       3.21e-02    
+      11             17         5.3072e-06      2.94e-07       9.38e-05       3.17e-02    
+      12             23         5.3072e-06      1.76e-11       9.16e-08       3.16e-02    
+      13             26         5.3072e-06      0.00e+00       0.00e+00       3.16e-02    
+`xtol` termination condition is satisfied.
+Function evaluations 26, initial cost 1.0654e-04, final cost 5.3072e-06, first-order optimality 3.16e-02.
+Final aspect ratio: 5.999997494106884
+Final mean iota: 0.41995994661882113
+Final magnetic well: -0.04899218916555745
+Final quasisymmetry: 1.0612704469841578e-05
+Final growth rate: 0.2329067528087907
+## Now calculating total objective function ##
+Total objective before optimization: 1.0614315022685547e-05
+-------------------------
+Optimizing with max_mode = 4
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         5.3072e-06                                    4.30e-02    
+       1              7         4.6567e-06      6.50e-07       1.98e-05       3.54e-02    
+       2              8         4.3751e-06      2.82e-07       1.98e-05       3.34e-02    
+       3              9         4.1894e-06      1.86e-07       1.98e-05       3.28e-02    
+       4             10         4.0419e-06      1.47e-07       1.98e-05       3.22e-02    
+       5             11         4.0412e-06      7.58e-10       4.95e-06       3.12e-02    
+       6             17         4.0412e-06      0.00e+00       0.00e+00       3.12e-02    
+`xtol` termination condition is satisfied.
+Function evaluations 17, initial cost 5.3072e-06, final cost 4.0412e-06, first-order optimality 3.12e-02.
+Final aspect ratio: 6.000010172164734
+Final mean iota: 0.41994094971357077
+Final magnetic well: -0.04904285658686854
+Final quasisymmetry: 8.078771790696283e-06
+Final growth rate: 0.23290740969082802
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER:    OS:    RELEASE:   DATE = Dec 21,2022  TIME = 01:30:54
+
+  NS =   16 NO. FOURIER MODES =   72 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =    1.0325550186222694       0.16982386590955448        2.3801275864951670E-002   2.7076734646462536E-003   1.2020472372913818E-003  -1.2235433982308596E-003   6.8874938824899665E-004
+      ZAXIS_CS =   -0.0000000000000000      -0.15847388514584795       -1.9768110578332380E-002  -8.2662543699540947E-004   6.0549564672035994E-004  -1.1075152438388132E-003   1.4534037397122336E-003
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  9.67E-03  6.37E-03  7.25E-03  1.230E+00  9.00E-01  2.8015E-01
+  200  1.24E-08  4.12E-09  4.26E-09  1.215E+00  9.00E-01  2.7900E-01
+  400  2.79E-10  7.44E-11  9.48E-11  1.212E+00  9.00E-01  2.7900E-01
+  600  1.76E-11  5.50E-12  6.48E-12  1.211E+00  9.00E-01  2.7900E-01
+  800  1.57E-12  4.31E-13  4.04E-13  1.211E+00  9.00E-01  2.7900E-01
+  833  9.83E-13  2.79E-13  2.49E-13  1.211E+00  9.00E-01  2.7900E-01
+
+  NS =   51 NO. FOURIER MODES =   72 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.07E-03  4.20E-04  1.90E-06  1.211E+00  9.00E-01  2.7900E-01
+  200  3.42E-10  9.77E-11  8.26E-12  1.211E+00  7.86E-01  2.7900E-01
+  400  4.42E-12  1.03E-12  3.15E-13  1.211E+00  7.86E-01  2.7900E-01
+  600  5.12E-13  1.35E-13  6.50E-14  1.211E+00  7.86E-01  2.7900E-01
+  800  1.17E-13  3.52E-14  2.14E-14  1.211E+00  7.86E-01  2.7900E-01
+  821  1.00E-13  3.04E-14  1.89E-14  1.211E+00  7.86E-01  2.7900E-01
+
+  NS =  101 NO. FOURIER MODES =   72 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  7.81E-04  2.83E-04  1.03E-07  1.211E+00  9.00E-01  2.7900E-01
+  200  8.38E-10  2.96E-10  9.88E-13  1.211E+00  6.18E-01  2.7900E-01
+  400  2.30E-11  6.29E-12  1.03E-13  1.211E+00  6.18E-01  2.7900E-01
+  600  2.36E-12  8.28E-13  2.69E-14  1.211E+00  6.18E-01  2.7900E-01
+  800  2.47E-13  9.13E-14  1.48E-14  1.211E+00  6.18E-01  2.7900E-01
+ 1000  5.85E-14  2.06E-14  8.30E-15  1.211E+00  6.18E-01  2.7900E-01
+ 1200  1.95E-14  6.33E-15  4.28E-15  1.211E+00  6.18E-01  2.7900E-01
+ 1290  9.99E-15  3.81E-15  3.02E-15  1.211E+00  6.18E-01  2.7900E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    3
+
+    TOTAL COMPUTATIONAL TIME (SEC)        17.27
+    TIME TO INPUT/OUTPUT                   0.03
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.03
+    TIME IN FUNCT3D                       17.13
+       BCOVAR FIELDS                       2.46
+       FOURIER TRANSFORM                   3.74
+       INVERSE FOURIER TRANSFORM           3.50
+       FORCES AND SYMMETRIZE               2.78
+       RESIDUE                             3.03
+       EQFORCE                             0.00
+nfp:  2
+ns:  101
+mpol:  6
+ntor:  6
+Aminor_p:  0.16941282352729006
+Rmajor_p:  1.0164786644588888
+aspect:             6.000010172164731
+Rmajor_p/Aminor_p:  6.000010172164731
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    6.139294801699169e-11
+bmnc.shape: (101, 162)
+bmns.shape: (101, 162)
+No module named 'mayavi'
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 72  len(xm): 72  len(xn): 72
+mnmax_nyq: 162  len(xm_nyq): 162  len(xn_nyq): 162
+Read ns=101, mpol=6, ntor=6, mnmax=72, mnmax_nyq=162
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 24
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   8     8  79   0  8.907e-01  8.907e-01  1.371e-15  1.095e+00  1.095e+00  1.907e-14
+                pi  8.907e-01  8.907e-01  1.234e-14  1.096e+00  1.096e+00  4.053e-16
+   9     9  89   0  8.841e-01  8.841e-01  1.909e-14  1.100e+00  1.100e+00  1.837e-14
+                pi  8.840e-01  8.840e-01  3.014e-15  1.102e+00  1.102e+00  1.008e-14
+   2     2  20   0  9.432e-01  9.432e-01  2.119e-15  1.048e+00  1.048e+00  2.585e-14
+                pi  9.435e-01  9.435e-01  4.707e-15  1.047e+00  1.047e+00  8.273e-15
+   5     5  49   0  9.133e-01  9.133e-01  2.297e-14  1.075e+00  1.075e+00  2.354e-14
+                pi  9.136e-01  9.136e-01  1.434e-14  1.075e+00  1.075e+00  8.471e-15
+   3     3  30   0  9.314e-01  9.314e-01  1.454e-14  1.059e+00  1.059e+00  5.872e-15
+                pi  9.317e-01  9.317e-01  5.005e-15  1.058e+00  1.058e+00  8.186e-15
+   0     0   0   0  9.880e-01  9.880e-01  1.910e-15  1.004e+00  1.004e+00  3.294e-14
+                pi  9.879e-01  9.879e-01  1.225e-14  1.004e+00  1.004e+00  3.539e-15
+   4     4  39   0  9.223e-01  9.223e-01  1.264e-14  1.067e+00  1.067e+00  1.103e-14
+                pi  9.226e-01  9.226e-01  1.215e-14  1.066e+00  1.066e+00  4.165e-15
+   6     6  60   0  9.044e-01  9.044e-01  7.979e-15  1.083e+00  1.083e+00  1.866e-14
+                pi  9.046e-01  9.046e-01  2.332e-15  1.083e+00  1.083e+00  1.538e-14
+   1     1  10   0  9.584e-01  9.584e-01  9.268e-16  1.033e+00  1.033e+00  1.826e-14
+                pi  9.586e-01  9.586e-01  2.316e-15  1.032e+00  1.032e+00  1.161e-14
+   7     7  70   0  8.970e-01  8.970e-01  1.782e-14  1.089e+00  1.089e+00  2.548e-14
+                pi  8.971e-01  8.971e-01  1.609e-14  1.090e+00  1.090e+00  8.149e-16
+Writing output to /marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA_onlyQS/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+Whole optimization took 2383.273043s

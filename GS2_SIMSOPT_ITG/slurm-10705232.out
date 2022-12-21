@@ -1,0 +1,869 @@
+Initial aspect ratio: 8.032497901971727
+Initial mean iota: -0.9073732888245726
+Initial magnetic well: -0.11352199535921875
+Initial growth rate: 0.11601592753249647
+## Now calculating total objective function ##
+00:57:51 - Growth rate = 0.116016, quasisymmetry = 0.140462, mirror = 0.000000 with aspect ratio=8.032498 took 127.056002s
+Total objective before optimization: 0.2761154086579257
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+01:00:02 - Growth rate = 0.116016, quasisymmetry = 0.140462, mirror = 0.000000 with aspect ratio=8.032498 took 126.836295s
+01:02:14 - Growth rate = 0.116016, quasisymmetry = 0.140462, mirror = 0.000000 with aspect ratio=8.032498 took 127.387396s
+01:04:26 - Growth rate = 0.116016, quasisymmetry = 0.140462, mirror = 0.000000 with aspect ratio=8.032498 took 126.860415s
+01:06:38 - Growth rate = 0.117824, quasisymmetry = 0.186617, mirror = 0.000000 with aspect ratio=8.032498 took 128.516151s
+01:06:38 - Growth rate = 0.117868, quasisymmetry = 0.459514, mirror = 0.000000 with aspect ratio=7.943228 took 128.973808s
+01:06:39 - Growth rate = 0.112667, quasisymmetry = 0.433793, mirror = 0.000000 with aspect ratio=7.534806 took 128.815598s
+01:06:39 - Growth rate = 0.118526, quasisymmetry = 0.186944, mirror = 0.000000 with aspect ratio=8.031337 took 128.799337s
+01:06:39 - Growth rate = 0.105799, quasisymmetry = 0.463404, mirror = 0.000000 with aspect ratio=7.582148 took 128.999381s
+01:06:40 - Growth rate = 0.114908, quasisymmetry = 0.141117, mirror = 0.000000 with aspect ratio=8.033632 took 129.558980s
+01:06:40 - Growth rate = 0.113411, quasisymmetry = 0.141405, mirror = 0.000000 with aspect ratio=8.033824 took 129.869521s
+01:06:40 - Growth rate = 0.130511, quasisymmetry = 0.501068, mirror = 0.000000 with aspect ratio=8.184196 took 129.993218s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.3806e-01                                    1.05e+01    
+01:08:52 - Growth rate = 0.114195, quasisymmetry = 0.154623, mirror = 0.000000 with aspect ratio=8.000526 took 126.806170s
+01:11:03 - Growth rate = 0.113342, quasisymmetry = 0.142191, mirror = 0.000000 with aspect ratio=8.025203 took 126.894147s
+01:13:14 - Growth rate = 0.113342, quasisymmetry = 0.142191, mirror = 0.000000 with aspect ratio=8.025203 took 126.156158s
+01:15:27 - Growth rate = 0.118425, quasisymmetry = 0.191735, mirror = 0.000000 with aspect ratio=8.025203 took 128.588782s
+01:15:27 - Growth rate = 0.117833, quasisymmetry = 0.498858, mirror = 0.000000 with aspect ratio=7.937516 took 129.356410s
+01:15:27 - Growth rate = 0.108664, quasisymmetry = 0.412854, mirror = 0.000000 with aspect ratio=7.528621 took 128.825930s
+01:15:28 - Growth rate = 0.119142, quasisymmetry = 0.142947, mirror = 0.000000 with aspect ratio=8.025617 took 129.300776s
+01:15:28 - Growth rate = 0.108370, quasisymmetry = 0.485996, mirror = 0.000000 with aspect ratio=7.575789 took 129.371197s
+01:15:28 - Growth rate = 0.114386, quasisymmetry = 0.186198, mirror = 0.000000 with aspect ratio=8.024177 took 129.378855s
+01:15:28 - Growth rate = 0.129006, quasisymmetry = 0.503182, mirror = 0.000000 with aspect ratio=8.174775 took 130.008247s
+01:15:29 - Growth rate = 0.114992, quasisymmetry = 0.142380, mirror = 0.000000 with aspect ratio=8.025655 took 130.337538s
+       1              3         1.3565e-01      2.41e-03       3.83e-03       6.90e+01    
+01:17:39 - Growth rate = 0.113562, quasisymmetry = 0.144758, mirror = 0.000000 with aspect ratio=8.021092 took 125.701614s
+01:19:51 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 127.098270s
+01:22:02 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 126.303172s
+01:24:14 - Growth rate = 0.110904, quasisymmetry = 0.435352, mirror = 0.000000 with aspect ratio=7.527460 took 128.394094s
+01:24:15 - Growth rate = 0.117640, quasisymmetry = 0.470667, mirror = 0.000000 with aspect ratio=7.936215 took 129.383878s
+01:24:15 - Growth rate = 0.113040, quasisymmetry = 0.186140, mirror = 0.000000 with aspect ratio=8.023837 took 129.380841s
+01:24:16 - Growth rate = 0.108209, quasisymmetry = 0.460353, mirror = 0.000000 with aspect ratio=7.574569 took 129.510144s
+01:24:16 - Growth rate = 0.116093, quasisymmetry = 0.188326, mirror = 0.000000 with aspect ratio=8.022688 took 129.347956s
+01:24:16 - Growth rate = 0.118864, quasisymmetry = 0.141430, mirror = 0.000000 with aspect ratio=8.024295 took 129.866441s
+01:24:16 - Growth rate = 0.114333, quasisymmetry = 0.141625, mirror = 0.000000 with aspect ratio=8.024253 took 129.993950s
+01:24:16 - Growth rate = 0.128654, quasisymmetry = 0.472397, mirror = 0.000000 with aspect ratio=8.173334 took 129.900057s
+       2              5         1.3454e-01      1.10e-03       2.39e-04       6.85e+01    
+01:26:28 - Growth rate = 0.113611, quasisymmetry = 0.141636, mirror = 0.000000 with aspect ratio=8.023486 took 127.132916s
+01:28:41 - Growth rate = 0.113001, quasisymmetry = 0.141505, mirror = 0.000000 with aspect ratio=8.023748 took 128.085695s
+01:30:53 - Growth rate = 0.112779, quasisymmetry = 0.141482, mirror = 0.000000 with aspect ratio=8.023815 took 126.959464s
+01:33:06 - Growth rate = 0.112729, quasisymmetry = 0.141477, mirror = 0.000000 with aspect ratio=8.023831 took 128.206221s
+01:35:17 - Growth rate = 0.112716, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023836 took 126.877275s
+01:37:29 - Growth rate = 0.112713, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 127.194515s
+01:39:42 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 127.860338s
+01:41:54 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 128.164402s
+01:44:07 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 127.960552s
+       3             14         1.3454e-01      0.00e+00       0.00e+00       6.85e+01    
+`xtol` termination condition is satisfied.
+Function evaluations 14, initial cost 1.3806e-01, final cost 1.3454e-01, first-order optimality 6.85e+01.
+Final aspect ratio: 8.02383688959958
+Final mean iota: -0.9029762418130722
+Final magnetic well: -0.11219831295921835
+Final quasisymmetry: 0.14147494589298976
+Final growth rate: 0.11271166952366064
+## Now calculating total objective function ##
+01:48:26 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 126.715502s
+Total objective before optimization: 0.26908234766688016
+-------------------------
+Optimizing with max_mode = 2
+-------------------------
+01:50:40 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 128.650401s
+01:52:51 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 126.937922s
+01:55:04 - Growth rate = 0.112712, quasisymmetry = 0.141475, mirror = 0.000000 with aspect ratio=8.023837 took 128.277569s
+01:57:19 - Growth rate = 0.117640, quasisymmetry = 0.470667, mirror = 0.000000 with aspect ratio=7.936215 took 131.801356s
+01:57:20 - Growth rate = 0.113040, quasisymmetry = 0.186140, mirror = 0.000000 with aspect ratio=8.023837 took 131.761774s
+01:57:20 - Growth rate = 0.116093, quasisymmetry = 0.188326, mirror = 0.000000 with aspect ratio=8.022688 took 131.834775s
+01:57:20 - Growth rate = 0.112736, quasisymmetry = 0.140337, mirror = 0.000000 with aspect ratio=8.023719 took 132.113960s
+01:57:21 - Growth rate = 0.113113, quasisymmetry = 0.141687, mirror = 0.000000 with aspect ratio=8.023833 took 132.218635s
+01:57:21 - Growth rate = 0.110904, quasisymmetry = 0.435352, mirror = 0.000000 with aspect ratio=7.527460 took 132.236413s
+01:57:21 - Growth rate = 0.113475, quasisymmetry = 0.141691, mirror = 0.000000 with aspect ratio=8.023835 took 132.415485s
+01:57:21 - Growth rate = 0.112748, quasisymmetry = 0.141470, mirror = 0.000000 with aspect ratio=8.024317 took 132.427863s
+01:57:21 - Growth rate = 0.112639, quasisymmetry = 0.141013, mirror = 0.000000 with aspect ratio=8.023376 took 132.671092s
+01:57:21 - Growth rate = 0.114093, quasisymmetry = 0.141437, mirror = 0.000000 with aspect ratio=8.023835 took 132.563177s
+01:57:21 - Growth rate = 0.108209, quasisymmetry = 0.460353, mirror = 0.000000 with aspect ratio=7.574569 took 132.755264s
+01:57:21 - Growth rate = 0.112764, quasisymmetry = 0.141595, mirror = 0.000000 with aspect ratio=8.023948 took 132.782752s
+01:57:21 - Growth rate = 0.113065, quasisymmetry = 0.141373, mirror = 0.000000 with aspect ratio=8.024043 took 132.822888s
+01:57:21 - Growth rate = 0.112719, quasisymmetry = 0.141294, mirror = 0.000000 with aspect ratio=8.023837 took 132.909917s
+01:57:21 - Growth rate = 0.114333, quasisymmetry = 0.141625, mirror = 0.000000 with aspect ratio=8.024253 took 133.010515s
+01:57:21 - Growth rate = 0.112204, quasisymmetry = 0.141796, mirror = 0.000000 with aspect ratio=8.023837 took 133.003161s
+01:57:21 - Growth rate = 0.112770, quasisymmetry = 0.141386, mirror = 0.000000 with aspect ratio=8.023832 took 133.070490s
+01:57:21 - Growth rate = 0.113246, quasisymmetry = 0.140984, mirror = 0.000000 with aspect ratio=8.023837 took 133.054332s
+01:57:22 - Growth rate = 0.112587, quasisymmetry = 0.141815, mirror = 0.000000 with aspect ratio=8.023832 took 133.059366s
+01:57:22 - Growth rate = 0.114510, quasisymmetry = 0.141510, mirror = 0.000000 with aspect ratio=8.023643 took 133.297852s
+01:57:22 - Growth rate = 0.128654, quasisymmetry = 0.472397, mirror = 0.000000 with aspect ratio=8.173334 took 133.249910s
+01:57:22 - Growth rate = 0.112864, quasisymmetry = 0.141643, mirror = 0.000000 with aspect ratio=8.024357 took 133.422408s
+01:57:22 - Growth rate = 0.112731, quasisymmetry = 0.141775, mirror = 0.000000 with aspect ratio=8.023837 took 133.490835s
+01:57:22 - Growth rate = 0.118864, quasisymmetry = 0.141430, mirror = 0.000000 with aspect ratio=8.024295 took 133.545650s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.3454e-01                                    6.85e+01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=6 ntor=6)>
+01:59:45 - Growth rate = 0.168622, quasisymmetry = 0.346538, mirror = 0.000000 with aspect ratio=8.004676 took 126.231766s
+02:01:56 - Growth rate = 0.137177, quasisymmetry = 0.065908, mirror = 0.000000 with aspect ratio=8.029465 took 126.923732s
+02:04:07 - Growth rate = 0.137177, quasisymmetry = 0.065908, mirror = 0.000000 with aspect ratio=8.029465 took 127.387838s
+02:06:21 - Growth rate = 0.129236, quasisymmetry = 0.419615, mirror = 0.000000 with aspect ratio=7.579819 took 131.040209s
+02:06:22 - Growth rate = 0.138643, quasisymmetry = 0.117014, mirror = 0.000000 with aspect ratio=8.029465 took 132.033306s
+02:06:22 - Growth rate = 0.138425, quasisymmetry = 0.065725, mirror = 0.000000 with aspect ratio=8.029135 took 132.054129s
+02:06:22 - Growth rate = 0.156090, quasisymmetry = 0.422537, mirror = 0.000000 with aspect ratio=7.944712 took 132.385510s
+02:06:23 - Growth rate = 0.137309, quasisymmetry = 0.065915, mirror = 0.000000 with aspect ratio=8.029995 took 132.570450s
+02:06:23 - Growth rate = 0.136572, quasisymmetry = 0.065963, mirror = 0.000000 with aspect ratio=8.030057 took 132.597556s
+02:06:23 - Growth rate = 0.138680, quasisymmetry = 0.108479, mirror = 0.000000 with aspect ratio=8.028516 took 132.580835s
+02:06:23 - Growth rate = 0.131824, quasisymmetry = 0.066502, mirror = 0.000000 with aspect ratio=8.028688 took 132.701265s
+02:06:23 - Growth rate = 0.137103, quasisymmetry = 0.065802, mirror = 0.000000 with aspect ratio=8.029465 took 132.796353s
+02:06:23 - Growth rate = 0.132891, quasisymmetry = 0.066069, mirror = 0.000000 with aspect ratio=8.029265 took 132.847241s
+02:06:23 - Growth rate = 0.136075, quasisymmetry = 0.066183, mirror = 0.000000 with aspect ratio=8.029465 took 132.868820s
+02:06:23 - Growth rate = 0.132042, quasisymmetry = 0.065723, mirror = 0.000000 with aspect ratio=8.029465 took 133.059350s
+02:06:23 - Growth rate = 0.137243, quasisymmetry = 0.066155, mirror = 0.000000 with aspect ratio=8.029467 took 133.104849s
+02:06:23 - Growth rate = 0.137385, quasisymmetry = 0.066008, mirror = 0.000000 with aspect ratio=8.029411 took 133.226759s
+02:06:23 - Growth rate = 0.137573, quasisymmetry = 0.066210, mirror = 0.000000 with aspect ratio=8.029465 took 133.250115s
+02:06:23 - Growth rate = 0.136831, quasisymmetry = 0.065987, mirror = 0.000000 with aspect ratio=8.029411 took 133.301559s
+02:06:23 - Growth rate = 0.144353, quasisymmetry = 0.063423, mirror = 0.000000 with aspect ratio=8.030145 took 133.178065s
+02:06:24 - Growth rate = 0.143032, quasisymmetry = 0.066559, mirror = 0.000000 with aspect ratio=8.029718 took 133.346123s
+02:06:24 - Growth rate = 0.142195, quasisymmetry = 0.065451, mirror = 0.000000 with aspect ratio=8.027556 took 133.173672s
+02:06:24 - Growth rate = 0.138797, quasisymmetry = 0.066699, mirror = 0.000000 with aspect ratio=8.030127 took 133.378801s
+02:06:24 - Growth rate = 0.164798, quasisymmetry = 0.469666, mirror = 0.000000 with aspect ratio=8.181206 took 133.172841s
+02:06:24 - Growth rate = 0.134724, quasisymmetry = 0.066561, mirror = 0.000000 with aspect ratio=8.029468 took 133.498261s
+02:06:24 - Growth rate = 0.108018, quasisymmetry = 0.362192, mirror = 0.000000 with aspect ratio=7.532555 took 133.505022s
+02:06:24 - Growth rate = 0.135780, quasisymmetry = 0.067268, mirror = 0.000000 with aspect ratio=8.030486 took 133.529896s
+       1              4         1.2748e-01      7.07e-03       9.31e-03       7.51e+01    
+02:08:35 - Growth rate = 0.138921, quasisymmetry = 0.058516, mirror = 0.000000 with aspect ratio=8.020859 took 127.462404s
+02:10:46 - Growth rate = 0.138921, quasisymmetry = 0.058516, mirror = 0.000000 with aspect ratio=8.020859 took 127.478622s
+02:13:01 - Growth rate = 0.140672, quasisymmetry = 0.109902, mirror = 0.000000 with aspect ratio=8.020859 took 130.794770s
+02:13:01 - Growth rate = 0.134355, quasisymmetry = 0.388347, mirror = 0.000000 with aspect ratio=7.572036 took 131.716227s
+02:13:02 - Growth rate = 0.142069, quasisymmetry = 0.058685, mirror = 0.000000 with aspect ratio=8.020859 took 131.656783s
+02:13:02 - Growth rate = 0.106328, quasisymmetry = 0.375592, mirror = 0.000000 with aspect ratio=7.524920 took 132.042033s
+02:13:02 - Growth rate = 0.161175, quasisymmetry = 0.390375, mirror = 0.000000 with aspect ratio=7.937012 took 132.537184s
+02:13:02 - Growth rate = 0.138546, quasisymmetry = 0.058523, mirror = 0.000000 with aspect ratio=8.021461 took 132.310066s
+02:13:03 - Growth rate = 0.139830, quasisymmetry = 0.057062, mirror = 0.000000 with aspect ratio=8.021798 took 132.589171s
+02:13:03 - Growth rate = 0.146158, quasisymmetry = 0.058732, mirror = 0.000000 with aspect ratio=8.021517 took 132.677302s
+02:13:03 - Growth rate = 0.139448, quasisymmetry = 0.058483, mirror = 0.000000 with aspect ratio=8.020857 took 132.693349s
+02:13:03 - Growth rate = 0.139175, quasisymmetry = 0.058729, mirror = 0.000000 with aspect ratio=8.020856 took 132.713157s
+02:13:03 - Growth rate = 0.138976, quasisymmetry = 0.058531, mirror = 0.000000 with aspect ratio=8.021388 took 132.792701s
+02:13:03 - Growth rate = 0.139521, quasisymmetry = 0.058322, mirror = 0.000000 with aspect ratio=8.020435 took 132.783565s
+02:13:03 - Growth rate = 0.138638, quasisymmetry = 0.058877, mirror = 0.000000 with aspect ratio=8.020858 took 132.841435s
+02:13:03 - Growth rate = 0.139260, quasisymmetry = 0.058490, mirror = 0.000000 with aspect ratio=8.020799 took 132.834797s
+02:13:03 - Growth rate = 0.156310, quasisymmetry = 0.098497, mirror = 0.000000 with aspect ratio=8.019913 took 132.841537s
+02:13:03 - Growth rate = 0.139070, quasisymmetry = 0.058560, mirror = 0.000000 with aspect ratio=8.020795 took 132.898379s
+02:13:03 - Growth rate = 0.145321, quasisymmetry = 0.059149, mirror = 0.000000 with aspect ratio=8.020863 took 132.890104s
+02:13:03 - Growth rate = 0.174004, quasisymmetry = 0.431002, mirror = 0.000000 with aspect ratio=8.172033 took 132.839300s
+02:13:03 - Growth rate = 0.141000, quasisymmetry = 0.058898, mirror = 0.000000 with aspect ratio=8.021074 took 132.997803s
+02:13:03 - Growth rate = 0.144893, quasisymmetry = 0.057940, mirror = 0.000000 with aspect ratio=8.018736 took 132.975632s
+02:13:03 - Growth rate = 0.146389, quasisymmetry = 0.058879, mirror = 0.000000 with aspect ratio=8.021665 took 132.952214s
+02:13:03 - Growth rate = 0.138504, quasisymmetry = 0.058902, mirror = 0.000000 with aspect ratio=8.020695 took 133.031846s
+02:13:03 - Growth rate = 0.138373, quasisymmetry = 0.058834, mirror = 0.000000 with aspect ratio=8.020852 took 133.136307s
+02:13:03 - Growth rate = 0.136841, quasisymmetry = 0.059726, mirror = 0.000000 with aspect ratio=8.019772 took 133.190041s
+       2              5         1.2597e-01      1.50e-03       2.33e-03       8.99e+01    
+02:15:15 - Growth rate = 0.134151, quasisymmetry = 0.064882, mirror = 0.000000 with aspect ratio=8.017544 took 127.463403s
+02:17:26 - Growth rate = 0.134151, quasisymmetry = 0.064882, mirror = 0.000000 with aspect ratio=8.017544 took 127.436828s
+02:19:41 - Growth rate = 0.151818, quasisymmetry = 0.339335, mirror = 0.000000 with aspect ratio=7.933802 took 131.266520s
+02:19:41 - Growth rate = 0.129348, quasisymmetry = 0.338891, mirror = 0.000000 with aspect ratio=7.569132 took 131.477597s
+02:19:41 - Growth rate = 0.141302, quasisymmetry = 0.129411, mirror = 0.000000 with aspect ratio=8.017544 took 131.714572s
+02:19:41 - Growth rate = 0.149353, quasisymmetry = 0.087560, mirror = 0.000000 with aspect ratio=8.016329 took 131.611287s
+02:19:41 - Growth rate = 0.140703, quasisymmetry = 0.063247, mirror = 0.000000 with aspect ratio=8.017757 took 131.908382s
+02:19:42 - Growth rate = 0.132290, quasisymmetry = 0.064976, mirror = 0.000000 with aspect ratio=8.017535 took 131.979677s
+02:19:42 - Growth rate = 0.134210, quasisymmetry = 0.064599, mirror = 0.000000 with aspect ratio=8.017484 took 132.647150s
+02:19:42 - Growth rate = 0.134157, quasisymmetry = 0.064550, mirror = 0.000000 with aspect ratio=8.017478 took 132.695992s
+02:19:42 - Growth rate = 0.140532, quasisymmetry = 0.062360, mirror = 0.000000 with aspect ratio=8.018493 took 132.779517s
+02:19:42 - Growth rate = 0.134463, quasisymmetry = 0.064750, mirror = 0.000000 with aspect ratio=8.017134 took 132.904006s
+02:19:42 - Growth rate = 0.132897, quasisymmetry = 0.065470, mirror = 0.000000 with aspect ratio=8.017544 took 132.981314s
+02:19:43 - Growth rate = 0.141655, quasisymmetry = 0.063780, mirror = 0.000000 with aspect ratio=8.015474 took 132.991035s
+02:19:43 - Growth rate = 0.132372, quasisymmetry = 0.064812, mirror = 0.000000 with aspect ratio=8.018072 took 133.071018s
+02:19:43 - Growth rate = 0.133714, quasisymmetry = 0.064816, mirror = 0.000000 with aspect ratio=8.018146 took 133.072156s
+02:19:43 - Growth rate = 0.140251, quasisymmetry = 0.064504, mirror = 0.000000 with aspect ratio=8.018471 took 133.204689s
+02:19:43 - Growth rate = 0.135059, quasisymmetry = 0.064245, mirror = 0.000000 with aspect ratio=8.017382 took 133.372114s
+02:19:43 - Growth rate = 0.107812, quasisymmetry = 0.430933, mirror = 0.000000 with aspect ratio=7.522030 took 133.757941s
+02:19:43 - Growth rate = 0.132153, quasisymmetry = 0.066805, mirror = 0.000000 with aspect ratio=8.016461 took 133.446459s
+02:19:43 - Growth rate = 0.133867, quasisymmetry = 0.064614, mirror = 0.000000 with aspect ratio=8.017537 took 133.443993s
+02:19:43 - Growth rate = 0.132794, quasisymmetry = 0.064760, mirror = 0.000000 with aspect ratio=8.017540 took 133.486513s
+02:19:43 - Growth rate = 0.138484, quasisymmetry = 0.063043, mirror = 0.000000 with aspect ratio=8.017546 took 133.510010s
+02:19:43 - Growth rate = 0.173311, quasisymmetry = 0.373420, mirror = 0.000000 with aspect ratio=8.168517 took 133.512755s
+02:19:43 - Growth rate = 0.133832, quasisymmetry = 0.064823, mirror = 0.000000 with aspect ratio=8.017552 took 133.533073s
+02:19:43 - Growth rate = 0.142907, quasisymmetry = 0.064878, mirror = 0.000000 with aspect ratio=8.018370 took 133.628757s
+       3              6         1.2258e-01      3.39e-03       5.82e-04       7.81e+01    
+02:21:54 - Growth rate = 0.139072, quasisymmetry = 0.069091, mirror = 0.000000 with aspect ratio=8.016895 took 126.873373s
+02:24:05 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 127.513121s
+02:26:17 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 127.528209s
+02:28:31 - Growth rate = 0.161598, quasisymmetry = 0.336566, mirror = 0.000000 with aspect ratio=7.933641 took 131.304965s
+02:28:32 - Growth rate = 0.151684, quasisymmetry = 0.086506, mirror = 0.000000 with aspect ratio=8.016147 took 131.506287s
+02:28:32 - Growth rate = 0.138331, quasisymmetry = 0.132149, mirror = 0.000000 with aspect ratio=8.017380 took 131.651795s
+02:28:32 - Growth rate = 0.129136, quasisymmetry = 0.336015, mirror = 0.000000 with aspect ratio=7.568994 took 131.855098s
+02:28:32 - Growth rate = 0.134514, quasisymmetry = 0.065697, mirror = 0.000000 with aspect ratio=8.017388 took 131.931954s
+02:28:33 - Growth rate = 0.136055, quasisymmetry = 0.065099, mirror = 0.000000 with aspect ratio=8.017218 took 132.215738s
+02:28:33 - Growth rate = 0.134383, quasisymmetry = 0.063837, mirror = 0.000000 with aspect ratio=8.017382 took 132.196601s
+02:28:33 - Growth rate = 0.133722, quasisymmetry = 0.065780, mirror = 0.000000 with aspect ratio=8.017376 took 132.428919s
+02:28:33 - Growth rate = 0.134486, quasisymmetry = 0.064033, mirror = 0.000000 with aspect ratio=8.017593 took 132.470181s
+02:28:33 - Growth rate = 0.143038, quasisymmetry = 0.065916, mirror = 0.000000 with aspect ratio=8.018215 took 132.373366s
+02:28:33 - Growth rate = 0.133135, quasisymmetry = 0.067861, mirror = 0.000000 with aspect ratio=8.016298 took 132.566378s
+02:28:33 - Growth rate = 0.133333, quasisymmetry = 0.065516, mirror = 0.000000 with aspect ratio=8.017314 took 132.634690s
+02:28:33 - Growth rate = 0.133852, quasisymmetry = 0.065752, mirror = 0.000000 with aspect ratio=8.016971 took 132.678303s
+02:28:33 - Growth rate = 0.108358, quasisymmetry = 0.435029, mirror = 0.000000 with aspect ratio=7.521887 took 133.084258s
+02:28:33 - Growth rate = 0.142178, quasisymmetry = 0.063086, mirror = 0.000000 with aspect ratio=8.018335 took 132.866103s
+02:28:33 - Growth rate = 0.135480, quasisymmetry = 0.064745, mirror = 0.000000 with aspect ratio=8.015313 took 132.827730s
+02:28:33 - Growth rate = 0.135027, quasisymmetry = 0.065571, mirror = 0.000000 with aspect ratio=8.017320 took 132.831785s
+02:28:33 - Growth rate = 0.133591, quasisymmetry = 0.066455, mirror = 0.000000 with aspect ratio=8.017380 took 132.952773s
+02:28:33 - Growth rate = 0.133331, quasisymmetry = 0.065802, mirror = 0.000000 with aspect ratio=8.017908 took 132.954342s
+02:28:33 - Growth rate = 0.132833, quasisymmetry = 0.065811, mirror = 0.000000 with aspect ratio=8.017981 took 132.991109s
+02:28:34 - Growth rate = 0.133386, quasisymmetry = 0.065999, mirror = 0.000000 with aspect ratio=8.017371 took 133.188419s
+02:28:34 - Growth rate = 0.133171, quasisymmetry = 0.065598, mirror = 0.000000 with aspect ratio=8.018305 took 133.223700s
+02:28:34 - Growth rate = 0.171964, quasisymmetry = 0.370271, mirror = 0.000000 with aspect ratio=8.168337 took 133.293213s
+02:28:34 - Growth rate = 0.132862, quasisymmetry = 0.065581, mirror = 0.000000 with aspect ratio=8.017372 took 133.320805s
+       4              8         1.2165e-01      9.29e-04       3.64e-05       7.29e+01    
+02:30:45 - Growth rate = 0.133534, quasisymmetry = 0.066058, mirror = 0.000000 with aspect ratio=8.017322 took 127.137097s
+02:32:55 - Growth rate = 0.133316, quasisymmetry = 0.065926, mirror = 0.000000 with aspect ratio=8.017365 took 125.888349s
+02:35:06 - Growth rate = 0.133102, quasisymmetry = 0.065892, mirror = 0.000000 with aspect ratio=8.017376 took 127.308895s
+02:37:17 - Growth rate = 0.133088, quasisymmetry = 0.065884, mirror = 0.000000 with aspect ratio=8.017379 took 126.848527s
+02:39:28 - Growth rate = 0.133085, quasisymmetry = 0.065882, mirror = 0.000000 with aspect ratio=8.017379 took 127.276617s
+02:41:39 - Growth rate = 0.133084, quasisymmetry = 0.065882, mirror = 0.000000 with aspect ratio=8.017380 took 127.185535s
+02:43:50 - Growth rate = 0.133084, quasisymmetry = 0.065882, mirror = 0.000000 with aspect ratio=8.017380 took 127.549861s
+       5             15         1.2165e-01      0.00e+00       0.00e+00       7.29e+01    
+`xtol` termination condition is satisfied.
+Function evaluations 15, initial cost 1.3454e-01, final cost 1.2165e-01, first-order optimality 7.29e+01.
+Final aspect ratio: 8.017379633318757
+Final mean iota: -0.961814761924773
+Final magnetic well: -0.07316433936136171
+Final quasisymmetry: 0.0658814638922924
+Final growth rate: 0.13308366037134814
+## Now calculating total objective function ##
+02:48:10 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 128.380827s
+Total objective before optimization: 0.24329612212495674
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+02:50:22 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 128.037981s
+02:52:33 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 127.301362s
+02:54:44 - Growth rate = 0.133084, quasisymmetry = 0.065881, mirror = 0.000000 with aspect ratio=8.017380 took 126.843406s
+02:57:04 - Growth rate = 0.138331, quasisymmetry = 0.132149, mirror = 0.000000 with aspect ratio=8.017380 took 136.996145s
+02:57:04 - Growth rate = 0.129136, quasisymmetry = 0.336015, mirror = 0.000000 with aspect ratio=7.568994 took 137.283768s
+02:57:04 - Growth rate = 0.134383, quasisymmetry = 0.063837, mirror = 0.000000 with aspect ratio=8.017382 took 136.985851s
+02:57:05 - Growth rate = 0.151684, quasisymmetry = 0.086506, mirror = 0.000000 with aspect ratio=8.016147 took 137.136831s
+02:57:05 - Growth rate = 0.134486, quasisymmetry = 0.064033, mirror = 0.000000 with aspect ratio=8.017593 took 137.184582s
+02:57:05 - Growth rate = 0.132855, quasisymmetry = 0.065938, mirror = 0.000000 with aspect ratio=8.017382 took 137.325968s
+02:57:05 - Growth rate = 0.133162, quasisymmetry = 0.065771, mirror = 0.000000 with aspect ratio=8.017372 took 137.709913s
+02:57:05 - Growth rate = 0.108358, quasisymmetry = 0.435029, mirror = 0.000000 with aspect ratio=7.521887 took 138.167626s
+02:57:05 - Growth rate = 0.133706, quasisymmetry = 0.065795, mirror = 0.000000 with aspect ratio=8.017447 took 137.869070s
+02:57:06 - Growth rate = 0.133040, quasisymmetry = 0.065825, mirror = 0.000000 with aspect ratio=8.017370 took 138.030689s
+02:57:06 - Growth rate = 0.135480, quasisymmetry = 0.064745, mirror = 0.000000 with aspect ratio=8.015313 took 138.823635s
+02:57:07 - Growth rate = 0.134617, quasisymmetry = 0.065979, mirror = 0.000000 with aspect ratio=8.017424 took 138.992834s
+02:57:07 - Growth rate = 0.132299, quasisymmetry = 0.066220, mirror = 0.000000 with aspect ratio=8.017381 took 139.186642s
+02:57:07 - Growth rate = 0.133852, quasisymmetry = 0.065752, mirror = 0.000000 with aspect ratio=8.016971 took 139.185640s
+02:57:07 - Growth rate = 0.133070, quasisymmetry = 0.065911, mirror = 0.000000 with aspect ratio=8.017382 took 139.331816s
+02:57:07 - Growth rate = 0.134206, quasisymmetry = 0.065331, mirror = 0.000000 with aspect ratio=8.017379 took 139.324696s
+02:57:07 - Growth rate = 0.136055, quasisymmetry = 0.065099, mirror = 0.000000 with aspect ratio=8.017218 took 139.457658s
+02:57:07 - Growth rate = 0.134051, quasisymmetry = 0.064007, mirror = 0.000000 with aspect ratio=8.017383 took 139.557510s
+02:57:07 - Growth rate = 0.132279, quasisymmetry = 0.065958, mirror = 0.000000 with aspect ratio=8.017365 took 139.553158s
+02:57:07 - Growth rate = 0.134514, quasisymmetry = 0.065697, mirror = 0.000000 with aspect ratio=8.017388 took 139.616058s
+02:57:07 - Growth rate = 0.133761, quasisymmetry = 0.066317, mirror = 0.000000 with aspect ratio=8.017352 took 139.811199s
+02:57:07 - Growth rate = 0.135027, quasisymmetry = 0.065571, mirror = 0.000000 with aspect ratio=8.017320 took 139.837986s
+02:57:07 - Growth rate = 0.133333, quasisymmetry = 0.065516, mirror = 0.000000 with aspect ratio=8.017314 took 139.852559s
+02:57:07 - Growth rate = 0.133838, quasisymmetry = 0.066236, mirror = 0.000000 with aspect ratio=8.017380 took 139.907068s
+02:57:07 - Growth rate = 0.134105, quasisymmetry = 0.066196, mirror = 0.000000 with aspect ratio=8.017379 took 139.935102s
+02:57:08 - Growth rate = 0.133245, quasisymmetry = 0.066285, mirror = 0.000000 with aspect ratio=8.017381 took 139.975606s
+02:57:08 - Growth rate = 0.133591, quasisymmetry = 0.066455, mirror = 0.000000 with aspect ratio=8.017380 took 140.252947s
+02:57:08 - Growth rate = 0.132977, quasisymmetry = 0.065904, mirror = 0.000000 with aspect ratio=8.017390 took 140.335104s
+02:57:08 - Growth rate = 0.142178, quasisymmetry = 0.063086, mirror = 0.000000 with aspect ratio=8.018335 took 140.702401s
+02:57:08 - Growth rate = 0.133722, quasisymmetry = 0.065780, mirror = 0.000000 with aspect ratio=8.017376 took 140.756060s
+02:57:09 - Growth rate = 0.143038, quasisymmetry = 0.065916, mirror = 0.000000 with aspect ratio=8.018215 took 141.141341s
+02:57:09 - Growth rate = 0.134896, quasisymmetry = 0.065127, mirror = 0.000000 with aspect ratio=8.017378 took 141.127753s
+02:57:09 - Growth rate = 0.161598, quasisymmetry = 0.336566, mirror = 0.000000 with aspect ratio=7.933641 took 141.428739s
+02:57:09 - Growth rate = 0.133331, quasisymmetry = 0.065802, mirror = 0.000000 with aspect ratio=8.017908 took 141.243504s
+02:57:09 - Growth rate = 0.132833, quasisymmetry = 0.065811, mirror = 0.000000 with aspect ratio=8.017981 took 141.612244s
+02:57:09 - Growth rate = 0.133186, quasisymmetry = 0.065928, mirror = 0.000000 with aspect ratio=8.017388 took 141.663862s
+02:57:09 - Growth rate = 0.133386, quasisymmetry = 0.065999, mirror = 0.000000 with aspect ratio=8.017371 took 141.681298s
+02:57:09 - Growth rate = 0.133295, quasisymmetry = 0.065731, mirror = 0.000000 with aspect ratio=8.017343 took 141.847259s
+02:57:09 - Growth rate = 0.133171, quasisymmetry = 0.065598, mirror = 0.000000 with aspect ratio=8.018305 took 141.864159s
+02:57:09 - Growth rate = 0.135839, quasisymmetry = 0.066363, mirror = 0.000000 with aspect ratio=8.017380 took 141.917148s
+02:57:09 - Growth rate = 0.133348, quasisymmetry = 0.066403, mirror = 0.000000 with aspect ratio=8.017380 took 141.959731s
+02:57:10 - Growth rate = 0.135669, quasisymmetry = 0.065847, mirror = 0.000000 with aspect ratio=8.017376 took 141.966757s
+02:57:10 - Growth rate = 0.132862, quasisymmetry = 0.065581, mirror = 0.000000 with aspect ratio=8.017372 took 142.028934s
+02:57:10 - Growth rate = 0.132691, quasisymmetry = 0.065932, mirror = 0.000000 with aspect ratio=8.017418 took 142.089366s
+02:57:10 - Growth rate = 0.133135, quasisymmetry = 0.067861, mirror = 0.000000 with aspect ratio=8.016298 took 142.134064s
+02:57:10 - Growth rate = 0.133043, quasisymmetry = 0.065974, mirror = 0.000000 with aspect ratio=8.017399 took 142.119403s
+02:57:10 - Growth rate = 0.171964, quasisymmetry = 0.370271, mirror = 0.000000 with aspect ratio=8.168337 took 142.187921s
+02:57:10 - Growth rate = 0.133310, quasisymmetry = 0.065761, mirror = 0.000000 with aspect ratio=8.017408 took 142.473357s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.2165e-01                                    7.29e+01    
+02:59:28 - Growth rate = 0.090041, quasisymmetry = 7.145498, mirror = 0.081509 with aspect ratio=9.237546 took 132.801739s
+03:01:43 - Growth rate = 0.167462, quasisymmetry = 0.306117, mirror = 0.000000 with aspect ratio=7.955287 took 128.923222s
+03:03:54 - Growth rate = 0.174677, quasisymmetry = 0.028769, mirror = 0.000000 with aspect ratio=8.009744 took 126.493379s
+03:06:04 - Growth rate = 0.154100, quasisymmetry = 0.050035, mirror = 0.000000 with aspect ratio=8.014853 took 126.842917s
+03:08:15 - Growth rate = 0.129825, quasisymmetry = 0.074285, mirror = 0.000000 with aspect ratio=8.013985 took 126.927744s
+03:10:26 - Growth rate = 0.129825, quasisymmetry = 0.074285, mirror = 0.000000 with aspect ratio=8.013985 took 127.107649s
+03:12:46 - Growth rate = 0.135347, quasisymmetry = 0.141354, mirror = 0.000000 with aspect ratio=8.013985 took 137.006651s
+03:12:47 - Growth rate = 0.132688, quasisymmetry = 0.304692, mirror = 0.000000 with aspect ratio=7.565920 took 137.638837s
+03:12:47 - Growth rate = 0.105188, quasisymmetry = 0.479076, mirror = 0.000000 with aspect ratio=7.518929 took 138.087811s
+03:12:47 - Growth rate = 0.129729, quasisymmetry = 0.074174, mirror = 0.000000 with aspect ratio=8.013977 took 137.814784s
+03:12:47 - Growth rate = 0.154852, quasisymmetry = 0.302010, mirror = 0.000000 with aspect ratio=7.930297 took 138.032191s
+03:12:48 - Growth rate = 0.130366, quasisymmetry = 0.074159, mirror = 0.000000 with aspect ratio=8.014047 took 138.151926s
+03:12:48 - Growth rate = 0.128494, quasisymmetry = 0.077011, mirror = 0.000000 with aspect ratio=8.012894 took 138.266164s
+03:12:48 - Growth rate = 0.128970, quasisymmetry = 0.074753, mirror = 0.000000 with aspect ratio=8.013984 took 138.271266s
+03:12:48 - Growth rate = 0.129869, quasisymmetry = 0.074219, mirror = 0.000000 with aspect ratio=8.014512 took 138.411085s
+03:12:48 - Growth rate = 0.129741, quasisymmetry = 0.074147, mirror = 0.000000 with aspect ratio=8.013949 took 138.691183s
+03:12:48 - Growth rate = 0.137619, quasisymmetry = 0.070026, mirror = 0.000000 with aspect ratio=8.015128 took 138.729856s
+03:12:48 - Growth rate = 0.141043, quasisymmetry = 0.091303, mirror = 0.000000 with aspect ratio=8.012550 took 138.870787s
+03:12:49 - Growth rate = 0.129803, quasisymmetry = 0.074813, mirror = 0.000000 with aspect ratio=8.013975 took 138.980574s
+03:12:49 - Growth rate = 0.138430, quasisymmetry = 0.074985, mirror = 0.000000 with aspect ratio=8.014912 took 139.070576s
+03:12:49 - Growth rate = 0.130500, quasisymmetry = 0.073843, mirror = 0.000000 with aspect ratio=8.013985 took 139.161069s
+03:12:49 - Growth rate = 0.129687, quasisymmetry = 0.074333, mirror = 0.000000 with aspect ratio=8.013994 took 139.326974s
+03:12:49 - Growth rate = 0.129181, quasisymmetry = 0.072209, mirror = 0.000000 with aspect ratio=8.014204 took 139.408774s
+03:12:49 - Growth rate = 0.129819, quasisymmetry = 0.074160, mirror = 0.000000 with aspect ratio=8.013923 took 139.572000s
+03:12:49 - Growth rate = 0.129310, quasisymmetry = 0.073913, mirror = 0.000000 with aspect ratio=8.013977 took 139.905457s
+03:12:49 - Growth rate = 0.129547, quasisymmetry = 0.072177, mirror = 0.000000 with aspect ratio=8.013990 took 139.908342s
+03:12:50 - Growth rate = 0.129305, quasisymmetry = 0.073655, mirror = 0.000000 with aspect ratio=8.014033 took 140.061316s
+03:12:50 - Growth rate = 0.129697, quasisymmetry = 0.072504, mirror = 0.000000 with aspect ratio=8.013988 took 140.165188s
+03:12:50 - Growth rate = 0.129435, quasisymmetry = 0.074764, mirror = 0.000000 with aspect ratio=8.013998 took 140.216423s
+03:12:50 - Growth rate = 0.128716, quasisymmetry = 0.073440, mirror = 0.000000 with aspect ratio=8.013982 took 140.284105s
+03:12:50 - Growth rate = 0.129612, quasisymmetry = 0.074906, mirror = 0.000000 with aspect ratio=8.013986 took 140.505386s
+03:12:50 - Growth rate = 0.128367, quasisymmetry = 0.074342, mirror = 0.000000 with aspect ratio=8.013974 took 140.563662s
+03:12:50 - Growth rate = 0.138484, quasisymmetry = 0.072793, mirror = 0.000000 with aspect ratio=8.011946 took 140.642995s
+03:12:50 - Growth rate = 0.130334, quasisymmetry = 0.074086, mirror = 0.000000 with aspect ratio=8.013991 took 140.737102s
+03:12:50 - Growth rate = 0.131362, quasisymmetry = 0.073929, mirror = 0.000000 with aspect ratio=8.013822 took 140.789709s
+03:12:50 - Growth rate = 0.129903, quasisymmetry = 0.074645, mirror = 0.000000 with aspect ratio=8.013981 took 140.674805s
+03:12:50 - Growth rate = 0.130124, quasisymmetry = 0.074232, mirror = 0.000000 with aspect ratio=8.013591 took 140.855206s
+03:12:50 - Growth rate = 0.136723, quasisymmetry = 0.075344, mirror = 0.000000 with aspect ratio=8.013986 took 140.911407s
+03:12:51 - Growth rate = 0.129476, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013975 took 140.997526s
+03:12:51 - Growth rate = 0.129933, quasisymmetry = 0.074726, mirror = 0.000000 with aspect ratio=8.013985 took 140.950300s
+03:12:51 - Growth rate = 0.129647, quasisymmetry = 0.074319, mirror = 0.000000 with aspect ratio=8.013986 took 140.952271s
+03:12:51 - Growth rate = 0.130171, quasisymmetry = 0.073408, mirror = 0.000000 with aspect ratio=8.013986 took 140.967877s
+03:12:51 - Growth rate = 0.129195, quasisymmetry = 0.074580, mirror = 0.000000 with aspect ratio=8.013979 took 140.986759s
+03:12:51 - Growth rate = 0.129872, quasisymmetry = 0.074170, mirror = 0.000000 with aspect ratio=8.014012 took 141.055531s
+03:12:51 - Growth rate = 0.129818, quasisymmetry = 0.074268, mirror = 0.000000 with aspect ratio=8.013963 took 141.114568s
+03:12:51 - Growth rate = 0.129293, quasisymmetry = 0.074878, mirror = 0.000000 with aspect ratio=8.013981 took 141.057069s
+03:12:51 - Growth rate = 0.129434, quasisymmetry = 0.074163, mirror = 0.000000 with aspect ratio=8.014586 took 141.170733s
+03:12:51 - Growth rate = 0.129307, quasisymmetry = 0.073404, mirror = 0.000000 with aspect ratio=8.013985 took 141.242712s
+03:12:51 - Growth rate = 0.129113, quasisymmetry = 0.074373, mirror = 0.000000 with aspect ratio=8.014001 took 141.281372s
+03:12:51 - Growth rate = 0.129687, quasisymmetry = 0.074553, mirror = 0.000000 with aspect ratio=8.013995 took 141.310484s
+03:12:51 - Growth rate = 0.129835, quasisymmetry = 0.073600, mirror = 0.000000 with aspect ratio=8.013923 took 141.363076s
+03:12:51 - Growth rate = 0.128768, quasisymmetry = 0.074351, mirror = 0.000000 with aspect ratio=8.014022 took 141.322321s
+03:12:51 - Growth rate = 0.164459, quasisymmetry = 0.333985, mirror = 0.000000 with aspect ratio=8.164783 took 141.376156s
+03:12:51 - Growth rate = 0.136296, quasisymmetry = 0.072644, mirror = 0.000000 with aspect ratio=8.015071 took 141.374929s
+       1              6         1.2151e-01      1.35e-04       7.82e-04       9.13e+01    
+03:15:03 - Growth rate = 0.131385, quasisymmetry = 0.074058, mirror = 0.000000 with aspect ratio=8.013710 took 127.601405s
+03:17:14 - Growth rate = 0.130629, quasisymmetry = 0.073921, mirror = 0.000000 with aspect ratio=8.013909 took 126.950398s
+03:19:25 - Growth rate = 0.129936, quasisymmetry = 0.074168, mirror = 0.000000 with aspect ratio=8.013965 took 127.182041s
+03:21:35 - Growth rate = 0.129779, quasisymmetry = 0.074254, mirror = 0.000000 with aspect ratio=8.013980 took 126.092861s
+03:23:45 - Growth rate = 0.129779, quasisymmetry = 0.074254, mirror = 0.000000 with aspect ratio=8.013980 took 126.866313s
+03:26:06 - Growth rate = 0.132766, quasisymmetry = 0.304596, mirror = 0.000000 with aspect ratio=7.565916 took 137.126788s
+03:26:06 - Growth rate = 0.135324, quasisymmetry = 0.141313, mirror = 0.000000 with aspect ratio=8.013980 took 137.187757s
+03:26:07 - Growth rate = 0.131413, quasisymmetry = 0.073899, mirror = 0.000000 with aspect ratio=8.013818 took 137.554321s
+03:26:07 - Growth rate = 0.130381, quasisymmetry = 0.074050, mirror = 0.000000 with aspect ratio=8.013986 took 137.639166s
+03:26:07 - Growth rate = 0.129774, quasisymmetry = 0.074144, mirror = 0.000000 with aspect ratio=8.013972 took 137.767459s
+03:26:07 - Growth rate = 0.140995, quasisymmetry = 0.091263, mirror = 0.000000 with aspect ratio=8.012545 took 137.835724s
+03:26:07 - Growth rate = 0.105177, quasisymmetry = 0.479116, mirror = 0.000000 with aspect ratio=7.518925 took 138.238145s
+03:26:07 - Growth rate = 0.130423, quasisymmetry = 0.074128, mirror = 0.000000 with aspect ratio=8.014042 took 138.194610s
+03:26:07 - Growth rate = 0.154931, quasisymmetry = 0.301888, mirror = 0.000000 with aspect ratio=7.930292 took 138.309953s
+03:26:07 - Growth rate = 0.129245, quasisymmetry = 0.072178, mirror = 0.000000 with aspect ratio=8.014199 took 138.146080s
+03:26:08 - Growth rate = 0.130113, quasisymmetry = 0.074201, mirror = 0.000000 with aspect ratio=8.013586 took 138.391488s
+03:26:08 - Growth rate = 0.128535, quasisymmetry = 0.076980, mirror = 0.000000 with aspect ratio=8.012889 took 138.533779s
+03:26:08 - Growth rate = 0.129915, quasisymmetry = 0.074188, mirror = 0.000000 with aspect ratio=8.014507 took 138.526718s
+03:26:08 - Growth rate = 0.136323, quasisymmetry = 0.074953, mirror = 0.000000 with aspect ratio=8.014907 took 138.507827s
+03:26:08 - Growth rate = 0.129018, quasisymmetry = 0.074713, mirror = 0.000000 with aspect ratio=8.013979 took 138.873618s
+03:26:09 - Growth rate = 0.129783, quasisymmetry = 0.074116, mirror = 0.000000 with aspect ratio=8.013944 took 139.796141s
+03:26:09 - Growth rate = 0.129920, quasisymmetry = 0.074138, mirror = 0.000000 with aspect ratio=8.014007 took 139.801911s
+03:26:09 - Growth rate = 0.129340, quasisymmetry = 0.074850, mirror = 0.000000 with aspect ratio=8.013976 took 139.846282s
+03:26:09 - Growth rate = 0.129658, quasisymmetry = 0.074870, mirror = 0.000000 with aspect ratio=8.013981 took 140.119253s
+03:26:09 - Growth rate = 0.129522, quasisymmetry = 0.074220, mirror = 0.000000 with aspect ratio=8.013971 took 140.193273s
+03:26:09 - Growth rate = 0.130571, quasisymmetry = 0.073824, mirror = 0.000000 with aspect ratio=8.013980 took 140.186892s
+03:26:09 - Growth rate = 0.129977, quasisymmetry = 0.074686, mirror = 0.000000 with aspect ratio=8.013980 took 140.253865s
+03:26:09 - Growth rate = 0.129693, quasisymmetry = 0.074286, mirror = 0.000000 with aspect ratio=8.013981 took 140.246647s
+03:26:10 - Growth rate = 0.129353, quasisymmetry = 0.073624, mirror = 0.000000 with aspect ratio=8.014028 took 140.307702s
+03:26:10 - Growth rate = 0.129868, quasisymmetry = 0.074130, mirror = 0.000000 with aspect ratio=8.013918 took 140.477042s
+03:26:10 - Growth rate = 0.138621, quasisymmetry = 0.072762, mirror = 0.000000 with aspect ratio=8.011941 took 140.478433s
+03:26:10 - Growth rate = 0.129854, quasisymmetry = 0.074790, mirror = 0.000000 with aspect ratio=8.013970 took 140.583807s
+03:26:10 - Growth rate = 0.129931, quasisymmetry = 0.074236, mirror = 0.000000 with aspect ratio=8.013958 took 140.619164s
+03:26:10 - Growth rate = 0.129952, quasisymmetry = 0.074621, mirror = 0.000000 with aspect ratio=8.013976 took 140.626820s
+03:26:10 - Growth rate = 0.129883, quasisymmetry = 0.073570, mirror = 0.000000 with aspect ratio=8.013918 took 140.691969s
+03:26:10 - Growth rate = 0.128408, quasisymmetry = 0.074311, mirror = 0.000000 with aspect ratio=8.013969 took 140.663515s
+03:26:10 - Growth rate = 0.129747, quasisymmetry = 0.072482, mirror = 0.000000 with aspect ratio=8.013983 took 140.715202s
+03:26:10 - Growth rate = 0.128162, quasisymmetry = 0.075286, mirror = 0.000000 with aspect ratio=8.013982 took 140.759949s
+03:26:10 - Growth rate = 0.129483, quasisymmetry = 0.074745, mirror = 0.000000 with aspect ratio=8.013994 took 140.681429s
+03:26:10 - Growth rate = 0.129155, quasisymmetry = 0.074342, mirror = 0.000000 with aspect ratio=8.013996 took 140.827080s
+03:26:10 - Growth rate = 0.135086, quasisymmetry = 0.069993, mirror = 0.000000 with aspect ratio=8.015124 took 141.048203s
+03:26:11 - Growth rate = 0.129599, quasisymmetry = 0.072170, mirror = 0.000000 with aspect ratio=8.013985 took 141.273520s
+03:26:11 - Growth rate = 0.128769, quasisymmetry = 0.073427, mirror = 0.000000 with aspect ratio=8.013977 took 141.339853s
+03:26:11 - Growth rate = 0.128802, quasisymmetry = 0.074320, mirror = 0.000000 with aspect ratio=8.014017 took 141.332198s
+03:26:11 - Growth rate = 0.136331, quasisymmetry = 0.072607, mirror = 0.000000 with aspect ratio=8.015066 took 141.387374s
+03:26:11 - Growth rate = 0.129480, quasisymmetry = 0.074132, mirror = 0.000000 with aspect ratio=8.014581 took 141.498150s
+03:26:11 - Growth rate = 0.129668, quasisymmetry = 0.074522, mirror = 0.000000 with aspect ratio=8.013990 took 141.530909s
+03:26:11 - Growth rate = 0.129732, quasisymmetry = 0.074303, mirror = 0.000000 with aspect ratio=8.013989 took 141.580971s
+03:26:11 - Growth rate = 0.164555, quasisymmetry = 0.333849, mirror = 0.000000 with aspect ratio=8.164778 took 141.681651s
+03:26:11 - Growth rate = 0.129056, quasisymmetry = 0.074550, mirror = 0.000000 with aspect ratio=8.013975 took 141.699450s
+03:26:11 - Growth rate = 0.129354, quasisymmetry = 0.073904, mirror = 0.000000 with aspect ratio=8.013972 took 141.765731s
+03:26:11 - Growth rate = 0.130218, quasisymmetry = 0.073378, mirror = 0.000000 with aspect ratio=8.013981 took 141.741738s
+03:26:11 - Growth rate = 0.129359, quasisymmetry = 0.073395, mirror = 0.000000 with aspect ratio=8.013980 took 141.947995s
+       2             10         1.2144e-01      7.64e-05       3.06e-06       3.21e+01    
+03:28:22 - Growth rate = 0.129797, quasisymmetry = 0.074244, mirror = 0.000000 with aspect ratio=8.013979 took 126.915346s
+03:30:34 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.953492s
+03:32:45 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 126.874584s
+03:35:05 - Growth rate = 0.140990, quasisymmetry = 0.091261, mirror = 0.000000 with aspect ratio=8.012545 took 136.404083s
+03:35:05 - Growth rate = 0.135326, quasisymmetry = 0.141310, mirror = 0.000000 with aspect ratio=8.013980 took 136.906626s
+03:35:06 - Growth rate = 0.132776, quasisymmetry = 0.304589, mirror = 0.000000 with aspect ratio=7.565916 took 137.340831s
+03:35:06 - Growth rate = 0.130423, quasisymmetry = 0.074125, mirror = 0.000000 with aspect ratio=8.014041 took 137.250074s
+03:35:06 - Growth rate = 0.129932, quasisymmetry = 0.074234, mirror = 0.000000 with aspect ratio=8.013957 took 137.288435s
+03:35:06 - Growth rate = 0.105179, quasisymmetry = 0.479119, mirror = 0.000000 with aspect ratio=7.518924 took 137.730716s
+03:35:06 - Growth rate = 0.129774, quasisymmetry = 0.074142, mirror = 0.000000 with aspect ratio=8.013972 took 137.447791s
+03:35:07 - Growth rate = 0.154941, quasisymmetry = 0.301880, mirror = 0.000000 with aspect ratio=7.930291 took 138.397105s
+03:35:07 - Growth rate = 0.129747, quasisymmetry = 0.072481, mirror = 0.000000 with aspect ratio=8.013982 took 138.427078s
+03:35:07 - Growth rate = 0.128535, quasisymmetry = 0.076977, mirror = 0.000000 with aspect ratio=8.012889 took 138.561957s
+03:35:07 - Growth rate = 0.128162, quasisymmetry = 0.075285, mirror = 0.000000 with aspect ratio=8.013981 took 138.611537s
+03:35:07 - Growth rate = 0.128770, quasisymmetry = 0.073427, mirror = 0.000000 with aspect ratio=8.013977 took 138.688516s
+03:35:08 - Growth rate = 0.129732, quasisymmetry = 0.074300, mirror = 0.000000 with aspect ratio=8.013989 took 138.707508s
+03:35:08 - Growth rate = 0.129915, quasisymmetry = 0.074185, mirror = 0.000000 with aspect ratio=8.014507 took 138.848972s
+03:35:08 - Growth rate = 0.130381, quasisymmetry = 0.074047, mirror = 0.000000 with aspect ratio=8.013986 took 138.920449s
+03:35:08 - Growth rate = 0.129668, quasisymmetry = 0.074520, mirror = 0.000000 with aspect ratio=8.013989 took 138.925846s
+03:35:08 - Growth rate = 0.129601, quasisymmetry = 0.072170, mirror = 0.000000 with aspect ratio=8.013985 took 138.946805s
+03:35:08 - Growth rate = 0.129883, quasisymmetry = 0.073567, mirror = 0.000000 with aspect ratio=8.013918 took 139.139133s
+03:35:08 - Growth rate = 0.129246, quasisymmetry = 0.072175, mirror = 0.000000 with aspect ratio=8.014199 took 139.278746s
+03:35:08 - Growth rate = 0.129920, quasisymmetry = 0.074136, mirror = 0.000000 with aspect ratio=8.014007 took 139.288989s
+03:35:08 - Growth rate = 0.138627, quasisymmetry = 0.072759, mirror = 0.000000 with aspect ratio=8.011941 took 139.559790s
+03:35:08 - Growth rate = 0.129783, quasisymmetry = 0.074113, mirror = 0.000000 with aspect ratio=8.013944 took 139.635642s
+03:35:08 - Growth rate = 0.129353, quasisymmetry = 0.073621, mirror = 0.000000 with aspect ratio=8.014028 took 139.649312s
+03:35:09 - Growth rate = 0.129522, quasisymmetry = 0.074218, mirror = 0.000000 with aspect ratio=8.013970 took 139.779111s
+03:35:09 - Growth rate = 0.129693, quasisymmetry = 0.074284, mirror = 0.000000 with aspect ratio=8.013981 took 139.861666s
+03:35:09 - Growth rate = 0.129018, quasisymmetry = 0.074711, mirror = 0.000000 with aspect ratio=8.013979 took 139.942581s
+03:35:09 - Growth rate = 0.129952, quasisymmetry = 0.074619, mirror = 0.000000 with aspect ratio=8.013976 took 140.033381s
+03:35:09 - Growth rate = 0.131413, quasisymmetry = 0.073897, mirror = 0.000000 with aspect ratio=8.013817 took 140.311213s
+03:35:09 - Growth rate = 0.129658, quasisymmetry = 0.074867, mirror = 0.000000 with aspect ratio=8.013981 took 140.344453s
+03:35:09 - Growth rate = 0.128408, quasisymmetry = 0.074308, mirror = 0.000000 with aspect ratio=8.013968 took 140.321693s
+03:35:09 - Growth rate = 0.130113, quasisymmetry = 0.074199, mirror = 0.000000 with aspect ratio=8.013585 took 140.462542s
+03:35:09 - Growth rate = 0.129341, quasisymmetry = 0.074849, mirror = 0.000000 with aspect ratio=8.013976 took 140.502260s
+03:35:09 - Growth rate = 0.130572, quasisymmetry = 0.073822, mirror = 0.000000 with aspect ratio=8.013980 took 140.539978s
+03:35:09 - Growth rate = 0.129869, quasisymmetry = 0.074128, mirror = 0.000000 with aspect ratio=8.013918 took 140.559123s
+03:35:10 - Growth rate = 0.129056, quasisymmetry = 0.074549, mirror = 0.000000 with aspect ratio=8.013974 took 140.654787s
+03:35:10 - Growth rate = 0.135086, quasisymmetry = 0.069990, mirror = 0.000000 with aspect ratio=8.015124 took 140.631791s
+03:35:10 - Growth rate = 0.129480, quasisymmetry = 0.074130, mirror = 0.000000 with aspect ratio=8.014581 took 140.834654s
+03:35:10 - Growth rate = 0.129359, quasisymmetry = 0.073395, mirror = 0.000000 with aspect ratio=8.013980 took 141.070585s
+03:35:10 - Growth rate = 0.136333, quasisymmetry = 0.072604, mirror = 0.000000 with aspect ratio=8.015066 took 141.136017s
+03:35:10 - Growth rate = 0.129854, quasisymmetry = 0.074788, mirror = 0.000000 with aspect ratio=8.013970 took 141.209012s
+03:35:10 - Growth rate = 0.129977, quasisymmetry = 0.074683, mirror = 0.000000 with aspect ratio=8.013980 took 141.236365s
+03:35:10 - Growth rate = 0.129354, quasisymmetry = 0.073904, mirror = 0.000000 with aspect ratio=8.013972 took 141.356176s
+03:35:10 - Growth rate = 0.128801, quasisymmetry = 0.074318, mirror = 0.000000 with aspect ratio=8.014017 took 141.407602s
+03:35:10 - Growth rate = 0.164566, quasisymmetry = 0.333840, mirror = 0.000000 with aspect ratio=8.164778 took 141.531027s
+03:35:10 - Growth rate = 0.136329, quasisymmetry = 0.074951, mirror = 0.000000 with aspect ratio=8.014907 took 141.542404s
+03:35:10 - Growth rate = 0.129483, quasisymmetry = 0.074743, mirror = 0.000000 with aspect ratio=8.013993 took 141.579880s
+03:35:10 - Growth rate = 0.130218, quasisymmetry = 0.073375, mirror = 0.000000 with aspect ratio=8.013981 took 141.522249s
+03:35:10 - Growth rate = 0.129155, quasisymmetry = 0.074339, mirror = 0.000000 with aspect ratio=8.013996 took 141.647324s
+       3             12         1.2144e-01      1.19e-06       1.91e-07       3.21e+01    
+03:37:22 - Growth rate = 0.129797, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013979 took 127.000777s
+03:39:34 - Growth rate = 0.129798, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 128.031406s
+03:41:44 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 126.445392s
+03:43:56 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.749327s
+03:46:16 - Growth rate = 0.135326, quasisymmetry = 0.141310, mirror = 0.000000 with aspect ratio=8.013980 took 136.769306s
+03:46:16 - Growth rate = 0.132776, quasisymmetry = 0.304589, mirror = 0.000000 with aspect ratio=7.565916 took 137.449744s
+03:46:17 - Growth rate = 0.105179, quasisymmetry = 0.479119, mirror = 0.000000 with aspect ratio=7.518924 took 137.664247s
+03:46:17 - Growth rate = 0.129883, quasisymmetry = 0.073567, mirror = 0.000000 with aspect ratio=8.013918 took 137.482209s
+03:46:17 - Growth rate = 0.140990, quasisymmetry = 0.091261, mirror = 0.000000 with aspect ratio=8.012545 took 137.590037s
+03:46:17 - Growth rate = 0.130113, quasisymmetry = 0.074199, mirror = 0.000000 with aspect ratio=8.013585 took 137.814460s
+03:46:17 - Growth rate = 0.154941, quasisymmetry = 0.301880, mirror = 0.000000 with aspect ratio=7.930291 took 138.221654s
+03:46:17 - Growth rate = 0.129774, quasisymmetry = 0.074142, mirror = 0.000000 with aspect ratio=8.013972 took 138.115456s
+03:46:18 - Growth rate = 0.129915, quasisymmetry = 0.074185, mirror = 0.000000 with aspect ratio=8.014507 took 138.222901s
+03:46:18 - Growth rate = 0.129977, quasisymmetry = 0.074683, mirror = 0.000000 with aspect ratio=8.013980 took 138.426189s
+03:46:18 - Growth rate = 0.129018, quasisymmetry = 0.074711, mirror = 0.000000 with aspect ratio=8.013979 took 138.352659s
+03:46:18 - Growth rate = 0.138627, quasisymmetry = 0.072759, mirror = 0.000000 with aspect ratio=8.011941 took 138.658700s
+03:46:18 - Growth rate = 0.128535, quasisymmetry = 0.076977, mirror = 0.000000 with aspect ratio=8.012889 took 138.735698s
+03:46:18 - Growth rate = 0.129522, quasisymmetry = 0.074218, mirror = 0.000000 with aspect ratio=8.013970 took 138.743145s
+03:46:18 - Growth rate = 0.130572, quasisymmetry = 0.073822, mirror = 0.000000 with aspect ratio=8.013980 took 138.715390s
+03:46:18 - Growth rate = 0.128162, quasisymmetry = 0.075285, mirror = 0.000000 with aspect ratio=8.013981 took 138.774019s
+03:46:19 - Growth rate = 0.129483, quasisymmetry = 0.074743, mirror = 0.000000 with aspect ratio=8.013993 took 139.136265s
+03:46:19 - Growth rate = 0.136333, quasisymmetry = 0.072604, mirror = 0.000000 with aspect ratio=8.015066 took 139.127617s
+03:46:19 - Growth rate = 0.129747, quasisymmetry = 0.072481, mirror = 0.000000 with aspect ratio=8.013982 took 139.083121s
+03:46:19 - Growth rate = 0.129783, quasisymmetry = 0.074113, mirror = 0.000000 with aspect ratio=8.013944 took 139.337899s
+03:46:19 - Growth rate = 0.136329, quasisymmetry = 0.074951, mirror = 0.000000 with aspect ratio=8.014907 took 139.296909s
+03:46:19 - Growth rate = 0.130423, quasisymmetry = 0.074125, mirror = 0.000000 with aspect ratio=8.014041 took 139.451819s
+03:46:19 - Growth rate = 0.129246, quasisymmetry = 0.072175, mirror = 0.000000 with aspect ratio=8.014199 took 139.860980s
+03:46:19 - Growth rate = 0.130381, quasisymmetry = 0.074047, mirror = 0.000000 with aspect ratio=8.013986 took 139.943660s
+03:46:20 - Growth rate = 0.129693, quasisymmetry = 0.074284, mirror = 0.000000 with aspect ratio=8.013981 took 140.057679s
+03:46:20 - Growth rate = 0.129601, quasisymmetry = 0.072170, mirror = 0.000000 with aspect ratio=8.013985 took 140.147528s
+03:46:20 - Growth rate = 0.128408, quasisymmetry = 0.074308, mirror = 0.000000 with aspect ratio=8.013968 took 140.176086s
+03:46:20 - Growth rate = 0.129869, quasisymmetry = 0.074128, mirror = 0.000000 with aspect ratio=8.013918 took 140.193500s
+03:46:20 - Growth rate = 0.129658, quasisymmetry = 0.074867, mirror = 0.000000 with aspect ratio=8.013981 took 140.336998s
+03:46:20 - Growth rate = 0.129932, quasisymmetry = 0.074234, mirror = 0.000000 with aspect ratio=8.013957 took 140.426985s
+03:46:20 - Growth rate = 0.129353, quasisymmetry = 0.073621, mirror = 0.000000 with aspect ratio=8.014028 took 140.397919s
+03:46:20 - Growth rate = 0.128770, quasisymmetry = 0.073427, mirror = 0.000000 with aspect ratio=8.013977 took 140.489727s
+03:46:20 - Growth rate = 0.129341, quasisymmetry = 0.074849, mirror = 0.000000 with aspect ratio=8.013976 took 140.491792s
+03:46:20 - Growth rate = 0.131413, quasisymmetry = 0.073897, mirror = 0.000000 with aspect ratio=8.013817 took 140.570943s
+03:46:20 - Growth rate = 0.129155, quasisymmetry = 0.074339, mirror = 0.000000 with aspect ratio=8.013996 took 140.614221s
+03:46:20 - Growth rate = 0.129359, quasisymmetry = 0.073395, mirror = 0.000000 with aspect ratio=8.013980 took 140.635758s
+03:46:20 - Growth rate = 0.128801, quasisymmetry = 0.074318, mirror = 0.000000 with aspect ratio=8.014017 took 140.604024s
+03:46:20 - Growth rate = 0.129732, quasisymmetry = 0.074300, mirror = 0.000000 with aspect ratio=8.013989 took 140.835198s
+03:46:20 - Growth rate = 0.129854, quasisymmetry = 0.074788, mirror = 0.000000 with aspect ratio=8.013970 took 140.903686s
+03:46:20 - Growth rate = 0.129480, quasisymmetry = 0.074130, mirror = 0.000000 with aspect ratio=8.014581 took 141.029804s
+03:46:20 - Growth rate = 0.129056, quasisymmetry = 0.074549, mirror = 0.000000 with aspect ratio=8.013974 took 140.990902s
+03:46:21 - Growth rate = 0.129952, quasisymmetry = 0.074619, mirror = 0.000000 with aspect ratio=8.013976 took 141.246650s
+03:46:21 - Growth rate = 0.129354, quasisymmetry = 0.073904, mirror = 0.000000 with aspect ratio=8.013972 took 141.319973s
+03:46:21 - Growth rate = 0.129668, quasisymmetry = 0.074520, mirror = 0.000000 with aspect ratio=8.013989 took 141.547811s
+03:46:21 - Growth rate = 0.135086, quasisymmetry = 0.069990, mirror = 0.000000 with aspect ratio=8.015124 took 141.524363s
+03:46:21 - Growth rate = 0.129920, quasisymmetry = 0.074136, mirror = 0.000000 with aspect ratio=8.014007 took 141.559607s
+03:46:21 - Growth rate = 0.164566, quasisymmetry = 0.333840, mirror = 0.000000 with aspect ratio=8.164778 took 141.582701s
+03:46:21 - Growth rate = 0.130218, quasisymmetry = 0.073375, mirror = 0.000000 with aspect ratio=8.013981 took 141.719470s
+       4             15         1.2144e-01      1.86e-08       2.98e-09       3.21e+01    
+03:48:33 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.574770s
+03:50:45 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.784155s
+03:53:05 - Growth rate = 0.135326, quasisymmetry = 0.141310, mirror = 0.000000 with aspect ratio=8.013980 took 136.530601s
+03:53:05 - Growth rate = 0.132776, quasisymmetry = 0.304589, mirror = 0.000000 with aspect ratio=7.565916 took 136.878168s
+03:53:05 - Growth rate = 0.129774, quasisymmetry = 0.074142, mirror = 0.000000 with aspect ratio=8.013972 took 136.963850s
+03:53:05 - Growth rate = 0.130423, quasisymmetry = 0.074125, mirror = 0.000000 with aspect ratio=8.014041 took 136.998080s
+03:53:06 - Growth rate = 0.129522, quasisymmetry = 0.074218, mirror = 0.000000 with aspect ratio=8.013970 took 137.521208s
+03:53:06 - Growth rate = 0.129658, quasisymmetry = 0.074867, mirror = 0.000000 with aspect ratio=8.013981 took 137.568085s
+03:53:06 - Growth rate = 0.105179, quasisymmetry = 0.479119, mirror = 0.000000 with aspect ratio=7.518924 took 137.914326s
+03:53:06 - Growth rate = 0.154941, quasisymmetry = 0.301880, mirror = 0.000000 with aspect ratio=7.930291 took 137.795992s
+03:53:06 - Growth rate = 0.129883, quasisymmetry = 0.073567, mirror = 0.000000 with aspect ratio=8.013918 took 138.007586s
+03:53:07 - Growth rate = 0.128535, quasisymmetry = 0.076977, mirror = 0.000000 with aspect ratio=8.012889 took 138.301057s
+03:53:07 - Growth rate = 0.140990, quasisymmetry = 0.091261, mirror = 0.000000 with aspect ratio=8.012545 took 138.340758s
+03:53:07 - Growth rate = 0.129353, quasisymmetry = 0.073621, mirror = 0.000000 with aspect ratio=8.014028 took 138.425051s
+03:53:07 - Growth rate = 0.129056, quasisymmetry = 0.074549, mirror = 0.000000 with aspect ratio=8.013974 took 138.582024s
+03:53:07 - Growth rate = 0.129341, quasisymmetry = 0.074849, mirror = 0.000000 with aspect ratio=8.013976 took 138.737684s
+03:53:07 - Growth rate = 0.129732, quasisymmetry = 0.074300, mirror = 0.000000 with aspect ratio=8.013989 took 139.017131s
+03:53:07 - Growth rate = 0.136330, quasisymmetry = 0.074951, mirror = 0.000000 with aspect ratio=8.014907 took 139.049820s
+03:53:08 - Growth rate = 0.129932, quasisymmetry = 0.074234, mirror = 0.000000 with aspect ratio=8.013957 took 139.107285s
+03:53:08 - Growth rate = 0.129920, quasisymmetry = 0.074136, mirror = 0.000000 with aspect ratio=8.014007 took 139.275015s
+03:53:08 - Growth rate = 0.136333, quasisymmetry = 0.072604, mirror = 0.000000 with aspect ratio=8.015066 took 139.347743s
+03:53:08 - Growth rate = 0.129783, quasisymmetry = 0.074113, mirror = 0.000000 with aspect ratio=8.013944 took 139.403818s
+03:53:08 - Growth rate = 0.131413, quasisymmetry = 0.073897, mirror = 0.000000 with aspect ratio=8.013817 took 139.571114s
+03:53:08 - Growth rate = 0.129747, quasisymmetry = 0.072481, mirror = 0.000000 with aspect ratio=8.013982 took 139.560173s
+03:53:08 - Growth rate = 0.129693, quasisymmetry = 0.074284, mirror = 0.000000 with aspect ratio=8.013981 took 139.643885s
+03:53:08 - Growth rate = 0.129018, quasisymmetry = 0.074711, mirror = 0.000000 with aspect ratio=8.013979 took 139.724273s
+03:53:08 - Growth rate = 0.128408, quasisymmetry = 0.074308, mirror = 0.000000 with aspect ratio=8.013968 took 139.700060s
+03:53:08 - Growth rate = 0.129483, quasisymmetry = 0.074743, mirror = 0.000000 with aspect ratio=8.013993 took 139.901236s
+03:53:08 - Growth rate = 0.129869, quasisymmetry = 0.074128, mirror = 0.000000 with aspect ratio=8.013918 took 139.900022s
+03:53:08 - Growth rate = 0.130381, quasisymmetry = 0.074047, mirror = 0.000000 with aspect ratio=8.013986 took 139.937278s
+03:53:08 - Growth rate = 0.135086, quasisymmetry = 0.069990, mirror = 0.000000 with aspect ratio=8.015124 took 139.887680s
+03:53:08 - Growth rate = 0.130572, quasisymmetry = 0.073822, mirror = 0.000000 with aspect ratio=8.013980 took 140.028177s
+03:53:08 - Growth rate = 0.130113, quasisymmetry = 0.074199, mirror = 0.000000 with aspect ratio=8.013585 took 140.027558s
+03:53:08 - Growth rate = 0.138627, quasisymmetry = 0.072759, mirror = 0.000000 with aspect ratio=8.011941 took 140.039272s
+03:53:09 - Growth rate = 0.128162, quasisymmetry = 0.075285, mirror = 0.000000 with aspect ratio=8.013981 took 140.118572s
+03:53:09 - Growth rate = 0.129246, quasisymmetry = 0.072175, mirror = 0.000000 with aspect ratio=8.014199 took 140.234450s
+03:53:09 - Growth rate = 0.128770, quasisymmetry = 0.073427, mirror = 0.000000 with aspect ratio=8.013977 took 140.705029s
+03:53:09 - Growth rate = 0.129480, quasisymmetry = 0.074130, mirror = 0.000000 with aspect ratio=8.014581 took 140.819266s
+03:53:09 - Growth rate = 0.129359, quasisymmetry = 0.073395, mirror = 0.000000 with aspect ratio=8.013980 took 140.892450s
+03:53:09 - Growth rate = 0.129977, quasisymmetry = 0.074683, mirror = 0.000000 with aspect ratio=8.013980 took 141.011029s
+03:53:10 - Growth rate = 0.128801, quasisymmetry = 0.074318, mirror = 0.000000 with aspect ratio=8.014017 took 141.028905s
+03:53:10 - Growth rate = 0.129668, quasisymmetry = 0.074520, mirror = 0.000000 with aspect ratio=8.013989 took 141.109893s
+03:53:10 - Growth rate = 0.129854, quasisymmetry = 0.074788, mirror = 0.000000 with aspect ratio=8.013970 took 141.107983s
+03:53:10 - Growth rate = 0.129354, quasisymmetry = 0.073904, mirror = 0.000000 with aspect ratio=8.013972 took 141.232066s
+03:53:10 - Growth rate = 0.164566, quasisymmetry = 0.333840, mirror = 0.000000 with aspect ratio=8.164778 took 141.236759s
+03:53:10 - Growth rate = 0.130218, quasisymmetry = 0.073375, mirror = 0.000000 with aspect ratio=8.013981 took 141.220319s
+03:53:10 - Growth rate = 0.129952, quasisymmetry = 0.074619, mirror = 0.000000 with aspect ratio=8.013976 took 141.257024s
+03:53:10 - Growth rate = 0.129915, quasisymmetry = 0.074185, mirror = 0.000000 with aspect ratio=8.014507 took 141.341106s
+03:53:10 - Growth rate = 0.129601, quasisymmetry = 0.072170, mirror = 0.000000 with aspect ratio=8.013985 took 141.318270s
+03:53:10 - Growth rate = 0.129155, quasisymmetry = 0.074339, mirror = 0.000000 with aspect ratio=8.013996 took 141.607385s
+       5             16         1.2144e-01      4.68e-09       7.46e-10       3.21e+01    
+`xtol` termination condition is satisfied.
+Function evaluations 16, initial cost 1.2165e-01, final cost 1.2144e-01, first-order optimality 3.21e+01.
+Final aspect ratio: 8.013979517920275
+Final mean iota: -0.9605379848549844
+Final magnetic well: -0.073665286200763
+Final quasisymmetry: 0.07425140051973825
+Final growth rate: 0.12977860790245363
+## Now calculating total objective function ##
+03:57:34 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 131.797422s
+Total objective before optimization: 0.24287169813200846
+-------------------------
+Optimizing with max_mode = 4
+-------------------------
+03:59:44 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 126.934469s
+04:01:56 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.507739s
+04:04:06 - Growth rate = 0.129779, quasisymmetry = 0.074251, mirror = 0.000000 with aspect ratio=8.013980 took 127.126951s
+04:06:26 - Growth rate = 0.135326, quasisymmetry = 0.141310, mirror = 0.000000 with aspect ratio=8.013980 took 136.390926s
+04:06:26 - Growth rate = 0.132776, quasisymmetry = 0.304589, mirror = 0.000000 with aspect ratio=7.565916 took 136.858662s
+04:06:27 - Growth rate = 0.140990, quasisymmetry = 0.091261, mirror = 0.000000 with aspect ratio=8.012545 took 136.538765s
+04:06:27 - Growth rate = 0.129932, quasisymmetry = 0.074234, mirror = 0.000000 with aspect ratio=8.013957 took 136.751879s
+04:06:27 - Growth rate = 0.130147, quasisymmetry = 0.074163, mirror = 0.000000 with aspect ratio=8.013981 took 136.824857s
+04:06:27 - Growth rate = 0.129693, quasisymmetry = 0.074284, mirror = 0.000000 with aspect ratio=8.013981 took 137.208193s
+04:06:27 - Growth rate = 0.136389, quasisymmetry = 0.077849, mirror = 0.000000 with aspect ratio=8.013980 took 137.300954s
+04:06:27 - Growth rate = 0.129246, quasisymmetry = 0.072175, mirror = 0.000000 with aspect ratio=8.014199 took 137.421170s
+04:06:28 - Growth rate = 0.129808, quasisymmetry = 0.074138, mirror = 0.000000 with aspect ratio=8.013980 took 137.676947s
+04:06:28 - Growth rate = 0.129747, quasisymmetry = 0.072481, mirror = 0.000000 with aspect ratio=8.013982 took 137.768571s
+04:06:29 - Growth rate = 0.129869, quasisymmetry = 0.074128, mirror = 0.000000 with aspect ratio=8.013918 took 138.456669s
+04:06:29 - Growth rate = 0.129648, quasisymmetry = 0.074379, mirror = 0.000000 with aspect ratio=8.013979 took 138.683439s
+04:06:29 - Growth rate = 0.154941, quasisymmetry = 0.301880, mirror = 0.000000 with aspect ratio=7.930291 took 138.938612s
+04:06:29 - Growth rate = 0.136330, quasisymmetry = 0.074951, mirror = 0.000000 with aspect ratio=8.014907 took 138.804684s
+04:06:29 - Growth rate = 0.130572, quasisymmetry = 0.073822, mirror = 0.000000 with aspect ratio=8.013980 took 138.937074s
+04:06:29 - Growth rate = 0.129601, quasisymmetry = 0.072170, mirror = 0.000000 with aspect ratio=8.013985 took 139.266304s
+04:06:29 - Growth rate = 0.129522, quasisymmetry = 0.074218, mirror = 0.000000 with aspect ratio=8.013970 took 139.275211s
+04:06:29 - Growth rate = 0.129354, quasisymmetry = 0.073904, mirror = 0.000000 with aspect ratio=8.013972 took 139.291107s
+04:06:29 - Growth rate = 0.128262, quasisymmetry = 0.076524, mirror = 0.000000 with aspect ratio=8.013978 took 139.401573s
+04:06:30 - Growth rate = 0.129018, quasisymmetry = 0.074711, mirror = 0.000000 with aspect ratio=8.013979 took 139.516481s
+04:06:30 - Growth rate = 0.129341, quasisymmetry = 0.074849, mirror = 0.000000 with aspect ratio=8.013976 took 139.617699s
+04:06:30 - Growth rate = 0.129359, quasisymmetry = 0.073395, mirror = 0.000000 with aspect ratio=8.013980 took 139.724040s
+04:06:30 - Growth rate = 0.129483, quasisymmetry = 0.074743, mirror = 0.000000 with aspect ratio=8.013993 took 139.751447s
+04:06:30 - Growth rate = 0.129764, quasisymmetry = 0.074317, mirror = 0.000000 with aspect ratio=8.013980 took 139.742608s
+04:06:30 - Growth rate = 0.130113, quasisymmetry = 0.074199, mirror = 0.000000 with aspect ratio=8.013585 took 139.818624s
+04:06:30 - Growth rate = 0.127653, quasisymmetry = 0.077302, mirror = 0.000000 with aspect ratio=8.013979 took 139.885874s
+04:06:30 - Growth rate = 0.129442, quasisymmetry = 0.075035, mirror = 0.000000 with aspect ratio=8.013978 took 139.858145s
+04:06:30 - Growth rate = 0.128408, quasisymmetry = 0.074308, mirror = 0.000000 with aspect ratio=8.013968 took 139.884791s
+04:06:30 - Growth rate = 0.128273, quasisymmetry = 0.076080, mirror = 0.000000 with aspect ratio=8.013979 took 139.939118s
+04:06:30 - Growth rate = 0.131413, quasisymmetry = 0.073897, mirror = 0.000000 with aspect ratio=8.013817 took 140.026851s
+04:06:30 - Growth rate = 0.129574, quasisymmetry = 0.074349, mirror = 0.000000 with aspect ratio=8.013980 took 140.065684s
+04:06:30 - Growth rate = 0.129056, quasisymmetry = 0.074549, mirror = 0.000000 with aspect ratio=8.013974 took 140.198976s
+04:06:30 - Growth rate = 0.129920, quasisymmetry = 0.074136, mirror = 0.000000 with aspect ratio=8.014007 took 140.338381s
+04:06:31 - Growth rate = 0.128801, quasisymmetry = 0.074318, mirror = 0.000000 with aspect ratio=8.014017 took 140.502589s
+04:06:31 - Growth rate = 0.129480, quasisymmetry = 0.074130, mirror = 0.000000 with aspect ratio=8.014581 took 140.775895s
+04:06:31 - Growth rate = 0.129780, quasisymmetry = 0.074016, mirror = 0.000000 with aspect ratio=8.013979 took 141.275936s
+04:06:31 - Growth rate = 0.130279, quasisymmetry = 0.074924, mirror = 0.000000 with aspect ratio=8.013980 took 141.258934s
+04:06:31 - Growth rate = 0.129519, quasisymmetry = 0.075934, mirror = 0.000000 with aspect ratio=8.013980 took 141.371316s
+04:06:31 - Growth rate = 0.129668, quasisymmetry = 0.074520, mirror = 0.000000 with aspect ratio=8.013989 took 141.351516s
+04:06:32 - Growth rate = 0.135086, quasisymmetry = 0.069990, mirror = 0.000000 with aspect ratio=8.015124 took 141.453908s
+04:06:32 - Growth rate = 0.129758, quasisymmetry = 0.074342, mirror = 0.000000 with aspect ratio=8.013980 took 141.535619s
+04:06:32 - Growth rate = 0.130023, quasisymmetry = 0.075104, mirror = 0.000000 with aspect ratio=8.013979 took 141.589812s
+04:06:32 - Growth rate = 0.129477, quasisymmetry = 0.074181, mirror = 0.000000 with aspect ratio=8.013978 took 141.649129s
+04:06:32 - Growth rate = 0.129952, quasisymmetry = 0.074619, mirror = 0.000000 with aspect ratio=8.013976 took 141.801761s
+04:06:32 - Growth rate = 0.129571, quasisymmetry = 0.075387, mirror = 0.000000 with aspect ratio=8.013981 took 141.818677s
+04:06:32 - Growth rate = 0.129977, quasisymmetry = 0.074683, mirror = 0.000000 with aspect ratio=8.013980 took 141.838520s
+04:06:32 - Growth rate = 0.135434, quasisymmetry = 0.076429, mirror = 0.000000 with aspect ratio=8.013980 took 141.896512s
+04:06:32 - Growth rate = 0.164566, quasisymmetry = 0.333840, mirror = 0.000000 with aspect ratio=8.164778 took 141.906583s
+04:08:43 - Growth rate = 0.138627, quasisymmetry = 0.072759, mirror = 0.000000 with aspect ratio=8.011941 took 133.239999s
+04:08:44 - Growth rate = 0.129391, quasisymmetry = 0.074399, mirror = 0.000000 with aspect ratio=8.013980 took 133.135518s
+04:08:44 - Growth rate = 0.129854, quasisymmetry = 0.074259, mirror = 0.000000 with aspect ratio=8.013979 took 132.817676s
+04:08:44 - Growth rate = 0.129353, quasisymmetry = 0.073621, mirror = 0.000000 with aspect ratio=8.014028 took 132.541536s
+04:08:44 - Growth rate = 0.128822, quasisymmetry = 0.076317, mirror = 0.000000 with aspect ratio=8.013979 took 132.502054s
+04:08:44 - Growth rate = 0.105179, quasisymmetry = 0.479119, mirror = 0.000000 with aspect ratio=7.518924 took 134.061707s
+04:08:44 - Growth rate = 0.129774, quasisymmetry = 0.074142, mirror = 0.000000 with aspect ratio=8.013972 took 132.257177s
+04:08:45 - Growth rate = 0.129883, quasisymmetry = 0.073567, mirror = 0.000000 with aspect ratio=8.013918 took 133.080228s
+04:08:46 - Growth rate = 0.128535, quasisymmetry = 0.076977, mirror = 0.000000 with aspect ratio=8.012889 took 132.945050s
+04:08:46 - Growth rate = 0.130033, quasisymmetry = 0.074442, mirror = 0.000000 with aspect ratio=8.013979 took 132.761940s
+04:08:46 - Growth rate = 0.129819, quasisymmetry = 0.074271, mirror = 0.000000 with aspect ratio=8.013981 took 132.996003s
+04:08:46 - Growth rate = 0.130228, quasisymmetry = 0.075432, mirror = 0.000000 with aspect ratio=8.013979 took 132.926431s
+04:08:46 - Growth rate = 0.129574, quasisymmetry = 0.074320, mirror = 0.000000 with aspect ratio=8.013980 took 132.901101s
+04:08:46 - Growth rate = 0.129854, quasisymmetry = 0.074788, mirror = 0.000000 with aspect ratio=8.013970 took 132.893881s
+04:08:47 - Growth rate = 0.130381, quasisymmetry = 0.074047, mirror = 0.000000 with aspect ratio=8.013986 took 133.427414s
+04:08:47 - Growth rate = 0.129783, quasisymmetry = 0.074113, mirror = 0.000000 with aspect ratio=8.013944 took 134.051124s
+04:08:47 - Growth rate = 0.128162, quasisymmetry = 0.075285, mirror = 0.000000 with aspect ratio=8.013981 took 133.342220s
+04:08:47 - Growth rate = 0.129658, quasisymmetry = 0.074867, mirror = 0.000000 with aspect ratio=8.013981 took 133.582467s
+04:08:47 - Growth rate = 0.129004, quasisymmetry = 0.074446, mirror = 0.000000 with aspect ratio=8.013980 took 133.468636s
+04:08:47 - Growth rate = 0.130423, quasisymmetry = 0.074125, mirror = 0.000000 with aspect ratio=8.014041 took 133.632864s
+04:08:47 - Growth rate = 0.129976, quasisymmetry = 0.074129, mirror = 0.000000 with aspect ratio=8.013982 took 132.979909s
+04:08:47 - Growth rate = 0.129119, quasisymmetry = 0.076678, mirror = 0.000000 with aspect ratio=8.013980 took 133.608400s
+04:08:48 - Growth rate = 0.129155, quasisymmetry = 0.074339, mirror = 0.000000 with aspect ratio=8.013996 took 132.917009s
+04:08:48 - Growth rate = 0.130154, quasisymmetry = 0.073979, mirror = 0.000000 with aspect ratio=8.013980 took 133.382262s
+04:08:48 - Growth rate = 0.130995, quasisymmetry = 0.074918, mirror = 0.000000 with aspect ratio=8.013980 took 132.730275s
+04:08:48 - Growth rate = 0.129732, quasisymmetry = 0.074300, mirror = 0.000000 with aspect ratio=8.013989 took 134.121694s
+04:08:48 - Growth rate = 0.128770, quasisymmetry = 0.073427, mirror = 0.000000 with aspect ratio=8.013977 took 133.116077s
+04:08:48 - Growth rate = 0.129915, quasisymmetry = 0.074185, mirror = 0.000000 with aspect ratio=8.014507 took 133.133710s
+04:08:49 - Growth rate = 0.129764, quasisymmetry = 0.074335, mirror = 0.000000 with aspect ratio=8.013980 took 133.378066s
+04:08:49 - Growth rate = 0.129216, quasisymmetry = 0.075844, mirror = 0.000000 with aspect ratio=8.013980 took 133.520434s
+04:08:49 - Growth rate = 0.136333, quasisymmetry = 0.072604, mirror = 0.000000 with aspect ratio=8.015066 took 133.453334s
+04:08:49 - Growth rate = 0.130218, quasisymmetry = 0.073375, mirror = 0.000000 with aspect ratio=8.013981 took 133.550879s
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.2144e-01                                    9.71e+01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=6 ntor=6)>
+04:11:07 - Growth rate = 0.169726, quasisymmetry = 1.419878, mirror = 0.000000 with aspect ratio=7.976305 took 129.516174s
+04:13:17 - Growth rate = 0.175684, quasisymmetry = 0.040795, mirror = 0.000000 with aspect ratio=8.007425 took 125.628397s
+04:15:28 - Growth rate = 0.155510, quasisymmetry = 0.049970, mirror = 0.000000 with aspect ratio=8.015128 took 126.898228s
+04:17:40 - Growth rate = 0.130958, quasisymmetry = 0.071512, mirror = 0.000000 with aspect ratio=8.014304 took 128.200397s
+04:19:51 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013861 took 127.000511s
+04:22:02 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013861 took 127.707570s
+04:24:23 - Growth rate = 0.128317, quasisymmetry = 0.302274, mirror = 0.000000 with aspect ratio=7.565805 took 137.259423s
+04:24:23 - Growth rate = 0.135605, quasisymmetry = 0.139497, mirror = 0.000000 with aspect ratio=8.013861 took 137.487303s
+04:24:24 - Growth rate = 0.130110, quasisymmetry = 0.073007, mirror = 0.000000 with aspect ratio=8.013861 took 137.523897s
+04:24:24 - Growth rate = 0.129497, quasisymmetry = 0.073226, mirror = 0.000000 with aspect ratio=8.013861 took 137.623346s
+04:24:24 - Growth rate = 0.129461, quasisymmetry = 0.074013, mirror = 0.000000 with aspect ratio=8.013859 took 137.625936s
+04:24:24 - Growth rate = 0.129582, quasisymmetry = 0.073315, mirror = 0.000000 with aspect ratio=8.013862 took 137.811561s
+04:24:24 - Growth rate = 0.138509, quasisymmetry = 0.090169, mirror = 0.000000 with aspect ratio=8.012414 took 137.915058s
+04:24:24 - Growth rate = 0.148558, quasisymmetry = 0.298624, mirror = 0.000000 with aspect ratio=7.930152 took 138.137594s
+04:24:24 - Growth rate = 0.134303, quasisymmetry = 0.075468, mirror = 0.000000 with aspect ratio=8.013859 took 138.198888s
+04:24:25 - Growth rate = 0.129199, quasisymmetry = 0.074987, mirror = 0.000000 with aspect ratio=8.013860 took 138.761853s
+04:24:25 - Growth rate = 0.129794, quasisymmetry = 0.073073, mirror = 0.000000 with aspect ratio=8.013838 took 138.845109s
+04:24:25 - Growth rate = 0.129534, quasisymmetry = 0.073053, mirror = 0.000000 with aspect ratio=8.013851 took 138.916148s
+04:24:25 - Growth rate = 0.135232, quasisymmetry = 0.073646, mirror = 0.000000 with aspect ratio=8.013861 took 138.911664s
+04:24:25 - Growth rate = 0.129782, quasisymmetry = 0.073249, mirror = 0.000000 with aspect ratio=8.013861 took 139.063840s
+04:24:25 - Growth rate = 0.129895, quasisymmetry = 0.074313, mirror = 0.000000 with aspect ratio=8.013856 took 139.038839s
+04:24:25 - Growth rate = 0.131374, quasisymmetry = 0.068867, mirror = 0.000000 with aspect ratio=8.015020 took 139.137799s
+04:24:25 - Growth rate = 0.129403, quasisymmetry = 0.073725, mirror = 0.000000 with aspect ratio=8.013861 took 139.280004s
+04:24:26 - Growth rate = 0.130372, quasisymmetry = 0.073058, mirror = 0.000000 with aspect ratio=8.013471 took 139.446506s
+04:24:26 - Growth rate = 0.128556, quasisymmetry = 0.074388, mirror = 0.000000 with aspect ratio=8.013860 took 139.660661s
+04:24:26 - Growth rate = 0.129737, quasisymmetry = 0.073171, mirror = 0.000000 with aspect ratio=8.013861 took 139.777366s
+04:24:26 - Growth rate = 0.129681, quasisymmetry = 0.074505, mirror = 0.000000 with aspect ratio=8.013853 took 140.041276s
+04:24:26 - Growth rate = 0.130063, quasisymmetry = 0.073871, mirror = 0.000000 with aspect ratio=8.013857 took 140.117069s
+04:24:26 - Growth rate = 0.128332, quasisymmetry = 0.073150, mirror = 0.000000 with aspect ratio=8.013850 took 140.211294s
+04:24:26 - Growth rate = 0.129626, quasisymmetry = 0.072352, mirror = 0.000000 with aspect ratio=8.013863 took 140.238733s
+04:24:26 - Growth rate = 0.129557, quasisymmetry = 0.073387, mirror = 0.000000 with aspect ratio=8.013870 took 140.403993s
+04:24:27 - Growth rate = 0.133689, quasisymmetry = 0.074556, mirror = 0.000000 with aspect ratio=8.013863 took 140.435114s
+04:24:27 - Growth rate = 0.130075, quasisymmetry = 0.072960, mirror = 0.000000 with aspect ratio=8.013861 took 140.620259s
+04:24:27 - Growth rate = 0.133412, quasisymmetry = 0.071072, mirror = 0.000000 with aspect ratio=8.014080 took 140.646907s
+04:24:27 - Growth rate = 0.131367, quasisymmetry = 0.072828, mirror = 0.000000 with aspect ratio=8.013698 took 140.680085s
+04:24:27 - Growth rate = 0.129513, quasisymmetry = 0.073557, mirror = 0.000000 with aspect ratio=8.013860 took 140.716766s
+04:24:27 - Growth rate = 0.129548, quasisymmetry = 0.073042, mirror = 0.000000 with aspect ratio=8.013798 took 140.781918s
+04:24:27 - Growth rate = 0.129789, quasisymmetry = 0.073246, mirror = 0.000000 with aspect ratio=8.013860 took 140.828349s
+04:24:27 - Growth rate = 0.128840, quasisymmetry = 0.075784, mirror = 0.000000 with aspect ratio=8.013858 took 140.874480s
+04:24:27 - Growth rate = 0.128641, quasisymmetry = 0.075438, mirror = 0.000000 with aspect ratio=8.013863 took 141.031322s
+04:24:27 - Growth rate = 0.129475, quasisymmetry = 0.072974, mirror = 0.000000 with aspect ratio=8.014462 took 141.148382s
+04:24:27 - Growth rate = 0.130403, quasisymmetry = 0.072946, mirror = 0.000000 with aspect ratio=8.013866 took 141.197710s
+04:24:27 - Growth rate = 0.129530, quasisymmetry = 0.073671, mirror = 0.000000 with aspect ratio=8.014784 took 141.333773s
+04:24:27 - Growth rate = 0.129569, quasisymmetry = 0.073191, mirror = 0.000000 with aspect ratio=8.013861 took 141.380054s
+04:24:28 - Growth rate = 0.128847, quasisymmetry = 0.072941, mirror = 0.000000 with aspect ratio=8.013888 took 141.421609s
+04:24:28 - Growth rate = 0.128320, quasisymmetry = 0.073618, mirror = 0.000000 with aspect ratio=8.013861 took 141.541276s
+04:24:28 - Growth rate = 0.129285, quasisymmetry = 0.072943, mirror = 0.000000 with aspect ratio=8.013861 took 141.618746s
+04:24:28 - Growth rate = 0.129572, quasisymmetry = 0.073053, mirror = 0.000000 with aspect ratio=8.013859 took 141.594206s
+04:24:28 - Growth rate = 0.129297, quasisymmetry = 0.074116, mirror = 0.000000 with aspect ratio=8.013856 took 141.704096s
+04:24:28 - Growth rate = 0.130346, quasisymmetry = 0.074225, mirror = 0.000000 with aspect ratio=8.013874 took 141.753897s
+04:24:28 - Growth rate = 0.129723, quasisymmetry = 0.072863, mirror = 0.000000 with aspect ratio=8.013861 took 141.687373s
+04:24:28 - Growth rate = 0.158367, quasisymmetry = 0.330358, mirror = 0.000000 with aspect ratio=8.164658 took 141.714716s
+04:24:28 - Growth rate = 0.130435, quasisymmetry = 0.072924, mirror = 0.000000 with aspect ratio=8.013860 took 141.773933s
+04:24:28 - Growth rate = 0.128791, quasisymmetry = 0.073171, mirror = 0.000000 with aspect ratio=8.013897 took 141.872989s
+04:26:39 - Growth rate = 0.130015, quasisymmetry = 0.071624, mirror = 0.000000 with aspect ratio=8.011841 took 132.776277s
+04:26:41 - Growth rate = 0.129677, quasisymmetry = 0.073136, mirror = 0.000000 with aspect ratio=8.013860 took 133.262558s
+04:26:41 - Growth rate = 0.128320, quasisymmetry = 0.074206, mirror = 0.000000 with aspect ratio=8.013862 took 133.124748s
+04:26:41 - Growth rate = 0.104878, quasisymmetry = 0.479365, mirror = 0.000000 with aspect ratio=7.518815 took 133.697457s
+04:26:41 - Growth rate = 0.129127, quasisymmetry = 0.075782, mirror = 0.000000 with aspect ratio=8.012775 took 133.460377s
+04:26:42 - Growth rate = 0.129320, quasisymmetry = 0.073636, mirror = 0.000000 with aspect ratio=8.013862 took 132.828760s
+04:26:42 - Growth rate = 0.129486, quasisymmetry = 0.073506, mirror = 0.000000 with aspect ratio=8.013861 took 133.061002s
+04:26:42 - Growth rate = 0.129790, quasisymmetry = 0.073123, mirror = 0.000000 with aspect ratio=8.013862 took 133.277722s
+04:26:42 - Growth rate = 0.129480, quasisymmetry = 0.073589, mirror = 0.000000 with aspect ratio=8.013851 took 133.431815s
+04:26:42 - Growth rate = 0.130085, quasisymmetry = 0.072966, mirror = 0.000000 with aspect ratio=8.013921 took 133.075198s
+04:26:43 - Growth rate = 0.129572, quasisymmetry = 0.074131, mirror = 0.000000 with aspect ratio=8.013858 took 133.344509s
+04:26:43 - Growth rate = 0.129766, quasisymmetry = 0.073031, mirror = 0.000000 with aspect ratio=8.014388 took 133.636945s
+04:26:43 - Growth rate = 0.129804, quasisymmetry = 0.072463, mirror = 0.000000 with aspect ratio=8.013799 took 132.713760s
+04:26:43 - Growth rate = 0.129674, quasisymmetry = 0.073179, mirror = 0.000000 with aspect ratio=8.013861 took 132.674078s
+04:26:43 - Growth rate = 0.137485, quasisymmetry = 0.071214, mirror = 0.000000 with aspect ratio=8.014968 took 132.912240s
+04:26:43 - Growth rate = 0.131918, quasisymmetry = 0.072495, mirror = 0.000000 with aspect ratio=8.013909 took 132.978931s
+04:26:44 - Growth rate = 0.128886, quasisymmetry = 0.073290, mirror = 0.000000 with aspect ratio=8.013862 took 133.441686s
+04:26:44 - Growth rate = 0.130460, quasisymmetry = 0.072505, mirror = 0.000000 with aspect ratio=8.013862 took 132.800649s
+04:26:44 - Growth rate = 0.129661, quasisymmetry = 0.073775, mirror = 0.000000 with aspect ratio=8.013860 took 133.392099s
+04:26:44 - Growth rate = 0.129077, quasisymmetry = 0.073170, mirror = 0.000000 with aspect ratio=8.013860 took 133.154940s
+04:26:44 - Growth rate = 0.129627, quasisymmetry = 0.073013, mirror = 0.000000 with aspect ratio=8.013852 took 133.203406s
+04:26:44 - Growth rate = 0.129416, quasisymmetry = 0.075271, mirror = 0.000000 with aspect ratio=8.013859 took 133.246930s
+04:26:44 - Growth rate = 0.129555, quasisymmetry = 0.072110, mirror = 0.000000 with aspect ratio=8.013867 took 133.384937s
+04:26:44 - Growth rate = 0.128969, quasisymmetry = 0.073183, mirror = 0.000000 with aspect ratio=8.013876 took 133.313164s
+04:26:45 - Growth rate = 0.129001, quasisymmetry = 0.073216, mirror = 0.000000 with aspect ratio=8.013860 took 133.469691s
+04:26:45 - Growth rate = 0.129684, quasisymmetry = 0.072918, mirror = 0.000000 with aspect ratio=8.013825 took 133.437552s
+04:26:45 - Growth rate = 0.129841, quasisymmetry = 0.073006, mirror = 0.000000 with aspect ratio=8.013863 took 133.628803s
+04:26:45 - Growth rate = 0.129722, quasisymmetry = 0.073191, mirror = 0.000000 with aspect ratio=8.013870 took 133.548814s
+04:26:45 - Growth rate = 0.130154, quasisymmetry = 0.072823, mirror = 0.000000 with aspect ratio=8.013861 took 133.688189s
+04:26:45 - Growth rate = 0.131127, quasisymmetry = 0.074158, mirror = 0.000000 with aspect ratio=8.013861 took 133.627904s
+04:26:45 - Growth rate = 0.129928, quasisymmetry = 0.074987, mirror = 0.000000 with aspect ratio=8.013861 took 134.082195s
+04:26:46 - Growth rate = 0.129424, quasisymmetry = 0.073250, mirror = 0.000000 with aspect ratio=8.013861 took 134.284633s
+       1              7         1.2068e-01      7.59e-04       1.87e-04       7.07e+01    
+04:28:59 - Growth rate = 0.129885, quasisymmetry = 0.073765, mirror = 0.000000 with aspect ratio=8.013754 took 126.917190s
+04:31:10 - Growth rate = 0.129754, quasisymmetry = 0.073210, mirror = 0.000000 with aspect ratio=8.013834 took 127.150094s
+04:33:20 - Growth rate = 0.129666, quasisymmetry = 0.073121, mirror = 0.000000 with aspect ratio=8.013854 took 126.708024s
+04:35:32 - Growth rate = 0.129646, quasisymmetry = 0.073103, mirror = 0.000000 with aspect ratio=8.013859 took 127.897637s
+04:37:42 - Growth rate = 0.129641, quasisymmetry = 0.073099, mirror = 0.000000 with aspect ratio=8.013860 took 126.236096s
+04:39:53 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013860 took 127.158976s
+04:42:04 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013861 took 126.912016s
+04:44:15 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013861 took 127.290840s
+04:46:27 - Growth rate = 0.129640, quasisymmetry = 0.073097, mirror = 0.000000 with aspect ratio=8.013861 took 128.533238s
+       2             16         1.2068e-01      0.00e+00       0.00e+00       7.07e+01    
+`xtol` termination condition is satisfied.
+Function evaluations 16, initial cost 1.2144e-01, final cost 1.2068e-01, first-order optimality 7.07e+01.
+Final aspect ratio: 8.013860526081206
+Final mean iota: -0.9598821296180673
+Final magnetic well: -0.07386306064675263
+Final quasisymmetry: 0.0730970739185962
+Final growth rate: 0.1296397832514358
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER:    OS:    RELEASE:   DATE = Dec 21,2022  TIME = 04:48:40
+
+  NS =   16 NO. FOURIER MODES =   72 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =   0.99047263162914501       0.13388886083901541        3.9615993978383600E-003  -1.4096416193728164E-003   6.3101943546552629E-004   3.4730917091531870E-004   3.0917617009324583E-005
+      ZAXIS_CS =   -0.0000000000000000       0.12473469690147655        3.9162925033587297E-003  -1.7984764582099576E-003  -6.9699126166613518E-005  -3.0374018242432607E-004   2.4458467233183810E-004
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.36E-02  4.28E-03  2.35E-02  1.128E+00  9.00E-01  1.6013E-01
+  200  3.38E-09  8.51E-10  1.63E-09  1.120E+00  9.00E-01  1.5714E-01
+  400  4.27E-11  1.37E-11  3.08E-11  1.120E+00  9.00E-01  1.5714E-01
+  600  1.40E-12  7.04E-13  7.92E-13  1.120E+00  9.00E-01  1.5714E-01
+  626  9.99E-13  5.50E-13  5.54E-13  1.120E+00  9.00E-01  1.5714E-01
+
+  NS =   51 NO. FOURIER MODES =   72 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  2.51E-03  1.32E-03  1.37E-06  1.120E+00  9.00E-01  1.5713E-01
+  200  1.20E-10  4.09E-11  1.22E-12  1.120E+00  9.00E-01  1.5713E-01
+  400  2.98E-12  1.12E-12  1.73E-13  1.120E+00  9.00E-01  1.5713E-01
+  600  1.98E-13  1.10E-13  2.46E-14  1.120E+00  9.00E-01  1.5713E-01
+  668  9.81E-14  5.39E-14  1.31E-14  1.120E+00  9.00E-01  1.5713E-01
+
+  NS =  101 NO. FOURIER MODES =   72 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  2.25E-03  1.20E-03  2.30E-08  1.120E+00  9.00E-01  1.5713E-01
+  200  4.09E-08  1.35E-08  7.63E-12  1.120E+00  7.54E-01  1.5713E-01
+  400  8.95E-11  2.19E-11  3.09E-14  1.120E+00  7.54E-01  1.5713E-01
+  600  2.90E-12  8.80E-13  8.54E-15  1.120E+00  7.54E-01  1.5713E-01
+  800  2.45E-13  9.52E-14  2.70E-15  1.120E+00  7.54E-01  1.5713E-01
+ 1000  6.31E-14  1.92E-14  5.46E-16  1.120E+00  7.54E-01  1.5713E-01
+ 1084  9.83E-15  3.80E-15  2.43E-16  1.120E+00  7.54E-01  1.5713E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    0
+
+    TOTAL COMPUTATIONAL TIME (SEC)        14.49
+    TIME TO INPUT/OUTPUT                   0.03
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.03
+    TIME IN FUNCT3D                       14.38
+       BCOVAR FIELDS                       2.06
+       FOURIER TRANSFORM                   3.12
+       INVERSE FOURIER TRANSFORM           2.91
+       FORCES AND SYMMETRIZE               2.38
+       RESIDUE                             2.54
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  6
+ntor:  6
+Aminor_p:  0.12397133827032934
+Rmajor_p:  0.9934890141300534
+aspect:             8.013860526081212
+Rmajor_p/Aminor_p:  8.013860526081212
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    3.8760227666356784e-11
+bmnc.shape: (101, 162)
+bmns.shape: (101, 162)
+No module named 'mayavi'
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 72  len(xm): 72  len(xn): 72
+mnmax_nyq: 162  len(xm_nyq): 162  len(xn_nyq): 162
+Read ns=101, mpol=6, ntor=6, mnmax=72, mnmax_nyq=162
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 24
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   1     1  10   0  9.932e-01  9.932e-01  6.819e-15  1.097e+00  1.097e+00  2.469e-14
+                pi  1.073e+00  1.073e+00  9.523e-15  9.785e-01  9.785e-01  1.554e-14
+   3     3  30   0  9.586e-01  9.586e-01  1.401e-14  1.135e+00  1.135e+00  2.660e-14
+                pi  1.087e+00  1.087e+00  1.307e-14  9.297e-01  9.297e-01  2.138e-14
+   7     7  70   0  9.175e-01  9.175e-01  2.420e-16  1.183e+00  1.183e+00  1.126e-15
+                pi  1.088e+00  1.088e+00  1.959e-14  8.574e-01  8.574e-01  1.502e-14
+   8     8  79   0  9.104e-01  9.104e-01  1.098e-14  1.192e+00  1.192e+00  2.309e-14
+                pi  1.086e+00  1.086e+00  1.022e-14  8.430e-01  8.430e-01  1.817e-14
+   0     0   0   0  1.033e+00  1.033e+00  0.000e+00  1.056e+00  1.056e+00  3.828e-14
+                pi  1.044e+00  1.044e+00  6.804e-15  1.024e+00  1.024e+00  4.772e-15
+   9     9  89   0  9.031e-01  9.031e-01  4.917e-15  1.201e+00  1.201e+00  1.441e-14
+                pi  1.083e+00  1.083e+00  1.128e-14  8.276e-01  8.276e-01  1.342e-15
+   5     5  49   0  9.366e-01  9.366e-01  1.043e-14  1.161e+00  1.161e+00  7.462e-15
+                pi  1.090e+00  1.090e+00  7.537e-15  8.931e-01  8.931e-01  1.019e-14
+   4     4  39   0  9.474e-01  9.474e-01  1.676e-14  1.148e+00  1.148e+00  5.416e-15
+                pi  1.089e+00  1.089e+00  6.931e-15  9.117e-01  9.117e-01  1.668e-14
+   2     2  20   0  9.735e-01  9.735e-01  6.843e-16  1.118e+00  1.118e+00  1.449e-14
+                pi  1.082e+00  1.082e+00  7.592e-15  9.519e-01  9.519e-01  1.936e-14
+   6     6  60   0  9.260e-01  9.260e-01  5.515e-15  1.173e+00  1.173e+00  1.514e-14
+                pi  1.090e+00  1.090e+00  2.038e-15  8.740e-01  8.740e-01  1.499e-14
+Writing output to /marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH_qlweight10.000/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+Whole optimization took 14164.706064s
