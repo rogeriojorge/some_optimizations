@@ -45,14 +45,14 @@ elif args.type == 4:
 
 s_radius = 0.25
 alpha_fieldline = 0
-nphi= 151
-nlambda = 35
-nperiod = 5.5
+nphi= 141
+nlambda = 33
+nperiod = 5.0
 nstep = 330
 dt = 0.4
 aky_min = 0.3
 aky_max = 4.0
-naky = 12
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
@@ -66,10 +66,12 @@ LT_array = np.linspace(0.5,6,12)
 n_processes_parallel = 8
 plot_extent_fix_gamma = True
 plot_gamma_min = 0
-plot_gamma_max = 0.55
+if 'QA' in output_dir: plot_gamma_max = 0.41
+else: plot_gamma_max = 0.46
 plot_extent_fix_weighted_gamma = True
 plot_weighted_gamma_min = 0
-plot_weighted_gamma_max = 0.45
+if 'QA' in output_dir: plot_weighted_gamma_max = 0.54
+else: plot_weighted_gamma_max = 0.42
 ########################################
 # Go into the output directory
 OUT_DIR = os.path.join(this_path,output_dir)

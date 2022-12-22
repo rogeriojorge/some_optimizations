@@ -45,7 +45,7 @@ start_time = time.time()
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
-max_modes = [1,2,3,4]
+max_modes = [1,2,3,4,5]
 if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
 elif args.type == 2 or args.type == 4: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
@@ -57,14 +57,14 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 151
-nlambda = 35
-nperiod = 5.5
+nphi= 141
+nlambda = 33
+nperiod = 5.0
 nstep = 330
 dt = 0.4
 aky_min = 0.3
-aky_max = 4.0
-naky = 12
+aky_max = 3.0
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
@@ -86,16 +86,17 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 5e+1
-diff_rel_step = 3e-2
-diff_abs_step = 1e-4
+weight_optTurbulence = 2e+1
+diff_rel_step = 1e-1
+#diff_abs_step = 1e-2 ## diff_abs_step = (max_mode/2)*10**(-max_mode)
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
+ftol=1e-5
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
-aspect_ratio_weight = 1e+0
+aspect_ratio_weight = 3e+0
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -286,7 +287,7 @@ try:
     pprint("Initial mean iota:", vmec.mean_iota())
     pprint("Initial magnetic well:", vmec.vacuum_well())
 except Exception as e: pprint(e)
-if MPI.COMM_WORLD.rank == 0: pprint("Initial growth rate:", CalculateGrowthRate(vmec))
+#if MPI.COMM_WORLD.rank == 0: pprint("Initial growth rate:", CalculateGrowthRate(vmec))
 ######################################
 initial_dofs=np.copy(surf.x)
 def fun(dofss):
@@ -326,8 +327,8 @@ for max_mode in max_modes:
     if initial_config[-2:] == 'QA': opt_tuple.append((vmec.mean_iota, 0.42, 1))
     if not opt_quasisymmetry: opt_tuple.append((optMirror.J,0,weight_mirror)) # reduce mirror ratio for non-quasisymmetric configurations
     prob = LeastSquaresProblem.from_tuples(opt_tuple)
-    pprint('## Now calculating total objective function ##')
-    if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
+    #pprint('## Now calculating total objective function ##')
+    #if MPI.COMM_WORLD.rank == 0: pprint("Total objective before optimization:", prob.objective())
     pprint('-------------------------')
     pprint(f'Optimizing with max_mode = {max_mode}')
     pprint('-------------------------')
@@ -338,7 +339,8 @@ for max_mode in max_modes:
         minimizer_kwargs = {"method": "Nelder-Mead", "bounds": bounds, "options": {'maxiter': MAXITER_LOCAL, 'maxfev': MAXFUN_LOCAL, 'disp': True}}
         if MPI.COMM_WORLD.rank == 0: res = dual_annealing(fun, bounds=bounds, maxiter=MAXITER, initial_temp=initial_temp,visit=visit, no_local_search=no_local_search, x0=dofs, minimizer_kwargs=minimizer_kwargs)
     elif optimizer == 'least_squares':
-        least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER)
+        diff_abs_step = (max_mode/2)*10**(-max_mode)
+        least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER, ftol=ftol)
     else: print('Optimizer not available')
     ######################################
     try: 
@@ -346,7 +348,7 @@ for max_mode in max_modes:
         pprint("Final mean iota:", vmec.mean_iota())
         pprint("Final magnetic well:", vmec.vacuum_well())
         pprint("Final quasisymmetry:", qs.total())
-        if MPI.COMM_WORLD.rank == 0: pprint("Final growth rate:", CalculateGrowthRate(vmec))
+        #if MPI.COMM_WORLD.rank == 0: pprint("Final growth rate:", CalculateGrowthRate(vmec))
     except Exception as e: pprint(e)
     ######################################
 if MPI.COMM_WORLD.rank == 0: vmec.write_input(os.path.join(OUT_DIR, f'input.final'))

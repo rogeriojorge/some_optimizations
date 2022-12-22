@@ -16,29 +16,35 @@ from shutil import move, copymode
 from quasilinear_estimate import quasilinear_estimate
 from simsopt.mhd import Vmec
 from simsopt.mhd.vmec_diagnostics import to_gs2, vmec_fieldlines
+import argparse
+parser = argparse.ArgumentParser()
+parser.add_argument("--type", type=int, default=1)
+args = parser.parse_args()
 this_path = Path(__file__).parent.resolve()
 matplotlib.use('Agg') 
 ######## INPUT PARAMETERS ########
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
-##vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-#vmec_file = '/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
-#output_dir = 'test_out_nfp2_QA_initial'
-##vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-vmec_file = '/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
-output_dir = 'test_out_nfp4_QH_initial'
+if args.type == 1:
+    ##vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+    vmec_file = '/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp2_QA.nc'
+    output_dir = 'test_out_nfp2_QA_initial'
+elif args.type == 2:
+    ##vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+    vmec_file = '/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/wout_nfp4_QH.nc'
+    output_dir = 'test_out_nfp4_QH_initial'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH/wout_final.nc'
 # output_dir = 'test_out_nfp4_QH_test'
 # vmec_file = '/Users/rogeriojorge/local/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp2_QA_QA/wout_final.nc'
 # output_dir = 'test_out_nfp2_QA_test'
-nphi= 151
-nlambda = 35
-nperiod = 5.5
+nphi= 141
+nlambda = 33
+nperiod = 5.0
 nstep = 330
 dt = 0.4
 aky_min = 0.3
-aky_max = 4.0
-naky = 12
+aky_max = 3.0
+naky = 8
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
