@@ -10,4 +10,4 @@
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=rogerio.jorge@tecnico.ulisboa.pt
 cd /marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG
-mpirun -n 1 ./test_parameters.py --type 2
+mpirun -n 1 ./test_parameters.py --type 1
