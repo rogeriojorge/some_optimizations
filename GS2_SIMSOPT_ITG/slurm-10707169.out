@@ -1,0 +1,572 @@
+Initial aspect ratio: 8.03249790197172
+Initial mean iota: -0.9073602290877159
+Initial magnetic well: -0.11353608145656895
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         7.1835e-02                                    2.20e+00    
+       1              2         7.1074e-02      7.61e-04       2.18e-03       3.93e-01    
+       2              3         7.0961e-02      1.13e-04       2.37e-03       7.86e-01    
+       3              6         7.0939e-02      2.24e-05       1.67e-04       5.60e-02    
+       4              9         7.0938e-02      9.64e-07       1.04e-05       1.01e-02    
+       5             13         7.0938e-02      5.27e-09       3.26e-07       7.52e-03    
+`ftol` termination condition is satisfied.
+Function evaluations 13, initial cost 7.1835e-02, final cost 7.0938e-02, first-order optimality 7.52e-03.
+Final aspect ratio: 8.010889769835703
+Final mean iota: -0.9101034607341242
+Final magnetic well: -0.1151693831779524
+Final quasisymmetry: 0.14151939382305695
+-------------------------
+Optimizing with max_mode = 2
+-------------------------
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         7.0938e-02                                    5.38e+00    
+       1              3         2.6885e-02      4.41e-02       1.63e-02       2.21e+01    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       2              4         1.6027e-02      1.09e-02       3.26e-02       1.13e+13    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       3              6         5.3315e-03      1.07e-02       8.15e-03       9.88e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       4              8         4.4686e-03      8.63e-04       4.08e-03       1.76e+00    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       5              9         3.9364e-03      5.32e-04       8.15e-03       2.73e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       6             10         3.7171e-03      2.19e-04       8.15e-03       1.84e+12    
+       7             11         2.2169e-03      1.50e-03       2.04e-03       1.08e+00    
+       8             12         1.9900e-03      2.27e-04       4.08e-03       1.67e+00    
+       9             13         1.7835e-03      2.07e-04       4.08e-03       1.40e+00    
+      10             14         1.6687e-03      1.15e-04       4.08e-03       1.18e+00    
+      11             15         1.6238e-03      4.48e-05       4.08e-03       1.06e+00    
+      12             16         1.5296e-03      9.42e-05       1.02e-03       1.87e-01    
+      13             18         1.5127e-03      1.69e-05       5.10e-04       1.24e-01    
+      14             20         1.5082e-03      4.47e-06       2.55e-04       6.92e-02    
+      15             21         1.5074e-03      8.39e-07       2.55e-04       6.80e-02    
+      16             24         1.5071e-03      2.80e-07       3.98e-06       3.36e-02    
+      17             25         1.5069e-03      2.10e-07       7.96e-06       1.97e-02    
+      18             28         1.5069e-03      8.65e-09       4.98e-07       1.86e-02    
+`ftol` termination condition is satisfied.
+Function evaluations 28, initial cost 7.0938e-02, final cost 1.5069e-03, first-order optimality 1.86e-02.
+Final aspect ratio: 8.00032195184697
+Final mean iota: -1.1543257442297692
+Final magnetic well: -0.016473355090170214
+Final quasisymmetry: 0.00301348744102269
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         1.5069e-03                                    9.66e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       1              6         1.2821e-03      2.25e-04       1.14e-03       3.39e+12    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       2              7         1.0136e-03      2.69e-04       2.28e-03       4.03e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       3             10         9.4180e-04      7.18e-05       2.85e-04       7.91e+09    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       4             11         8.4121e-04      1.01e-04       5.69e-04       1.05e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       5             13         7.8687e-04      5.43e-05       2.85e-04       1.08e+12    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       6             15         7.6032e-04      2.66e-05       1.42e-04       9.70e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       7             17         7.4809e-04      1.22e-05       7.12e-05       8.18e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       8             18         7.4258e-04      5.51e-06       1.42e-04       1.04e+12    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       9             20         7.3108e-04      1.15e-05       7.12e-05       7.59e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      10             22         7.2690e-04      4.18e-06       3.56e-05       6.27e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      11             24         7.2588e-04      1.03e-06       1.78e-05       6.32e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      12             25         7.2572e-04      1.57e-07       3.56e-05       6.74e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      13             26         7.2501e-04      7.04e-07       3.56e-05       6.97e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      14             28         7.2374e-04      1.28e-06       1.78e-05       6.83e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      15             29         7.2262e-04      1.12e-06       3.56e-05       7.07e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      16             32         7.2199e-04      6.25e-07       4.45e-06       6.96e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      17             36         7.2199e-04      2.52e-09       1.39e-07       6.95e+11    
+      18             39         7.2199e-04      0.00e+00       0.00e+00       6.95e+11    
+`xtol` termination condition is satisfied.
+Function evaluations 39, initial cost 1.5069e-03, final cost 7.2199e-04, first-order optimality 6.95e+11.
+Final aspect ratio: 8.002317423518758
+Final mean iota: -1.1595345549394713
+Final magnetic well: -0.014958969036180684
+Final quasisymmetry: 0.001427865960632564
+-------------------------
+Optimizing with max_mode = 4
+-------------------------
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         7.2199e-04                                    6.95e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       1              6         7.1787e-04      4.12e-06       1.14e-03       1.22e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       2              7         6.3123e-04      8.66e-05       2.85e-04       1.46e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       3              9         6.1463e-04      1.66e-05       1.43e-04       5.20e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       4             11         6.0549e-04      9.14e-06       7.13e-05       5.20e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       5             12         5.9089e-04      1.46e-05       1.43e-04       1.30e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       6             14         5.8056e-04      1.03e-05       7.13e-05       9.83e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       7             16         5.7727e-04      3.29e-06       3.57e-05       8.63e+10    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       8             18         5.7441e-04      2.86e-06       1.78e-05       1.89e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       9             20         5.7358e-04      8.34e-07       8.92e-06       1.68e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      10             22         5.7351e-04      7.24e-08       4.46e-06       1.58e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      11             23         5.7347e-04      3.63e-08       4.46e-06       1.48e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      12             24         5.7346e-04      6.91e-09       4.46e-06       1.40e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      13             25         5.7336e-04      9.79e-08       1.11e-06       1.38e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      14             27         5.7336e-04      8.53e-10       5.57e-07       1.37e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      15             28         5.7336e-04      1.56e-10       1.39e-07       1.37e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      16             29         5.7336e-04      2.28e-11       3.48e-08       1.37e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      17             30         5.7336e-04      1.17e-11       8.71e-09       1.37e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+      18             31         5.7336e-04      2.54e-12       2.18e-09       1.37e+11    
+`xtol` termination condition is satisfied.
+Function evaluations 31, initial cost 7.2199e-04, final cost 5.7336e-04, first-order optimality 1.37e+11.
+Final aspect ratio: 8.000455312972466
+Final mean iota: -1.160225204931669
+Final magnetic well: -0.015266427779815411
+Final quasisymmetry: 0.0011461049953473271
+-------------------------
+Optimizing with max_mode = 5
+-------------------------
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+   Iteration     Total nfev        Cost      Cost reduction    Step norm     Optimality   
+       0              1         5.7336e-04                                    1.37e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       1             12         5.7317e-04      1.89e-07       2.79e-07       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       2             14         5.7307e-04      1.07e-07       1.39e-07       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       3             15         5.7287e-04      1.98e-07       2.79e-07       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       4             18         5.7285e-04      2.11e-08       3.49e-08       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       5             19         5.7280e-04      4.83e-08       6.97e-08       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       6             22         5.7279e-04      6.14e-09       8.71e-09       1.36e+11    
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=4 mpol=8 ntor=8)>
+       7             23         5.7278e-04      1.20e-08       1.74e-08       1.36e+11    
+       8             26         5.7278e-04      0.00e+00       0.00e+00       1.36e+11    
+`xtol` termination condition is satisfied.
+Function evaluations 26, initial cost 5.7336e-04, final cost 5.7278e-04, first-order optimality 1.36e+11.
+Final aspect ratio: 8.000453260651103
+Final mean iota: -1.1602252570093576
+Final magnetic well: -0.015266061597016461
+Final quasisymmetry: 0.0011449480825531958
+ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  SEQ =    1 TIME SLICE  0.0000E+00
+  PROCESSING INPUT.final
+  THIS IS PARVMEC (PARALLEL VMEC), VERSION 9.0
+  Lambda: Full Radial Mesh. L-Force: hybrid full/half.
+
+  COMPUTER:    OS:    RELEASE:   DATE = Dec 22,2022  TIME = 02:43:37
+
+  NS =   16 NO. FOURIER MODES =  128 FTOLV =  1.000E-12 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+ INITIAL JACOBIAN CHANGED SIGN!
+ TRYING TO IMPROVE INITIAL MAGNETIC AXIS GUESS
+  ---- Improved AXIS Guess ----
+      RAXIS_CC =    1.0030719599772595       0.19150169469284345        8.1943336728671698E-003  -1.5373546215455638E-003   2.9297297375165850E-003  -8.7006143177529834E-004   2.7045723470271148E-005   4.7312245945804206E-004  -5.4115438504292546E-004
+      ZAXIS_CS =   -0.0000000000000000       0.16128995245795780        9.3292773365450995E-003   3.0930082416595226E-003   2.4513637494770848E-003   2.5259844034385598E-004  -3.0680178904314630E-004  -5.7010368574388038E-004  -5.6500061272604402E-004
+  -----------------------------
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  4.20E-02  2.73E-02  5.32E-02  1.203E+00  9.00E-01  1.8386E-01
+  200  1.01E-08  5.79E-09  9.50E-09  1.193E+00  7.29E-01  1.7815E-01
+  400  1.05E-10  5.72E-11  9.81E-11  1.194E+00  7.29E-01  1.7815E-01
+  600  1.99E-11  1.23E-11  2.19E-11  1.194E+00  7.29E-01  1.7814E-01
+  800  3.14E-12  1.30E-12  2.06E-12  1.194E+00  7.29E-01  1.7814E-01
+  901  9.80E-13  5.37E-13  8.14E-13  1.194E+00  7.29E-01  1.7814E-01
+
+  NS =   51 NO. FOURIER MODES =  128 FTOLV =  1.000E-13 NITER =  10000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.30E-02  4.96E-03  1.57E-05  1.194E+00  9.00E-01  1.7815E-01
+  200  6.35E-09  4.14E-09  1.20E-10  1.194E+00  6.67E-01  1.7815E-01
+  400  1.06E-10  5.82E-11  1.43E-11  1.194E+00  6.67E-01  1.7815E-01
+  600  1.33E-11  7.05E-12  4.87E-12  1.194E+00  6.67E-01  1.7815E-01
+  800  2.48E-12  1.24E-12  8.95E-13  1.194E+00  6.67E-01  1.7815E-01
+ 1000  3.90E-13  1.89E-13  1.46E-13  1.194E+00  6.67E-01  1.7815E-01
+ 1142  9.88E-14  5.09E-14  4.00E-14  1.194E+00  6.67E-01  1.7815E-01
+
+  NS =  101 NO. FOURIER MODES =  128 FTOLV =  1.000E-14 NITER =   4000
+  PROCESSOR COUNT - RADIAL:    1
+
+  ITER    FSQR      FSQZ      FSQL    RAX(v=0)    DELT       WMHD
+
+    1  1.02E-02  3.18E-03  3.08E-07  1.194E+00  9.00E-01  1.7815E-01
+  200  8.73E-09  7.78E-09  6.38E-12  1.194E+00  5.40E-01  1.7815E-01
+  400  2.54E-10  1.62E-10  7.76E-13  1.194E+00  5.40E-01  1.7815E-01
+  600  6.34E-11  5.35E-11  3.39E-13  1.194E+00  5.40E-01  1.7815E-01
+  800  1.15E-11  1.02E-11  1.38E-13  1.194E+00  5.40E-01  1.7815E-01
+ 1000  6.86E-12  3.23E-12  4.02E-14  1.194E+00  5.40E-01  1.7815E-01
+ 1200  9.22E-13  7.69E-13  1.06E-14  1.194E+00  5.40E-01  1.7815E-01
+ 1400  2.70E-13  3.12E-13  2.93E-15  1.194E+00  5.40E-01  1.7815E-01
+ 1600  6.16E-14  5.78E-14  7.42E-16  1.194E+00  5.40E-01  1.7815E-01
+ 1800  1.80E-14  1.39E-14  2.80E-16  1.194E+00  5.40E-01  1.7815E-01
+ 1943  9.96E-15  8.06E-15  1.44E-16  1.194E+00  5.40E-01  1.7815E-01
+
+ EXECUTION TERMINATED NORMALLY
+
+ FILE : final_000_000000
+ NUMBER OF JACOBIAN RESETS =    4
+
+    TOTAL COMPUTATIONAL TIME (SEC)        41.42
+    TIME TO INPUT/OUTPUT                   0.05
+       READ IN DATA                        0.00
+       WRITE OUT DATA TO WOUT              0.05
+    TIME IN FUNCT3D                       41.15
+       BCOVAR FIELDS                       5.29
+       FOURIER TRANSFORM                  10.26
+       INVERSE FOURIER TRANSFORM          10.28
+       FORCES AND SYMMETRIZE               5.87
+       RESIDUE                             5.08
+       EQFORCE                             0.00
+nfp:  4
+ns:  101
+mpol:  8
+ntor:  8
+Aminor_p:  0.12428494554624954
+Rmajor_p:  0.9943358978453362
+aspect:             8.000453260651097
+Rmajor_p/Aminor_p:  8.000453260651097
+betatotal:  0.0
+betapol:    0.0
+betator:    0.0
+betaxis:    0.0
+ctor:    -1.314595134138674e-11
+bmnc.shape: (101, 242)
+bmns.shape: (101, 242)
+No module named 'mayavi'
+Creating Boozer class for vmec_final
+Defining surfaces where to compute Boozer coordinates
+ booz_surfaces=[0.  0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9]
+Running BOOZ_XFORM
+mnmax: 128  len(xm): 128  len(xn): 128
+mnmax_nyq: 242  len(xm_nyq): 242  len(xn_nyq): 242
+Read ns=101, mpol=8, ntor=8, mnmax=128, mnmax_nyq=242
+compute_surfs (0-based indices):  0 10 20 30 39 49 60 70 79 89
+Initializing with mboz=64, nboz=64
+ntheta = 258, nzeta = 258, # threads = 24
+                   |        outboard (theta=0)      |      inboard (theta=pi)      |
+thread js_b js zeta| |B|input  |B|Boozer    Error   | |B|input  |B|Boozer    Error |
+------------------------------------------------------------------------------------
+   2     2  20   0  1.009e+00  1.009e+00  1.100e-15  1.168e+00  1.168e+00  2.566e-14
+                pi  1.173e+00  1.173e+00  1.382e-14  1.011e+00  1.011e+00  2.173e-14
+   6     6  60   0  9.614e-01  9.614e-01  1.351e-14  1.236e+00  1.236e+00  3.594e-15
+                pi  1.227e+00  1.227e+00  9.046e-15  9.559e-01  9.559e-01  1.498e-14
+   0     0   0   0  1.071e+00  1.071e+00  9.534e-15  1.096e+00  1.096e+00  1.135e-14
+                pi  1.103e+00  1.103e+00  6.037e-15  1.078e+00  1.078e+00  5.766e-15
+   7     7  70   0  9.526e-01  9.526e-01  1.538e-14  1.249e+00  1.249e+00  1.511e-14
+                pi  1.236e+00  1.236e+00  7.726e-15  9.456e-01  9.456e-01  4.039e-14
+   5     5  49   0  9.721e-01  9.721e-01  1.199e-14  1.220e+00  1.220e+00  3.477e-14
+                pi  1.216e+00  1.216e+00  1.826e-16  9.684e-01  9.684e-01  1.020e-14
+   4     4  39   0  9.831e-01  9.831e-01  4.179e-15  1.204e+00  1.204e+00  1.512e-14
+                pi  1.204e+00  1.204e+00  2.952e-15  9.812e-01  9.812e-01  1.980e-14
+   9     9  89   0  9.377e-01  9.377e-01  2.368e-15  1.273e+00  1.273e+00  7.324e-15
+                pi  1.247e+00  1.247e+00  1.211e-14  9.283e-01  9.283e-01  1.029e-14
+   3     3  30   0  9.944e-01  9.944e-01  1.072e-14  1.188e+00  1.188e+00  3.420e-14
+                pi  1.190e+00  1.190e+00  9.514e-15  9.943e-01  9.943e-01  1.541e-14
+   1     1  10   0  1.030e+00  1.030e+00  1.682e-14  1.143e+00  1.143e+00  1.593e-14
+                pi  1.149e+00  1.149e+00  3.092e-15  1.034e+00  1.034e+00  6.873e-15
+   8     8  79   0  9.453e-01  9.453e-01  8.339e-15  1.261e+00  1.261e+00  1.479e-14
+                pi  1.242e+00  1.242e+00  8.581e-15  9.371e-01  9.371e-01  2.192e-14
+Writing output to /marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS/boozmn_single_stage.nc
+Plot BOOZ_XFORM
+Whole optimization took 6517.873064s
