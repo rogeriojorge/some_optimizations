@@ -25,10 +25,10 @@ for option in options:
 
     fig= plt.figure(figsize = (8, 4), dpi = 200);ax=plt.subplot(111)
     for i, (label, folder) in enumerate(zip(file_labels,folders)):
-        if np.mod(i,2)==0: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_{folder[10:17]}_{file_suffix}'),'r',mmap=False)
-        else: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_final_{file_suffix}'),'r',mmap=False)
-        time  = np.array(fX.variables['time'][:])
-        qflux = np.array(fX.groups['Fluxes'].variables['qflux'][:,0])
+        # if np.mod(i,2)==0: fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_{folder[10:17]}_{file_suffix}'),'r',mmap=False)
+        fX = netCDF4.Dataset(os.path.join(this_path,folder,f'gx_final_{file_suffix}'),'r',mmap=False)
+        time  = np.array(fX.variables['time'][140:])
+        qflux = np.array(fX.groups['Fluxes'].variables['qflux'][140:,0])
         plt.plot(time,qflux,label=label)
 
     plt.xlabel('Time $(v_{ti}/a)$', fontsize=22)
