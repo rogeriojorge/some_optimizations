@@ -41,7 +41,7 @@ elif args.type == 4:
 else:
     exit()
 nstep = 400 # actually t_max
-dt = 0.5
+dt = 0.1
 nzgrid = 125
 npol = 4
 desired_normalized_toroidal_flux = 0.25
@@ -50,9 +50,9 @@ nhermite  = 16
 nlaguerre = 8
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 130
-y0 = 16.0
+ny = 90
+nx = 140
+y0 = 25.0
 nonlinear = True
 ########################################
 # Go into the output directory
