@@ -273,7 +273,7 @@ if plot_result:
     ax2=fig.add_subplot(111, label="2", frame_on=False)
     ax.set_xlabel('$RBC_{0,1}$', fontsize=20)
     ax.tick_params(axis='x', labelsize=14)
-    line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$f_\gamma$ ITG')
+    line1, = ax.plot(df_scan[f'x({vmec_index_scan_opt})'], df_scan['growth_rate'], color="C0", label='$f_Q$')
     ax.set_ylabel("Microstability Cost Function", color="C0", fontsize=20)
     ax.tick_params(axis='y', colors="C0", labelsize=15)
     ax.set_xlim((min_bound,max_bound))
