@@ -268,7 +268,7 @@ if plot_result:
     # fig = plt.figure();plt.plot(points_scan, df_scan['effective_1o_time'], label='Effective 1/time')
     # plt.ylabel('Effective time');plt.xlabel('RBC(0,1)');plt.savefig('effective_1o_time_scan.pdf')
 
-    fig=plt.figure(figsize=(7.5,4))
+    fig=plt.figure(figsize=(8,6))
     ax=fig.add_subplot(111, label="1")
     ax2=fig.add_subplot(111, label="2", frame_on=False)
     ax.set_xlabel('$RBC_{0,1}$', fontsize=20)
