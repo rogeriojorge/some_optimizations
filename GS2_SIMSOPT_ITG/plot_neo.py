@@ -10,7 +10,8 @@ warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarnin
 
 this_path = Path(__file__).parent.resolve()
 
-out_dirs = ([['output_MAXITER350_least_squares_nfp2_QA_QA',
+out_dirs = ([
+             ['output_MAXITER350_least_squares_nfp2_QA_QA',
               'output_MAXITER350_least_squares_nfp2_QA_QA_onlyQS'],
              ['output_MAXITER350_least_squares_nfp4_QH_QH',
               'output_MAXITER350_least_squares_nfp4_QH_QH_onlyQS']])
@@ -62,7 +63,7 @@ for i, out_dir_qaorqh in enumerate(out_dirs):
         eps_eff = np.array(eps_eff)
         s_radial = s_radial[np.argwhere(~np.isnan(eps_eff))[:,0]]
         eps_eff = eps_eff[np.argwhere(~np.isnan(eps_eff))[:,0]]
-        plt.plot(s_radial,eps_eff, ('--' if j==0 else ':'), label=('QA' if i==0 else 'QH')+(' + ITG' if j==0 else ' only'), linewidth=2.0)
+        plt.plot(s_radial,eps_eff, ('--' if j==0 else ':'), label=('$\omega_{f_{Q}}=10$' if j==0 else '$\omega_{f_{Q}}=0$'), linewidth=2.0)
         os.chdir(this_path)
     #
     ax.set_yscale('log')
@@ -88,7 +89,7 @@ for i, out_dir_qaorqh in enumerate(out_dirs):
         loss_fractions = np.loadtxt('loss_history.dat')
         loss_fractions_time = loss_fractions[:,0]
         loss_fractions = loss_fractions[:,1]
-        plt.plot(loss_fractions_time,loss_fractions,label=('QA' if i==0 else 'QH')+(' + ITG' if j==0 else ' only'), linewidth=2.0)
+        plt.plot(loss_fractions_time,loss_fractions,label=('$\omega_{f_{Q}}=10$' if j==0 else '$\omega_{f_{Q}}=0$'), linewidth=2.0)
         os.chdir(this_path)
     plt.ylabel('Loss fraction', fontsize=22)
     plt.xlabel('Time (s)', fontsize=22)
