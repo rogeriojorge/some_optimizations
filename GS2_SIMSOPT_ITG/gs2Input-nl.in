@@ -112,3 +112,4 @@
  save_for_restart = .false. ! Write restart files.
  write_phi_over_time = .false. ! Write entire Phi field to NetCDF file every nwrite.
 /
+

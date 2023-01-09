@@ -1,0 +1,91 @@
+Initial aspect ratio: 6.002990249024757
+Initial mean iota: 0.39939858456440464
+Initial magnetic well: -0.04553931505796013
+-------------------------
+Optimizing with max_mode = 1
+-------------------------
+`ftol` termination condition is satisfied.
+Function evaluations 13, initial cost 4.9831e-03, final cost 4.8104e-03, first-order optimality 3.88e-04.
+`ftol` termination condition is satisfied.
+Function evaluations 11, initial cost 4.8104e-03, final cost 4.8083e-03, first-order optimality 1.62e-04.
+Final aspect ratio: 6.000841003748103
+Final mean iota: 0.4039575603902783
+Final magnetic well: -0.043113405128620774
+Final quasisymmetry: 0.009357167491522505
+-------------------------
+Optimizing with max_mode = 2
+-------------------------
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+`xtol` termination condition is satisfied.
+Function evaluations 39, initial cost 4.8083e-03, final cost 1.0745e-04, first-order optimality 8.10e+10.
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+`xtol` termination condition is satisfied.
+Function evaluations 17, initial cost 1.0745e-04, final cost 1.0745e-04, first-order optimality 8.10e+11.
+Final aspect ratio: 6.000054451643035
+Final mean iota: 0.41902675638428144
+Final magnetic well: -0.057040302323061495
+Final quasisymmetry: 0.00021393809713765653
+-------------------------
+Optimizing with max_mode = 3
+-------------------------
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+Traceback (most recent call last):
+  File "/marconi_scratch/userexternal/rjorge00/some_optimizations/GS2_SIMSOPT_ITG/./main.py", line 347, in <module>
+    least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER, ftol=ftol, diff_method=diff_method, method=local_optimization_method)
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/solve/mpi.py", line 196, in least_squares_mpi_solve
+    with MPIFiniteDifference(prob.residuals, mpi, abs_step=abs_step,
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/_core/finite_difference.py", line 167, in __enter__
+    self.mpi_apart()
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/_core/finite_difference.py", line 172, in mpi_apart
+    self.mpi.apart(lambda mpi, data: self.mpi_leaders_task(),
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/util/mpi.py", line 254, in apart
+    self.leaders_loop(leaders_action)
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/util/mpi.py", line 214, in leaders_loop
+    action(self, data)
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/_core/finite_difference.py", line 172, in <lambda>
+    self.mpi.apart(lambda mpi, data: self.mpi_leaders_task(),
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/_core/finite_difference.py", line 309, in mpi_leaders_task
+    self._jac()
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/_core/finite_difference.py", line 256, in _jac
+    out = np.asarray(self.fn())
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/objectives/least_squares.py", line 195, in residuals
+    unweighted_residuals = self.unweighted_residuals(x, *args, **kwargs)
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/objectives/least_squares.py", line 156, in unweighted_residuals
+    out = fn(*args, **kwargs)
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/mhd/vmec.py", line 815, in aspect
+    self.run()
+  File "/marconi/home/userexternal/rjorge00/simsopt/src/simsopt/mhd/vmec.py", line 722, in run
+    raise ObjectiveFailure(f"VMEC did not converge. ierr={ierr}")
+simsopt._core.util.ObjectiveFailure: VMEC did not converge. ierr=2
+WARNING:simsopt.objectives.least_squares:Function evaluation failed for <bound method Vmec.aspect of Vmec1 (nfp=2 mpol=8 ntor=8)>
+slurmstepd: error: *** JOB 10734374 ON r136c01s04 CANCELLED AT 2023-01-07T07:57:33 DUE TO TIME LIMIT ***

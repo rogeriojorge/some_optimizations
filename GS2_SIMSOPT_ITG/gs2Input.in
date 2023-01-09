@@ -122,3 +122,4 @@
  alpha_f0 = "analytic" ! Form of the alpha equilibrium distribution function: "maxwellian", "analytic" or "external"
  energy_0 = 0.01 ! Lower limit of F_alpha for : F_alpha(energy_0)=0.
 /
+

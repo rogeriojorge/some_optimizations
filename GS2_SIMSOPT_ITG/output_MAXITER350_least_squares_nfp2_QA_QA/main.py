@@ -45,7 +45,7 @@ start_time = time.time()
 # gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
 gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 MAXITER = 350
-max_modes = [1,2,3,4,5]
+max_modes = [1,2,3]
 if   args.type == 1 or args.type == 3: QA_or_QH = 'QH'
 elif args.type == 2 or args.type == 4: QA_or_QH = 'QA'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
@@ -57,20 +57,20 @@ weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
 s_radius = 0.25
 alpha_fieldline = 0
 
-nphi= 141
-nlambda = 33
+nphi= 151
+nlambda = 35
 nperiod = 5.0
-nstep = 330
+nstep = 340
 dt = 0.4
 aky_min = 0.3
 aky_max = 3.0
-naky = 8
+naky = 10
 LN = 1.0
 LT = 3.0
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 9
+negrid = 10
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
 if QA_or_QH=='QA':
@@ -86,17 +86,20 @@ plot_result = True
 use_previous_results_if_available = False
 
 weight_mirror = 10
-weight_optTurbulence = 1e+1
+weight_optTurbulence = 30
 #diff_rel_step = 1e-1 ## diff_rel_step = 0.1/max_mode
 #diff_abs_step = 1e-2 ## diff_abs_step = (max_mode/2)*10**(-max_mode)
 MAXITER_LOCAL = 3
 MAXFUN_LOCAL = 30
-ftol=1e-5
+ftol=1e-6
 no_local_search = False
 output_path_parameters=f'output_{optimizer}.csv'
 HEATFLUX_THRESHOLD = 1e18
 GROWTHRATE_THRESHOLD = 10
 aspect_ratio_weight = 3e+0
+diff_method = 'centered'
+local_optimization_method = 'lm' # 'trf'
+perform_extra_solve = True
 ######################################
 ######################################
 OUT_DIR_APPENDIX=f'output_MAXITER{MAXITER}_{optimizer}_{initial_config[6:]}'
@@ -341,7 +344,8 @@ for max_mode in max_modes:
     elif optimizer == 'least_squares':
         diff_rel_step = (1e-1)/max_mode
         diff_abs_step = min(1e-2,(max_mode/4)*10**(-max_mode))
-        least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER, ftol=ftol)
+        least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step, abs_step=diff_abs_step, max_nfev=MAXITER, ftol=ftol, diff_method=diff_method, method=local_optimization_method)
+        if perform_extra_solve: least_squares_mpi_solve(prob, mpi, grad=True, rel_step=diff_rel_step/10, abs_step=diff_abs_step/10, max_nfev=MAXITER, ftol=ftol, diff_method=diff_method, method=local_optimization_method)
     else: print('Optimizer not available')
     ######################################
     try: 
