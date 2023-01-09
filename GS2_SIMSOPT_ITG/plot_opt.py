@@ -13,17 +13,17 @@ from neat.fields import Simple
 from neat.tracing import ChargedParticleEnsemble, ParticleEnsembleOrbit_Simple
 import booz_xform as bx
 #################################
-max_mode = 5
-QA_or_QH = 'QA'
+max_mode = 3
+QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
 opt_turbulence = False
 
-plt_opt_res = False
+plt_opt_res = True
 plot_vmec = False
-run_simple = True
+run_simple = False
 plot_loss_fractions = False
-plot_neo = False
+plot_neo = True
 
 MAXITER=350
 
@@ -34,7 +34,7 @@ else:
     nfp=4
     aspect_target = 8.0
 
-if quasisymmetry: quasisymmetry_weight=1e-3
+if quasisymmetry: quasisymmetry_weight=1e-2
 else: quasisymmetry_weight=1e-8
 
 

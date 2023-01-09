@@ -45,20 +45,18 @@ elif args.type == 4:
 
 s_radius = 0.25
 alpha_fieldline = 0
-nphi= 141
-nlambda = 33
+nphi= 151
+nlambda = 35
 nperiod = 5.0
-nstep = 330
+nstep = 340
 dt = 0.4
 aky_min = 0.3
 aky_max = 4.0
-naky = 8
-LN = 1.0
-LT = 3.0
+naky = 10
 s_radius = 0.25
 alpha_fieldline = 0
 ngauss = 3
-negrid = 9
+negrid = 10
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 ## Ln, Lt, plotting options
 LN_array = np.linspace(0.5,6,12)
