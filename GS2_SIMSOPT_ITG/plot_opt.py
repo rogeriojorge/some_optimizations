@@ -17,13 +17,13 @@ max_mode = 3
 QA_or_QH = 'QH'
 optimizer = 'least_squares'#'dual_annealing' #'least_squares'
 quasisymmetry = True
-opt_turbulence = False
+opt_turbulence = True
 
-plt_opt_res = True
-plot_vmec = False
+plt_opt_res = False
+plot_vmec = True
 run_simple = False
 plot_loss_fractions = False
-plot_neo = True
+plot_neo = False
 
 MAXITER=350
 
@@ -41,7 +41,7 @@ else: quasisymmetry_weight=1e-8
 aspect_weight = 1e0
 mirror_weight = 1e1
 use_final = True
-use_previous_results_if_available = False
+use_previous_results_if_available = True
 
 nparticles = 3000  # number of particles
 tfinal = 2e-2  # seconds
@@ -160,21 +160,21 @@ if plot_vmec:
     b1.bx.write_boozmn("boozmn_out.nc")
     print("Plot BOOZ_XFORM")
     fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=1,  fill=False, ncontours=35)
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_1.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=int(boozxform_nsurfaces/2), fill=False, ncontours=35)
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_2.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     fig = plt.figure(); ax = plt.subplot(111); bx.surfplot(b1.bx, js=boozxform_nsurfaces-1, fill=False, ncontours=35)
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     plt.savefig("Boozxform_surfplot_3.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
     fig = plt.figure(); ax = plt.subplot(111); bx.symplot(b1.bx, helical_detail = True, sqrts=True)
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     plt.savefig("Boozxform_symplot.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
     fig = plt.figure(); ax = plt.subplot(111); bx.modeplot(b1.bx, sqrts=True); plt.xlabel(r'$s=\psi/\psi_b$')
-    ax.tick_params(axis='x', labelsize=16);ax.tick_params(axis='y', labelsize=16);plt.tight_layout()
+    ax.tick_params(axis='x', labelsize=20);ax.tick_params(axis='y', labelsize=20);plt.tight_layout()
     plt.savefig("Boozxform_modeplot.pdf", bbox_inches = 'tight', pad_inches = 0); plt.close()
 #################################
 if run_simple:
@@ -247,8 +247,8 @@ if plot_loss_fractions:
     plt.ylabel('Loss fraction', fontsize=22)
     plt.xlabel('Time (s)', fontsize=22)
     # plt.legend(fontsize=18)
-    ax.tick_params(axis='x', labelsize=16)
-    ax.tick_params(axis='y', labelsize=16)
+    ax.tick_params(axis='x', labelsize=20)
+    ax.tick_params(axis='y', labelsize=20)
     plt.tight_layout()
     plt.savefig('loss_fractions.pdf')
     plt.close()

@@ -11,7 +11,7 @@ import warnings
 import matplotlib.cbook
 warnings.filterwarnings("ignore",category=matplotlib.MatplotlibDeprecationWarning)
 
-options = ['QA','QH']
+options = ['QH']
 
 for option in options:
     try:
