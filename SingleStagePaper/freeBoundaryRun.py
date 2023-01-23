@@ -50,7 +50,7 @@ nzeta = 101
 nr = 101
 nz = 101
 print('Creating to_mgrid file')
-bs_final.to_mgrid(os.path.join(outdir_coils,'tomgrid_opt_coils.nc'), nr=nr, nphi=nzeta, nz=nr, rmin=0.9*np.min(r0), rmax=1.1*np.max(r0), zmin=1.1*np.min(z0), zmax=1.1*np.max(z0), nfp=nfp)
+bs_final.to_mgrid(os.path.join(outdir_coils,'tomgrid_opt_coils.nc'), nr=nr, nphi=nzeta, nz=nr, rmin=0.9*np.min(r0), rmax=1.1*np.max(r0), zmin=1.1*np.min(z0), zmax=1.1*np.max(z0), nfp=nfp, mgrid_mode='S')
 print('Done')
 
 if full_torus:
@@ -89,10 +89,10 @@ z0 = s_final.gamma()[:, :, 2]
 vmec_final.indata.lfreeb = True
 # vmec_final.indata.mgrid_file = os.path.join(outdir_coils,'mgrid_opt_coils.nc')
 vmec_final.indata.mgrid_file = os.path.join(outdir_coils,'tomgrid_opt_coils.nc')
-vmec_final.indata.extcur[0:ncoils_total] = [c.current.get_value() for c in bs_final.coils]
+vmec_final.indata.extcur[0:ncoils_total] = [-c.current.get_value()*1.515*1e-7 for c in bs_final.coils]
 vmec_final.indata.nvacskip = 6
 vmec_final.indata.nzeta = nzeta
-vmec_final.indata.phiedge = -(1/(4*np.pi))*1e7*np.abs(vmec_final.indata.phiedge)
+vmec_final.indata.phiedge = vmec_final.indata.phiedge
 
 vmec_final.indata.ns_array[:4]    = [   9,    29,    49,   101]
 vmec_final.indata.niter_array[:4] = [4000,  6000,  6000,  8000]
@@ -100,15 +100,15 @@ vmec_final.indata.ftol_array[:4]  = [1e-5,  1e-6, 1e-12, 1e-15]
 
 vmec_final.write_input(os.path.join(dir,'input.final_freeb'))
 
-vmec_final.run()
+# vmec_final.run()
 
-# print("Running VMEC")
-# os.chdir(os.path.join(dir,'vmec'))
-# run_string = f"{vmec_executable} {os.path.join(dir,'input.final_freeb')}"
-# run(run_string, shell=True, check=True)
-# try: shutil.move(os.path.join(dir, 'vmec', f"wout_final_freeb.nc"), os.path.join(dir, f"wout_final_freeb.nc"))
-# except Exception as e: print(e)
-# os.chdir(this_path)
+print("Running VMEC")
+os.chdir(os.path.join(dir,'vmec'))
+run_string = f"{vmec_executable} {os.path.join(dir,'input.final_freeb')}"
+run(run_string, shell=True, check=True)
+try: shutil.move(os.path.join(dir, 'vmec', f"wout_final_freeb.nc"), os.path.join(dir, f"wout_final_freeb.nc"))
+except Exception as e: print(e)
+os.chdir(this_path)
 
 boozxform_nsurfaces=10
 helical_detail=True
