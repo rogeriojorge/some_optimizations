@@ -73,6 +73,8 @@ ngauss = 3
 negrid = 10
 phi_GS2 = np.linspace(-nperiod*np.pi, nperiod*np.pi, nphi)
 
+## MAKE VNEWK LARGER?
+
 if QA_or_QH=='QA':
     aspect_ratio_target = 6
     nfp = 2

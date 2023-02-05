@@ -37,7 +37,7 @@ MAXITER = 10
 MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
-run_scan = False
+run_scan = True
 run_optimization = False
 plot_result = True
 
@@ -63,7 +63,7 @@ D_hyper = 0.05
 ny = 80
 nx = 80
 y0 = 10.0
-nonlinear = True
+nonlinear = False # True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
 
