@@ -52,19 +52,19 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/
 ##
 LN = 1.0
 LT = 3.0
-nstep = 12000
-dt = 0.04
+nstep = 30000
+dt = 0.005
 nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 26
-nlaguerre = 12
+nhermite  = 48
+nlaguerre = 16
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 30
+ny = 50
 nx = 1
-y0 = 10.0
+y0 = 20.0
 nonlinear = False # True
 
 OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')

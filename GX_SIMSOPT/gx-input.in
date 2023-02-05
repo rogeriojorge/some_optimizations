@@ -22,8 +22,8 @@
 [Time]
  dt = 0.010
  nstep  = 9000
- nwrite = 500
- nsave  = 10000000
+ nwrite = 10
+ nsave  = 1000
  scheme = "sspx3"
  cfl = 1.0
 
