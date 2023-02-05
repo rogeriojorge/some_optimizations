@@ -22,7 +22,7 @@ import matplotlib
 matplotlib.use('Agg') 
 this_path = Path(__file__).parent.resolve()
 
-min_bound = -0.15
+min_bound = -0.13
 max_bound = 0.2
 vmec_index_scan_opt = 0
 npoints_scan = 50
@@ -58,11 +58,11 @@ nzgrid = 121
 npol = 4
 desired_normalized_toroidal_flux = 0.25
 alpha_fieldline = 0
-nhermite  = 48
-nlaguerre = 16
+nhermite  = 36
+nlaguerre = 12
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 50
+ny = 60
 nx = 1
 y0 = 20.0
 nonlinear = False # True
