@@ -50,7 +50,7 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_module
 ##
 LN = 1.0
 LT = 3.0
-nstep = 6000
+nstep = 8000
 dt = 0.02
 nzgrid = 91
 npol = 4
@@ -60,8 +60,8 @@ nhermite  = 15
 nlaguerre = 5
 nu_hyper = 0.5
 D_hyper = 0.05
-ny = 80
-nx = 80
+ny = 30
+nx = 1
 y0 = 10.0
 nonlinear = False # True
 
@@ -126,6 +126,8 @@ def gammabyky(stellFile, fractionToConsider=0.4):
     omega_average_array = np.array(fX.groups['Special']['omega_v_time'][()])
     realFrequencyX = np.mean(omega_average_array[startIndexX:,:,:,0],axis=0)
     growthRateX = np.mean(omega_average_array[startIndexX:,:,:,1],axis=0)
+    growthRateX[growthRateX == np.inf] = np.min(growthRateX)
+    growthRateX[growthRateX == np.nan] = np.min(growthRateX)
     max_index = np.unravel_index(growthRateX.argmax(),growthRateX.shape)
     max_growthrate_omega = realFrequencyX[max_index[0],max_index[1]]
     max_growthrate_gamma = growthRateX[max_index[0],max_index[1]]
