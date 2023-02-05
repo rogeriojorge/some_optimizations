@@ -23,7 +23,7 @@ matplotlib.use('Agg')
 this_path = Path(__file__).parent.resolve()
 
 min_bound = -0.1
-max_bound = 0.1
+max_bound = 0.2
 vmec_index_scan_opt = 0
 npoints_scan = 20
 ftol = 1e-2
@@ -50,7 +50,7 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_module
 ##
 LN = 1.0
 LT = 3.0
-nstep = 10000
+nstep = 6000
 dt = 0.02
 nzgrid = 91
 npol = 4
