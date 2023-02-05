@@ -210,14 +210,8 @@ def create_gx_inputs(vmec_file):
     os.remove(os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     fname = f"gxInput_wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
-    print('###############################')
-    print('###############################')
     if nonlinear: shutil.copy(os.path.join(this_path,'gx-input_nl.in'),fnamein)
     else: shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
-    print('Check if copied')
-    print(f'fnamein={fnamein}')
-    print('###############################')
-    exit()
     replace(fnamein,' geofile = "gx_wout.nc"',f' geofile = "gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux:.3f}_nt_{2*nzgrid}_geo.nc"')
     replace(fnamein,' gridout_file = "grid.out"',f' gridout_file = "{gridout_file}"')
     replace(fnamein,' nstep  = 9000',f' nstep  = {nstep}')
@@ -273,6 +267,8 @@ def get_qflux(stellFile, fractionToConsider=0.4):
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
+    print(f'check {gx_input_name} exists')
+    exit()
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
     with open(f_log, 'w') as fp:
