@@ -211,6 +211,8 @@ def create_gx_inputs(vmec_file):
     fname = f"gxInput_wout_{f_wout[5:-3]}"
     fnamein = os.path.join(OUT_DIR,fname+'.in')
     print('###############################')
+    print(os.path.join(this_path,'gx-input.in'))
+    print(fnamein)
     shutil.copy(os.path.join(this_path,'gx-input.in'),fnamein)
     print('###############################')
     exit()
