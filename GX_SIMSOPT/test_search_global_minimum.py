@@ -268,31 +268,44 @@ def get_qflux(stellFile, fractionToConsider=0.4):
     return Q_avg
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
+    print('Creating GX inputs')
     gx_input_name = create_gx_inputs(vmec.output_file)
+    print(f'Created GX inputs with gx_input_name={gx_input_name}')
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
+    print(f'Running GX with gx_cmd={gx_cmd}')
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
+    print(f'Done. Reading output file fout={fout}')
     try:
         eigenPlot(fout)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
         qflux = get_qflux(fout)
+        print(f'Done. max_growthrate_gamma={max_growthrate_gamma}')
     except Exception as e:
         print(e)
+        print(f'FAILED!!!')
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
+    print('Removing gx files')
     remove_gx_files(gx_input_name)
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux
 def TurbulenceCostFunction(v: Vmec):
     start_time = time.time()
+    print('Starting to run VMEC')
     try: v.run()
     except Exception as e:
         print(e)
+        print('FAILED RUNNING VMEC')
         return GROWTHRATE_THRESHOLD
     try:
+        print('Starting to run GX')
         growth_rate, max_growthrate_omega, max_growthrate_ky, qflux = run_gx(v)
+        print('Done running GX')
     except Exception as e:
+        print(e)
+        print('FAILED RUNNING GX')
         growth_rate, max_growthrate_omega, max_growthrate_ky = GROWTHRATE_THRESHOLD, GROWTHRATE_THRESHOLD, GROWTHRATE_THRESHOLD
     # out_str = f'{datetime.now().strftime("%H:%M:%S")} - Growth rate = {growth_rate:1f}, quasisymmetry = {qs.total():1f} with aspect ratio={v.aspect():1f} took {(time.time()-start_time):1f}s'
     out_str = f'Growth rate = {growth_rate:1f}, qflux = {qflux:1f} for point {(vmec.x[vmec_index_scan_opt]):1f}, aspect {np.abs(v.aspect()):1f}, quasisymmetry = {qs.total():1f} and iota {(v.mean_iota()):1f} took {(time.time()-start_time):1f}s'
