@@ -50,8 +50,8 @@ convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_module
 ##
 LN = 1.0
 LT = 3.0
-nstep = 8000
-dt = 0.35
+nstep = 10000
+dt = 0.02
 nzgrid = 91
 npol = 4
 desired_normalized_toroidal_flux = 0.25
