@@ -288,8 +288,8 @@ def run_gx(vmec: Vmec):
         print(e)
         print(f'FAILED!!!')
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux = HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD, HEATFLUX_THRESHOLD
-    print('Removing gx files')
-    remove_gx_files(gx_input_name)
+    # print('Removing gx files')
+    # remove_gx_files(gx_input_name)
     return max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky, qflux
 def TurbulenceCostFunction(v: Vmec):
     start_time = time.time()
