@@ -45,8 +45,10 @@ output_path_parameters_opt = 'opt_dofs_loss.csv'
 output_path_parameters_scan = 'scan_dofs_loss.csv'
 output_path_parameters_min = 'min_dofs_loss.csv'
 
-gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
-convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
+# gx_executable = '/m100/home/userexternal/rjorge00/gx_latest/gx'
+gx_executable = '/m100/home/userexternal/rjorge00/gx/gx'
+# convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx_latest/geometry_modules/vmec/convert_VMEC_to_GX'
+convert_VMEC_to_GX = '/m100/home/userexternal/rjorge00/gx/geometry_modules/vmec/convert_VMEC_to_GX'
 ##
 LN = 1.0
 LT = 3.0
