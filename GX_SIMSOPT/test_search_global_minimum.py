@@ -267,14 +267,16 @@ def get_qflux(stellFile, fractionToConsider=0.4):
 # Function to run GS2 and extract growth rate
 def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
-    print(f'check {gx_input_name} exists')
-    exit()
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
+    print(f'Running gx_cmd={gx_cmd}')
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
+    print(f'check {gx_input_name} exists')
+    print(f'check {fout} exists')
+    exit()
     try:
         eigenPlot(fout)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
