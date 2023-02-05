@@ -204,9 +204,6 @@ def create_gx_inputs(vmec_file):
     if not os.path.isfile(os.path.join(OUT_DIR,'convert_VMEC_to_GX')): shutil.copy(convert_VMEC_to_GX,os.path.join(OUT_DIR,'convert_VMEC_to_GX'))
     p = subprocess.Popen(f"./convert_VMEC_to_GX gx-geometry_wout_{f_wout[5:-3]}".split(),stderr=subprocess.STDOUT,stdout=subprocess.DEVNULL)
     p.wait()
-    print(f"Ran ./convert_VMEC_to_GX gx-geometry_wout_{f_wout[5:-3]}")
-    print('Check gridout_file {gridout_file} exists')
-    exit()
     try: os.remove(geometry_file)
     except Exception as e: print(e)
     gridout_file = f'grid.gx_wout_{f_wout[5:-3]}_psiN_{desired_normalized_toroidal_flux}_nt_{2*nzgrid}'
@@ -272,14 +269,10 @@ def run_gx(vmec: Vmec):
     gx_input_name = create_gx_inputs(vmec.output_file)
     f_log = os.path.join(OUT_DIR,gx_input_name+".log")
     gx_cmd = [f"{gx_executable}", f"{os.path.join(OUT_DIR,gx_input_name+'.in')}", "1"]
-    print(f'Running gx_cmd={gx_cmd}')
     with open(f_log, 'w') as fp:
         p = subprocess.Popen(gx_cmd,stdout=fp)
     p.wait()
     fout = os.path.join(OUT_DIR,gx_input_name+".nc")
-    print(f'check {gx_input_name} exists')
-    print(f'check {fout} exists')
-    exit()
     try:
         eigenPlot(fout)
         max_growthrate_gamma, max_growthrate_omega, max_growthrate_ky = gammabyky(fout)
