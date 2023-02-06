@@ -26,14 +26,14 @@ parser = argparse.ArgumentParser()
 parser.add_argument("--type", type=int, default=1)
 args = parser.parse_args()
 
-# gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
-gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
+gs2_executable = '/Users/rogeriojorge/local/gs2/bin/gs2'
+# gs2_executable = '/marconi/home/userexternal/rjorge00/gs2/bin/gs2'
 
 if args.type == 1: initial_config = 'input.nfp4_QH'
 else: initial_config = 'input.nfp2_QA'
 weighted_growth_rate = True #use sum(gamma/ky) instead of peak(gamma)
-npoints_scan = 350
-min_bound = -0.20
+npoints_scan = 30
+min_bound = -0.15
 max_bound = 0.20
 run_scan = True
 run_optimization = False
@@ -43,7 +43,7 @@ ftol = 1e-2
 s_radius = 0.25
 alpha_fieldline = 0
 nphi= 151
-nlambda = 35
+nlambda = 28
 nperiod = 5.0
 nstep = 340
 dt = 0.4
@@ -66,11 +66,11 @@ MAXFUN = 50
 MAXITER_LOCAL = 2
 MAXFUN_LOCAL = 5
 
-output_path_parameters_opt = 'opt_dofs_loss.csv'
-output_path_parameters_scan = 'scan_dofs_loss.csv'
-output_path_parameters_min = 'min_dofs_loss.csv'
+output_path_parameters_opt = f'opt_dofs_loss_nstep{nstep}_dt{dt}_nlambda{nlambda}.csv'
+output_path_parameters_scan = f'scan_dofs_loss_nstep{nstep}_dt{dt}_nlambda{nlambda}.csv'
+output_path_parameters_min = f'min_dofs_loss_nstep{nstep}_dt{dt}_nlambda{nlambda}.csv'
 
-OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}')
+OUT_DIR = os.path.join(this_path,f'test_optimization_{initial_config[-7:]}_nstep{nstep}_dt{dt}_nlambda{nlambda}')
 
 os.makedirs(OUT_DIR, exist_ok=True)
 os.chdir(OUT_DIR)
